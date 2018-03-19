@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import {
   StyleSheet,
   View,
+  Text,
 } from 'react-native';
 
 import Logo from './components/Logo';
@@ -37,7 +38,9 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Logo title="Welcome to ReactNative" />
+        <Logo></Logo>
+        <Logo></Logo>
+        <Logo></Logo>
       </View>
     );
   }

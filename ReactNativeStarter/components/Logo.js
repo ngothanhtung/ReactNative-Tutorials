@@ -1,31 +1,23 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types'; // ES6
-import {
-  View,
-  Text,
-} from 'react-native';
+import React, {Component} from 'react';
+import {StyleSheet, View, Text} from 'react-native';
+
+const styles = StyleSheet.create({
+  text: {
+    color: 'red',
+    fontSize: 20
+  }
+});
 
 class Logo extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-
-    };
-  }
-
-  render() {
-    return (
+  render(){
+    return(
       <View>
-        <Text>
-          {this.props.title}
+        <Text style={styles.text}>
+          REACT NATIVE LOGO
         </Text>
       </View>
     );
   }
 }
-
-Logo.propTypes = {
-  title: PropTypes.string.isRequired,
-};
 
 export default Logo;
