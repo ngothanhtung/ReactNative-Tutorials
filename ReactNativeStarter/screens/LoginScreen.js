@@ -1,6 +1,18 @@
 import React, { Component } from 'react';
 import { StyleSheet, View, Text, TextInput, Button } from 'react-native';
 
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  inputText: {
+    width: 240,
+    height: 48,
+  }
+});
+
 class LoginScreen extends Component {
   constructor(props) {
     super(props);
@@ -18,26 +30,32 @@ class LoginScreen extends Component {
     } else {
       alert("Login Failed");
     }
-      
+
   }
 
   render() {
     return (
-      <View style={{ padding: 10 }}>
+      <View style={styles.container}>
+        <Text>
+          Username:
+        </Text>
         <TextInput
-          style={{ height: 40 }}
+          style={styles.inputText}
           placeholder=""
           onChangeText={(text) => this.setState({ username: text })}
         />
-
+        <Text>
+          Password:
+        </Text>
         <TextInput
-        secureTextEntry={true}
-        style={{ height: 40 }}
-        placeholder=""
-        onChangeText={(text) => this.setState({ password: text })}
-      />
-        <Button title="Contact Us" onPress={this.onPressLogin} />
-
+          secureTextEntry={true}
+          style={styles.inputText}
+          placeholder=""
+          onChangeText={(text) => this.setState({ password: text })}
+        />
+        <View style={{ paddingTop: 24}}>
+          <Button title="Login" onPress={this.onPressLogin} />
+        </View>
       </View>
     );
   }
