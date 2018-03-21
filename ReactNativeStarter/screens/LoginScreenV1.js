@@ -95,15 +95,13 @@ class LoginScreen extends Component {
   render() {
     return (
       <KeyboardAvoidingView behavior="padding" style={styles.container}>
-      <AptechLogo />  
-      <View>          
+        <AptechLogo />
+        <View>
           <Text style={styles.headerText}>
             STUDENT LOGIN
         </Text>
           <View style={styles.hr}>
-
           </View>
-
           <TextInput
             style={styles.inputText}
             placeholder="Enter your username"
@@ -135,7 +133,7 @@ class LoginScreen extends Component {
         </View>
         <View style={styles.footerContainer}>
           <Text>Have an account? </Text>
-          <TouchableOpacity onPress={() => {alert("This feature is coming soon (Next chapter)")}}>
+          <TouchableOpacity onPress={() => { alert("This feature is coming soon (Next chapter)") }}>
             <Text style={styles.signUpText}>Sign Up</Text>
           </TouchableOpacity>
         </View>
