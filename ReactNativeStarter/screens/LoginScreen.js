@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, TextInput, Button, Image, Dimensions } from 'react-native';
+import {
+  View, Text, TextInput, Button, Image,
+  StyleSheet, Dimensions, KeyboardAvoidingView, TouchableOpacity
+} from 'react-native';
 
 var { width, height } = Dimensions.get('window');
 
@@ -16,18 +19,47 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#ffffff'
   },
+
+  footerContainer: {
+    marginTop: 20,
+    flexDirection: 'row',
+    marginBottom: 40
+  },
+
   inputText: {
     width: width - 60,
     height: 48,
-
+    backgroundColor: '#f1f2f6',
+    color: '#0c2461',
+    padding: 12,
+    marginBottom: 8,
+  },
+  buttonContainer: {
+    backgroundColor: '#0c2461',
+    paddingVertical: 15
+  },
+  buttonText: {
+    color: '#fff',
+    textAlign: 'center',
+    fontWeight: '700'
+  },
+  loginButton: {
+    backgroundColor: '#0c2461',
+    color: '#fff',
+    width: 240
+  },
+  signUpText: {
+    color: '#0c2461',
+    textDecorationLine: 'underline',
+    alignSelf: 'center'
   },
   headerText: {
     fontSize: 24,
-    color: '#2c3e50',
+    color: '#0c2461',
     marginBottom: 12
   },
   hr: {
-    borderBottomColor: '#57606f',
+    borderBottomColor: '#0c2461',
     borderBottomWidth: 1,
     width: width - 60,
     marginBottom: 24
@@ -62,30 +94,52 @@ class LoginScreen extends Component {
 
   render() {
     return (
-      <View style={styles.container}>
-        <AptechLogo />
-        <Text style={styles.headerText}>
-          LOGIN SCREEN
+      <KeyboardAvoidingView behavior="padding" style={styles.container}>
+      <AptechLogo />  
+      <View>          
+          <Text style={styles.headerText}>
+            STUDENT LOGIN
         </Text>
-        <View style={styles.hr}>
+          <View style={styles.hr}>
 
-        </View>
+          </View>
 
-        <TextInput
-          style={styles.inputText}
-          placeholder="Enter your username"
-          onChangeText={(text) => this.setState({ username: text })}
-        />
-        <TextInput
-          secureTextEntry={true}
-          style={styles.inputText}
-          placeholder="Enter your password"
-          onChangeText={(text) => this.setState({ password: text })}
-        />
-        <View style={{ paddingTop: 24 }}>
-          <Button title="Login" onPress={this.onPressLogin} />
+          <TextInput
+            style={styles.inputText}
+            placeholder="Enter your username"
+            placeholderTextColor="#6a89cc"
+            keyboardType="email-address"
+            autoCapitalize="none"
+            autoCorrect={false}
+            returnKeyType="next"
+            onChangeText={(text) => this.setState({ username: text })}
+            onSubmitEditing={() => this.passwordInput.focus()}
+          />
+          <TextInput
+            ref={(input) => this.passwordInput = input}
+            secureTextEntry={true}
+            style={styles.inputText}
+            placeholder="Enter your password"
+            placeholderTextColor="#6a89cc"
+            returnKeyType="go"
+            onChangeText={(text) => this.setState({ password: text })}
+          />
+          <View>
+            {/*
+              <Button title="Login" onPress={this.onPressLogin} />
+            */}
+            <TouchableOpacity style={styles.buttonContainer} onPress={this.onPressLogin}>
+              <Text style={styles.buttonText}>LOGIN</Text>
+            </TouchableOpacity>
+          </View>
         </View>
-      </View>
+        <View style={styles.footerContainer}>
+          <Text>Have an account? </Text>
+          <TouchableOpacity onPress={() => {alert("This feature is coming soon (Next chapter)")}}>
+            <Text style={styles.signUpText}>Sign Up</Text>
+          </TouchableOpacity>
+        </View>
+      </KeyboardAvoidingView>
     );
   }
 }
