@@ -4,11 +4,14 @@ import {
   Dimensions, KeyboardAvoidingView
 } from 'react-native';
 
+import COLORS from '../constants/COLORS';
+
 // BEGIN: CONSTANTS
 const WINDOW_WIDTH = Dimensions.get('window').width;
 const WINDOW_HEIGHT = Dimensions.get('window').height;
 
-const WHITE_COLOR = '#FFFFFF';
+// Get value from CONSTANTS
+const WHITE_COLOR = COLORS.White;
 const DARK_COLOR = '#1E1A17';
 
 const BACKGROUND_IMAGE = require('../resources/background.png');
@@ -133,12 +136,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row'
   },
   inputIcon: {
-    width: 25,
-    height: 25,
+    width: 24,
+    height: 24,
     tintColor: WHITE_COLOR,
     alignSelf: 'center',
     marginBottom: 5,
-    marginRight: 10
+    marginRight: 12
   },
 
   inputBackground: {
