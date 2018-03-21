@@ -1,7 +1,13 @@
 import React, { Component } from 'react';
-import { StyleSheet, View, Text, TextInput, Button, Dimensions } from 'react-native';
+import { StyleSheet, View, Text, TextInput, Button, Image, Dimensions } from 'react-native';
 
-var {width, height} = Dimensions.get('window');
+var { width, height } = Dimensions.get('window');
+
+
+const AptechLogo = () => (
+  <Image source={require('../resources/aptech-logo.jpg')} resizeMode={'contain'} style={styles.logo} />
+)
+
 
 const styles = StyleSheet.create({
   container: {
@@ -25,7 +31,13 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     width: width - 60,
     marginBottom: 24
-  }
+  },
+
+  logo: {
+    width: 240,
+    height: 175,
+    alignSelf: 'center'
+  },
 });
 
 class LoginScreen extends Component {
@@ -51,12 +63,13 @@ class LoginScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
+        <AptechLogo />
         <Text style={styles.headerText}>
           LOGIN SCREEN
-      </Text>
-      <View style={styles.hr}>
-      
-      </View>
+        </Text>
+        <View style={styles.hr}>
+
+        </View>
 
         <TextInput
           style={styles.inputText}
