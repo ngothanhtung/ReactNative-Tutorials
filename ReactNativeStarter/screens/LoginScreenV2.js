@@ -20,6 +20,33 @@ const LOCK_ICON = require('../resources/lock_icon.png');
 // END CONSTANTS
 
 export default class LoginScreenV2 extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      username: '',
+      password: '',
+      invalidEmail: false
+    }
+  }
+
+  onPressLogin = () => {
+    var username = this.state.username;
+    var password = this.state.password;
+
+    if (username.trim().length === 0) {
+      this.setState({ invalidEmail: true });
+      return;
+    } 
+    else {
+      this.setState({ invalidEmail: false });      
+    }
+    if (username === 'admin' && password === '123456789') {
+      alert("Login OK");
+    } else {
+      alert("Login Failed");
+    }
+  }
+
   render() {
     return (
       <KeyboardAvoidingView behavior="padding" style={styles.container}>
@@ -43,10 +70,18 @@ export default class LoginScreenV2 extends Component {
                 underlineColorAndroid={'transparent'}
                 placeholder="Email"
                 placeholderTextColor="#FFFFFF"
+                onChangeText={(text) => this.setState({ username: text, invalidEmail: false })}
               />
             </View>
             <View style={styles.inputBackground}></View>
+            {
+              this.state.invalidEmail &&
+              <Text style={{ color: COLORS.White }}>
+                Please enter Email
+              </Text>
+            }
           </View>
+
 
           {/* PASSWORD FIELD */}
           <View style={styles.inputContainer}>
@@ -59,6 +94,7 @@ export default class LoginScreenV2 extends Component {
                 underlineColorAndroid={'transparent'}
                 placeholder="Password"
                 placeholderTextColor="#FFFFFF"
+                onChangeText={(text) => this.setState({ password: text})}
               />
             </View>
             <View style={styles.inputBackground}></View>
@@ -75,6 +111,7 @@ export default class LoginScreenV2 extends Component {
               marginVertical: 10
             }}
             activeOpacity={0.7}
+            onPress={this.onPressLogin}
           >
             <Text style={{ fontSize: 16, color: WHITE_COLOR, fontWeight: 'bold' }}>Login</Text>
           </TouchableOpacity>
