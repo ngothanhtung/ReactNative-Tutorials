@@ -10,10 +10,10 @@ const WINDOW_HEIGHT = Dimensions.get('window').height;
 
 // Get value from CONSTANTS
 const WHITE_COLOR = COLORS.White;
-const DARK_COLOR = '#1E1A17';
+const DARK_COLOR = '#45aaf2';
 
-const BACKGROUND_IMAGE = require('../resources/background.png');
-const LOGO_IMAGE = require('../resources/aptech-logo.png');
+const BACKGROUND_IMAGE = require('../resources/background-2.jpg');
+const LOGO_IMAGE = require('../resources/react-native-logo.png');
 const MAIL_ICON = require('../resources/mail_icon.png');
 const LOCK_ICON = require('../resources/lock_icon.png');
 
@@ -53,6 +53,7 @@ export default class LoginScreenV2 extends Component {
             <View style={styles.subInputContainer}>
               <Image source={LOCK_ICON} style={styles.inputIcon} />
               <TextInput
+                secureTextEntry={true}
                 autoFocus={false}
                 style={styles.inputText}
                 underlineColorAndroid={'transparent'}
@@ -103,7 +104,9 @@ const styles = StyleSheet.create({
     flex: 1
   },
   backgroundImage: {
-    height: '100%'
+    height: '100%',
+    width: '100%',
+    resizeMode: 'stretch'
   },
   loginContainer: {
     position: 'absolute',
@@ -115,9 +118,9 @@ const styles = StyleSheet.create({
     flex: 1
   },
   logoImage: {
-    width: WINDOW_WIDTH / 2,
-    height: WINDOW_WIDTH / 2,
-    borderRadius: WINDOW_WIDTH / 4,
+    width: 120,
+    height: 120,
+    borderRadius: 60,
     alignSelf: 'center',
     marginVertical: 15
   },
@@ -152,12 +155,12 @@ const styles = StyleSheet.create({
     zIndex: 0
   },
 
-	inputText: {
-		width: '100%',
-		height: '100%',
-		fontSize: 16,
-		color: COLORS.White
-	},
+  inputText: {
+    width: '100%',
+    height: '100%',
+    fontSize: 16,
+    color: COLORS.White
+  },
   footerContainer: {
     flexDirection: 'row',
     width: '80%',
