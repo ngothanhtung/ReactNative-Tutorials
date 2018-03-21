@@ -3,9 +3,7 @@ import {
   StyleSheet, Text, View, Image, TextInput, TouchableOpacity,
   Dimensions, KeyboardAvoidingView
 } from 'react-native';
-
 import COLORS from '../constants/COLORS';
-
 // BEGIN: CONSTANTS
 const WINDOW_WIDTH = Dimensions.get('window').width;
 const WINDOW_HEIGHT = Dimensions.get('window').height;
@@ -41,7 +39,7 @@ export default class LoginScreenV2 extends Component {
                 autoCapitalize="none"
                 autoCorrect={false}
                 keyboardType="email-address"
-                style={styles.InputText}
+                style={styles.inputText}
                 underlineColorAndroid={'transparent'}
                 placeholder="Email"
                 placeholderTextColor="#FFFFFF"
@@ -56,7 +54,7 @@ export default class LoginScreenV2 extends Component {
               <Image source={LOCK_ICON} style={styles.inputIcon} />
               <TextInput
                 autoFocus={false}
-                style={styles.InputText}
+                style={styles.inputText}
                 underlineColorAndroid={'transparent'}
                 placeholder="Password"
                 placeholderTextColor="#FFFFFF"
@@ -154,6 +152,12 @@ const styles = StyleSheet.create({
     zIndex: 0
   },
 
+	inputText: {
+		width: '100%',
+		height: '100%',
+		fontSize: 16,
+		color: COLORS.White
+	},
   footerContainer: {
     flexDirection: 'row',
     width: '80%',
