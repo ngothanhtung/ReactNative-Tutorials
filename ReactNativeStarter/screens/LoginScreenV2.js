@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import {
-  StyleSheet, Text, View, Image, TextInput, TouchableOpacity,
-  Dimensions, KeyboardAvoidingView
+  StyleSheet, Text, View, Image, TextInput,
+  TouchableOpacity, Dimensions, KeyboardAvoidingView
 } from 'react-native';
 import COLORS from '../constants/COLORS';
+
 // BEGIN: CONSTANTS
 const WINDOW_WIDTH = Dimensions.get('window').width;
 const WINDOW_HEIGHT = Dimensions.get('window').height;
@@ -17,7 +18,20 @@ const LOGO_IMAGE = require('../resources/react-native-logo.png');
 const MAIL_ICON = require('../resources/mail_icon.png');
 const LOCK_ICON = require('../resources/lock_icon.png');
 
-// END CONSTANTS
+// END CONSTANTS COMPONENTS
+
+const Error = (props) => {
+  if (props.isInvalid === true) {
+    return (
+      <View style={{ alignItems: 'center' }}>
+        <Text style={{ color: 'yellow' }}>{props.errorMessage}</Text>
+      </View>
+    );
+  }
+  return (
+    <View></View>
+  );
+};
 
 export default class LoginScreenV2 extends Component {
   constructor(props) {
@@ -25,27 +39,36 @@ export default class LoginScreenV2 extends Component {
     this.state = {
       username: '',
       password: '',
-      invalidEmail: false
-    }
+      invalidEmail: false,
+      invalidPassword: false
+    };
   }
 
   onPressLogin = () => {
-    var username = this.state.username;
-    var password = this.state.password;
-
+    const { username, password } = this.state;
+    // CHECK VALID EMAIL
     if (username.trim().length === 0) {
       this.setState({ invalidEmail: true });
       return;
-    } 
-    else {
-      this.setState({ invalidEmail: false });      
+    } else {
+      this.setState({ invalidEmail: false });
     }
-    if (username === 'admin' && password === '123456789') {
+
+    // CHECK VALID PASSWORD
+    if (password.trim().length === 0) {
+      this.setState({ invalidPassword: true });
+      return;
+    } else {
+      this.setState({ invalidPassword: false });
+    }
+
+    // CHECK LOGIN
+    if (username.toLowerCase() === 'admin' && password === '123456789') {
       alert("Login OK");
     } else {
       alert("Login Failed");
     }
-  }
+  };
 
   render() {
     return (
@@ -56,7 +79,6 @@ export default class LoginScreenV2 extends Component {
         <View style={styles.loginContainer}>
           {/* LOGO IMAGE */}
           <Image source={LOGO_IMAGE} style={styles.logoImage} />
-
           {/* USERNAME FIELD */}
           <View style={styles.inputContainer}>
             <View style={styles.subInputContainer}>
@@ -70,34 +92,36 @@ export default class LoginScreenV2 extends Component {
                 underlineColorAndroid={'transparent'}
                 placeholder="Email"
                 placeholderTextColor="#FFFFFF"
-                onChangeText={(text) => this.setState({ username: text, invalidEmail: false })}
-              />
+                onChangeText={(text) => this.setState({ username: text, invalidEmail: text.length === 0 })}
+                onSubmitEditing={(input) => this.passwordInput.focus()} />
             </View>
             <View style={styles.inputBackground}></View>
-            {
-              this.state.invalidEmail &&
-              <Text style={{ color: COLORS.White }}>
-                Please enter Email
-              </Text>
-            }
-          </View>
 
+            {/* ERROR */}
+            <Error isInvalid={this.state.invalidEmail} errorMessage="Please enter email" />
+
+          </View>
 
           {/* PASSWORD FIELD */}
           <View style={styles.inputContainer}>
             <View style={styles.subInputContainer}>
               <Image source={LOCK_ICON} style={styles.inputIcon} />
               <TextInput
+                ref={(input) => this.passwordInput = input}
                 secureTextEntry={true}
                 autoFocus={false}
                 style={styles.inputText}
                 underlineColorAndroid={'transparent'}
                 placeholder="Password"
                 placeholderTextColor="#FFFFFF"
-                onChangeText={(text) => this.setState({ password: text})}
-              />
+                onChangeText={(text) => this.setState({ password: text, invalidPassword: text.length === 0 })}
+                onSubmitEditing={this.onPressLogin} />
             </View>
             <View style={styles.inputBackground}></View>
+            {/* ERROR */}
+            <Error
+              isInvalid={this.state.invalidPassword}
+              errorMessage="Please enter password" />
           </View>
 
           {/* LOGIN BUTTON */}
@@ -111,9 +135,13 @@ export default class LoginScreenV2 extends Component {
               marginVertical: 10
             }}
             activeOpacity={0.7}
-            onPress={this.onPressLogin}
-          >
-            <Text style={{ fontSize: 16, color: WHITE_COLOR, fontWeight: 'bold' }}>Login</Text>
+            onPress={this.onPressLogin}>
+            <Text
+              style={{
+                fontSize: 16,
+                color: WHITE_COLOR,
+                fontWeight: 'bold'
+              }}>Login</Text>
           </TouchableOpacity>
 
           {/* REGISTER AND FORGOT PASSWORD */}
@@ -200,6 +228,6 @@ const styles = StyleSheet.create({
   },
   footerContainer: {
     flexDirection: 'row',
-    width: '80%',
+    width: '80%'
   }
 });
