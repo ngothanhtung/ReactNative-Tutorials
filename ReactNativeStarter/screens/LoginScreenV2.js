@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {
   StyleSheet, Text, View, Image, TextInput,
-  TouchableOpacity, Dimensions, KeyboardAvoidingView
+  TouchableOpacity, Dimensions, KeyboardAvoidingView, Platform
 } from 'react-native';
 import COLORS from '../constants/COLORS';
 
@@ -72,7 +72,7 @@ export default class LoginScreenV2 extends Component {
 
   render() {
     return (
-      <KeyboardAvoidingView style={styles.container}>
+      <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : null} style={styles.container}>
         {/* BACKGROUND */}
         <Image source={BACKGROUND_IMAGE} resizeMode='stretch' style={styles.backgroundImage} />
         {/* LOGIN COMPONENTS */}
@@ -170,7 +170,7 @@ const styles = StyleSheet.create({
   },
   backgroundImage: {
     height: '100%',
-    width: '100%'    
+    width: '100%'
   },
   loginContainer: {
     position: 'absolute',
