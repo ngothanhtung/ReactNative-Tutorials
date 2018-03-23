@@ -14,7 +14,7 @@ const WHITE_COLOR = COLORS.White;
 const DARK_COLOR = '#45aaf2';
 
 const BACKGROUND_IMAGE = require('../resources/background-2.jpg');
-const LOGO_IMAGE = require('../resources/react-native-logo.png');
+const LOGO_IMAGE = require('../resources/ames-logo.png');
 const MAIL_ICON = require('../resources/mail_icon.png');
 const LOCK_ICON = require('../resources/lock_icon.png');
 
@@ -72,9 +72,9 @@ export default class LoginScreenV2 extends Component {
 
   render() {
     return (
-      <KeyboardAvoidingView behavior="padding" style={styles.container}>
+      <KeyboardAvoidingView style={styles.container}>
         {/* BACKGROUND */}
-        <Image source={BACKGROUND_IMAGE} style={styles.backgroundImage} />
+        <Image source={BACKGROUND_IMAGE} resizeMode='stretch' style={styles.backgroundImage} />
         {/* LOGIN COMPONENTS */}
         <View style={styles.loginContainer}>
           {/* LOGO IMAGE */}
@@ -170,8 +170,7 @@ const styles = StyleSheet.create({
   },
   backgroundImage: {
     height: '100%',
-    width: '100%',
-    resizeMode: 'stretch'
+    width: '100%'    
   },
   loginContainer: {
     position: 'absolute',
