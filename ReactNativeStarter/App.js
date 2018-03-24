@@ -12,7 +12,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#0c2461',
   }
 });
 
@@ -27,9 +27,7 @@ export default class App extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Logo text="Apple - US" logoText="Apple"></Logo>
-        <Logo text="Google - US" logoText="Google"></Logo>
-        <Logo text="Facebook - US" logoText="Facebook"></Logo>
+        
       </View>
     );
   }
