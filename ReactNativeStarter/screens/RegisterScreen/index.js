@@ -45,34 +45,29 @@ export default class RegisterScreen extends Component {
     super(props);
     this.state = {
       birthday: new Date(Date.now()),
-      gender: 'female',
-      job: 'student'
+      gender: '',
+      job: ''
     }
   }
-
-  JOBS = ['Programmer', 'Servicer', 'Taxi driver'];
-  GENDER = ['Male', 'Female'];
 
   openBirthdayAndroidDatePicker = e => {
     DatePickerAndroid.open({ mode: 'spinner', date: this.state.birthday })
       .then(result => {
         if (result.action != DatePickerAndroid.dismissedAction) {
-          var birthday = new Date();
-          birthday.setUTCDate(result.day);
-          birthday.setUTCMonth(result.month);
-          birthday.setUTCFullYear(result.year);
+          var selectedDate = new Date();
+          selectedDate.setUTCDate(result.day);
+          selectedDate.setUTCMonth(result.month);
+          selectedDate.setUTCFullYear(result.year);
           this.setState({
-            birthday
+            birthday: selectedDate
           });
         }
       })
       .catch(err => console.log(err));
   }
 
-
-  formatAndroidBirthdayText = () => {
-    var birthday = this.state.birthday;
-    return `${birthday.getUTCDate()}/${birthday.getUTCMonth() + 1}/${birthday.getUTCFullYear()}`;
+  formatAndroidBirthdayText = (date) => {
+    return `${date.getUTCMonth() + 1}/${date.getUTCDate()}/${date.getUTCFullYear()}`;
   }
 
   render() {
@@ -152,7 +147,7 @@ export default class RegisterScreen extends Component {
             <View style={styles.subInputContainer}>
               <Image source={BIRTHDAY_ICON} style={styles.inputIcon} />
               <Text style={styles.androidBirthdayText} onPress={this.openBirthdayAndroidDatePicker}>
-                {this.formatAndroidBirthdayText()}
+                {this.formatAndroidBirthdayText(this.state.birthday)}
               </Text>
             </View>
             <View style={styles.inputBackground}></View>
@@ -164,14 +159,15 @@ export default class RegisterScreen extends Component {
               <Image source={GENDER_ICON} style={styles.inputIcon} />
               <Picker
                 style={{ flex: 1, color: WHITE_COLOR }}
-                mode={'dialog'}
+                mode={'dropdown'}
                 selectedValue={this.state.gender}
                 onValueChange={(itemValue, itemPosition) => {
                   this.setState({ gender: itemValue });
                 }}
               >
-                <Picker.Item label="Male" value="male" color={DARK_COLOR} />
-                <Picker.Item label="Female" value="female" color={DARK_COLOR} />
+                <Picker.Item label="[ Select gender ]" value="" color={COLORS.Black} />
+                <Picker.Item label="Male" value="male" color={COLORS.Black} />
+                <Picker.Item label="Female" value="female" color={COLORS.Black} />
               </Picker>
             </View>
             <View style={styles.inputBackground}></View>
@@ -183,14 +179,15 @@ export default class RegisterScreen extends Component {
               <Image source={JOB_ICON} style={styles.inputIcon} />
               <Picker
                 style={{ flex: 1, color: WHITE_COLOR }}
-                mode={'dialog'}
+                mode={'dropdown'}
                 selectedValue={this.state.gender}
                 onValueChange={(itemValue, itemPosition) => {
                   this.setState({ job: itemValue });
                 }}
               >
-                <Picker.Item label="Student" value="student" color={DARK_COLOR} />
-                <Picker.Item label="Software Engineer" value="software-engineer" color={DARK_COLOR} />
+                <Picker.Item label="[ Select job ]" value="" color={COLORS.Black} />
+                <Picker.Item label="Student" value="student" color={COLORS.Black} />
+                <Picker.Item label="Software Engineer" value="software-engineer" color={COLORS.Black} />
               </Picker>
             </View>
             <View style={styles.inputBackground}></View>
@@ -208,8 +205,6 @@ export default class RegisterScreen extends Component {
     );
   }
 }
-
-
 
 const styles = StyleSheet.create({
   container: {
