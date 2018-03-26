@@ -85,7 +85,7 @@ export default class RegisterScreen extends Component {
           {/* LOGO IMAGE */}
           <Image source={LOGO_IMAGE} style={styles.logoImage} />
 
-          {/* USERNAME */}
+          {/* EMAIL */}
           <View style={styles.inputContainer}>
             <View style={styles.subInputContainer}>
               <Image source={MAIL_ICON} style={styles.inputIcon} />
@@ -117,6 +117,27 @@ export default class RegisterScreen extends Component {
                 style={styles.inputText}
                 placeholder={"Password"}
                 keyboardType={"default"}
+                underlineColorAndroid={'transparent'}
+                placeholderTextColor={WHITE_COLOR}
+              // onChangeText={(text) => this.setState({ username: text, invalidEmail: text.length === 0 })}
+              // onSubmitEditing={(input) => this.passwordInput.focus()}
+              />
+            </View>
+            <View style={styles.inputBackground}></View>
+          </View>
+
+          {/* PHONE */}
+          <View style={styles.inputContainer}>
+            <View style={styles.subInputContainer}>
+              <Image source={PHONE_ICON} style={styles.inputIcon} />
+              <TextInput
+                secureTextEntry={true}
+                autoFocus={false}
+                autoCorrect={false}
+                autoCapitalize={"none"}
+                style={styles.inputText}
+                placeholder={"Phone"}
+                keyboardType={"number-pad"}
                 underlineColorAndroid={'transparent'}
                 placeholderTextColor={WHITE_COLOR}
               // onChangeText={(text) => this.setState({ username: text, invalidEmail: text.length === 0 })}
@@ -161,7 +182,7 @@ export default class RegisterScreen extends Component {
             <View style={styles.subInputContainer}>
               <Image source={JOB_ICON} style={styles.inputIcon} />
               <Picker
-              style={{ flex: 1, color: WHITE_COLOR }}
+                style={{ flex: 1, color: WHITE_COLOR }}
                 mode={'dialog'}
                 selectedValue={this.state.gender}
                 onValueChange={(itemValue, itemPosition) => {
