@@ -50,20 +50,40 @@ export default class RegisterScreen extends Component {
     }
   }
 
-  openBirthdayAndroidDatePicker = e => {
-    DatePickerAndroid.open({ mode: 'spinner', date: this.state.birthday })
-      .then(result => {
-        if (result.action != DatePickerAndroid.dismissedAction) {
-          var selectedDate = new Date();
-          selectedDate.setUTCDate(result.day);
-          selectedDate.setUTCMonth(result.month);
-          selectedDate.setUTCFullYear(result.year);
-          this.setState({
-            birthday: selectedDate
-          });
-        }
-      })
-      .catch(err => console.log(err));
+  openBirthdayAndroidDatePicker = async () => {
+    // DatePickerAndroid.open({ mode: 'spinner', date: this.state.birthday })
+    //   .then(result => {
+    //     if (result.action != DatePickerAndroid.dismissedAction) {
+    //       var selectedDate = new Date();
+    //       selectedDate.setUTCDate(result.day);
+    //       selectedDate.setUTCMonth(result.month);
+    //       selectedDate.setUTCFullYear(result.year);
+    //       this.setState({
+    //         birthday: selectedDate
+    //       });
+    //     }
+    //   })
+    //   .catch(err => console.log(err));
+
+    try {
+      const { action, year, month, day } = await DatePickerAndroid.open({
+        // Use `new Date()` for current date.
+        // May 25 2020. Month 0 is January.
+        date: new Date()
+      });
+      if (action !== DatePickerAndroid.dismissedAction) {
+        // Selected year, month (0-11), day
+        var selectedDate = new Date(); 
+        selectedDate.setUTCDate(day);
+        selectedDate.setUTCMonth(month);
+        selectedDate.setUTCFullYear(year);
+        this.setState({
+          birthday: selectedDate
+        });
+      }
+    } catch ({ code, message }) {
+      console.warn('Cannot open date picker', message);
+    }
   }
 
   formatAndroidBirthdayText = (date) => {
