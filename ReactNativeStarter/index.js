@@ -10,9 +10,13 @@ import RegisterScreen from './screens/RegisterScreen';
 
 import ModalScreen from './screens/ModalScreen';
 
+import CameraRollScreen from './screens/CameraRollScreen';
+
 //AppRegistry.registerComponent('ReactNativeStarter', () => App);
 //AppRegistry.registerComponent('ReactNativeStarter', () => LoginScreenV1);
 // AppRegistry.registerComponent('ReactNativeStarter', () => LoginScreenV2);
 //AppRegistry.registerComponent('ReactNativeStarter', () => FlexBasic);
 AppRegistry.registerComponent('ReactNativeStarter', () => RegisterScreen);
 //AppRegistry.registerComponent('ReactNativeStarter', () => ModalScreen);
+
+//AppRegistry.registerComponent('ReactNativeStarter', () => CameraRollScreen);

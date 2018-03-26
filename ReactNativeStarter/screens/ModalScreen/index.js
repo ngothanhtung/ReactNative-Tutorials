@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Modal, Text, TouchableHighlight, View, ActionSheetIOS } from 'react-native';
+import { Modal, Text, TouchableHighlight, View } from 'react-native';
 
 export default class ModalScreen extends Component {
   state = {
@@ -21,18 +21,10 @@ export default class ModalScreen extends Component {
             alert('Modal has been closed.');
           }}>
           <View style={{ marginTop: 22 }}>
-            <View>              
+            <View>
               <TouchableHighlight
                 onPress={() => {
-                  //this.setModalVisible(!this.state.modalVisible);
-                  ActionSheetIOS.showActionSheetWithOptions({
-                    options: ['Cancel', 'Remove'],
-                    destructiveButtonIndex: 1,
-                    cancelButtonIndex: 0,
-                  },
-                  (buttonIndex) => {
-                    if (buttonIndex === 1) { /* destructive action */ }
-                  });
+                  this.setModalVisible(!this.state.modalVisible);
                 }}>
                 <Text>Hide Modal</Text>
               </TouchableHighlight>
