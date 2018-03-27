@@ -42,6 +42,27 @@ const Error = (props) => {
 	);
 };
 
+const MyInputText = props => (
+	<View style={styles.inputContainer}>
+		<View style={styles.subInputContainer}>
+			<Image source={props.icon} style={styles.inputIcon} />
+			<TextInput
+				autoFocus={false}
+				autoCorrect={false}
+				autoCapitalize={'none'}
+				style={styles.inputText}
+				placeholder={props.placeholder}
+				keyboardType={props.keyboardType}
+				underlineColorAndroid={'transparent'}
+				placeholderTextColor={WHITE_COLOR}
+			// onChangeText={(text) => this.setState({ username: text, invalidEmail: text.length === 0 })}
+			// onSubmitEditing={(input) => this.passwordInput.focus()}
+			/>
+		</View>
+		<View style={styles.inputBackground}></View>
+	</View>
+)
+
 export default class LoginScreenV2 extends Component {
 	constructor(props) {
 		super(props);
@@ -63,6 +84,77 @@ export default class LoginScreenV2 extends Component {
 
 	JOB = ['Programmer', 'Servicer', 'Taxi driver'];
 	GENDER = ['Male', 'Female'];
+
+	//COMPONENTS
+	MyCrossPlatformDatePicker = props => (
+		<View style={styles.inputContainer}>
+			<View style={styles.subInputContainer}>
+				<Image source={props.icon} style={styles.inputIcon} />
+				<Text style={styles.placeHolderText} onPress={this.openBirthdayDatePicker}>
+					{this.formatAndroidBirthdayText()}
+				</Text>
+			</View>
+			<View style={styles.inputBackground}></View>
+			{
+				Platform.OS == 'ios'
+				&&
+				<Modal
+					transparent
+					animationType={'slide'}
+					visible={this.state.iOS.datepickerVisible}
+					onRequestClose={() => { }}
+				>
+					<View style={styleSheet.iOSDatepicker.container}>
+						<View style={styleSheet.iOSDatepicker.allButtonContainer}>
+							<View style={styleSheet.iOSDatepicker.buttonContainer}>
+								<Text style={styleSheet.iOSDatepicker.buttonText} onPress={this.closeIOSDatePicker} >
+									Cancel
+																</Text>
+							</View>
+							<View style={styleSheet.iOSDatepicker.buttonContainer}></View>
+							<View style={{ ...styleSheet.iOSDatepicker.buttonContainer, alignItems: 'flex-end' }}>
+								<Text style={styleSheet.iOSDatepicker.buttonText} onPress={this.submitIOSDatePicker} >
+									Select
+																</Text>
+							</View>
+						</View>
+						<DatePickerIOS
+							mode={'date'}
+							date={this.state.tempIOSDatePickerTime}
+							onDateChange={date => this.setState({ tempIOSDatePickerTime: date })}
+						/>
+					</View>
+				</Modal>
+			}
+		</View>
+	)
+
+	MyCrossPlatformPicker = props => (
+		<View style={styles.inputContainer}>
+			<View style={styles.subInputContainer}>
+				<Image source={props.icon} style={styles.inputIcon} />
+				{
+					Platform.OS == 'ios'
+					&&
+					<Text style={styles.placeHolderText} onPress={this.openIOSActionSheet.bind(this, props.data)}>
+						{props.selectedValue}
+					</Text>
+					||
+					<Picker
+						style={{ flex: 1, color: WHITE_COLOR }}
+						mode={'dropdown'}
+						selectedValue={props.selectedValue}
+						onValueChange={(pickerValue, pickerIndex) => this.onPickerValueChange(pickerValue, pickerIndex, props.data)}
+						children={props.data.items.map((subItem, subIndex) => <Picker.Item key={subIndex} label={subItem} value={subItem} color={DARK_COLOR} />)}
+					/>
+
+				}
+			</View>
+			<View style={styles.inputBackground}></View>
+		</View>
+	)
+
+	//END COMPONENTS
 
 	openBirthdayDatePicker = e => {
 		if (Platform.OS == 'ios') {
@@ -92,7 +184,7 @@ export default class LoginScreenV2 extends Component {
 	onPickerValueChange = (pickerValue, pickerIndex, item) => {
 		if (pickerIndex != PICKER_HOLDER) {
 			var stateModel = {};
-			if (item.placeholder == 'Gender') {
+			if (item.type == 'Gender') {
 				stateModel = {
 					pickerSelectedValue: {
 						job: this.state.pickerSelectedValue.job,
@@ -140,7 +232,7 @@ export default class LoginScreenV2 extends Component {
 		options.push('Cancel');
 		ActionSheetIOS.showActionSheetWithOptions({
 			title: `Select ${field.placeholder}`,
-			message: `Please select your ${field.placeholder}`,
+			message: `Please select your ${field.type}`,
 			options,
 			cancelButtonIndex: options.length - 1
 		}, buttonIndex => {
@@ -148,7 +240,7 @@ export default class LoginScreenV2 extends Component {
 				var stateModel = {
 					pickerSelectedValue: this.state.pickerSelectedValue
 				};
-				stateModel.pickerSelectedValue[field.placeholder.toLowerCase()] = options[buttonIndex];
+				stateModel.pickerSelectedValue[field.type.toLowerCase()] = options[buttonIndex];
 				this.setState(stateModel);
 			}
 		});
@@ -163,7 +255,33 @@ export default class LoginScreenV2 extends Component {
 				<View style={styles.loginContainer}>
 					{/* LOGO IMAGE */}
 					<Image source={LOGO_IMAGE} style={styles.logoImage} />
-					{/* USERNAME FIELD */}
+
+					{/* EMAIL INPUT */}
+					<MyInputText icon={MAIL_ICON} placeholder={'Email'} keyboardType={'email-address'} />
+
+					{/* PASSWORD INPUT */}
+					<MyInputText icon={LOCK_ICON} placeholder={'Password'} keyboardType={'default'} />
+
+					{/* PHONE INPUT */}
+					<MyInputText icon={PHONE_ICON} placeholder={'Phone'} keyboardType={'phone-pad'} />
+
+					{/* BIRTHDAY DATE PICKER */}
+					<this.MyCrossPlatformDatePicker icon={BIRTHDAY_ICON} />
+
+					{/* GENDER PICKER */}
+					<this.MyCrossPlatformPicker
+						selectedValue={this.state.pickerSelectedValue.gender == '' ? PICKER_HOLDER : this.state.pickerSelectedValue.gender}
+						icon={GENDER_ICON}
+						data={{ type: 'Gender', items: this.GENDER }}
+					/>
+
+					{/* JOB PICKER */}
+					<this.MyCrossPlatformPicker
+						selectedValue={this.state.pickerSelectedValue.job == '' ? PICKER_HOLDER : this.state.pickerSelectedValue.job}
+						icon={JOB_ICON}
+						data={{ type: 'Job', items: this.JOB }}
+					/>
+
 					{
 						[
 							{ placeholder: 'Email', icon: MAIL_ICON, placeholderTextColor: WHITE_COLOR, keyboardType: 'email-address', type: 'TextInput' },
@@ -173,108 +291,107 @@ export default class LoginScreenV2 extends Component {
 							{ placeholder: 'Gender', icon: GENDER_ICON, type: 'Picker', items: this.GENDER },
 							{ placeholder: 'Job', icon: JOB_ICON, type: 'Picker', items: this.JOB }
 						].map((item, index) => (
-							<View key={index} style={styles.inputContainer}>
-								{/* TEXT INPUT */}
+							<View key={index} >
 								{
-									item.type == 'TextInput'
-									&&
-									<View>
-										<View style={styles.subInputContainer}>
-											<Image source={item.icon} style={styles.inputIcon} />
-											<TextInput
-												autoFocus={false}
-												autoCorrect={false}
-												autoCapitalize={'none'}
-												style={styles.inputText}
-												placeholder={item.placeholder}
-												keyboardType={item.keyboardType}
-												underlineColorAndroid={'transparent'}
-												placeholderTextColor={item.placeholderTextColor}
-											// onChangeText={(text) => this.setState({ username: text, invalidEmail: text.length === 0 })}
-											// onSubmitEditing={(input) => this.passwordInput.focus()}
-											/>
-										</View>
-										<View style={styles.inputBackground}></View>
-									</View>
+									// item.type == 'TextInput'
+									// &&
+									// <View>
+									// 	<View style={styles.subInputContainer}>
+									// 		<Image source={item.icon} style={styles.inputIcon} />
+									// 		<TextInput
+									// 			autoFocus={false}
+									// 			autoCorrect={false}
+									// 			autoCapitalize={'none'}
+									// 			style={styles.inputText}
+									// 			placeholder={item.placeholder}
+									// 			keyboardType={item.keyboardType}
+									// 			underlineColorAndroid={'transparent'}
+									// 			placeholderTextColor={item.placeholderTextColor}
+									// 		// onChangeText={(text) => this.setState({ username: text, invalidEmail: text.length === 0 })}
+									// 		// onSubmitEditing={(input) => this.passwordInput.focus()}
+									// 		/>
+									// 	</View>
+									// 	<View style={styles.inputBackground}></View>
+									// </View>
 								}
 
 								{/* BIRTHDAY DATE PICKER */}
 								{
-									item.type == 'DatePicker'
-									&&
-									<View>
-										<View style={styles.subInputContainer}>
-											<Image source={item.icon} style={styles.inputIcon} />
-											<Text style={styles.placeHolderText} onPress={this.openBirthdayDatePicker}>
-												{this.formatAndroidBirthdayText()}
-											</Text>
-										</View>
-										<View style={styles.inputBackground}></View>
-										{
-											Platform.OS == 'ios'
-											&&
-											<Modal
-												transparent
-												animationType={'slide'}
-												visible={this.state.iOS.datepickerVisible}
-												onRequestClose={() => { }}
-											>
-												<View style={styleSheet.iOSDatepicker.container}>
-													<View style={styleSheet.iOSDatepicker.allButtonContainer}>
-														<View style={styleSheet.iOSDatepicker.buttonContainer}>
-															<Text style={styleSheet.iOSDatepicker.buttonText} onPress={this.closeIOSDatePicker} >
-																Cancel
-                                                            </Text>
-														</View>
-														<View style={styleSheet.iOSDatepicker.buttonContainer}></View>
-														<View style={{ ...styleSheet.iOSDatepicker.buttonContainer, alignItems: 'flex-end' }}>
-															<Text style={styleSheet.iOSDatepicker.buttonText} onPress={this.submitIOSDatePicker} >
-																Select
-                                                            </Text>
-														</View>
-													</View>
-													<DatePickerIOS
-														mode={'date'}
-														date={this.state.tempIOSDatePickerTime}
-														onDateChange={date => this.setState({ tempIOSDatePickerTime: date })}
-													/>
-												</View>
-											</Modal>
-										}
-									</View>
+									// item.type == 'DatePicker'
+									// &&
+									// <View>
+									// 	<View style={styles.subInputContainer}>
+									// 		<Image source={item.icon} style={styles.inputIcon} />
+									// 		<Text style={styles.placeHolderText} onPress={this.openBirthdayDatePicker}>
+									// 			{this.formatAndroidBirthdayText()}
+									// 		</Text>
+									// 	</View>
+									// 	<View style={styles.inputBackground}></View>
+									// 	{
+									// 		Platform.OS == 'ios'
+									// 		&&
+									// 		<Modal
+									// 			transparent
+									// 			animationType={'slide'}
+									// 			visible={this.state.iOS.datepickerVisible}
+									// 			onRequestClose={() => { }}
+									// 		>
+									// 			<View style={styleSheet.iOSDatepicker.container}>
+									// 				<View style={styleSheet.iOSDatepicker.allButtonContainer}>
+									// 					<View style={styleSheet.iOSDatepicker.buttonContainer}>
+									// 						<Text style={styleSheet.iOSDatepicker.buttonText} onPress={this.closeIOSDatePicker} >
+									// 							Cancel
+									//                         </Text>
+									// 					</View>
+									// 					<View style={styleSheet.iOSDatepicker.buttonContainer}></View>
+									// 					<View style={{ ...styleSheet.iOSDatepicker.buttonContainer, alignItems: 'flex-end' }}>
+									// 						<Text style={styleSheet.iOSDatepicker.buttonText} onPress={this.submitIOSDatePicker} >
+									// 							Select
+									//                         </Text>
+									// 					</View>
+									// 				</View>
+									// 				<DatePickerIOS
+									// 					mode={'date'}
+									// 					date={this.state.tempIOSDatePickerTime}
+									// 					onDateChange={date => this.setState({ tempIOSDatePickerTime: date })}
+									// 				/>
+									// 			</View>
+									// 		</Modal>
+									// 	}
+									// </View>
 								}
 
 								{/* GENDER/JOB PICKER */}
 
 								{
-									item.type == 'Picker'
-									&&
-									<View>
-										<View style={styles.subInputContainer}>
-											<Image source={item.icon} style={styles.inputIcon} />
-											{
-												Platform.OS == 'ios'
-												&&
-												<Text style={styles.placeHolderText} onPress={this.openIOSActionSheet.bind(this, item)}>
-													{
-														item.placeholder == 'Gender'
-															? this.state.pickerSelectedValue.gender == '' ? PICKER_HOLDER : this.state.pickerSelectedValue.gender
-															: this.state.pickerSelectedValue.job == '' ? PICKER_HOLDER : this.state.pickerSelectedValue.job
-													}
-												</Text>
-												||
-												<Picker
-													style={{ flex: 1 }}
-													mode={'dropdown'}
-													selectedValue={item.placeholder == 'Gender' ? this.state.pickerSelectedValue.gender : this.state.pickerSelectedValue.job}
-													onValueChange={(pickerValue, pickerIndex) => this.onPickerValueChange(pickerValue, pickerIndex, item)}
-													children={item.items.map((subItem, subIndex) => <Picker.Item key={subIndex} label={subItem} value={subItem} color={DARK_COLOR} />)}
-												/>
+									// item.type == 'Picker'
+									// &&
+									// <View>
+									// 	<View style={styles.subInputContainer}>
+									// 		<Image source={item.icon} style={styles.inputIcon} />
+									// 		{
+									// 			Platform.OS == 'ios'
+									// 			&&
+									// 			<Text style={styles.placeHolderText} onPress={this.openIOSActionSheet.bind(this, item)}>
+									// 				{
+									// 					item.placeholder == 'Gender'
+									// 						? this.state.pickerSelectedValue.gender == '' ? PICKER_HOLDER : this.state.pickerSelectedValue.gender
+									// 						: this.state.pickerSelectedValue.job == '' ? PICKER_HOLDER : this.state.pickerSelectedValue.job
+									// 				}
+									// 			</Text>
+									// 			||
+									// 			<Picker
+									// 				style={{ flex: 1 }}
+									// 				mode={'dropdown'}
+									// 				selectedValue={item.placeholder == 'Gender' ? this.state.pickerSelectedValue.gender : this.state.pickerSelectedValue.job}
+									// 				onValueChange={(pickerValue, pickerIndex) => this.onPickerValueChange(pickerValue, pickerIndex, item)}
+									// 				children={item.items.map((subItem, subIndex) => <Picker.Item key={subIndex} label={subItem} value={subItem} color={DARK_COLOR} />)}
+									// 			/>
 
-											}
-										</View>
-										<View style={styles.inputBackground}></View>
-									</View>
+									// 		}
+									// 	</View>
+									// 	<View style={styles.inputBackground}></View>
+									// </View>
 								}
 
 								{/* ERROR */}
