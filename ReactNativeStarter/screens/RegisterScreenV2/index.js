@@ -26,7 +26,7 @@ const GENDER_ICON = require('../../resources/icons/gender_icon.png');
 const JOB_ICON = require('../../resources/icons/job_icon.png');
 
 const SUBMIT_BUTTON_TEXT = 'REGISTER';
-const PICKER_HOLDER = '- Touch to select';
+
 // END CONSTANTS COMPONENTS
 
 const Error = (props) => {
@@ -86,7 +86,7 @@ export default class LoginScreenV2 extends Component {
 	GENDER = ['Male', 'Female'];
 
 	//COMPONENTS
-	MyCrossPlatformDatePicker = props => (
+	PlatformDatePicker = props => (
 		<View style={styles.inputContainer}>
 			<View style={styles.subInputContainer}>
 				<Image source={props.icon} style={styles.inputIcon} />
@@ -109,13 +109,13 @@ export default class LoginScreenV2 extends Component {
 							<View style={styleSheet.iOSDatepicker.buttonContainer}>
 								<Text style={styleSheet.iOSDatepicker.buttonText} onPress={this.closeIOSDatePicker} >
 									Cancel
-																</Text>
+								</Text>
 							</View>
 							<View style={styleSheet.iOSDatepicker.buttonContainer}></View>
 							<View style={{ ...styleSheet.iOSDatepicker.buttonContainer, alignItems: 'flex-end' }}>
 								<Text style={styleSheet.iOSDatepicker.buttonText} onPress={this.submitIOSDatePicker} >
 									Select
-																</Text>
+								</Text>
 							</View>
 						</View>
 						<DatePickerIOS
@@ -129,7 +129,7 @@ export default class LoginScreenV2 extends Component {
 		</View>
 	)
 
-	MyCrossPlatformPicker = props => (
+	PlatformPicker = props => (
 		<View style={styles.inputContainer}>
 			<View style={styles.subInputContainer}>
 				<Image source={props.icon} style={styles.inputIcon} />
@@ -266,18 +266,18 @@ export default class LoginScreenV2 extends Component {
 					<MyInputText icon={PHONE_ICON} placeholder={'Phone'} keyboardType={'phone-pad'} />
 
 					{/* BIRTHDAY DATE PICKER */}
-					<this.MyCrossPlatformDatePicker icon={BIRTHDAY_ICON} />
+					<this.PlatformDatePicker icon={BIRTHDAY_ICON} />
 
 					{/* GENDER PICKER */}
-					<this.MyCrossPlatformPicker
-						selectedValue={this.state.pickerSelectedValue.gender == '' ? PICKER_HOLDER : this.state.pickerSelectedValue.gender}
+					<this.PlatformPicker
+						selectedValue={this.state.pickerSelectedValue.gender == '' ? '-- Please select a gender' : this.state.pickerSelectedValue.gender}
 						icon={GENDER_ICON}
 						data={{ type: 'Gender', items: this.GENDER }}
 					/>
 
 					{/* JOB PICKER */}
-					<this.MyCrossPlatformPicker
-						selectedValue={this.state.pickerSelectedValue.job == '' ? PICKER_HOLDER : this.state.pickerSelectedValue.job}
+					<this.PlatformPicker
+						selectedValue={this.state.pickerSelectedValue.job == '' ? '-- Please select a job' : this.state.pickerSelectedValue.job}
 						icon={JOB_ICON}
 						data={{ type: 'Job', items: this.JOB }}
 					/>
