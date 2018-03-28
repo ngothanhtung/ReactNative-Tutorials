@@ -42,27 +42,6 @@ const Error = (props) => {
 	);
 };
 
-const MyInputText = props => (
-	<View style={styles.inputContainer}>
-		<View style={styles.subInputContainer}>
-			<Image source={props.icon} style={styles.inputIcon} />
-			<TextInput
-				autoFocus={false}
-				autoCorrect={false}
-				autoCapitalize={'none'}
-				style={styles.inputText}
-				placeholder={props.placeholder}
-				keyboardType={props.keyboardType}
-				underlineColorAndroid={'transparent'}
-				placeholderTextColor={WHITE_COLOR}
-			// onChangeText={(text) => this.setState({ username: text, invalidEmail: text.length === 0 })}
-			// onSubmitEditing={(input) => this.passwordInput.focus()}
-			/>
-		</View>
-		<View style={styles.inputBackground}></View>
-	</View>
-)
-
 export default class LoginScreenV2 extends Component {
 	constructor(props) {
 		super(props);
@@ -82,8 +61,8 @@ export default class LoginScreenV2 extends Component {
 		this.state.tempIOSDatePickerTime = this.state.birthday;
 	}
 
-	JOB = ['Programmer', 'Servicer', 'Taxi driver'];
-	GENDER = ['Male', 'Female'];
+	JOBS = ['Software Engineer', 'Teacher', 'Student'];
+	GENDERS = ['Male', 'Female'];
 
 	//COMPONENTS
 	PlatformDatePicker = props => (
@@ -257,13 +236,61 @@ export default class LoginScreenV2 extends Component {
 					<Image source={LOGO_IMAGE} style={styles.logoImage} />
 
 					{/* EMAIL INPUT */}
-					<MyInputText icon={MAIL_ICON} placeholder={'Email'} keyboardType={'email-address'} />
+					
+					<View style={styles.inputContainer}>
+						<View style={styles.subInputContainer}>
+							<Image source={MAIL_ICON} style={styles.inputIcon} />
+							<TextInput
+								autoFocus={false}
+								autoCorrect={false}
+								autoCapitalize={'none'}
+								style={styles.inputText}
+								placeholder={'Email'}
+								keyboardType={'email-address'}
+								underlineColorAndroid={'transparent'}
+								placeholderTextColor={WHITE_COLOR}
+							/>
+						</View>
+						<View style={styles.inputBackground}></View>
+					</View>
 
-					{/* PASSWORD INPUT */}
-					<MyInputText icon={LOCK_ICON} placeholder={'Password'} keyboardType={'default'} />
+					{/* PASSWORD INPUT */}					
+					<View style={styles.inputContainer}>
+						<View style={styles.subInputContainer}>
+							<Image source={LOCK_ICON} style={styles.inputIcon} />
+							<TextInput
+								autoFocus={false}
+								autoCorrect={false}
+								autoCapitalize={'none'}
+								secureTextEntry={true}
+								style={styles.inputText}
+								placeholder={'Password'}
+								keyboardType={'default'}
+								underlineColorAndroid={'transparent'}
+								placeholderTextColor={WHITE_COLOR}
+							/>
+						</View>
+						<View style={styles.inputBackground}></View>
+					</View>
+
 
 					{/* PHONE INPUT */}
-					<MyInputText icon={PHONE_ICON} placeholder={'Phone'} keyboardType={'phone-pad'} />
+					<View style={styles.inputContainer}>
+						<View style={styles.subInputContainer}>
+							<Image source={PHONE_ICON} style={styles.inputIcon} />
+							<TextInput
+								autoFocus={false}
+								autoCorrect={false}
+								autoCapitalize={'none'}
+								style={styles.inputText}
+								placeholder={'Phone'}
+								keyboardType={'phone-pad'}
+								underlineColorAndroid={'transparent'}
+								placeholderTextColor={WHITE_COLOR}
+							/>
+						</View>
+						<View style={styles.inputBackground}></View>
+					</View>
 
 					{/* BIRTHDAY DATE PICKER */}
 					<this.PlatformDatePicker icon={BIRTHDAY_ICON} />
@@ -272,14 +299,14 @@ export default class LoginScreenV2 extends Component {
 					<this.PlatformPicker
 						selectedValue={this.state.pickerSelectedValue.gender == '' ? '-- Please select a gender' : this.state.pickerSelectedValue.gender}
 						icon={GENDER_ICON}
-						data={{ type: 'Gender', items: this.GENDER }}
+						data={{ type: 'Gender', items: this.GENDERS }}
 					/>
 
 					{/* JOB PICKER */}
 					<this.PlatformPicker
 						selectedValue={this.state.pickerSelectedValue.job == '' ? '-- Please select a job' : this.state.pickerSelectedValue.job}
 						icon={JOB_ICON}
-						data={{ type: 'Job', items: this.JOB }}
+						data={{ type: 'Job', items: this.JOBS }}
 					/>
 
 					{/* LOGIN BUTTON */}
