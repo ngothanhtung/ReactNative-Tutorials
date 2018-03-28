@@ -3,7 +3,7 @@ import {
 	StyleSheet, Text, View, Image, TextInput,
 	TouchableOpacity, Dimensions, KeyboardAvoidingView, Platform,
 	DatePickerAndroid, DatePickerIOS, Picker, ActionSheetIOS,
-	Modal, StatusBar
+	Modal, TouchableWithoutFeedback, Keyboard
 } from 'react-native';
 import COLORS from '../../constants/COLORS';
 
@@ -230,93 +230,96 @@ export default class LoginScreenV2 extends Component {
 			<KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : null} style={styles.container}>
 				{/* BACKGROUND */}
 				<Image source={BACKGROUND_IMAGE} resizeMode='stretch' style={styles.backgroundImage} />
-				{/* LOGIN COMPONENTS */}
-				<View style={styles.loginContainer}>
-					{/* LOGO IMAGE */}
-					<Image source={LOGO_IMAGE} style={styles.logoImage} />
+				<TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
 
-					{/* EMAIL INPUT */}
-					
-					<View style={styles.inputContainer}>
-						<View style={styles.subInputContainer}>
-							<Image source={MAIL_ICON} style={styles.inputIcon} />
-							<TextInput
-								autoFocus={false}
-								autoCorrect={false}
-								autoCapitalize={'none'}
-								style={styles.inputText}
-								placeholder={'Email'}
-								keyboardType={'email-address'}
-								underlineColorAndroid={'transparent'}
-								placeholderTextColor={WHITE_COLOR}
-							/>
+					{/* LOGIN COMPONENTS */}
+					<View style={styles.loginContainer}>
+						{/* LOGO IMAGE */}
+						<Image source={LOGO_IMAGE} style={styles.logoImage} />
+
+						{/* EMAIL INPUT */}
+
+						<View style={styles.inputContainer}>
+							<View style={styles.subInputContainer}>
+								<Image source={MAIL_ICON} style={styles.inputIcon} />
+								<TextInput
+									autoFocus={false}
+									autoCorrect={false}
+									autoCapitalize={'none'}
+									style={styles.inputText}
+									placeholder={'Email'}
+									keyboardType={'email-address'}
+									underlineColorAndroid={'transparent'}
+									placeholderTextColor={WHITE_COLOR}
+								/>
+							</View>
+							<View style={styles.inputBackground}></View>
 						</View>
-						<View style={styles.inputBackground}></View>
-					</View>
 
-					{/* PASSWORD INPUT */}					
-					<View style={styles.inputContainer}>
-						<View style={styles.subInputContainer}>
-							<Image source={LOCK_ICON} style={styles.inputIcon} />
-							<TextInput
-								autoFocus={false}
-								autoCorrect={false}
-								autoCapitalize={'none'}
-								secureTextEntry={true}
-								style={styles.inputText}
-								placeholder={'Password'}
-								keyboardType={'default'}
-								underlineColorAndroid={'transparent'}
-								placeholderTextColor={WHITE_COLOR}
-							/>
+						{/* PASSWORD INPUT */}
+						<View style={styles.inputContainer}>
+							<View style={styles.subInputContainer}>
+								<Image source={LOCK_ICON} style={styles.inputIcon} />
+								<TextInput
+									autoFocus={false}
+									autoCorrect={false}
+									autoCapitalize={'none'}
+									secureTextEntry={true}
+									style={styles.inputText}
+									placeholder={'Password'}
+									keyboardType={'default'}
+									underlineColorAndroid={'transparent'}
+									placeholderTextColor={WHITE_COLOR}
+								/>
+							</View>
+							<View style={styles.inputBackground}></View>
 						</View>
-						<View style={styles.inputBackground}></View>
-					</View>
 
 
-					{/* PHONE INPUT */}
-					<View style={styles.inputContainer}>
-						<View style={styles.subInputContainer}>
-							<Image source={PHONE_ICON} style={styles.inputIcon} />
-							<TextInput
-								autoFocus={false}
-								autoCorrect={false}
-								autoCapitalize={'none'}
-								style={styles.inputText}
-								placeholder={'Phone'}
-								keyboardType={'phone-pad'}
-								underlineColorAndroid={'transparent'}
-								placeholderTextColor={WHITE_COLOR}
-							/>
+						{/* PHONE INPUT */}
+						<View style={styles.inputContainer}>
+							<View style={styles.subInputContainer}>
+								<Image source={PHONE_ICON} style={styles.inputIcon} />
+								<TextInput
+									autoFocus={false}
+									autoCorrect={false}
+									autoCapitalize={'none'}
+									style={styles.inputText}
+									placeholder={'Phone'}
+									keyboardType={'phone-pad'}
+									underlineColorAndroid={'transparent'}
+									placeholderTextColor={WHITE_COLOR}
+								/>
+							</View>
+							<View style={styles.inputBackground}></View>
 						</View>
-						<View style={styles.inputBackground}></View>
+
+						{/* BIRTHDAY DATE PICKER */}
+						<this.PlatformDatePicker icon={BIRTHDAY_ICON} />
+
+						{/* GENDER PICKER */}
+						<this.PlatformPicker
+							selectedValue={this.state.pickerSelectedValue.gender == '' ? '-- Please select a gender' : this.state.pickerSelectedValue.gender}
+							icon={GENDER_ICON}
+							data={{ type: 'Gender', items: this.GENDERS }}
+						/>
+
+						{/* JOB PICKER */}
+						<this.PlatformPicker
+							selectedValue={this.state.pickerSelectedValue.job == '' ? '-- Please select a job' : this.state.pickerSelectedValue.job}
+							icon={JOB_ICON}
+							data={{ type: 'Job', items: this.JOBS }}
+						/>
+
+						{/* LOGIN BUTTON */}
+						<TouchableOpacity
+							activeOpacity={0.7}
+							style={styles.submitButton}
+							onPress={this.onPressLogin}>
+							<Text style={styles.submitButtonText}>{SUBMIT_BUTTON_TEXT}</Text>
+						</TouchableOpacity>
 					</View>
-
-					{/* BIRTHDAY DATE PICKER */}
-					<this.PlatformDatePicker icon={BIRTHDAY_ICON} />
-
-					{/* GENDER PICKER */}
-					<this.PlatformPicker
-						selectedValue={this.state.pickerSelectedValue.gender == '' ? '-- Please select a gender' : this.state.pickerSelectedValue.gender}
-						icon={GENDER_ICON}
-						data={{ type: 'Gender', items: this.GENDERS }}
-					/>
-
-					{/* JOB PICKER */}
-					<this.PlatformPicker
-						selectedValue={this.state.pickerSelectedValue.job == '' ? '-- Please select a job' : this.state.pickerSelectedValue.job}
-						icon={JOB_ICON}
-						data={{ type: 'Job', items: this.JOBS }}
-					/>
-
-					{/* LOGIN BUTTON */}
-					<TouchableOpacity
-						activeOpacity={0.7}
-						style={styles.submitButton}
-						onPress={this.onPressLogin}>
-						<Text style={styles.submitButtonText}>{SUBMIT_BUTTON_TEXT}</Text>
-					</TouchableOpacity>
-				</View>
+				</TouchableWithoutFeedback>
 			</KeyboardAvoidingView >
 		);
 	}
