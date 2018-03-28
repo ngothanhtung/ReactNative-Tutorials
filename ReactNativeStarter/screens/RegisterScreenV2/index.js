@@ -42,7 +42,7 @@ const Error = (props) => {
 	);
 };
 
-export default class LoginScreenV2 extends Component {
+export default class RegisterScreenV2 extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -108,14 +108,14 @@ export default class LoginScreenV2 extends Component {
 		</View>
 	)
 
-	PlatformPicker = props => (
+	PlatformPicker = (props) => (
 		<View style={styles.inputContainer}>
 			<View style={styles.subInputContainer}>
 				<Image source={props.icon} style={styles.inputIcon} />
 				{
 					Platform.OS == 'ios'
 					&&
-					<Text style={styles.placeHolderText} onPress={this.openIOSActionSheet.bind(this, props.data)}>
+					<Text style={styles.placeHolderText} onPress={this.openGenderActionSheetIOS.bind(this, props.data)}>
 						{props.selectedValue}
 					</Text>
 					||
@@ -165,15 +165,15 @@ export default class LoginScreenV2 extends Component {
 			var stateModel = {};
 			if (item.type == 'Gender') {
 				stateModel = {
-					pickerSelectedValue: {
-						job: this.state.pickerSelectedValue.job,
+					selectedPickerItem: {
+						job: this.state.selectedPickerItem.job,
 						gender: pickerValue
 					}
 				}
 			} else {
 				stateModel = {
-					pickerSelectedValue: {
-						gender: this.state.pickerSelectedValue.gender,
+					selectedPickerItem: {
+						gender: this.state.selectedPickerItem.gender,
 						job: pickerValue
 					}
 				}
@@ -206,12 +206,13 @@ export default class LoginScreenV2 extends Component {
 		});
 	}
 
-	openIOSActionSheet = field => {
-		var options = [...field.items];
+	openGenderActionSheetIOS = (params) => {
+		var options = [...params.items];
 		options.push('Cancel');
+
 		ActionSheetIOS.showActionSheetWithOptions({
-			title: `Select ${field.placeholder}`,
-			message: `Please select your ${field.type}`,
+			title: params.title,
+			message: params.message,
 			options,
 			cancelButtonIndex: options.length - 1
 		}, buttonIndex => {
@@ -219,7 +220,7 @@ export default class LoginScreenV2 extends Component {
 				var stateModel = {
 					pickerSelectedValue: this.state.pickerSelectedValue
 				};
-				stateModel.pickerSelectedValue[field.type.toLowerCase()] = options[buttonIndex];
+				stateModel.pickerSelectedValue[params.type.toLowerCase()] = options[buttonIndex];
 				this.setState(stateModel);
 			}
 		});
@@ -301,14 +302,14 @@ export default class LoginScreenV2 extends Component {
 						<this.PlatformPicker
 							selectedValue={this.state.pickerSelectedValue.gender == '' ? '-- Please select a gender' : this.state.pickerSelectedValue.gender}
 							icon={GENDER_ICON}
-							data={{ type: 'Gender', items: this.GENDERS }}
+							data={{ title: 'Gender', message: 'Please select a gender', items: this.GENDERS }}
 						/>
 
 						{/* JOB PICKER */}
 						<this.PlatformPicker
 							selectedValue={this.state.pickerSelectedValue.job == '' ? '-- Please select a job' : this.state.pickerSelectedValue.job}
 							icon={JOB_ICON}
-							data={{ type: 'Job', items: this.JOBS }}
+							data={{ title: 'Job', message: 'Please select a job', items: this.JOBS }}
 						/>
 
 						{/* LOGIN BUTTON */}

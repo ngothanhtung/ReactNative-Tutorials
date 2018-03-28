@@ -41,7 +41,7 @@ const Error = (props) => {
   );
 };
 
-export default class RegisterScreen extends Component {
+export default class RegisterScreenV1 extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -208,7 +208,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1
   },
-  
+
   backgroundImage: {
     height: '100%',
     width: '100%'
