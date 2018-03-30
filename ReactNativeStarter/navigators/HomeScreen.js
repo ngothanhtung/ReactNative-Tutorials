@@ -4,6 +4,10 @@ import { View, Text, Button } from 'react-native';
 import styles from './styles';
 
 export default class HomeScreen extends Component {
+  static navigationOptions = {
+    title: 'Home',
+  };
+
   render() {
     return (
       <View style={styles.container}>
