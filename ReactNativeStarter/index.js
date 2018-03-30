@@ -17,10 +17,10 @@ import PropsAndState from './screens/PropsAndState';
 
 //AppRegistry.registerComponent('ReactNativeStarter', () => App);
 //AppRegistry.registerComponent('ReactNativeStarter', () => LoginScreenV1);
-//AppRegistry.registerComponent('ReactNativeStarter', () => LoginScreenV2);
+AppRegistry.registerComponent('ReactNativeStarter', () => LoginScreenV2);
 //AppRegistry.registerComponent('ReactNativeStarter', () => FlexBasic);
 //AppRegistry.registerComponent('ReactNativeStarter', () => RegisterScreenV1);
 //AppRegistry.registerComponent('ReactNativeStarter', () => RegisterScreenV2);
 //AppRegistry.registerComponent('ReactNativeStarter', () => ModalScreen);
 //AppRegistry.registerComponent('ReactNativeStarter', () => CameraRollScreen);
-AppRegistry.registerComponent('ReactNativeStarter', () => PropsAndState);
+//AppRegistry.registerComponent('ReactNativeStarter', () => PropsAndState);
