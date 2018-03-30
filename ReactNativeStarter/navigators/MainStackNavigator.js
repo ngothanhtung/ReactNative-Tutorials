@@ -4,15 +4,14 @@ import HomeScreen from './HomeScreen';
 import AboutScreen from './AboutScreen';
 
 class MainStackNavigator extends React.Component {
-  Stack = StackNavigator(
-    {
-      Home: {
-        screen: HomeScreen
-      },
-      About: {
-        screen: AboutScreen
-      }
-    });
+  Stack = StackNavigator({
+    Home: {
+      screen: HomeScreen
+    },
+    About: {
+      screen: AboutScreen
+    }
+  });
 
   constructor(props) {
     super(props);
