@@ -65,6 +65,7 @@ export default class RegisterScreenV2 extends Component {
 	GENDERS = ['Male', 'Female'];
 
 	//COMPONENTS
+	
 	PlatformDatePicker = props => (
 		<View style={styles.inputContainer}>
 			<View style={styles.subInputContainer}>
@@ -321,7 +322,7 @@ export default class RegisterScreenV2 extends Component {
 						</TouchableOpacity>
 					</View>
 				</TouchableWithoutFeedback>
-			</KeyboardAvoidingView >
+			</KeyboardAvoidingView>
 		);
 	}
 }
