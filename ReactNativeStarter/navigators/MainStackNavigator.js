@@ -12,9 +12,6 @@ class MainStackNavigator extends React.Component {
       About: {
         screen: AboutScreen
       }
-    },
-    {
-      headerMode: 'none'
     });
 
   constructor(props) {
