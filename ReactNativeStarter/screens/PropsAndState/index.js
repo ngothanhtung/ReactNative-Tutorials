@@ -6,16 +6,16 @@ import PropTypes from 'prop-types';
 const Header = (props) => (
 	<View>
 		<Text>
-			Header
+			{props.title}
 		</Text>
 	</View>
 )
 
-class PropsAndState extends Component {
+export default class PropsAndState extends Component {
 	render() {
 		return (
-			<View>
-				<Text>  
+			<View style={styles.container}>
+				<Text>
 					<Header />
 				</Text>
 			</View>
@@ -23,4 +23,11 @@ class PropsAndState extends Component {
 	}
 }
 
-export default componentName;
+const styles = StyleSheet.create({
+	container: {
+		flex: 1,
+		justifyContent: 'center',		
+		alignItems: 'center'
+	}
+});
+
