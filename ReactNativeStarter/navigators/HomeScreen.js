@@ -16,7 +16,15 @@ export default class HomeScreen extends Component {
     return (
       <View style={styles.container}>
         <View style={styles.topContainer}>
-          <Text>Home Screen</Text>
+          <Text style={styles.logoText}>@workplace</Text>
+          
+          <View style={{ height: 8 }}></View>
+
+          <Text style={styles.header}>Enter your password</Text>
+          
+          <View style={{ height: 8 }}></View>
+          
+          <Text style={styles.title}>Log in using your Workplace password</Text>
         </View>
         <View style={styles.middleContainer}>
 

@@ -29,6 +29,10 @@ export default StyleSheet.create({
     justifyContent: 'flex-end'
   },
 
+  logoText: {
+    fontSize: 32,
+    fontWeight: '700',
+  },
   header: {
     fontSize: 20,
   },
@@ -67,7 +71,9 @@ export default StyleSheet.create({
   },
 
   buttonContainer: {
-    padding: 12,
+    paddingLeft: 12,
+    paddingRight: 12,
+    paddingBottom: 16,
   },
 
   button: {    
