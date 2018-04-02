@@ -13,7 +13,7 @@ import styles from './styles';
 export default class LoginScreen1 extends Component {
   static navigationOptions = {
     title: 'Create Account',
-    headerBackTitle: ''
+    headerBackTitle: null
   }
 
   constructor(props) {
