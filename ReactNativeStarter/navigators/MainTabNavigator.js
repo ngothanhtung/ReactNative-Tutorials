@@ -1,4 +1,6 @@
 import React from 'react';
+import { Icon } from 'react-native';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import { TabNavigator } from 'react-navigation';
 import NewsFeedScreen from './NewsFeedScreen';
 import GroupScreen from './GroupScreen';
@@ -9,7 +11,11 @@ import NotificationScreen from './NotificationScreen';
 class MainTabNavigator extends React.Component {
   Tab = TabNavigator({
     NewsFeed: {
-      screen: NewsFeedScreen
+      screen: NewsFeedScreen,
+      navigationOptions: {        
+        tabBarIcon: ({ tintColor, focused }) => (
+          <Ionicons name={focused ? 'ios-home' : 'ios-home-outline'} size={26} style={{ color: '#2d3436' }} />)
+      },
     },
     Group: {
       screen: GroupScreen
@@ -19,8 +25,15 @@ class MainTabNavigator extends React.Component {
     },
     Notification: {
       screen: NotificationScreen
-    },
-  });
+    }
+  }, {
+      tabBarOptions: {
+        showIcon: true,
+        showLabel: true
+      },
+      swipeEnabled: true,
+    }
+  );
 
   constructor(props) {
     super(props);
