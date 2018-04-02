@@ -12,7 +12,7 @@ class MainTabNavigator extends React.Component {
   Tab = TabNavigator({
     NewsFeed: {
       screen: NewsFeedScreen,
-      navigationOptions: {                
+      navigationOptions: {
         tabBarIcon: ({ tintColor, focused }) => (
           <Ionicons name={focused ? 'ios-home' : 'ios-home-outline'} size={26} style={{ color: '#2d3436' }} />)
       },
