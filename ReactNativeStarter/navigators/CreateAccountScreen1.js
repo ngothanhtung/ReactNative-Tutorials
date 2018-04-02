@@ -12,17 +12,17 @@ import styles from './styles';
 
 export default class LoginScreen1 extends Component {
   static navigationOptions = {
-    title: 'Login',
-    headerBackTitle: null
+    title: 'Create Account',
+    headerBackTitle: ''
   }
 
   constructor(props) {
     super(props);
     this.state = {
-      email: ''
-    }
+      email: '',     
+    }    
   }
-
+ 
   render() {
     return (
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -30,6 +30,13 @@ export default class LoginScreen1 extends Component {
           <View style={styles.topContainer}>
             <Text style={styles.header}>
               Enter your business email
+            </Text>
+            <View style={{ height: 8 }}></View>
+            <Text style={styles.title}>
+              Use your main business email
+            </Text>
+            <Text style={styles.title}>
+              ex. 'john@aptech.edu'
             </Text>
           </View>
           <View style={styles.middleContainer}>
@@ -44,7 +51,7 @@ export default class LoginScreen1 extends Component {
             </View>
           </View>
           <View style={styles.bottomContainer}>
-            <TouchableOpacity style={styles.buttonContainer} onPress={() => { this.props.navigation.navigate('Login2', { email: this.state.email }) }}>
+            <TouchableOpacity style={styles.buttonContainer} onPress={() => { this.props.navigation.navigate('CreateAccount2', { email: this.state.email }) }}>
               <View style={styles.button}>
                 <Text style={styles.buttonText}>Next</Text>
               </View>

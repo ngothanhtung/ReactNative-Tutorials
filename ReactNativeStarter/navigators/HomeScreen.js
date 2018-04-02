@@ -17,20 +17,20 @@ export default class HomeScreen extends Component {
       <View style={styles.container}>
         <View style={styles.topContainer}>
           <Text style={styles.logoText}>@workplace</Text>
-          
+
           <View style={{ height: 8 }}></View>
 
           <Text style={styles.header}>Enter your password</Text>
-          
+
           <View style={{ height: 8 }}></View>
-          
+
           <Text style={styles.title}>Log in using your Workplace password</Text>
         </View>
         <View style={styles.middleContainer}>
 
         </View>
         <View style={styles.bottomContainer}>
-          <TouchableOpacity style={styles.buttonContainer} onPress={() => { this.props.navigation.navigate('CreateAccount') }}>
+          <TouchableOpacity style={styles.buttonContainer} onPress={() => { this.props.navigation.navigate('CreateAccount1') }}>
             <View style={styles.button}>
               <Text style={styles.buttonText}>Create Account</Text>
             </View>

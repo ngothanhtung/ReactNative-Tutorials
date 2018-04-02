@@ -8,16 +8,12 @@ import {
 } from 'react-native';
 import styles from './styles';
 
-export default class LoginScreen2 extends Component {
+export default class CreateAccountScreen extends Component {
   static navigationOptions = {
-    title: 'Login',
+    title: 'Create Account',
     headerBackTitle: null
   }
 
-  constructor(props) {
-    super(props);
-
-  }
   render() {
     return (
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -28,16 +24,20 @@ export default class LoginScreen2 extends Component {
             </Text>
             <View style={{ height: 8 }}></View>
             <Text style={styles.title}>
-              Log in using your Workplace password
+              We will send an email to {this.props.navigation.state.params.email}
+            </Text>
+            <Text style={styles.title}>
+              Enter the code below. Change email.
             </Text>
           </View>
           <View style={styles.middleContainer}>
-            <View style={styles.textInputContainer}>
+            <View style={styles.disabledTextInputContainer}>
               <TextInput
                 style={styles.textInput} placeholder={"Business email"}
                 autoCapitalize='none'
                 autoCorrect={false}
                 keyboardType={'email-address'}
+                editable={false}
                 value={this.props.navigation.state.params.email}
               />
             </View>
@@ -51,18 +51,21 @@ export default class LoginScreen2 extends Component {
                 keyboardType={'default'}
               />
             </View>
+            <View style={{ height: 30 }}></View>
+            <View style={styles.textInputContainer}>
+              <TextInput
+                style={styles.textInput} placeholder={"Re-enter Password"}
+                secureTextEntry={true}
+                autoCapitalize='none'
+                autoCorrect={false}
+                keyboardType={'default'}
+              />
+            </View>
           </View>
           <View style={styles.bottomContainer}>
-            <View>
-              <Text style={styles.link}>
-                Forgotten your password?
-              </Text>
-            </View>
-            <View style={{ height: 8 }}>
-            </View>
-            <TouchableOpacity style={styles.buttonContainer} onPress={() => { this.props.navigation.navigate('Tab') }}>
+            <TouchableOpacity style={styles.buttonContainer} onPress={() => { Alert.alert('Coming soon') }}>
               <View style={styles.button}>
-                <Text style={styles.buttonText}>Log in</Text>
+                <Text style={styles.buttonText}>Create Account</Text>
               </View>
             </TouchableOpacity>
           </View>
