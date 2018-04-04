@@ -22,8 +22,7 @@ export default class MoreScreen extends React.Component {
     };
   };
 
-  componentWillReceiveProps(props) {
-    console.log(props);
+  componentWillReceiveProps(props) {    
     this.stackRef._navigation.navigate(props.screenProps.navigation.state.params.screenName);
   }
 
