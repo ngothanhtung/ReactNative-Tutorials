@@ -8,6 +8,7 @@ import LoginScreen1 from './LoginScreen1';
 import LoginScreen2 from './LoginScreen2';
 
 import MainTabNavigator from './MainTabNavigator';
+import MainDrawerNavigator from './MainDrawerNavigator';
 
 class MainStackNavigator extends React.Component {
   Stack = StackNavigator({
@@ -29,8 +30,11 @@ class MainStackNavigator extends React.Component {
     About: {
       screen: AboutScreen
     },
-    Tab: {
-      screen: MainTabNavigator
+    // Tab: {
+    //   screen: MainTabNavigator
+    // },
+    Drawer: {
+      screen: MainDrawerNavigator
     }
   });
 
@@ -40,7 +44,7 @@ class MainStackNavigator extends React.Component {
 
   render() {
     return (
-      <this.Stack />
+      <this.Stack ref="mainStackRef"/>
     );
   }
 }

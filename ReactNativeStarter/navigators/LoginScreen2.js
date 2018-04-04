@@ -60,7 +60,7 @@ export default class LoginScreen2 extends Component {
             </View>
             <View style={{ height: 8 }}>
             </View>
-            <TouchableOpacity style={styles.buttonContainer} onPress={() => { this.props.navigation.navigate('Tab') }}>
+            <TouchableOpacity style={styles.buttonContainer} onPress={() => { this.props.navigation.navigate('Drawer') }}>
               <View style={styles.button}>
                 <Text style={styles.buttonText}>Log in</Text>
               </View>
