@@ -10,6 +10,8 @@ import {
 } from 'react-native';
 import styles from './styles';
 
+import { auth, database, provider } from '../config/firebase';
+
 export default class LoginScreen1 extends Component {
   static navigationOptions = {
     title: 'Login',

@@ -4,6 +4,8 @@ import {
   TouchableOpacity
 } from 'react-native';
 
+import { auth, database, provider } from '../config/firebase';
+
 import styles from './styles';
 
 export default class HomeScreen extends Component {
@@ -12,6 +14,28 @@ export default class HomeScreen extends Component {
     headerBackTitle: null
   };
 
+
+  createUser = () => { 
+    const { email, password } = { email: 'tungnt@softech.edu.vn', password: '123456789' };
+    auth.createUserWithEmailAndPassword(email, password)
+      .then((user) => {
+        console.log(user.uid);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
+
+  login = () => {
+    const { email, password } = { email: 'tungnt@softech.vn', password: '123456789' };
+    auth.signInWithEmailAndPassword(email, password)
+      .then((user) => {
+        console.log(user.uid);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  }
   render() {
     return (
       <View style={styles.container}>
@@ -38,6 +62,16 @@ export default class HomeScreen extends Component {
           <TouchableOpacity style={styles.buttonContainer} onPress={() => { this.props.navigation.navigate('Login1') }}>
             <View style={styles.button}>
               <Text style={styles.buttonText}>Log in</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.buttonContainer} onPress={this.login}>
+            <View style={styles.button}>
+              <Text style={styles.buttonText}>Firebase Login</Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.buttonContainer} onPress={this.createUser}>
+            <View style={styles.button}>
+              <Text style={styles.buttonText}>Firebase Create User</Text>
             </View>
           </TouchableOpacity>
         </View>
