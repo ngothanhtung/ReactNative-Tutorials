@@ -23,10 +23,13 @@ export default class HomeScreen extends Component {
 
     var component = this;
     fetch('http://localhost:3000/product/')
-      .then(function (response) {
+      .then((response) => {
         return response.json();
       })
-      .then(function (data) {
+      .catch((error) => {
+        component.setState({ loading: false });
+      })
+      .then((data) => {
         component.setState({ products: data });
         component.setState({ loading: false });
       });
@@ -53,8 +56,9 @@ export default class HomeScreen extends Component {
         console.log(error);
       });
   }
+
   render() {
-    if (this.state.loading) {
+    if (this.state.status) {
       return (
         <View>
           <Text>Loading ...</Text>
@@ -76,7 +80,7 @@ export default class HomeScreen extends Component {
           </View>
           <View style={styles.middleContainer}>
             {
-              this.state.products.map((p, index) =>
+              this.state.products && this.state.products.map((p, index) =>
                 <View key={index}>
                   <Text>
                     {p.name}

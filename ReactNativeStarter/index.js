@@ -10,6 +10,8 @@ import CameraRollScreen from './screens/CameraRollScreen';
 import PropsAndState from './screens/PropsAndState';
 import MainStackNavigator from './navigators/MainStackNavigator';
 
+console.disableYellowBox = true;
+
 //AppRegistry.registerComponent('ReactNativeStarter', () => App);
 //AppRegistry.registerComponent('ReactNativeStarter', () => LoginScreenV1);
 //AppRegistry.registerComponent('ReactNativeStarter', () => LoginScreenV2);

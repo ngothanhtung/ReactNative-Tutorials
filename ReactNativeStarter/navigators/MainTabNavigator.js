@@ -71,10 +71,14 @@ class MainTabNavigator extends React.Component {
     super(props);
   }
 
-  componentWillReceiveProps(props) {
-    console.log(props);
+  static getDerivedStateFromProps(nextProps, prevState) {
     this.tabRef._navigation.navigate("More");
   }
+
+  // componentWillReceiveProps(props) {
+  //   console.log(props);
+  //   this.tabRef._navigation.navigate("More");
+  // }
 
   render() {
     return (
