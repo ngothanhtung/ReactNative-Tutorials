@@ -3,7 +3,7 @@ var MongoClient = require('mongodb').MongoClient;
 var ObjectID = require('mongodb').ObjectID;
 
 // Chuỗi kết nối đến MongoDB
-var ConnectionString = 'mongodb://127.0.0.1:27017/OnlineShopDb';
+var ConnectionString = 'mongodb://127.0.0.1:27017/';
 
 function MongoDbHelper() {
 }
@@ -13,7 +13,8 @@ MongoDbHelper.insertDocument = function (jsonData, collectionName, callback) {
     MongoClient.connect(ConnectionString, function (err, db) {
         if (err) console.log('MONGODB ERROR', err);
         else {
-            var collection = db.collection(collectionName);
+            var dbo = db.db("OnlineShopDb");
+            var collection = dbo.collection(collectionName);
             collection.insertOne(jsonData, function (err, result) {
                 if (err) console.log('MONGODB ERROR', err);
                 else {
@@ -30,7 +31,8 @@ MongoDbHelper.updateDocument = function (id, jsonData, collectionName, callback)
     MongoClient.connect(ConnectionString, function (err, db) {
         if (err) console.log('MONGODB ERROR', err);
         else {
-            var collection = db.collection(collectionName);
+            var dbo = db.db("OnlineShopDb");
+            var collection = dbo.collection(collectionName);
             collection.updateOne({ _id: ObjectID(id) }, { $set: jsonData }, function (err, result) {
                 if (err) console.log('MONGODB ERROR', err);
                 else {
@@ -47,7 +49,8 @@ MongoDbHelper.removeDocument = function (id, collectionName, callback) {
     MongoClient.connect(ConnectionString, function (err, db) {
         if (err) console.log('MONGODB ERROR', err);
         else {
-            var collection = db.collection(collectionName);
+            var dbo = db.db("OnlineShopDb");
+            var collection = dbo.collection(collectionName);
             collection.removeOne({ _id: ObjectID(id) }, function (err, result) {
                 if (err) console.log('MONGODB ERROR', err);
                 else {
@@ -64,7 +67,8 @@ MongoDbHelper.findDocuments = function (jsonData, collectionName, callback) {
     MongoClient.connect(ConnectionString, function (err, db) {
         if (err) console.log('MONGODB ERROR', err);
         else {
-            var collection = db.collection(collectionName);
+            var dbo = db.db("OnlineShopDb");
+            var collection = dbo.collection(collectionName);
             collection.find(jsonData).toArray(function (err, result) {
                 if (err) console.log('MONGODB ERROR', err);
                 else {
@@ -81,7 +85,8 @@ MongoDbHelper.findDocument = function (id, collectionName, callback) {
     MongoClient.connect(ConnectionString, function (err, db) {
         if (err) console.log('MONGODB ERROR', err);
         else {
-            var collection = db.collection(collectionName);
+            var dbo = db.db("OnlineShopDb");
+            var collection = dbo.collection(collectionName);
             collection.findOne({ _id: ObjectID(id) }, function (err, result) {
                 if (err) console.log('MONGODB ERROR', err);
                 else {
