@@ -9,6 +9,7 @@ var cors = require('cors');
 
 var index = require('./routes/index');
 var product = require('./routes/product');
+var user = require('./routes/user');
 
 var app = express();
 
@@ -31,6 +32,7 @@ app.use(cors());
 
 app.use('/', index);
 app.use('/product', product);
+app.use('/user', user);
 
 
 

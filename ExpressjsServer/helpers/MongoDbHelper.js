@@ -3,7 +3,7 @@ var MongoClient = require('mongodb').MongoClient;
 var ObjectID = require('mongodb').ObjectID;
 
 // Chuỗi kết nối đến MongoDB
-var ConnectionString = 'mongodb://127.0.0.1:27017/WebTokenExample';
+var ConnectionString = 'mongodb://127.0.0.1:27017/OnlineShopDb';
 
 function MongoDbHelper() {
 }

@@ -8,6 +8,9 @@ import {
   TouchableOpacity,
   TouchableWithoutFeedback
 } from 'react-native';
+
+import axios from 'axios';
+
 import styles from './styles';
 
 import { auth, database, provider } from '../config/firebase';
@@ -46,7 +49,23 @@ export default class LoginScreen1 extends Component {
             </View>
           </View>
           <View style={styles.bottomContainer}>
-            <TouchableOpacity style={styles.buttonContainer} onPress={() => { this.props.navigation.navigate('Login2', { email: this.state.email }) }}>
+            <TouchableOpacity style={styles.buttonContainer} onPress={() => {
+              // CHECK: EMAIL EXISTS?
+              axios.get('http://localhost:3000/user/get/' + this.state.email)
+                .then((response) => {
+                  console.log(response.data);
+                  if (response.data.result.length > 0) {
+                    // GO TO LOGIN 2
+                    this.props.navigation.navigate('Login2', { email: this.state.email });
+                  } else {
+                    alert('Email does not exists');
+                  }
+                })
+                .catch((error) => {
+                  alert('Error: ' + error);
+                  console.log(error);
+                });
+            }}>
               <View style={styles.button}>
                 <Text style={styles.buttonText}>Next</Text>
               </View>

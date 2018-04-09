@@ -6,6 +6,8 @@ import {
   KeyboardAvoidingView,
   Platform
 } from 'react-native';
+
+import axios from 'axios';
 import styles from './styles';
 
 export default class LoginScreen2 extends Component {
@@ -60,7 +62,10 @@ export default class LoginScreen2 extends Component {
             </View>
             <View style={{ height: 8 }}>
             </View>
-            <TouchableOpacity style={styles.buttonContainer} onPress={() => { this.props.navigation.navigate('Drawer') }}>
+            <TouchableOpacity style={styles.buttonContainer} onPress={() => {
+              
+               this.props.navigation.navigate('Drawer') 
+              }}>
               <View style={styles.button}>
                 <Text style={styles.buttonText}>Log in</Text>
               </View>

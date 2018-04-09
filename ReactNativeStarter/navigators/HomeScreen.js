@@ -4,6 +4,8 @@ import {
   TouchableOpacity
 } from 'react-native';
 
+import axios from 'axios';
+
 import { auth, database, provider } from '../config/firebase';
 
 import styles from './styles';
@@ -22,7 +24,7 @@ export default class HomeScreen extends Component {
     }
 
     var component = this;
-    fetch('http://localhost:3000/product/')
+    fetch('http://localhost:310/product/')
       .then((response) => {
         return response.json();
       })
@@ -32,6 +34,20 @@ export default class HomeScreen extends Component {
       .then((data) => {
         component.setState({ products: data });
         component.setState({ loading: false });
+      });
+  }
+
+  addProduct = () => {
+    axios.post('http://localhost:3000/product/add/', {
+      name: 'iPhone X',
+      price: 1500,
+      desc: 'from RN'
+    })
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
       });
   }
 
@@ -109,6 +125,11 @@ export default class HomeScreen extends Component {
             <TouchableOpacity style={styles.buttonContainer} onPress={this.createUser}>
               <View style={styles.button}>
                 <Text style={styles.buttonText}>Firebase Create User</Text>
+              </View>
+            </TouchableOpacity>
+            <TouchableOpacity style={styles.buttonContainer} onPress={this.addProduct}>
+              <View style={styles.button}>
+                <Text style={styles.buttonText}>Add Product</Text>
               </View>
             </TouchableOpacity>
           </View>
