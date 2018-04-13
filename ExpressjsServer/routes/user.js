@@ -44,7 +44,7 @@ router.post('/forgotten-password', function (req, res) {
   var email = req.body.email;
   // FIND USER
   db.findDocuments({ email: email }, "users", function (result) {    
-    if (result) {
+    if (result.length > 0) {
       // FOUND USER
       // SEND EMAIL
       var subject = 'Recovery your password';
