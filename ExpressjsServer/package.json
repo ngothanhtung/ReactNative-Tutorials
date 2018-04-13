@@ -14,7 +14,8 @@
     "express": "^4.16.3",
     "http-errors": "~1.6.2",
     "mongo": "^0.1.0",
-    "morgan": "~1.9.0"
+    "morgan": "~1.9.0",
+    "nodemailer": "^4.6.4"
   },
   "devDependencies": {}
 }
