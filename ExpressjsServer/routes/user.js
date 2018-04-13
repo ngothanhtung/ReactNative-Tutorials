@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var db = require('../helpers/MongoDbHelper');
+var db = require('../helpers/MongoDbHelper').default;
 
 router.get('/get/:email', function (req, res) {
   var email = req.params.email;
@@ -43,7 +43,7 @@ router.post('/register', function (req, res) {
 router.post('/forgotten-password', function (req, res) {
   var email = req.body.email;
   // FIND USER
-  db.findDocuments({ email: email }, "users", function (result) {    
+  db.findDocuments({ email: email }, "users", function (result) {
     if (result.length > 0) {
       // FOUND USER
       // SEND EMAIL

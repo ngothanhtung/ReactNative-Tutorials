@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var db = require('../helpers/MongoDbHelper');
+var db = require('../helpers/MongoDbHelper').default;
 
 router.get('/', function (req, res) {
     db.findDocuments({}, "products", function (result) {
