@@ -12,6 +12,7 @@ import {
 import axios from 'axios';
 
 import styles from './styles';
+import SETTINGS from '../constants/SETTINGS';
 
 import { auth, database, provider } from '../config/firebase';
 
@@ -28,6 +29,24 @@ export default class LoginScreen1 extends Component {
     }
   }
 
+  onPressNextButton = () => {
+    // AXIOS: EMAIL EXISTS?              
+    axios.get(SETTINGS.ExpressApiUrl + '/user/get/' + this.state.email)
+      .then((response) => {
+        console.log(response.data);
+        if (response.data.result.length > 0) {
+          // GO TO LOGIN 2
+          this.props.navigation.navigate('Login2', { email: this.state.email });
+        } else {
+          alert('Email does not exists');
+        }
+      })
+      .catch((error) => {
+        alert('Error: ' + error);
+        console.log(error);
+      });
+  }
+
   render() {
     return (
       <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
@@ -41,31 +60,17 @@ export default class LoginScreen1 extends Component {
             <View style={styles.textInputContainer}>
               <TextInput
                 style={styles.textInput} placeholder={"Business email"}
+                autoFocus={true}
                 autoCapitalize='none'
                 autoCorrect={false}
                 keyboardType={'email-address'}
                 onChangeText={(text) => this.setState({ email: text })}
+                onSubmitEditing={this.onPressNextButton}
               />
             </View>
           </View>
           <View style={styles.bottomContainer}>
-            <TouchableOpacity style={styles.buttonContainer} onPress={() => {
-              // CHECK: EMAIL EXISTS?
-              axios.get('http://localhost:3000/user/get/' + this.state.email)
-                .then((response) => {
-                  console.log(response.data);
-                  if (response.data.result.length > 0) {
-                    // GO TO LOGIN 2
-                    this.props.navigation.navigate('Login2', { email: this.state.email });
-                  } else {
-                    alert('Email does not exists');
-                  }
-                })
-                .catch((error) => {
-                  alert('Error: ' + error);
-                  console.log(error);
-                });
-            }}>
+            <TouchableOpacity style={styles.buttonContainer} onPress={this.onPressNextButton}>
               <View style={styles.button}>
                 <Text style={styles.buttonText}>Next</Text>
               </View>
@@ -73,7 +78,6 @@ export default class LoginScreen1 extends Component {
           </View>
         </View>
       </TouchableWithoutFeedback>
-
     );
   }
 }

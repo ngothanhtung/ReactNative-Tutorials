@@ -24,7 +24,7 @@ export default class HomeScreen extends Component {
     }
 
     var component = this;
-    fetch('http://localhost:310/product/')
+    fetch('http://localhost:90000/product/')
       .then((response) => {
         return response.json();
       })
@@ -38,7 +38,7 @@ export default class HomeScreen extends Component {
   }
 
   addProduct = () => {
-    axios.post('http://localhost:3000/product/add/', {
+    axios.post('http://localhost:9000/product/add/', {
       name: 'iPhone X',
       price: 1500,
       desc: 'from RN'
