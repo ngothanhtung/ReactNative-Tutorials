@@ -3,6 +3,7 @@ import {
   View, Text, Button, Icon, TextInput,
   ScrollView,
   Animated,
+  Platform,
   Keyboard,
   KeyboardAvoidingView,
   TouchableOpacity,
@@ -14,12 +15,12 @@ import axios from 'axios';
 import styles from './styles';
 import SETTINGS from '../constants/SETTINGS';
 
-import { auth, database, provider } from '../config/firebase';
-
 export default class LoginScreen1 extends Component {
   static navigationOptions = {
     title: 'Login',
-    headerBackTitle: null
+    headerTitleStyle: { alignSelf: 'center' },
+    headerRight: (<View />),
+    headerBackTitle: null // iOS
   }
 
   constructor(props) {
@@ -59,7 +60,8 @@ export default class LoginScreen1 extends Component {
           <View style={styles.middleContainer}>
             <View style={styles.textInputContainer}>
               <TextInput
-                style={styles.textInput} placeholder={"Business email"}
+                underlineColorAndroid={'#ffffff'}
+                style={styles.textInput} placeholder={Platform.OS == 'ios' ? 'Business email' : 'Enter business email'}
                 autoFocus={true}
                 autoCapitalize='none'
                 autoCorrect={false}
@@ -72,7 +74,9 @@ export default class LoginScreen1 extends Component {
           <View style={styles.bottomContainer}>
             <TouchableOpacity style={styles.buttonContainer} onPress={this.onPressNextButton}>
               <View style={styles.button}>
-                <Text style={styles.buttonText}>Next</Text>
+                <Text style={styles.buttonText}>
+                  {Platform.OS == 'ios' ? 'Next' : 'CONTINUE'}
+                </Text>
               </View>
             </TouchableOpacity>
           </View>

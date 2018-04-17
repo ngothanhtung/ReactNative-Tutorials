@@ -7,7 +7,7 @@ import {
 } from 'react-native';
 
 import firebase from 'react-native-firebase';
-
+import Moment from 'moment';
 import MainContainer from '../components/MainContainer';
 
 class Todo extends Component {
@@ -25,7 +25,8 @@ class Todo extends Component {
       <TouchableHighlight style={{ padding: 8 }} underlayColor={'#dfe6e9'} activeOpacity={9} onPress={() => this.toggleComplete()}>
         <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center' }}>
           <View style={{ flex: 8 }}>
-            <Text>{this.props.title}</Text>
+            <Text style={{fontWeight: '700'}}>{this.props.title}</Text>
+            <Text>{Moment(this.props.createdTime).format("YYYY-MM-DD HH:mm")}</Text>
           </View>
           <View style={{ flex: 4, alignItems: 'flex-end' }}>
             {this.props.complete && (
@@ -53,18 +54,30 @@ export default class FirestoreScreen extends Component {
   onCollectionUpdate = (querySnapshot) => {
     const todos = [];
     querySnapshot.forEach((doc) => {
-      const { title, complete } = doc.data();
+      const { title, complete, createdTime } = doc.data();
       todos.push({
         key: doc.id,
         doc, // DocumentSnapshot
         title,
         complete,
+        createdTime: createdTime
       });
     });
 
     this.setState({
+      //todos: todos,
       todos: todos.sort((x, y) => {
-        return x.title > y.title
+        var titleX = x.title.toUpperCase(); // ignore upper and lowercase
+        var titleY = y.title.toUpperCase(); // ignore upper and lowercase
+        if (titleX < titleY) {
+          return -1;
+        }
+        if (titleX > titleY) {
+          return 1;
+        }
+
+        // names must be equal
+        return 0;
       }),
       loading: false,
     });
@@ -82,6 +95,7 @@ export default class FirestoreScreen extends Component {
     this.ref.add({
       title: this.state.textInput,
       complete: false,
+      createdTime: new Date()
     });
     this.setState({
       textInput: '',
@@ -94,7 +108,6 @@ export default class FirestoreScreen extends Component {
     }
     return (
       <MainContainer>
-
         <View style={{ height: 32 }}></View>
         <View style={{ alignItems: 'center' }}>
           <Text style={{ fontSize: 18 }}>Firestore Examples</Text>
@@ -114,6 +127,8 @@ export default class FirestoreScreen extends Component {
         <KeyboardAvoidingView style={{ width: '100%', alignItems: 'center', paddingLeft: 8, paddingRight: 8 }} behavior='padding'>
           <View style={styles.textInputContainer}>
             <TextInput
+              style={{ height: 48 }}
+              underlineColorAndroid={'transparent'}
               placeholder={'Add todo content ...'}
               value={this.state.textInput}
               onChangeText={(text) => {
@@ -146,7 +161,7 @@ const styles = {
     borderBottomWidth: 1,
     borderBottomColor: '#dfe6e9',
     width: '100%',
-    height: 32
+    height: 48
   },
 
   buttonContainer: {

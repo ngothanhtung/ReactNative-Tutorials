@@ -22,7 +22,7 @@ export default StyleSheet.create({
   },
 
   bottomContainer: {
-    flex: 1,
+    flex: 2,
     width: '100%',
     backgroundColor: '#ffffff',    
     justifyContent: 'flex-end'
@@ -33,6 +33,7 @@ export default StyleSheet.create({
     fontWeight: '700',
   },
   header: {
+    color: '#000000',
     fontSize: 20,
   },
 
@@ -59,7 +60,7 @@ export default StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#0984e3',
     width: '90%',    
-    height: 32
+    height: 48
   },
 
   textInput: {
@@ -67,6 +68,7 @@ export default StyleSheet.create({
     textAlign: 'center',
     fontSize: 18,
     width: 200,    
+    height: 48,    
   },
 
   buttonContainer: {
