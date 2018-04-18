@@ -8,7 +8,7 @@ import {
 
 import firebase from 'react-native-firebase';
 import Moment from 'moment';
-import MainContainer from '../components/MainContainer';
+import MainContainer from '../../components/MainContainer';
 
 class Todo extends Component {
   constructor(props) {
@@ -39,7 +39,7 @@ class Todo extends Component {
   }
 }
 
-export default class FirestoreScreen extends Component {
+export default class TodosScreen extends Component {
   constructor(props) {
     super(props);
     this.ref = firebase.firestore().collection('Todos');
@@ -66,18 +66,17 @@ export default class FirestoreScreen extends Component {
 
     this.setState({
       //todos: todos,
-      todos: todos.sort((x, y) => {
-        var titleX = x.title.toUpperCase(); // ignore upper and lowercase
-        var titleY = y.title.toUpperCase(); // ignore upper and lowercase
-        if (titleX < titleY) {
+      todos: todos.sort((x, y) => {               
+        var valueX = x.createdTime;
+        var valueY = y.createdTime;
+        if (valueX < valueY) {
           return -1;
         }
-        if (titleX > titleY) {
+        if (valueX > valueY) {
           return 1;
         }
-
-        // names must be equal
         return 0;
+       
       }),
       loading: false,
     });

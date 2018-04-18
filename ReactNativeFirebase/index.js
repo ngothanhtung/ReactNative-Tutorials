@@ -1,6 +1,6 @@
 import { AppRegistry } from 'react-native';
 import App from './App';
-import FirestoreScreen from './src/screens/FirestoreScreen';
+import TodosScreen from './src/screens/Firestore/TodosScreen';
 
 AppRegistry.registerComponent('reactnativefirebase', () => App);
-AppRegistry.registerComponent('reactnativefirebase', () => FirestoreScreen);
+AppRegistry.registerComponent('reactnativefirebase', () => TodosScreen);
