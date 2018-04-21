@@ -11,18 +11,10 @@ const LOGO_IMAGE = require('../resources/react-native-logo.png');
 
 const styles = StyleSheet.create({
   container: {
-    justifyContent: 'center',
-    alignItems: 'center',
     opacity: 1,
     width: '100%',
     height: '100%',
     position: 'absolute',
-  },
-
-  footerContainer: {
-    marginTop: 20,
-    flexDirection: 'row',
-    marginBottom: 40
   },
 
   inputText: {
@@ -34,7 +26,7 @@ const styles = StyleSheet.create({
     marginBottom: 8,
   },
   buttonContainer: {
-    backgroundColor: '#0c2461',
+    backgroundColor: '#0984e3',
     paddingVertical: 15
   },
   buttonText: {
@@ -52,10 +44,9 @@ const styles = StyleSheet.create({
   },
 
   loginButton: {
-    backgroundColor: '#0c2461',
-    color: '#fff',
     width: 240
   },
+
   signUpText: {
     color: '#ffffff',
     textDecorationLine: 'underline',
@@ -86,47 +77,49 @@ class LoginScreenV3 extends Component {
     return (
       <ImageBackground style={{ flex: 1, position: 'relative' }} source={BACKGROUND_IMAGE}>
         <View style={styles.container}>
-          <Image source={LOGO_IMAGE} style={styles.logoImage} />
-          <View style={{ height: 32 }}></View>
-          <View>
-            <TextInput
-              style={styles.inputText}
-              placeholder="Enter your email"
-              placeholderTextColor="#6a89cc"
-              keyboardType="email-address"
-              autoCapitalize="none"
-              autoCorrect={false}
-              returnKeyType="next"
-              underlineColorAndroid={"transparent"}
-              onChangeText={(text) => this.setState({ username: text })}
-              onSubmitEditing={() => this.passwordInput.focus()}
-            />
-            <TextInput
-              ref={(input) => this.passwordInput = input}
-              secureTextEntry={true}
-              style={styles.inputText}
-              placeholder="Enter your password"
-              placeholderTextColor="#6a89cc"
-              returnKeyType="go"
-              underlineColorAndroid={"transparent"}
-              onChangeText={(text) => this.setState({ password: text })}
-            />
+          <View style={{ flex: 9, justifyContent: 'center', alignItems: 'center' }}>
+            <Image source={LOGO_IMAGE} style={styles.logoImage} />
+            <View style={{ height: 32 }}></View>
             <View>
-              {/*
+              <TextInput
+                style={styles.inputText}
+                placeholder="Enter your email"
+                placeholderTextColor="#0984e3"
+                keyboardType="email-address"
+                autoCapitalize="none"
+                autoCorrect={false}
+                returnKeyType="next"
+                underlineColorAndroid={"transparent"}
+                onChangeText={(text) => this.setState({ username: text })}
+                onSubmitEditing={() => this.passwordInput.focus()}
+              />
+              <TextInput
+                ref={(input) => this.passwordInput = input}
+                secureTextEntry={true}
+                style={styles.inputText}
+                placeholder="Enter your password"
+                placeholderTextColor="#0984e3"
+                returnKeyType="go"
+                underlineColorAndroid={"transparent"}
+                onChangeText={(text) => this.setState({ password: text })}
+              />
+              <View>
+                {/*
               <Button title="Login" onPress={this.onPressLogin} />
             */}
-              <TouchableOpacity style={styles.buttonContainer} onPress={this.onPressLogin}>
-                <Text style={styles.buttonText}>LOGIN</Text>
-              </TouchableOpacity>
+                <TouchableOpacity style={styles.buttonContainer} onPress={this.onPressLogin}>
+                  <Text style={styles.buttonText}>LOGIN</Text>
+                </TouchableOpacity>
+              </View>
             </View>
           </View>
-          <View style={styles.footerContainer}>
-            <Text style={{ color: '#ffffff' }}>Have an account? </Text>
+          <View style={{ flex: 1, justifyContent: 'flex-end', alignItems: 'center', paddingBottom: 12 }}>            
             <TouchableOpacity onPress={() => { alert("This feature is coming soon (Next chapter)") }}>
-              <Text style={{ color: '#ffffff' }}>Sign Up</Text>
+              <Text style={{ color: '#ffffff',  textDecorationLine: 'underline'}}>Sign Up</Text>
             </TouchableOpacity>
           </View>
         </View>
+
       </ImageBackground>
     );
   }
