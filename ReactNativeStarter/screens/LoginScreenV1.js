@@ -1,16 +1,14 @@
 import React, { Component } from 'react';
 import {
   View, Text, TextInput, Button, Image,
-  StyleSheet, Dimensions, KeyboardAvoidingView, TouchableOpacity
+  StyleSheet, Dimensions, TouchableOpacity
 } from 'react-native';
 
 var { width, height } = Dimensions.get('window');
 
-
 const AptechLogo = () => (
   <Image source={require('../resources/aptech-logo.jpg')} resizeMode={'contain'} style={styles.logo} />
 )
-
 
 const styles = StyleSheet.create({
   container: {
@@ -89,12 +87,11 @@ class LoginScreen extends Component {
     } else {
       alert("Login Failed");
     }
-
   }
 
   render() {
     return (
-      <KeyboardAvoidingView behavior="padding" style={styles.container}>
+      <View style={styles.container}>
         <AptechLogo />
         <View>
           <Text style={styles.headerText}>
@@ -104,12 +101,13 @@ class LoginScreen extends Component {
           </View>
           <TextInput
             style={styles.inputText}
-            placeholder="Enter your username"
+            placeholder="Enter your email"
             placeholderTextColor="#6a89cc"
             keyboardType="email-address"
             autoCapitalize="none"
             autoCorrect={false}
             returnKeyType="next"
+            underlineColorAndroid={"transparent"}
             onChangeText={(text) => this.setState({ username: text })}
             onSubmitEditing={() => this.passwordInput.focus()}
           />
@@ -120,6 +118,7 @@ class LoginScreen extends Component {
             placeholder="Enter your password"
             placeholderTextColor="#6a89cc"
             returnKeyType="go"
+            underlineColorAndroid={"transparent"}
             onChangeText={(text) => this.setState({ password: text })}
           />
           <View>
@@ -136,8 +135,10 @@ class LoginScreen extends Component {
           <TouchableOpacity onPress={() => { alert("This feature is coming soon (Next chapter)") }}>
             <Text style={styles.signUpText}>Sign Up</Text>
           </TouchableOpacity>
+
+
         </View>
-      </KeyboardAvoidingView>
+      </View>
     );
   }
 }
