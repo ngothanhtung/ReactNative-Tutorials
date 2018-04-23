@@ -1,16 +1,16 @@
 # A. Install Firebase CLI
-** Command: 
+**Command:**
 npm install -g firebase-tools
 
 ## Ref:
 https://github.com/firebase/firebase-tools
 
 # B. Create a project
-** Command:
+**Command:**
 firebase init
 
 # C. Firebase function
-** Ref:
+**Ref:**
 https://firebase.google.com/docs/functions/get-started
 ** Command:
 firebase deploy --only functions

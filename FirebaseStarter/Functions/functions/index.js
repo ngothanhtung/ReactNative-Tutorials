@@ -62,7 +62,7 @@ exports.updateProduct = functions.https.onRequest((request, response) => {
 });
 
 // ------------------------------------------------------------------------------------------------
-// UPDATE FUNCTION
+// DELETE FUNCTION
 exports.deleteProduct = functions.https.onRequest((request, response) => {
   var id = request.body.id;
 
