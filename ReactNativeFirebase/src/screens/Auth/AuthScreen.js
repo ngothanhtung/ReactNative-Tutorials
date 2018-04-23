@@ -24,10 +24,11 @@ export default class AuthScreen extends Component {
   }
 
   componentDidMount() {
+    //this.onCreateUser();
     this.authSubscription = firebase.auth().onAuthStateChanged((user) => {
       this.setState({
         loading: false,
-        user,
+        user: user,
       });
     });
   }
@@ -64,6 +65,15 @@ export default class AuthScreen extends Component {
       });
   }
 
+  onCreateUser = () => {
+    firebase.auth().createUserAndRetrieveDataWithEmailAndPassword("ngothanhtung.it@gmail.com", "123456789")
+      .then(user => {
+        console.log(user);
+      })
+      .catch(error => {
+        console.log(error);
+      });
+  }
   render() {
     // The application is initialising
     if (this.state.loading) {
