@@ -14,3 +14,5 @@ firebase init
 https://firebase.google.com/docs/functions/get-started
 ## Command:
 firebase deploy --only functions
+
+# D. Firebase hosting
