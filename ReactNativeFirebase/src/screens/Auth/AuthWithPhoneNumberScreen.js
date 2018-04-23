@@ -138,7 +138,8 @@ export default class AuthWithPhoneNumberScreen extends Component {
             <View style={styles.textInputContainer}>
               <TextInput
                 style={styles.textInput}
-                placeholder={"Phone number"}
+                underlineColorAndroid={'transparent'}
+                placeholder={'Phone number'}
                 autoFocus={true}
                 autoCapitalize='none'
                 autoCorrect={false}
@@ -156,6 +157,7 @@ export default class AuthWithPhoneNumberScreen extends Component {
             <View style={styles.textInputContainer}>
               <TextInput
                 style={styles.textInput}
+                underlineColorAndroid={'transparent'}
                 placeholder={"Verification Code"}
                 autoCapitalize='none'
                 autoCorrect={false}

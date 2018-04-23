@@ -11,7 +11,7 @@ import firebase from 'react-native-firebase';
 import Moment from 'moment';
 import MainContainer from '../../components/MainContainer';
 
-export default class AuthScreen extends Component {
+export default class AuthWithEmailAndPasswordScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
