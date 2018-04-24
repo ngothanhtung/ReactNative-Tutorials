@@ -11,8 +11,8 @@ import {
   Platform,
 } from 'react-native';
 
-import LogoImageUrl from '../resources/email-orange.png';
-import BackgroundImageUrl from '../resources/orange-background.jpg';
+import LogoImageUrl from '../../resources/email-orange.png';
+import BackgroundImageUrl from '../../resources/orange-background.jpg';
 
 const styles = {
   container: {
