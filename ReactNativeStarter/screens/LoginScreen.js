@@ -1,13 +1,25 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput, Button, TouchableOpacity } from 'react-native';
+import {
+  Alert,
+  View,
+  Text,
+  TextInput,
+  Button,
+  Image,
+  TouchableOpacity
+} from 'react-native';
+
+import LogoImageUrl from '../resources/aptech-logo.jpg';
 
 export default class LoginScreen extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <View style={styles.topContainer}></View>
+        <View style={styles.topContainer}>
+          <Image resizeMode={'contain'} style={{ width: 240, height: 80 }} source={LogoImageUrl} />
+        </View>
         <View style={styles.middleContainer}>
-          <View style={{ padding: 12 }}>
+          <View style={{ padding: 24 }}>
             <Text style={styles.headerText}>
               STUDENT LOGIN
             </Text>
@@ -31,8 +43,11 @@ export default class LoginScreen extends Component {
           </View>
         </View>
         <View style={styles.bottomContainer}>
-          <View style={{ backgroundColor: 'pink', alignItems: 'center', paddingBottom: 16 }}>
-            <Text>Have an account? Sign up</Text>
+          <View style={{ backgroundColor: 'white', alignItems: 'center', paddingBottom: 16 }}>
+            <Text>Have an account?
+              <Text> </Text>
+              <Text style={{ textDecorationLine: 'underline' }} onPress={() => { Alert.alert('React Native', 'Coming soon') }}>Sign up</Text>
+            </Text>
           </View>
         </View>
       </View>
@@ -43,20 +58,22 @@ export default class LoginScreen extends Component {
 const styles = {
   container: {
     flex: 1,
-    backgroundColor: 'red'
+    //backgroundColor: 'red'
   },
   topContainer: {
     flex: 1,
-    backgroundColor: 'yellow'
+    //backgroundColor: 'yellow',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
   },
   middleContainer: {
     flex: 2,
-    backgroundColor: 'green',
+    //backgroundColor: 'green',
     justifyContent: 'center'
   },
   bottomContainer: {
     flex: 1,
-    backgroundColor: 'blue',
+    //backgroundColor: 'blue',
     justifyContent: 'flex-end',
   },
 
@@ -78,7 +95,7 @@ const styles = {
     fontSize: 18,
   },
   headerText: {
-    fontSize: 32,
+    fontSize: 24,
     color: '#2d3436'
   }
 };
