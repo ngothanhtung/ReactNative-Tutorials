@@ -12,6 +12,10 @@ import CameraRollScreen from './screens/CameraRollScreen';
 import PropsAndState from './screens/PropsAndState';
 import MainStackNavigator from './navigators/MainStackNavigator';
 
+import ComponentExample from './screens/ComponentExample';
+import StateExample from './screens/StateExample';
+import LoginScreen from './screens/LoginScreen';
+
 console.disableYellowBox = true;
 
 //AppRegistry.registerComponent('ReactNativeStarter', () => App);
@@ -20,6 +24,11 @@ console.disableYellowBox = true;
 //AppRegistry.registerComponent('ReactNativeStarter', () => LoginScreenV2);
 //AppRegistry.registerComponent('ReactNativeStarter', () => LoginScreenV3);
 //AppRegistry.registerComponent('ReactNativeStarter', () => FlexBasic);
+
+//AppRegistry.registerComponent('ReactNativeStarter', () => ComponentExample);
+//AppRegistry.registerComponent('ReactNativeStarter', () => StateExample);
+AppRegistry.registerComponent('ReactNativeStarter', () => LoginScreen);
+
 //AppRegistry.registerComponent('ReactNativeStarter', () => RegisterScreenV1);
 //AppRegistry.registerComponent('ReactNativeStarter', () => RegisterScreenV2);
 //AppRegistry.registerComponent('ReactNativeStarter', () => ModalScreen);
