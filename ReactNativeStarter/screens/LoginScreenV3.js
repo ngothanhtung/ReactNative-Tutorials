@@ -49,7 +49,7 @@ const styles = {
   button: {
     borderColor: '#ffffff',
     borderWidth: 0.5,
-    backgroundColor: '#D75C34',
+    backgroundColor: '#D00F14',
     height: 48,
     justifyContent: 'center',
     alignItems: 'center',
