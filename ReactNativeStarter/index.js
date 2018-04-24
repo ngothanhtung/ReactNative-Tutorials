@@ -22,12 +22,12 @@ console.disableYellowBox = true;
 //AppRegistry.registerComponent('ReactNativeStarter', () => FlexBasic);
 //AppRegistry.registerComponent('ReactNativeStarter', () => LoginScreenV1);
 //AppRegistry.registerComponent('ReactNativeStarter', () => LoginScreenV2);
-//AppRegistry.registerComponent('ReactNativeStarter', () => LoginScreenV3);
+AppRegistry.registerComponent('ReactNativeStarter', () => LoginScreenV3);
 //AppRegistry.registerComponent('ReactNativeStarter', () => FlexBasic);
 
 //AppRegistry.registerComponent('ReactNativeStarter', () => ComponentExample);
 //AppRegistry.registerComponent('ReactNativeStarter', () => StateExample);
-AppRegistry.registerComponent('ReactNativeStarter', () => LoginScreen);
+//AppRegistry.registerComponent('ReactNativeStarter', () => LoginScreen);
 
 //AppRegistry.registerComponent('ReactNativeStarter', () => RegisterScreenV1);
 //AppRegistry.registerComponent('ReactNativeStarter', () => RegisterScreenV2);
