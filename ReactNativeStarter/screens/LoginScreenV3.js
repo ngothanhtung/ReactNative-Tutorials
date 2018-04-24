@@ -1,128 +1,104 @@
 import React, { Component } from 'react';
 import {
-  View, Text, TextInput, Button, Image, ImageBackground,
-  StyleSheet, Dimensions, TouchableOpacity
+  Alert,
+  View,
+  Text,
+  TextInput,
+  Button,
+  Image,
+  TouchableOpacity,
+  ImageBackground
 } from 'react-native';
 
-var { width, height } = Dimensions.get('window');
+import LogoImageUrl from '../resources/user-logo.png';
+import BackgroundImageUrl from "../resources/orange-background.jpg";
 
-const BACKGROUND_IMAGE = require('../resources/background-2.jpg');
-const LOGO_IMAGE = require('../resources/react-native-logo.png');
-
-const styles = StyleSheet.create({
-  container: {
-    opacity: 1,
-    width: '100%',
-    height: '100%',
-    position: 'absolute',
-  },
-
-  inputText: {
-    width: width - 60,
-    height: 48,
-    backgroundColor: '#f1f2f6',
-    color: '#0c2461',
-    padding: 12,
-    marginBottom: 8,
-  },
-  buttonContainer: {
-    backgroundColor: '#0984e3',
-    paddingVertical: 15
-  },
-  buttonText: {
-    color: '#fff',
-    textAlign: 'center',
-    fontWeight: '700'
-  },
-
-  logoImage: {
-    width: 120,
-    height: 120,
-    borderRadius: 60,
-    alignSelf: 'center',
-    marginVertical: 15
-  },
-
-  loginButton: {
-    width: 240
-  },
-
-  signUpText: {
-    color: '#ffffff',
-    textDecorationLine: 'underline',
-    alignSelf: 'center'
-  }
-});
-
-class LoginScreenV3 extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      username: '',
-      password: ''
-    }
-  }
-
-  onPressLogin = () => {
-    var username = this.state.username;
-    var password = this.state.password;
-    if (username === 'admin' && password === '123456789') {
-      alert("Login OK");
-    } else {
-      alert("Login Failed");
-    }
-  }
-
+export default class LoginScreenV3 extends Component {
   render() {
     return (
-      <ImageBackground style={{ flex: 1, position: 'relative' }} source={BACKGROUND_IMAGE}>
+      <ImageBackground style={{ flex: 1, position: 'relative' }} source={BackgroundImageUrl}>
         <View style={styles.container}>
-          <View style={{ flex: 9, justifyContent: 'center', alignItems: 'center' }}>
-            <Image source={LOGO_IMAGE} style={styles.logoImage} />
-            <View style={{ height: 32 }}></View>
-            <View>
+          <View style={styles.topContainer}>
+            <Image resizeMode={'contain'} style={{ width: 160, height: 160 }} source={LogoImageUrl} />
+          </View>
+          <View style={styles.middleContainer}>
+            <View style={{ padding: 24 }}>
               <TextInput
-                style={styles.inputText}
-                placeholder="Enter your email"
-                placeholderTextColor="#0984e3"
-                keyboardType="email-address"
-                autoCapitalize="none"
-                autoCorrect={false}
-                returnKeyType="next"
-                underlineColorAndroid={"transparent"}
-                onChangeText={(text) => this.setState({ username: text })}
-                onSubmitEditing={() => this.passwordInput.focus()}
+                style={styles.textIput}
+                placeholder={"Enter email"}
+                placeholderTextColor={"#ffffff"}
               />
+              <View style={{ height: 12 }} />
               <TextInput
-                ref={(input) => this.passwordInput = input}
-                secureTextEntry={true}
-                style={styles.inputText}
-                placeholder="Enter your password"
-                placeholderTextColor="#0984e3"
-                returnKeyType="go"
-                underlineColorAndroid={"transparent"}
-                onChangeText={(text) => this.setState({ password: text })}
+                style={styles.textIput}
+                placeholder={"Enter password"}
+                placeholderTextColor={"#ffffff"}
               />
-              <View>
-                {/*
-              <Button title="Login" onPress={this.onPressLogin} />
-            */}
-                <TouchableOpacity style={styles.buttonContainer} onPress={this.onPressLogin}>
-                  <Text style={styles.buttonText}>LOGIN</Text>
-                </TouchableOpacity>
-              </View>
+              <View style={{ height: 12 }} />
+              <TouchableOpacity style={styles.button}>
+                <Text style={styles.buttonText}>Login</Text>
+              </TouchableOpacity>
             </View>
           </View>
-          <View style={{ flex: 1, justifyContent: 'flex-end', alignItems: 'center', paddingBottom: 12 }}>            
-            <TouchableOpacity onPress={() => { alert("This feature is coming soon (Next chapter)") }}>
-              <Text style={{ color: '#ffffff',  textDecorationLine: 'underline'}}>Sign Up</Text>
-            </TouchableOpacity>
+          <View style={styles.bottomContainer}>
+            <View style={{ backgroundColor: 'transparent', alignItems: 'center', paddingBottom: 16 }}>
+              <Text style={{ color: '#ffffff' }} >Have an account?
+              <Text> </Text>
+                <Text style={{ textDecorationLine: 'underline' }} onPress={() => { Alert.alert('React Native', 'Coming soon') }}>Sign up</Text>
+              </Text>
+            </View>
           </View>
         </View>
-
       </ImageBackground>
     );
   }
 }
 
-export default LoginScreenV3;
+const styles = {
+  container: {
+    flex: 1,
+    //backgroundColor: 'red'
+  },
+  topContainer: {
+    flex: 2,
+    //backgroundColor: 'yellow',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
+  },
+  middleContainer: {
+    flex: 2,
+    //backgroundColor: 'green',
+    justifyContent: 'center'
+  },
+  bottomContainer: {
+    flex: 1,
+    //backgroundColor: 'blue',
+    justifyContent: 'flex-end',
+  },
+
+  textIput: {
+    borderRadius: 12,
+    borderColor: '#ffffff',
+    borderWidth: 0.5,
+    height: 48,
+    paddingLeft: 12,
+    opacity: 1
+  },
+
+  button: {
+    backgroundColor: '#fa8231',
+    height: 48,
+    justifyContent: 'center',
+    alignItems: 'center',
+    borderRadius: 12,
+  },
+  buttonText: {
+    color: 'white',
+    fontWeight: '700',
+    fontSize: 18,
+  },
+  headerText: {
+    fontSize: 24,
+    color: '#ffffff'
+  }
+};
