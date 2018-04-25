@@ -1,4 +1,5 @@
 import { AppRegistry } from 'react-native';
-import App from './App';
+import PusherExample from './src/PusherExample';
+import SocketClientExample from './src/SocketClientExample';
 
-AppRegistry.registerComponent('RealtimeStarter', () => App);
+AppRegistry.registerComponent('RealtimeStarter', () => SocketClientExample);

@@ -22,7 +22,6 @@ app.set('port', port);
 var server = http.createServer(app);
 
 // SOCKET
-
 const io = require('socket.io')(server, {
   path: '/',
   serveClient: false,
@@ -34,18 +33,18 @@ const io = require('socket.io')(server, {
 
 io.on('connection', function (socket) {
   console.log("Socket connected");
-  console.log('socket id: ', socket.id);
-  socket.emit('server-simple-message: ', 'hi, i am socket.io');
-  
+  console.log('socket client id: ', socket.id);
+
   // Listen event from clients
   socket.on('client-message', function (data) {
-      console.log('SEND FROM CLIENT', data);
-      // sending to all clients except sender
-      //socket.broadcast.emit('server-message', "sending to all clients except sender");
+    console.log('SEND FROM CLIENT: ', data);
+    //socket.emit('server-message', 'hi, i am socket.io');
+    // sending to all clients except sender
+    socket.broadcast.emit('server-message', "sending to all clients except sender");
   });
   //Whenever someone disconnects this piece of code executed
   socket.on('disconnect', function () {
-      console.log("Socket disconnected");
+    console.log("Socket disconnected");
   });
 });
 
