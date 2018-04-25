@@ -95,7 +95,7 @@ export default class SocketClientExample extends Component {
                 <Text style={styles.buttonText}>Join</Text>
               </TouchableOpacity>
             </View>
-            
+
             <View style={{ flex: 3 }}>
               <TouchableOpacity style={styles.button} onPress={() => {
                 // LEAVE FROM ROOM
@@ -152,10 +152,13 @@ class Message extends Component {
 
   render() {
     return (
-      <TouchableHighlight style={{ padding: 8 }} underlayColor={'#dfe6e9'} activeOpacity={9}>
-        <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center' }}>
-          <Text style={{ fontWeight: '700' }}>{this.props.name}: </Text>
-          <Text>{this.props.message}</Text>
+      <TouchableHighlight style={{ padding: 8 }}>
+        <View style={{ flex: 1, flexDirection: 'column' }}>
+          <View style={{ flexDirection: 'row', alignItems: 'center' }}>
+            <Text style={{ fontWeight: '700' }}>{this.props.name}: </Text>
+            <Text>{this.props.message}</Text>
+          </View>
+          <View style={{marginTop: 12, borderBottomColor: '#dfe6e9', borderBottomWidth: 1 }}></View>
         </View>
       </TouchableHighlight>
     );
