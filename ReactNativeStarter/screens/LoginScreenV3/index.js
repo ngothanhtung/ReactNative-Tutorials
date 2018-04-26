@@ -66,16 +66,16 @@ const styles = {
   },
 };
 
-const FullName = (props) => (
+const MyTextInput = (props) => (
   <View>
     <TextInput
       style={styles.textIput}
       underlineColorAndroid="transparent"
       autoCorrect={false}
       autoCapitalize="none"
-      placeholder="Enter your fullname"
+      placeholder={props.placeholder}
       placeholderTextColor="#ffffff"
-      keyboardType="email-address"
+      keyboardType="default"
       onChangeText={props.onChangeText}
     />
     <View style={{ height: 12 }} />
@@ -86,7 +86,8 @@ export default class LoginScreenV3 extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      screenName: 'login'
+      screenName: 'login',
+      text: '',
     };
   }
 
@@ -103,7 +104,7 @@ export default class LoginScreenV3 extends Component {
           </View>
           <View style={styles.middleContainer}>
             <View style={{ padding: 24 }}>
-              <FullName onChangeText={(text) => console.log(text)} />
+              <MyTextInput placeholder="My Text" onChangeText={(text) => {this.setState({text: text})}} />            
               <TextInput
                 style={styles.textIput}
                 underlineColorAndroid="transparent"
