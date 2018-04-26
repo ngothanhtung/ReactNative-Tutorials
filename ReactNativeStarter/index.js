@@ -2,7 +2,7 @@ import { AppRegistry } from 'react-native';
 // import App from './App';
 // import LoginScreenV1 from './screens/LoginScreenV1';
 // import LoginScreenV2 from './screens/LoginScreenV2';
-import LoginScreenV3 from './screens/LoginScreenV3';
+// import LoginScreenV3 from './screens/LoginScreenV3';
 // import FlexBasic from './screens/FlexLayout/Basic';
 // import RegisterScreenV1 from './screens/RegisterScreenV1';
 // import RegisterScreenV2 from './screens/RegisterScreenV2';
@@ -14,7 +14,8 @@ import LoginScreenV3 from './screens/LoginScreenV3';
 
 // import ComponentExample from './screens/ComponentExample';
 // import StateExample from './screens/StateExample';
-// import LoginScreen from './screens/LoginScreen';
+import LoginScreen from './screens/LoginScreen';
+import ComplexLayout from './screens/FlexLayout/Complex';
 
 // console.disableYellowBox = true;
 
@@ -22,9 +23,9 @@ import LoginScreenV3 from './screens/LoginScreenV3';
 // AppRegistry.registerComponent('ReactNativeStarter', () => FlexBasic);
 // AppRegistry.registerComponent('ReactNativeStarter', () => LoginScreenV1);
 // AppRegistry.registerComponent('ReactNativeStarter', () => LoginScreenV2);
-AppRegistry.registerComponent('ReactNativeStarter', () => LoginScreenV3);
+// AppRegistry.registerComponent('ReactNativeStarter', () => LoginScreenV3);
 // AppRegistry.registerComponent('ReactNativeStarter', () => FlexBasic);
-
+AppRegistry.registerComponent('ReactNativeStarter', () => ComplexLayout);
 // AppRegistry.registerComponent('ReactNativeStarter', () => ComponentExample);
 // AppRegistry.registerComponent('ReactNativeStarter', () => StateExample);
 // AppRegistry.registerComponent('ReactNativeStarter', () => LoginScreen);

@@ -18,18 +18,18 @@ const styles = {
   },
   topContainer: {
     flex: 1,
-    // backgroundColor: 'yellow',
+    backgroundColor: 'yellow',
     justifyContent: 'flex-end',
     alignItems: 'center',
   },
   middleContainer: {
     flex: 2,
-    // backgroundColor: 'green',
+    backgroundColor: 'green',
     justifyContent: 'center',
   },
   bottomContainer: {
     flex: 1,
-    // backgroundColor: 'blue',
+    backgroundColor: 'blue',
     justifyContent: 'flex-end',
   },
 
