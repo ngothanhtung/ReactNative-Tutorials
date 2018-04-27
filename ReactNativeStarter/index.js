@@ -1,38 +1,53 @@
 import { AppRegistry } from 'react-native';
-// import App from './App';
-// import LoginScreenV1 from './screens/LoginScreenV1';
-// import LoginScreenV2 from './screens/LoginScreenV2';
-// import LoginScreenV3 from './screens/LoginScreenV3';
-// import FlexBasic from './screens/FlexLayout/Basic';
-// import RegisterScreenV1 from './screens/RegisterScreenV1';
-// import RegisterScreenV2 from './screens/RegisterScreenV2';
+import App from './App';
+import LoginScreenV1 from './screens/LoginScreenV1';
+import LoginScreenV2 from './screens/LoginScreenV2';
+import LoginScreenV3 from './screens/LoginScreenV3';
 
-// import ModalScreen from './screens/ModalScreen';
-// import CameraRollScreen from './screens/CameraRollScreen';
-// import PropsAndState from './screens/PropsAndState';
-// import MainStackNavigator from './navigators/MainStackNavigator';
+import FlexBasic from './screens/FlexLayout/Basic';
+import RegisterScreenV1 from './screens/RegisterScreenV1';
+import RegisterScreenV2 from './screens/RegisterScreenV2';
 
-// import ComponentExample from './screens/ComponentExample';
-// import StateExample from './screens/StateExample';
+import ModalScreen from './screens/ModalScreen';
+import CameraRollScreen from './screens/CameraRollScreen';
+import PropsAndState from './screens/PropsAndState';
+import MainStackNavigator from './navigators/MainStackNavigator';
+
+import ComponentExample from './screens/ComponentExample';
+import StateExample from './screens/StateExample';
 import LoginScreen from './screens/LoginScreen';
-import ComplexLayout from './screens/FlexLayout/Complex';
+import Complex from './screens/FlexLayout/Complex';
 
-// console.disableYellowBox = true;
+console.disableYellowBox = true;
 
 // AppRegistry.registerComponent('ReactNativeStarter', () => App);
-// AppRegistry.registerComponent('ReactNativeStarter', () => FlexBasic);
+
+// LOGIN SCREENS
+// AppRegistry.registerComponent('ReactNativeStarter', () => LoginScreen);
 // AppRegistry.registerComponent('ReactNativeStarter', () => LoginScreenV1);
 // AppRegistry.registerComponent('ReactNativeStarter', () => LoginScreenV2);
 // AppRegistry.registerComponent('ReactNativeStarter', () => LoginScreenV3);
+
+// FLEX
 // AppRegistry.registerComponent('ReactNativeStarter', () => FlexBasic);
-AppRegistry.registerComponent('ReactNativeStarter', () => ComplexLayout);
+// AppRegistry.registerComponent('ReactNativeStarter', () => Complex);
+
+// PROPS AND STATE
+// AppRegistry.registerComponent('ReactNativeStarter', () => PropsAndState);
 // AppRegistry.registerComponent('ReactNativeStarter', () => ComponentExample);
 // AppRegistry.registerComponent('ReactNativeStarter', () => StateExample);
-// AppRegistry.registerComponent('ReactNativeStarter', () => LoginScreen);
 
+// REGISTER SCREENS
 // AppRegistry.registerComponent('ReactNativeStarter', () => RegisterScreenV1);
 // AppRegistry.registerComponent('ReactNativeStarter', () => RegisterScreenV2);
-// AppRegistry.registerComponent('ReactNativeStarter', () => ModalScreen);
-// AppRegistry.registerComponent('ReactNativeStarter', () => CameraRollScreen);
-// AppRegistry.registerComponent('ReactNativeStarter', () => PropsAndState);
+
+// NAVIGATORS
 // AppRegistry.registerComponent('ReactNativeStarter', () => MainStackNavigator);
+
+// MODAL SCREENS
+// AppRegistry.registerComponent('ReactNativeStarter', () => ModalScreen);
+
+// CAMERA
+AppRegistry.registerComponent('ReactNativeStarter', () => CameraRollScreen);
+
+

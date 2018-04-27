@@ -12,10 +12,10 @@ const WINDOW_WIDTH = Dimensions.get('window').width;
 const WHITE_COLOR = COLORS.White;
 const DARK_COLOR = '#45aaf2';
 
-const BACKGROUND_IMAGE = require('../resources/background-2.jpg');
-const LOGO_IMAGE = require('../resources/react-native-logo.png');
-const MAIL_ICON = require('../resources/mail_icon.png');
-const LOCK_ICON = require('../resources/lock_icon.png');
+const BACKGROUND_IMAGE = require('../../resources/background-2.jpg');
+const LOGO_IMAGE = require('../../resources/react-native-logo.png');
+const MAIL_ICON = require('../../resources/mail_icon.png');
+const LOCK_ICON = require('../../resources/lock_icon.png');
 
 // END CONSTANTS COMPONENTS
 
