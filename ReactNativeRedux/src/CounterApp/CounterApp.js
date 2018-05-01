@@ -1,10 +1,10 @@
 import React from 'react'
 import { View } from 'react-native'
-import Counter from '../containers/counter'
+import CounterContainer from './containers/counterContainer'
 
 const CounterApp = () => (
   <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-    <Counter />
+    <CounterContainer />
   </View>
 )
 

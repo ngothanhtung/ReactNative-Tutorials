@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-import CounterApp from './components/CounterApp';
+import CounterApp from './CounterApp';
 
 import rootReducer from './reducers';
 
