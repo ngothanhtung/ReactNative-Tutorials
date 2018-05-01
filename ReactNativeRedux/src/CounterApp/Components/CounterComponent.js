@@ -17,14 +17,14 @@ export default class CounterComponent extends Component {
 			<View style={styles.container}>
 				<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', flexDirection: 'column', }}>
 					<Button
-						onPress={this.props.increase}
+						onPress={this.props.increaseCount}
 						title="Increase Count"
 					/>
 
 					<Text>{this.props.count}</Text>
 
 					<Button
-						onPress={this.props.decrease}
+						onPress={this.props.decreaseCount}
 						title="Decrease Count"
 					/>
 				</View>

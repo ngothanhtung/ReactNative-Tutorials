@@ -1,9 +1,4 @@
-import * as Actions from '../constants/actionTypes';
+import * as ActionTypes from './types';
 
-export const increase = () => ({
-  type: Actions.COUNTER_INCREMENT,
-})
-
-export const decrease = () => ({
-  type: Actions.COUNTER_DECREMENT,
-})
+export const increaseCount = () => ({ type: ActionTypes.INCREASE_COUNT });
+export const decreaseCount = () => ({ type: ActionTypes.DECREASE_COUNT });
