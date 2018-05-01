@@ -1,18 +1,8 @@
-import { combineReducers, createStore } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
+import { combineReducers } from 'redux';
+import counterReducer from './counter'
 
-import counterReducer from './CounterReducer'
-
-const AppReducers = combineReducers({
+const rootReducer = combineReducers({
 	counterReducer,
 });
 
-const rootReducer = (state, action) => {
-	return AppReducers(state, action);
-}
-
-let store = createStore(
-	rootReducer,
-);
-
-export default store;
+export default rootReducer;
