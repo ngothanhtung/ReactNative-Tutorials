@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { View, Text, } from 'react-native';
 
-export default class ActionSheetScreen extends Component {
+export default class ActionSheetIOSScreen extends Component {
   render() {
     return (
       <View>

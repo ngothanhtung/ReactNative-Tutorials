@@ -41,8 +41,12 @@ AppRegistry.registerComponent('ReactNativeStarter', () => App);
 // import ActionSheetScreen from './screens/CoreComponents/ActionSheetScreen';
 // AppRegistry.registerComponent('ReactNativeStarter', () => ActionSheetScreen);
 
-// import DatePickerIOSScreen from './screens/CoreComponents/IOS/DatePickerIOSScreen';
-// AppRegistry.registerComponent('ReactNativeStarter', () => DatePickerIOSScreen);
+import DatePickerIOSScreen from './screens/CoreComponents/IOS/DatePickerIOSScreen';
+AppRegistry.registerComponent('ReactNativeStarter', () => DatePickerIOSScreen);
+
+import ModalExamples from './screens/CoreComponents/ModalExamples';
+AppRegistry.registerComponent('ReactNativeStarter', () => ModalExamples);
+
 
 // import PickerExamples from './screens/CoreComponents/Android/PickerExamples';
 // AppRegistry.registerComponent('ReactNativeStarter', () => PickerExamples);
@@ -58,6 +62,4 @@ AppRegistry.registerComponent('ReactNativeStarter', () => App);
 // AppRegistry.registerComponent('ReactNativeStarter', () => ModalScreen);
 
 // CAMERA
-//AppRegistry.registerComponent('ReactNativeStarter', () => CameraRollScreen);
-
-
+// AppRegistry.registerComponent('ReactNativeStarter', () => CameraRollScreen);
