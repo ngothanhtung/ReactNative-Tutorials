@@ -15,10 +15,10 @@ export default class ModalExamples extends Component {
 
   render() {
     return (
-      <View style={{ marginTop: 22, height: 250 }}>
+      <View style={{ marginTop: 22 }}>
         <Modal
           animationType="slide"
-          transparent={false}
+          transparent={true}
           visible={this.state.modalVisible}
           onRequestClose={() => {
             Alert.alert('Modal has been closed.');
@@ -26,12 +26,11 @@ export default class ModalExamples extends Component {
         >
           <View
             style={{
-              marginTop: 22, flex: 1, justifyContent: 'center', alignItems: 'center',
+              marginTop: 22, width: '100%', justifyContent: 'center', alignItems: 'center', height: 300, backgroundColor: 'red', position: 'absolute', bottom: 0
             }}
           >
             <View>
               <Text>Hello World!</Text>
-
               <TouchableHighlight
                 style={{
                   height: 48, backgroundColor: '#2c3e50', justifyContent: 'center', alignItems: 'center', width: 240,
