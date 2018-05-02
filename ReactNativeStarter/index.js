@@ -20,7 +20,7 @@ import Complex from './screens/FlexLayout/Complex';
 
 console.disableYellowBox = true;
 
-// AppRegistry.registerComponent('ReactNativeStarter', () => App);
+AppRegistry.registerComponent('ReactNativeStarter', () => App);
 
 // LOGIN SCREENS
 // AppRegistry.registerComponent('ReactNativeStarter', () => LoginScreen);
@@ -37,6 +37,20 @@ console.disableYellowBox = true;
 // AppRegistry.registerComponent('ReactNativeStarter', () => ComponentExample);
 // AppRegistry.registerComponent('ReactNativeStarter', () => StateExample);
 
+// CORE COMPONENTS
+// import ActionSheetScreen from './screens/CoreComponents/ActionSheetScreen';
+// AppRegistry.registerComponent('ReactNativeStarter', () => ActionSheetScreen);
+
+import DatePickerIOSScreen from './screens/CoreComponents/IOS/DatePickerIOSScreen';
+AppRegistry.registerComponent('ReactNativeStarter', () => DatePickerIOSScreen);
+
+import ModalExamples from './screens/CoreComponents/ModalExamples';
+AppRegistry.registerComponent('ReactNativeStarter', () => ModalExamples);
+
+
+// import PickerExamples from './screens/CoreComponents/Android/PickerExamples';
+// AppRegistry.registerComponent('ReactNativeStarter', () => PickerExamples);
+
 // REGISTER SCREENS
 // AppRegistry.registerComponent('ReactNativeStarter', () => RegisterScreenV1);
 // AppRegistry.registerComponent('ReactNativeStarter', () => RegisterScreenV2);
@@ -48,6 +62,4 @@ console.disableYellowBox = true;
 // AppRegistry.registerComponent('ReactNativeStarter', () => ModalScreen);
 
 // CAMERA
-AppRegistry.registerComponent('ReactNativeStarter', () => CameraRollScreen);
-
-
+// AppRegistry.registerComponent('ReactNativeStarter', () => CameraRollScreen);
