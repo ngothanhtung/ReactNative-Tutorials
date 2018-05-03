@@ -166,6 +166,7 @@ export default class RegisterScreenV1 extends Component {
                 <Picker.Item label="[ Select gender ]" value="" color={COLORS.Black} />
                 <Picker.Item label="Male" value="male" color={COLORS.Black} />
                 <Picker.Item label="Female" value="female" color={COLORS.Black} />
+                <Picker.Item label="Unknown" value="unknown" color={COLORS.Black} />
               </Picker>
             </View>
             <View style={styles.inputBackground}></View>

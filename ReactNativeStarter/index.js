@@ -38,21 +38,21 @@ console.disableYellowBox = true;
 // AppRegistry.registerComponent('ReactNativeStarter', () => StateExample);
 
 // CORE COMPONENTS
-// import ActionSheetScreen from './screens/CoreComponents/ActionSheetScreen';
-// AppRegistry.registerComponent('ReactNativeStarter', () => ActionSheetScreen);
+// import ActionSheetIOSScreen from './screens/CoreComponents/IOS/ActionSheetIOSScreen';
+// AppRegistry.registerComponent('ReactNativeStarter', () => ActionSheetIOSScreen);
 
 // import DatePickerIOSScreen from './screens/CoreComponents/IOS/DatePickerIOSScreen';
 // AppRegistry.registerComponent('ReactNativeStarter', () => DatePickerIOSScreen);
 
-import ModalExamples from './screens/CoreComponents/ModalExamples';
-AppRegistry.registerComponent('ReactNativeStarter', () => ModalExamples);
+// import ModalExamples from './screens/CoreComponents/ModalExamples';
+// AppRegistry.registerComponent('ReactNativeStarter', () => ModalExamples);
 
 
 // import PickerExamples from './screens/CoreComponents/Android/PickerExamples';
 // AppRegistry.registerComponent('ReactNativeStarter', () => PickerExamples);
 
 // REGISTER SCREENS
-// AppRegistry.registerComponent('ReactNativeStarter', () => RegisterScreenV1);
+AppRegistry.registerComponent('ReactNativeStarter', () => RegisterScreenV1);
 // AppRegistry.registerComponent('ReactNativeStarter', () => RegisterScreenV2);
 
 // NAVIGATORS

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Alert, Modal, Text, TextInput, TouchableHighlight, View } from 'react-native';
+import { Platform, Alert, Modal, Button, Text, TextInput, TouchableHighlight, View } from 'react-native';
 
 class TextInputWithModal extends Component {
   constructor(props) {
@@ -29,13 +29,15 @@ class TextInputWithModal extends Component {
     var value = 'This is value';
     this.setState({ selectedValue: value });
     this.props.onSelect(value);
+
+    // (value) => { this.setState({ text: value }) }
     // CLOSE MODAL
     this.setState({ modalVisible: false });
   }
 
   render() {
     return (
-      <View>
+      <View style={{ marginTop: 22 }}>
         <Modal
           animationType="slide"
           transparent={true}
@@ -53,17 +55,23 @@ class TextInputWithModal extends Component {
             <View style={{ width: '100%', position: 'absolute', top: 0, backgroundColor: '#b2bec3' }}>
               <View style={{ flex: 1, flexDirection: 'row', backgroundColor: 'green' }}>
                 <View style={{ flex: 1, flexDirection: 'row', alignItems: 'flex-start', backgroundColor: 'yellow' }}>
-                  {/* CANCEL BUTTON */}
-                  <TouchableHighlight
-                    style={{
-                      height: 40, backgroundColor: '#2c3e50', alignItems: 'center', justifyContent: 'center', width: 60
-                    }}
-                    onPress={this.hideModal}
-                  >
-                    <Text style={{ color: '#ffffff' }}>Cancel</Text>
-                  </TouchableHighlight>
+                  {/* CANCEL BUTTON */}                  
+                  {
+                    Platform.OS === 'ios' &&
+                    <View>
+                      <TouchableHighlight
+                        style={{
+                          height: 40, backgroundColor: '#2c3e50', alignItems: 'center', justifyContent: 'center', width: 60
+                        }}
+                        onPress={this.hideModal}
+                      >
+                        <Text style={{ color: '#ffffff' }}>Cancel</Text>
+                      </TouchableHighlight>
 
-                  <View style={{ width: 1 }} />
+                      <View style={{ width: 1 }} />
+                    </View>
+                  }
+
 
                   {/* CLEAR BUTTON */}
                   <TouchableHighlight
@@ -96,14 +104,22 @@ class TextInputWithModal extends Component {
           </View>
         </Modal>
         {/* ----------------------------------------------------------------------------------- */}
-        <TouchableHighlight onPress={this.showModal}>
-          <TextInput
+
+        <TouchableHighlight onPress={this.showModal} style={{ alignItems: 'flex-start', justifyContent: 'center', height: 48, backgroundColor: '#dfe6e9', paddingLeft: 12, paddingRight: 12, color: '#000000' }}>
+          <Text
+            style={{ color: '#000000' }}
+          >
+            {
+              this.state.selectedValue
+            }
+          </Text>
+          {/* <TextInput
             style={{ height: 48, backgroundColor: '#dfe6e9', paddingLeft: 12, paddingRight: 12, color: '#000000' }}
             placeholder="Enter your text"
             underlineColorAndroid="transparent"
             editable={false}
             value={this.state.selectedValue}
-          />
+          /> */}
         </TouchableHighlight>
       </View>
     );
@@ -122,6 +138,7 @@ export default class ModalExamples extends Component {
     return (
       <View style={{ flex: 1 }}>
         <TextInputWithModal onSelect={(value) => { this.setState({ text: value }) }} />
+
         <Text>
           {this.state.text}
         </Text>
