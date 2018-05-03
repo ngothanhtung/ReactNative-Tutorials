@@ -147,9 +147,7 @@ android {
 }
 
 dependencies {
-    compile(project(':react-native-firebase')) {
-        transitive = false
-    }
+    implementation project(':react-native-fbsdk')
     implementation(project(':react-native-firebase')) {
         transitive = false
     }
