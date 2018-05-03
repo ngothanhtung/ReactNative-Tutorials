@@ -6,7 +6,6 @@ export default class IOSGenderPicker extends Component {
     super(props);
     this.state = {
       modalVisible: false,
-      text: '',
       value: '',
     }
   }
@@ -38,10 +37,9 @@ export default class IOSGenderPicker extends Component {
           >
             <Picker
               selectedValue={this.state.value}
-              onValueChange={(value, index) => {
-                this.setState({ value: value });
-                this.setState({ text: value });
-                this.props.onSelect(value);
+              onValueChange={(itemValue, itemPosition) => {
+                this.setState({ value: itemValue });
+                this.props.onSelect(itemValue);
                 this.hideModal();
               }}
             >
