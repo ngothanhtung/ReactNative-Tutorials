@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "750667481972",
+    "firebase_url": "https://reactnative-tutorials.firebaseio.com",
+    "project_id": "reactnative-tutorials",
+    "storage_bucket": "reactnative-tutorials.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:750667481972:android:2df0a2df3345354d",
+        "android_client_info": {
+          "package_name": "com.fbloginwithfirebaseexample"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "750667481972-q05o71h552epnp0nss4r0eib1l6nv077.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.fbloginwithfirebaseexample",
+            "certificate_hash": "6a5461762252a402cca8cd6b0057da9bdcaa5e7b"
+          }
+        },
+        {
+          "client_id": "750667481972-t936688vlj9qhmivair7oqi3hmnq5895.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHJmZeMHtKNZkHdxcNCoaGMroYCsMVqAw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "750667481972-t936688vlj9qhmivair7oqi3hmnq5895.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
