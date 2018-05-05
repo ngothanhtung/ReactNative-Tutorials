@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList, StyleSheet } from 'react-native';
+import { View, Text, Image, FlatList, StyleSheet, ActivityIndicator } from 'react-native';
 
 const people = [
   { key: 'Devin' },
@@ -17,19 +17,20 @@ export default class FlatListExamples extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      movies: []
+      photos: [],
+      done: false,
     }
 
-    this.getMoviesFromApiAsync();
+    this.getPhotos();
   }
 
-  getMoviesFromApiAsync() {
-    return fetch('https://facebook.github.io/react-native/movies.json')
+  getPhotos() {
+    return fetch('https://jsonplaceholder.typicode.com/photos')
       .then((response) => response.json())
       .then((responseJson) => {
-        console.log(responseJson.movies);
-        this.setState({ movies: responseJson.movies });
-        return responseJson.movies;
+        this.setState({ photos: responseJson });
+        this.setState({ done: true });
+        return responseJson;
       })
       .catch((error) => {
         console.error(error);
@@ -39,8 +40,18 @@ export default class FlatListExamples extends Component {
 
   renderOneItem(item) {
     return (
-      <View style={{ height: 40, backgroundColor: 'yellow', }}>
-        <Text style={styles.item}>{item.title} ({item.releaseYear})</Text>
+      <View style={{ backgroundColor: 'white', }}>
+        <View style={{ flex: 1, flexDirection: 'row' }}>
+          <View style={{ width: 120, height: 120 }}>
+            <Image source={{ uri: 'https://placehold.it/320/771796' }} style={{ height: 120, width: 120 }} />
+          </View>
+          <View style={{ flex: 1 }} >
+            <View style={{ padding: 12 }}>
+              <Text style={styles.item}>{item.title}</Text>
+            </View>
+          </View>
+        </View>
+        <View style={{ backgroundColor: 'red', height: 1 }}></View>
       </View>
     );
   }
@@ -48,10 +59,19 @@ export default class FlatListExamples extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <FlatList
-          data={this.state.movies}
-          renderItem={({ item }) => { return this.renderOneItem(item); }}
-        />
+        {
+          this.state.done &&
+          <FlatList
+            data={this.state.photos}
+            renderItem={({ item }) => (this.renderOneItem(item))}
+            keyExtractor={(item, index) => index.toString()}
+          />
+          ||
+          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            <ActivityIndicator size="large" color="#0000ff" />
+          </View>
+
+        }
       </View>
     );
   }
@@ -61,10 +81,5 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     paddingTop: 22
-  },
-  item: {
-    padding: 10,
-    fontSize: 18,
-    height: 44,
-  },
+  }
 });
