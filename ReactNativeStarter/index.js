@@ -19,7 +19,7 @@ import StateExample from './screens/StateExample';
 import LoginScreen from './screens/LoginScreen';
 import Complex from './screens/FlexLayout/Complex';
 
-console.disableYellowBox = true;
+//console.disableYellowBox = true;
 
 // AppRegistry.registerComponent('ReactNativeStarter', () => App);
 
@@ -45,12 +45,21 @@ console.disableYellowBox = true;
 // import DatePickerIOSScreen from './screens/CoreComponents/IOS/DatePickerIOSScreen';
 // AppRegistry.registerComponent('ReactNativeStarter', () => DatePickerIOSScreen);
 
-import ModalExamples from './screens/CoreComponents/ModalExamples';
-AppRegistry.registerComponent('ReactNativeStarter', () => ModalExamples);
+// import ModalExamples from './screens/CoreComponents/ModalExamples';
+// AppRegistry.registerComponent('ReactNativeStarter', () => ModalExamples);
 
 
-import ScrollViewExamples from './screens/CoreComponents/ScrollViewExamples';
-AppRegistry.registerComponent('ReactNativeStarter', () => ScrollViewExamples);
+// import ScrollViewExamples from './screens/CoreComponents/ScrollViewExamples';
+// AppRegistry.registerComponent('ReactNativeStarter', () => ScrollViewExamples);
+
+
+
+import FlatListExamples from './screens/CoreComponents/FlatListExamples';
+AppRegistry.registerComponent('ReactNativeStarter', () => FlatListExamples);
+
+
+// import SectionListExamples from './screens/CoreComponents/SectionListExamples';
+// AppRegistry.registerComponent('ReactNativeStarter', () => SectionListExamples);
 
 
 // import PickerExamples from './screens/CoreComponents/Android/PickerExamples';
