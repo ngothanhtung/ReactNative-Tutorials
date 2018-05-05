@@ -43,7 +43,7 @@ export default class FlatListExamples extends Component {
       <View style={{ backgroundColor: 'white', }}>
         <View style={{ flex: 1, flexDirection: 'row' }}>
           <View style={{ width: 120, height: 120 }}>
-            <Image source={{ uri: 'https://placehold.it/320/771796' }} style={{ height: 120, width: 120 }} />
+            <Image source={{ uri: item.url.replace('http', 'https') }} style={{ height: 120, width: 120 }} />
           </View>
           <View style={{ flex: 1 }} >
             <View style={{ padding: 12 }}>
