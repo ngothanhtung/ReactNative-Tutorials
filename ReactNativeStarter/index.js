@@ -49,6 +49,10 @@ import ModalExamples from './screens/CoreComponents/ModalExamples';
 AppRegistry.registerComponent('ReactNativeStarter', () => ModalExamples);
 
 
+import ScrollViewExamples from './screens/CoreComponents/ScrollViewExamples';
+AppRegistry.registerComponent('ReactNativeStarter', () => ScrollViewExamples);
+
+
 // import PickerExamples from './screens/CoreComponents/Android/PickerExamples';
 // AppRegistry.registerComponent('ReactNativeStarter', () => PickerExamples);
 
