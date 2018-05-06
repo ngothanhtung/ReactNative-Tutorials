@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
 import {
-  View, Text, Button, Icon, TextInput,
-  ScrollView,
-  Animated,
+  Alert, View, Text, TextInput,
   Platform,
   Keyboard,
-  KeyboardAvoidingView,
   TouchableOpacity,
-  TouchableWithoutFeedback
+  TouchableWithoutFeedback,
 } from 'react-native';
 
 import axios from 'axios';
@@ -20,31 +17,29 @@ export default class LoginScreen1 extends Component {
     title: 'Login',
     headerTitleStyle: { alignSelf: 'center' },
     headerRight: (<View />),
-    headerBackTitle: null // iOS
-  }
+    headerBackTitle: null, // iOS
+  };
 
   constructor(props) {
     super(props);
     this.state = {
-      email: ''
-    }
+      email: '',
+    };
   }
 
   onPressNextButton = () => {
-    // AXIOS: EMAIL EXISTS?              
-    axios.get(SETTINGS.ExpressApiUrl + '/user/get/' + this.state.email)
+    // AXIOS: EMAIL EXISTS?
+    axios.get(`${SETTINGS.ExpressApiUrl}/user/get/${this.state.email}`)
       .then((response) => {
-        console.log(response.data);
         if (response.data.result.length > 0) {
           // GO TO LOGIN 2
           this.props.navigation.navigate('Login2', { email: this.state.email });
         } else {
-          alert('Email does not exists');
+          Alert.alert('Error', 'Email does not exists');
         }
       })
       .catch((error) => {
-        alert('Error: ' + error);
-        console.log(error);
+        Alert.alert(`Error: ${error}`);
       });
   }
 
@@ -60,13 +55,14 @@ export default class LoginScreen1 extends Component {
           <View style={styles.middleContainer}>
             <View style={styles.textInputContainer}>
               <TextInput
-                underlineColorAndroid={'#ffffff'}
-                style={styles.textInput} placeholder={Platform.OS == 'ios' ? 'Business email' : 'Enter business email'}
-                autoFocus={true}
-                autoCapitalize='none'
+                underlineColorAndroid="#ffffff"
+                style={styles.textInput}
+                placeholder={Platform.OS === 'ios' ? 'Business email' : 'Enter business email'}
+                autoFocus
+                autoCapitalize="none"
                 autoCorrect={false}
-                keyboardType={'email-address'}
-                onChangeText={(text) => this.setState({ email: text })}
+                keyboardType="email-address"
+                onChangeText={text => this.setState({ email: text })}
                 onSubmitEditing={this.onPressNextButton}
               />
             </View>
@@ -75,7 +71,7 @@ export default class LoginScreen1 extends Component {
             <TouchableOpacity style={styles.buttonContainer} onPress={this.onPressNextButton}>
               <View style={styles.button}>
                 <Text style={styles.buttonText}>
-                  {Platform.OS == 'ios' ? 'Next' : 'CONTINUE'}
+                  {Platform.OS === 'ios' ? 'Next' : 'CONTINUE'}
                 </Text>
               </View>
             </TouchableOpacity>
