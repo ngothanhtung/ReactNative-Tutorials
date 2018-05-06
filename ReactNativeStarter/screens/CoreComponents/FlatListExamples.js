@@ -1,17 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, Image, FlatList, StyleSheet, ActivityIndicator } from 'react-native';
 
-const people = [
-  { key: 'Devin' },
-  { key: 'Jackson' },
-  { key: 'James' },
-  { key: 'Joel' },
-  { key: 'John' },
-  { key: 'Jillian' },
-  { key: 'Jimmy' },
-  { key: 'Julie' },
-];
-
 export default class FlatListExamples extends Component {
 
   constructor(props) {
@@ -21,10 +10,10 @@ export default class FlatListExamples extends Component {
       done: false,
     }
 
-    this.getPhotos();
+    this.getPhotosAsync();
   }
 
-  getPhotos() {
+  getPhotosAsync() {
     return fetch('https://jsonplaceholder.typicode.com/photos')
       .then((response) => response.json())
       .then((responseJson) => {
@@ -38,6 +27,10 @@ export default class FlatListExamples extends Component {
   }
 
 
+  onPressItem() {
+
+  }
+
   renderOneItem(item) {
     return (
       <View style={{ backgroundColor: 'white', }}>
@@ -46,12 +39,12 @@ export default class FlatListExamples extends Component {
             <Image source={{ uri: item.url.replace('http', 'https') }} style={{ height: 120, width: 120 }} />
           </View>
           <View style={{ flex: 1 }} >
-            <View style={{ padding: 12 }}>
+            <View style={{ padding: 6 }}>
               <Text style={styles.item}>{item.title}</Text>
             </View>
           </View>
         </View>
-        <View style={{ backgroundColor: 'red', height: 1 }}></View>
+        <View style={{ backgroundColor: '#b2bec3', height: 1 }}></View>
       </View>
     );
   }
@@ -68,9 +61,8 @@ export default class FlatListExamples extends Component {
           />
           ||
           <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <ActivityIndicator size="large" color="#0000ff" />
+            <ActivityIndicator size="large" color="#2d3436" />
           </View>
-
         }
       </View>
     );
