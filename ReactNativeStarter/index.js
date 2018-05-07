@@ -52,14 +52,16 @@ import Complex from './screens/FlexLayout/Complex';
 // import ScrollViewExamples from './screens/CoreComponents/ScrollViewExamples';
 // AppRegistry.registerComponent('ReactNativeStarter', () => ScrollViewExamples);
 
-
-
+// LIST VIEW
 import FlatListExamples from './screens/CoreComponents/FlatListExamples';
 AppRegistry.registerComponent('ReactNativeStarter', () => FlatListExamples);
 
 
 // import SectionListExamples from './screens/CoreComponents/SectionListExamples';
 // AppRegistry.registerComponent('ReactNativeStarter', () => SectionListExamples);
+
+// import SectionListAdvancedExamples from './screens/CoreComponents/SectionListAdvancedExamples';
+// AppRegistry.registerComponent('ReactNativeStarter', () => SectionListAdvancedExamples);
 
 
 // import PickerExamples from './screens/CoreComponents/Android/PickerExamples';

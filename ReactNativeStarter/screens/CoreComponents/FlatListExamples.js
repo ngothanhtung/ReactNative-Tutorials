@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import { Alert, View, Text, Image, FlatList, StyleSheet, ActivityIndicator } from 'react-native';
+import { Platform, Alert, View, Text, Image, FlatList, StyleSheet, ActivityIndicator } from 'react-native';
 import axios from 'axios';
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 22,
+    paddingTop: Platform.OS === 'ios' ? 22 : null,
   },
 });
 
@@ -20,7 +20,7 @@ export default class FlatListExamples extends Component {
     this.getPhotosAsync();
   }
 
-  getPhotosAsync() {
+  getPhotosAsync = () => {
     axios.get('https://jsonplaceholder.typicode.com/photos')
       .then((response) => {
         this.setState({ photos: response.data });
@@ -31,7 +31,7 @@ export default class FlatListExamples extends Component {
       });
   }
 
-  renderOneItem(item) {
+  renderItem = ({ item }) => {
     return (
       <View style={{ backgroundColor: 'white' }}>
         <View style={{ flex: 1, flexDirection: 'row' }}>
@@ -56,7 +56,7 @@ export default class FlatListExamples extends Component {
           this.state.done ?
             <FlatList
               data={this.state.photos}
-              renderItem={({ item }) => (this.renderOneItem(item))}
+              renderItem={this.renderItem}
               keyExtractor={(item, index) => index.toString()}
             />
             :
