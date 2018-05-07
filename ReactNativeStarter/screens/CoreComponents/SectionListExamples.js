@@ -7,7 +7,7 @@ export default class SectionListExamples extends Component {
       <View style={styles.container}>
         <SectionList
           sections={[
-            { title: 'D', data: ['Devin'] },
+            { title: 'D', data: ['Devin', 'David'] },
             { title: 'J', data: ['Jackson', 'James', 'Jillian', 'Jimmy', 'Joel', 'John', 'Julie'] },
           ]}
           renderItem={({ item }) => <Text style={styles.item}>{item}</Text>}

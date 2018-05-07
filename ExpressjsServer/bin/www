@@ -22,6 +22,7 @@ app.set('port', port);
 var server = http.createServer(app);
 
 // SOCKET
+/*
 const io = require('socket.io')(server, {
   path: '/',
   serveClient: false,
@@ -58,7 +59,7 @@ io.on('connection', function (socket) {
     console.log("Socket disconnected");
   });
 });
-
+*/
 /**
  * Listen on provided port, on all network interfaces.
  */

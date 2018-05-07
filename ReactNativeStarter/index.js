@@ -19,7 +19,7 @@ import StateExample from './screens/StateExample';
 import LoginScreen from './screens/LoginScreen';
 import Complex from './screens/FlexLayout/Complex';
 
-//console.disableYellowBox = true;
+console.disableYellowBox = true;
 
 // AppRegistry.registerComponent('ReactNativeStarter', () => App);
 
@@ -53,8 +53,8 @@ import Complex from './screens/FlexLayout/Complex';
 // AppRegistry.registerComponent('ReactNativeStarter', () => ScrollViewExamples);
 
 // LIST VIEW
-import FlatListExamples from './screens/CoreComponents/FlatListExamples';
-AppRegistry.registerComponent('ReactNativeStarter', () => FlatListExamples);
+// import FlatListExamples from './screens/CoreComponents/FlatListExamples';
+// AppRegistry.registerComponent('ReactNativeStarter', () => FlatListExamples);
 
 
 // import SectionListExamples from './screens/CoreComponents/SectionListExamples';
@@ -80,3 +80,8 @@ AppRegistry.registerComponent('ReactNativeStarter', () => FlatListExamples);
 
 // CAMERA
 // AppRegistry.registerComponent('ReactNativeStarter', () => CameraRollScreen);
+
+
+import MainScreen from './screens/Gallery/MainScreen';
+AppRegistry.registerComponent('ReactNativeStarter', () => MainScreen);
+
