@@ -21,7 +21,7 @@ export default class LoginScreen2 extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: this.props.navigation.state.params.email,
+      email: this.props.navigation.getParam("email"),
       password: ''
     };
   }
@@ -55,7 +55,7 @@ export default class LoginScreen2 extends Component {
                 underlineColorAndroid="transparent"
                 style={styles.textInput} placeholder={"Business email"}
                 editable={false}
-                value={this.props.navigation.state.params.email}
+                value={this.state.email}
               />
             </View>
             <View style={{ height: 30 }}></View>

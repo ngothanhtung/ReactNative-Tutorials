@@ -12,7 +12,7 @@ export default class PhotoScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      album: this.props.navigation.state.params.album,
+      album: this.props.navigation.getParam("album", []),
     };
   }
 

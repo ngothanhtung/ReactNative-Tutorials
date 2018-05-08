@@ -75,7 +75,7 @@ console.disableYellowBox = true;
 // AppRegistry.registerComponent('ReactNativeStarter', () => RegisterScreenV3);
 
 // NAVIGATORS
-//AppRegistry.registerComponent('ReactNativeStarter', () => AppNavigator);
+// AppRegistry.registerComponent('ReactNativeStarter', () => AppNavigator);
 // AppRegistry.registerComponent('ReactNativeStarter', () => MainTabNavigator);
 
 // MODAL SCREENS
