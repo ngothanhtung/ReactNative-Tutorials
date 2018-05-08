@@ -15,7 +15,7 @@ export default class LoginScreen2 extends Component {
   static navigationOptions = {
     header: null,
     title: 'Login',
-    headerBackTitle: null
+    // headerBackTitle: null, // iOS
   }
 
   constructor(props) {
@@ -26,27 +26,14 @@ export default class LoginScreen2 extends Component {
     };
   }
 
-  onPressLoginButton = () => {
-    // CHECK: EMAIL EXISTS?              
-    /*
-    axios.post(SETTINGS.ExpressApiUrl + '/user/login', {
-      email: this.state.email,
-      password: this.state.password
-    })
-      .then((response) => {
-        console.log(response.data);
-        if (response.data.result.length > 0) {
-          // GO TO DRAWER
-          this.props.navigation.navigate('Drawer')
-        } else {
-          alert('Password may be wrong');
-        }
-      })
-      .catch((error) => {
-        alert('Error: ' + error);
-        console.log(error);
-      });
-    */
+  onPressLoginButton() {
+    if (this.state.email === 'admin@gmail.com' && this.state.password === '123456789') {
+      Alert.alert('React Native', 'Login success!');
+      this.props.navigation.navigate('Drawer');
+    }
+    else {
+      Alert.alert('Error', 'Login failed!');
+    }
   }
 
   render() {
@@ -67,12 +54,8 @@ export default class LoginScreen2 extends Component {
               <TextInput
                 underlineColorAndroid="transparent"
                 style={styles.textInput} placeholder={"Business email"}
-                autoCapitalize='none'
-                autoCorrect={false}
                 editable={false}
-                keyboardType={'email-address'}
                 value={this.props.navigation.state.params.email}
-                onSubmitEditing={() => this.passwordInput.focus()}
               />
             </View>
             <View style={{ height: 30 }}></View>
@@ -87,7 +70,7 @@ export default class LoginScreen2 extends Component {
                 autoCorrect={false}
                 keyboardType={'default'}
                 onChangeText={(text) => { this.setState({ password: text }) }}
-                onSubmitEditing={this.onPressLoginButton}
+                onSubmitEditing={() => { this.onPressLoginButton(); }}
               />
             </View>
           </View>
@@ -99,7 +82,7 @@ export default class LoginScreen2 extends Component {
             </View>
             <View style={{ height: 8 }}>
             </View>
-            <TouchableOpacity style={styles.buttonContainer} onPress={this.onPressLoginButton}>
+            <TouchableOpacity style={styles.buttonContainer} onPress={() => { this.onPressLoginButton(); }}>
               <View style={styles.button}>
                 <Text style={styles.buttonText}>Log in</Text>
               </View>

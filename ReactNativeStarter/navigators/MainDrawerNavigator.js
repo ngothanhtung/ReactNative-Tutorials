@@ -1,6 +1,6 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import { DrawerNavigator } from 'react-navigation';
+import { createDrawerNavigator } from 'react-navigation';
 import HomeScreen from './HomeScreen';
 import AboutScreen from './AboutScreen';
 import CreateAccountScreen1 from './CreateAccountScreen1';
@@ -15,7 +15,7 @@ class MainDrawerNavigator extends React.Component {
     header: null
   })
 
-  Drawer = DrawerNavigator({
+  Drawer = createDrawerNavigator({
     Tab: {
       screen: MainTabNavigator
     }
@@ -47,11 +47,7 @@ class MainDrawerNavigator extends React.Component {
               </View>
             </View>
             <View style={styles.bottomContainer}>
-
             </View>
-
-
-
           </View>
         );
       }

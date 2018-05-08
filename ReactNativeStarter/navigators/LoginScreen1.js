@@ -7,18 +7,13 @@ import {
   TouchableWithoutFeedback,
 } from 'react-native';
 
-import axios from 'axios';
-
 import styles from './styles';
-import SETTINGS from '../constants/SETTINGS';
 
 export default class LoginScreen1 extends Component {
   static navigationOptions = {
     header: null,
     title: 'Login',
-    headerTitleStyle: { alignSelf: 'center' },
-    headerRight: (<View />),
-    headerBackTitle: null, // iOS
+    // headerBackTitle: null, // iOS
   };
 
   constructor(props) {
@@ -28,24 +23,13 @@ export default class LoginScreen1 extends Component {
     };
   }
 
-  onPressNextButton = () => {
-    this.props.navigation.navigate('Login2', { email: this.state.email });
-
-    // AXIOS: EMAIL EXISTS?
-    /*
-    axios.get(`${SETTINGS.ExpressApiUrl}/user/get/${this.state.email}`)
-      .then((response) => {
-        if (response.data.result.length > 0) {
-          // GO TO LOGIN 2
-          this.props.navigation.navigate('Login2', { email: this.state.email });
-        } else {
-          Alert.alert('Error', 'Email does not exists');
-        }
-      })
-      .catch((error) => {
-        Alert.alert(`Error: ${error}`);
-      });
-    */
+  onPressNextButton() {
+    if (this.state.email === 'admin@gmail.com') {
+      this.props.navigation.navigate('Login2', { email: this.state.email });
+    }
+    else {
+      Alert.alert('Error', 'Your email is not exists!');
+    }
   }
 
   render() {
@@ -67,13 +51,13 @@ export default class LoginScreen1 extends Component {
                 autoCapitalize="none"
                 autoCorrect={false}
                 keyboardType="email-address"
-                onChangeText={text => this.setState({ email: text })}
-                onSubmitEditing={this.onPressNextButton}
+                onChangeText={(text) => this.setState({ email: text })}
+                onSubmitEditing={() => { this.onPressNextButton(); }}
               />
             </View>
           </View>
           <View style={styles.bottomContainer}>
-            <TouchableOpacity style={styles.buttonContainer} onPress={this.onPressNextButton}>
+            <TouchableOpacity style={styles.buttonContainer} onPress={() => { this.onPressNextButton(); }}>
               <View style={styles.button}>
                 <Text style={styles.buttonText}>
                   {Platform.OS === 'ios' ? 'Next' : 'CONTINUE'}
