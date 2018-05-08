@@ -75,7 +75,7 @@ console.disableYellowBox = true;
 // AppRegistry.registerComponent('ReactNativeStarter', () => RegisterScreenV3);
 
 // NAVIGATORS
-// AppRegistry.registerComponent('ReactNativeStarter', () => AppNavigator);
+AppRegistry.registerComponent('ReactNativeStarter', () => AppNavigator);
 // AppRegistry.registerComponent('ReactNativeStarter', () => MainTabNavigator);
 
 // MODAL SCREENS
@@ -88,6 +88,6 @@ console.disableYellowBox = true;
 // import MainScreen from './screens/Gallery/MainScreen';
 // AppRegistry.registerComponent('ReactNativeStarter', () => MainScreen);
 
-import SimpleGallery from './screens/SimpleGallery';
-AppRegistry.registerComponent('ReactNativeStarter', () => SimpleGallery);
+// import SimpleGallery from './screens/SimpleGallery';
+// AppRegistry.registerComponent('ReactNativeStarter', () => SimpleGallery);
 

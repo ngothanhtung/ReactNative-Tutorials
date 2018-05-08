@@ -8,15 +8,12 @@ import {
   TouchableOpacity,
   TouchableWithoutFeedback
 } from 'react-native';
+import { DrawerActions } from 'react-navigation';
+
 import styles from './styles';
 
 
 export default class MoreScreen1 extends Component {
-
-  static navigationOptions = () => ({
-    header: null
-  })
-
   render() {
     return (
       <View style={styles.container}>
@@ -24,6 +21,9 @@ export default class MoreScreen1 extends Component {
 
         </View>
         <View style={styles.middleContainer}>
+          <Button title="open" onPress={() => {
+            this.props.navigation.openDrawer();
+          }} />
           <Text style={styles.header}>
             More Screen 1
             </Text>

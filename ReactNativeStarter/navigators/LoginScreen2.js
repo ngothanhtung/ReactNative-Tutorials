@@ -29,7 +29,7 @@ export default class LoginScreen2 extends Component {
   onPressLoginButton() {
     if (this.state.email === 'admin@gmail.com' && this.state.password === '123456789') {
       Alert.alert('React Native', 'Login success!');
-      this.props.navigation.navigate('Drawer');
+      this.props.navigation.navigate('Tab');
     }
     else {
       Alert.alert('Error', 'Login failed!');
