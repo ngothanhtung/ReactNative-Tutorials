@@ -21,7 +21,7 @@ import StateExample from './screens/StateExample';
 import LoginScreen from './screens/LoginScreen';
 import Complex from './screens/FlexLayout/Complex';
 
-// console.disableYellowBox = true;
+console.disableYellowBox = true;
 
 // AppRegistry.registerComponent('ReactNativeStarter', () => App);
 
@@ -75,7 +75,7 @@ import Complex from './screens/FlexLayout/Complex';
 // AppRegistry.registerComponent('ReactNativeStarter', () => RegisterScreenV3);
 
 // NAVIGATORS
-AppRegistry.registerComponent('ReactNativeStarter', () => AppNavigator);
+//AppRegistry.registerComponent('ReactNativeStarter', () => AppNavigator);
 // AppRegistry.registerComponent('ReactNativeStarter', () => MainTabNavigator);
 
 // MODAL SCREENS
@@ -88,6 +88,6 @@ AppRegistry.registerComponent('ReactNativeStarter', () => AppNavigator);
 // import MainScreen from './screens/Gallery/MainScreen';
 // AppRegistry.registerComponent('ReactNativeStarter', () => MainScreen);
 
-// import SimpleGallery from './screens/SimpleGallery';
-// AppRegistry.registerComponent('ReactNativeStarter', () => SimpleGallery);
+import SimpleGallery from './screens/SimpleGallery';
+AppRegistry.registerComponent('ReactNativeStarter', () => SimpleGallery);
 

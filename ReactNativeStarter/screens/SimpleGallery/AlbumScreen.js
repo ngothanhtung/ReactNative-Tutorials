@@ -14,6 +14,7 @@ const styles = StyleSheet.create({
 export default class AlbumScreen extends Component {
   static navigationOptions = {
     title: 'Albums',
+    // header: null,
     headerBackTitle: null, // iOS
   };
 
