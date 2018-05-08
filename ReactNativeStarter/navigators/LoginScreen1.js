@@ -14,6 +14,7 @@ import SETTINGS from '../constants/SETTINGS';
 
 export default class LoginScreen1 extends Component {
   static navigationOptions = {
+    header: null,
     title: 'Login',
     headerTitleStyle: { alignSelf: 'center' },
     headerRight: (<View />),
@@ -28,7 +29,10 @@ export default class LoginScreen1 extends Component {
   }
 
   onPressNextButton = () => {
+    this.props.navigation.navigate('Login2', { email: this.state.email });
+
     // AXIOS: EMAIL EXISTS?
+    /*
     axios.get(`${SETTINGS.ExpressApiUrl}/user/get/${this.state.email}`)
       .then((response) => {
         if (response.data.result.length > 0) {
@@ -41,6 +45,7 @@ export default class LoginScreen1 extends Component {
       .catch((error) => {
         Alert.alert(`Error: ${error}`);
       });
+    */
   }
 
   render() {

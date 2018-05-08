@@ -13,6 +13,7 @@ import styles from './styles';
 
 export default class LoginScreen2 extends Component {
   static navigationOptions = {
+    header: null,
     title: 'Login',
     headerBackTitle: null
   }
@@ -27,6 +28,7 @@ export default class LoginScreen2 extends Component {
 
   onPressLoginButton = () => {
     // CHECK: EMAIL EXISTS?              
+    /*
     axios.post(SETTINGS.ExpressApiUrl + '/user/login', {
       email: this.state.email,
       password: this.state.password
@@ -44,6 +46,7 @@ export default class LoginScreen2 extends Component {
         alert('Error: ' + error);
         console.log(error);
       });
+    */
   }
 
   render() {
@@ -62,6 +65,7 @@ export default class LoginScreen2 extends Component {
           <View style={styles.middleContainer}>
             <View style={styles.textInputContainer}>
               <TextInput
+                underlineColorAndroid="transparent"
                 style={styles.textInput} placeholder={"Business email"}
                 autoCapitalize='none'
                 autoCorrect={false}
@@ -75,6 +79,7 @@ export default class LoginScreen2 extends Component {
             <View style={styles.textInputContainer}>
               <TextInput
                 ref={component => this.passwordInput = component}
+                underlineColorAndroid="transparent"
                 style={styles.textInput} placeholder={"Password"}
                 autoFocus={true}
                 secureTextEntry={true}

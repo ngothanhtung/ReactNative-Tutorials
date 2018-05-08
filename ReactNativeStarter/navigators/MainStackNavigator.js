@@ -12,30 +12,30 @@ import MainDrawerNavigator from './MainDrawerNavigator';
 
 class MainStackNavigator extends React.Component {
   Stack = StackNavigator({
-    Home: {
-      screen: HomeScreen
-    },
-    CreateAccount1: {
-      screen: CreateAccountScreen1
-    },
-    CreateAccount2: {
-      screen: CreateAccountScreen2
-    },
+    // Home: {
+    //   screen: HomeScreen
+    // },
+    // CreateAccount1: {
+    //   screen: CreateAccountScreen1
+    // },
+    // CreateAccount2: {
+    //   screen: CreateAccountScreen2
+    // },
     Login1: {
       screen: LoginScreen1
     },
     Login2: {
       screen: LoginScreen2
     },
-    About: {
-      screen: AboutScreen
-    },
+    // About: {
+    //   screen: AboutScreen
+    // },
     // Tab: {
     //   screen: MainTabNavigator
     // },
-    Drawer: {
-      screen: MainDrawerNavigator
-    }
+    // Drawer: {
+    //   screen: MainDrawerNavigator
+    // }
   });
 
   constructor(props) {
@@ -44,7 +44,7 @@ class MainStackNavigator extends React.Component {
 
   render() {
     return (
-      <this.Stack ref="mainStackRef"/>
+      <this.Stack ref="mainStackRef" />
     );
   }
 }
