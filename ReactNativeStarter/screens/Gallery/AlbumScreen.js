@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import { Platform, Alert, View, Text, Image, FlatList, StyleSheet, TouchableOpacity, ActivityIndicator } from 'react-native';
+import { Dimensions, Platform, Alert, View, Text, Image, FlatList, StyleSheet, TouchableOpacity, ActivityIndicator } from 'react-native';
 import axios from 'axios';
+
+const { width, height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: Platform.OS === 'ios' ? 0 : null,
   },
 });
 
@@ -46,21 +47,24 @@ export default class AlbumScreen extends Component {
     return (
       <View style={{ backgroundColor: 'white' }}>
         <View style={{ flex: 1, flexDirection: 'row' }}>
-          <View style={{ width: 120, height: 120 }}>
-            <TouchableOpacity onPress={() => {
-              this.props.navigation.navigate('PhotoScreen', { albumId: item._id });
-            }}>
-              <Image source={{ uri: 'https://placehold.it/600/92c952' }} style={{ height: 120, width: 120 }} />
-            </TouchableOpacity>
+          <View style={{ padding: 12 }}>
+            <View style={{ width: 120, height: 120, backgroundColor: 'green' }}>
+              <TouchableOpacity onPress={() => {
+                this.props.navigation.navigate('PhotoScreen', { albumId: item._id });
+              }}>
+                <Image resizeMode="cover" source={{ uri: item.coverUrl }} style={{ height: '100%', width: '100%' }} />
+              </TouchableOpacity>
+            </View>
           </View>
+
           <View style={{ flex: 1 }} >
-            <View style={{ padding: 6 }}>
-              <Text style={styles.item}>{item.title}</Text>
+            <View style={{ padding: 12 }}>
+              <Text style={{ fontWeight: '700' }}>{item.title}</Text>
             </View>
           </View>
         </View>
-        <View style={{ backgroundColor: '#b2bec3', height: 1 }} />
-      </View>
+        <View style={{ backgroundColor: '#ffffff', height: 24 }} />
+      </View >
     );
   }
 

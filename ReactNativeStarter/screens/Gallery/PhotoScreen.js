@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, FlatList, TouchableOpacity, Image, ActivityIndicator } from 'react-native';
+import { Dimensions, View, Text, StyleSheet, FlatList, TouchableOpacity, Image, ActivityIndicator } from 'react-native';
 import axios from 'axios';
+const { width, height } = Dimensions.get('window');
 
 export default class PhotoScreen extends Component {
   static navigationOptions = {
@@ -11,7 +12,7 @@ export default class PhotoScreen extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      albums: [],
+      photos: [],
       done: false,
       albumId: this.props.navigation.state.params.albumId,
     };
@@ -20,9 +21,9 @@ export default class PhotoScreen extends Component {
   }
 
   getPhotosAsync = () => {
-    axios.get('https://jsonplaceholder.typicode.com/photos')
+    axios.get('http://localhost:9000/gallery/photos/' + this.state.albumId)
       .then((response) => {
-        this.setState({ photos: response.data });
+        this.setState({ photos: response.data.result });
         this.setState({ done: true });
       })
       .catch((error) => {
@@ -34,11 +35,11 @@ export default class PhotoScreen extends Component {
     return (
       <View style={{ backgroundColor: 'white' }}>
         <View style={{ flex: 1, flexDirection: 'row' }}>
-          <View style={{ width: 120, height: 120 }}>
+          <View style={{ width: '100%', height: height / 2 }}>
             <TouchableOpacity onPress={() => {
               this.props.navigation.navigate('PhotoScreen', { albumId: item.id });
             }}>
-              <Image source={{ uri: item.url.replace('http', 'https') }} style={{ height: 120, width: 120 }} />
+              <Image resizeMode="cover" source={{ uri: item.imageUrl }} style={{ height: '100%', width: '100%' }} />
             </TouchableOpacity>
           </View>
           <View style={{ flex: 1 }} >
@@ -47,7 +48,7 @@ export default class PhotoScreen extends Component {
             </View>
           </View>
         </View>
-        <View style={{ backgroundColor: '#b2bec3', height: 1 }} />
+        <View style={{ backgroundColor: '#ffffff', height: 24 }} />
       </View>
     );
   }
@@ -79,5 +80,6 @@ export default class PhotoScreen extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    backgroundColor: '#ffffff',
   }
 });
