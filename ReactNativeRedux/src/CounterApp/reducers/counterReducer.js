@@ -1,4 +1,4 @@
-import * as ActionTypes from '../actions/types';
+import * as ActionTypes from '../Actions/types';
 
 const counterReducer = (state = { count: 0 }, action) => {
 	switch (action.type) {
