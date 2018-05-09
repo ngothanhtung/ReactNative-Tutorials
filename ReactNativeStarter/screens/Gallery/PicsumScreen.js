@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { Dimensions, View, Text, StyleSheet, FlatList, TouchableOpacity, TouchableWithoutFeedback, Image, ActivityIndicator, Animated } from 'react-native';
+import { Dimensions, View, Text, StyleSheet, FlatList, TouchableOpacity, TouchableWithoutFeedback, Image, ActivityIndicator } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import axios from 'axios';
-import Swiper from 'react-native-swiper';
 
 const { width, height } = Dimensions.get('window');
 
