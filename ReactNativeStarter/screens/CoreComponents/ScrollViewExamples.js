@@ -6,7 +6,7 @@ export default class ScrollViewExamples extends Component {
     return (
       <ScrollView style={styles.container}>
         <View style={styles.boxLarge} />
-        <ScrollView horizontal>
+        <ScrollView horizontal pagingEnabled>
           <View style={styles.boxSmall} />
           <View style={styles.boxSmall} />
           <View style={styles.boxSmall} />
