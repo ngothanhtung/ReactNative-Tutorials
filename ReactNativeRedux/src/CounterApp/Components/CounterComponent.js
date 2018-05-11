@@ -9,7 +9,10 @@ import {
 export default class CounterComponent extends Component {
 
 	constructor(props) {
-		super(props)
+		super(props);
+		this.state = {
+			number: 5
+		}
 	}
 
 	render() {
@@ -17,14 +20,14 @@ export default class CounterComponent extends Component {
 			<View style={styles.container}>
 				<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', flexDirection: 'column', }}>
 					<Button
-						onPress={this.props.increaseCount}
+						onPress={() => { this.props.increaseCount(this.state.number) }}
 						title="Increase Count"
 					/>
 
 					<Text>{this.props.count}</Text>
 
 					<Button
-						onPress={this.props.decreaseCount}
+						onPress={() => { this.props.decreaseCount(this.state.number) }}
 						title="Decrease Count"
 					/>
 				</View>
