@@ -1,6 +1,6 @@
 import axios from 'axios';
-export const client = axios.create({
-  baseURL: 'http://192.168.72.23:9000/gallery',
+const client = axios.create({
+  baseURL: 'http://localhost:9000/gallery',
   headers: {
     'Content-Type': 'application/json'
   }

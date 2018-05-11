@@ -23,4 +23,10 @@ router.get('/photos/:albumId', function (req, res) {
   })
 });
 
+router.get('/photos', function (req, res) {
+  db.findDocuments({}, "photos", function (result) {
+    res.json(result);
+  })
+});
+
 module.exports = router;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { View } from 'react-native';
 import { createStore, compose, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
@@ -13,20 +14,20 @@ import rootReducer from './Reducers';
 
 // MIDDLEWARE
 const middewares = [
-	promise(),
-	thunkMiddleware
+	thunkMiddleware,
+	//promise(),
 ];
-
-const store = createStore(
-	rootReducer,
-	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-);
-
 
 // const store = createStore(
 // 	rootReducer,
-// 	composeWithDevTools(applyMiddleware(...middewares))
+// 	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 // );
+
+
+const store = createStore(
+	rootReducer,
+	composeWithDevTools(applyMiddleware(...middewares))
+);
 
 export default class App extends Component {
 	constructor(props) {
@@ -36,7 +37,10 @@ export default class App extends Component {
 	render() {
 		return (
 			<Provider store={store}>
-				<CounterApp />
+				<View style={{ flex: 1 }}>
+					<CounterApp />
+					<GalleryApp />
+				</View>
 			</Provider>
 		);
 	}
