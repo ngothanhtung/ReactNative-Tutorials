@@ -1,5 +1,6 @@
 import { connect } from 'react-redux';
 import { getAlbums, addAlbum } from '../Actions/albumAction';
+import { increaseCount } from '../Actions/counterAction';
 import AlbumComponent from '../Components/AlbumComponent';
 
 const mapStateToProps = (state) => ({
@@ -7,5 +8,5 @@ const mapStateToProps = (state) => ({
     loading: state.albumReducer.loading,
 });
 
-export default connect(mapStateToProps, { getAlbums, addAlbum })(AlbumComponent);
+export default connect(mapStateToProps, { getAlbums, addAlbum, increaseCount })(AlbumComponent);
 

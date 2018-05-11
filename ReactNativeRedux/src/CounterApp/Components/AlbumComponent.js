@@ -24,7 +24,10 @@ export default class AlbumComponent extends Component {
 					}
 					<View>
 						<Button
-							onPress={() => { this.props.getAlbums() }}
+							onPress={() => {
+								this.props.increaseCount(15);
+								this.props.getAlbums();
+							}}
 							title="Get albums"
 						/>
 

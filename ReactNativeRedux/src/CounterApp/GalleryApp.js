@@ -5,7 +5,8 @@ import PhotoContainer from './Containers/PhotoContainer';
 
 const GalleryApp = () => (
   <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-    <PhotoContainer />
+    {/* <PhotoContainer /> */}
+    <AlbumContainer />
   </View>
 )
 

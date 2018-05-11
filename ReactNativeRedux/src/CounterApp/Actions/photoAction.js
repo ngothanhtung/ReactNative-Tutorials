@@ -8,7 +8,7 @@ const client = axios.create({
 
 import * as ActionTypes from './types';
 
-export const getPhotos = (data) => {
+export const getPhotosSuccess = (data) => {
   return ({ type: ActionTypes.GET_PHOTOS_SUCCESS, payload: { data } });
 }
 
@@ -26,7 +26,7 @@ export const getPhotosAsync = () => {
 
     client.get('/photos')
       .then((response) => {
-        dispatch(getPhotos(response.data));
+        dispatch(getPhotosSuccess(response.data));
       })
       .catch((error) => {
         console.log(error);

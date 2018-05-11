@@ -15,7 +15,7 @@ import rootReducer from './Reducers';
 // MIDDLEWARE
 const middewares = [
 	thunkMiddleware,
-	//promise(),
+	promise(),
 ];
 
 // const store = createStore(
