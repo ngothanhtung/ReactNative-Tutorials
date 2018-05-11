@@ -3,7 +3,8 @@ import {
 	StyleSheet,
 	Text,
 	View,
-	Button
+	Button,
+	ActivityIndicator
 } from 'react-native';
 
 export default class AlbumComponent extends Component {
@@ -18,19 +19,24 @@ export default class AlbumComponent extends Component {
 		return (
 			<View style={styles.container}>
 				<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', flexDirection: 'column', }}>
-					<Button
-						onPress={() => { this.props.getAlbums() }}
-						title="Get albums"
-					/>
+					{
+						this.props.loading && <ActivityIndicator />
+					}
+					<View>
+						<Button
+							onPress={() => { this.props.getAlbums() }}
+							title="Get albums"
+						/>
 
-					<Button
-						onPress={() => {
-							this.props.addAlbum({
-								title: 'New Album', coverUrl: 'https://picsum.photos/300/300/?random'
-							})
-						}}
-						title="Add album"
-					/>
+						<Button
+							onPress={() => {
+								this.props.addAlbum({
+									title: 'New Album', coverUrl: 'https://picsum.photos/300/300/?random'
+								})
+							}}
+							title="Add album"
+						/>
+					</View>
 				</View>
 			</View>
 		);

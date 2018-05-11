@@ -17,16 +17,16 @@ const middewares = [
 	thunkMiddleware
 ];
 
-// const store = createStore(
-// 	rootReducer,
-// 	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-// );
-
-
 const store = createStore(
 	rootReducer,
-	composeWithDevTools(applyMiddleware(...middewares))
+	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 );
+
+
+// const store = createStore(
+// 	rootReducer,
+// 	composeWithDevTools(applyMiddleware(...middewares))
+// );
 
 export default class App extends Component {
 	constructor(props) {
@@ -36,7 +36,7 @@ export default class App extends Component {
 	render() {
 		return (
 			<Provider store={store}>
-				<GalleryApp />
+				<CounterApp />
 			</Provider>
 		);
 	}
