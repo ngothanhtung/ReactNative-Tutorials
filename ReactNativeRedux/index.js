@@ -1,4 +1,4 @@
 import { AppRegistry } from 'react-native';
-import App from './src/CounterApp/App';
+import ReduxApp from './src/ReduxApp';
 
-AppRegistry.registerComponent('ReactNativeRedux', () => App);
+AppRegistry.registerComponent('ReactNativeRedux', () => ReduxApp);

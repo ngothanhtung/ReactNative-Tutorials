@@ -7,6 +7,7 @@ import {
 	ActivityIndicator
 } from 'react-native';
 
+
 export default class AlbumComponent extends Component {
 	constructor(props) {
 		super(props);
@@ -25,7 +26,8 @@ export default class AlbumComponent extends Component {
 					<View>
 						<Button
 							onPress={() => {
-								this.props.increaseCount(15);
+								//this.props.increaseCount(15);
+								this.props.dispatch({ type: 'INCREASE_COUNT', number: 9 });
 								this.props.getAlbums();
 							}}
 							title="Get albums"

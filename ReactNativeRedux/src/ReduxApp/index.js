@@ -29,7 +29,7 @@ const store = createStore(
 	composeWithDevTools(applyMiddleware(...middewares))
 );
 
-export default class App extends Component {
+export default class ReduxApp extends Component {
 	constructor(props) {
 		super(props);
 	}
