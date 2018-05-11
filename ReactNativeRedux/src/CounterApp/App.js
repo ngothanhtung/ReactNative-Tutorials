@@ -1,14 +1,31 @@
 import React, { Component } from 'react';
-import { createStore } from 'redux';
+import { createStore, compose, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
+import thunkMiddleware from 'redux-thunk';
+import promise from 'redux-promise-middleware';
+
+import { composeWithDevTools } from 'redux-devtools-extension';
 
 import CounterApp from './CounterApp';
+import GalleryApp from './GalleryApp';
 
 import rootReducer from './Reducers';
 
+// MIDDLEWARE
+const middewares = [
+	promise(),
+	thunkMiddleware
+];
+
+// const store = createStore(
+// 	rootReducer,
+// 	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+// );
+
+
 const store = createStore(
 	rootReducer,
-	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+	composeWithDevTools(applyMiddleware(...middewares))
 );
 
 export default class App extends Component {
@@ -19,7 +36,7 @@ export default class App extends Component {
 	render() {
 		return (
 			<Provider store={store}>
-				<CounterApp />
+				<GalleryApp />
 			</Provider>
 		);
 	}

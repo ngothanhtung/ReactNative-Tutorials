@@ -1,11 +1,11 @@
 import React from 'react';
 import { View } from 'react-native';
-import CounterContainer from './Containers/CounterContainer';
+import AlbumContainer from './Containers/AlbumContainer';
 
-const CounterApp = () => (
+const GalleryApp = () => (
   <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-    <CounterContainer />
+    <AlbumContainer />
   </View>
 )
 
-export default CounterApp;
+export default GalleryApp;

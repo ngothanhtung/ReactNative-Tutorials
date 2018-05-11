@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 
-import { increaseCount, decreaseCount } from '../Actions';
+import { increaseCount, decreaseCount } from '../Actions/counterAction';
 import CounterComponent from '../Components/CounterComponent';
 
 const mapStateToProps = (state) => ({
@@ -13,4 +13,5 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CounterComponent);
+
 

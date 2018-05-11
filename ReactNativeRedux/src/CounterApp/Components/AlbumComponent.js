@@ -6,11 +6,11 @@ import {
 	Button
 } from 'react-native';
 
-export default class CounterComponent extends Component {
+export default class AlbumComponent extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			number: 5
+
 		}
 	}
 
@@ -19,15 +19,17 @@ export default class CounterComponent extends Component {
 			<View style={styles.container}>
 				<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', flexDirection: 'column', }}>
 					<Button
-						onPress={() => { this.props.increaseCount(this.state.number) }}
-						title="Increase Count"
+						onPress={() => { this.props.getAlbums() }}
+						title="Get albums"
 					/>
-					<View style={{ padding: 24 }}>
-						<Text style={{ fontSize: 18, fontWeight: '700' }}>{this.props.count}</Text>
-					</View>
+
 					<Button
-						onPress={() => { this.props.decreaseCount(this.state.number) }}
-						title="Decrease Count"
+						onPress={() => {
+							this.props.addAlbum({
+								title: 'New Album', coverUrl: 'https://picsum.photos/300/300/?random'
+							})
+						}}
+						title="Add album"
 					/>
 				</View>
 			</View>
