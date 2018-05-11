@@ -8,8 +8,8 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    increaseCount: () => dispatch(increaseCount()),
-    decreaseCount: () => dispatch(decreaseCount()),
+    increaseCount: (number) => dispatch(increaseCount(number)),
+    decreaseCount: (number) => dispatch(decreaseCount(number)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(CounterComponent);
