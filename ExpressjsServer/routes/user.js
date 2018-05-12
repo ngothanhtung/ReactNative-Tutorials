@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var db = require('../helpers/MongoDbHelper').default;
+var db = require('../helpers/MongoDbHelper');
 
 router.get('/get/:email', function (req, res) {
   var email = req.params.email;

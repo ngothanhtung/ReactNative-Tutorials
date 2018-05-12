@@ -12,3 +12,11 @@ export const GET_PHOTOS_PENDING = 'GET_PHOTOS_PENDING';
 // ALBUM
 export const GET_ALBUMS = 'GET_ALBUMS';
 export const ADD_ALBUM = 'ADD_ALBUM';
+
+// AUTH
+export const LOGIN = 'LOGIN';
+export const REGISTER = 'REGISTER';
+
+// THEME
+
+export const UPDATE_THEME = 'UPDATE_THEME';

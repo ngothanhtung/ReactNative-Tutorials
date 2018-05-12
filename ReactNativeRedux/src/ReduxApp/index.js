@@ -9,6 +9,7 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import CounterApp from './CounterApp';
 import GalleryApp from './GalleryApp';
+import AuthApp from './AuthApp';
 
 import rootReducer from './Reducers';
 
@@ -58,6 +59,7 @@ export default class ReduxApp extends Component {
 				<View style={{ flex: 1 }}>
 					<CounterApp />
 					<GalleryApp />
+					<AuthApp />
 				</View>
 			</Provider>
 		);
