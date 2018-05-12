@@ -6,6 +6,8 @@ import { createBottomTabNavigator } from 'react-navigation';
 import TabItemScreen2 from './TabItemScreen2';
 import TabItemScreen1 from './TabItemScreen1';
 import DrawerNavigator from './DrawerNavigator';
+import MoreScreen from './MoreScreen';
+import ProfileStackNavigator from './ProfileStackNavigator';
 
 export default createBottomTabNavigator({
   TabItem1: {
@@ -25,7 +27,7 @@ export default createBottomTabNavigator({
     },
   },
   TabItem3: {
-    screen: DrawerNavigator,
+    screen: ProfileStackNavigator,
     navigationOptions: {
       title: 'Tab 3',
       tabBarIcon: ({ tintColor, focused }) => (

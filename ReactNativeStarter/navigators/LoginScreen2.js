@@ -15,14 +15,14 @@ export default class LoginScreen2 extends Component {
   static navigationOptions = {
     header: null,
     title: 'Login',
-    // headerBackTitle: null, // iOS
+    headerBackTitle: null, // iOS
   }
 
   constructor(props) {
     super(props);
     this.state = {
       email: this.props.navigation.getParam("email"),
-      password: ''
+      password: '123456789'
     };
   }
 
@@ -69,6 +69,7 @@ export default class LoginScreen2 extends Component {
                 autoCapitalize='none'
                 autoCorrect={false}
                 keyboardType={'default'}
+                value={this.state.password}
                 onChangeText={(text) => { this.setState({ password: text }) }}
                 onSubmitEditing={() => { this.onPressLoginButton(); }}
               />

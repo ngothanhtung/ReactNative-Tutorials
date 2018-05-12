@@ -24,6 +24,9 @@ export default class MoreScreen1 extends Component {
           <Button title="open" onPress={() => {
             this.props.navigation.openDrawer();
           }} />
+          <Button title="close" onPress={() => {
+            this.props.navigation.closeDrawer();
+          }} />
           <Text style={styles.header}>
             More Screen 1
             </Text>

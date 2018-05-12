@@ -13,13 +13,13 @@ export default class LoginScreen1 extends Component {
   static navigationOptions = {
     header: null,
     title: 'Login',
-    // headerBackTitle: null, // iOS
+    headerBackTitle: null, // iOS
   };
 
   constructor(props) {
     super(props);
     this.state = {
-      email: '',
+      email: 'admin@gmail.com',
     };
   }
 
@@ -51,6 +51,7 @@ export default class LoginScreen1 extends Component {
                 autoCapitalize="none"
                 autoCorrect={false}
                 keyboardType="email-address"
+                value={this.state.email}
                 onChangeText={(text) => this.setState({ email: text })}
                 onSubmitEditing={() => { this.onPressNextButton(); }}
               />
