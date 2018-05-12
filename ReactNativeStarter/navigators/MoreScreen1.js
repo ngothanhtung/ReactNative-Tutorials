@@ -21,12 +21,10 @@ export default class MoreScreen1 extends Component {
 
         </View>
         <View style={styles.middleContainer}>
-          <Button title="open" onPress={() => {
-            this.props.navigation.openDrawer();
+          <Button title="Go to MoreScreen 2" onPress={() => {
+            this.props.navigation.navigate("MoreScreen2");
           }} />
-          <Button title="close" onPress={() => {
-            this.props.navigation.closeDrawer();
-          }} />
+
           <Text style={styles.header}>
             More Screen 1
             </Text>

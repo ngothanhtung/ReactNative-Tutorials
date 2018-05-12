@@ -14,6 +14,7 @@ import CameraRollScreen from './screens/CameraRollScreen';
 import PropsAndState from './screens/PropsAndState';
 import MainStackNavigator from './navigators/MainStackNavigator';
 import MainTabNavigator from './navigators/MainTabNavigator';
+import TabNavigator from './navigators/TabNavigator';
 import AppNavigator from './navigators/AppNavigator';
 
 import ComponentExample from './screens/ComponentExample';
@@ -76,6 +77,7 @@ console.disableYellowBox = true;
 
 // NAVIGATORS
 AppRegistry.registerComponent('ReactNativeStarter', () => AppNavigator);
+//AppRegistry.registerComponent('ReactNativeStarter', () => TabNavigator);
 // AppRegistry.registerComponent('ReactNativeStarter', () => MainTabNavigator);
 
 // MODAL SCREENS

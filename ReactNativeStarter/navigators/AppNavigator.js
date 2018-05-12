@@ -12,6 +12,6 @@ export default class App extends Component {
 
 const AppNavigator = createSwitchNavigator({
   Stack: StackNavigator,
-  Drawer: DrawerNavigator,
   Tab: TabNavigator,
+  Drawer: DrawerNavigator,
 });
