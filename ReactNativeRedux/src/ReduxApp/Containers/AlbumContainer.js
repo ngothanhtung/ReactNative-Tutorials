@@ -8,11 +8,11 @@ const mapStateToProps = (state) => ({
     loading: state.albumReducer.loading,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-    getAlbums, addAlbum,
-    increaseCount: (number) => dispatch({ type: 'INCREASE_COUNT', number: number })
-});
-
+const mapDispatchToProps = {
+    getAlbums,
+    addAlbum,
+    increaseCount
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(AlbumComponent);
 
