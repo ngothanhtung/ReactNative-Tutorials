@@ -18,5 +18,7 @@ export const LOGIN = 'LOGIN';
 export const REGISTER = 'REGISTER';
 
 // THEME
-
 export const UPDATE_THEME = 'UPDATE_THEME';
+
+// SHOPPING CART
+export const ADD_TO_CART = 'ADD_TO_CART';

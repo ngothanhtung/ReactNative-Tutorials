@@ -12,6 +12,7 @@ import GalleryApp from './GalleryApp';
 import AuthApp from './AuthApp';
 
 import rootReducer from './Reducers';
+import ShoppingCartApp from './ShoppingCartApp';
 
 // LOGGER MIDDLEWARE
 logger = ({ getState }) => {
@@ -34,7 +35,8 @@ logger = ({ getState }) => {
 const middewares = [
 	thunkMiddleware,
 	promise(),
-	logger
+	// Custom Middleware
+	// logger
 ];
 
 // const store = createStore(
@@ -60,6 +62,7 @@ export default class ReduxApp extends Component {
 					<CounterApp />
 					<GalleryApp />
 					<AuthApp />
+					<ShoppingCartApp />
 				</View>
 			</Provider>
 		);
