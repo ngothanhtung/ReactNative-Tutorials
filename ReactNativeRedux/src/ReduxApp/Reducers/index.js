@@ -7,11 +7,11 @@ import themeReducer from './themeReducer';
 import shoppingCartReducer from './shoppingCartReducer';
 
 const rootReducer = combineReducers({
-	counterReducer: counterReducer,
-	albumReducer,
-	photoReducer,
-	authReducer,
-	themeReducer,
+	// counterReducer: counterReducer,
+	// albumReducer,
+	// photoReducer,
+	// authReducer,
+	// themeReducer,
 	shoppingCartReducer,
 });
 

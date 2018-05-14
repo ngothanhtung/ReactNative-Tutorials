@@ -10,7 +10,7 @@ const mapStateToProps = (state) => ({
 
 
 const mapDispatchToProps = {
-    addToCart,
+    // removeFromCart,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ShoppingCartComponent);

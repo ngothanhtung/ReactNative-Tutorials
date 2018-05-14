@@ -58,10 +58,10 @@ export default class ReduxApp extends Component {
 	render() {
 		return (
 			<Provider store={store}>
-				<View style={{ flex: 1 }}>
-					<CounterApp />
+				<View style={{ flex: 1, paddingTop: 24 }}>
+					{/* <CounterApp />
 					<GalleryApp />
-					<AuthApp />
+					<AuthApp /> */}
 					<ShoppingCartApp />
 				</View>
 			</Provider>

@@ -8,12 +8,12 @@ const defaultState = {
 const shoppingCartReducer = (state = defaultState, action) => {
 	switch (action.type) {
 		case ActionTypes.ADD_TO_CART:
-			let total = state.addedProducts.reduce((total, item) => (total + item.product.price * item.quantity), 0);
 			let addedProducts = [...state.addedProducts, { product: action.product, quantity: action.quantity }];
+			let total = addedProducts.reduce((total, item) => (total + item.product.price * item.quantity), 0);
 			return {
 				...state,
 				addedProducts: addedProducts,
-				total: state.addedProducts.reduce((total, item) => (total + item.product.price * item.quantity), 0)
+				total: total
 			};
 		default:
 			return state;
