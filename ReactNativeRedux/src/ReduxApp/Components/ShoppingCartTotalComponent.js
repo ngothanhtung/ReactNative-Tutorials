@@ -1,14 +1,29 @@
 import React, { Component } from 'react';
-import { View, Text, } from 'react-native';
+import { View, Text, TouchableOpacity } from 'react-native';
 
 import { connect } from 'react-redux';
 
+
+
 export default class ShoppingCartTotalComponent extends Component {
+  formatCurrency(number) {
+    var options = { style: 'currency', currency: 'USD', minimumFractionDigits: 0 };
+    var numberFormat = new Intl.NumberFormat('en-US', options);
+    return numberFormat.format(number);
+  }
+
   render() {
     return (
-      <View style={{ padding: 4 }}>
-        <Text style={{ color: 'red', fontWeight: '700' }}>Total: ${this.props.total} </Text>
-      </View>
+      <TouchableOpacity
+        style={{ backgroundColor: '#d63031' }}
+        onPress={() => {
+          this.props.showShoppingCart();
+        }}>
+        <View style={{ padding: 6, alignItems: 'flex-end' }}>
+          <Text style={{ color: '#ffffff', fontWeight: '700' }}>Total: {this.formatCurrency(this.props.total)} </Text>
+        </View>
+      </TouchableOpacity>
     );
   }
 }
+
