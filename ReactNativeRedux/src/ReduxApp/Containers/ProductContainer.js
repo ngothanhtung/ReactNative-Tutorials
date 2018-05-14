@@ -5,6 +5,7 @@ import { addToCart } from '../Actions/shoppingCartAction';
 import ProductComponent from '../Components/ProductComponent';
 
 const mapStateToProps = (state) => ({
+    // total: state.shoppingCartReducer.total,
     // addedProducts: state.shoppingCartReducer.addedProducts,
 });
 

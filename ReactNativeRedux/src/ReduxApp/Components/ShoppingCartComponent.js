@@ -17,7 +17,7 @@ export default class ShoppingCartComponent extends Component {
           </View>
           <View style={{ backgroundColor: '#0984e3', padding: 8 }}>
             <TouchableOpacity onPress={() => {
-
+              this.props.increaseCount(1)
             }}>
               <Text style={{ color: '#ffffff' }}>Remove</Text>
             </TouchableOpacity>

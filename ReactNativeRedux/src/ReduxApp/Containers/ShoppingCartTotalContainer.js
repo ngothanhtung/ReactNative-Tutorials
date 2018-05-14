@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 
 import { addToCart } from '../Actions/shoppingCartAction';
 
+
 import ShoppingCartTotalComponent from '../Components/ShoppingCartTotalComponent';
 
 const mapStateToProps = (state) => ({

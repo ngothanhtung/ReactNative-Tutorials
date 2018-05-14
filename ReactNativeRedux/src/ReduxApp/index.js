@@ -11,6 +11,8 @@ import CounterApp from './CounterApp';
 import GalleryApp from './GalleryApp';
 import AuthApp from './AuthApp';
 
+import StackNavigator from './StackNavigator';
+
 import rootReducer from './Reducers';
 import ShoppingCartApp from './ShoppingCartApp';
 
@@ -40,10 +42,9 @@ const middewares = [
 ];
 
 // const store = createStore(
-// 	rootReducer,
+// 	rootReducer,	
 // 	window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
 // );
-
 
 const store = createStore(
 	rootReducer,
@@ -58,12 +59,13 @@ export default class ReduxApp extends Component {
 	render() {
 		return (
 			<Provider store={store}>
-				<View style={{ flex: 1, paddingTop: 24 }}>
-					{/* <CounterApp />
+				{/* <View style={{ flex: 1 }}>
+					<CounterApp />
 					<GalleryApp />
-					<AuthApp /> */}
-					<ShoppingCartApp />
-				</View>
+					<AuthApp />
+					<ShoppingCartApp />				
+				</View> */}
+				<StackNavigator />
 			</Provider>
 		);
 	}

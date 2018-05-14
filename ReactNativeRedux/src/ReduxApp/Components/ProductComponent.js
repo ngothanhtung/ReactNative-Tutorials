@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList, ScrollView, TouchableOpacity } from 'react-native';
-
+import { Button, View, Text, FlatList, ScrollView, TouchableOpacity } from 'react-native';
+import ShoppingCartTotalComponent from './ShoppingCartTotalComponent';
 const products = [
   { id: 1, name: 'iPhone 6', price: 600, discount: '10' },
   { id: 2, name: 'iPhone 7', price: 800, discount: '5' },
@@ -8,6 +8,13 @@ const products = [
 ]
 
 export default class ProductComponent extends Component {
+  static navigationOptions = ({ navigation }) => (
+    {
+      title: 'Products',
+      headerRight: <ShoppingCartTotalComponent />
+    }
+  );
+
   renderItem = ({ item }) => {
     return (
       <View style={{ flex: 1, margin: 2 }}>
@@ -20,7 +27,7 @@ export default class ProductComponent extends Component {
           </View>
           <View style={{ backgroundColor: '#0984e3', padding: 8 }}>
             <TouchableOpacity onPress={() => {
-              this.props.addToCart(item, 1)
+              this.props.addToCart(item, 1);
             }}>
               <Text style={{ color: '#ffffff' }}>Add</Text>
             </TouchableOpacity>
@@ -42,6 +49,16 @@ export default class ProductComponent extends Component {
             keyExtractor={(item, index) => index.toString()}
           />
         </ScrollView>
+        <View>
+          <TouchableOpacity onPress={() => this.props.navigation.navigate('ShoppingCart')}>
+            <Text>
+              Go to shopping cart
+            </Text>
+          </TouchableOpacity>
+        </View>
+        <View>
+          <ShoppingCartTotalComponent />
+        </View>
       </View>
     );
   }

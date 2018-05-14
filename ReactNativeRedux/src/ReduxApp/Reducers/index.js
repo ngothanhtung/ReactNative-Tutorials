@@ -7,7 +7,7 @@ import themeReducer from './themeReducer';
 import shoppingCartReducer from './shoppingCartReducer';
 
 const rootReducer = combineReducers({
-	// counterReducer: counterReducer,
+	counterReducer: counterReducer,
 	// albumReducer,
 	// photoReducer,
 	// authReducer,
