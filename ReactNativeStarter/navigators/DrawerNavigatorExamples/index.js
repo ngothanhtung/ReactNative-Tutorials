@@ -87,6 +87,7 @@ const DrawerNavigator = createDrawerNavigator({
 
 
 const DrawerNavigatorExamples = createSwitchNavigator({
+  //Stack: StackNavigator,
   Drawer: DrawerNavigator,
 });
 

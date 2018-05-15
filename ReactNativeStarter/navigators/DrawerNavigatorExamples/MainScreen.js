@@ -21,7 +21,9 @@ export default class MainScreen extends Component {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <Text>Main Screen</Text>
-        <Button title="Go to More Screen 1" onPress={() => { }} />
+        <Button title="Go to More Screen 1" onPress={() => {
+
+        }} />
       </View>
     );
   }
