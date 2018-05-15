@@ -1,13 +1,13 @@
 import React from 'react';
-import { Icon } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import { createBottomTabNavigator } from 'react-navigation';
 
 import TabItemScreen1 from './TabItemScreen1';
 import TabItemScreen2 from './TabItemScreen2';
 import MoreScreensStackNavigator from './MoreScreensStackNavigator';
+import DrawerNavigator from './DrawerNavigator';
 
-export default createBottomTabNavigator({
+const routeConfigs = {
   TabItem1: {
     screen: TabItemScreen1,
     navigationOptions: {
@@ -27,22 +27,33 @@ export default createBottomTabNavigator({
   TabItem3: {
     screen: MoreScreensStackNavigator,
     navigationOptions: {
-      title: 'Tab 3',
+      title: 'More',
       tabBarIcon: ({ tintColor, focused }) => (
         <Ionicons name={focused ? 'ios-lock' : 'ios-lock-outline'} size={26} style={{ color: '#2d3436' }} />)
     },
   },
-}, {
-    tabBarOptions: {
-      showIcon: true,
-      showLabel: true,
-      labelStyle: {
-        color: '#000000',
-      },
-      style: {
-        //backgroundColor: '#2d3436'
-      }
+  TabItem4: {
+    screen: DrawerNavigator,
+    navigationOptions: {      
+      title: 'Tab 4 (Drawer)',
+      tabBarIcon: ({ tintColor, focused }) => (
+        <Ionicons name={focused ? 'ios-lock' : 'ios-lock-outline'} size={26} style={{ color: '#2d3436' }} />)
     },
-    swipeEnabled: true,
+  },
+};
 
-  });
+const tabNavigatorConfigs = {
+  tabBarOptions: {
+    showIcon: true,
+    showLabel: true,
+    labelStyle: {
+      color: '#2d3436',
+    },
+    style: {
+      //backgroundColor: '#2d3436'
+    }
+  },
+  swipeEnabled: true,
+}
+
+export default createBottomTabNavigator(routeConfigs, tabNavigatorConfigs);
