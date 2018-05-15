@@ -78,11 +78,11 @@ console.disableYellowBox = true;
 // NAVIGATORS
 //import AppNavigator from './navigators/AppNavigator';
 //AppRegistry.registerComponent('ReactNativeStarter', () => AppNavigator);
-import TabNavigatorExamples from './navigators/TabNavigatorExamples';
-AppRegistry.registerComponent('ReactNativeStarter', () => TabNavigatorExamples);
+// import TabNavigatorExamples from './navigators/TabNavigatorExamples';
+// AppRegistry.registerComponent('ReactNativeStarter', () => TabNavigatorExamples);
 
-import DrawerNavigatorExamples from './navigators/DrawerNavigatorExamples';
-AppRegistry.registerComponent('ReactNativeStarter', () => DrawerNavigatorExamples);
+// import DrawerNavigatorExamples from './navigators/DrawerNavigatorExamples';
+// AppRegistry.registerComponent('ReactNativeStarter', () => DrawerNavigatorExamples);
 
 
 // AppRegistry.registerComponent('ReactNativeStarter', () => MainTabNavigator);
@@ -100,3 +100,5 @@ AppRegistry.registerComponent('ReactNativeStarter', () => DrawerNavigatorExample
 // import SimpleGallery from './screens/SimpleGallery';
 // AppRegistry.registerComponent('ReactNativeStarter', () => SimpleGallery);
 
+import LoginHomeworkScreen from './screens/LoginHomeworkScreen';
+AppRegistry.registerComponent('ReactNativeStarter', () => LoginHomeworkScreen);
