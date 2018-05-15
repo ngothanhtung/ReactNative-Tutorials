@@ -5,7 +5,6 @@ import LoadingScreen from '../screens/LoadingScreen';
 import StackNavigator from './StackNavigator';
 
 const AppNavigator = createSwitchNavigator({
-  //LoadingScreen: LoadingScreen,
   Stack: StackNavigator,
 
 });

@@ -1,11 +1,11 @@
 import { connect } from 'react-redux';
 import { increaseCount } from '../Actions/counterAction';
-import { login } from '../Actions/AuthAction';
+import { login } from '../Actions/authAction';
 import { updateTheme } from '../Actions/themeAction';
 import LoginComponent from '../Components/LoginComponent';
 
 const mapStateToProps = (state) => ({
-    color: state.themeReducer.color, 
+    color: state.themeReducer.color,
     user: state.authReducer.user,
     loading: state.authReducer.loading,
 });
@@ -13,7 +13,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = {
     login,
-    increaseCount,    
+    increaseCount,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(LoginComponent);
