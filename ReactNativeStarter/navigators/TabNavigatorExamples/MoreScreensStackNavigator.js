@@ -14,7 +14,7 @@ const routeConfigs = {
 };
 
 const stackNavigatorConfig = {
-  headerMode: 'none'
+  // headerMode: 'none'
 };
 
 export default createStackNavigator(routeConfigs, stackNavigatorConfig);
