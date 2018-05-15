@@ -100,5 +100,9 @@ console.disableYellowBox = true;
 // import SimpleGallery from './screens/SimpleGallery';
 // AppRegistry.registerComponent('ReactNativeStarter', () => SimpleGallery);
 
-import LoginHomeworkScreen from './screens/LoginHomeworkScreen';
-AppRegistry.registerComponent('ReactNativeStarter', () => LoginHomeworkScreen);
+// import LoginHomeworkScreen from './screens/LoginHomeworkScreen';
+// AppRegistry.registerComponent('ReactNativeStarter', () => LoginHomeworkScreen);
+
+
+import OnlineShopExamples from './navigators/OnlineShopExamples';
+AppRegistry.registerComponent('ReactNativeStarter', () => OnlineShopExamples);
