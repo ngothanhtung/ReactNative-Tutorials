@@ -1,26 +1,26 @@
 import { AppRegistry } from 'react-native';
-import App from './App';
-import LoginScreenV1 from './screens/LoginScreenV1';
-import LoginScreenV2 from './screens/LoginScreenV2';
-import LoginScreenV3 from './screens/LoginScreenV3';
+// import App from './App';
+// import LoginScreenV1 from './screens/LoginScreenV1';
+// import LoginScreenV2 from './screens/LoginScreenV2';
+// import LoginScreenV3 from './screens/LoginScreenV3';
 
-import FlexBasic from './screens/FlexLayout/Basic';
-import RegisterScreenV1 from './screens/RegisterScreenV1';
-import RegisterScreenV2 from './screens/RegisterScreenV2';
-import RegisterScreenV3 from './screens/RegisterScreenV3';
+// import FlexBasic from './screens/FlexLayout/Basic';
+// import RegisterScreenV1 from './screens/RegisterScreenV1';
+// import RegisterScreenV2 from './screens/RegisterScreenV2';
+// import RegisterScreenV3 from './screens/RegisterScreenV3';
 
-import ModalScreen from './screens/ModalScreen';
-import CameraRollScreen from './screens/CameraRollScreen';
-import PropsAndState from './screens/PropsAndState';
-import MainStackNavigator from './navigators/MainStackNavigator';
-import MainTabNavigator from './navigators/MainTabNavigator';
-import TabNavigatorExamples from './navigators/TabNavigatorExamples';
-import AppNavigator from './navigators/AppNavigator';
+// import ModalScreen from './screens/ModalScreen';
+// import CameraRollScreen from './screens/CameraRollScreen';
+// import PropsAndState from './screens/PropsAndState';
+// import MainStackNavigator from './navigators/MainStackNavigator';
+// import MainTabNavigator from './navigators/MainTabNavigator';
+// import TabNavigatorExamples from './navigators/TabNavigatorExamples';
+// import AppNavigator from './navigators/AppNavigator';
 
-import ComponentExample from './screens/ComponentExample';
-import StateExample from './screens/StateExample';
-import LoginScreen from './screens/LoginScreen';
-import Complex from './screens/FlexLayout/Complex';
+// import ComponentExample from './screens/ComponentExample';
+// import StateExample from './screens/StateExample';
+// import LoginScreen from './screens/LoginScreen';
+// import Complex from './screens/FlexLayout/Complex';
 
 console.disableYellowBox = true;
 
@@ -77,7 +77,9 @@ console.disableYellowBox = true;
 
 // NAVIGATORS
 // AppRegistry.registerComponent('ReactNativeStarter', () => AppNavigator);
-AppRegistry.registerComponent('ReactNativeStarter', () => TabNavigatorExamples);
+import DrawerNavigatorExamples from './navigators/DrawerNavigatorExamples';
+AppRegistry.registerComponent('ReactNativeStarter', () => DrawerNavigatorExamples);
+// AppRegistry.registerComponent('ReactNativeStarter', () => TabNavigatorExamples);
 // AppRegistry.registerComponent('ReactNativeStarter', () => MainTabNavigator);
 
 // MODAL SCREENS

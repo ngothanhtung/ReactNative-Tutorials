@@ -1,33 +1,61 @@
 import React from 'react';
-import { StyleSheet, Button } from 'react-native';
-import { createDrawerNavigator } from 'react-navigation';
+import { StyleSheet, Button, View, Text, TouchableOpacity } from 'react-native';
+import { createStackNavigator, createDrawerNavigator, createSwitchNavigator } from 'react-navigation';
+import { DrawerActions } from 'react-navigation';
+import Icon from 'react-native-vector-icons/FontAwesome';
 
-class MyHomeScreen extends React.Component {
-  static navigationOptions = {
-    drawerLabel: 'Home',
-  };
+import MainScreen from './MainScreen';
+
+class ProfileScreen extends React.Component {
+  static navigationOptions = ({ navigation }) => ({
+    title: 'Profile',
+    headerLeft: (
+      <TouchableOpacity onPress={() => {
+        navigation.dispatch(DrawerActions.openDrawer());
+      }}>
+        <View style={{ padding: 6 }}>
+          <Icon size={26} name="bars" />
+        </View>
+      </TouchableOpacity>
+    )
+  });
 
   render() {
     return (
-      <Button
-        onPress={() => this.props.navigation.navigate('Notifications')}
-        title="Go to notifications"
-      />
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', }}>
+        <Text>This is profile screen</Text>
+        <Button
+          onPress={() => this.props.navigation.navigate('Order')}
+          title="Go to Order"
+        />
+      </View>
+
     );
   }
 }
 
-class MyNotificationsScreen extends React.Component {
-  static navigationOptions = {
-    drawerLabel: 'Notifications',
-  };
+class OrderScreen extends React.Component {
+  static navigationOptions = ({ navigation }) => ({
+    title: 'Order',
+    headerLeft: (
+      <TouchableOpacity onPress={() => {
+        navigation.dispatch(DrawerActions.openDrawer());
+      }}>
+        <View style={{ padding: 6 }}>
+          <Icon size={26} name="bars" />
+        </View>
+      </TouchableOpacity>
+    )
+  });
 
   render() {
     return (
-      <Button
-        onPress={() => this.props.navigation.goBack()}
-        title="Go back home"
-      />
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', }}>
+        <Button
+          onPress={() => this.props.navigation.navigate('Profile')}
+          title="Go back"
+        />
+      </View>
     );
   }
 }
@@ -39,13 +67,27 @@ const styles = StyleSheet.create({
   },
 });
 
-const DrawerNavigatorExamples = createDrawerNavigator({
-  Home: {
-    screen: MyHomeScreen,
+const StackNavigator = createStackNavigator({
+  MainScreen: {
+    screen: MainScreen
+  }
+});
+
+const DrawerNavigator = createDrawerNavigator({
+  Main: {
+    screen: StackNavigator,
   },
-  Notifications: {
-    screen: MyNotificationsScreen,
+  Profile: {
+    screen: createStackNavigator({ Profile: ProfileScreen }),
   },
+  Order: {
+    screen: createStackNavigator({ Order: OrderScreen }),
+  },
+});
+
+
+const DrawerNavigatorExamples = createSwitchNavigator({
+  Drawer: DrawerNavigator,
 });
 
 export default DrawerNavigatorExamples;
