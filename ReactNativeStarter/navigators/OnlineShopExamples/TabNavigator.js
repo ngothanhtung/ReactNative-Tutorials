@@ -1,9 +1,9 @@
-import { createTabNavigator } from 'react-navigation';
+import { createBottomTabNavigator } from 'react-navigation';
 import HomeScreen from './TabScreens/HomeScreen';
 import ProductScreen from './TabScreens/ProductScreen';
 import CheckoutScreen from './TabScreens/CheckoutScreen';
 
-const TabNavigator = createTabNavigator({
+const TabNavigator = createBottomTabNavigator({
   HomeScreen: HomeScreen,
   ProductScreen: ProductScreen,
   CheckoutScreen: CheckoutScreen

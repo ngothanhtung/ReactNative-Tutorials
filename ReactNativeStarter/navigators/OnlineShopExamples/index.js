@@ -5,8 +5,9 @@ import DrawerNavigator from './DrawerNavigator';
 
 const SwitchNavigator = createSwitchNavigator({
   Stack: StackNavigator,
-  Tab: TabNavigator,
   Drawer: DrawerNavigator
+  //Tab: TabNavigator,
+  
 });
 
 export default SwitchNavigator;
