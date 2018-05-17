@@ -59,13 +59,13 @@ export default class ReduxApp extends Component {
 	render() {
 		return (
 			<Provider store={store}>
-				{/* <View style={{ flex: 1 }}>
-					<CounterApp />
+				<View style={{ flex: 1 }}>
+					{/* <CounterApp />
 					<GalleryApp />
-					<AuthApp />
-					<ShoppingCartApp />				
-				</View> */}
-				<StackNavigator />
+					<AuthApp /> */}
+					<ShoppingCartApp />
+				</View>
+				{/* <StackNavigator /> */}
 			</Provider>
 		);
 	}

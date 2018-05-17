@@ -3,6 +3,10 @@ import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image } from 'reac
 
 import LogoImageUrl from '../resources/aptech-logo.jpg';
 
+const DUTCH_COLORS = {
+  Blue: '#0652DD'
+}
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -31,13 +35,14 @@ const styles = StyleSheet.create({
   inputContainer: {
     height: 48,
     //backgroundColor: 'orange',
-    backgroundColor: '#dfe6e9',
+    backgroundColor: '#ecf0f1',
     justifyContent: 'center',
     marginVertical: 6,
   },
 
   textInput: {
     padding: 12,
+    color: '#2d3436',
     //backgroundColor: 'violet',
   },
 
@@ -51,6 +56,7 @@ const styles = StyleSheet.create({
   button: {
     padding: 12,
     backgroundColor: '#0984e3',
+    backgroundColor:'#273c75',
     alignItems: 'center',
   },
 
@@ -79,11 +85,13 @@ export default class LoginHomeworkScreen extends Component {
           {/* Email */}
           <View style={styles.inputContainer}>
             <TextInput style={styles.textInput}
+              underlineColorAndroid="transparent"
               placeholder="Enter email"
             />
           </View>
           <View style={styles.inputContainer}>
             <TextInput style={styles.textInput}
+              underlineColorAndroid="transparent"
               placeholder="Enter password"
             />
           </View>

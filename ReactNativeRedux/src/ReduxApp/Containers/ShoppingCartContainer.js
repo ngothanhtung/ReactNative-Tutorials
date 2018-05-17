@@ -1,18 +1,15 @@
 import { connect } from 'react-redux';
-
-import { addToCart } from '../Actions/shoppingCartAction';
-import { increaseCount } from '../Actions/counterAction';
-
+import { removeFromCart, hideShoppingCart } from '../Actions/shoppingCartAction';
 import ShoppingCartComponent from '../Components/ShoppingCartComponent';
 
 const mapStateToProps = (state) => ({
     addedProducts: state.shoppingCartReducer.addedProducts,
+    shoppingCartVisible: state.shoppingCartReducer.shoppingCartVisible,
 });
 
-
 const mapDispatchToProps = {
-    // removeFromCart,
-    increaseCount
+    removeFromCart,
+    hideShoppingCart,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ShoppingCartComponent);
