@@ -5,7 +5,7 @@ import DrawerNavigator from './DrawerNavigator';
 
 const SwitchNavigator = createSwitchNavigator({
   Stack: StackNavigator,
-  Tab: TabNavigator,
+  //Tab: TabNavigator,
   Drawer: DrawerNavigator
 });
 

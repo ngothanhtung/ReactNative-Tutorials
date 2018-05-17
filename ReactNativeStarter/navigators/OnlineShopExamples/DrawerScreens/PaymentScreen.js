@@ -6,6 +6,9 @@ export default class PaymentScreen extends Component {
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'blue' }}>
         <Text> PaymentScreen </Text>
+        <Button title="Go back" onPress={() => {
+          this.props.navigation.navigate('Tab');
+        }} />
       </View>
     );
   }
