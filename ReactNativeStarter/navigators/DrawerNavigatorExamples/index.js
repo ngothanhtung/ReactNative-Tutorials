@@ -4,20 +4,22 @@ import Icon from 'react-native-vector-icons/FontAwesome';
 
 import { DrawerActions, createDrawerNavigator, createStackNavigator, createSwitchNavigator } from 'react-navigation';
 
+const BarIconMenu = ({ navigation }) => {
+  return (
+    <TouchableOpacity onPress={() => {
+      navigation.dispatch(DrawerActions.openDrawer());
+    }}>
+      <View style={{ padding: 6, paddingRight: 12 }}>
+        <Icon name="bars" size={26} />
+      </View>
+    </TouchableOpacity>
+  );
+}
+
 class MainScreen extends React.Component {
   static navigationOptions = ({ navigation }) => ({
-    drawerLabel: 'Main',
     title: 'Main',
-    headerLeft: (
-      <TouchableOpacity onPress={() => {
-        navigation.dispatch(DrawerActions.openDrawer());
-        //this.props.navigation.openDrawer();
-      }}>
-        <View style={{ padding: 6 }}>
-          <Icon name="bars" size={26} />
-        </View>
-      </TouchableOpacity>
-    )
+    headerRight: <BarIconMenu navigation={navigation} />
   });
 
   render() {
@@ -31,17 +33,8 @@ class MainScreen extends React.Component {
 
 class ProfileScreen extends React.Component {
   static navigationOptions = ({ navigation }) => ({
-    drawerLabel: 'Profile',
     title: 'Profile',
-    headerLeft: (
-      <TouchableOpacity onPress={() => {
-        navigation.dispatch(DrawerActions.openDrawer());
-      }}>
-        <View style={{ padding: 6 }}>
-          <Icon name="bars" size={26} />
-        </View>
-      </TouchableOpacity>
-    )
+    headerRight: <BarIconMenu navigation={navigation} />
   });
 
   render() {
@@ -55,17 +48,8 @@ class ProfileScreen extends React.Component {
 
 class OrderScreen extends React.Component {
   static navigationOptions = ({ navigation }) => ({
-    drawerLabel: 'Order',
     title: 'Order',
-    headerLeft: (
-      <TouchableOpacity onPress={() => {
-        navigation.dispatch(DrawerActions.openDrawer());
-      }}>
-        <View style={{ padding: 6 }}>
-          <Icon name="bars" size={26} />
-        </View>
-      </TouchableOpacity>
-    )
+    headerRight: <BarIconMenu navigation={navigation} />
   });
 
   render() {
@@ -91,17 +75,25 @@ class OrderScreen extends React.Component {
 
 
 
-const DrawerNavigator = createDrawerNavigator({
-  MainScreen: {
-    screen: createStackNavigator({ screen: MainScreen }),
+const DrawerNavigator = createDrawerNavigator(
+  {
+    MainScreen: {
+      screen: createStackNavigator({ screen: MainScreen}),
+      navigationOptions: { title: 'Main Screen' }
+    },
+    ProfileScreen: {
+      screen: createStackNavigator({ screen: ProfileScreen }),
+      navigationOptions: { title: 'Profile Screen' }
+    },
+    OrderScreen: {
+      screen: createStackNavigator({ screen: OrderScreen }),
+      navigationOptions: { title: 'Order Screen' }
+    },
   },
-  ProfileScreen: {
-    screen: createStackNavigator({ screen: ProfileScreen }),
-  },
-  OrderScreen: {
-    screen: createStackNavigator({ screen: OrderScreen }),
-  },
-});
+  {
+    drawerPosition: 'right'
+  }
+);
 
 
 const DrawerNavigatorExamples = createSwitchNavigator({
