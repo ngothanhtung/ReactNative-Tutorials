@@ -36,11 +36,11 @@ const CustomDrawerContentComponent = (props) => (
 );
 
 const drawerNavigatorConfig = {
-  contentComponent: CustomDrawerContentComponent,
+  // contentComponent: CustomDrawerContentComponent,
   drawerPosition: 'right',
   contentOptions: {
-    activeTintColor: '#ffffff',
-    activeBackgroundColor: '#0652DD',    
+    // activeTintColor: '#ffffff',
+    // activeBackgroundColor: '#0652DD',    
   }
 };
 
