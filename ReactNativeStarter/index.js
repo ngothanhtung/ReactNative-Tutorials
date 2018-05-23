@@ -10,7 +10,7 @@ import { AppRegistry } from 'react-native';
 // import RegisterScreenV3 from './screens/RegisterScreenV3';
 
 // import ModalScreen from './screens/ModalScreen';
-// import CameraRollScreen from './screens/CameraRollScreen';
+
 // import PropsAndState from './screens/PropsAndState';
 // import MainStackNavigator from './navigators/MainStackNavigator';
 // import MainTabNavigator from './navigators/MainTabNavigator';
@@ -60,8 +60,8 @@ console.disableYellowBox = true;
 // AppRegistry.registerComponent('ReactNativeStarter', () => FlatListExamples);
 
 
-// import SectionListExamples from './screens/CoreComponents/SectionListExamples';
-// AppRegistry.registerComponent('ReactNativeStarter', () => SectionListExamples);
+import SectionListExamples from './screens/CoreComponents/SectionListExamples';
+AppRegistry.registerComponent('ReactNativeStarter', () => SectionListExamples);
 
 // import SectionListAdvancedExamples from './screens/CoreComponents/SectionListAdvancedExamples';
 // AppRegistry.registerComponent('ReactNativeStarter', () => SectionListAdvancedExamples);
@@ -91,6 +91,7 @@ console.disableYellowBox = true;
 // AppRegistry.registerComponent('ReactNativeStarter', () => ModalScreen);
 
 // CAMERA
+// import CameraRollScreen from './screens/CameraRollScreen';
 // AppRegistry.registerComponent('ReactNativeStarter', () => CameraRollScreen);
 
 
@@ -107,5 +108,8 @@ console.disableYellowBox = true;
 // import OnlineShopExamples from './navigators/OnlineShopExamples';
 // AppRegistry.registerComponent('ReactNativeStarter', () => OnlineShopExamples);
 
-import CaptureScreen from './screens/CaptureScreen';
-AppRegistry.registerComponent('ReactNativeStarter', () => CaptureScreen);
+// import CaptureScreen from './screens/CaptureScreen';
+// AppRegistry.registerComponent('ReactNativeStarter', () => CaptureScreen);
+
+// import PicsumScreen from './screens/Gallery/PicsumScreen';
+// AppRegistry.registerComponent('ReactNativeStarter', () => PicsumScreen);
