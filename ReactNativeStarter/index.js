@@ -60,8 +60,8 @@ console.disableYellowBox = true;
 // AppRegistry.registerComponent('ReactNativeStarter', () => FlatListExamples);
 
 
-import SectionListExamples from './screens/CoreComponents/SectionListExamples';
-AppRegistry.registerComponent('ReactNativeStarter', () => SectionListExamples);
+// import SectionListExamples from './screens/CoreComponents/SectionListExamples';
+// AppRegistry.registerComponent('ReactNativeStarter', () => SectionListExamples);
 
 // import SectionListAdvancedExamples from './screens/CoreComponents/SectionListAdvancedExamples';
 // AppRegistry.registerComponent('ReactNativeStarter', () => SectionListAdvancedExamples);
@@ -113,3 +113,6 @@ AppRegistry.registerComponent('ReactNativeStarter', () => SectionListExamples);
 
 // import PicsumScreen from './screens/Gallery/PicsumScreen';
 // AppRegistry.registerComponent('ReactNativeStarter', () => PicsumScreen);
+
+import FetchExamples from './screens/FetchExamples';
+AppRegistry.registerComponent('ReactNativeStarter', () => FetchExamples);
