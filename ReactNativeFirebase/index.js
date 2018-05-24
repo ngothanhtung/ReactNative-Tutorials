@@ -9,7 +9,7 @@ import UploadImageScreen from './src/screens/Storage/UploadImageScreen';
 
 // AUTH
 // AppRegistry.registerComponent('reactnativefirebase', () => AuthWithEmailAndPasswordScreen);
-// AppRegistry.registerComponent('reactnativefirebase', () => AuthWithPhoneNumberScreen);
+AppRegistry.registerComponent('reactnativefirebase', () => AuthWithPhoneNumberScreen);
 
 // STORAGE
-AppRegistry.registerComponent('reactnativefirebase', () => UploadImageScreen);
+// AppRegistry.registerComponent('reactnativefirebase', () => UploadImageScreen);
