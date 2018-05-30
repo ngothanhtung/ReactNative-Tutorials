@@ -18,7 +18,8 @@ export default class ProductsComponent extends Component {
       <View style={{ flex: 1, margin: 2 }}>
         <View style={{ width: '100%', height: this.state.mode === 'list' ? height / 3 : height / 6 }}>
           <TouchableOpacity onPress={() => {
-
+            // NAVIGATE TO OTHER SCREEn WITH PARAMETERS
+            this.props.navigation.navigate('ProductDetailScreen', { product: item });
           }}>
             <Image resizeMode="cover" source={{ uri: 'https://picsum.photos/600/600' }} style={{ height: '100%', width: '100%' }} />
           </TouchableOpacity>
@@ -40,13 +41,13 @@ export default class ProductsComponent extends Component {
             <View style={{ height: 40, backgroundColor: '#ecf0f1', marginBottom: 4 }}>
               <View style={{ flex: 1, flexDirection: 'row', justifyContent: 'flex-end', alignItems: 'center', paddingRight: 6 }}>
                 <TouchableOpacity onPress={() => { this.setState({ mode: 'grid' }) }}>
-                  <Icon name="apps" size={24} style={this.state.mode === 'grid' ? {color: '#2d3436'} : {color: 'gray'}} />
+                  <Icon name="apps" size={24} style={this.state.mode === 'grid' ? { color: '#2d3436' } : { color: 'gray' }} />
                 </TouchableOpacity>
 
                 <View style={{ width: 2 }} />
 
                 <TouchableOpacity onPress={() => { this.setState({ mode: 'list' }) }}>
-                  <Icon name="view-sequential" size={24} style={this.state.mode === 'list' ? {color: '#2d3436'} : {color: 'gray'}} />
+                  <Icon name="view-sequential" size={24} style={this.state.mode === 'list' ? { color: '#2d3436' } : { color: 'gray' }} />
                 </TouchableOpacity>
               </View>
             </View>

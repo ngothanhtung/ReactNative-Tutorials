@@ -2,13 +2,14 @@ import React, { Component } from 'react';
 import { StyleSheet, View, } from 'react-native';
 import { createBottomTabNavigator, DrawerActions } from 'react-navigation';
 import HomeScreen from './screens/TabScreens/HomeScreen';
-import ProductScreen from './screens/TabScreens/ProductScreen';
+
 import CheckoutScreen from './screens/TabScreens/CheckoutScreen';
 import HomeStackNavigator from './screens/TabScreens/HomeStackNavigator';
 import MoreStackNavigator from './screens/TabScreens/MoreStackNavigator';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import AccountScreen from './screens/TabScreens/AccountScreen';
+import ProductStackNavigator from './screens/TabScreens/ProductStackNavigatior';
 
 const styles = StyleSheet.create({
   icon: {
@@ -29,8 +30,8 @@ const routeConfigs = {
       tabBarIcon: <Icon style={styles.icon} name="home" size={24} />
     }
   },
-  ProductScreen: {
-    screen: ProductScreen,
+  ProductStackNavigator: {
+    screen: ProductStackNavigator,
     navigationOptions: {
       title: 'Products',
       tabBarIcon: <Icon style={styles.icon} name="apps" size={24} />

@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import { View, Text, FlatList } from 'react-native';
-import ProductContainer from '../../containers/ProductContainer';
+import ProductContainer from '../../../containers/ProductContainer';
 
 export default class ProductScreen extends Component {
+  constructor(props) {
+    super(props);
+  }
   render() {
     return (
       <View>
-        <ProductContainer />
+        <ProductContainer navigation={this.props.navigation} />
       </View>
     );
   }
