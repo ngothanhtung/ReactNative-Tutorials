@@ -15,3 +15,4 @@ export default class ProductDetailScreen extends Component {
     );
   }
 }
+
