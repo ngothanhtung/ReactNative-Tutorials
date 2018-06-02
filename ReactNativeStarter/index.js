@@ -114,5 +114,19 @@ console.disableYellowBox = true;
 // import PicsumScreen from './screens/Gallery/PicsumScreen';
 // AppRegistry.registerComponent('ReactNativeStarter', () => PicsumScreen);
 
-import FetchExamples from './screens/FetchExamples';
-AppRegistry.registerComponent('ReactNativeStarter', () => FetchExamples);
+// import FetchExamples from './screens/FetchExamples';
+// AppRegistry.registerComponent('ReactNativeStarter', () => FetchExamples);
+
+
+// import ProductsScreen from './navigators/OnlineShopExamples/ProductsScreen';
+// AppRegistry.registerComponent('ReactNativeStarter', () => ProductsScreen);
+
+// import ProductDetailsScreen from './navigators/OnlineShopExamples/ProductDetailsScreen';
+// AppRegistry.registerComponent('ReactNativeStarter', () => ProductDetailsScreen);
+
+
+// import ProductsStackNavigator from './navigators/OnlineShopExamples/ProductsStackNavigator';
+// AppRegistry.registerComponent('ReactNativeStarter', () => ProductsStackNavigator);
+
+import OnlineShopExamples from './navigators/OnlineShopExamples';
+AppRegistry.registerComponent('ReactNativeStarter', () => OnlineShopExamples);
