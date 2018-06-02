@@ -29,7 +29,7 @@ export default class ProductDetailsScreen extends Component {
 
   render() {
     return (
-      <View style={{ flex: 1, marginTop: 24 }}>
+      <View style={{ flex: 1 }}>
         {
           (this.state.loading === false) &&
           <View style={{ flex: 1 }}>

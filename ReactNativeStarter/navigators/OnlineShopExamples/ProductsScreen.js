@@ -48,7 +48,7 @@ export default class ProductsScreen extends Component {
 
   render() {
     return (
-      <View style={{ marginTop: 24 }}>
+      <View style={{ flex: 1 }}>
         <FlatList
           data={this.state.products}
           renderItem={(item) => (this.renderItem(item))}

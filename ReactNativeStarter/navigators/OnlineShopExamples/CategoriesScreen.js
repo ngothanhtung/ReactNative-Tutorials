@@ -46,7 +46,7 @@ export default class CategoriesScreen extends Component {
 
   render() {
     return (
-      <View style={{ marginTop: 24 }}>
+      <View style={{ flex: 1 }}>
         <FlatList
           data={this.state.categories}
           renderItem={(item) => (this.renderItem(item))}
