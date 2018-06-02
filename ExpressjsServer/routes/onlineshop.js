@@ -10,6 +10,7 @@ router.get('/categories', function (req, res) {
     })
 });
 
+
 router.get('/categories/:id/products', function (req, res) {
     const id = req.params.id;
     db.findDocuments({ categoryId: ObjectID(id) }, "products", function (result) {
