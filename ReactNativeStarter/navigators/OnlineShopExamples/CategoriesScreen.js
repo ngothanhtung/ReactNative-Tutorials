@@ -14,7 +14,6 @@ export default class CategoriesScreen extends Component {
     fetch('http://localhost:9000/onlineshop/categories')
       .then((response) => response.json())
       .then((responseJson) => {
-        console.log(responseJson);
         this.setState({ categories: responseJson });
       })
       .catch((error) => {

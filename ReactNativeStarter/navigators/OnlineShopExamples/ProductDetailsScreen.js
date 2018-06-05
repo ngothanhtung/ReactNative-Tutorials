@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList, TouchableOpacity, Image, Dimensions } from 'react-native';
+import { View, Text, FlatList, TouchableOpacity, Image, Dimensions, AsyncStorage } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 const { width, height } = Dimensions.get('window');
 
@@ -44,6 +44,29 @@ export default class ProductDetailsScreen extends Component {
               <View style={{ padding: 8 }}>
                 <Text>${this.state.product.price}</Text>
               </View>
+            </View>
+
+            <View>
+              <TouchableOpacity
+                style={{ height: 48, backgroundColor: '#d63031', justifyContent: 'center', alignItems: 'center' }}
+                onPress={() => {
+                  let carts = [];
+                  AsyncStorage.getItem('Carts', (error, result) => {
+                    console.log(error);
+                    if (result) {
+                      carts = JSON.parse(result);
+                      carts.push(this.state.product);
+                    } else {
+                      carts.push(this.state.product);
+                    }
+                    AsyncStorage.setItem('Carts', JSON.stringify(carts), (error) => {
+                      this.props.navigation.navigate('ShoppingCartScreen');
+                    });
+                  });
+                }}
+              >
+                <Text style={{ color: '#ffffff' }}>Add to cart</Text>
+              </TouchableOpacity>
             </View>
           </View>
         }
