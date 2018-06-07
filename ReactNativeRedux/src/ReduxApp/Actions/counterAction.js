@@ -7,3 +7,4 @@ export const increaseCount = (number) => ({
 export const decreaseCount = (number) => ({
   type: ActionTypes.DECREASE_COUNT, number: number
 });
+

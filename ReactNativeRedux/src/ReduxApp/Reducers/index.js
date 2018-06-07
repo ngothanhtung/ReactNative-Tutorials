@@ -12,7 +12,7 @@ const rootReducer = combineReducers({
 	// photoReducer,
 	// authReducer,
 	// themeReducer,
-	// shoppingCartReducer,
+	shoppingCartReducer,
 });
 
 export default rootReducer;

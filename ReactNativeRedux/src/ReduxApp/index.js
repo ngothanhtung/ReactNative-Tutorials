@@ -67,7 +67,7 @@ export default class ReduxApp extends Component {
 					<CounterApp />
 					{/* <GalleryApp />
 					<AuthApp /> */}
-					{/* <ShoppingCartApp /> */}
+					<ShoppingCartApp />
 				</View>
 				{/* <StackNavigator /> */}
 			</Provider>

@@ -20,10 +20,10 @@ export const addToCart = (product, quantity) => ({
 
 export const removeFromCart = (productId) => ({
   type: ActionTypes.REMOVE_FROM_CART,
-  productId, productId,
+  productId: productId,
 });
 
-export const showShoppingCart = (status) => ({
+export const showShoppingCart = () => ({
   type: ActionTypes.SHOW_SHOPPING_CART,
 });
 

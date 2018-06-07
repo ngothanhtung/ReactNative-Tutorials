@@ -7,26 +7,19 @@ import {
 } from 'react-native';
 
 export default class CounterComponent extends Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			number: 5
-		}
-	}
-
 	render() {
 		return (
 			<View style={styles.container}>
 				<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', flexDirection: 'column', }}>
 					<Button
-						onPress={() => { this.props.increaseCount(this.state.number) }}
+						onPress={() => { this.props.increaseCount(1) }}
 						title="Increase Count"
 					/>
 					<View style={{ padding: 24 }}>
 						<Text style={{ fontSize: 18, fontWeight: '700' }}>{this.props.count}</Text>
 					</View>
 					<Button
-						onPress={() => { this.props.decreaseCount(this.state.number) }}
+						onPress={() => { this.props.decreaseCount(1) }}
 						title="Decrease Count"
 					/>
 				</View>
