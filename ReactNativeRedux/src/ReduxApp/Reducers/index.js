@@ -7,12 +7,12 @@ import themeReducer from './themeReducer';
 import shoppingCartReducer from './shoppingCartReducer';
 
 const rootReducer = combineReducers({
-	// counterReducer: counterReducer,
+	counterReducer,
 	// albumReducer,
 	// photoReducer,
 	// authReducer,
 	// themeReducer,
-	shoppingCartReducer,
+	// shoppingCartReducer,
 });
 
 export default rootReducer;

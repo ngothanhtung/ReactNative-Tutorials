@@ -17,26 +17,30 @@ import rootReducer from './Reducers';
 import ShoppingCartApp from './ShoppingCartApp';
 
 // LOGGER MIDDLEWARE
-logger = ({ getState }) => {
-	return next => action => {
-		console.log('will dispatch', action)
+// logger = ({ getState }) => {
+// 	return next => action => {
+// 		console.log('will dispatch', action)
 
-		// Call the next dispatch method in the middleware chain.
-		const returnValue = next(action)
+// 		// Call the next dispatch method in the middleware chain.
+// 		const returnValue = next(action)
 
-		console.log('state after dispatch', getState())
+// 		console.log('state after dispatch', getState())
 
-		// This will likely be the action itself, unless
-		// a middleware further in chain changed it.
-		return returnValue
-	}
-}
+// 		// This will likely be the action itself, unless
+// 		// a middleware further in chain changed it.
+// 		return returnValue
+// 	}
+// }
 
 
 // MIDDLEWARE
 const middewares = [
-	thunkMiddleware,
-	promise(),
+	// THUNK
+	// thunkMiddleware,
+
+	// PROMISE
+	// promise(),
+
 	// Custom Middleware
 	// logger
 ];
@@ -60,10 +64,10 @@ export default class ReduxApp extends Component {
 		return (
 			<Provider store={store}>
 				<View style={{ flex: 1 }}>
-					{/* <CounterApp />
-					<GalleryApp />
+					<CounterApp />
+					{/* <GalleryApp />
 					<AuthApp /> */}
-					<ShoppingCartApp />
+					{/* <ShoppingCartApp /> */}
 				</View>
 				{/* <StackNavigator /> */}
 			</Provider>
