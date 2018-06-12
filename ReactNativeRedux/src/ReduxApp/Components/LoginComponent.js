@@ -5,11 +5,11 @@ export default class LoginComponent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
+      email: '',
       password: '',
     }
   }
-  render() {    
+  render() {
     console.log(this.props);
     return (
       <View style={{ flex: 1, padding: 24 }}>
@@ -17,7 +17,7 @@ export default class LoginComponent extends Component {
           <View>
             <TextInput
               placeholder="Username"
-              onChangeText={(text) => { this.setState({ username: text }) }}
+              onChangeText={(text) => { this.setState({ email: text }) }}
             />
           </View>
           <View>
@@ -29,8 +29,7 @@ export default class LoginComponent extends Component {
           <View>
             <TouchableOpacity
               onPress={() => {
-                this.props.login(this.state.username, this.state.password);
-                this.props.increaseCount(10);
+                this.props.login(this.state.email, this.state.password);
               }}
               style={{ backgroundColor: '#2d3436', height: 48, justifyContent: 'center', alignItems: 'center' }}>
               <Text style={{ color: this.props.color }}>

@@ -10,9 +10,8 @@ const rootReducer = combineReducers({
 	counterReducer,
 	// albumReducer,
 	// photoReducer,
-	// authReducer,
+	authReducer,
 	// themeReducer,
-	shoppingCartReducer,
 });
 
 export default rootReducer;

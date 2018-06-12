@@ -36,10 +36,10 @@ import ShoppingCartApp from './ShoppingCartApp';
 // MIDDLEWARE
 const middewares = [
 	// THUNK
-	// thunkMiddleware,
+	thunkMiddleware,
 
 	// PROMISE
-	// promise(),
+	promise(),
 
 	// Custom Middleware
 	// logger
@@ -64,10 +64,10 @@ export default class ReduxApp extends Component {
 		return (
 			<Provider store={store}>
 				<View style={{ flex: 1 }}>
-					<CounterApp />
-					{/* <GalleryApp />
-					<AuthApp /> */}
-					<ShoppingCartApp />
+					{/* <CounterApp /> */}
+					{/* <GalleryApp /> */}
+					<AuthApp />
+					{/* <ShoppingCartApp /> */}
 				</View>
 				{/* <StackNavigator /> */}
 			</Provider>

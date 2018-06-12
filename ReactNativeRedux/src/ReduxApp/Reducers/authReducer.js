@@ -1,16 +1,17 @@
 import * as ActionTypes from '../Actions/types';
 
 const defaultState = {
-  user: null,
   loading: false,
+  user: null,
 };
 
-const authReducer = (state = defaultState , action) => {
+const authReducer = (state = defaultState, action) => {
   switch (action.type) {
-    case `${ActionTypes.LOGIN}_PENDING`: {      
+    case `${ActionTypes.LOGIN}_PENDING`: {
       return {
         ...state,
         loading: true,
+        error: null,
       };
     }
 
@@ -19,6 +20,7 @@ const authReducer = (state = defaultState , action) => {
         ...state,
         user: action.payload.data,
         loading: false,
+        error: null,
       };
     }
 
@@ -26,6 +28,7 @@ const authReducer = (state = defaultState , action) => {
       return {
         ...state,
         loading: false,
+        user: null,
         errors: { message: action.payload.message }
       };
     }
