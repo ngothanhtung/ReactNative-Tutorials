@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { createStore, compose, applyMiddleware } from 'redux';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
 import promise from 'redux-promise-middleware';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import rootReducer from './src/reducers';
+import productReducer from './src/modules/ProductModule/reducers';
 
-import AppNavigator from './src/index';
+import AppNavigator from './src/navigators/index';
 
 // MIDDLEWARE
 const middewares = [
@@ -14,7 +14,12 @@ const middewares = [
   promise(),
 ];
 
+const rootReducer = combineReducers({
+  productReducer,
+});
 
+
+// STORE
 const store = createStore(
   rootReducer,
   composeWithDevTools(applyMiddleware(...middewares))

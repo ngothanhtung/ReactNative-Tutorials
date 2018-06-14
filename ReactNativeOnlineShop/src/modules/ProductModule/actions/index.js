@@ -1,11 +1,11 @@
 import * as ActionTypes from './types';
-import client from '../config/index';
+import axiosClient from '../../../config/axiosClient';
 
 export const getProducts = () => {
   return (dispatch) => {
     dispatch({
       type: ActionTypes.GET_PRODUCTS,
-      payload: client.get('/products')
+      payload: axiosClient.get('/products')
     });
   };
 }

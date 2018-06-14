@@ -1,5 +1,6 @@
 import axios from 'axios';
-const client = axios.create({
+
+const axiosClient = axios.create({
   baseURL: 'http://localhost:9000/onlineshop',
   headers: {
     'Content-Type': 'application/json'
@@ -7,4 +8,4 @@ const client = axios.create({
 });
 
 
-export default client;
+export default axiosClient;
