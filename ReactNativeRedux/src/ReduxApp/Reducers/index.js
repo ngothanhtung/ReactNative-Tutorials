@@ -9,8 +9,8 @@ import shoppingCartReducer from './shoppingCartReducer';
 const rootReducer = combineReducers({
 	counterReducer,
 	// albumReducer,
-	// photoReducer,
-	authReducer,
+	photoReducer,
+	// authReducer,
 	// themeReducer,
 });
 
