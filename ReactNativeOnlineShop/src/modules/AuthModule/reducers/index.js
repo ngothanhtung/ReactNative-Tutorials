@@ -1,34 +1,35 @@
 import * as ActionTypes from '../actions/types';
 
 const defaultState = {
-  products: null,
+  loggedInUser: null,
   loading: false
 }
 
-export default (state = { defaultState }, action) => {
+export default (state = defaultState, action) => {
   switch (action.type) {
-    case `${ActionTypes.GET_PRODUCTS}_PENDING`: {
+    case `${ActionTypes.AUTH_LOGIN}_PENDING`: {
       return {
         ...state,
         loading: true,
-        products: null,
+        loggedInUser: null,
         errors: null,
       };
     }
-    case `${ActionTypes.GET_PRODUCTS}_FULFILLED`: {
+    case `${ActionTypes.AUTH_LOGIN}_FULFILLED`: {
       return {
         ...state,
         loading: false,
-        products: action.payload.data,
+        loggedInUser: action.payload.data,
         errors: null,
+
       };
     }
 
-    case `${ActionTypes.GET_PRODUCTS}_REJECTED`: {
+    case `${ActionTypes.AUTH_LOGIN}_REJECTED`: {
       return {
         ...state,
         loading: false,
-        products: null,
+        loggedInUser: null,
         errors: { message: action.payload.message }
       };
     }

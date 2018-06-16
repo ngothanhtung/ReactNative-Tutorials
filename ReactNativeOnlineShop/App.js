@@ -4,6 +4,7 @@ import { Provider } from 'react-redux';
 import thunkMiddleware from 'redux-thunk';
 import promise from 'redux-promise-middleware';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import authReducer from './src/modules/AuthModule/reducers';
 import productReducer from './src/modules/ProductModule/reducers';
 
 import AppNavigator from './src/navigators/index';
@@ -15,6 +16,7 @@ const middewares = [
 ];
 
 const rootReducer = combineReducers({
+  authReducer,
   productReducer,
 });
 
