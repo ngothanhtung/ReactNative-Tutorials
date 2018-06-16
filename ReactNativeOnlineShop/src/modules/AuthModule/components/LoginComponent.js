@@ -107,7 +107,8 @@ export default class LoginHomeworkScreen extends Component {
           <View style={styles.buttonContainer}>
             <TouchableOpacity style={styles.button}
               onPress={() => {
-                this.props.login(this.state.email, this.state.password);
+                var result = this.props.login(this.state.email, this.state.password);
+                console.log(result);
               }}
             >
               <Text style={styles.buttonText}>

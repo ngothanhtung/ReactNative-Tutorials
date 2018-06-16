@@ -1,8 +1,9 @@
 import * as ActionTypes from '../actions/types';
 
 const defaultState = {
+  loading: false,
   loggedInUser: null,
-  loading: false
+  errors: null,
 }
 
 export default (state = defaultState, action) => {
@@ -21,7 +22,6 @@ export default (state = defaultState, action) => {
         loading: false,
         loggedInUser: action.payload.data,
         errors: null,
-
       };
     }
 

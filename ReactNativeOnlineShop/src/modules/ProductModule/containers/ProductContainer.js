@@ -4,15 +4,17 @@ import { getProducts } from '../actions';
 import ProductsComponent from '../components/ProductsComponent';
 
 const mapStateToProps = (state) => {
-  console.log(state);
   return ({
     products: state.productReducer.products,
     loading: state.productReducer.loading,
+    errors: state.productReducer.errors,
   })
 };
 
-const mapDispatchToProps = {
-  getProducts,
+const mapDispatchToProps = (dispatch) => {
+  return ({
+    getProducts,
+  });
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductsComponent);
