@@ -1,3 +1,6 @@
+# Download tool:
+https://github.com/firebase/firebase-tools
+
 # A. Install Firebase CLI
 **Command:**
 npm install -g firebase-tools
