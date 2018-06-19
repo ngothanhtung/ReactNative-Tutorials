@@ -20,12 +20,12 @@ export default class MainScreen extends Component {
 
 
   async componentDidMount() {
-    FCM.createNotificationChannel({
-      id: 'default',
-      name: 'Default',
-      description: 'used for example',
-      priority: 'high'
-    });
+    // FCM.createNotificationChannel({
+    //   id: 'default',
+    //   name: 'Default',
+    //   description: 'used for example',
+    //   priority: 'high'
+    // });
 
     registerAppListener(this.props.navigation);
 
@@ -114,8 +114,8 @@ export default class MainScreen extends Component {
     FCM.presentLocalNotification({
       channel: 'default',
       id: new Date().valueOf().toString(), // (optional for instant notification)
-      title: "Test Notification with action", // as FCM payload
-      body: "Force touch to reply", // as FCM payload (required)
+      title: "Local Notification", // as FCM payload
+      body: "This is local notification", // as FCM payload (required)
       sound: "default", // "bell.mp3", // "default" or filename
       priority: "high", // as FCM payload
       click_action: "com.myapp.MyCategory", // as FCM payload - this is used as category identifier on iOS.
@@ -142,29 +142,27 @@ export default class MainScreen extends Component {
 
   scheduleLocalNotification() {
     FCM.scheduleLocalNotification({
+      channel: 'default',
       id: "testnotif",
       fire_date: new Date().getTime() + 5000,
       vibrate: 500,
-      title: "Hello",
-      body: "Test Scheduled Notification",
-      sub_text: "sub text",
+      title: "Scheduled Notification",
+      body: "This is Scheduled Notification",
+      sub_text: "This is sub text",
       priority: "high",
-      large_icon:
-        "https://image.freepik.com/free-icon/small-boy-cartoon_318-38077.jpg",
+      large_icon: "https://image.freepik.com/free-icon/small-boy-cartoon_318-38077.jpg",
       show_in_foreground: true,
-      picture:
-        "https://firebase.google.com/_static/af7ae4b3fc/images/firebase/lockup.png",
+      picture: "https://firebase.google.com/_static/af7ae4b3fc/images/firebase/lockup.png",
       wake_screen: true,
       extra1: { a: 1 },
-      extra2: 1
+      extra2: 1,
     });
   }
 
 
   showLocalNotificationWithAction() {
-    console.log('showLocalNotificationWithAction');
-
     FCM.presentLocalNotification({
+      channel: 'default',
       title: "Test Notification with action",
       body: "Force touch to reply",
       priority: "high",
