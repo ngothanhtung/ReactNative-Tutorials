@@ -4,7 +4,7 @@ import getPeopleFromApi from './api';
 import NavigationService from './NavigationService';
 
 function* getPeople(action) {
-  console.log(action);
+  console.log('Action', action);
   try {
     const data = yield call(getPeopleFromApi);
     // const data = yield all([
@@ -13,7 +13,7 @@ function* getPeople(action) {
     //   call(getPeopleFromApi)
     // ]);
     yield put({ type: FETCHING_PEOPLE_SUCCESS, data });
-    NavigationService.navigate('MainScreen');
+    // NavigationService.navigate('MainScreen');
   } catch (e) {
     yield put({ type: FETCHING_PEOPLE_FAILURE });
   }

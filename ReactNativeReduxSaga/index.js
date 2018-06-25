@@ -8,7 +8,7 @@ import {
 import { Provider } from 'react-redux';
 import configureStore from './src/configureStore';
 
-
+console.disableYellowBox = true;
 
 import NavigationService from './src/NavigationService';
 
