@@ -3,16 +3,24 @@ import {
   AppRegistry
 } from 'react-native';
 
+
+
 import { Provider } from 'react-redux';
 import configureStore from './src/configureStore';
 
-import App from './src/App';
 
+
+import NavigationService from './src/NavigationService';
+
+//import App from './src/PeopleContainer';
+import App from './src/App';
 const store = configureStore();
 
 const ReduxApp = () => (
   <Provider store={store}>
-    <App />
+    <App ref={navigatorRef => {
+      NavigationService.setTopLevelNavigator(navigatorRef);
+    }} />
   </Provider>
 )
 

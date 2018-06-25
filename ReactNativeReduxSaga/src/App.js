@@ -1,20 +1,16 @@
-import React, { Component } from 'react';
-import { Text, View } from 'react-native';
-import PeopleScreen from './PeopleScreen';
-import { connect } from 'react-redux'
-import { fetchPeople } from './actions'
+import {
+  createStackNavigator
+} from 'react-navigation';
+import PeopleScreen from './PeopleComponent';
+import MainScreen from './MainScreen';
+import PeopleContainer from './PeopleContainer';
 
 
-function mapStateToProps(state) {
-  return {
-    appData: state.dataReducer
+const App = createStackNavigator(
+  {
+    PeopleScreen: PeopleContainer,
+    MainScreen: MainScreen
   }
-}
+);
 
-function mapDispatchToProps(dispatch) {
-  return {
-    fetchPeople: () => dispatch(fetchPeople())
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(PeopleScreen);
+export default App;
