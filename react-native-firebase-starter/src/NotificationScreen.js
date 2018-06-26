@@ -55,7 +55,6 @@ export default class NotificationScreen extends Component {
       console.log('onNotificationDisplayed', notification);
     });
 
-
     this.notificationListener = firebase.notifications().onNotification((notification) => {
       // Process your notification as required
       console.log('onNotification', notification);
@@ -128,7 +127,9 @@ export default class NotificationScreen extends Component {
         }} />
 
         <Button title="Schedule message" onPress={() => {
+
           const notification = new firebase.notifications.Notification();
+
           notification.setNotificationId('id_' + new Date().getTime().toString());
           notification.setTitle('My schedule notification title');
           notification.setBody('My schedule otification body');
@@ -136,36 +137,29 @@ export default class NotificationScreen extends Component {
             key1: 'value1',
             key2: 'value2',
           });
+
+          notification.android.setColor('red');
           notification.setSound('default');
-          notification.android.setColor('green');
-          notification.android.setAutoCancel(true);
-          notification.android.setPriority(firebase.notifications.Android.Priority.Max);
           notification.android.setChannelId('default');
-          notification.android.setSmallIcon('ic_launcher');
-          notification.android.setLocalOnly(true);
-          notification.android.setUsesChronometer(true);
-          notification.android.setBigText('Show when notification is expanded');
-          notification.android.setClickAction('ACTION');
-          notification.android.setShowWhen(true);
+
           // Schedule the notification for 1 minute in the future
           const date = new Date();
-          date.setSeconds(date.getSeconds() + 30);
-
-          firebase.notifications().cancelAllNotifications();
+          date.setSeconds(date.getSeconds() + 10);
 
           firebase.notifications().scheduleNotification(notification, {
             fireDate: date.getTime(),
-          });
+          })
 
           firebase.notifications().getScheduledNotifications().then(notifications => {
-            notifications.map((item, idex) => {
+            notifications.map((item, index) => {
               var d = new Date();
               d.setTime(item.schedule.fireDate);
-              console.log(d.toTimeString());
+              console.log(item);
             })
           });
 
-          firebase.notifications().removeAllDeliveredNotifications();
+          // firebase.notifications().removeAllDeliveredNotifications();
+          // firebase.notifications().cancelAllNotifications();
         }} />
       </View>
     );
