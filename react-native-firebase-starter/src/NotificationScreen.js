@@ -112,7 +112,7 @@ export default class NotificationScreen extends Component {
             key2: 'value2',
           });
           notification.setSound('default');
-          notification.android.setColor('green');
+          notification.android.setColor('red');
           notification.android.setAutoCancel(true);
           notification.android.setPriority(firebase.notifications.Android.Priority.Max);
           notification.android.setChannelId('default');
@@ -120,7 +120,7 @@ export default class NotificationScreen extends Component {
           notification.android.setLocalOnly(true);
           notification.android.setUsesChronometer(true);
           notification.android.setBigText('Show when notification is expanded');
-          notification.android.setClickAction('ACTION');
+          notification.android.setClickAction('VIEW');
           notification.android.setShowWhen(true);
 
           firebase.notifications().displayNotification(notification);
@@ -138,7 +138,7 @@ export default class NotificationScreen extends Component {
             key2: 'value2',
           });
 
-          notification.android.setColor('red');
+          notification.android.setColor('blue');
           notification.setSound('default');
           notification.android.setChannelId('default');
 
@@ -150,13 +150,13 @@ export default class NotificationScreen extends Component {
             fireDate: date.getTime(),
           })
 
-          firebase.notifications().getScheduledNotifications().then(notifications => {
-            notifications.map((item, index) => {
-              var d = new Date();
-              d.setTime(item.schedule.fireDate);
-              console.log(item);
-            })
-          });
+          // firebase.notifications().getScheduledNotifications().then(notifications => {
+          //   notifications.map((item, index) => {
+          //     var d = new Date();
+          //     d.setTime(item.schedule.fireDate);
+          //     console.log(item);
+          //   })
+          // });
 
           // firebase.notifications().removeAllDeliveredNotifications();
           // firebase.notifications().cancelAllNotifications();
