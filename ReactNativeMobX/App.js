@@ -1,9 +1,3 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   Platform,
@@ -19,6 +13,8 @@ import {
 
 import stores from './src/AppStores';
 import Login from './src/Login';
+import LoginStatus from './src/LoginStatus';
+import Movies from './src/Movies';
 
 
 export default class App extends Component {
@@ -26,9 +22,14 @@ export default class App extends Component {
     return (
       <Provider {...stores}>
         <Observer>
-          <Login />
+          {() =>
+            <View style={{ flex: 1 }}>
+              <Login />
+              <Movies />
+              <LoginStatus />
+            </View>}
         </Observer>
-      </Provider >
+      </Provider>
     );
   }
 }
