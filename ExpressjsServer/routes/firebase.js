@@ -10,8 +10,8 @@ admin.initializeApp({
 
 router.post('/send-notification', function (req, res) {
   // This registration token comes from the client FCM SDKs.
-  var registrationToken = 'eueJJNp9ChM:APA91bGiqXrbFk4Pyr8QlqBwzESlcVs2MXmhmMG-UUCZkp7-BTOOjcn_AXd_D3R-y8JG-7-R0AShoun2SrS40tQXsd5fLrsFGGnMhxKiBOKqU-haMcnR_LyOxXLsD0lbCho8mEo4qdxcT2LmMHgqqgQvca76R4ZvdQ';
-
+  var registrationToken = req.body.registrationToken;
+  console.log(registrationToken);
   var message = {
     notification: {
       title: 'Hello from EXPRESS ' + new Date().getTime(),
