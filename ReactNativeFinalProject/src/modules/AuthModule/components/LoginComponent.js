@@ -98,7 +98,7 @@ export default class LoginComponent extends Component {
         <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : null} style={styles.container}>
           <View style={styles.topContainer}>
             <View style={{
-              padding: 40, backgroundColor: '#ffffff', opacity: 1, borderRadius: 40,
+              padding: 40, backgroundColor: '#ffffff', opacity: 1, borderRadius: 200,
             }}
             >
               <Image resizeMode="contain" style={{ width: 160, height: 160 }} source={LogoImageUrl} />
