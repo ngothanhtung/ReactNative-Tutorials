@@ -63,10 +63,11 @@ export default class LoadingScreen extends Component {
         </View>
         <Text style={{ alignSelf: 'center' }}> Loading Screen </Text>
         <Button
-          backgroundColor='#4396EC'
-          iconRight={iconHome}
+          backgroundColor='#4396EC'         
           title='Start'
-          onPress={() => this.start()}
+          onPress={() => {
+            this.props.navigation.navigate('LoginScreen');
+          }}
         />
       </View>
     );

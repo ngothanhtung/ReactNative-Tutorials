@@ -135,6 +135,11 @@ PODS:
   - nanopb/decode (0.3.8)
   - nanopb/encode (0.3.8)
   - Protobuf (3.5.0)
+  - React (0.11.0):
+    - React/Core (= 0.11.0)
+  - React/Core (0.11.0)
+  - RNVectorIcons (4.6.0):
+    - React
 
 DEPENDENCIES:
   - Crashlytics (~> 3.10.1)
@@ -149,6 +154,7 @@ DEPENDENCIES:
   - Firebase/Performance
   - Firebase/RemoteConfig
   - Firebase/Storage
+  - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
@@ -179,6 +185,11 @@ SPEC REPOS:
     - leveldb-library
     - nanopb
     - Protobuf
+    - React
+
+EXTERNAL SOURCES:
+  RNVectorIcons:
+    :path: "../node_modules/react-native-vector-icons"
 
 SPEC CHECKSUMS:
   BoringSSL: 60dd24df4af296bf41d78e5841dbb95d75f88c0d
@@ -208,7 +219,9 @@ SPEC CHECKSUMS:
   leveldb-library: 08cba283675b7ed2d99629a4bc5fd052cd2bb6a5
   nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
   Protobuf: 8a9838fba8dae3389230e1b7f8c104aa32389c03
+  React: ab1a2e21deb34965c38328d5ec40cc7d12c6050a
+  RNVectorIcons: c0dbfbf6068fefa240c37b0f71bd03b45dddac44
 
-PODFILE CHECKSUM: f52082162ea45a115e198711fcd5ae1eab31430a
+PODFILE CHECKSUM: 1a307ff0f31979dabdf92513fdab3baffd81532c
 
 COCOAPODS: 1.5.3

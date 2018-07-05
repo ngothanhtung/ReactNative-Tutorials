@@ -16,7 +16,7 @@
       android:theme="@style/AppTheme">
       <meta-data
         android:name="com.google.firebase.messaging.default_notification_icon"
-        android:resource="@mipmap/ic_launcher" />
+        android:resource="@drawable/ic_stat_brightness_7" />
       <meta-data
         android:name="com.google.firebase.messaging.default_notification_channel_id"
         android:value="@string/default_notification_channel_id"/>

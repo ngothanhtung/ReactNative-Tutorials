@@ -139,7 +139,8 @@ export default class LoginComponent extends Component {
                 buttonStyle={styles.button}
                 icon={<Icon name="key" size={20} color="white" />}
                 onPress={() => {
-
+                  // TEST NAVIGATION
+                  this.props.navigation.navigate('Drawer');
                 }}
               />
             </View>

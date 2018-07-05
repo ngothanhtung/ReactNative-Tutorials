@@ -9,8 +9,11 @@ export default class ProductDetailScreen extends Component {
 
   render() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Product Detail: {this.props.navigation.state.params.product._id}</Text>
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'blue' }}>
+        <Text>
+          Product Details
+        </Text>
+        {/* <Text>Product Detail: {this.props.navigation.state.params.product._id}</Text> */}
       </View>
     );
   }
