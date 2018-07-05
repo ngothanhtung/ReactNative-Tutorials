@@ -1,129 +1,163 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, TextInput, TouchableOpacity, Image } from 'react-native';
+import {
+  Alert,
+  View,
+  Text,
+  TextInput,
+  Image,
+  ImageBackground,
+  KeyboardAvoidingView,
+  Platform,
+} from 'react-native';
 
-//import LogoImageUrl from '../resources/aptech-logo.jpg';
+import { Button } from 'react-native-elements';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import BackgroundImageUrl from '../../../../assets/bg.jpg';
+import LogoImageUrl from '../../../../assets/logo.jpg';
 
-const DUTCH_COLORS = {
-  Blue: '#0652DD'
-}
-
-const styles = StyleSheet.create({
+const styles = {
   container: {
     flex: 1,
-    //backgroundColor: 'pink',
   },
-
   topContainer: {
     flex: 2,
-    //backgroundColor: 'blue',
-    justifyContent: 'flex-end',
+    justifyContent: 'center',
     alignItems: 'center',
   },
-
   middleContainer: {
-    flex: 3,
-    padding: 24,
-    //backgroundColor: 'green',
+    flex: 1,
+    justifyContent: 'center',
   },
-
   bottomContainer: {
     flex: 1,
-    //backgroundColor: 'yellow',
-    justifyContent: 'flex-end'
+    justifyContent: 'flex-end',
   },
 
-  inputContainer: {
-    height: 48,
-    //backgroundColor: 'orange',
-    backgroundColor: '#ecf0f1',
-    justifyContent: 'center',
-    marginVertical: 6,
-  },
-
-  textInput: {
-    padding: 12,
+  textIput: {
+    fontSize: 16,
+    fontWeight: '700',
+    borderRadius: 12,
+    borderColor: '#dfe6e9',
+    borderWidth: 1,
+    height: 54,
+    paddingLeft: 12,
+    opacity: 0.75,
     color: '#2d3436',
-    //backgroundColor: 'violet',
-  },
-
-  buttonContainer: {
-    height: 48,
-    //backgroundColor: 'red',
-    justifyContent: 'center',
-    marginVertical: 6,
+    backgroundColor: '#ffffff',
   },
 
   button: {
-    padding: 12,
-    backgroundColor: '#0984e3',
-    backgroundColor: '#273c75',
+    borderColor: '#e17055',
+    borderWidth: 1,
+    backgroundColor: '#AD1F23',
+    height: 54,
+    justifyContent: 'center',
     alignItems: 'center',
+    borderRadius: 12,
   },
-
   buttonText: {
-    color: '#ffffff',
+    color: 'white',
     fontWeight: '700',
     fontSize: 18,
   },
+  headerText: {
+    fontWeight: '900',
+    fontSize: 48,
+    color: '#AD1F23',
+  },
+};
 
-  footer: {
-    flexDirection: 'row',
-    justifyContent: 'center',
-    //backgroundColor: 'brown',
-    padding: 12,
-  }
-});
-
-export default class LoginHomeworkScreen extends Component {
+export default class LoginComponent extends Component {
   constructor(props) {
     super(props);
+
     this.state = {
-      email: '',
-      password: ''
-    }
+      email: 'ngothanhtung.it@gmail.com',
+      password: '123456789',
+    };
   }
+
+  componentDidUpdate(prevProps) {
+    // if (this.props.reduxData.payload) {
+    //   if (this.props.reduxData.payload !== prevProps.reduxData.payload) {
+    //     this.props.navigation.navigate('Drawer');
+    //     // this.props.navigation.navigate('Tab');
+    //   }
+    // }
+
+    // if (this.props.reduxData.error) {
+    //   if (this.props.reduxData.error !== prevProps.reduxData.error) {
+    //     Alert.alert('Thông báo', this.props.reduxData.error.message);
+    //   }
+    // }
+  }
+
   render() {
     return (
-      <View style={styles.container}>
-        {/* <View style={styles.topContainer}>
-          <Image resizeMode="contain" style={{ width: 240, height: 80 }} source={LogoImageUrl} />
-        </View> */}
-        <View style={styles.middleContainer}>
-          {/* Email */}
-          <View style={styles.inputContainer}>
-            <TextInput style={styles.textInput}
-              underlineColorAndroid="transparent"
-              placeholder="Enter email"
-              onChangeText={(text) => this.setState({ email: text })}
-            />
-          </View>
-          <View style={styles.inputContainer}>
-            <TextInput style={styles.textInput}
-              underlineColorAndroid="transparent"
-              placeholder="Enter password"
-              onChangeText={(text) => this.setState({ password: text })}
-            />
-          </View>
-          <View style={styles.buttonContainer}>
-            <TouchableOpacity style={styles.button}
-              onPress={() => {
-                var result = this.props.login(this.state.email, this.state.password);
-                console.log(result);
-              }}
+      <ImageBackground style={{ flex: 1, position: 'relative' }} blurRadius={0} source={BackgroundImageUrl}>
+        <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : null} style={styles.container}>
+          <View style={styles.topContainer}>
+            <View style={{
+              padding: 40, backgroundColor: '#ffffff', opacity: 1, borderRadius: 40,
+            }}
             >
-              <Text style={styles.buttonText}>
-                Login
+              <Image resizeMode="contain" style={{ width: 160, height: 160 }} source={LogoImageUrl} />
+            </View>
+
+          </View>
+          <View style={styles.middleContainer}>
+            <View style={{ padding: 24 }}>
+              <TextInput
+                style={styles.textIput}
+                underlineColorAndroid="transparent"
+                autoCorrect={false}
+                autoCapitalize="none"
+                placeholder="Email"
+                placeholderTextColor="#2d3436"
+                keyboardType="email-address"
+                value={this.state.email}
+                onChangeText={(text) => { this.setState({ email: text }); }}
+              />
+              <View style={{ height: 12 }} />
+
+
+              <TextInput
+                ref={(component) => { this.passwordInput = component; }}
+                style={styles.textIput}
+                underlineColorAndroid="transparent"
+                secureTextEntry
+                autoCorrect={false}
+                autoCapitalize="none"
+                placeholder="Password"
+                placeholderTextColor="#2d3436"
+                value={this.state.password}
+                onChangeText={(text) => { this.setState({ password: text }); }}
+              />
+              <View style={{ height: 12 }} />
+              <Button
+                title="Đăng nhập"
+                buttonStyle={styles.button}
+                icon={<Icon name="key" size={20} color="white" />}
+                onPress={() => {
+
+                }}
+              />
+            </View>
+          </View>
+          <View style={styles.bottomContainer}>
+            <View style={{ flexDirection: 'row', justifyContent: 'center', paddingBottom: 16 }}>
+              <Text
+                style={{ textDecorationLine: 'underline', color: '#ffffff' }}
+                onPress={() => {
+
+                }}
+              >
+                Quên mật khẩu
               </Text>
-            </TouchableOpacity>
+            </View>
           </View>
-        </View>
-        <View style={styles.bottomContainer}>
-          <View style={styles.footer}>
-            <Text>Have a account?</Text>
-            <Text>Sign up</Text>
-          </View>
-        </View>
-      </View>
+        </KeyboardAvoidingView>
+      </ImageBackground>
     );
   }
 }
