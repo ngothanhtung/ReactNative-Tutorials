@@ -21,10 +21,20 @@
     "preset": "react-native"
   },
   "dependencies": {
+    "axios": "^0.18.0",
     "fbjs": "^0.8.16",
     "moment": "^2.22.2",
     "react": "^16.3.1",
     "react-native": "^0.55.3",
-    "react-native-firebase": "^4.1.0"
+    "react-native-firebase": "^4.1.0",
+    "react-native-elements": "^0.19.1",
+    "react-native-fcm": "^16.0.0",
+    "react-native-vector-icons": "^4.6.0",
+    "react-navigation": "^2.0.1",
+    "react-redux": "^5.0.7",
+    "redux": "^4.0.0",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-promise-middleware": "^5.1.1",
+    "redux-thunk": "^2.2.0"
   }
 }
