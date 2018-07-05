@@ -1,11 +1,11 @@
 var express = require('express');
 var router = express.Router();
 var admin = require("firebase-admin");
-var serviceAccount = require("../reactnativefirebasestart-729d8-firebase-adminsdk-48e03-4a6ea4bd7b.json");
+var serviceAccount = require("../aptech-rnfp-firebase-adminsdk-7e1rt-a512cbbcfc.json");
 
 admin.initializeApp({
   credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://reactnativefirebasestart-729d8.firebaseio.com"
+  databaseURL: "https://aptech-rnfp.firebaseio.com"
 });
 
 router.post('/send-notification', function (req, res) {
