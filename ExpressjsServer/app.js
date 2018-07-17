@@ -12,6 +12,7 @@ var productRouter = require('./routes/product');
 var galleryRouter = require('./routes/gallery');
 var onlineshopRouter = require('./routes/onlineshop');
 var firebaseRouter = require('./routes/firebase');
+var uploadFileRouter = require('./routes/uploadFile');
 
 var app = express();
 
@@ -33,6 +34,7 @@ app.use('/product', productRouter);
 app.use('/gallery', galleryRouter);
 app.use('/onlineshop', onlineshopRouter);
 app.use('/firebase', firebaseRouter);
+app.use('/uploadFile', uploadFileRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
