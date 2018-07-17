@@ -78,18 +78,15 @@ export default class LoginComponent extends Component {
   }
 
   componentDidUpdate(prevProps) {
-    // if (this.props.reduxData.payload) {
-    //   if (this.props.reduxData.payload !== prevProps.reduxData.payload) {
-    //     this.props.navigation.navigate('Drawer');
-    //     // this.props.navigation.navigate('Tab');
-    //   }
-    // }
-
-    // if (this.props.reduxData.error) {
-    //   if (this.props.reduxData.error !== prevProps.reduxData.error) {
-    //     Alert.alert('Thông báo', this.props.reduxData.error.message);
-    //   }
-    // }
+    console.log(this.props);
+    if (this.props.loggedInUser !== prevProps.loggedInUser) {
+      //this.props.navigation.navigate('Drawer');
+      // this.props.navigation.navigate('Tab');
+      if (this.props.loggedInUser && this.props.loggedInUser.result.length > 0) {
+        // alert('OK');
+        this.props.navigation.navigate('Drawer');
+      }
+    }
   }
 
   render() {
@@ -139,8 +136,9 @@ export default class LoginComponent extends Component {
                 buttonStyle={styles.button}
                 icon={<Icon name="key" size={20} color="white" />}
                 onPress={() => {
+                  this.props.login(this.state.email, this.state.password);
                   // TEST NAVIGATION
-                  this.props.navigation.navigate('Drawer');
+                  // this.props.navigation.navigate('Drawer');
                 }}
               />
             </View>
