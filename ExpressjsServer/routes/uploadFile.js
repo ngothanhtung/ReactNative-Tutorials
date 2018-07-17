@@ -2,13 +2,6 @@ var express = require('express');
 var router = express.Router();
 var fs = require('fs');
 
-function decodeFromBase64String(base64String, file) {
-  var bitmap = new Buffer(base64str, 'base64');
-  // write buffer to file
-  fs.writeFileSync(file, bitmap);
-}
-
-
 // ---------------------------------------------------------------------------------------------------------------
 // MULTER UPLOAD
 var multer = require('multer');
