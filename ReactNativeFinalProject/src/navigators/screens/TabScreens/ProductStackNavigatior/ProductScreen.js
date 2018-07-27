@@ -10,15 +10,8 @@ export default class ProductScreen extends Component {
   }
   render() {
     return (
-      <View style={{ flex: 1, backgroundColor: 'violet' }}>
-        {/* <ProductContainer navigation={this.props.navigation} /> */}
-        <Text>Product Screen</Text>
-        <Button
-          title="Go to details"
-          onPress={() => {
-            this.props.navigation.navigate('ProductDetailScreen');
-          }}
-        />
+      <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
+        <ProductContainer navigation={this.props.navigation} />
       </View>
     );
   }

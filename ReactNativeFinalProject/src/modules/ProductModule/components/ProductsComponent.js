@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Dimensions, View, Text, StyleSheet, FlatList, TouchableOpacity, TouchableWithoutFeedback, Image, ActivityIndicator } from 'react-native';
+import { RefreshControl, Dimensions, View, Text, StyleSheet, FlatList, TouchableOpacity, TouchableWithoutFeedback, Image, ActivityIndicator } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 const { width, height } = Dimensions.get('window');
 
@@ -9,14 +9,16 @@ export default class ProductsComponent extends Component {
     this.state = {
       mode: 'grid',
     }
-
-    this.props.getProducts();
-
   }
+
+  componentDidMount() {
+    this.props.getProducts();
+  }
+
   renderItem({ item }) {
     return (
       <View style={{ flex: 1, margin: 2 }}>
-        <View style={{ width: '100%', height: this.state.mode === 'list' ? height / 3 : height / 6 }}>
+        <View style={{ width: this.state.mode === 'list' ? '100%' : (width - 12) / 3, height: this.state.mode === 'list' ? height / 3 : height / 6, }}>
           <TouchableOpacity onPress={() => {
             // NAVIGATE TO OTHER SCREEn WITH PARAMETERS
             this.props.navigation.navigate('ProductDetailScreen', { product: item });
@@ -24,6 +26,11 @@ export default class ProductsComponent extends Component {
             <Image resizeMode="cover" source={{ uri: 'https://picsum.photos/600/600' }} style={{ height: '100%', width: '100%' }} />
           </TouchableOpacity>
         </View>
+        <View style={{height: 60, backgroundColor: 'red'}}>
+            <Text>
+              {item.name}
+            </Text>
+          </View>
       </View>
     );
   }
@@ -52,6 +59,14 @@ export default class ProductsComponent extends Component {
               </View>
             </View>
             <FlatList
+              refreshControl={
+                <RefreshControl
+                  refreshing={this.props.loading}
+                  onRefresh={() => {
+                    this.props.getProducts();
+                  }}
+                />
+              }
               data={this.props.products}
               renderItem={(item) => (this.renderItem(item))}
               keyExtractor={(item, index) => (index.toString())}
@@ -64,10 +79,3 @@ export default class ProductsComponent extends Component {
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#ffffff',
-  }
-});

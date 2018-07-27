@@ -20,6 +20,7 @@ export default class ProductComponent extends Component {
 
   constructor(props) {
     super(props);
+
   }
 
   componentDidMount() {

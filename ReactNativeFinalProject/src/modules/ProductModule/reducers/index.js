@@ -33,6 +33,51 @@ export default (state = { defaultState }, action) => {
       };
     }
 
+    // SHOPPING CART
+    case ActionTypes.SHOW_SHOPPING_CART:
+      return {
+        ...state,
+        shoppingCartVisible: true,
+      }
+
+    case ActionTypes.HIDE_SHOPPING_CART:
+      return {
+        ...state,
+        shoppingCartVisible: false,
+      }
+
+    case ActionTypes.ADD_TO_CART:
+      // FIND ITEM BEFORE ADD TO CART, IF EXISTS THEN UPDATE QUANTITY, ELSE ADD NEW ITEM WITH QUANTITY = 1	
+      var found = [...state.addedProducts].find(item => item.product.id === action.product.id);
+      if (found) {
+        found.quantity++;
+        var total = updateTotal([...state.addedProducts]);
+        return {
+          ...state,
+          addedProducts: [...state.addedProducts],
+          total: total
+        }
+      }
+
+      // ELSE ADD NEW ITEM WITH QUANTITY = 1	
+      var addedProducts = [...state.addedProducts, { product: action.product, quantity: action.quantity }];
+      var total = updateTotal(addedProducts);
+      return {
+        ...state,
+        addedProducts: addedProducts,
+        total: total
+      };
+
+    case ActionTypes.REMOVE_FROM_CART:
+      var addedProducts = [...state.addedProducts].filter(e => e.product.id != action.productId);
+      var total = updateTotal(addedProducts);
+      return {
+        ...state,
+        addedProducts: addedProducts,
+        total: total
+      };
+
+    // DEFAULT
     default:
       return state;
   }

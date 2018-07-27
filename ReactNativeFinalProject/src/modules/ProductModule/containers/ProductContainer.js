@@ -11,10 +11,8 @@ const mapStateToProps = (state) => {
   })
 };
 
-const mapDispatchToProps = (dispatch) => {
-  return ({
-    getProducts,
-  });
+const mapDispatchToProps = {
+  getProducts,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(ProductsComponent);

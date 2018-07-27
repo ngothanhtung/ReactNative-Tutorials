@@ -4,12 +4,11 @@ import { View, Text, FlatList } from 'react-native';
 export default class ProductDetailScreen extends Component {
   constructor(props) {
     super(props);
-    console.log(this.props.navigation);
   }
 
   render() {
     return (
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: 'blue' }}>
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#ffffff' }}>
         <Text>
           Product Details
         </Text>

@@ -11,6 +11,8 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import AccountScreen from './screens/TabScreens/AccountScreen';
 import ProductStackNavigator from './screens/TabScreens/ProductStackNavigatior';
 
+import colors from '../constants/colors';
+
 const styles = StyleSheet.create({
   icon: {
     color: '#ffffff',
@@ -67,8 +69,8 @@ const routeConfigs = {
 const bottomTabNavigatorConfig = {
   tabBarOptions: {
     labelStyle: styles.label,
-    activeBackgroundColor: '#0652DD',
-    inactiveBackgroundColor: '#0984e3'
+    activeBackgroundColor: colors.lightPurpleColor,
+    inactiveBackgroundColor: colors.purpleColor
   }
 }
 

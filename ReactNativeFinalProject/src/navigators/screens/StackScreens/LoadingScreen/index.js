@@ -61,14 +61,16 @@ export default class LoadingScreen extends Component {
             source={{ uri: 'https://s3.amazonaws.com/media-p.slid.es/uploads/alexanderfarennikov/images/1198519/reactjs.png' }}
           />
         </View>
-        <Text style={{ alignSelf: 'center' }}> Loading Screen </Text>
-        <Button
-          backgroundColor='#4396EC'         
-          title='Start'
-          onPress={() => {
-            this.props.navigation.navigate('LoginScreen');
-          }}
-        />
+        <View style={{ padding: 20 }}>
+          <Text style={{ alignSelf: 'center', marginVertical: 12 }}> Loading Screen </Text>
+          <Button
+            backgroundColor='#4396EC'
+            title='Start'
+            onPress={() => {
+              this.props.navigation.navigate('LoginScreen');
+            }}
+          />
+        </View>
       </View>
     );
   }
