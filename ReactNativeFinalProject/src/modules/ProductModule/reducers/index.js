@@ -1,11 +1,11 @@
 import * as ActionTypes from '../actions/types';
 
 const defaultState = {
-  products: null,
+  products: [],
   loading: false
 }
 
-export default (state = { defaultState }, action) => {
+export default (state = defaultState, action) => {
   switch (action.type) {
     case `${ActionTypes.GET_PRODUCTS}_PENDING`: {
       return {

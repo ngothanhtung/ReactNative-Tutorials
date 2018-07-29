@@ -1,7 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, FlatList } from 'react-native';
-import { Button } from 'react-native-elements';
-
+import { View } from 'react-native';
 import ProductContainer from '../../../../modules/ProductModule/containers/ProductContainer';
 
 export default class ProductScreen extends Component {
