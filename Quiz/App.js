@@ -108,8 +108,8 @@ export default class App extends Component {
           <View style={{ flexDirection: 'row' }}>
             {
               this.state.alphabet.map((item, index) => (
-                <View key={index} style={item.status === 'off' ? { width: 0 } : {}}>
-                  <TouchableOpacity style={[styles.button, { backgroundColor: 'yellow' }]} onPress={() => {
+                <View key={index} style={item.status === 'off' ? {} : {}}>
+                  <TouchableOpacity style={[styles.button, { backgroundColor: item.status === 'off' ? 'white' : 'yellow' }]} onPress={() => {
                     this.addCharacter(item);
                   }}>
                     <Text>
