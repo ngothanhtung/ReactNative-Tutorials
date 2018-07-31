@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { View, Text, Button } from 'react-native';
 import { createStackNavigator } from 'react-navigation';
 import ShoppingCartContainer from '../../../../modules/ProductModule/containers/ShoppingCartContainer';
+import ShoppingCartTotalContainer from '../../../../modules/ProductModule/containers/ShoppingCartTotalContainer';
 import colors from '../../../../constants/colors';
 
 class CheckOutScreen extends Component {
@@ -9,6 +10,7 @@ class CheckOutScreen extends Component {
     return (
       <View style={{ flex: 1 }}>
         <ShoppingCartContainer />
+        <ShoppingCartTotalContainer />
       </View>
     );
   }

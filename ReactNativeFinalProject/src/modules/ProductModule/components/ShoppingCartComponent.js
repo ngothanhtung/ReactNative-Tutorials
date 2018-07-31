@@ -3,6 +3,7 @@ import { StyleSheet, View, Text, FlatList, Dimensions, Image, TouchableOpacity }
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import Star from '../../../components/Star';
+import colors from '../../../constants/colors';
 const { width, height } = Dimensions.get('window');
 
 const styles = StyleSheet.create({
@@ -16,7 +17,7 @@ export default class ShoppingCartComponent extends Component {
     let price = this.formatCurrency(item.product.price);
     let sum = this.formatCurrency(item.quantity * item.product.price * (100 - item.product.discount) / 100);
     return (
-      <View style={{ flex: 1, paddingHorizontal: 8, marginBottom: 32 }}>
+      <View style={{ flex: 1, paddingHorizontal: 8, marginBottom: 24 }}>
         <View style={{ flexDirection: 'row' }}>
           {/* IMAGE */}
           <View style={{ width: (width * 20 / 100), height: (width * 20 / 100) }}>
@@ -28,8 +29,11 @@ export default class ShoppingCartComponent extends Component {
               <Text style={{ color: '#182C61', fontWeight: '700' }}>{item.product.name}</Text>
             </View>
             {/* PRICE */}
-            <View style={{ paddingVertical: 6 }}>
+            <View style={{ paddingVertical: 2 }}>
               <Text style={{ color: '#6D214F', fontWeight: '700' }}>US ${item.product.price}</Text>
+            </View>
+            <View style={{ paddingVertical: 2 }}>
+              <Text style={{ color: '#6D214F', fontSize: 12 }}>Discount: {item.product.discount}%</Text>
             </View>
             <View style={{ flex: 1 }}></View>
 
@@ -46,14 +50,13 @@ export default class ShoppingCartComponent extends Component {
               <View style={{ flex: 0, justifyContent: 'center' }}>
                 <TouchableOpacity
                   onPress={() => {
-                    this.props.removeFromCart(item.product.id)
+                    this.props.removeFromCart(item.product._id)
                   }}>
-                  <Icon name="cart-off" size={16} color="#000000" />
+                  <Icon name="cart-off" size={18} color={colors.purpleColor} />
                 </TouchableOpacity>
               </View>
             </View>
           </View>
-
         </View>
       </View>
       // <View style={{ flex: 1 }}>

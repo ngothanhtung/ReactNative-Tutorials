@@ -84,7 +84,7 @@ export default (state = defaultState, action) => {
 
     case ActionTypes.ADD_TO_CART:
       // FIND ITEM BEFORE ADD TO CART, IF EXISTS THEN UPDATE QUANTITY, ELSE ADD NEW ITEM WITH QUANTITY = 1	
-      var found = [...state.addedProducts].find(item => item.product.id === action.product.id);
+      var found = [...state.addedProducts].find(item => item.product._id === action.product._id);
       if (found) {
         found.quantity++;
         var total = updateTotal([...state.addedProducts]);
@@ -105,7 +105,7 @@ export default (state = defaultState, action) => {
       };
 
     case ActionTypes.REMOVE_FROM_CART:
-      var addedProducts = [...state.addedProducts].filter(e => e.product.id != action.productId);
+      var addedProducts = [...state.addedProducts].filter(e => e.product._id != action.productId);
       var total = updateTotal(addedProducts);
       return {
         ...state,
