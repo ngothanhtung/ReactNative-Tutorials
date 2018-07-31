@@ -10,6 +10,15 @@ export const getProducts = () => {
   };
 }
 
+export const getProduct = (id) => {
+  return (dispatch) => {
+    dispatch({
+      type: ActionTypes.GET_PRODUCT,
+      payload: axiosClient.get('/onlineshop/products/' + id)
+    });
+  };
+}
+
 export const addToCart = (product, quantity) => ({
   type: ActionTypes.ADD_TO_CART,
   product: product,

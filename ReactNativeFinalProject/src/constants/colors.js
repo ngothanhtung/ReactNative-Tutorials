@@ -6,6 +6,6 @@ export default {
   redColor: '#c0392b',
   blueColor: '#0984e3',
   iconColor: '#2c3e50',
-  purpleColor: '#6D214F',
+  purpleColor: '#6F1E51',
   lightPurpleColor: '#B33771',
 };

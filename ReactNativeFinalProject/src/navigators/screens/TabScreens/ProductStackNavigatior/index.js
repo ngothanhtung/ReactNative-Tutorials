@@ -1,18 +1,18 @@
 import { createStackNavigator } from 'react-navigation';
-import ProductScreen from './ProductScreen';
-import ProductDetailScreen from './ProductDetailScreen';
+import ProductsScreen from './ProductsScreen';
+import ProductDetailsScreen from './ProductDetailsScreen';
 import colors from '../../../../constants/colors';
 
 const ProductStackNavigator = createStackNavigator(
   {
     ProductScreen: {
-      screen: ProductScreen,
+      screen: ProductsScreen,
       navigationOptions: ({ navigation }) => ({
         title: 'Products',
       })
     },
-    ProductDetailScreen: {
-      screen: ProductDetailScreen,
+    ProductDetailsScreen: {
+      screen: ProductDetailsScreen,
       navigationOptions: ({ navigation }) => ({
         title: 'Product Details',
       })

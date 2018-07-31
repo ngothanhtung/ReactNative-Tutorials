@@ -31,7 +31,7 @@ const store = createStore(
 export default class App extends React.Component {
   componentWillMount() {
     if (Platform.OS == 'android') {
-      StatusBar.setBackgroundColor('#FFC600', true);
+      StatusBar.setBackgroundColor('#B33771', true);
     }
 
     StatusBar.setBarStyle('light-content', true);

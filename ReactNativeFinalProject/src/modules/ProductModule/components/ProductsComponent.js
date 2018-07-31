@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { RefreshControl, Dimensions, View, Text, StyleSheet, FlatList, TouchableOpacity, TouchableWithoutFeedback, Image, ActivityIndicator } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Star from '../../../components/Star';
+
 const { width, height } = Dimensions.get('window');
 
 export default class ProductsComponent extends Component {
@@ -10,7 +12,6 @@ export default class ProductsComponent extends Component {
       mode: 'grid',
     }
     this.props.getProducts();
-    console.log(props);
   }
 
   renderStar(stars) {
@@ -44,7 +45,7 @@ export default class ProductsComponent extends Component {
             </View>
             <View style={{ flex: 1 }}></View>
             <View style={{ flex: 0, flexDirection: 'row' }}>
-              {this.renderStar('*****')}
+              <Star stars="*****" />
             </View>
             <View style={{ marginTop: 6 }}>
               <Text style={{ fontSize: 12, color: '#2C3A47' }}>
@@ -62,7 +63,7 @@ export default class ProductsComponent extends Component {
       <View style={{ width: width / 2, marginBottom: 32 }}>
         <TouchableOpacity
           onPress={() => {
-            this.props.navigation.navigate('ProductDetailScreen', { product: item });
+            this.props.navigation.navigate('ProductDetailsScreen', { product: item });
           }}>
           {/* IMAGE */}
           <View style={{ width: width / 2, height: (width / 2) - 16, alignItems: 'center' }}>

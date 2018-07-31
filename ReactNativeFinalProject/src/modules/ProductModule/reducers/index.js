@@ -2,6 +2,7 @@ import * as ActionTypes from '../actions/types';
 
 const defaultState = {
   products: [],
+  product: null,
   loading: false
 }
 
@@ -29,6 +30,33 @@ export default (state = defaultState, action) => {
         ...state,
         loading: false,
         products: null,
+        errors: { message: action.payload.message }
+      };
+    }
+
+
+    case `${ActionTypes.GET_PRODUCT}_PENDING`: {
+      return {
+        ...state,
+        loading: true,
+        product: null,
+        errors: null,
+      };
+    }
+    case `${ActionTypes.GET_PRODUCT}_FULFILLED`: {
+      return {
+        ...state,
+        loading: false,
+        product: action.payload.data,
+        errors: null,
+      };
+    }
+
+    case `${ActionTypes.GET_PRODUCT}_REJECTED`: {
+      return {
+        ...state,
+        loading: false,
+        product: null,
         errors: { message: action.payload.message }
       };
     }
