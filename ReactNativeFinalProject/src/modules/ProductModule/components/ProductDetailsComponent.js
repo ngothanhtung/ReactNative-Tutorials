@@ -17,9 +17,6 @@ export default class ProductComponent extends Component {
     const product = this.props.navigation.state.params.product;
     this.props.getProduct(product._id);
   }
-  componentDidUpdate(prevProps) {
-    console.log(this.props);
-  }
 
   render() {
     return (
@@ -77,8 +74,8 @@ export default class ProductComponent extends Component {
                       elevation: 0
                     }}
                     onPress={() => {
-                      console.log(this.props.product);
-                      // this.props.addToCart(this.props.product, 1)
+                      // console.log(this.props.product);
+                      this.props.addToCart(this.props.product, 1)
                     }} />
                 </View>
                 <View style={{ flex: 1 }}>

@@ -3,8 +3,16 @@ import * as ActionTypes from '../actions/types';
 const defaultState = {
   products: [],
   product: null,
+  addedProducts: [],
+  total: 0,
+  shoppingCartVisible: false,
   loading: false
 }
+
+updateTotal = (items) => {
+  return items.reduce((total, item) => (total + ((item.product.price * item.quantity) * (100 - item.product.discount) / 100)), 0);
+}
+
 
 export default (state = defaultState, action) => {
   switch (action.type) {
