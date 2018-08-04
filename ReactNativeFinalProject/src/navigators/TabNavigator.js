@@ -3,9 +3,7 @@ import { StyleSheet, View, } from 'react-native';
 import { createBottomTabNavigator, DrawerActions } from 'react-navigation';
 import HomeScreen from './screens/TabScreens/HomeScreen';
 
-import CheckoutScreen from './screens/TabScreens/CheckoutScreen';
-import HomeStackNavigator from './screens/TabScreens/HomeStackNavigator';
-import MoreStackNavigator from './screens/TabScreens/MoreStackNavigator';
+import CheckoutScreen from './screens/TabScreens/CheckOutScreen';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
 import AccountScreen from './screens/TabScreens/AccountScreen';

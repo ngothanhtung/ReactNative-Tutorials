@@ -1,5 +1,5 @@
 import { createStackNavigator } from 'react-navigation';
-import CheckoutScreen from './CheckoutScreen';
+import CheckoutScreen from './CheckOutScreen';
 
 export default MoreStackNavigator = createStackNavigator({
   CheckoutScreen: {

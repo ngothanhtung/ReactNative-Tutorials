@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { View } from 'react-native';
-import ProductContainer from '../../../../modules/ProductModule/containers/ProductContainer';
+import ProductsContainer from '../../../../modules/ProductModule/containers/ProductsContainer';
 
 export default class ProductScreen extends Component {
   constructor(props) {
@@ -9,7 +9,7 @@ export default class ProductScreen extends Component {
   render() {
     return (
       <View style={{ flex: 1, backgroundColor: '#ffffff' }}>
-        <ProductContainer navigation={this.props.navigation} />
+        <ProductsContainer navigation={this.props.navigation} />
       </View>
     );
   }

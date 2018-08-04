@@ -1,10 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 
-import { connect } from 'react-redux';
-
-
-
 export default class ShoppingCartTotalComponent extends Component {
   formatCurrency(number) {
     var options = { style: 'currency', currency: 'USD', minimumFractionDigits: 0 };

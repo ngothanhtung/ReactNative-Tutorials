@@ -2,8 +2,17 @@ import * as ActionTypes from '../actions/types';
 
 const defaultState = {
   products: [],
+  product: null,
+  addedProducts: [],
+  total: 0,
+  shoppingCartVisible: false,
   loading: false
 }
+
+updateTotal = (items) => {
+  return items.reduce((total, item) => (total + ((item.product.price * item.quantity) * (100 - item.product.discount) / 100)), 0);
+}
+
 
 export default (state = defaultState, action) => {
   switch (action.type) {
@@ -33,6 +42,33 @@ export default (state = defaultState, action) => {
       };
     }
 
+
+    case `${ActionTypes.GET_PRODUCT}_PENDING`: {
+      return {
+        ...state,
+        loading: true,
+        product: null,
+        errors: null,
+      };
+    }
+    case `${ActionTypes.GET_PRODUCT}_FULFILLED`: {
+      return {
+        ...state,
+        loading: false,
+        product: action.payload.data,
+        errors: null,
+      };
+    }
+
+    case `${ActionTypes.GET_PRODUCT}_REJECTED`: {
+      return {
+        ...state,
+        loading: false,
+        product: null,
+        errors: { message: action.payload.message }
+      };
+    }
+
     // SHOPPING CART
     case ActionTypes.SHOW_SHOPPING_CART:
       return {
@@ -48,7 +84,7 @@ export default (state = defaultState, action) => {
 
     case ActionTypes.ADD_TO_CART:
       // FIND ITEM BEFORE ADD TO CART, IF EXISTS THEN UPDATE QUANTITY, ELSE ADD NEW ITEM WITH QUANTITY = 1	
-      var found = [...state.addedProducts].find(item => item.product.id === action.product.id);
+      var found = [...state.addedProducts].find(item => item.product._id === action.product._id);
       if (found) {
         found.quantity++;
         var total = updateTotal([...state.addedProducts]);
@@ -69,7 +105,7 @@ export default (state = defaultState, action) => {
       };
 
     case ActionTypes.REMOVE_FROM_CART:
-      var addedProducts = [...state.addedProducts].filter(e => e.product.id != action.productId);
+      var addedProducts = [...state.addedProducts].filter(e => e.product._id != action.productId);
       var total = updateTotal(addedProducts);
       return {
         ...state,
