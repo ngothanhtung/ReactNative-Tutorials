@@ -14,7 +14,7 @@ var db = admin.firestore();
 exports.helloWorld = functions.https.onRequest((request, response) => {
   console.log({ message: 'Hello from firebase' });
 
-  response.send("Hello from Firebase!");
+  response.json({ message: "Hello from Firebase!" });
 });
 
 // ------------------------------------------------------------------------------------------------

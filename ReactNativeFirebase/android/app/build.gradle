@@ -104,7 +104,7 @@ android {
     defaultConfig {
         applicationId "com.aptech.reactnativefirebase"
         minSdkVersion 16
-        targetSdkVersion 22
+        targetSdkVersion 27
         versionCode 1
         versionName "1.0"
         ndk {
@@ -146,8 +146,7 @@ android {
     }
 }
 
-dependencies {
-    implementation project(':react-native-fbsdk')
+dependencies {    
     implementation(project(':react-native-firebase')) {
         transitive = false
     }

@@ -1,5 +1,5 @@
 import { AppRegistry } from 'react-native';
-// import App from './App';
+import App from './App';
 // import LoginScreenV1 from './screens/LoginScreenV1';
 // import LoginScreenV2 from './screens/LoginScreenV2';
 // import LoginScreenV3 from './screens/LoginScreenV3';
@@ -24,7 +24,7 @@ import { AppRegistry } from 'react-native';
 
 console.disableYellowBox = true;
 
-// AppRegistry.registerComponent('ReactNativeStarter', () => App);
+AppRegistry.registerComponent('ReactNativeStarter', () => App);
 
 // LOGIN SCREENS
 // AppRegistry.registerComponent('ReactNativeStarter', () => LoginScreen);
@@ -128,5 +128,6 @@ console.disableYellowBox = true;
 // import ProductsStackNavigator from './navigators/OnlineShopExamples/ProductsStackNavigator';
 // AppRegistry.registerComponent('ReactNativeStarter', () => ProductsStackNavigator);
 
-import OnlineShopExamples from './navigators/OnlineShopExamples';
-AppRegistry.registerComponent('ReactNativeStarter', () => OnlineShopExamples);
+// import OnlineShopExamples from './navigators/OnlineShopExamples';
+// import ChatScreen from './screens/ChatScreen';
+// AppRegistry.registerComponent('ReactNativeStarter', () => ChatScreen);

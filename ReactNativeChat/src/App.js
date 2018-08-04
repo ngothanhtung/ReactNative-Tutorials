@@ -238,7 +238,6 @@ export default class App extends Component {
 							</View>
 						</View>
 					}
-
 				</View>
 			</KeyboardAvoidingView>
 		);
