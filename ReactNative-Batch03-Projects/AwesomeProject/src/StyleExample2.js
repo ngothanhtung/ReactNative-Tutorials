@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text } from 'react-native';
+import { View, ScrollView } from 'react-native';
 
 export default class StyleExample2 extends Component {
   constructor(props) {
@@ -17,29 +17,23 @@ export default class StyleExample2 extends Component {
           <View style={{ flex: 1 }}></View>
           <View style={{ width: 60, height: 60, backgroundColor: 'yellow' }}></View>
         </View>
-        <View style={{ flex: 1, backgroundColor: 'green' }}>
-          <View style={{ height: 100, flexDirection: 'row' }}>
-            <View style={{ height: 100, width: 80, backgroundColor: 'pink' }}></View>
-            <View style={{ height: 100, flex: 1, backgroundColor: 'yellow' }}></View>
-            <View style={{ height: 100, width: 80, backgroundColor: 'red' }}></View>
-          </View>
-          {/* ------------------------------------------------------------------ */}
-          <View style={{ height: 1 }}></View>
-          {/* ------------------------------------------------------------------ */}
-          <View style={{ height: 100, flexDirection: 'row' }}>
-            <View style={{ height: 100, width: 80, backgroundColor: 'pink' }}></View>
-            <View style={{ height: 100, flex: 1, backgroundColor: 'yellow' }}></View>
-            <View style={{ height: 100, width: 80, backgroundColor: 'red' }}></View>
-          </View>
-          {/* ------------------------------------------------------------------ */}
-          <View style={{ height: 1 }}></View>
-          {/* ------------------------------------------------------------------ */}
-          <View style={{ height: 100, flexDirection: 'row' }}>
-            <View style={{ height: 100, width: 80, backgroundColor: 'pink' }}></View>
-            <View style={{ height: 100, flex: 1, backgroundColor: 'yellow' }}></View>
-            <View style={{ height: 100, width: 80, backgroundColor: 'red' }}></View>
-          </View>
-        </View>
+        <ScrollView style={{ flex: 1, backgroundColor: '#ecf0f1' }}>
+          {
+            [1, 2, 3, 4, 5, 6, 7, 8, 9].map((item, index) => (
+              <View key={index}>
+                <View style={{ height: 80, flexDirection: 'row' }}>
+                  <View style={{ height: 80, width: 80, opacity: (index + 2) * 0.15, backgroundColor: '#8e44ad', justifyContent: 'center', alignItems: 'center' }}>
+                    <View style={{ height: 48, width: 48, backgroundColor: 'white', borderRadius: 24 }}></View>
+                  </View>
+                  <View style={{ height: 80, flex: 1, opacity: (index + 2) * 0.15, backgroundColor: '#27ae60' }}></View>
+                  <View style={{ height: 80, width: 80, opacity: (index + 2) * 0.15, backgroundColor: '#2c3e50' }}></View>
+                </View>
+                {/* ------------------------------------------------------------------ */}
+                <View style={{ height: 1 }}></View>
+              </View>
+            ))
+          }
+        </ScrollView>
         <View style={{ height: 60, backgroundColor: 'orange', flexDirection: 'row' }}>
           <View style={{ flex: 1, backgroundColor: 'red', justifyContent: 'center', alignItems: 'center' }}>
             <View style={{ height: 48, width: 48, backgroundColor: 'white', borderRadius: 24 }}></View>
