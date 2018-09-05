@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import UserNameInput from './shared/UserNameInput';
 import LogonImageUrl from '../resources/aptech-logo.png';
-import BackgroundImageUrl from '../resources/background.png';
+import BackgroundImageUrl from '../resources/background-main.png';
 
 export default class LoginScreen extends Component {
   constructor(props) {
