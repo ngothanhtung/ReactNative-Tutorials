@@ -9,6 +9,8 @@ import FlexLayoutExamples from './src/FlexLayoutExamples';
 import Login from './src/Login';
 import PostScreen from './src/components/PostScreen';
 import PhotoScreen from './src/components/PhotoScreen';
+import StackNavigator from './src/navigators/StackNavigator';
+import TabNavigator from './src/navigators/TabNavigator';
 import { name as appName } from './src/app.json';
 
-AppRegistry.registerComponent(appName, () => PhotoScreen);
+AppRegistry.registerComponent(appName, () => TabNavigator);
