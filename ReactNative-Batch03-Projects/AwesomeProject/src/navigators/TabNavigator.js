@@ -1,8 +1,11 @@
+import React from 'react';
 import { createBottomTabNavigator } from 'react-navigation';
-import HomeScreen from '../screens/HomeScreen';
-import AboutScreen from '../screens/AboutScreen';
-import NewsScreen from '../screens/NewsScreen';
-import AccountScreen from '../screens/AccountScreen';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import HomeScreen from '../screens/TabScreens/HomeScreen';
+import AboutScreen from '../screens/TabScreens/AboutScreen';
+import NewsScreen from '../screens/TabScreens/NewsScreens';
+import AccountScreen from '../screens/TabScreens/AccountScreen';
+
 
 const RouteConfigs = {
   HomeScreen: {
@@ -10,7 +13,10 @@ const RouteConfigs = {
   }
   ,
   NewsScreen: {
-    screen: NewsScreen
+    screen: NewsScreen,
+    navigationOptions: {
+      tabBarIcon: <Icon name='earth' size={24} />
+    }
   },
   AboutScreen: {
     screen: AboutScreen

@@ -1,13 +1,14 @@
 import { createStackNavigator } from 'react-navigation';
-import LoginScreen from '../screens/StackScreens/LoginScreen';
-import RegisterScreen from '../screens/StackScreens/RegisterScreen';
+import NewsListScreen from './NewsListScreen';
+import NewsDetailsScreen from './NewsDetailsScreen';
+
 
 const RouteConfigs = {
-  LoginScreen: {
-    screen: LoginScreen
+  NewsListScreen: {
+    screen: NewsListScreen
   },
-  RegisterScreen: {
-    screen: RegisterScreen
+  NewsDetailsScreen: {
+    screen: NewsDetailsScreen
   },
 }
 const StackNavigatorConfig = {
