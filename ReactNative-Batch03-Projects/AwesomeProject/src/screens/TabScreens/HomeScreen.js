@@ -3,11 +3,6 @@ import { View, Text, Button } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 export default class HomeScreen extends Component {
-  static navigationOptions = {
-    title: 'Home',
-    tabBarIcon: <Icon name='home' size={24} />
-  };
-
   constructor(props) {
     super(props);
     this.state = {

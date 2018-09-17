@@ -12,6 +12,7 @@ const RouteConfigs = {
 }
 const StackNavigatorConfig = {
   navigationOptions: {
+    header: null,
     headerStyle: {
       backgroundColor: '#f4511e',
     },

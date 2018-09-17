@@ -1,6 +1,6 @@
 import React from 'react';
 import { ScrollView, SafeAreaView } from 'react-native';
-import { createStackNavigator, createDrawerNavigator, DrawerItems, DrawerActions } from 'react-navigation';
+import { createStackNavigator, createDrawerNavigator, DrawerItems } from 'react-navigation';
 import AddressScreen from '../screens/DrawerScreens/AddressScreen';
 import PaymentScreen from '../screens/DrawerScreens/PaymentScreen';
 import TabNavigator from './TabNavigator';
@@ -10,8 +10,7 @@ const CustomDrawerContentComponent = (props) => (
   <ScrollView>
     <SafeAreaView style={{ flex: 1 }} forceInset={{ top: 'always', horizontal: 'never' }}>
       <DrawerItems {...props} onItemPress={(item) => {
-        //props.navigation.navigate('AccountScreen');
-        props.navigation.dispatch(DrawerActions.closeDrawer());
+        props.navigation.closeDrawer();
         props.navigation.navigate(item.route.routeName);
       }}
       />
