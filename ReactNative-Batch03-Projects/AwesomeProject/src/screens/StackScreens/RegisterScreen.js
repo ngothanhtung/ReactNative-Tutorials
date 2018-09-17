@@ -18,7 +18,7 @@ export default class RegisterScreen extends Component {
       <View style={{ flex: 1, backgroundColor: 'blue', justifyContent: 'center', alignItems: 'center' }}>
         <Text> Register </Text>
         <Button title="Go to Tab" onPress={() => {
-          this.props.navigation.navigate('TabScreen', {});
+          this.props.navigation.navigate('DrawerScreen', {});
         }} />
       </View>
     );

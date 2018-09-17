@@ -1,5 +1,5 @@
 import React from 'react';
-import { createBottomTabNavigator } from 'react-navigation';
+import { createBottomTabNavigator, DrawerActions } from 'react-navigation';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import HomeScreen from '../screens/TabScreens/HomeScreen';
 import AboutScreen from '../screens/TabScreens/AboutScreen';
@@ -23,6 +23,17 @@ const RouteConfigs = {
   },
   AccountScreen: {
     screen: AccountScreen
+  },
+  MoreScreen: {
+    screen: AccountScreen,
+    navigationOptions: ({ navigation }) => ({
+      title: 'More',
+      tabBarIcon: <Icon name="settings" size={24} />,
+      tabBarOnPress: (previousScene, scene, jumpToIndex) => {
+        //alert(scene);
+        navigation.dispatch(DrawerActions.openDrawer());
+      }
+    })
   },
 }
 const BottomTabNavigatorConfig = {
