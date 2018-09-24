@@ -22,8 +22,8 @@ export default class HomeScreen extends Component {
     return (
       <ImageBackground source={BackgroundImageUrl} style={{ flex: 1, position: 'relative' }}>
         <View style={{ flex: 1, opacity: 0.8 }}>
-          <View style={{ flex: 1, backgroundColor: 'red' }}></View>
-          <View style={{ flex: 2, backgroundColor: 'yellow', padding: 24 }}>
+          <View style={{ flex: 1, }}></View>
+          <View style={{ flex: 2, padding: 24 }}>
             <TextInput
               style={{ paddingHorizontal: 12, height: 48, backgroundColor: 'white' }}
               placeholder="Enter your email"
