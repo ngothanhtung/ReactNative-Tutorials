@@ -24,6 +24,7 @@ export default class ProductDetailsScreen extends Component {
     return (
       <View>
         <Text> textInComponent </Text>
+
       </View>
     )
   }
