@@ -18,7 +18,7 @@ class Product extends Component {
           <Text>
             {this.props.product.name}
           </Text>
-          <Star number={5} />
+          <Star number={3} />
         </View>
       </TouchableOpacity>
 
