@@ -3,6 +3,7 @@ import LoginScreen from '../screens/StackScreens/LoginScreen';
 import RegisterScreen from '../screens/StackScreens/RegisterScreen';
 import ProductsScreen from '../screens/StackScreens/ProductsScreen';
 import ProductDetailsScreen from '../screens/StackScreens/ProductDetailsScreen';
+import CheckoutScreen from '../screens/StackScreens/CheckoutScreen';
 
 const RouteConfigs = {
   ProductsScreen: {
@@ -10,6 +11,9 @@ const RouteConfigs = {
   },
   ProductDetailsScreen: {
     screen: ProductDetailsScreen
+  },
+  CheckoutScreen: {
+    screen: CheckoutScreen
   },
   LoginScreen: {
     screen: LoginScreen
@@ -20,14 +24,14 @@ const RouteConfigs = {
 }
 const StackNavigatorConfig = {
   navigationOptions: {
-    header: null,
+    // header: null,
     headerStyle: {
-      backgroundColor: '#f4511e',
+      // backgroundColor: '#f4511e',
     },
-    headerTintColor: '#fff',
-    headerTitleStyle: {
-      fontWeight: 'bold',
-    },
+    // headerTintColor: '#fff',
+    // headerTitleStyle: {
+    //   fontWeight: 'bold',
+    // },
   },
 }
 
