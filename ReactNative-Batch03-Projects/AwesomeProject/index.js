@@ -11,7 +11,7 @@ import { AppRegistry } from 'react-native';
 // import StackNavigator from './src/navigators/StackNavigator';
 // import TabNavigator from './src/navigators/TabNavigator';
 import SwitchNavigator from './src/navigators/SwitchNavigator';
-import MultiLevelHandling from './src/screens/MultiLevelHandling';
+// import MultiLevelHandling from './src/screens/MultiLevelHandling';
 import { name as appName } from './src/app.json';
 
-AppRegistry.registerComponent(appName, () => MultiLevelHandling);
+AppRegistry.registerComponent(appName, () => SwitchNavigator);

@@ -1,8 +1,16 @@
 import { createStackNavigator } from 'react-navigation';
 import LoginScreen from '../screens/StackScreens/LoginScreen';
 import RegisterScreen from '../screens/StackScreens/RegisterScreen';
+import ProductsScreen from '../screens/StackScreens/ProductsScreen';
+import ProductDetailsScreen from '../screens/StackScreens/ProductDetailsScreen';
 
 const RouteConfigs = {
+  ProductsScreen: {
+    screen: ProductsScreen
+  },
+  ProductDetailsScreen: {
+    screen: ProductDetailsScreen
+  },
   LoginScreen: {
     screen: LoginScreen
   },
