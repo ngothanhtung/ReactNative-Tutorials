@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, FlatList, Image, TouchableOpacity } from 'react-native';
 import axios from 'axios';
+import Star from '../../components/shared/Star';
 
 const url = 'https://slacklivechat.com/jsonplaceholder/products';
 
@@ -17,6 +18,7 @@ class Product extends Component {
           <Text>
             {this.props.product.name}
           </Text>
+          <Star number={5} />
         </View>
       </TouchableOpacity>
 
@@ -45,6 +47,7 @@ export default class ProductsScreen extends Component {
       <View>
         <FlatList
           data={this.state.products}
+          keyExtractor={(item, index) => index.toString()}
           renderItem={({ item }) =>
             <Product navigation={this.props.navigation} product={item} />
           }
