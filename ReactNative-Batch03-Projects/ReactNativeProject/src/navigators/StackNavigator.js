@@ -16,13 +16,18 @@ const RouteConfigs = {
     screen: CheckoutScreen
   },
   LoginScreen: {
-    screen: LoginScreen
+    screen: LoginScreen,
+    navigationOptions: ({ navigation }) => ({
+      header: null
+    }),
   },
   RegisterScreen: {
     screen: RegisterScreen
   },
+
 }
 const StackNavigatorConfig = {
+  initialRouteName: 'LoginScreen',
   navigationOptions: {
     // header: null,
     headerStyle: {
