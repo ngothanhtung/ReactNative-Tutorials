@@ -21,10 +21,24 @@ exports.helloWorld = functions.https.onRequest((request, response) => {
 
 exports.login = functions.https.onRequest((request, response) => {
   if (request.body.username === 'admin' && request.body.password === '123456789') {
-    response.send("Hello admin!");
+    response.json({ status: 'OK', message: 'Login successful' });
   } else {
-    response.send("Hello nguoi la!");
+    response.json({ status: 'Not OK', message: 'Login failed' });
   }
+});
+
+exports.register = functions.https.onRequest((request, response) => {
+  // {
+  //   username: "tungnt",
+  //   password: "12345678789",
+  //   phone: "0905157803",
+  //   fullName: "Ngo Thanh Tung"
+  // }
+
+  var data = request.body;
+  db.collection('users').add(data).then(result => {
+    response.json({ status: 'OK', message: 'Register completed' });
+  });
 });
 
 exports.addCity = functions.https.onRequest((request, response) => {
