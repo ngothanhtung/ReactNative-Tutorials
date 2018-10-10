@@ -61,9 +61,31 @@ exports.register = functions.https.onRequest((request, response) => {
   });
 });
 
+
+
 exports.addCity = functions.https.onRequest((request, response) => {
   var data = request.body;
   db.collection('cities').add(data).then(result => {
     response.json(result);
+  });
+});
+
+exports.addProduct = functions.https.onRequest((request, response) => {
+  var data = request.body;
+  db.collection('products').add(data).then(result => {
+    response.json(result);
+  });
+});
+
+exports.getProducts = functions.https.onRequest((request, response) => {
+  var result = [];
+  db.collection('products').get().then(snapshot => {
+    snapshot.forEach(doc => {
+      //console.log(doc.id, '=>', doc.data());
+      result.push(doc.data())
+    });
+    response.json(result);
+  }).catch(err => {
+    response.json({ error: err });
   });
 });
