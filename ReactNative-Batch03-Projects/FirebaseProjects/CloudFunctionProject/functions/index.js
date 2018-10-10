@@ -20,11 +20,21 @@ exports.helloWorld = functions.https.onRequest((request, response) => {
 
 
 exports.login = functions.https.onRequest((request, response) => {
-  if (request.body.username === 'admin' && request.body.password === '123456789') {
-    response.json({ status: 'OK', message: 'Login successful' });
-  } else {
-    response.json({ status: 'Not OK', message: 'Login failed' });
-  }
+  var username = request.body.username;
+  var password = request.body.password;
+  var userRef = db.collection('users')
+    .where('username', '==', username)
+    .where('password', '==', password)
+    .get()
+    .then(doc => {
+      if (doc.exists) {
+        response.json({ message: 'Login OK' })
+      } else {
+        response.json({ message: 'Login Failed' })
+      }
+    }).catch(error => {
+      response.json({ error: error });
+    });
 });
 
 exports.register = functions.https.onRequest((request, response) => {
