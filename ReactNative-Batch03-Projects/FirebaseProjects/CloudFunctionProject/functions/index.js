@@ -22,12 +22,16 @@ exports.helloWorld = functions.https.onRequest((request, response) => {
 exports.login = functions.https.onRequest((request, response) => {
   var username = request.body.username;
   var password = request.body.password;
+
+  console.log('username', username);
+  console.log('password', password);
+
   var userRef = db.collection('users')
     .where('username', '==', username)
     .where('password', '==', password)
     .get()
-    .then(doc => {
-      if (doc.exists) {
+    .then(snapshot => {
+      if (snapshot.size > 0) {
         response.json({ message: 'Login OK' })
       } else {
         response.json({ message: 'Login Failed' })
@@ -45,9 +49,15 @@ exports.register = functions.https.onRequest((request, response) => {
   //   fullName: "Ngo Thanh Tung"
   // }
 
-  var data = request.body;
-  db.collection('users').add(data).then(result => {
-    response.json({ status: 'OK', message: 'Register completed' });
+  var { username, password, phone, fullName } = request.body;
+  // console.log(data);
+  db.collection('users').add({
+    username: username,
+    password: password,
+    phone: phone,
+    fullName: fullName
+  }).then(result => {
+    response.json({ status: 'OK', message: 'Register completed (updated)' });
   });
 });
 
