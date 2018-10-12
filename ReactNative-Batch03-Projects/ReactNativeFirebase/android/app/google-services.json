@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "595684650138",
+    "firebase_url": "https://aptech-reactnative-firebase.firebaseio.com",
+    "project_id": "aptech-reactnative-firebase",
+    "storage_bucket": "aptech-reactnative-firebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:595684650138:android:e31fcd7021dbf069",
+        "android_client_info": {
+          "package_name": "com.aptech.myfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "595684650138-mmdegdnnc1h6ao9kp87blfh26q542moo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCGTors5LXzvlAWV6vuLDmJUb-p_9-hDUE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
