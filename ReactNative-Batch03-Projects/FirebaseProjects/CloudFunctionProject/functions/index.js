@@ -4,6 +4,7 @@ const functions = require('firebase-functions');
 admin.initializeApp(functions.config().firebase);
 
 var db = admin.firestore();
+var database = admin.database();
 // // Create and Deploy Your First Cloud Functions
 // // https://firebase.google.com/docs/functions/write-firebase-functions
 //
@@ -87,5 +88,23 @@ exports.getProducts = functions.https.onRequest((request, response) => {
     response.json(result);
   }).catch(err => {
     response.json({ error: err });
+  });
+});
+
+exports.chat = functions.https.onRequest((request, response) => {
+  var { from, to, messageText } = request.body;
+  //const serverTime = database.ServerValue.TIMESTAMP;
+  database.ref('messages').push({
+    from: from,
+    to: to,
+    messageText: messageText,
+    createdTime: new Date()
+  }, (error) => {
+    if (error) {
+      response.json({ error: error });
+    }
+    else {
+      response.json({ status: 'OK' });
+    }
   });
 });
