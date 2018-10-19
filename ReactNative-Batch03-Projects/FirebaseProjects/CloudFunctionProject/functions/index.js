@@ -91,6 +91,7 @@ exports.editProduct = functions.https.onRequest((request, response) => {
   }
   else {
     var id = request.query.id;
+    console.log(request.query);
     var data = request.body;
     db.collection('products').doc(id).update(data).then(result => {
       response.json(result);
@@ -113,12 +114,12 @@ exports.getProducts = functions.https.onRequest((request, response) => {
 
 exports.chat = functions.https.onRequest((request, response) => {
   var { from, to, messageText } = request.body;
-  //const serverTime = database.ServerValue.TIMESTAMP;
+  const serverTime = admin.database.ServerValue.TIMESTAMP;
   database.ref('messages').push({
     from: from,
     to: to,
     messageText: messageText,
-    createdTime: new Date()
+    createdTime: serverTime
   }, (error) => {
     if (error) {
       response.json({ error: error });
