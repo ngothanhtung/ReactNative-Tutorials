@@ -71,11 +71,31 @@ exports.addCity = functions.https.onRequest((request, response) => {
   });
 });
 
+// POST
 exports.addProduct = functions.https.onRequest((request, response) => {
-  var data = request.body;
-  db.collection('products').add(data).then(result => {
-    response.json(result);
-  });
+  if (request.method !== 'POST') {
+    response.status(400).json({ ok: false });
+  }
+  else {
+    var data = request.body;
+    db.collection('products').add(data).then(result => {
+      response.json(result);
+    });
+  }
+});
+
+// PUT
+exports.editProduct = functions.https.onRequest((request, response) => {
+  if (request.method !== 'PUT') {
+    response.status(400).json({ ok: false });
+  }
+  else {
+    var id = request.query.id;
+    var data = request.body;
+    db.collection('products').doc(id).update(data).then(result => {
+      response.json(result);
+    });
+  }
 });
 
 exports.getProducts = functions.https.onRequest((request, response) => {
@@ -108,3 +128,23 @@ exports.chat = functions.https.onRequest((request, response) => {
     }
   });
 });
+
+
+exports.chat = functions.https.onRequest((request, response) => {
+  var { from, to, messageText } = request.body;
+  //const serverTime = database.ServerValue.TIMESTAMP;
+  database.ref('messages').push({
+    from: from,
+    to: to,
+    messageText: messageText,
+    createdTime: new Date()
+  }, (error) => {
+    if (error) {
+      response.json({ error: error });
+    }
+    else {
+      response.json({ status: 'OK' });
+    }
+  });
+});
+
