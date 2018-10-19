@@ -91,7 +91,6 @@ exports.editProduct = functions.https.onRequest((request, response) => {
   }
   else {
     var id = request.query.id;
-    console.log(request.query);
     var data = request.body;
     db.collection('products').doc(id).update(data).then(result => {
       response.json(result);
