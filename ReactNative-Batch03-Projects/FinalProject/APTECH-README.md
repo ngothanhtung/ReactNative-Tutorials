@@ -1,0 +1,1 @@
+MacOS - Delete folder .git: rm -rf .git
