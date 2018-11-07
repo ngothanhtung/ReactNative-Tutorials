@@ -1,0 +1,3 @@
+export const CALCULATE_TOTAL = 'CALCULATE_TOTAL';
+export const RESET_TOTAL = 'RESET_TOTAL';
+
