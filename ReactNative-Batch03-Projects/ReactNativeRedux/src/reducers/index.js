@@ -1,6 +1,9 @@
 import * as ActionTypes from '../actions/types';
 const defaulState = {
-  total: 999
+  total: 999,
+  // -----------------
+  photos: [],
+  loading: false
 };
 
 const calculatorReducer = (state = defaulState, action) => {
@@ -14,6 +17,23 @@ const calculatorReducer = (state = defaulState, action) => {
       return Object.assign({}, state, {
         total: 0
       });
+    case ActionTypes.GET_PHOTOS_PENDING:
+      return {
+        ...state,
+        loading: true,
+      };
+    case ActionTypes.GET_PHOTOS_SUCCESS:
+      return {
+        ...state,
+        photos: action.photos,
+        loading: false,
+      };
+    case ActionTypes.GET_PHOTOS_ERROR:
+      return {
+        ...state,
+        photos: [],
+        loading: false,
+      };
     default:
       return state;
   }
