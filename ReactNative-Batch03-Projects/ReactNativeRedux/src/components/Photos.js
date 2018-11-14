@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 import { connect } from 'react-redux';
 import { getPhotosAsync } from '../actions';
+import { GET_PHOTOS } from '../actions/types'
 
 class Photos extends Component {
   componentDidMount() {
@@ -24,7 +25,10 @@ const mapStateToProps = (state) => ({
 });
 // Nối các functions vào props (functions) của View Component
 const mapDispatchToProps = (dispatch) => ({
-  getPhotosAsync: () => dispatch(getPhotosAsync())
+  getPhotosAsync: () => dispatch(getPhotosAsync()),
+  getPhotosBySaga: () => dispatch({
+    type: GET_PHOTOS
+  }),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Photos);

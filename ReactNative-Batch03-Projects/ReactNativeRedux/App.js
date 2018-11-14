@@ -3,13 +3,21 @@ import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
 import Product from './src/components/Product';
 import Footer from './src/components/Footer';
 import Photos from './src/components/Photos';
-
+// STORE
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
+// PROVIDER
 import { Provider } from 'react-redux';
+// REDUCER
 import calculatorReducer from './src/reducers/index'
-
+// THUNK
 import thunkMiddleware from 'redux-thunk';
+// TOOLS
 import { composeWithDevTools } from 'redux-devtools-extension';
+// SAGA
+import createSagaMiddleware from 'redux-saga';
+import photoSagas from './src/photoSagas';
+
+const sagaMiddleware = createSagaMiddleware();
 
 const rootReducer = combineReducers({
   calculatorReducer,
@@ -18,6 +26,8 @@ const rootReducer = combineReducers({
 const middewares = [
   // THUNK
   thunkMiddleware,
+  // SAGA
+  sagaMiddleware,
 ];
 
 
@@ -26,6 +36,8 @@ const store = createStore(
   composeWithDevTools(applyMiddleware(...middewares))
   // applyMiddleware(...middewares)
 );
+
+sagaMiddleware.run(photoSagas);
 
 
 export default class App extends Component {

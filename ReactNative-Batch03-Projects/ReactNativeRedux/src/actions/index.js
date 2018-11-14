@@ -13,6 +13,7 @@ export const resetTotal = () => ({
 });
 
 // --------------------------------------
+// REDUX - THUNK
 export const getPhotosAsync = () => {
   return (dispatch) => {
     dispatch({ type: ActionTypes.GET_PHOTOS_PENDING });

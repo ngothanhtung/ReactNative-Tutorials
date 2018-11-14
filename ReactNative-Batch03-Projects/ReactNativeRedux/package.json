@@ -12,6 +12,7 @@
     "react-native": "0.57.4",
     "react-redux": "^5.1.0",
     "redux": "^4.0.1",
+    "redux-saga": "^0.16.2",
     "redux-thunk": "^2.3.0"
   },
   "devDependencies": {

@@ -5115,6 +5115,11 @@ redux-devtools-extension@^2.13.5:
   resolved "https://registry.yarnpkg.com/redux-devtools-extension/-/redux-devtools-extension-2.13.5.tgz#3ff34f7227acfeef3964194f5f7fc2765e5c5a39"
   integrity sha512-QQ9BRy77oURHMdGys9rfQcCQDzXZ1T4oW+eUyE5Cg7DNVau69HJzc4YNDMOmpi0Dzpi1zOQgQ2rUpgJta4Lfqg==
 
+redux-saga@^0.16.2:
+  version "0.16.2"
+  resolved "https://registry.yarnpkg.com/redux-saga/-/redux-saga-0.16.2.tgz#993662e86bc945d8509ac2b8daba3a8c615cc971"
+  integrity sha512-iIjKnRThI5sKPEASpUvySemjzwqwI13e3qP7oLub+FycCRDysLSAOwt958niZW6LhxfmS6Qm1BzbU70w/Koc4w==
+
 redux-thunk@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/redux-thunk/-/redux-thunk-2.3.0.tgz#51c2c19a185ed5187aaa9a2d08b666d0d6467622"
