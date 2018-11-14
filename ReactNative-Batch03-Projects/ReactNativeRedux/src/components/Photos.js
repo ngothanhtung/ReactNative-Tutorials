@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, Button } from 'react-native';
 import { connect } from 'react-redux';
 import { getPhotosAsync } from '../actions';
 import { GET_PHOTOS } from '../actions/types'
@@ -12,6 +12,9 @@ class Photos extends Component {
     return (
       <View>
         <Text> {this.props.total} </Text>
+        <Button title="login" onPress={() => {
+          this.props.login('', '123456789');
+        }} />
       </View>
     )
   }
@@ -28,6 +31,11 @@ const mapDispatchToProps = (dispatch) => ({
   getPhotosAsync: () => dispatch(getPhotosAsync()),
   getPhotosBySaga: () => dispatch({
     type: GET_PHOTOS
+  }),
+  login: (email, password) => dispatch({
+    type: 'LOGIN',
+    email: email,
+    password: password
   }),
 });
 
