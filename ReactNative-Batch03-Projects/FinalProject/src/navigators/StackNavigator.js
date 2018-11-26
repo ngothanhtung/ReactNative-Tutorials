@@ -1,8 +1,20 @@
 import { createStackNavigator } from 'react-navigation';
 import LoginScreen from '../screens/StackScreens/LoginScreen';
 import RegisterScreen from '../screens/StackScreens/RegisterScreen';
+import ProductsScreen from '../screens/TabScreens/ProductsScreen';
+import ProductDetailsScreen from '../screens/TabScreens/ProductDetailsScreen';
+import CheckoutScreen from '../screens/StackScreens/CheckoutScreen';
 
 const RouteConfigs = {
+  ProductsScreen: {
+    screen: ProductsScreen
+  },
+  ProductDetailsScreen: {
+    screen: ProductDetailsScreen
+  },
+  CheckoutScreen: {
+    screen: CheckoutScreen
+  },
   LoginScreen: {
     screen: LoginScreen,
     navigationOptions: ({ navigation }) => ({
@@ -12,6 +24,7 @@ const RouteConfigs = {
   RegisterScreen: {
     screen: RegisterScreen
   },
+
 }
 const StackNavigatorConfig = {
   initialRouteName: 'LoginScreen',

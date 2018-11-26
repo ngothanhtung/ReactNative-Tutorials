@@ -1,18 +1,18 @@
 import { createSwitchNavigator } from 'react-navigation';
-import StackNavigator from './StackNavigation';
-// import TabNavigator from '../navigators/TabNavigator';
-// import DrawerNavigator from './DrawerNavigator';
+import StackNavigator from '../navigators/StackNavigator';
+import TabNavigator from '../navigators/TabNavigator';
+import DrawerNavigator from './DrawerNavigator';
 
 const RouteConfigs = {
-  StackScreen: {
-    screen: StackNavigator
-  },
+  // StackScreen: {
+  //   screen: StackNavigator
+  // },
   // DrawerScreen: {
   //   screen: DrawerNavigator
   // },
-  // TabScreen: {
-  //   screen: TabNavigator
-  // },
+  TabScreen: {
+    screen: TabNavigator
+  },
 }
 const SwitchNavigatorConfig = {
 

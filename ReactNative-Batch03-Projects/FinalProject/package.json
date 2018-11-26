@@ -8,6 +8,7 @@
     "jest": "23.6.0",
     "metro-react-native-babel-preset": "0.48.0",
     "react-test-renderer": "16.5.0",
+    "redux-devtools-extension": "^2.13.6",
     "replace-in-file": "^3.4.0"
   },
   "scripts": {
@@ -22,9 +23,17 @@
     "preset": "react-native"
   },
   "dependencies": {
+    "axios": "^0.18.0",
+    "native-base": "^2.8.1",
     "react": "16.5.0",
     "react-native": "0.57.1",
     "react-native-firebase": "^5.0.0",
-    "react-navigation": "^2.18.2"
+    "react-native-linear-gradient": "^2.5.2",
+    "react-native-text-gradient": "^0.0.16",
+    "react-native-vector-icons": "^6.1.0",
+    "react-navigation": "^2.18.2",
+    "react-redux": "^5.1.1",
+    "redux": "^4.0.1",
+    "redux-saga": "^0.16.2"
   }
 }
