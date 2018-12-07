@@ -148,3 +148,32 @@ exports.chat = functions.https.onRequest((request, response) => {
   });
 });
 
+
+
+exports.sendToTopic = functions.https.onRequest((request, response) => {
+  var { topic, title, body } = request.body;
+  var message = {
+    notification: {
+      title: title,
+      body: body
+    },
+    data: {
+
+    },
+    topic: topic
+  };
+
+  // Send a message to devices subscribed to the provided topic.
+  admin.messaging().send(message)
+    .then((response) => {
+      // Response is a message ID string.
+      console.log('Successfully sent message:', response);
+      response.json({ status: 'OK' });
+      res
+    })
+    .catch((error) => {
+      console.log('Error sending message:', error);
+      response.json({ status: 'Error' });
+    });
+});
+

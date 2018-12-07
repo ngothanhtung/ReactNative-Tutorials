@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "230727659562",
+    "firebase_url": "https://aptech-batch03-final-project.firebaseio.com",
+    "project_id": "aptech-batch03-final-project",
+    "storage_bucket": "aptech-batch03-final-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:230727659562:android:108cf571488036c8",
+        "android_client_info": {
+          "package_name": "com.aptech.batchiii"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "230727659562-3cgi8l12nm28pcrjpl9nr9sdu0b0vcv0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBG8JS3fUuzONkcWKt1u5NIDO8wuperVZ8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:230727659562:android:9c9b286d8bfa9848",
+        "android_client_info": {
+          "package_name": "com.aptech.firebasechat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "230727659562-3cgi8l12nm28pcrjpl9nr9sdu0b0vcv0.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBG8JS3fUuzONkcWKt1u5NIDO8wuperVZ8"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
