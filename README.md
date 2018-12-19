@@ -1,7 +1,9 @@
 # Get Started
 1. Nodejs: https://nodejs.org/en/
-2. Xcode, Android Studio
-3. 
+2. Java SDK 8: https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html 
+3. Xcode, Android Studio: https://developer.android.com/studio/
+4. Visual Studio Code: https://code.visualstudio.com/Download
+
 # A. Some useful websites
 ## References:
 1. https://flatuicolors.com
