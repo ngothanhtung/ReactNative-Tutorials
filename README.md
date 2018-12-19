@@ -1,3 +1,7 @@
+# Get Started
+1. Nodejs: https://nodejs.org/en/
+2. Xcode, Android Studio
+3. 
 # A. Some useful websites
 ## References:
 1. https://flatuicolors.com
