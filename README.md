@@ -3,6 +3,7 @@
 2. Java SDK 8: https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html 
 3. Xcode, Android Studio: https://developer.android.com/studio/
 4. Visual Studio Code: https://code.visualstudio.com/Download
+5. Git SCM: https://git-scm.com/download/
 
 # Visual Studio Code Extensions:
 1. Auto Rename Tag: (Donwloads: 1.1M)
