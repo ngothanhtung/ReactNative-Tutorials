@@ -18,8 +18,8 @@
 1. https://facebook.github.io/react-native/
 2. https://facebook.github.io/react-native/docs/getting-started
 3. Select tab: Building Projects with Native Code
-3.1. npm install -g react-native-cli
-3.2 react-native init HelloWorldApp
+4. npm install -g react-native-cli
+5. react-native init HelloWorldApp
 
 # A. Some useful websites
 ## References:
