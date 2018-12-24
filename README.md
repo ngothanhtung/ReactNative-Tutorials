@@ -4,6 +4,15 @@
 3. Xcode, Android Studio: https://developer.android.com/studio/
 4. Visual Studio Code: https://code.visualstudio.com/Download
 
+# Visual Studio Code Extensions:
+1. Auto Rename Tag: (Donwloads: 1.1M)
+2. Bracket Pair Colorizer (Donwloads: 3.2M)
+3. ES7 React/Redux/GraphQL/React-Native snippets (Downloads: 1.1M)
+4. React Native Tools (Downloads: 2.9M)
+5. Material Icon Theme (Downloads: 5M)
+6. One Dark Pro (Downloads: 7.8M)
+7. Debugger for Chrome (Downloads: 15.4M)
+
 # A. Some useful websites
 ## References:
 1. https://flatuicolors.com
