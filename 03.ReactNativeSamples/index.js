@@ -4,19 +4,14 @@ import App from './App';
 // import LoginScreenV1 from './screens/LoginScreenV1';
 // import LoginScreenV2 from './screens/LoginScreenV2';
 // import LoginScreenV3 from './screens/LoginScreenV3';
-
 // import FlexBasic from './screens/FlexLayout/Basic';
 // import RegisterScreenV1 from './screens/RegisterScreenV1';
 // import RegisterScreenV2 from './screens/RegisterScreenV2';
 // import RegisterScreenV3 from './screens/RegisterScreenV3';
-
 // import ModalScreen from './screens/ModalScreen';
-
 // import PropsAndState from './screens/PropsAndState';
 // import MainStackNavigator from './navigators/MainStackNavigator';
 // import MainTabNavigator from './navigators/MainTabNavigator';
-
-
 
 // import ComponentExample from './screens/ComponentExample';
 // import StateExample from './screens/StateExample';
@@ -25,7 +20,7 @@ import App from './App';
 
 console.disableYellowBox = true;
 
-AppRegistry.registerComponent('ReactNativeStarter', () => PicsumScreen);
+AppRegistry.registerComponent('ReactNativeSamples', () => App);
 
 // LOGIN SCREENS
 // AppRegistry.registerComponent('ReactNativeStarter', () => LoginScreen);

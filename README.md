@@ -6,7 +6,7 @@
 
 # Visual Studio Code Extensions:
 1. Auto Rename Tag: (Donwloads: 1.1M)
-2. Bracket Pair Colorizer (Donwloads: 3.2M)
+2. Bracket Pair Colorizer 2 (Donwloads: 66K)
 3. ES7 React/Redux/GraphQL/React-Native snippets (Downloads: 1.1M)
 4. React Native Tools (Downloads: 2.9M)
 5. Material Icon Theme (Downloads: 5M)
