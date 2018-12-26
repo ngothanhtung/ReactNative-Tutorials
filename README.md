@@ -14,6 +14,9 @@
 6. One Dark Pro (Downloads: 7.8M)
 7. Debugger for Chrome (Downloads: 15.4M)
 
+# Videos:
+1. Videos: https://www.youtube.com/watch?v=kNHuLOXR5T0&list=PLWBrqglnjNl31S91FFE63DtuRc9v9LSGl
+
 # Session 01 & 02 Hello World App:
 1. https://facebook.github.io/react-native/
 2. https://facebook.github.io/react-native/docs/getting-started
