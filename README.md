@@ -23,11 +23,14 @@
 6. Component Examples: https://facebook.github.io/react-native/docs/tutorial
 7. Props: https://facebook.github.io/react-native/docs/props
 8. State: https://facebook.github.io/react-native/docs/state
+
 # Session 03 More Props & State
 1. props: https://reactjs.org/docs/typechecking-with-proptypes.html
-2. state: https://facebook.github.io/react-native/docs/handling-text-input
-3. TextInput ref: https://facebook.github.io/react-native/docs/textinput
-4. Examples: Folder Session 03
+2. Install Package: https://www.npmjs.com/package/prop-types
+3. state: https://facebook.github.io/react-native/docs/handling-text-input
+4. TextInput ref: https://facebook.github.io/react-native/docs/textinput
+5. Examples: https://github.com/ngothanhtung/reactnative-tutorials/blob/master/Batch04/HelloWorldApp/session03/Login.js
+
 # A. Some useful websites
 ## References:
 1. https://flatuicolors.com
