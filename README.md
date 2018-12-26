@@ -14,12 +14,18 @@
 6. One Dark Pro (Downloads: 7.8M)
 7. Debugger for Chrome (Downloads: 15.4M)
 
-# Hello World App:
+# Session 01 & 02 Hello World App:
 1. https://facebook.github.io/react-native/
 2. https://facebook.github.io/react-native/docs/getting-started
-3. Select tab: Building Projects with Native Code
+3. Get started: Select tab: Building Projects with Native Code
 4. npm install -g react-native-cli
-5. react-native init HelloWorldApp
+5. Create new react native project: react-native init HelloWorldApp
+6. Component Examples: https://facebook.github.io/react-native/docs/tutorial
+7. Props: https://facebook.github.io/react-native/docs/props
+8. State: https://facebook.github.io/react-native/docs/state
+# Session 03 More Props & State
+1. prop
+2. state
 
 # A. Some useful websites
 ## References:
