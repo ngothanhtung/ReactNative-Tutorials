@@ -25,8 +25,9 @@
 8. State: https://facebook.github.io/react-native/docs/state
 # Session 03 More Props & State
 1. props: https://reactjs.org/docs/typechecking-with-proptypes.html
-2. state
-
+2. state: https://facebook.github.io/react-native/docs/handling-text-input
+3. TextInput ref: https://facebook.github.io/react-native/docs/textinput
+4. Examples: Folder Session 03
 # A. Some useful websites
 ## References:
 1. https://flatuicolors.com
