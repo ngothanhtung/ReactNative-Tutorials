@@ -24,7 +24,7 @@
 7. Props: https://facebook.github.io/react-native/docs/props
 8. State: https://facebook.github.io/react-native/docs/state
 # Session 03 More Props & State
-1. prop
+1. props: https://reactjs.org/docs/typechecking-with-proptypes.html
 2. state
 
 # A. Some useful websites
