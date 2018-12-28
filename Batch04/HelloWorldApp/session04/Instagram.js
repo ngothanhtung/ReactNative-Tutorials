@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Text, View, StyleSheet, SafeAreaView } from 'react-native'
+import { Text, View, StyleSheet, SafeAreaView, Image } from 'react-native'
 import ButtonStyles from '../styles/ButtonStyles'
 import FaIcon from 'react-native-vector-icons/FontAwesome'
 import FeIcon from 'react-native-vector-icons/Feather'
@@ -28,13 +28,49 @@ export default class Instagram extends Component {
         </View>
         {/* ===================================================== */}
         <View style={{ height: 80, backgroundColor: 'green', flexDirection: 'row' }}>
-          <View style={{ flex: 1, backgroundColor: '#ffeaa7' }}>
+          <View style={{ flex: 1, backgroundColor: '#ffeaa7', justifyContent: 'center', alignItems: 'center' }}>
+            <View style={{ height: 66, width: 66, justifyContent: 'center', alignItems: 'center', backgroundColor: 'red', borderRadius: 33 }}>
+              <Image source={{ uri: 'http://i.pravatar.cc/300' }}
+                style={{
+                  height: 60, width: 60,
+                  borderRadius: 30
+                }}
+              />
+            </View>
 
           </View>
-          <View style={{ flex: 1, backgroundColor: '#00cec9' }}></View>
-          <View style={{ flex: 1, backgroundColor: '#0984e3' }}></View>
-          <View style={{ flex: 1, backgroundColor: '#6c5ce7' }}></View>
-          <View style={{ flex: 1, backgroundColor: '#b2bec3' }}></View>
+          <View style={{ flex: 1, backgroundColor: '#ffeaa7', justifyContent: 'center', alignItems: 'center' }}>
+            <Image source={{ uri: 'http://i.pravatar.cc/300' }}
+              style={{
+                height: 60, width: 60,
+                borderRadius: 30
+              }}
+            />
+          </View>
+          <View style={{ flex: 1, backgroundColor: '#ffeaa7', justifyContent: 'center', alignItems: 'center' }}>
+            <Image source={{ uri: 'http://i.pravatar.cc/300' }}
+              style={{
+                height: 60, width: 60,
+                borderRadius: 30
+              }}
+            />
+          </View>
+          <View style={{ flex: 1, backgroundColor: '#ffeaa7', justifyContent: 'center', alignItems: 'center' }}>
+            <Image source={{ uri: 'http://i.pravatar.cc/300' }}
+              style={{
+                height: 60, width: 60,
+                borderRadius: 30
+              }}
+            />
+          </View>
+          <View style={{ flex: 1, backgroundColor: '#ffeaa7', justifyContent: 'center', alignItems: 'center' }}>
+            <Image source={{ uri: 'http://i.pravatar.cc/300' }}
+              style={{
+                height: 60, width: 60,
+                borderRadius: 30
+              }}
+            />
+          </View>
         </View>
         {/* ===================================================== */}
         <View style={{ height: 54, backgroundColor: 'orange', flexDirection: 'row' }}>
