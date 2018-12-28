@@ -36,6 +36,8 @@
 3. state: https://facebook.github.io/react-native/docs/handling-text-input
 4. TextInput ref: https://facebook.github.io/react-native/docs/textinput
 5. Examples: https://github.com/ngothanhtung/reactnative-tutorials/blob/master/Batch04/HelloWorldApp/session03/Login.js
+# Session 04 Styles
+1. Style: https://facebook.github.io/react-native/docs/style
 
 # A. Some useful websites
 ## References:
