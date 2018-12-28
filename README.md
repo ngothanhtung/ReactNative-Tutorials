@@ -42,6 +42,7 @@
 3. Layout with Flexbox: https://facebook.github.io/react-native/docs/flexbox
 4. Package: React-Native-Vector-Icons: https://github.com/oblador/react-native-vector-icons
 5. Browse Icons: https://oblador.github.io/react-native-vector-icons/
+6. Face Stock: http://pravatar.cc/
 
 # A. Some useful websites
 ## References:

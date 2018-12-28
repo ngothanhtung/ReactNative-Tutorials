@@ -8,4 +8,4 @@ import FlexLayout from './session04/FlexLayout'
 import FlexLayoutComplex from './session04/FlexLayoutComplex'
 import { name as appName } from './app.json';
 
-AppRegistry.registerComponent(appName, () => FlexLayoutComplex);
+AppRegistry.registerComponent(appName, () => Instagram);
