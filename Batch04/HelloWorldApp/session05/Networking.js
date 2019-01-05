@@ -33,20 +33,19 @@ export default class NetworkingComponent extends Component {
     return (
       <SafeAreaView style={{ flex: 1 }}>
         <View style={{ flex: 1, justifyContent: 'center', padding: 24 }}>
-          {/* {
-          this.state.loading && <ActivityIndicator size="large" />
-        }
-        {
-          (this.state.loading === false) && this.state.movies.map((item, index) => {
-            return (
-              <View key={index}>
-                <Text>{item.title}</Text>
-              </View>
-            )
-          })
-        } */}
           {
-
+            this.state.loading && <ActivityIndicator size="large" />
+          }
+          {
+            (this.state.loading === false) && this.state.movies.map((item, index) => {
+              return (
+                <View key={index}>
+                  <Text>{item.title}</Text>
+                </View>
+              )
+            })
+          }
+          {
             <FlatList
               data={this.state.movies}
               keyExtractor={(item, index) => index.toString()}
