@@ -36,14 +36,15 @@
 3. state: https://facebook.github.io/react-native/docs/handling-text-input
 4. TextInput ref: https://facebook.github.io/react-native/docs/textinput
 5. Examples: https://github.com/ngothanhtung/reactnative-tutorials/blob/master/Batch04/HelloWorldApp/session03/Login.js
-# Session 04 Styles
+# Session 04 Styles & Layout
 1. Style: https://facebook.github.io/react-native/docs/style
 2. Height and Width: https://facebook.github.io/react-native/docs/height-and-width
 3. Layout with Flexbox: https://facebook.github.io/react-native/docs/flexbox
 4. Package: React-Native-Vector-Icons: https://github.com/oblador/react-native-vector-icons
 5. Browse Icons: https://oblador.github.io/react-native-vector-icons/
 6. Face Stock: http://pravatar.cc/
-
+# Session 05 Networking
+1. 
 # A. Some useful websites
 ## References:
 1. https://flatuicolors.com
