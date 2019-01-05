@@ -3,7 +3,7 @@ import { Text, View, TextInput, Image } from 'react-native'
 import Button from './Button'
 import Header from './Header'
 import TotalText from './TotalText'
-
+import Footer from './session03/Footer'
 export default class App extends Component {
   constructor(props) {
     super(props)
@@ -39,6 +39,8 @@ export default class App extends Component {
         />
 
         <TotalText price={1000} quantity={1} discount={5} />
+        <Footer />
+
       </View>
     )
   }
