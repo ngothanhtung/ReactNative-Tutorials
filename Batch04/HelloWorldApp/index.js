@@ -13,6 +13,7 @@ import SectionListAdvancedExamples from './session05/SectionListAdvancedExamples
 import NetworkingComponent from './session05/Networking'
 import NetworkingAxiosExamples from './session05/NetworkingAxiosExamples'
 import NetworkingMoreExamples from './session05/NetworkingMoreExamples'
+import GalleryHomework from './session05/GalleryHomework'
 import { name as appName } from './app.json';
 
-AppRegistry.registerComponent(appName, () => NetworkingMoreExamples);
+AppRegistry.registerComponent(appName, () => GalleryHomework);
