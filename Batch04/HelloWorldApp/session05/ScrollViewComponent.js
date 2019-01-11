@@ -20,19 +20,7 @@ export default class ScrollViewComponent extends Component {
   render() {
     return (
       <View>
-        <FlatList
-          data={this.state.posts}
-          renderItem={({ item }) => (
-            <View style={{ borderBottomWidth: 1, borderBottomColor: 'red', height: 100, backgroundColor: 'yellow' }}>
-              <Image source={{ uri: item.thumbnailUrl }} style={{ height: 100, width: 100 }} />
-              <Text>
-                {item.title}
-              </Text>
-            </View>
-          )}
-
-        />
-        {/* <ScrollView>
+        <ScrollView>
           {
             this.state.posts && this.state.posts.map((item, index) => (
               <View key={index} style={{ borderBottomWidth: 1, borderBottomColor: 'red', height: 100, backgroundColor: 'yellow' }}>
@@ -43,7 +31,7 @@ export default class ScrollViewComponent extends Component {
               </View>
             ))
           }
-        </ScrollView> */}
+        </ScrollView>
       </View>
 
     )

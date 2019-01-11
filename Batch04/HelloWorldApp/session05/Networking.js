@@ -11,16 +11,15 @@ export default class NetworkingComponent extends Component {
     }
 
     fetch('https://facebook.github.io/react-native/movies.json')
-      .then((response) => response.json())
+      .then((response) => {
+        console.log(response);
+        return response.json()
+      })
       .then((responseJson) => {
-        //console.log('WILL DONE');
-        //console.log('NETWORKING JSON', responseJson);
         this.setState({
           movies: responseJson.movies
         });
-        console.log(this.state.movies);
         this.setState({ loading: false });
-        // return responseJson.movies;
       })
       .catch((error) => {
         this.setState({ loading: false });
@@ -29,6 +28,17 @@ export default class NetworkingComponent extends Component {
 
     console.log('DONE')
   }
+
+  async getMovies() {
+    try {
+      let response = await fetch('https://facebook.github.io/react-native/movies.json');
+      let responseJson = await response.json();
+      return responseJson.movies;
+    } catch (error) {
+
+    }
+  }
+
   render() {
     return (
       <SafeAreaView style={{ flex: 1 }}>

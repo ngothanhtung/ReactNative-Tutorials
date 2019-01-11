@@ -42,10 +42,14 @@ export default class TouchableComponent extends Component {
     return (
       <SafeAreaView>
         {/* 1. Dynamic binding in render() */}
-        <Button title="Click me 1" onPress={this.clickMeType1.bind(this, 'This is a parameter')} />
+        <Button title="Click me 1" onPress={
+          this.clickMeType1.bind(this, 'This is a parameter')
+        } />
 
-        {/* 2. Use Arrow Function in Render, similar to #1 */}
-        <Button title="Click me 2" onPress={() => this.clickMeType2('This is a parameter')} />
+        {/* 2. Use Arrow Function in Render, similar to #1: (Quick Code) */}
+        <Button title="Click me 2" onPress={() => {
+          this.clickMeType2('This is a parameter');
+        }} />
 
         {/* 3. Use Arrow Function in Class Property (Without Parameters): Nên dùng */}
         <Button title="Click me 3" onPress={this.clickMeType3} />
