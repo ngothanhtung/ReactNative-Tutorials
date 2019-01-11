@@ -1,9 +1,7 @@
 import React, { Component } from 'react'
-import { Text, View, ActivityIndicator, FlatList, SafeAreaView, RefreshControl } from 'react-native'
+import { Text, View, FlatList, SafeAreaView, RefreshControl } from 'react-native'
 
 export default class NetworkingComponent extends Component {
-
-
   constructor(props) {
     super(props);
     this.state = {
@@ -18,14 +16,18 @@ export default class NetworkingComponent extends Component {
     this.getPosts();
     this.getUsers();
   }
+
   async getUsers() {
     try {
+      this.setState({ loadingUsers: true });
       let response = await fetch('https://jsonplaceholder.typicode.com/users');
       let responseJson = await response.json();
       console.log(responseJson);
       this.setState({ users: responseJson });
+      this.setState({ loadingUsers: false });
     } catch (error) {
       console.error(error);
+      this.setState({ loadingUsers: false });
     }
   }
 
@@ -51,7 +53,7 @@ export default class NetworkingComponent extends Component {
             this.state.users &&
             <View style={{ marginBottom: 24 }}>
               <FlatList
-                horizontal
+                horizontal={true}
                 data={this.state.users}
                 keyExtractor={(item, index) => index.toString()}
                 ItemSeparatorComponent={() => <View style={{ width: 6 }}></View>}
@@ -70,11 +72,11 @@ export default class NetworkingComponent extends Component {
             <FlatList
               refreshControl={
                 <RefreshControl
-                  refreshing={this.state.loadingUsers}
+                  refreshing={this.state.loadingPosts}
                   onRefresh={() => this.getPosts()}
                 />
               }
-              inverted
+              inverted={false}
               data={this.state.posts}
               keyExtractor={(item, index) => index.toString()}
               ItemSeparatorComponent={() => <View style={{ height: 6 }}></View>}

@@ -11,6 +11,8 @@ import ScrollViewComponent from './session05/ScrollViewComponent'
 import SectionListExamples from './session05/SectionListExamples'
 import SectionListAdvancedExamples from './session05/SectionListAdvancedExamples'
 import NetworkingComponent from './session05/Networking'
+import NetworkingAxiosExamples from './session05/NetworkingAxiosExamples'
+import NetworkingMoreExamples from './session05/NetworkingMoreExamples'
 import { name as appName } from './app.json';
 
-AppRegistry.registerComponent(appName, () => NetworkingComponent);
+AppRegistry.registerComponent(appName, () => NetworkingMoreExamples);
