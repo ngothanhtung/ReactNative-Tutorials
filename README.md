@@ -36,6 +36,7 @@
 3. state: https://facebook.github.io/react-native/docs/handling-text-input
 4. TextInput ref: https://facebook.github.io/react-native/docs/textinput
 5. Examples: https://github.com/ngothanhtung/reactnative-tutorials/blob/master/Batch04/HelloWorldApp/session03/Login.js
+
 # Session 04 Styles & Layout
 1. Style: https://facebook.github.io/react-native/docs/style
 2. Height and Width: https://facebook.github.io/react-native/docs/height-and-width
@@ -43,8 +44,25 @@
 4. Package: React-Native-Vector-Icons: https://github.com/oblador/react-native-vector-icons
 5. Browse Icons: https://oblador.github.io/react-native-vector-icons/
 6. Face Stock: http://pravatar.cc/
-# Session 05 Networking
-1. 
+
+# Session 05 Event Networking
+1. Handling Text Input: https://facebook.github.io/react-native/docs/handling-text-input
+2. Handling Touches: https://facebook.github.io/react-native/docs/handling-touches
+3. ScrollView: https://facebook.github.io/react-native/docs/using-a-scrollview
+4. ListView: https://facebook.github.io/react-native/docs/using-a-listview
+5. FlatList: https://facebook.github.io/react-native/docs/flatlist
+6. SectionList: https://facebook.github.io/react-native/docs/sectionlist
+7. Networking: https://facebook.github.io/react-native/docs/network
+8. Fetch API: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+9. Axios: https://github.com/axios/axios
+10. Homework: Gallery: http://bit.ly/2D5BMPC
+# Session 06 React Navigation
+1. https://reactnavigation.org
+2. StackNavigation
+3. TabNavigation
+4. DrawerNavigation
+5. SwitchNavigation
+
 # A. Some useful websites
 ## References:
 1. https://flatuicolors.com
