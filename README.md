@@ -45,7 +45,7 @@
 5. Browse Icons: https://oblador.github.io/react-native-vector-icons/
 6. Face Stock: http://pravatar.cc/
 
-# Session 05 Event Networking
+# Session 05 Handling Events & ListView & Networking
 1. Handling Text Input: https://facebook.github.io/react-native/docs/handling-text-input
 2. Handling Touches: https://facebook.github.io/react-native/docs/handling-touches
 3. ScrollView: https://facebook.github.io/react-native/docs/using-a-scrollview
