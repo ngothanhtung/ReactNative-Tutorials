@@ -12,7 +12,8 @@ export default class RegisterScreen extends Component {
         <Text> Register Screen </Text>
         <Text>
           {
-            this.props.navigation.state.params.message
+            // this.props.navigation.state.params.message
+            this.props.navigation.getParam('message', 'default text')
           }
         </Text>
       </SafeAreaView>

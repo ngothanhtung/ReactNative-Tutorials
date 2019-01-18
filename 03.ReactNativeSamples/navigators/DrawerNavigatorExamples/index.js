@@ -78,7 +78,7 @@ class OrderScreen extends React.Component {
 const DrawerNavigator = createDrawerNavigator(
   {
     MainScreen: {
-      screen: createStackNavigator({ screen: MainScreen}),
+      screen: createStackNavigator({ screen: MainScreen }),
       navigationOptions: { title: 'Main Screen' }
     },
     ProfileScreen: {
