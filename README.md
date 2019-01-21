@@ -62,6 +62,15 @@
 3. TabNavigation
 4. DrawerNavigation
 5. SwitchNavigation
+# Session 07 Firebase
+## Cloud Function
+1. Setup firebase tools: npm install -g firebase-tools
+2. Login: firebase login
+3. Login: firebase logout
+4. Init project: firebase init
+5. Hello Function: Uncomment
+6. Deploy: firebase deploy
+7. Cloud Firestore: https://firebase.google.com/docs/firestore/quickstart?authuser=2
 
 # A. Some useful websites
 ## References:

@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Text, Button, SafeAreaView, View } from 'react-native'
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons'
+import axios from 'axios';
 
 class HeaderTitle extends Component {
   render() {
@@ -59,6 +60,14 @@ export default class LoginScreen extends Component {
         <Button title="Go to Tab" onPress={() => {
           // this.props.navigation.navigate('TabNavigator')
           this.props.navigation.navigate('DrawerNavigator')
+        }} />
+        <Button title="LOGIN" onPress={() => {
+          axios.post('https://us-central1-reactnativebatch04.cloudfunctions.net/login', {
+            username: 'admin',
+            password: '1234567899'
+          }).then(response => {
+            console.log(response.data);
+          })
         }} />
       </SafeAreaView>
     )
