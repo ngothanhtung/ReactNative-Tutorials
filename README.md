@@ -56,12 +56,14 @@
 8. Fetch API: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
 9. Axios: https://github.com/axios/axios
 10. Homework: Gallery: http://bit.ly/2D5BMPC
+
 # Session 06 React Navigation
 1. https://reactnavigation.org
 2. StackNavigation
 3. TabNavigation
 4. DrawerNavigation
 5. SwitchNavigation
+
 # Session 07 Firebase
 ## Cloud Function
 1. Setup firebase tools: npm install -g firebase-tools
@@ -71,6 +73,7 @@
 5. Hello Function: Uncomment
 6. Deploy: firebase deploy
 7. Cloud Firestore: https://firebase.google.com/docs/firestore/quickstart?authuser=2
+8. Cloud Firestore Query: https://firebase.google.com/docs/firestore/query-data/queries
 
 # A. Some useful websites
 ## References:
