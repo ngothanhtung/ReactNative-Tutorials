@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "258271771151",
+    "firebase_url": "https://reactnativebatch04.firebaseio.com",
+    "project_id": "reactnativebatch04",
+    "storage_bucket": "reactnativebatch04.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:258271771151:android:66d334090be8657d",
+        "android_client_info": {
+          "package_name": "com.aptech.reactnativefirebasestarter"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "258271771151-fis95mie58gduhbveb2pbs6ev0ga3uhq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCiAI01SgNEPs3EFWVBLEa-D34mdhvZEL0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

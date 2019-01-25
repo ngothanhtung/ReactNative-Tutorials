@@ -69,12 +69,20 @@
 1. Setup firebase tools: npm install -g firebase-tools
 2. Login: firebase login
 3. Login: firebase logout
-4. Init project: firebase init
+4. Init project: firebase init => Choose Cloud Function => Choose Project => Choose Language => SELECT DEFAUT OPTIONS => DONE
 5. Hello Function: Uncomment
 6. Deploy: firebase deploy
-7. Cloud Firestore: https://firebase.google.com/docs/firestore/quickstart?authuser=2
-8. Cloud Firestore Query: https://firebase.google.com/docs/firestore/query-data/queries
-
+## Cloud Filestore
+1. Cloud Firestore: https://firebase.google.com/docs/firestore/quickstart
+2. Query Data: https://firebase.google.com/docs/firestore/query-data/queries
+3. Get Data: https://firebase.google.com/docs/firestore/query-data/get-data
+3. Add / Update Data: https://firebase.google.com/docs/firestore/manage-data/add-data
+4. Delete Data: https://firebase.google.com/docs/firestore/manage-data/delete-data
+5. Realtime Update: https://firebase.google.com/docs/firestore/query-data/listen
+## React Native With Firebase
+1. https://rnfirebase.io/
+2. Documents: https://rnfirebase.io/docs/v5.x.x/getting-started
+3. Starter Kit: https://rnfirebase.io/docs/v5.x.x/installation/basic-kit
 # A. Some useful websites
 ## References:
 1. https://flatuicolors.com

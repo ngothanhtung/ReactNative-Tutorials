@@ -1,42 +1,24 @@
+// https://firebase.google.com/docs/functions/write-firebase-functions
+
+const auth = require('./auth');
 const admin = require('firebase-admin');
 const functions = require('firebase-functions');
 
 admin.initializeApp(functions.config().firebase);
-
 var db = admin.firestore();
 
-// // Create and Deploy Your First Cloud Functions
-// // https://firebase.google.com/docs/functions/write-firebase-functions
+// exports.helloWorld = functions.https.onRequest((request, response) => {
+//   response.send("Hello from Firebase!");
+// });
 
-exports.helloWorld = functions.https.onRequest((request, response) => {
-  response.send("Hello from Firebase!");
-});
-
-exports.easyLogin = functions.https.onRequest((request, response) => {
-  // body: {username: 'admin', password: '123456789'}
-  // method: 'POST'
-
-  // const username = request.body.username;
-  // const password = request.body.password;
-  const { username, password } = request.body;
-  // IF USE DATABASE: CODE ...
-  // HARD CODE
-  if (username === 'admin' && password === '123456789') {
-    response.json({
-      ok: true,
-      message: 'Login OK'
-    });
-  } else {
-    response.json({
-      ok: false,
-      message: 'Login Failed'
-    });
-  }
-});
+// exports.easyLogin = functions.https.onRequest((request, response) => {
+//   auth.handlerLogin(request, response);
+// });
 
 exports.register = functions.https.onRequest((request, response) => {
   var docRef = db.collection('users');
-  // const data = {
+  // method: 'POST'
+  // body = {
   //   username: request.body.username,
   //   password: request.body.password,
   //   fullName: request.body.fullName,
@@ -54,10 +36,9 @@ exports.register = functions.https.onRequest((request, response) => {
   });
 });
 
-
 exports.login = functions.https.onRequest((request, response) => {
-  // body: {username: 'admin', password: '123456789'}
   // method: 'POST'
+  // body: {username: 'admin', password: '123456789'}  
   // const username = request.body.username;
   // const password = request.body.password;
   const { username, password } = request.body;
@@ -71,15 +52,9 @@ exports.login = functions.https.onRequest((request, response) => {
         docs.push(doc.data());
       });
       var ok = docs.length > 0;
-      response.json({
-        ok: ok,
-        user: docs
-      });
+      response.json({ ok: ok, user: docs });
     })
-    .catch((err) => {
-      response.json({
-        ok: false,
-        error: err
-      });
+    .catch((error) => {
+      response.json({ ok: false, error: error });
     });
 });
