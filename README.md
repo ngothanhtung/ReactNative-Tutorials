@@ -83,6 +83,7 @@
 1. https://rnfirebase.io/
 2. Documents: https://rnfirebase.io/docs/v5.x.x/getting-started
 3. Starter Kit: https://rnfirebase.io/docs/v5.x.x/installation/basic-kit
+4. Send Notification (Google API): https://firebase.google.com/docs/cloud-messaging/http-server-ref
 # A. Some useful websites
 ## References:
 1. https://flatuicolors.com
