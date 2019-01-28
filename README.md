@@ -84,11 +84,11 @@
 1. https://rnfirebase.io/
 2. Documents: https://rnfirebase.io/docs/v5.x.x/getting-started
 3. Starter Kit: https://rnfirebase.io/docs/v5.x.x/installation/basic-kit
-  1. Manual install for Android (Video): https://youtu.be/_7iKm233n_M
-  2. Manual install for iOS (Video): https://youtu.be/qiOGMcX6Xtw
+ 1. Manual install for Android (Video): https://youtu.be/_7iKm233n_M
+ 2. Manual install for iOS (Video): https://youtu.be/qiOGMcX6Xtw
 4. Send Notification (Google API): https://firebase.google.com/docs/cloud-messaging/http-server-ref
-  1. Send a notification (Admin SDK - Cloud Function): https://firebase.google.com/docs/cloud-messaging/admin/send-messages
-  2. Manage Topic: https://firebase.google.com/docs/cloud-messaging/admin/manage-topic-subscriptions
+ 1. Send a notification (Admin SDK - Cloud Function): https://firebase.google.com/docs/cloud-messaging/admin/send-messages
+ 2. Manage Topic: https://firebase.google.com/docs/cloud-messaging/admin/manage-topic-subscriptions
 
 
 # A. Some useful websites
