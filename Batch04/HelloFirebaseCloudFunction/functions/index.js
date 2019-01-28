@@ -159,3 +159,56 @@ exports.sendNotification = functions.https.onRequest((request, response) => {
       response.json(error);
     });
 });
+
+
+// ------------------------------------------------------------------------------------------------
+// SUBSCRIBE TO TOPIC (ADMIN SDK) FUNCTION
+exports.subscribeToTopic = functions.https.onRequest((request, response) => {
+  // These registration tokens come from the client FCM SDKs.
+  var registrationTokens = request.body.tokens;
+  var topic = request.body.topic;
+
+  // Subscribe the devices corresponding to the registration tokens to the
+  // topic.
+  admin.messaging().subscribeToTopic(registrationTokens, topic)
+    .then(function (result) {
+      // See the MessagingTopicManagementResponse reference documentation
+      // for the contents of response.
+      console.log('Successfully subscribed to topic:', result);
+      response.json(result);
+
+    })
+    .catch(function (error) {
+      console.log('Error subscribing to topic:', error);
+      response.json(error);
+    });
+});
+
+exports.sendToTopic = functions.https.onRequest((request, response) => {
+  // This registration token comes from the client FCM SDKs.
+  // var registrationToken = request.body.token;
+  var topic = request.body.topic;
+  var data = request.body.data;
+  var notification = request.body.notification;
+
+  // See documentation on defining a message payload.
+  var message = {
+    notification: notification,
+    data: data,
+    // token: registrationToken
+    topic: topic
+  };
+
+  // Send a message to the device corresponding to the provided
+  // registration token.
+  admin.messaging().send(message)
+    .then((result) => {
+      // Response is a message ID string.
+      console.log('Successfully sent message:', result);
+      response.json(result);
+    })
+    .catch((error) => {
+      console.log('Error sending message:', error);
+      response.json(error);
+    });
+});
