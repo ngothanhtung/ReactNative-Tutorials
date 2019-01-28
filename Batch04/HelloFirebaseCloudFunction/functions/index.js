@@ -130,3 +130,32 @@ exports.deleteProduct = functions.https.onRequest((request, response) => {
       response.send("Error deleting document: " + err);
     });
 });
+
+// ------------------------------------------------------------------------------------------------
+// SEND NOTIFICATION (ADMIN SDK) FUNCTION
+exports.sendNotification = functions.https.onRequest((request, response) => {
+  // This registration token comes from the client FCM SDKs.
+  var registrationToken = request.body.token;
+  var data = request.body.data;
+  var notification = request.body.notification;
+
+  // See documentation on defining a message payload.
+  var message = {
+    notification: notification,
+    data: data,
+    token: registrationToken
+  };
+
+  // Send a message to the device corresponding to the provided
+  // registration token.
+  admin.messaging().send(message)
+    .then((result) => {
+      // Response is a message ID string.
+      console.log('Successfully sent message:', result);
+      response.json(result);
+    })
+    .catch((error) => {
+      console.log('Error sending message:', error);
+      response.json(error);
+    });
+});

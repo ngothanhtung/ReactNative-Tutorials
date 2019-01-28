@@ -1,0 +1,20 @@
+{
+  "to": "cP8Byg7R-Fo:APA91bHy2hwhyUoG6iN_0i1JgQlGoKVziimF-E4QNyqPtvnE3_-a4aRgUCt3U2t4su2hHapS3EZzydAPD4a-CJGy55tE51e7smndKVJkpvzYoLcY8whrc-oQXS7vSo3LxIJ_LvnTHmS6",
+  "notification": {
+    "body": "Chi tiet lich nghi TET o Google",
+    "title": "THONG BAO NGHI TET",
+    "content_available": false,
+    "priority": "normal",
+    "sound": "default",
+    "tag": "postid",
+    "color": "#000000",
+    "icon": "default"
+  },
+  "data": {
+    "body": "Aptech One Notification",
+    "title": "ReactNative news",
+    "bonus": "BAI TAP VE NHA",
+    "content_available": true,
+    "priority": "high"
+  }
+}
