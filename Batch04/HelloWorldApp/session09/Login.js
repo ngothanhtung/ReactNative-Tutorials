@@ -11,6 +11,8 @@ import {
   Platform,
 } from 'react-native';
 
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+
 import LogoImageUrl from './resources/email-orange.png';
 import BackgroundImageUrl from './resources/orange-background.jpg';
 
@@ -66,21 +68,6 @@ const styles = {
   },
 };
 
-const MyTextInput = (props) => (
-  <View>
-    <TextInput
-      style={styles.textIput}
-      underlineColorAndroid="transparent"
-      autoCorrect={false}
-      autoCapitalize="none"
-      placeholder={props.placeholder}
-      placeholderTextColor="#ffffff"
-      keyboardType="default"
-      onChangeText={props.onChangeText}
-    />
-    <View style={{ height: 12 }} />
-  </View>
-)
 
 export default class LoginScreenV3 extends Component {
   constructor(props) {
@@ -104,97 +91,95 @@ export default class LoginScreenV3 extends Component {
           </View>
           <View style={styles.middleContainer}>
             <View style={{ padding: 24 }}>
-              <MyTextInput placeholder="My Text" onChangeText={(text) => { this.setState({ text: text }) }} />
-              <TextInput
-                style={styles.textIput}
-                underlineColorAndroid="transparent"
-                autoCorrect={false}
-                autoCapitalize="none"
-                placeholder="Enter your email"
-                placeholderTextColor="#ffffff"
-                keyboardType="email-address"
+              <View style={{
+                flexDirection: 'row', borderRadius: 12,
+                borderColor: '#ffffff',
+                borderWidth: 0.5,
+                height: 48,
+                paddingLeft: 12,
+                opacity: 1,
+                color: '#ffffff',
+              }}>
+                <View style={{ justifyContent: 'center' }}>
+                  <Icon color="white" name="email" size={24} />
+                </View>
+                <View style={{ flex: 1 }}>
+                  <TextInput
+                    style={{
+                      height: 48,
+                      paddingLeft: 12,
+                    }}
+                    underlineColorAndroid="transparent"
+                    autoCorrect={false}
+                    autoCapitalize="none"
+                    placeholder="Enter your email"
+                    placeholderTextColor="#ffffff"
+                    keyboardType="email-address"
 
-                onChangeText={(text) => { this.setState({ username: text }); }}
-              />
-              <View style={{ height: 12 }} />
-              {
-                this.state.screenName === 'signUp' &&
-                (
-                  <View>
-                    <TextInput
-                      style={styles.textIput}
-                      underlineColorAndroid="transparent"
-                      autoCorrect={false}
-                      autoCapitalize="none"
-                      placeholder="Enter your fullname"
-                      placeholderTextColor="#ffffff"
-                      keyboardType="email-address"
-                      onChangeText={(text) => { this.setState({ fullname: text }); }}
-                    />
-                    <View style={{ height: 12 }} />
-                  </View>
-                )
-              }
+                    onChangeText={(text) => { this.setState({ username: text }); }}
+                  />
+                </View>
 
-              <TextInput
-                ref={(component) => { this.passwordInput = component; }}
-                style={styles.textIput}
-                underlineColorAndroid="transparent"
-                secureTextEntry
-                autoCorrect={false}
-                autoCapitalize="none"
-                placeholder="Enter your password"
-                placeholderTextColor="#ffffff"
-                onChangeText={(text) => { this.setState({ password: text }); }}
-              />
+              </View>
+
               <View style={{ height: 12 }} />
 
-              {
-                this.state.screenName === 'signUp' &&
-                (
-                  <View>
-                    <TextInput
-                      ref={(component) => { this.passwordInput = component; }}
-                      style={styles.textIput}
-                      underlineColorAndroid="transparent"
-                      secureTextEntry
-                      autoCorrect={false}
-                      autoCapitalize="none"
-                      placeholder="Re-enter your password"
-                      placeholderTextColor="#ffffff"
-                      onChangeText={(text) => { this.setState({ repeatPassword: text }); }}
-                    />
-                    <View style={{ height: 12 }} />
-                  </View>
-                )
-              }
+              <View style={{
+                flexDirection: 'row', borderRadius: 12,
+                borderColor: '#ffffff',
+                borderWidth: 0.5,
+                height: 48,
+                paddingLeft: 12,
+                opacity: 1,
+                color: '#ffffff',
+              }}>
+                <View style={{ justifyContent: 'center' }}>
+                  <Icon color="white" name="key-variant" size={24} />
+                </View>
+                <View style={{ flex: 1 }}>
+                  <TextInput
+                    style={{
+                      height: 48,
+                      paddingLeft: 12,
+                    }}
+                    secureTextEntry={true}
+                    underlineColorAndroid="transparent"
+                    autoCorrect={false}
+                    autoCapitalize="none"
+                    placeholder="Enter your password"
+                    placeholderTextColor="#ffffff"
+                    keyboardType="default"
+
+                    onChangeText={(text) => { this.setState({ username: text }); }}
+                  />
+                </View>
+
+              </View>
+
+              <View style={{ height: 12 }} />
+
+
 
               <TouchableOpacity
                 style={styles.button}
                 onPress={() => { this.onPressLoginorSignupButton(); }}
               >
-                <Text style={styles.buttonText}>{
-                  this.state.screenName === 'signUp' ? 'Sign up' : 'Login'
-                }</Text>
+                <Text style={styles.buttonText}>Login</Text>
               </TouchableOpacity>
             </View>
           </View>
           <View style={styles.bottomContainer}>
             <View style={{ flexDirection: 'row', justifyContent: 'center', paddingBottom: 16 }}>
               <Text style={{ color: '#ffffff', paddingRight: 6 }} >
-                {
-                  this.state.screenName === 'login' ? "Haven't an account?" : "Have an account?"
-                }
+                Haven't an account?
               </Text>
               <Text
                 style={{ textDecorationLine: 'underline', color: '#ffffff' }}
                 onPress={() => {
-                  this.state.screenName === 'login' ? this.setState({ screenName: 'signUp' }) : this.setState({ screenName: 'login' })
+
                 }}
               >
-                {
-                  this.state.screenName === 'login' ? "Sign up" : "Log in"
-                }
+                Sign up
               </Text>
             </View>
           </View>
