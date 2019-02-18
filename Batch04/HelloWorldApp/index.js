@@ -17,6 +17,7 @@ import GalleryHomework from './session05/GalleryHomework'
 import ReactNavigatorExamples from './session06'
 import LifecycleExamples from './session08'
 import LoginScreen from './session09/Login'
+import RegisterScreen from './session09/Register'
 import { name as appName } from './app.json';
 
-AppRegistry.registerComponent(appName, () => LoginScreen);
+AppRegistry.registerComponent(appName, () => RegisterScreen);
