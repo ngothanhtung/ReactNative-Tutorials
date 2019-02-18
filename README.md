@@ -90,6 +90,10 @@
   * Send a notification (Admin SDK - Cloud Function): https://firebase.google.com/docs/cloud-messaging/admin/send-messages
   * Manage Topic: https://firebase.google.com/docs/cloud-messaging/admin/manage-topic-subscriptions
 
+# Session 08 React Component & Lifecycle
+1. Theory: https://reactjs.org/docs/react-component.html
+2. Diagram: http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+3. Examples: 
 
 # A. Some useful websites
 ## References:

@@ -15,6 +15,7 @@ import NetworkingAxiosExamples from './session05/NetworkingAxiosExamples'
 import NetworkingMoreExamples from './session05/NetworkingMoreExamples'
 import GalleryHomework from './session05/GalleryHomework'
 import ReactNavigatorExamples from './session06'
+import LifecycleExamples from './session08'
 import { name as appName } from './app.json';
 
-AppRegistry.registerComponent(appName, () => ReactNavigatorExamples);
+AppRegistry.registerComponent(appName, () => LifecycleExamples);
