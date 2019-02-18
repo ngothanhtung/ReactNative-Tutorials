@@ -16,6 +16,7 @@ import NetworkingMoreExamples from './session05/NetworkingMoreExamples'
 import GalleryHomework from './session05/GalleryHomework'
 import ReactNavigatorExamples from './session06'
 import LifecycleExamples from './session08'
+import LoginScreen from './session09/Login'
 import { name as appName } from './app.json';
 
-AppRegistry.registerComponent(appName, () => LifecycleExamples);
+AppRegistry.registerComponent(appName, () => LoginScreen);
