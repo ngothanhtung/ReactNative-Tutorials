@@ -11,10 +11,12 @@ import {
   Platform,
 } from 'react-native';
 
+import axios from 'axios';
+
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import LogoImageUrl from './resources/email-orange.png';
-import BackgroundImageUrl from './resources/orange-background.jpg';
+import BackgroundImageUrl from './resources/bg1.jpeg';
 
 const styles = {
   container: {
@@ -73,8 +75,8 @@ export default class LoginScreenV3 extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      screenName: 'login',
-      text: '',
+      username: '',
+      password: ''
     };
   }
 
@@ -84,7 +86,7 @@ export default class LoginScreenV3 extends Component {
 
   render() {
     return (
-      <ImageBackground style={{ flex: 1, position: 'relative' }} blurRadius={20} source={BackgroundImageUrl}>
+      <ImageBackground style={{ flex: 1, position: 'relative' }} blurRadius={90} source={BackgroundImageUrl}>
         <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : null} style={styles.container}>
           <View style={styles.topContainer}>
             <Image resizeMode="contain" style={{ width: 160, height: 160 }} source={LogoImageUrl} />
@@ -94,11 +96,11 @@ export default class LoginScreenV3 extends Component {
               <View style={{
                 flexDirection: 'row', borderRadius: 12,
                 borderColor: '#ffffff',
-                borderWidth: 0.5,
+                // borderWidth: 0.5,
                 height: 48,
                 paddingLeft: 12,
                 opacity: 1,
-                color: '#ffffff',
+                backgroundColor: 'orange'
               }}>
                 <View style={{ justifyContent: 'center' }}>
                   <Icon color="white" name="email" size={24} />
@@ -127,11 +129,11 @@ export default class LoginScreenV3 extends Component {
               <View style={{
                 flexDirection: 'row', borderRadius: 12,
                 borderColor: '#ffffff',
-                borderWidth: 0.5,
+                // borderWidth: 0.5,
                 height: 48,
                 paddingLeft: 12,
                 opacity: 1,
-                color: '#ffffff',
+                backgroundColor: 'orange'
               }}>
                 <View style={{ justifyContent: 'center' }}>
                   <Icon color="white" name="key-variant" size={24} />
@@ -150,7 +152,7 @@ export default class LoginScreenV3 extends Component {
                     placeholderTextColor="#ffffff"
                     keyboardType="default"
 
-                    onChangeText={(text) => { this.setState({ username: text }); }}
+                    onChangeText={(text) => { this.setState({ password: text }); }}
                   />
                 </View>
 
@@ -162,7 +164,20 @@ export default class LoginScreenV3 extends Component {
 
               <TouchableOpacity
                 style={styles.button}
-                onPress={() => { this.onPressLoginorSignupButton(); }}
+                onPress={() => {
+                  // LOGIN
+                  axios.post('https://us-central1-reactnativebatch04.cloudfunctions.net/login', {
+                    username: this.state.username,
+                    password: this.state.password
+                  }).then(response => {
+                    console.log(response.data);
+                    if (response.data.user && response.data.user.length > 0) {
+                      alert('LOGIN OK');
+                    }
+                  })
+
+
+                }}
               >
                 <Text style={styles.buttonText}>Login</Text>
               </TouchableOpacity>
