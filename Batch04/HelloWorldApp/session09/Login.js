@@ -70,12 +70,17 @@ const styles = {
   },
 };
 
+function validateEmail(email) {
+  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+}
 
 export default class LoginScreenV3 extends Component {
   constructor(props) {
     super(props);
     this.state = {
       username: '',
+      hasUsernameError: false,
       password: ''
     };
   }
@@ -103,13 +108,14 @@ export default class LoginScreenV3 extends Component {
                 backgroundColor: 'orange'
               }}>
                 <View style={{ justifyContent: 'center' }}>
-                  <Icon color="white" name="email" size={24} />
+                  <Icon color={this.state.hasUsernameError ? 'red' : 'white'} name="email" size={24} />
                 </View>
                 <View style={{ flex: 1 }}>
                   <TextInput
                     style={{
                       height: 48,
                       paddingLeft: 12,
+                      color: 'white'
                     }}
                     underlineColorAndroid="transparent"
                     autoCorrect={false}
@@ -117,8 +123,16 @@ export default class LoginScreenV3 extends Component {
                     placeholder="Enter your email"
                     placeholderTextColor="#ffffff"
                     keyboardType="email-address"
+                    onChangeText={(text) => {
+                      if (text.length === 0) {
+                        this.setState({ hasUsernameError: true });
+                      } else {
+                        this.setState({ hasUsernameError: false });
+                      }
+                      this.setState({ hasUsernameError: !validateEmail(text) });
 
-                    onChangeText={(text) => { this.setState({ username: text }); }}
+                      this.setState({ username: text });
+                    }}
                   />
                 </View>
 
@@ -143,6 +157,7 @@ export default class LoginScreenV3 extends Component {
                     style={{
                       height: 48,
                       paddingLeft: 12,
+                      color: 'white'
                     }}
                     secureTextEntry={true}
                     underlineColorAndroid="transparent"
