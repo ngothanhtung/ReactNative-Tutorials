@@ -100,6 +100,15 @@
 # Session 10 REDUX
 1. Theory: https://redux.js.org/introduction/getting-started
 2. Usage with React: https://redux.js.org/basics/usage-with-react
+3. Diagram: https://kuanhsuh.github.io/2017/09/28/What-s-Redux-and-how-to-use-it/
+4. Install packages: redux, react-redux, (npm isntall --save redux), (npm isntall --save react-redux)
+5. Coding: 
+- actions
+- reducers
+- components
+- store
+6. Debug:
+- Download tool: https://github.com/jhen0409/react-native-debugger/releases
 
 # A. Some useful websites
 ## References:
