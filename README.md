@@ -101,7 +101,7 @@
 1. Theory: https://redux.js.org/introduction/getting-started
 2. Usage with React: https://react-redux.js.org
 3. Diagram: https://kuanhsuh.github.io/2017/09/28/What-s-Redux-and-how-to-use-it/
-4. Install packages: redux, react-redux, (npm isntall --save redux), (npm isntall --save react-redux)
+4. Install packages: redux, react-redux, (npm isntall --save redux), (npm isntall --save react-redux), (npm isntall --save --dev redux-devtools-extension)
 5. Coding: 
 - actions
 - reducers
