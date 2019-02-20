@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import { SafeAreaView, StyleSheet, Text, View, Button } from 'react-native';
 import Counter from './components/Counter';
 // STORE
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
@@ -7,12 +7,16 @@ import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 // REDUCERS
 import counterReducer from './reducers/index'
+import atmReducer from './reducers/atmReducer'
 // TOOLS
 import { composeWithDevTools } from 'redux-devtools-extension';
 import Label from './components/Label';
+import ATM from './components/ATM'
+import BalanceLabel from './components/BalanceLabel';
 
 const rootReducer = combineReducers({
   counterReducer,
+  atmReducer
 });
 
 const middewares = [
@@ -37,6 +41,16 @@ export default class CounterApp extends Component {
           <View style={{ flex: 1, justifyContent: 'center' }}>
             <Label />
           </View>
+          <View style={{ flex: 1, justifyContent: 'center' }}>
+            <ATM />
+            <BalanceLabel />
+          </View>
+          <Button title="NOP TIEN" onPress={() => {
+            store.dispatch({
+              type: 'ATM_DEPOSITE',
+              money: 5000
+            })
+          }} />
         </SafeAreaView>
       </Provider>
     );

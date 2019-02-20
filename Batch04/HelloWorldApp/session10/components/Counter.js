@@ -11,13 +11,13 @@ class Counter extends Component {
         <View style={{ flexDirection: 'row', padding: 12 }}>
           <View style={{ flex: 1 }}>
             <Button title="Decrease" onPress={() => {
-              this.props.decreaseCount(1);
+              this.props.giam(1);
             }} />
           </View>
-          <Text style={{ fontSize: 32, color: 'red' }}> {this.props.count} </Text>
+          <Text style={{ fontSize: 32, color: 'red' }}> {this.props.biendem} </Text>
           <View style={{ flex: 1 }}>
             <Button title="Increase" onPress={() => {
-              this.props.increaseCount(1);
+              this.props.tang(1);
             }} />
           </View>
         </View>
@@ -28,17 +28,17 @@ class Counter extends Component {
 
 // Nối các states vào props (values) của View Component
 const mapStateToProps = (state) => ({
-  count: state.counterReducer.count
+  biendem: state.counterReducer.count
 });
 // Nối các functions vào props (functions) của View Component
 const mapDispatchToProps = (dispatch) => ({
-  // increaseCount: (number) => dispatch(increaseCount(number)),
-  // decreaseCount: (number) => dispatch(decreaseCount(number)),
-  increaseCount: (number) => dispatch({
+  // tang: (number) => dispatch(increaseCount(number)),
+  // giam: (number) => dispatch(decreaseCount(number)),
+  tang: (number) => dispatch({
     type: ActionTypes.INCREASE_COUNT,
     number: number
   }),
-  decreaseCount: (number) => dispatch({
+  giam: (number) => dispatch({
     type: ActionTypes.DECREASE_COUNT,
     number: number
   }),
