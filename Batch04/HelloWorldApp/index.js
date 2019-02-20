@@ -18,7 +18,7 @@ import ReactNavigatorExamples from './session06'
 import LifecycleExamples from './session08'
 import LoginScreen from './session09/Login'
 import RegisterScreen from './session09/Register'
-import PickerExamples from './session09/PickerExamples'
+import CounterApp from './session10/CounterApp'
 import { name as appName } from './app.json';
 
-AppRegistry.registerComponent(appName, () => RegisterScreen);
+AppRegistry.registerComponent(appName, () => CounterApp);

@@ -94,6 +94,12 @@
 1. Theory: https://reactjs.org/docs/react-component.html
 2. Diagram: http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 3. Examples: 
+# Session 09 UI / UX
+1.
+2.
+# Session 10 REDUX
+1. Theory: https://redux.js.org/introduction/getting-started
+2. Usage with React: https://redux.js.org/basics/usage-with-react
 
 # A. Some useful websites
 ## References:
