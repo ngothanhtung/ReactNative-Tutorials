@@ -5,21 +5,33 @@ import Counter from './components/Counter';
 import { createStore, combineReducers, compose, applyMiddleware } from 'redux';
 // PROVIDER
 import { Provider } from 'react-redux';
+// REDUX-THUNK: ASYNC ACTIONS
+import thunkMiddleware from 'redux-thunk';
 // REDUCERS
 import counterReducer from './reducers/index'
 import atmReducer from './reducers/atmReducer'
+import fbReducer from './reducers/fbReducer'
+import authReducer from './reducers/authReducer'
 // TOOLS
 import { composeWithDevTools } from 'redux-devtools-extension';
 import Label from './components/Label';
 import ATM from './components/ATM'
 import BalanceLabel from './components/BalanceLabel';
+import Comments from './components/Comments'
+import CommentCount from './components/CommentCount'
+import AddComment from './components/AddComment'
+import Login from './components/Login'
 
 const rootReducer = combineReducers({
   counterReducer,
-  atmReducer
+  atmReducer,
+  fbReducer,
+  authReducer
 });
 
 const middewares = [
+  // THUNK
+  thunkMiddleware
 ];
 
 
@@ -35,7 +47,7 @@ export default class CounterApp extends Component {
     return (
       <Provider store={store}>
         <SafeAreaView style={{ flex: 1 }}>
-          <View style={{ flex: 1, justifyContent: 'center' }}>
+          {/* <View style={{ flex: 1, justifyContent: 'center' }}>
             <Counter />
           </View>
           <View style={{ flex: 1, justifyContent: 'center' }}>
@@ -50,7 +62,11 @@ export default class CounterApp extends Component {
               type: 'ATM_DEPOSITE',
               money: 5000
             })
-          }} />
+          }} /> */}
+          {/* <CommentCount />
+          <Comments />
+          <AddComment /> */}
+          <Login />
         </SafeAreaView>
       </Provider>
     );
