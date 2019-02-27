@@ -19,6 +19,7 @@ import LifecycleExamples from './session08'
 import LoginScreen from './session09/Login'
 import RegisterScreen from './session09/Register'
 import CounterApp from './session10/CounterApp'
+import Session11App from './session11/App'
 import { name as appName } from './app.json';
 
-AppRegistry.registerComponent(appName, () => CounterApp);
+AppRegistry.registerComponent(appName, () => Session11App);
