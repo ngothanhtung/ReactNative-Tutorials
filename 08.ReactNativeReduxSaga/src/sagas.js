@@ -6,7 +6,8 @@ import NavigationService from './NavigationService';
 function* getPeople(action) {
   console.log('Action', action);
   try {
-    const data = yield call(getPeopleFromApi);
+    // const data = yield getPeopleFromApi({});
+    const data = yield call(getPeopleFromApi, {});
     // const data = yield all([
     //   call(getPeopleFromApi),
     //   call(getPeopleFromApi),

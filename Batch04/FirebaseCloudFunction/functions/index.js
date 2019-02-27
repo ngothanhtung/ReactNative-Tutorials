@@ -27,6 +27,22 @@ exports.register = functions.https.onRequest((request, response) => {
   //   fullName: request.body.fullName,
   //   email: request.body.email,
   // }
+
+  var username = request.body.username;
+  if (username != null && username.length === 0) {
+    response.json({
+      ok: false,
+      error: { message: 'Username cannot be empty string' }
+    });
+    return;
+  } else {
+    response.json({
+      ok: false,
+      error: { message: 'Username cannot be null' }
+    });
+    return;
+  }
+
   docRef.add(request.body).then(result => {
     response.json({
       ok: true,

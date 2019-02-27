@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Text, View, Button, TextInput, ActivityIndicator } from 'react-native'
 import { connect } from 'react-redux'
 import { loginAsync } from '../actions'
+import store from '../../store';
 
 class Login extends Component {
   constructor(props) {
@@ -13,9 +14,9 @@ class Login extends Component {
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
-    if (this.props.loginStatus !== prevProps.loginStatus) {
-      console.log(this.props.loginStatus);
-    }
+    // if (this.props.loginStatus !== prevProps.loginStatus) {
+    //   console.log(this.props.loginStatus);
+    // }
   }
 
   render() {
@@ -47,6 +48,7 @@ class Login extends Component {
         <View>
           <View style={{ height: 12 }}></View>
           <Button title="LOGIN" onPress={() => {
+            //store.dispatch({ type: 'AUTH_REGISTER', username: '' });
             this.props.loginAsync(this.state.username, this.state.password);
           }} />
         </View>

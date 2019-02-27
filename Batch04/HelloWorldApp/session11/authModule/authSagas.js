@@ -1,6 +1,7 @@
 import { put, takeLatest } from 'redux-saga/effects';
 import * as ActionTypes from './actions/types';
 import axios from 'axios';
+import { Alert } from 'react-native';
 
 // ---------------------------------------------------------------------------------------------------------
 function* AUTH_LOGIN(action) {
@@ -18,6 +19,7 @@ function* AUTH_LOGIN(action) {
   // }
 
   try {
+    yield put({ type: ActionTypes.AUTH_LOGIN_PENDING });
     const url = 'https://us-central1-reactnativebatch04.cloudfunctions.net/login'
     const response = yield axios.post(url, {
       username: action.username,
@@ -52,9 +54,45 @@ function* AUTH_LOGIN(action) {
   }
 }
 
+// ---------------------------------------------------------------------------------------------------------
+function* AUTH_REGISTER(action) {
+  try {
+    yield put({ type: ActionTypes.AUTH_REGISTER_PENDING });
+    const url = 'https://us-central1-reactnativebatch04.cloudfunctions.net/register'
+    const user = {
+      username: action.username,
+      password: action.password,
+      fullname: action.fullname,
+      email: action.email,
+      phone: action.phone
+    };
+    const response = yield axios.post(url, user);
+
+    if (response.data.ok && response.data.ok === true) {
+      yield put({
+        type: ActionTypes.AUTH_REGISTER_SUCCESS,
+        user: user,
+      });
+    } else {
+      Alert.alert('Aptech', 'Đăng ký không thành công.\n' + response.data.error.message);
+      yield put({
+        type: ActionTypes.AUTH_REGISTER_ERROR,
+        error: response.data.error,
+      });
+    }
+  } catch (exception) {
+    console.log('SAGA ERROR (authSagas):', exception);
+    yield put({
+      type: ActionTypes.AUTH_REGISTER_ERROR,
+      error: exception,
+    });
+  }
+}
+
 // ====================================================================================================================
 export default function* sagas() {
   yield takeLatest(ActionTypes.AUTH_LOGIN, AUTH_LOGIN);
+  yield takeLatest(ActionTypes.AUTH_REGISTER, AUTH_REGISTER);
   // yield takeLatest(ActionTypes.AUTH_CHANGE_PASSWORD, AUTH_CHANGE_PASSWORD);
   // yield takeLatest(ActionTypes.AUTH_RECOVER_PASSWORD, AUTH_RECOVER_PASSWORD);
   // yield takeEvery(ActionTypes.AUTH_LOGIN_GUEST, AUTH_LOGIN_GUEST);
