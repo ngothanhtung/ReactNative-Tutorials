@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import { Text, View, Button, TextInput, ActivityIndicator } from 'react-native'
+import { Text, View, TextInput, ActivityIndicator } from 'react-native';
+import { Button, Icon, Input } from 'react-native-elements'
 import { connect } from 'react-redux'
 import { loginAsync } from '../actions'
 import store from '../../store';
@@ -24,7 +25,7 @@ class Login extends Component {
       <View style={{ padding: 24, flex: 1, justifyContent: 'center' }}>
         {/* CONDITIONAL REDERING */}
 
-        <Text> Email </Text>
+        {/* <Text> Email </Text>
         <TextInput
           value={this.state.username}
           placeholder="Enter your username"
@@ -33,8 +34,11 @@ class Login extends Component {
           returnKeyType="next"
           onChangeText={(text) => {
             this.setState({ username: text });
-          }} />
-
+          }} /> */}
+        <Input
+          label="Email:"
+          leftIcon={{ type: 'font-awesome', name: 'chevron-left' }}
+        />
         <Text> Paswword: </Text>
         <TextInput
           secureTextEntry={true}
@@ -47,10 +51,14 @@ class Login extends Component {
 
         <View>
           <View style={{ height: 12 }}></View>
-          <Button title="LOGIN" onPress={() => {
-            //store.dispatch({ type: 'AUTH_REGISTER', username: '' });
-            this.props.loginAsync(this.state.username, this.state.password);
-          }} />
+          <Button
+            icon={<Icon name='rowing' color="white" />}
+            iconRight={true}
+            title="LOGIN"
+            onPress={() => {
+              //store.dispatch({ type: 'AUTH_REGISTER', username: '' });
+              this.props.loginAsync(this.state.username, this.state.password);
+            }} />
         </View>
         {
           (this.props.loading === true) && <ActivityIndicator />
