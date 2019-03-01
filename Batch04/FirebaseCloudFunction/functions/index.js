@@ -35,22 +35,41 @@ exports.register = functions.https.onRequest((request, response) => {
       error: { message: 'Username cannot be empty string' }
     });
     return;
-  } else {
+  }
+  if (username === null) {
     response.json({
       ok: false,
       error: { message: 'Username cannot be null' }
     });
     return;
   }
+  var docs = [];
+  docRef.where('username', '==', username)
+    .get()
+    .then((snapshot) => {
+      snapshot.forEach((doc) => {
+        docs.push(doc.data());
+      });
+      var exists = docs.length > 0;
+      if (exists) {
+        response.json({ ok: false, message: 'Username is duplicated' });
+        return;
+      }
+    })
+    .catch((exception) => {
+      response.json({ ok: false, error: exception });
+      return;
+    });
 
+  // REGISTER
   docRef.add(request.body).then(result => {
     response.json({
       ok: true,
     })
-  }).catch(error => {
+  }).catch(exception => {
     response.json({
       ok: false,
-      error: error // DEVELOPMENT MODE
+      error: exception
     })
   });
 });
@@ -58,8 +77,6 @@ exports.register = functions.https.onRequest((request, response) => {
 exports.login = functions.https.onRequest((request, response) => {
   // method: 'POST'
   // body: {username: 'admin', password: '123456789'}  
-  // const username = request.body.username;
-  // const password = request.body.password;
   const { username, password } = request.body;
   var docs = [];
   db.collection('users')
@@ -73,17 +90,10 @@ exports.login = functions.https.onRequest((request, response) => {
       var ok = docs.length > 0;
       response.json({ ok: ok, user: docs });
     })
-    .catch((error) => {
-      response.json({ ok: false, error: error });
+    .catch((exception) => {
+      response.json({ ok: false, error: exception });
     });
 });
-
-
-exports.sql = functions.https.onRequest((request, response) => {
-  var Connection = require('tedious').Connection;
-  response.json({ ok: true });
-});
-
 
 // ------------------------------------------------------------------------------------------------
 // GET FUNCTION
@@ -97,8 +107,28 @@ exports.getProducts = functions.https.onRequest((request, response) => {
 
       response.send(docs);
     })
-    .catch((err) => {
-      response.send("Error getting documents: " + err);
+    .catch((exception) => {
+      response.status(500).json({ ok: false, error: exception });
+    });
+});
+
+// GET FUNCTION: GET BY ID
+exports.getProduct = functions.https.onRequest((request, response) => {
+  // METHOD: GET
+  // URL: https://wyx.com/getProduct?id=5
+  var id = request.query.id;
+  this.db.collection('Products')
+    .doc(id)
+    .get()
+    .then(doc => {
+      if (!doc.exists) {
+        response.json({ ok: true, product: null });
+      } else {
+        response.json({ ok: true, product: doc.data() });
+      }
+    })
+    .catch(exception => {
+      response.status(500).json({ ok: false, error: exception });
     });
 });
 
