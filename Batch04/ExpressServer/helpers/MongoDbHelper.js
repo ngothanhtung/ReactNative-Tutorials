@@ -16,7 +16,8 @@ class MongoDbHelper {
 				.then(client => {
 					var dbo = client.db(DATABASE_NAME);
 					var collection = dbo.collection(collectionName);
-					collection.insertOne(data)
+					collection
+						.insertOne(data)
 						.then(result => {
 							client.close();
 							resolve({ data: data, result: result });
@@ -29,7 +30,7 @@ class MongoDbHelper {
 					reject(err);
 				});
 		});
-	};
+	}
 
 	// ----------------------------------------------------------------------------
 	// INSERT: Thêm mới (nhiều)
@@ -39,7 +40,8 @@ class MongoDbHelper {
 				.then(client => {
 					var dbo = client.db(DATABASE_NAME);
 					var collection = dbo.collection(collectionName);
-					collection.insertMany(list)
+					collection
+						.insertMany(list)
 						.then(result => {
 							client.close();
 							resolve(result);
@@ -52,7 +54,7 @@ class MongoDbHelper {
 					reject(err);
 				});
 		});
-	};
+	}
 
 	// ----------------------------------------------------------------------------
 	// UPDATE: Sửa
@@ -63,7 +65,8 @@ class MongoDbHelper {
 					var dbo = client.db(DATABASE_NAME);
 					var collection = dbo.collection(collectionName);
 					var query = { _id: ObjectID(id) };
-					collection.findOneAndUpdate(query, { $set: data })
+					collection
+						.findOneAndUpdate(query, { $set: data })
 						.then(result => {
 							client.close();
 							resolve(result);
@@ -76,7 +79,7 @@ class MongoDbHelper {
 					reject(err);
 				});
 		});
-	};
+	}
 
 	// ----------------------------------------------------------------------------
 	// UPDATE: Sửa (nhiều)
@@ -86,7 +89,8 @@ class MongoDbHelper {
 				.then(client => {
 					var dbo = client.db(DATABASE_NAME);
 					var collection = dbo.collection(collectionName);
-					collection.updateMany(query, { $set: data })
+					collection
+						.updateMany(query, { $set: data })
 						.then(result => {
 							client.close();
 							resolve(result);
@@ -99,7 +103,7 @@ class MongoDbHelper {
 					reject(err);
 				});
 		});
-	};
+	}
 
 	// ----------------------------------------------------------------------------
 	// REMOVE: Xoá
@@ -110,7 +114,8 @@ class MongoDbHelper {
 					var dbo = client.db(DATABASE_NAME);
 					var collection = dbo.collection(collectionName);
 					var query = { _id: ObjectID(id) };
-					collection.deleteOne(query)
+					collection
+						.deleteOne(query)
 						.then(result => {
 							client.close();
 							resolve(result);
@@ -123,7 +128,7 @@ class MongoDbHelper {
 					reject(err);
 				});
 		});
-	};
+	}
 
 	// ----------------------------------------------------------------------------
 	// REMOVE: Xoá (nhiều)
@@ -133,7 +138,8 @@ class MongoDbHelper {
 				.then(client => {
 					var dbo = client.db(DATABASE_NAME);
 					var collection = dbo.collection(collectionName);
-					collection.deleteMany(query)
+					collection
+						.deleteMany(query)
 						.then(result => {
 							client.close();
 							resolve(result);
@@ -146,7 +152,7 @@ class MongoDbHelper {
 					reject(err);
 				});
 		});
-	};
+	}
 	// ----------------------------------------------------------------------------
 	// FIND: Tìm kiếm (id)
 	findDocument(id, collectionName) {
@@ -156,7 +162,8 @@ class MongoDbHelper {
 					var dbo = client.db(DATABASE_NAME);
 					var collection = dbo.collection(collectionName);
 					var query = { _id: ObjectID(id) };
-					collection.findOne(query)
+					collection
+						.findOne(query)
 						.then(result => {
 							client.close();
 							resolve(result);
@@ -169,16 +176,18 @@ class MongoDbHelper {
 					reject(err);
 				});
 		});
-	};
+	}
 	// ----------------------------------------------------------------------------
 	// FIND: Tìm kiếm (nhiều)
 	findDocuments(query, collectionName) {
 		return new Promise((resolve, reject) => {
-			MongoClient.connect(CONNECTION_STRING)
+			MongoClient.connect(CONNECTION_STRING, { useNewUrlParser: true })
 				.then(client => {
 					var dbo = client.db(DATABASE_NAME);
 					var collection = dbo.collection(collectionName);
-					collection.find(query).toArray()
+					collection
+						.find(query)
+						.toArray()
 						.then(result => {
 							client.close();
 							resolve(result);
@@ -192,47 +201,46 @@ class MongoDbHelper {
 					reject(err);
 				});
 		});
-	};
+	}
 
 	// FIND: Tìm kiếm (nhiều)
-	findDocuments(query, collectionName) {
-		return new Promise((resolve, reject) => {
-			MongoClient.connect(CONNECTION_STRING)
-				.then(client => {
-					var dbo = client.db(DATABASE_NAME);
-					var collection = dbo.collection(collectionName);
-					//var collection = dbo.collection('orders');
-					collection
-						.find(query)
-						// .aggregate([
-						// 	{
-						// 		$lookup: {
-						// 			from: 'products',
-						// 			localField: 'productId',
-						// 			foreignField: '_id',
-						// 			as: 'orderdetails'
-						// 		}
-						// 	}
-						// ])
-						//.skip(4)
-						//.limit(100)
-						//.project({ name: 1, price: 1, discount: 1 })
-						//.sort({ price: -1, name: 1 })
-						.toArray()
-						.then(result => {
-							client.close();
-							resolve(result);
-						})
-						.catch(err => {
-							reject(err);
-						});
-				})
-				.catch(err => {
-					reject(err);
-				});
-		});
-	};
-
+	// findDocuments(query, collectionName) {
+	// 	return new Promise((resolve, reject) => {
+	// 		MongoClient.connect(CONNECTION_STRING)
+	// 			.then(client => {
+	// 				var dbo = client.db(DATABASE_NAME);
+	// 				var collection = dbo.collection(collectionName);
+	// 				//var collection = dbo.collection('orders');
+	// 				collection
+	// 					.find(query)
+	// 					// .aggregate([
+	// 					// 	{
+	// 					// 		$lookup: {
+	// 					// 			from: 'products',
+	// 					// 			localField: 'productId',
+	// 					// 			foreignField: '_id',
+	// 					// 			as: 'orderdetails'
+	// 					// 		}
+	// 					// 	}
+	// 					// ])
+	// 					//.skip(4)
+	// 					//.limit(100)
+	// 					//.project({ name: 1, price: 1, discount: 1 })
+	// 					//.sort({ price: -1, name: 1 })
+	// 					.toArray()
+	// 					.then(result => {
+	// 						client.close();
+	// 						resolve(result);
+	// 					})
+	// 					.catch(err => {
+	// 						reject(err);
+	// 					});
+	// 			})
+	// 			.catch(err => {
+	// 				reject(err);
+	// 			});
+	// 	});
+	// };
 
 	findProducts(query, collectionName) {
 		return new Promise((resolve, reject) => {
@@ -249,12 +257,12 @@ class MongoDbHelper {
 									from: 'categories',
 									localField: 'categoryId',
 									foreignField: 'subCategories._id',
-									as: 'category'
-								}
+									as: 'category',
+								},
 							},
 							{
-								$match: query
-							}
+								$match: query,
+							},
 						])
 						// .find(query)
 						//.skip(4)
@@ -274,8 +282,7 @@ class MongoDbHelper {
 					reject(err);
 				});
 		});
-	};
+	}
 }
 
 module.exports = new MongoDbHelper();
-
