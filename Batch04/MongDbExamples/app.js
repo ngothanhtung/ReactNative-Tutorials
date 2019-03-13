@@ -13,12 +13,13 @@ client.connect(function(err) {
 	const db = client.db(dbName);
 	// INSERT MANY
 	const data = [{ a: 1 }, { name: 'peter' }];
-	db.collection('test').insertMany(data, function(error, result) {
-		if (error) {
-			// ERROR
-		} else {
+	db.collection('test')
+		.insertMany(data)
+		.then(result => {
 			console.log(result);
-		}
-	});
+		})
+		.catch(error => {
+			console.log(error);
+		});
 	client.close();
 });

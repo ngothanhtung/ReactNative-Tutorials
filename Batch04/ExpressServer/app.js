@@ -9,6 +9,7 @@ var usersRouter = require('./routes/users');
 var productsRouter = require('./routes/products');
 var basicMongoDbRouter = require('./routes/basicMongoDb');
 var mongodbRouter = require('./routes/mongodb');
+var reactnativeRouter = require('./routes/reactnative');
 
 var app = express();
 
@@ -27,6 +28,7 @@ app.use('/users', usersRouter);
 app.use('/products', productsRouter);
 app.use('/basic-mongodb', basicMongoDbRouter);
 app.use('/mongodb', mongodbRouter);
+app.use('/rn', reactnativeRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
