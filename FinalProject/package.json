@@ -1,0 +1,41 @@
+{
+  "name": "finalproject",
+  "version": "5.1.0",
+  "private": true,
+  "devDependencies": {
+    "babel-jest": "23.6.0",
+    "fs-extra": "^6.0.1",
+    "jest": "23.6.0",
+    "metro-react-native-babel-preset": "0.49.2",
+    "react-test-renderer": "16.7.0",
+    "redux-devtools-extension": "^2.13.8",
+    "replace-in-file": "^3.4.2"
+  },
+  "scripts": {
+    "android": "react-native run-android",
+    "ios": "react-native run-ios --simulator=\"iPhone X\"",
+    "apk": "cd android && ./gradlew assembleRelease",
+    "rename": "node ./bin/rename.js",
+    "start": "react-native start",
+    "test": "jest"
+  },
+  "jest": {
+    "preset": "react-native"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "lodash": "^4.17.11",
+    "moment": "^2.24.0",
+    "prop-types": "^15.6.2",
+    "react": "16.6.3",
+    "react-native": "0.58.0-rc.2",
+    "react-native-elements": "^1.1.0",
+    "react-native-firebase": "^5.2.0",
+    "react-native-gesture-handler": "~1.0.14",
+    "react-native-vector-icons": "^6.4.2",
+    "react-navigation": "^3.5.1",
+    "react-redux": "^6.0.1",
+    "redux": "^4.0.1",
+    "redux-saga": "^1.0.2"
+  }
+}
