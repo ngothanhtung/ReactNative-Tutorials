@@ -134,7 +134,9 @@
 
 - Download tool: https://github.com/jhen0409/react-native-debugger/releases
 
-# Session 11 EXPRESSJS & MONGODB
+# Session 11 React Native Elements & NativeBase
+# Session 12 Practice
+# Session 13 EXPRESSJS & MONGODB
 
 1. Expressjs: https://expressjs.com/en/starter/generator.html
 2. Basic Routing: https://expressjs.com/en/starter/basic-routing.html
@@ -143,6 +145,7 @@
 5. Tools: https://www.mongodb.com/download-center/compass
 6. Others: RoboMongo: https://robomongo.org/
 7. Nodejs Mongodb Driver: http://mongodb.github.io/node-mongodb-native/3.1/
+8. Databases with Express: https://expressjs.com/en/guide/database-integration.html
 
 # A. Some useful websites
 
