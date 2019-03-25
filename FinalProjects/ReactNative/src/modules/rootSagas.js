@@ -1,5 +1,6 @@
 import { all, fork } from 'redux-saga/effects';
 import authSagas from './authModule/authSagas';
+import shopSagas from './shopModule/shopSagas';
 // import feedbackSagas from './FeedbackModule/feedbackSagas';
 // import chatSagas from './ChatModule/chatSagas';
 // import notificationSagas from './NotificationModule/notificationSagas';
@@ -8,6 +9,7 @@ import authSagas from './authModule/authSagas';
 export default function* rootSagas() {
   yield all([
     fork(authSagas),
+    fork(shopSagas),
     // fork(feedbackSagas),
     // fork(chatSagas),
     // fork(notificationSagas),

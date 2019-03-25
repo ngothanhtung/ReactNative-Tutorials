@@ -127,7 +127,7 @@ export default class App extends React.Component {
           }}
         />
         {/* <Login /> */}
-        <Button
+        {/* <Button
           title='Local message'
           onPress={() => {
             const notification = new firebase.notifications.Notification();
@@ -193,7 +193,7 @@ export default class App extends React.Component {
             // firebase.notifications().removeAllDeliveredNotifications();
             // firebase.notifications().cancelAllNotifications();
           }}
-        />
+        /> */}
       </Provider>
     );
   }

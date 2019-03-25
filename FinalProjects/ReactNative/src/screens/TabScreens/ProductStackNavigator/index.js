@@ -1,8 +1,15 @@
-import { createStackNavigator, createAppContainer } from 'react-navigation'
-import ProductsScreen from './ProductsScreen'
-import ProductDetailsScreen from './ProductDetailsScreen'
+import { createStackNavigator, createAppContainer } from 'react-navigation';
+import CategoriesScreen from './CategoriesScreen';
+import ProductsScreen from './ProductsScreen';
+import ProductDetailsScreen from './ProductDetailsScreen';
 
 const routeConfigs = {
+  CategoriesScreen: {
+    screen: CategoriesScreen,
+    navigationOptions: ({ navigation }) => ({
+      title: 'Categories',
+    }),
+  },
   ProductsScreen: {
     screen: ProductsScreen,
     navigationOptions: ({ navigation }) => ({
@@ -14,10 +21,10 @@ const routeConfigs = {
     navigationOptions: ({ navigation }) => ({
       title: 'Product Details',
     }),
-  }
+  },
 };
 const stackNavigatorConfig = {
-  headerMode: 'none'
+  headerMode: 'none',
 };
 
 const stackNavigator = createStackNavigator(routeConfigs, stackNavigatorConfig);

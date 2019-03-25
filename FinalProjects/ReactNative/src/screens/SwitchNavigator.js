@@ -1,14 +1,14 @@
-import { createSwitchNavigator, createAppContainer } from 'react-navigation'
+import { createSwitchNavigator, createAppContainer } from 'react-navigation';
 
-import StackNavigator from './StackNavigator'
-import TabNavigator from './TabNavigator'
-import DrawerNavigator from './DrawerNavigator'
+import StackNavigator from './StackNavigator';
+import TabNavigator from './TabNavigator';
+import DrawerNavigator from './DrawerNavigator';
 
 const routeConfigs = {
-  StackNavigator: StackNavigator,
-  // TabNavigator: TabNavigator,
-  DrawerNavigator: DrawerNavigator,
-}
+  // StackNavigator: StackNavigator,
+  TabNavigator: TabNavigator,
+  // DrawerNavigator: DrawerNavigator,
+};
 
 const switchNavigatorConfig = {};
 

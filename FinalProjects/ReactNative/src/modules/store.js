@@ -1,5 +1,6 @@
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import authReducer from './authModule/reducers';
+import shopReducer from './shopModule/reducers';
 // import feedbackReducer from './FeedbackModule/reducers';
 // import chatReducer from './ChatModule/reducers';
 // import notificationReducer from './NotificationModule/reducers';
@@ -10,6 +11,7 @@ import { middlewares } from './middlewares';
 
 const rootReducer = combineReducers({
   authReducer,
+  shopReducer,
   // feedbackReducer,
   // chatReducer,
   // notificationReducer,
@@ -18,9 +20,6 @@ const rootReducer = combineReducers({
 });
 
 // STORE
-const store = createStore(
-  rootReducer,
-  composeWithDevTools(applyMiddleware(...middlewares)),
-);
+const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(...middlewares)));
 
 export default store;
