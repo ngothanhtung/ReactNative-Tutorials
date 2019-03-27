@@ -1,20 +1,30 @@
 import React, { Component } from 'react';
-import { Text, View, FlatList } from 'react-native';
+import { Text, View, FlatList, ActivityIndicator } from 'react-native';
 import { ListItem, Icon } from 'react-native-elements';
 import { connect } from 'react-redux';
 import * as ActionTypes from '../actions/types';
 import { withNavigation } from 'react-navigation';
+import colors from '../../../constants/colors';
+import Loading from '../../../components/Loading';
+
 class Categories extends Component {
   renderItem = ({ item }) => {
-    return <ListItem onPress={() => {
-      this.props.navigation.navigate('ProductsScreen', {category: item});
-    }} 
-    title={item.name} 
-    leftIcon={{ type: 'material-community', name: item.iconName, size: 24 }} 
-    bottomDivider={true} 
-    chevron={true} />;
+    return (
+      <ListItem
+        onPress={() => {
+          this.props.navigation.navigate('ProductsScreen', { category: item });
+        }}
+        title={item.name}
+        leftIcon={{ type: 'material-community', name: item.iconName, size: 24 }}
+        bottomDivider={true}
+        chevron={true}
+      />
+    );
   };
   render() {
+    if (this.props.loading) {
+      return <Loading />;
+    }
     return (
       <View>
         <FlatList extraData={this.props} data={this.props.categories} renderItem={this.renderItem} keyExtractor={(item, index) => item._id} />
@@ -43,4 +53,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)( withNavigation(Categories));
+)(withNavigation(Categories));

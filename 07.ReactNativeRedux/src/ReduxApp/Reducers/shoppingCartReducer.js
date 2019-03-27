@@ -4,12 +4,12 @@ const defaultState = {
 	products: [],
 	addedProducts: [],
 	total: 0,
-	shoppingCartVisible: false
+	shoppingCartVisible: false,
 };
 
-updateTotal = (items) => {
-	return items.reduce((total, item) => (total + ((item.product.price * item.quantity) * (100 - item.product.discount) / 100)), 0);
-}
+updateTotal = items => {
+	return items.reduce((total, item) => total + (item.product.price * item.quantity * (100 - item.product.discount)) / 100, 0);
+};
 
 const shoppingCartReducer = (state = defaultState, action) => {
 	switch (action.type) {
@@ -17,22 +17,22 @@ const shoppingCartReducer = (state = defaultState, action) => {
 			return {
 				...state,
 				products: action.products,
-			}
+			};
 
 		case ActionTypes.SHOW_SHOPPING_CART:
 			return {
 				...state,
 				shoppingCartVisible: true,
-			}
+			};
 
 		case ActionTypes.HIDE_SHOPPING_CART:
 			return {
 				...state,
 				shoppingCartVisible: false,
-			}
+			};
 
 		case ActionTypes.ADD_TO_CART:
-			// FIND ITEM BEFORE ADD TO CART, IF EXISTS THEN UPDATE QUANTITY, ELSE ADD NEW ITEM WITH QUANTITY = 1	
+			// FIND ITEM BEFORE ADD TO CART, IF EXISTS THEN UPDATE QUANTITY, ELSE ADD NEW ITEM WITH QUANTITY = 1
 			var found = [...state.addedProducts].find(item => item.product.id === action.product.id);
 			if (found) {
 				found.quantity++;
@@ -40,17 +40,17 @@ const shoppingCartReducer = (state = defaultState, action) => {
 				return {
 					...state,
 					addedProducts: [...state.addedProducts],
-					total: total
-				}
+					total: total,
+				};
 			}
 
-			// ELSE ADD NEW ITEM WITH QUANTITY = 1	
+			// ELSE ADD NEW ITEM WITH QUANTITY = 1
 			var addedProducts = [...state.addedProducts, { product: action.product, quantity: action.quantity }];
 			var total = updateTotal(addedProducts);
 			return {
 				...state,
 				addedProducts: addedProducts,
-				total: total
+				total: total,
 			};
 
 		case ActionTypes.REMOVE_FROM_CART:
@@ -59,7 +59,7 @@ const shoppingCartReducer = (state = defaultState, action) => {
 			return {
 				...state,
 				addedProducts: addedProducts,
-				total: total
+				total: total,
 			};
 		default:
 			return state;

@@ -4,6 +4,7 @@ import { ListItem, Icon } from 'react-native-elements';
 import { connect } from 'react-redux';
 import * as ActionTypes from '../actions/types';
 import { withNavigation } from 'react-navigation';
+import Loading from '../../../components/Loading';
 class Products extends Component {
   renderItem = ({ item }) => {
     return (
@@ -18,6 +19,9 @@ class Products extends Component {
     );
   };
   render() {
+    if (this.props.loading) {
+      return <Loading />;
+    }
     return (
       <View>
         <FlatList data={this.props.products} renderItem={this.renderItem} keyExtractor={(item, index) => item._id} />

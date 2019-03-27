@@ -3,6 +3,7 @@ import * as ActionTypes from '../actions/types';
 const defaultState = {
   loading: false,
   products: [],
+  product: null,
   error: null,
 };
 
@@ -31,6 +32,29 @@ const productReducer = (state = defaultState, action) => {
         ...state,
         loading: false,
         products: [],
+        error: action.error,
+      };
+
+    // --------------------------------------------------------------
+    case ActionTypes.SHOP_GET_PRODUCT_BY_ID_PENDING:
+      return {
+        ...state,
+        loading: true,
+        product: null,
+        error: null,
+      };
+    case ActionTypes.SHOP_GET_PRODUCT_BY_ID_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        product: action.product,
+        error: null,
+      };
+    case ActionTypes.SHOP_GET_PRODUCT_BY_ID_ERROR:
+      return {
+        ...state,
+        loading: false,
+        product: null,
         error: action.error,
       };
     default:

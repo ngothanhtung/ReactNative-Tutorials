@@ -43,8 +43,28 @@ function* SHOP_GET_PRODUCTS_BY_CATEGORY(action) {
   }
 }
 
+// ---------------------------------------------------------------------------------------------------------
+function* SHOP_GET_PRODUCT_BY_ID(action) {
+  try {
+    yield put({ type: ActionTypes.SHOP_GET_PRODUCT_BY_ID_PENDING });
+    const url = URL + '/products/' + action.productId;
+    const response = yield axios.get(url);
+    const product = response.data.result;
+    yield put({
+      type: ActionTypes.SHOP_GET_PRODUCT_BY_ID_SUCCESS,
+      product: product,
+    });
+  } catch (exception) {
+    console.log('SAGA ERROR (authSagas):', exception);
+    yield put({
+      type: ActionTypes.SHOP_GET_PRODUCT_BY_ID_ERROR,
+      error: exception,
+    });
+  }
+}
 // ====================================================================================================================
 export default function* sagas() {
   yield takeLatest(ActionTypes.SHOP_GET_CATEGORIES, SHOP_GET_CATEGORIES);
   yield takeLatest(ActionTypes.SHOP_GET_PRODUCTS_BY_CATEGORY, SHOP_GET_PRODUCTS_BY_CATEGORY);
+  yield takeLatest(ActionTypes.SHOP_GET_PRODUCT_BY_ID, SHOP_GET_PRODUCT_BY_ID);
 }
