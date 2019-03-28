@@ -47,11 +47,13 @@ class MongoDbHelper {
 					collection
 						.insertMany(list)
 						.then(result => {
-							client.close();
 							resolve(result);
 						})
 						.catch(err => {
 							reject(err);
+						})
+						.finally(() => {
+							client.close();
 						});
 				})
 				.catch(err => {
@@ -72,11 +74,13 @@ class MongoDbHelper {
 					collection
 						.findOneAndUpdate(query, { $set: data })
 						.then(result => {
-							client.close();
 							resolve(result);
 						})
 						.catch(err => {
 							reject(err);
+						})
+						.finally(() => {
+							client.close();
 						});
 				})
 				.catch(err => {
@@ -96,11 +100,13 @@ class MongoDbHelper {
 					collection
 						.updateMany(query, { $set: data })
 						.then(result => {
-							client.close();
 							resolve(result);
 						})
 						.catch(err => {
 							reject(err);
+						})
+						.finally(() => {
+							client.close();
 						});
 				})
 				.catch(err => {
@@ -121,11 +127,13 @@ class MongoDbHelper {
 					collection
 						.deleteOne(query)
 						.then(result => {
-							client.close();
 							resolve(result);
 						})
 						.catch(err => {
 							reject(err);
+						})
+						.finally(() => {
+							client.close();
 						});
 				})
 				.catch(err => {
@@ -145,11 +153,13 @@ class MongoDbHelper {
 					collection
 						.deleteMany(query)
 						.then(result => {
-							client.close();
 							resolve(result);
 						})
 						.catch(err => {
 							reject(err);
+						})
+						.finally(() => {
+							client.close();
 						});
 				})
 				.catch(err => {
@@ -159,7 +169,7 @@ class MongoDbHelper {
 	}
 	// ----------------------------------------------------------------------------
 	// FIND: Tìm kiếm (id)
-	findDocument(id, collectionName) {
+	async findDocument(id, collectionName, projection) {
 		return new Promise((resolve, reject) => {
 			MongoClient.connect(CONNECTION_STRING, { useNewUrlParser: true })
 				.then(client => {
@@ -169,11 +179,13 @@ class MongoDbHelper {
 					collection
 						.findOne(query)
 						.then(result => {
-							client.close();
 							resolve(result);
 						})
 						.catch(err => {
 							reject(err);
+						})
+						.finally(() => {
+							client.close();
 						});
 				})
 				.catch(err => {
@@ -183,7 +195,7 @@ class MongoDbHelper {
 	}
 	// ----------------------------------------------------------------------------
 	// FIND: Tìm kiếm (nhiều)
-	findDocuments(query, collectionName) {
+	findDocuments(query, collectionName, projection) {
 		return new Promise((resolve, reject) => {
 			MongoClient.connect(CONNECTION_STRING, { useNewUrlParser: true })
 				.then(client => {
@@ -191,14 +203,17 @@ class MongoDbHelper {
 					var collection = dbo.collection(collectionName);
 					collection
 						.find(query)
+						.project(projection)
 						.toArray()
 						.then(result => {
-							client.close();
 							resolve(result);
 						})
 						.catch(err => {
 							console.log(err);
 							reject(err);
+						})
+						.finally(() => {
+							client.close();
 						});
 				})
 				.catch(err => {
@@ -245,8 +260,7 @@ class MongoDbHelper {
 	// 			});
 	// 	});
 	// };
-
-	findProducts(query, collectionName) {
+	findProducts(query) {
 		return new Promise((resolve, reject) => {
 			MongoClient.connect(CONNECTION_STRING, { useNewUrlParser: true })
 				.then(client => {
@@ -268,7 +282,7 @@ class MongoDbHelper {
 								$match: query
 							}
 						])
-						// .find(query)
+						.find(query)
 						//.skip(4)
 						//.limit(100)
 						//.project({ name: 1, price: 1, discount: 1 })

@@ -11,7 +11,7 @@ router.all('/*', (req, res, next) => {
 
 // Example: GET: http://localhost:3000/products
 router.get('/', function(req, res, next) {
-	MongoDbHelper.findDocuments({}, 'products')
+	MongoDbHelper.findDocuments({}, 'products', { _id: 1, name: 1, price: 1 })
 		.then(result => {
 			res.json({ ok: true, result: result });
 		})
