@@ -20,6 +20,19 @@ router.get('/', function(req, res, next) {
 		});
 });
 
+router.get('/:page/:size', function(req, res, next) {
+	var page = parseInt(req.params.page);
+	var size = parseInt(req.params.size);
+	console.log(page, size);
+	MongoDbHelper.getProducts({}, 'products', page, size)
+		.then(result => {
+			res.json({ ok: true, result: result });
+		})
+		.catch(error => {
+			res.status(500).json({ ok: false, error: error });
+		});
+});
+
 // Example: GET: http://localhost:3000/products/5c86529998554ffc5b59661a
 router.get('/:id', function(req, res, next) {
 	var id = req.params.id;

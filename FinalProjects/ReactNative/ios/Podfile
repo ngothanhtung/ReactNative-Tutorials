@@ -11,23 +11,22 @@ target 'finalproject' do
   pod 'Firebase/Core', '~> 5.15.0'
 
   # [OPTIONAL PODS] - comment out pods for firebase products you won't be using.
-  pod 'Firebase/AdMob', '~> 5.15.0'
+  # pod 'Firebase/AdMob', '~> 5.15.0'
   pod 'Firebase/Auth', '~> 5.15.0'
-  pod 'Firebase/Core', '~> 5.15.0'
   pod 'Firebase/Database', '~> 5.15.0'
-  pod 'Firebase/Functions', '~> 5.15.0'
-  pod 'Firebase/DynamicLinks', '~> 5.15.0'
+  # pod 'Firebase/Functions', '~> 5.15.0'
+  # pod 'Firebase/DynamicLinks', '~> 5.15.0'
   pod 'Firebase/Firestore', '~> 5.15.0'
   # pod 'Firebase/Invites', '~> 5.15.0'
   pod 'Firebase/Messaging', '~> 5.15.0'
-  pod 'Firebase/RemoteConfig', '~> 5.15.0'
-  pod 'Firebase/Storage', '~> 5.15.0'
+  # pod 'Firebase/RemoteConfig', '~> 5.15.0'
+  # pod 'Firebase/Storage', '~> 5.15.0'
   pod 'Firebase/Performance', '~> 5.15.0'
   pod 'Fabric', '~> 1.7.13'
   pod 'Crashlytics', '~> 3.10.9'
 
-  pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
+  # pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
 
-  pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
+  # pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
 end

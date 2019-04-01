@@ -207,6 +207,37 @@ class MongoDbHelper {
 		});
 	}
 
+	getProducts(query, collectionName, page, size) {
+		var skip = 0;
+		if (page === 1) skip = 0;
+		skip = size * (page - 1);
+
+		return new Promise((resolve, reject) => {
+			MongoClient.connect(CONNECTION_STRING, { useNewUrlParser: true })
+				.then(client => {
+					var dbo = client.db(DATABASE_NAME);
+					var collection = dbo.collection(collectionName);
+					collection
+						.find(query)
+						.skip(skip)
+						.limit(size)
+						.toArray()
+						.then(result => {
+							client.close();
+							resolve(result);
+						})
+						.catch(err => {
+							console.log(err);
+							reject(err);
+						});
+				})
+				.catch(err => {
+					console.log(err);
+					reject(err);
+				});
+		});
+	}
+
 	// FIND: Tìm kiếm (nhiều)
 	// findDocuments(query, collectionName) {
 	// 	return new Promise((resolve, reject) => {
@@ -261,12 +292,12 @@ class MongoDbHelper {
 									from: 'categories',
 									localField: 'categoryId',
 									foreignField: 'subCategories._id',
-									as: 'category'
-								}
+									as: 'category',
+								},
 							},
 							{
-								$match: query
-							}
+								$match: query,
+							},
 						])
 						// .find(query)
 						//.skip(4)
