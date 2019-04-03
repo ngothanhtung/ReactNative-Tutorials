@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>890600439907-bm7fun3pl5qomg8rm149nb8qt16p4guk.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.890600439907-bm7fun3pl5qomg8rm149nb8qt16p4guk</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAnLNder4xeOBSRBYHwJT_WchsU8JD2Xz4</string>
+	<key>GCM_SENDER_ID</key>
+	<string>890600439907</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.softech.minishop</string>
+	<key>PROJECT_ID</key>
+	<string>softech-project</string>
+	<key>STORAGE_BUCKET</key>
+	<string>softech-project.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:890600439907:ios:b5b04fc6f9de7686</string>
+	<key>DATABASE_URL</key>
+	<string>https://softech-project.firebaseio.com</string>
+</dict>
+</plist>

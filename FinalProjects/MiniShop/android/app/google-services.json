@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "890600439907",
+    "firebase_url": "https://softech-project.firebaseio.com",
+    "project_id": "softech-project",
+    "storage_bucket": "softech-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:890600439907:android:b5b04fc6f9de7686",
+        "android_client_info": {
+          "package_name": "com.softech.minishop"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAhAC3YrwjaDkpz6uBDYJVtMT3FhwAvlW0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "890600439907-lgg8k20m400s84ai1hfkku4tcqklo7gt.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "890600439907-bm7fun3pl5qomg8rm149nb8qt16p4guk.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.softech.minishop"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
