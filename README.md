@@ -15,7 +15,7 @@
 5. Material Icon Theme (Downloads: 5M)
 6. One Dark Pro (Downloads: 7.8M)
 7. Debugger for Chrome (Downloads: 15.4M)
-
+8. Prettier
 # Videos:
 
 1. Videos: https://www.youtube.com/watch?v=kNHuLOXR5T0&list=PLWBrqglnjNl31S91FFE63DtuRc9v9LSGl
