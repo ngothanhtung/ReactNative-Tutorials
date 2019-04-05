@@ -81,7 +81,7 @@ const routeConfigs = {
   },
 };
 const tabNavigatorConfig = {
-  initialRouteName: 'AccountScreen',
+  initialRouteName: 'HomeScreen',
   lazy: true,
   tabBarOptions: {
     style: { height: 60, backgroundColor: colors.PRIMARY },
