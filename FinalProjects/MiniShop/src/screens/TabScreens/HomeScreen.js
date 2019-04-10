@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, SafeAreaView, FlatList, ActivityIndicator } from 'react-native';
+import axiosClient from '../../configs/axiosClient';
 
 export default class HomeScreen extends Component {
   constructor(props) {
@@ -17,15 +18,14 @@ export default class HomeScreen extends Component {
 
   _getProducts = () => {
     const { page } = this.state;
-    fetch(`http://localhost:3000/products/${this.state.page}/${this.state.size}`)
-      .then(response => response.json())
-      .then(json => {
-        console.log(json);
-        if (json.result.length === 0) {
+    axiosClient
+      .get(`http://localhost:3000/products/${this.state.page}/${this.state.size}`)
+      .then(response => {
+        if (response.data.result.length === 0) {
           this.setState({ canLoadMore: false });
         }
         this.setState((prevState, nextProps) => ({
-          products: page === 1 ? json.result : [...this.state.products, ...json.result],
+          products: page === 1 ? response.data.result : [...this.state.products, ...response.data.result],
           loading: false,
           loadingMore: false,
           refreshing: false,

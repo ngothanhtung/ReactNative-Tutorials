@@ -2,7 +2,8 @@ import { put, takeLatest } from 'redux-saga/effects';
 import * as ActionTypes from './actions/types';
 import axios from 'axios';
 import { Alert } from 'react-native';
-import NavigationService from '../../helpers/NavigationService'
+import NavigationService from '../../helpers/NavigationService';
+import axiosClient from '../../configs/axiosClient';
 // ---------------------------------------------------------------------------------------------------------
 function* AUTH_LOGIN(action) {
   // if (action.username.length === 0) {
@@ -20,20 +21,20 @@ function* AUTH_LOGIN(action) {
 
   try {
     yield put({ type: ActionTypes.AUTH_LOGIN_PENDING });
-    const url = 'https://us-central1-reactnativebatch04.cloudfunctions.net/login'
-    const response = yield axios.post(url, {
+    const url = '/login';
+    const response = yield axiosClient.post(url, {
       username: action.username,
       password: action.password,
     });
 
-    // console.log(response);
+    console.log(response);
     // LOGIN: OK
 
     if (response.data.user && response.data.user.length > 0) {
       yield put({
         type: ActionTypes.AUTH_LOGIN_SUCCESS,
         user: response.data.user,
-        loginStatus: true
+        loginStatus: true,
       });
       // NavigationServer.navigate('ScreenName');
       NavigationService.navigate('DrawerNavigator');
@@ -60,15 +61,15 @@ function* AUTH_LOGIN(action) {
 function* AUTH_REGISTER(action) {
   try {
     yield put({ type: ActionTypes.AUTH_REGISTER_PENDING });
-    const url = 'https://us-central1-reactnativebatch04.cloudfunctions.net/register'
+    const url = '/register';
     const user = {
       username: action.username,
       password: action.password,
       fullname: action.fullname,
       email: action.email,
-      phone: action.phone
+      phone: action.phone,
     };
-    const response = yield axios.post(url, user);
+    const response = yield axiosClient.post(url, user);
 
     if (response.data.ok && response.data.ok === true) {
       yield put({
@@ -101,4 +102,3 @@ export default function* sagas() {
   // yield takeEvery(ActionTypes.AUTH_REGISTER_GUEST, AUTH_REGISTER_GUEST);
   // yield takeEvery(ActionTypes.AUTH_LOGOUT, AUTH_LOGOUT);
 }
-

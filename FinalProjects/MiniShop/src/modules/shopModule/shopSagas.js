@@ -3,12 +3,14 @@ import * as ActionTypes from './actions/types';
 import axios from 'axios';
 import NavigationService from '../../helpers/NavigationService';
 import URL from '../../constants/host';
+import axiosClient from '../../configs/axiosClient';
+
 // ---------------------------------------------------------------------------------------------------------
 function* SHOP_GET_CATEGORIES(action) {
   try {
     yield put({ type: ActionTypes.SHOP_GET_CATEGORIES_PENDING });
-    const url = URL + '/categories';
-    const response = yield axios.get(url);
+    const url = '/categories';
+    const response = yield axiosClient.get(url);
     const categories = response.data.result;
     yield put({
       type: ActionTypes.SHOP_GET_CATEGORIES_SUCCESS,
@@ -27,8 +29,8 @@ function* SHOP_GET_CATEGORIES(action) {
 function* SHOP_GET_PRODUCTS_BY_CATEGORY(action) {
   try {
     yield put({ type: ActionTypes.SHOP_GET_PRODUCTS_BY_CATEGORY_PENDING });
-    const url = URL + '/categories/' + action.categoryId + '/products';
-    const response = yield axios.get(url);
+    const url = '/categories/' + action.categoryId + '/products';
+    const response = yield axiosClient.get(url);
     const products = response.data.result;
     yield put({
       type: ActionTypes.SHOP_GET_PRODUCTS_BY_CATEGORY_SUCCESS,
@@ -47,8 +49,8 @@ function* SHOP_GET_PRODUCTS_BY_CATEGORY(action) {
 function* SHOP_GET_PRODUCT_BY_ID(action) {
   try {
     yield put({ type: ActionTypes.SHOP_GET_PRODUCT_BY_ID_PENDING });
-    const url = URL + '/products/' + action.productId;
-    const response = yield axios.get(url);
+    const url = '/products/' + action.productId;
+    const response = yield axiosClient.get(url);
     const product = response.data.result;
     yield put({
       type: ActionTypes.SHOP_GET_PRODUCT_BY_ID_SUCCESS,
@@ -67,8 +69,8 @@ function* SHOP_GET_PRODUCT_BY_ID(action) {
 function* SHOP_CHECKOUT(action) {
   try {
     yield put({ type: ActionTypes.SHOP_CHECKOUT_PENDING });
-    const url = URL + '/checkout';
-    const response = yield axios.post(url, {
+    const url = '/checkout';
+    const response = yield axiosClient.post(url, {
       cartItems: action.cartItems,
       fullname: action.fullname,
       phone: action.phone,

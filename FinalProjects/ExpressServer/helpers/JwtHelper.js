@@ -12,7 +12,7 @@ var MongoDbHelper = require('./MongoDbHelper');
 JwtHelper.check = function(req, res, next) {
 	// check header or url parameters or post parameters for token
 	var token = req.body.token || req.params.token || req.headers['x-access-token'];
-
+	console.log(token);
 	// decode token
 	if (token) {
 		// verifies secret and checks exp
@@ -45,7 +45,7 @@ JwtHelper.login = function(req, res) {
 				password: password,
 			};
 			var token = jwt.sign(payload, secrect, {
-				expiresIn: 86400, // expires in 24 hours
+				expiresIn: 3600, // expires in 24 hours
 			});
 
 			if (result.length > 0) {

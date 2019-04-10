@@ -37,8 +37,8 @@ app.post('/login', function(req, res) {
 app.use(function(req, res, next) {
 	JwtHelper.check(req, res, next);
 });
-
 app.use('/', indexRouter);
+
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
 app.use('/categories', categoriesRouter);
