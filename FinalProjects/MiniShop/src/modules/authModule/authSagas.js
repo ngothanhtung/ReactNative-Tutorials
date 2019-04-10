@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Alert } from 'react-native';
 import NavigationService from '../../helpers/NavigationService';
 import axiosClient from '../../configs/axiosClient';
+import { AsyncStorage } from 'react-native';
 // ---------------------------------------------------------------------------------------------------------
 function* AUTH_LOGIN(action) {
   // if (action.username.length === 0) {
@@ -30,12 +31,17 @@ function* AUTH_LOGIN(action) {
     console.log(response);
     // LOGIN: OK
 
-    if (response.data.user && response.data.user.length > 0) {
-      yield put({
+    if (response.data.result && response.data.result.length > 0) {
+      var data = {
         type: ActionTypes.AUTH_LOGIN_SUCCESS,
-        user: response.data.user,
+        user: response.data.result[0],
         loginStatus: true,
-      });
+      };
+      data.user.token = response.data.token;
+      yield put(data);
+
+      yield AsyncStorage.setItem('loggedInUser', JSON.stringify(response.data.result[0]));
+
       // NavigationServer.navigate('ScreenName');
       NavigationService.navigate('DrawerNavigator');
     } else {
