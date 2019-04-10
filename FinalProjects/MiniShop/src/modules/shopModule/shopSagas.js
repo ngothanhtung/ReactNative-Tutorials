@@ -89,10 +89,33 @@ function* SHOP_CHECKOUT(action) {
     });
   }
 }
+
+// ---------------------------------------------------------------------------------------------------------
+function* SHOP_GET_PRODUCTS_PAGING(action) {
+  try {
+    yield put({ type: ActionTypes.SHOP_GET_PRODUCTS_PAGING_PENDING });
+    const page = action.page;
+    const size = action.size;
+    const url = '/products/' + page + '/' + size;
+    const response = yield axiosClient.get(url);
+    const products = response.data.result;
+    yield put({
+      type: ActionTypes.SHOP_GET_PRODUCTS_PAGING_SUCCESS,
+      products: products,
+    });
+  } catch (exception) {
+    console.log('SAGA ERROR (authSagas):', exception);
+    yield put({
+      type: ActionTypes.SHOP_GET_PRODUCTS_PAGINGD_ERROR,
+      error: exception,
+    });
+  }
+}
 // ====================================================================================================================
 export default function* sagas() {
   yield takeLatest(ActionTypes.SHOP_GET_CATEGORIES, SHOP_GET_CATEGORIES);
   yield takeLatest(ActionTypes.SHOP_GET_PRODUCTS_BY_CATEGORY, SHOP_GET_PRODUCTS_BY_CATEGORY);
   yield takeLatest(ActionTypes.SHOP_GET_PRODUCT_BY_ID, SHOP_GET_PRODUCT_BY_ID);
+  yield takeLatest(ActionTypes.SHOP_GET_PRODUCTS_PAGING, SHOP_GET_PRODUCTS_PAGING);
   yield takeLatest(ActionTypes.SHOP_CHECKOUT, SHOP_CHECKOUT);
 }

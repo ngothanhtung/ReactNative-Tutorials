@@ -1,4 +1,5 @@
 import * as ActionTypes from '../actions/types';
+import _ from 'lodash';
 
 const defaultState = {
   loading: false,
@@ -55,6 +56,40 @@ const productReducer = (state = defaultState, action) => {
         ...state,
         loading: false,
         product: null,
+        error: action.error,
+      };
+
+    // ------------------------------
+    case ActionTypes.SHOP_GET_PRODUCTS_PAGING_PENDING: {
+      return {
+        ...state,
+        loading: true,
+        // products: [],
+        error: null,
+      };
+    }
+
+    case ActionTypes.SHOP_GET_PRODUCTS_PAGING_SUCCESS: {
+      var products = [];
+      if (action.page === 1) {
+        products = [...action.products];
+      } else {
+        products = _.concat(state.products, action.products);
+      }
+
+      return {
+        ...state,
+        products: products,
+        loading: false,
+        error: null,
+      };
+    }
+
+    case ActionTypes.SHOP_GET_PRODUCTS_PAGINGD_ERROR:
+      return {
+        ...state,
+        loading: false,
+        products: [],
         error: action.error,
       };
     default:

@@ -21,6 +21,7 @@ export default class HomeScreen extends Component {
     axiosClient
       .get(`http://localhost:3000/products/${this.state.page}/${this.state.size}`)
       .then(response => {
+        console.log(response);
         if (response.data.result.length === 0) {
           this.setState({ canLoadMore: false });
         }
