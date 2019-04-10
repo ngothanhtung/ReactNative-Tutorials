@@ -11,6 +11,7 @@ var categoriesRouter = require('./routes/categories');
 var checkoutRouter = require('./routes/checkout');
 
 var app = express();
+var JwtHelper = require('./helpers/JwtHelper');
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -21,6 +22,21 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+
+// ---------------------------------------------------------
+// authentication (no middleware necessary since this isnt authenticated)
+// ---------------------------------------------------------
+app.post('/login', function(req, res) {
+	// check login here
+	JwtHelper.login(req, res);
+});
+
+// ---------------------------------------------------------
+// route middleware to authenticate and check token
+// ---------------------------------------------------------
+app.use(function(req, res, next) {
+	JwtHelper.check(req, res, next);
+});
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
