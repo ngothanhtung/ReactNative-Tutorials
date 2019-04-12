@@ -16,6 +16,7 @@
 6. One Dark Pro (Downloads: 7.8M)
 7. Debugger for Chrome (Downloads: 15.4M)
 8. Prettier
+
 # Videos:
 
 1. Videos: https://www.youtube.com/watch?v=kNHuLOXR5T0&list=PLWBrqglnjNl31S91FFE63DtuRc9v9LSGl
@@ -135,7 +136,9 @@
 - Download tool: https://github.com/jhen0409/react-native-debugger/releases
 
 # Session 11 React Native Elements & NativeBase
+
 # Session 12 Practice
+
 # Session 13 EXPRESSJS & MONGODB
 
 1. Expressjs: https://expressjs.com/en/starter/generator.html
@@ -146,6 +149,10 @@
 6. Others: RoboMongo: https://robomongo.org/
 7. Nodejs Mongodb Driver: http://mongodb.github.io/node-mongodb-native/3.1/
 8. Databases with Express: https://expressjs.com/en/guide/database-integration.html
+
+# Final: Release
+
+1. https://facebook.github.io/react-native/docs/signed-apk-android
 
 # A. Some useful websites
 
