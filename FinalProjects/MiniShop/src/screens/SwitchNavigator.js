@@ -6,7 +6,7 @@ import DrawerNavigator from './DrawerNavigator';
 import CheckoutStackNavigator from './CheckoutStackNavigator';
 
 const routeConfigs = {
-  StackNavigator: StackNavigator,
+  // StackNavigator: StackNavigator,
   // TabNavigator: TabNavigator,
   DrawerNavigator: DrawerNavigator,
   CheckoutStackNavigator: CheckoutStackNavigator,
