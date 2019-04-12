@@ -153,7 +153,7 @@
 # Final: Release
 
 1. Android icon: https://romannurik.github.io/AndroidAssetStudio/index.html
-2. iOs icon: https://www.appicon.build/
+2. iOs icon: https://appicon.co/
 3. https://facebook.github.io/react-native/docs/signed-apk-android
 4. https://play.google.com/apps/publish
 
