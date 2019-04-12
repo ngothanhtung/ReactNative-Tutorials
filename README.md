@@ -152,9 +152,10 @@
 
 # Final: Release
 
-1. https://romannurik.github.io/AndroidAssetStudio/index.html
-2. https://facebook.github.io/react-native/docs/signed-apk-android
-3. https://play.google.com/apps/publish
+1. Android icon: https://romannurik.github.io/AndroidAssetStudio/index.html
+2. iOs icon: https://www.appicon.build/
+3. https://facebook.github.io/react-native/docs/signed-apk-android
+4. https://play.google.com/apps/publish
 
 # A. Some useful websites
 
