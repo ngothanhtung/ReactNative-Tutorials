@@ -152,7 +152,9 @@
 
 # Final: Release
 
-1. https://facebook.github.io/react-native/docs/signed-apk-android
+1. https://romannurik.github.io/AndroidAssetStudio/index.html
+2. https://facebook.github.io/react-native/docs/signed-apk-android
+3. https://play.google.com/apps/publish
 
 # A. Some useful websites
 
