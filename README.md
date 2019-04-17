@@ -7,8 +7,9 @@
 5. Git SCM: https://git-scm.com/download/
 6. https://chocolatey.org (Windows)
 7. Yarn (https://yarnpkg.com/lang/en/docs/install/#windows-stable)
-8. Setup ANDROID_HOME (https://facebook.github.io/react-native/docs/assets/GettingStartedAndroidEnvironmentVariableANDROID_HOME.png)
-9. Setup JAVA_HOME (https://confluence.atlassian.com/doc/setting-the-java_home-variable-in-windows-8895.html)
+8. Setup ANDROID_HOME (c:\Users\YOUR_USERNAME\AppData\Local\Android\Sdk)
+9. Add platform-tools to Path (c:\Users\YOUR_USERNAME\AppData\Local\Android\Sdk\platform-tools)
+10. Setup JAVA_HOME (https://confluence.atlassian.com/doc/setting-the-java_home-variable-in-windows-8895.html)
 
 # Visual Studio Code Extensions:
 
