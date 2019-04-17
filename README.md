@@ -19,17 +19,13 @@
 5. Material Icon Theme (Downloads: 5M)
 6. One Dark Pro (Downloads: 7.8M)
 7. Debugger for Chrome (Downloads: 15.4M)
-8. Prettier
+8. Prettier (Downloads: 7.8M)
 
 # Videos:
 
 1. Videos: https://www.youtube.com/watch?v=kNHuLOXR5T0&list=PLWBrqglnjNl31S91FFE63DtuRc9v9LSGl
 
-# ReactNative Websites
-
-1. http://www.reactnativeexpress.com/
-
-# Session 01 & 02 Hello World App:
+# Session 01: Setup
 
 1. https://facebook.github.io/react-native/
 2. https://facebook.github.io/react-native/docs/getting-started
@@ -37,16 +33,18 @@
 4. npm install -g react-native-cli
 5. Create new react native project: react-native init HelloWorldApp
 6. Component Examples: https://facebook.github.io/react-native/docs/tutorial
-7. Props: https://facebook.github.io/react-native/docs/props
-8. State: https://facebook.github.io/react-native/docs/state
+
+# Session 02 Basic of Props & State
+
+1. Props: https://facebook.github.io/react-native/docs/props
+2. State: https://facebook.github.io/react-native/docs/state
 
 # Session 03 More Props & State
 
-1. props: https://reactjs.org/docs/typechecking-with-proptypes.html
+1. Type-Checking: https://reactjs.org/docs/typechecking-with-proptypes.html
 2. Install Package: https://www.npmjs.com/package/prop-types
-3. state: https://facebook.github.io/react-native/docs/handling-text-input
+3. Handle Event within state: https://facebook.github.io/react-native/docs/handling-text-input
 4. TextInput ref: https://facebook.github.io/react-native/docs/textinput
-5. Examples: https://github.com/ngothanhtung/reactnative-tutorials/blob/master/Batch04/HelloWorldApp/session03/Login.js
 
 # Session 04 Styles & Layout
 
