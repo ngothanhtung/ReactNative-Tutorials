@@ -1,14 +1,18 @@
-# Get Started
+# Get Started (Setup enviroment)
 
 1. Nodejs: https://nodejs.org/en/
 2. Java SDK 8: https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 3. Xcode, Android Studio: https://developer.android.com/studio/
 4. Visual Studio Code: https://code.visualstudio.com/Download
 5. Git SCM: https://git-scm.com/download/
+6. https://chocolatey.org (Windows)
+7. Yarn (https://yarnpkg.com/lang/en/docs/install/#windows-stable)
+8. Setup ANDROID_HOME (https://facebook.github.io/react-native/docs/assets/GettingStartedAndroidEnvironmentVariableANDROID_HOME.png)
+9. Setup JAVA_HOME (https://confluence.atlassian.com/doc/setting-the-java_home-variable-in-windows-8895.html)
 
 # Visual Studio Code Extensions:
 
-1. Auto Rename Tag: (Donwloads: 1.1M)
+1. Auto Rename Tag: (Downloads: 1.1M)
 2. Bracket Pair Colorizer 2 (Donwloads: 66K)
 3. ES7 React/Redux/GraphQL/React-Native snippets (Downloads: 1.1M)
 4. React Native Tools (Downloads: 2.9M)
