@@ -1,31 +1,32 @@
-# Get Started
+# Get Started (Setup enviroment)
 
 1. Nodejs: https://nodejs.org/en/
 2. Java SDK 8: https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 3. Xcode, Android Studio: https://developer.android.com/studio/
 4. Visual Studio Code: https://code.visualstudio.com/Download
 5. Git SCM: https://git-scm.com/download/
+6. https://chocolatey.org (Windows)
+7. Yarn (https://yarnpkg.com/lang/en/docs/install/#windows-stable)
+8. Setup ANDROID_HOME (c:\Users\YOUR_USERNAME\AppData\Local\Android\Sdk)
+9. Add platform-tools to Path (c:\Users\YOUR_USERNAME\AppData\Local\Android\Sdk\platform-tools)
+10. Setup JAVA_HOME (https://confluence.atlassian.com/doc/setting-the-java_home-variable-in-windows-8895.html)
 
 # Visual Studio Code Extensions:
 
-1. Auto Rename Tag: (Donwloads: 1.1M)
+1. Auto Rename Tag: (Downloads: 1.1M)
 2. Bracket Pair Colorizer 2 (Donwloads: 66K)
 3. ES7 React/Redux/GraphQL/React-Native snippets (Downloads: 1.1M)
 4. React Native Tools (Downloads: 2.9M)
 5. Material Icon Theme (Downloads: 5M)
 6. One Dark Pro (Downloads: 7.8M)
 7. Debugger for Chrome (Downloads: 15.4M)
-8. Prettier
+8. Prettier (Downloads: 7.8M)
 
 # Videos:
 
 1. Videos: https://www.youtube.com/watch?v=kNHuLOXR5T0&list=PLWBrqglnjNl31S91FFE63DtuRc9v9LSGl
 
-# ReactNative Websites
-
-1. http://www.reactnativeexpress.com/
-
-# Session 01 & 02 Hello World App:
+# Session 01: Setup
 
 1. https://facebook.github.io/react-native/
 2. https://facebook.github.io/react-native/docs/getting-started
@@ -33,16 +34,18 @@
 4. npm install -g react-native-cli
 5. Create new react native project: react-native init HelloWorldApp
 6. Component Examples: https://facebook.github.io/react-native/docs/tutorial
-7. Props: https://facebook.github.io/react-native/docs/props
-8. State: https://facebook.github.io/react-native/docs/state
+
+# Session 02 Basic of Props & State
+
+1. Props: https://facebook.github.io/react-native/docs/props
+2. State: https://facebook.github.io/react-native/docs/state
 
 # Session 03 More Props & State
 
-1. props: https://reactjs.org/docs/typechecking-with-proptypes.html
+1. Type-Checking: https://reactjs.org/docs/typechecking-with-proptypes.html
 2. Install Package: https://www.npmjs.com/package/prop-types
-3. state: https://facebook.github.io/react-native/docs/handling-text-input
+3. Handle Event within state: https://facebook.github.io/react-native/docs/handling-text-input
 4. TextInput ref: https://facebook.github.io/react-native/docs/textinput
-5. Examples: https://github.com/ngothanhtung/reactnative-tutorials/blob/master/Batch04/HelloWorldApp/session03/Login.js
 
 # Session 04 Styles & Layout
 
