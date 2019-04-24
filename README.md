@@ -25,6 +25,8 @@
 # Videos:
 
 1. Videos: https://www.youtube.com/watch?v=kNHuLOXR5T0&list=PLWBrqglnjNl31S91FFE63DtuRc9v9LSGl
+2. Style Cheat Sheet
+   https://github.com/vhpoet/react-native-styling-cheat-sheet
 
 # Session 01: Setup
 
