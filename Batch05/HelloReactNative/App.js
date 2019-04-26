@@ -4,6 +4,11 @@ import Header from './components/Header';
 import Post from './components/Post';
 import Button from './components/Button';
 import LoginScreen from './Login/LoginScreen';
+import StateExample from './Session03/StateExample';
+import ConditionalRender from './Session03/ConditionalRender';
+import StyleExample from './Session04/StyleExample';
+import FlexLayout from './Session05/FlexLayout';
+
 export default class App extends Component {
 	render() {
 		return (
@@ -17,7 +22,11 @@ export default class App extends Component {
 				<Button text='Click me' color='red' />
 				<View style={{ height: 32 }} />
 				<Button text='Open' color='green' /> */}
-				<LoginScreen />
+				{/* <LoginScreen /> */}
+				{/* <StateExample /> */}
+				{/* <ConditionalRender /> */}
+				{/* <StyleExample /> */}
+				<FlexLayout />
 			</SafeAreaView>
 		);
 	}
