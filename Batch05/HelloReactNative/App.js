@@ -8,6 +8,7 @@ import StateExample from './Session03/StateExample';
 import ConditionalRender from './Session03/ConditionalRender';
 import StyleExample from './Session04/StyleExample';
 import FlexLayout from './Session05/FlexLayout';
+import Instagram from './Session05/Instagram';
 
 export default class App extends Component {
 	render() {
@@ -26,7 +27,8 @@ export default class App extends Component {
 				{/* <StateExample /> */}
 				{/* <ConditionalRender /> */}
 				{/* <StyleExample /> */}
-				<FlexLayout />
+				{/* <FlexLayout /> */}
+				<Instagram />
 			</SafeAreaView>
 		);
 	}
