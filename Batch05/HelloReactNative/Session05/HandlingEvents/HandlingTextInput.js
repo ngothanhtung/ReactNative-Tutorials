@@ -19,7 +19,7 @@ export default class HandlingTextInput extends Component {
 					keyboardType='numbers-and-punctuation'
 					keyboardAppearance='dark'
 					style={{ height: 48, backgroundColor: '#bdc3c7', borderRadius: 12, paddingHorizontal: 8 }}
-					onChangeText={text => {
+					onChangeText={(text) => {
 						this.setState({ username: text });
 					}}
 					onEndEditing={() => {
@@ -33,7 +33,7 @@ export default class HandlingTextInput extends Component {
 				<TextInput
 					secureTextEntry={true}
 					style={{ height: 48, backgroundColor: '#bdc3c7', borderRadius: 12, paddingHorizontal: 8 }}
-					onChangeText={text => {
+					onChangeText={(text) => {
 						this.setState({ password: text });
 					}}
 				/>

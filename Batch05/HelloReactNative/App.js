@@ -10,22 +10,18 @@ import { SafeAreaView, View, Text, TouchableOpacity } from 'react-native';
 // import StyleExample from './Session04/StyleExample';
 // import FlexLayout from './Session04/FlexLayout';
 // import Instagram from './Session04/Instagram';
-import Instagram2 from './Session04/Instagram2';
-import HandlingTextInput from './Session05/HandlingTextInput';
+// import Instagram2 from './Session04/Instagram2';
+// SESSION 05
+import ScrollViewExamples from './Session05/ListView/ScrollViewExamples';
+import FlatListExamples from './Session05/ListView/FlatListExamples';
+import SectionListExamples from './Session05/ListView/SectionListExamples';
+// PRACTICE
+import GalleryHomework from './Session05/Practices/GalleryHomework';
 
 export default class App extends Component {
 	render() {
 		return (
 			<SafeAreaView style={{ flex: 1 }}>
-				{/* <Header /> */}
-				{/* <Post name='Peter' phone='0905123456' /> */}
-				{/* <View style={{ height: 32 }} /> */}
-				{/* <Post name='Mary' /> */}
-
-				{/* <View style={{ height: 32 }} />
-				<Button text='Click me' color='red' />
-				<View style={{ height: 32 }} />
-				<Button text='Open' color='green' /> */}
 				{/* <LoginScreen /> */}
 				{/* <StateExample /> */}
 				{/* <GenderComponent /> */}
@@ -34,7 +30,12 @@ export default class App extends Component {
 				{/* <FlexLayout /> */}
 				{/* <Instagram /> */}
 				{/* <Instagram2 /> */}
-				<HandlingTextInput />
+
+				{/* SESSION 05 */}
+				{/* <ScrollViewExamples /> */}
+				{/* <FlatListExamples /> */}
+				{/* <SectionListExamples /> */}
+				<GalleryHomework />
 			</SafeAreaView>
 		);
 	}

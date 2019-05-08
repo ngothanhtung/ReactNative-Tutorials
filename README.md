@@ -70,7 +70,7 @@
 7. Networking: https://facebook.github.io/react-native/docs/network
 8. Fetch API: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
 9. Axios: https://github.com/axios/axios
-10. Homework: Gallery: http://bit.ly/2D5BMPC
+10. https://jsonplaceholder.typicode.com/
 
 # Session 06 React Navigation
 
