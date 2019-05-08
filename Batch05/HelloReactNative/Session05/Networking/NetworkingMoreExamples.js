@@ -45,6 +45,27 @@ export default class NetworkingComponent extends Component {
 		}
 	}
 
+	renderUserItem = ({ item, index }) => {
+		return (
+			<View style={{ height: 80, width: 80, backgroundColor: '#ecf0f1', borderRadius: 40, justifyContent: 'center', alignItems: 'center' }}>
+				<Text key={index}>{item.username}</Text>
+			</View>
+		);
+	};
+
+	renderPostItem = ({ item, index }) => {
+		return (
+			<View style={{ paddingVertical: 8 }}>
+				<View>
+					<Text style={{ fontWeight: '700' }}>{item.title}</Text>
+				</View>
+				<View>
+					<Text>{item.body}</Text>
+				</View>
+			</View>
+		);
+	};
+
 	render() {
 		return (
 			<SafeAreaView style={{ flex: 1 }}>
@@ -52,39 +73,22 @@ export default class NetworkingComponent extends Component {
 					{this.state.users && (
 						<View style={{ marginBottom: 24 }}>
 							<FlatList
-								horizontal={true}
 								data={this.state.users}
-								keyExtractor={(item, index) => index.toString()}
+								renderItem={this.renderUserItem}
+								keyExtractor={(item, index) => 'user_' + index.toString()}
+								horizontal={true}
 								ItemSeparatorComponent={() => <View style={{ width: 6 }} />}
-								renderItem={({ item, index }) => {
-									return (
-										<View style={{ height: 80, width: 80, backgroundColor: '#ecf0f1', borderRadius: 40, justifyContent: 'center', alignItems: 'center' }}>
-											<Text key={index}>{item.username}</Text>
-										</View>
-									);
-								}}
 							/>
 						</View>
 					)}
 					{this.state.posts && (
 						<FlatList
+							data={this.state.posts}
+							renderItem={this.renderPostItem}
+							keyExtractor={(item, index) => 'post_' + index.toString()}
 							refreshControl={<RefreshControl refreshing={this.state.loadingPosts} onRefresh={() => this.getPosts()} />}
 							inverted={false}
-							data={this.state.posts}
-							keyExtractor={(item, index) => index.toString()}
 							ItemSeparatorComponent={() => <View style={{ height: 6 }} />}
-							renderItem={({ item, index }) => {
-								return (
-									<View style={{ paddingVertical: 8 }}>
-										<View>
-											<Text style={{ fontWeight: '700' }}>{item.title}</Text>
-										</View>
-										<View>
-											<Text>{item.body}</Text>
-										</View>
-									</View>
-								);
-							}}
 						/>
 					)}
 				</View>

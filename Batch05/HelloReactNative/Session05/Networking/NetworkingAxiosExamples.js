@@ -9,7 +9,7 @@ export default class NetworkingAxiosExamples extends Component {
 			movies: null,
 		};
 
-		axios.get('https://facebook.github.io/react-native/movies.json').then((response) => {
+		axios.get('https://facebook.github.io/react-native/movies.json').then(response => {
 			console.log(response.data.movies);
 		});
 	}

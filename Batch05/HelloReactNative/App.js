@@ -12,6 +12,11 @@ import { SafeAreaView, View, Text, TouchableOpacity } from 'react-native';
 // import Instagram from './Session04/Instagram';
 // import Instagram2 from './Session04/Instagram2';
 // SESSION 05
+//
+import BasicNetworking from './Session05/Networking/BasicNetworking';
+import Networking from './Session05/Networking/Networking';
+import NetworkingMoreExamples from './Session05/Networking/NetworkingMoreExamples';
+import BasicScrollView from './Session05/ListView/BasicScrollView';
 import ScrollViewExamples from './Session05/ListView/ScrollViewExamples';
 import FlatListExamples from './Session05/ListView/FlatListExamples';
 import SectionListExamples from './Session05/ListView/SectionListExamples';
@@ -32,6 +37,10 @@ export default class App extends Component {
 				{/* <Instagram2 /> */}
 
 				{/* SESSION 05 */}
+				{/* <BasicNetworking /> */}
+				{/* <Networking /> */}
+				{/* <NetworkingMoreExamples /> */}
+				{/* <BasicScrollView /> */}
 				{/* <ScrollViewExamples /> */}
 				{/* <FlatListExamples /> */}
 				{/* <SectionListExamples /> */}

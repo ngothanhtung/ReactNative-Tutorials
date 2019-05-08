@@ -12,12 +12,12 @@ export default class ScrollViewComponent extends Component {
 
 	componentDidMount() {
 		fetch('https://jsonplaceholder.typicode.com/photos')
-			.then((response) => response.json())
-			.then((json) => {
-				// console.table(json);
+			.then(response => response.json())
+			.then(json => {
+				console.table(json);
 				this.setState({ photos: json });
 			})
-			.catch((error) => {
+			.catch(error => {
 				console.error(error);
 			});
 	}

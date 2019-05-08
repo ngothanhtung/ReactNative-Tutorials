@@ -14,12 +14,12 @@ export default class ScrollViewExamples extends Component {
 	componentDidMount() {
 		this.setState({ loading: true });
 		fetch('https://jsonplaceholder.typicode.com/photos')
-			.then((response) => response.json())
-			.then((json) => {
-				// console.table(json);
-				this.setState({ photos: json.slice(0, 500) });
+			.then(response => response.json())
+			.then(json => {
+				console.table(json);
+				this.setState({ photos: json.slice(0, 5000) });
 			})
-			.catch((error) => {
+			.catch(error => {
 				console.error(error);
 			})
 			.finally(() => {
@@ -40,7 +40,7 @@ export default class ScrollViewExamples extends Component {
 						{this.state.photos &&
 							this.state.photos.map((item, index) => (
 								<View key={index} style={{ flexDirection: 'row', borderBottomWidth: 0.5, borderBottomColor: 'gray', backgroundColor: 'white', padding: 8 }}>
-									<Image source={{ uri: item.thumbnailUrl }} style={{ height: 100, width: 100 }} />
+									{/* <Image source={{ uri: item.thumbnailUrl }} style={{ height: 100, width: 100 }} /> */}
 									<View style={{ flex: 1, paddingHorizontal: 8, paddingTop: 8 }}>
 										<Text style={{ color: '#2d3436' }}>{item.title}</Text>
 									</View>

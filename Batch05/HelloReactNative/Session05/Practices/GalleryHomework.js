@@ -21,24 +21,26 @@ export default class GalleryHomework extends Component {
 			loadedHighQualityImage: false,
 			groupPhotos: [],
 		};
-
-		this.getPhotosAsync();
 	}
 
 	getPhotosAsync = () => {
 		axios
 			.get('https://picsum.photos/list')
-			.then((response) => {
+			.then(response => {
 				this.setState({ photos: response.data });
 				console.log(response);
 				this.setState({ done: true });
 			})
-			.catch((error) => {
+			.catch(error => {
 				Alert.alert('Error', error);
 			});
 	};
 
-	renderItem = ({ item }) => {
+	componentDidMount() {
+		this.getPhotosAsync();
+	}
+
+	renderItem = ({ item, index }) => {
 		return (
 			<View style={{ flex: 1, margin: 2 }}>
 				<View style={{ width: '100%', height: this.state.mode === 'list' ? height / 3 : height / 6 }}>
@@ -94,22 +96,17 @@ export default class GalleryHomework extends Component {
 						</TouchableOpacity>
 					</View>
 				</View>
+
 				{/* SLIDE MODE */}
 				{this.state.done && this.state.mode === 'slide' && (
 					<View style={{ flex: 1, justifyContent: 'center' }}>
 						<FlatList
 							style={{ marginLeft: 2, marginRight: 2 }}
 							data={this.state.photos}
-							renderItem={({ item }) => (
-								<Image
-									resizeMode='contain'
-									source={{ uri: 'https://picsum.photos/1600/1200/?image=' + item.id }}
-									style={{ height: '100%', width: width - 4 }}
-								/>
-							)}
+							renderItem={({ item }) => <Image resizeMode='contain' source={{ uri: 'https://picsum.photos/1600/1200/?image=' + item.id }} style={{ height: '100%', width: width - 4 }} />}
 							keyExtractor={(item, index) => index.toString()}
-							pagingEnabled
-							horizontal
+							pagingEnabled={true}
+							horizontal={true}
 						/>
 					</View>
 				)}
