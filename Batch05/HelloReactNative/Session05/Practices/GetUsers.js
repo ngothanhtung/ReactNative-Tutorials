@@ -54,9 +54,11 @@ export default class GetUsers extends Component {
 
 				<View style={{ flex: 1, paddingHorizontal: 8 }}>
 					<View>
-						<Text style={{ fontWeight: '700' }}>
-							{item.name.first} {item.name.last}
-						</Text>
+						{item.name && item.name.first && item.name.last && (
+							<Text style={{ fontWeight: '700' }}>
+								{item.name.first} {item.name.last}
+							</Text>
+						)}
 					</View>
 					<View>
 						<Text>{item.email}</Text>

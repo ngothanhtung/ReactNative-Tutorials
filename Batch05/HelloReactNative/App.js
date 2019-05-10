@@ -47,8 +47,8 @@ export default class App extends Component {
 				{/* <FlatListExamples /> */}
 				{/* <SectionListExamples /> */}
 				{/* <GalleryHomework /> */}
-				{/* <GetUsers /> */}
-				<Login />
+				<GetUsers />
+				{/* <Login /> */}
 			</SafeAreaView>
 		);
 	}
