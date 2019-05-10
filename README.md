@@ -58,6 +58,7 @@
 4. Package: React-Native-Vector-Icons: https://github.com/oblador/react-native-vector-icons
 5. Browse Icons: https://oblador.github.io/react-native-vector-icons/
 6. Face Stock: http://pravatar.cc/
+7. Stock: http://thestocks.im/
 
 # Session 05 Handling Events & ListView & Networking
 
@@ -71,7 +72,12 @@
 8. Fetch API: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
 9. Axios: https://github.com/axios/axios
 10. https://jsonplaceholder.typicode.com/
-
+11. POSTMAN Tool: https://www.getpostman.com/postman
+12. API Samples: 
+- 12.1. https://softech.dev/api/training/users (GET)
+- 12.2. https://softech.dev/api/training/users/login (POST, data: {"email": "youremail@gmail.com", "password": "123"})
+- 12.3. https://softech.dev/api/training/users/register (POST, data: {"email": "youremail@gmail.com", "password": "123", "name": "Your Name"})
+13. Notes: POSTMAN: Method: POST, Body: Raw => JSON
 # Session 06 React Navigation
 
 1. https://reactnavigation.org
