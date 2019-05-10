@@ -71,6 +71,11 @@
 8. Fetch API: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
 9. Axios: https://github.com/axios/axios
 10. https://jsonplaceholder.typicode.com/
+11. POSTMAN Tool: https://www.getpostman.com/postman
+12. API Samples: 
+12.1. https://softech.dev/api/training/users (GET)
+12.2. https://softech.dev/api/training/users/login (POST, data: {"email": "youremail@gmail.com", "password": "123"})
+12.3. https://softech.dev/api/training/users/register (POST, data: {"email": "youremail@gmail.com", "password": "123", "name": "Your Name"})
 
 # Session 06 React Navigation
 
