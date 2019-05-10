@@ -10,10 +10,24 @@ export default class LoginScreen extends Component {
 	render() {
 		return (
 			<ImageBackground style={{ flex: 1 }} source={BackgroundImageUrl}>
-				<View style={{ backgroundColor: 'red', flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+				<View
+					style={{
+						backgroundColor: 'red',
+						flex: 1,
+						justifyContent: 'center',
+						alignItems: 'center',
+					}}
+				>
 					<Logo />
 				</View>
-				<View style={{ backgroundColor: 'orange', flex: 2, paddingHorizontal: 24, justifyContent: 'center' }}>
+				<View
+					style={{
+						backgroundColor: 'orange',
+						flex: 2,
+						paddingHorizontal: 24,
+						justifyContent: 'center',
+					}}
+				>
 					<TextBox text='Enter your username' />
 					<View style={{ height: 12 }} />
 					<TextBox text='Enter your password' />

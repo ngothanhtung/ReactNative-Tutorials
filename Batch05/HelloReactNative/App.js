@@ -22,6 +22,8 @@ import FlatListExamples from './Session05/ListView/FlatListExamples';
 import SectionListExamples from './Session05/ListView/SectionListExamples';
 // PRACTICE
 import GalleryHomework from './Session05/Practices/GalleryHomework';
+import GetUsers from './Session05/Practices/GetUsers';
+import Login from './Session05/Practices/Login';
 
 export default class App extends Component {
 	render() {
@@ -44,7 +46,9 @@ export default class App extends Component {
 				{/* <ScrollViewExamples /> */}
 				{/* <FlatListExamples /> */}
 				{/* <SectionListExamples /> */}
-				<GalleryHomework />
+				{/* <GalleryHomework /> */}
+				{/* <GetUsers /> */}
+				<Login />
 			</SafeAreaView>
 		);
 	}
