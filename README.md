@@ -58,6 +58,7 @@
 4. Package: React-Native-Vector-Icons: https://github.com/oblador/react-native-vector-icons
 5. Browse Icons: https://oblador.github.io/react-native-vector-icons/
 6. Face Stock: http://pravatar.cc/
+7. Stock: http://thestocks.im/
 
 # Session 05 Handling Events & ListView & Networking
 
