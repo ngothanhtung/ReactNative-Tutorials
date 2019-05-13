@@ -22,7 +22,7 @@
 7. Debugger for Chrome (Downloads: 15.4M)
 8. Prettier (Downloads: 7.8M)
 
-#Stocks:
+# Stocks:
 1. All stocks: http://thestocks.im
 2. Font Icons: https://oblador.github.io/react-native-vector-icons
 3. Image Icons: https://www.flaticon.com
