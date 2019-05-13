@@ -22,6 +22,13 @@
 7. Debugger for Chrome (Downloads: 15.4M)
 8. Prettier (Downloads: 7.8M)
 
+#Stocks:
+1. All stocks: http://thestocks.im
+2. Font Icons: https://oblador.github.io/react-native-vector-icons
+3. Image Icons: https://www.flaticon.com
+4. Color: https://flatuicolors.com
+5. Face / Avatar: http://pravatar.cc
+
 # Videos:
 
 1. Videos: https://www.youtube.com/watch?v=kNHuLOXR5T0&list=PLWBrqglnjNl31S91FFE63DtuRc9v9LSGl
@@ -78,6 +85,7 @@
 - 12.2. https://softech.dev/api/training/users/login (POST, data: {"email": "youremail@gmail.com", "password": "123"})
 - 12.3. https://softech.dev/api/training/users/register (POST, data: {"email": "youremail@gmail.com", "password": "123", "name": "Your Name"})
 13. Notes: POSTMAN: Method: POST, Body: Raw => JSON
+
 # Session 06 React Navigation
 
 1. https://reactnavigation.org
