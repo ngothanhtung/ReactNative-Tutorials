@@ -13,20 +13,20 @@ class MongoDbHelper {
 	insertDocument(data, collectionName) {
 		return new Promise((resolve, reject) => {
 			MongoClient.connect(CONNECTION_STRING)
-				.then(client => {
+				.then((client) => {
 					var dbo = client.db(DATABASE_NAME);
 					var collection = dbo.collection(collectionName);
 					collection
 						.insertOne(data)
-						.then(result => {
+						.then((result) => {
 							client.close();
 							resolve({ data: data, result: result });
 						})
-						.catch(err => {
+						.catch((err) => {
 							reject(err);
 						});
 				})
-				.catch(err => {
+				.catch((err) => {
 					reject(err);
 				});
 		});
@@ -37,20 +37,20 @@ class MongoDbHelper {
 	insertDocuments(list, collectionName) {
 		return new Promise((resolve, reject) => {
 			MongoClient.connect(CONNECTION_STRING)
-				.then(client => {
+				.then((client) => {
 					var dbo = client.db(DATABASE_NAME);
 					var collection = dbo.collection(collectionName);
 					collection
 						.insertMany(list)
-						.then(result => {
+						.then((result) => {
 							client.close();
 							resolve(result);
 						})
-						.catch(err => {
+						.catch((err) => {
 							reject(err);
 						});
 				})
-				.catch(err => {
+				.catch((err) => {
 					reject(err);
 				});
 		});
@@ -61,21 +61,21 @@ class MongoDbHelper {
 	updateDocument(id, data, collectionName) {
 		return new Promise((resolve, reject) => {
 			MongoClient.connect(CONNECTION_STRING)
-				.then(client => {
+				.then((client) => {
 					var dbo = client.db(DATABASE_NAME);
 					var collection = dbo.collection(collectionName);
 					var query = { _id: ObjectID(id) };
 					collection
 						.findOneAndUpdate(query, { $set: data })
-						.then(result => {
+						.then((result) => {
 							client.close();
 							resolve(result);
 						})
-						.catch(err => {
+						.catch((err) => {
 							reject(err);
 						});
 				})
-				.catch(err => {
+				.catch((err) => {
 					reject(err);
 				});
 		});
@@ -86,20 +86,20 @@ class MongoDbHelper {
 	updateDocuments(query, data, collectionName) {
 		return new Promise((resolve, reject) => {
 			MongoClient.connect(CONNECTION_STRING)
-				.then(client => {
+				.then((client) => {
 					var dbo = client.db(DATABASE_NAME);
 					var collection = dbo.collection(collectionName);
 					collection
 						.updateMany(query, { $set: data })
-						.then(result => {
+						.then((result) => {
 							client.close();
 							resolve(result);
 						})
-						.catch(err => {
+						.catch((err) => {
 							reject(err);
 						});
 				})
-				.catch(err => {
+				.catch((err) => {
 					reject(err);
 				});
 		});
@@ -110,21 +110,21 @@ class MongoDbHelper {
 	deleteDocument(id, collectionName) {
 		return new Promise((resolve, reject) => {
 			MongoClient.connect(CONNECTION_STRING)
-				.then(client => {
+				.then((client) => {
 					var dbo = client.db(DATABASE_NAME);
 					var collection = dbo.collection(collectionName);
 					var query = { _id: ObjectID(id) };
 					collection
 						.deleteOne(query)
-						.then(result => {
+						.then((result) => {
 							client.close();
 							resolve(result);
 						})
-						.catch(err => {
+						.catch((err) => {
 							reject(err);
 						});
 				})
-				.catch(err => {
+				.catch((err) => {
 					reject(err);
 				});
 		});
@@ -135,20 +135,20 @@ class MongoDbHelper {
 	deleteDocuments(query, collectionName) {
 		return new Promise((resolve, reject) => {
 			MongoClient.connect(CONNECTION_STRING)
-				.then(client => {
+				.then((client) => {
 					var dbo = client.db(DATABASE_NAME);
 					var collection = dbo.collection(collectionName);
 					collection
 						.deleteMany(query)
-						.then(result => {
+						.then((result) => {
 							client.close();
 							resolve(result);
 						})
-						.catch(err => {
+						.catch((err) => {
 							reject(err);
 						});
 				})
-				.catch(err => {
+				.catch((err) => {
 					reject(err);
 				});
 		});
@@ -158,21 +158,21 @@ class MongoDbHelper {
 	findDocument(id, collectionName) {
 		return new Promise((resolve, reject) => {
 			MongoClient.connect(CONNECTION_STRING)
-				.then(client => {
+				.then((client) => {
 					var dbo = client.db(DATABASE_NAME);
 					var collection = dbo.collection(collectionName);
 					var query = { _id: ObjectID(id) };
 					collection
 						.findOne(query)
-						.then(result => {
+						.then((result) => {
 							client.close();
 							resolve(result);
 						})
-						.catch(err => {
+						.catch((err) => {
 							reject(err);
 						});
 				})
-				.catch(err => {
+				.catch((err) => {
 					reject(err);
 				});
 		});
@@ -182,22 +182,22 @@ class MongoDbHelper {
 	findDocuments(query, collectionName) {
 		return new Promise((resolve, reject) => {
 			MongoClient.connect(CONNECTION_STRING, { useNewUrlParser: true })
-				.then(client => {
+				.then((client) => {
 					var dbo = client.db(DATABASE_NAME);
 					var collection = dbo.collection(collectionName);
 					collection
 						.find(query)
 						.toArray()
-						.then(result => {
+						.then((result) => {
 							client.close();
 							resolve(result);
 						})
-						.catch(err => {
+						.catch((err) => {
 							console.log(err);
 							reject(err);
 						});
 				})
-				.catch(err => {
+				.catch((err) => {
 					reject(err);
 				});
 		});
@@ -245,7 +245,7 @@ class MongoDbHelper {
 	findProducts(query, collectionName) {
 		return new Promise((resolve, reject) => {
 			MongoClient.connect(CONNECTION_STRING)
-				.then(client => {
+				.then((client) => {
 					var dbo = client.db(DATABASE_NAME);
 					var collection = dbo.collection('products');
 					//var collection = dbo.collection('orders');
@@ -270,15 +270,15 @@ class MongoDbHelper {
 						//.project({ name: 1, price: 1, discount: 1 })
 						//.sort({ price: -1, name: 1 })
 						.toArray()
-						.then(result => {
+						.then((result) => {
 							client.close();
 							resolve(result);
 						})
-						.catch(err => {
+						.catch((err) => {
 							reject(err);
 						});
 				})
-				.catch(err => {
+				.catch((err) => {
 					reject(err);
 				});
 		});
