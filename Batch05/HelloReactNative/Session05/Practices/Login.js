@@ -45,7 +45,7 @@ export default class Login extends Component {
 	};
 	render() {
 		return (
-			<View style={{ flex: 1, padding: 12 }}>
+			<Animatable.View animation='zoomIn' duration={1000} style={{ flex: 1, padding: 12 }}>
 				<View />
 				{/* EMAIL --------------------------------- */}
 				<View style={{ flexDirection: 'row', backgroundColor: '#b2bec3', borderRadius: 24 }}>
@@ -91,7 +91,7 @@ export default class Login extends Component {
 						<ActivityIndicator size='large' />
 					</View>
 				)}
-			</View>
+			</Animatable.View>
 		);
 	}
 }
