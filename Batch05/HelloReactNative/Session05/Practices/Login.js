@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Text, View, TextInput, Button, Alert } from 'react-native';
+import { Text, View, TextInput, Button, Alert, ActivityIndicator } from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import * as Animatable from 'react-native-animatable';
 import axios from 'axios';
 
 export default class Login extends Component {
@@ -7,18 +9,27 @@ export default class Login extends Component {
 		super(props);
 		// state
 		this.state = {
+			loading: false,
 			email: '',
+			emailError: false,
 			password: '',
 		};
 	}
 
 	login = () => {
+		if (this.state.email.length === 0) {
+			this.setState({ emailError: true });
+			return;
+		}
+
+		this.setState({ loading: true });
 		axios
 			.post('https://softech.dev/api/training/users/login', {
 				email: this.state.email,
 				password: this.state.password,
 			})
 			.then(response => {
+				this.setState({ loading: false });
 				const result = response.data;
 				if (result.login === true) {
 					Alert.alert('THÔNG BÁO', 'Đăng nhập thành công');
@@ -27,22 +38,40 @@ export default class Login extends Component {
 				}
 			})
 			.catch(error => {
+				this.setState({ loading: false });
 				console.log(error);
 				Alert.alert('THÔNG BÁO', 'Có lỗi xảy ra');
 			});
 	};
 	render() {
 		return (
-			<View>
+			<View style={{ flex: 1, padding: 12 }}>
 				<View />
 				{/* EMAIL --------------------------------- */}
-				<View>
-					<TextInput
-						placeholder='Enter your email'
-						onChangeText={text => {
-							this.setState({ email: text });
-						}}
-					/>
+				<View style={{ flexDirection: 'row', backgroundColor: '#b2bec3', borderRadius: 24 }}>
+					<View style={{ justifyContent: 'center', paddingLeft: 16 }}>
+						<Icon name='email' size={24} />
+					</View>
+					<View style={{ flex: 1 }}>
+						<TextInput
+							style={{ height: 48, paddingHorizontal: 8 }}
+							placeholder='Enter your email'
+							onChangeText={text => {
+								this.setState({ emailError: text.length === 0 });
+								this.setState({ email: text });
+							}}
+						/>
+					</View>
+					{this.state.emailError && (
+						<Animatable.View
+							animation='flash'
+							duration={1000}
+							delay={200}
+							style={{ justifyContent: 'center', paddingRight: 16 }}
+						>
+							<Icon name='alert-circle' size={24} color='red' />
+						</Animatable.View>
+					)}
 				</View>
 				{/* PASSWORD ------------------------------ */}
 				<View>
@@ -57,6 +86,11 @@ export default class Login extends Component {
 				<View>
 					<Button title='Login' onPress={this.login} />
 				</View>
+				{this.state.loading && (
+					<View>
+						<ActivityIndicator size='large' />
+					</View>
+				)}
 			</View>
 		);
 	}
