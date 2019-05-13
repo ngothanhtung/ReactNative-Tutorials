@@ -28,6 +28,7 @@
 3. Image Icons: https://www.flaticon.com
 4. Color: https://flatuicolors.com
 5. Face / Avatar: http://pravatar.cc
+6. Animatable (Animation): https://github.com/oblador/react-native-animatable
 
 # Videos:
 
