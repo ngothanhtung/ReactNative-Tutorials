@@ -84,10 +84,20 @@
 11. Download POSTMAN Tool: https://www.getpostman.com/postman
 12. UI + API Practices::
 
-- https://softech.dev/api/training/users - Method: GET
-- https://softech.dev/api/training/users/login - Method: POST - Body: {"email": "youremail@gmail.com", "password": "123"}
-- https://softech.dev/api/training/users/register - Method: POST - Body: {"email": "youremail@gmail.com", "password": "123", "name": "Your Name"}
+```
+- https://softech.dev/api/training/users
+  + Method: GET
+
+- https://softech.dev/api/training/users/login
+  + Method: POST
+  + Body: {"email": "youremail@gmail.com", "password": "123"}
+
+- https://softech.dev/api/training/users/register
+  + Method: POST
+  + Body: {"email": "youremail@gmail.com", "password": "123", "name": "Your Name"}
+
 - Notes: POSTMAN: Method: POST, Body: Raw => JSON
+```
 
 14. UI Practices:
 
@@ -102,19 +112,19 @@
 
 ```
 export default class App extends React.Component {
-	render() {
-		return <AppContainer />;
-	}
+  render() {
+    return <AppContainer />;
+  }
 }
 
 const AuthenticationNavigator = createStackNavigator({
-	SignIn: SignInScreen,
-	ForgotPassword: ForgotPasswordScreen
+  SignIn: SignInScreen,
+  ForgotPassword: ForgotPasswordScreen
 });
 
 const AppNavigator = createSwitchNavigator({
-	Auth: AuthenticationNavigator,
-	Home: HomeScreen
+  Auth: AuthenticationNavigator,
+  Home: HomeScreen
 });
 
 const AppContainer = createAppContainer(AppNavigator);
