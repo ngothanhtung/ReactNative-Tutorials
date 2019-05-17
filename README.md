@@ -82,7 +82,7 @@
 9. Axios Package: https://github.com/axios/axios
 10. JSON samples: https://jsonplaceholder.typicode.com/
 11. Download POSTMAN Tool: https://www.getpostman.com/postman
-12. UI + API Practices: https://akveo.github.io/react-native-ui-kitten/#/home
+12. UI + API Practices: 
 
 ```
 - https://softech.dev/api/training/users
@@ -99,7 +99,9 @@
 - Notes: POSTMAN: Method: POST, Body: Raw => JSON
 ```
 
-14. UI Practices:
+13. UI Practices:
+13.1. https://github.com/react-native-community/react-native-linear-gradient
+13.2. https://akveo.github.io/react-native-ui-kitten/#/home
 
 # Session 06 React Navigation
 
