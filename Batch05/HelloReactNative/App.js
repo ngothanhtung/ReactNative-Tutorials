@@ -4,6 +4,8 @@ import { SafeAreaView, View, Text, TouchableOpacity } from 'react-native';
 // import Post from './components/Post';
 // import Button from './components/Button';
 // import LoginScreen from './Login/LoginScreen';
+import TextBox from './Session03/TypeChecking/TextBox';
+import Button from './Session03/TypeChecking/Button';
 // import StateExample from './Session03/StateExample';
 // import ConditionalRender from './Session03/ConditionalRender';
 // import GenderComponent from './Session03/GenderComponent';
@@ -24,8 +26,15 @@ import SectionListExamples from './Session05/ListView/SectionListExamples';
 import GalleryHomework from './Session05/Practices/GalleryHomework';
 import GetUsers from './Session05/Practices/GetUsers';
 import Login from './Session05/Practices/Login';
+import LoginV2 from './Session05/Practices/LoginV2';
 
 export default class App extends Component {
+	constructor(props) {
+		super(props);
+		this.state = {
+			username: 'admin',
+		};
+	}
 	render() {
 		return (
 			<SafeAreaView style={{ flex: 1 }}>
@@ -48,7 +57,20 @@ export default class App extends Component {
 				{/* <SectionListExamples /> */}
 				{/* <GalleryHomework /> */}
 				{/* <GetUsers /> */}
-				<Login />
+				{/* <Login /> */}
+				<LoginV2 />
+				{/* <TextBox
+					onTyping={text => {
+						this.setState({ username: text });
+					}}
+				/>
+				<Text>{this.state.username}</Text>
+				<Button
+					title='Ok'
+					onTouch={() => {
+						alert('OK');
+					}}
+				/> */}
 			</SafeAreaView>
 		);
 	}
