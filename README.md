@@ -82,7 +82,7 @@
 9. Axios Package: https://github.com/axios/axios
 10. JSON samples: https://jsonplaceholder.typicode.com/
 11. Download POSTMAN Tool: https://www.getpostman.com/postman
-12. UI + API Practices::
+12. UI + API Practices: https://akveo.github.io/react-native-ui-kitten/#/home
 
 ```
 - https://softech.dev/api/training/users
