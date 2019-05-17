@@ -23,6 +23,7 @@
 8. Prettier (Downloads: 7.8M)
 
 # Stocks:
+
 1. All stocks: http://thestocks.im
 2. Font Icons: https://oblador.github.io/react-native-vector-icons
 3. Image Icons: https://www.flaticon.com
@@ -81,45 +82,43 @@
 9. Axios Package: https://github.com/axios/axios
 10. JSON samples: https://jsonplaceholder.typicode.com/
 11. Download POSTMAN Tool: https://www.getpostman.com/postman
-12. UI + API Practices:: 
-- https://softech.dev/api/training/users 
-	- Method: GET
-- https://softech.dev/api/training/users/login 
-	- Method: POST
-	- Body: {"email": "youremail@gmail.com", "password": "123"}
-- https://softech.dev/api/training/users/register 
-	- Method: POST
-	- Body: {"email": "youremail@gmail.com", "password": "123", "name": "Your Name"}
+12. UI + API Practices::
+
+- https://softech.dev/api/training/users - Method: GET
+- https://softech.dev/api/training/users/login - Method: POST - Body: {"email": "youremail@gmail.com", "password": "123"}
+- https://softech.dev/api/training/users/register - Method: POST - Body: {"email": "youremail@gmail.com", "password": "123", "name": "Your Name"}
 - Notes: POSTMAN: Method: POST, Body: Raw => JSON
-14. UI Practices: 
+
+14. UI Practices:
 
 # Session 06 React Navigation
 
- 1. Docs: https://reactnavigation.org
- 2. Setup (Please carefully): https://reactnavigation.org/docs/en/getting-started.html
- 3. StackNavigation
- 4. TabNavigation
- 5. DrawerNavigation
- 6. SwitchNavigation
- 7. Correct way:
+1.  Docs: https://reactnavigation.org
+2.  Setup (Please carefully): https://reactnavigation.org/docs/en/getting-started.html
+3.  StackNavigation
+4.  TabNavigation
+5.  DrawerNavigation
+6.  SwitchNavigation
 
-		export  default  class App extends React.Component {
-			render() { 
-				return  <AppContainer />; 
-			} 
-		} 
+```
+export default class App extends React.Component {
+	render() {
+		return <AppContainer />;
+	}
+}
 
-		const AuthenticationNavigator = createStackNavigator({ 
-			SignIn: SignInScreen, 
-			ForgotPassword: ForgotPasswordScreen 
-		});
-		 
-		const AppNavigator = createSwitchNavigator({ 
-			Auth: AuthenticationNavigator, 
-			Home: HomeScreen 
-		});
-		 
-		const AppContainer = createAppContainer(AppNavigator);
+const AuthenticationNavigator = createStackNavigator({
+	SignIn: SignInScreen,
+	ForgotPassword: ForgotPasswordScreen
+});
+
+const AppNavigator = createSwitchNavigator({
+	Auth: AuthenticationNavigator,
+	Home: HomeScreen
+});
+
+const AppContainer = createAppContainer(AppNavigator);
+```
 
 # Session 07 Firebase
 
@@ -230,4 +229,3 @@
 # C. Firebase
 
 1. https://firebase.googleblog.com/2016/01/the-beginners-guide-to-react-native-and_84.html
-
