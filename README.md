@@ -95,23 +95,42 @@
 
 # Session 06 React Navigation
 
-1. Docs: https://reactnavigation.org
-2. Setup (Please carefully): https://reactnavigation.org/docs/en/getting-started.html
-3. StackNavigation
-4. TabNavigation
-5. DrawerNavigation
-6. SwitchNavigation
+ 1. Docs: https://reactnavigation.org
+ 2. Setup (Please carefully): https://reactnavigation.org/docs/en/getting-started.html
+ 3. StackNavigation
+ 4. TabNavigation
+ 5. DrawerNavigation
+ 6. SwitchNavigation
+ 7. Correct way:
+
+		export  default  class App extends React.Component {
+			render() { 
+				return  <AppContainer />; 
+			} 
+		} 
+
+		const AuthenticationNavigator = createStackNavigator({ 
+			SignIn: SignInScreen, 
+			ForgotPassword: ForgotPasswordScreen 
+		});
+		 
+		const AppNavigator = createSwitchNavigator({ 
+			Auth: AuthenticationNavigator, 
+			Home: HomeScreen 
+		});
+		 
+		const AppContainer = createAppContainer(AppNavigator);
 
 # Session 07 Firebase
 
 ## Cloud Function
 
 1. Setup firebase tools: npm install -g firebase-tools
-2. Login: firebase login
-3. Login: firebase logout
-4. Init project: firebase init => Choose Cloud Function => Choose Project => Choose Language => SELECT DEFAUT OPTIONS => DONE
-5. Hello Function: Uncomment
-6. Deploy: firebase deploy
+2. Login / Logout: firebase login
+3. Init project: firebase init => Choose Cloud Function => Choose Project => Choose Language => SELECT DEFAULT OPTIONS => DONE
+4. Hello Function: Uncomment
+5. Deploy: firebase deploy
+6. Test API
 
 ## Cloud Filestore
 
@@ -211,3 +230,4 @@
 # C. Firebase
 
 1. https://firebase.googleblog.com/2016/01/the-beginners-guide-to-react-native-and_84.html
+
