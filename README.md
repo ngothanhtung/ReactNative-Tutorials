@@ -1,12 +1,12 @@
-# Get Started (Setup enviroment)
+# Get Started (Setup environment)
 
 1. Nodejs: https://nodejs.org/en/
-2. Java SDK 8: https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
-3. Xcode, Android Studio: https://developer.android.com/studio/
+2. Yarn (https://yarnpkg.com/lang/en/docs/install/#windows-stable)
+3. Java SDK 8: https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 4. Visual Studio Code: https://code.visualstudio.com/Download
 5. Git SCM: https://git-scm.com/download/
-6. https://chocolatey.org (Windows)
-7. Yarn (https://yarnpkg.com/lang/en/docs/install/#windows-stable)
+6. https://chocolatey.org (For Windows)
+7. Xcode, Android Studio: https://developer.android.com/studio/
 8. Setup ANDROID_HOME (c:\Users\YOUR_USERNAME\AppData\Local\Android\Sdk)
 9. Add platform-tools to Path (c:\Users\YOUR_USERNAME\AppData\Local\Android\Sdk\platform-tools)
 10. Setup JAVA_HOME (https://confluence.atlassian.com/doc/setting-the-java_home-variable-in-windows-8895.html)
@@ -78,22 +78,29 @@
 6. SectionList: https://facebook.github.io/react-native/docs/sectionlist
 7. Networking: https://facebook.github.io/react-native/docs/network
 8. Fetch API: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
-9. Axios: https://github.com/axios/axios
-10. https://jsonplaceholder.typicode.com/
-11. POSTMAN Tool: https://www.getpostman.com/postman
-12. API Samples: 
-- 12.1. https://softech.dev/api/training/users (GET)
-- 12.2. https://softech.dev/api/training/users/login (POST, data: {"email": "youremail@gmail.com", "password": "123"})
-- 12.3. https://softech.dev/api/training/users/register (POST, data: {"email": "youremail@gmail.com", "password": "123", "name": "Your Name"})
-13. Notes: POSTMAN: Method: POST, Body: Raw => JSON
+9. Axios Package: https://github.com/axios/axios
+10. JSON samples: https://jsonplaceholder.typicode.com/
+11. Download POSTMAN Tool: https://www.getpostman.com/postman
+12. UI + API Practices:: 
+- https://softech.dev/api/training/users 
+	- Method: GET
+- https://softech.dev/api/training/users/login 
+	- Method: POST
+	- Body: {"email": "youremail@gmail.com", "password": "123"}
+- https://softech.dev/api/training/users/register 
+	- Method: POST
+	- Body: {"email": "youremail@gmail.com", "password": "123", "name": "Your Name"}
+- Notes: POSTMAN: Method: POST, Body: Raw => JSON
+14. UI Practices: 
 
 # Session 06 React Navigation
 
-1. https://reactnavigation.org
-2. StackNavigation
-3. TabNavigation
-4. DrawerNavigation
-5. SwitchNavigation
+1. Docs: https://reactnavigation.org
+2. Setup (Please carefully): https://reactnavigation.org/docs/en/getting-started.html
+3. StackNavigation
+4. TabNavigation
+5. DrawerNavigation
+6. SwitchNavigation
 
 # Session 07 Firebase
 
