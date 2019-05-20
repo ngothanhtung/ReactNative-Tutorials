@@ -27,6 +27,9 @@ import GalleryHomework from './Session05/Practices/GalleryHomework';
 import GetUsers from './Session05/Practices/GetUsers';
 import Login from './Session05/Practices/Login';
 import LoginV2 from './Session05/Practices/LoginV2';
+// SESSION 06
+// import StackNavigator from './Session06/StackNavigator';
+import TabNavigator from './Session06/TabNavigator';
 
 export default class App extends Component {
 	constructor(props) {
@@ -37,7 +40,7 @@ export default class App extends Component {
 	}
 	render() {
 		return (
-			<SafeAreaView style={{ flex: 1 }}>
+			<View style={{ flex: 1 }}>
 				{/* <LoginScreen /> */}
 				{/* <StateExample /> */}
 				{/* <GenderComponent /> */}
@@ -58,7 +61,7 @@ export default class App extends Component {
 				{/* <GalleryHomework /> */}
 				{/* <GetUsers /> */}
 				{/* <Login /> */}
-				<LoginV2 />
+				{/* <LoginV2 /> */}
 				{/* <TextBox
 					onTyping={text => {
 						this.setState({ username: text });
@@ -71,7 +74,9 @@ export default class App extends Component {
 						alert('OK');
 					}}
 				/> */}
-			</SafeAreaView>
+				{/* <StackNavigator /> */}
+				<TabNavigator />
+			</View>
 		);
 	}
 }
