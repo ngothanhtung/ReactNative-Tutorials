@@ -30,6 +30,7 @@ import LoginV2 from './Session05/Practices/LoginV2';
 // SESSION 06
 // import StackNavigator from './Session06/StackNavigator';
 import TabNavigator from './Session06/TabNavigator';
+import DrawerNavigator from './Session06/DrawerNavigator';
 
 export default class App extends Component {
 	constructor(props) {
@@ -75,7 +76,8 @@ export default class App extends Component {
 					}}
 				/> */}
 				{/* <StackNavigator /> */}
-				<TabNavigator />
+				{/* <TabNavigator /> */}
+				<DrawerNavigator />
 			</View>
 		);
 	}
