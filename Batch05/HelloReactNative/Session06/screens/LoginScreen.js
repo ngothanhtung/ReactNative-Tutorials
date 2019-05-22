@@ -16,6 +16,12 @@ export default class LoginScreen extends Component {
 						this.props.navigation.navigate('RegisterScreen');
 					}}
 				/>
+				<Button
+					title='Go to Tab'
+					onPress={() => {
+						this.props.navigation.navigate('Tab2Screen');
+					}}
+				/>
 				<Text>{this.props.navigation.state.params.message}</Text>
 			</View>
 		);

@@ -57,14 +57,13 @@ const StackNavigatorConfig = {
 			<TouchableOpacity
 				onPress={() => {
 					navigation.navigate('HomeScreen');
-				}}
-			>
+				}}>
 				<Icon name='home' size={24} />
 			</TouchableOpacity>
 		),
 	}),
 };
 
-const AppNavigator = createStackNavigator(RouteConfigs, StackNavigatorConfig);
-
-export default createAppContainer(AppNavigator);
+const StackNavigator = createStackNavigator(RouteConfigs, StackNavigatorConfig);
+export default StackNavigator;
+// export default createAppContainer(AppNavigator);
