@@ -4,10 +4,11 @@ import { View, Text, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { createBottomTabNavigator, createAppContainer } from 'react-navigation';
 
-import Tab1Screen from './screens/Tab1Screen';
-import Tab2Screen from './screens/Tab2Screen';
-import Tab3Screen from './screens/Tab3Screen';
-import Tab4Screen from './screens/Tab4Screen';
+import Tab1Screen from './Tab1Screen';
+import Tab2Screen from './Tab2Screen';
+import Tab3Screen from './Tab3Screen';
+import Tab4Screen from './Tab4Screen';
+import NewsStackNavigator from './NewsStackNavigator';
 
 // Screens
 const RouteConfigs = {
@@ -23,10 +24,10 @@ const RouteConfigs = {
 	},
 	// RouteName:
 	Tab2Screen: {
-		screen: Tab2Screen, // Component
+		screen: NewsStackNavigator, //Tab2Screen, // Component
 		navigationOptions: ({ navigation }) => ({
 			title: 'News',
-			tabBarIcon: <Icon color='#bdc3c7' name='earth' size={24} />, //React Element
+			tabBarIcon: <Icon color='#bdc3c7' name='earth' size={20} />, //React Element
 		}),
 	},
 	// RouteName:
@@ -35,7 +36,7 @@ const RouteConfigs = {
 		navigationOptions: ({ navigation }) => ({
 			title: 'Account',
 			// tabBarVisible: false,
-			tabBarIcon: <Icon color='#bdc3c7' name='account' size={24} />, //React Element
+			tabBarIcon: <Icon color='#bdc3c7' name='account' size={20} />, //React Element
 		}),
 	},
 	// RouteName:
@@ -43,7 +44,7 @@ const RouteConfigs = {
 		screen: Tab4Screen, // Component
 		navigationOptions: ({ navigation }) => ({
 			title: 'Logout',
-			tabBarIcon: <Icon color='#bdc3c7' name='close' size={24} />, //React Element
+			tabBarIcon: <Icon color='#bdc3c7' name='close' size={20} />, //React Element
 		}),
 	},
 };
@@ -52,7 +53,10 @@ const BottomTabNavigatorConfig = {
 	defaultNavigationOptions: {},
 	tabBarOptions: {
 		style: { backgroundColor: '#6F1E51' },
-		tabStyle: { height: 54 },
+		tabStyle: { height: 54, justifyContent: 'flex-start' },
+		labelStyle: {
+			fontWeight: '700',
+		},
 		activeTintColor: 'yellow',
 		inactiveTintColor: '#bdc3c7',
 		// activeBackgroundColor: 'yellow',

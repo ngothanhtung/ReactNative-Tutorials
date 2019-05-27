@@ -29,9 +29,9 @@ import Login from './Session05/Practices/Login';
 import LoginV2 from './Session05/Practices/LoginV2';
 // SESSION 06
 // import StackNavigator from './Session06/StackNavigator';
-import TabNavigator from './Session06/TabNavigator';
-import DrawerNavigator from './Session06/DrawerNavigator';
-import SwitchNavigator from './Session06/SwitchNavigator';
+import TabNavigator from './Session06/screens/TabNavigator';
+import DrawerNavigator from './Session06/screens/DrawerNavigator';
+import SwitchNavigator from './Session06/screens/SwitchNavigator';
 
 export default class App extends Component {
 	constructor(props) {

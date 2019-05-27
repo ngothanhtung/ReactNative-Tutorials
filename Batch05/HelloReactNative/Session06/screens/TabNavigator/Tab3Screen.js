@@ -4,7 +4,6 @@ import { Text, View, Button } from 'react-native';
 export default class Tab3Screen extends Component {
 	constructor(props) {
 		super(props);
-		console.log(props);
 	}
 	render() {
 		return (

@@ -2,9 +2,9 @@ import React from 'react';
 import { ScrollView, View, Text, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { createDrawerNavigator, createAppContainer, DrawerItems, SafeAreaView } from 'react-navigation';
-import TabNavigator from './TabNavigator';
-import Drawer1Screen from './screens/Drawer1Screen';
-import Drawer2Screen from './screens/Drawer2Screen';
+import TabNavigator from '../TabNavigator';
+import Drawer1Screen from './Drawer1Screen';
+import Drawer2Screen from './Drawer2Screen';
 // < UI customize
 // const CustomDrawerContentComponent = (props) => (
 // 	<ScrollView>
