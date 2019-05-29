@@ -1,5 +1,5 @@
 import React from 'react';
-import { View } from 'react-native';
+import { View, SafeAreaView } from 'react-native';
 
 import AddDataScreen from './src/CloudFilestore/AddDataScreen';
 import ReadDataScreen from './src/CloudFilestore/ReadDataScreen';
@@ -18,10 +18,10 @@ export default class App extends React.Component {
 
   render() {
     return (
-      <View style={{ flex: 1 }}>
+      <SafeAreaView style={{ flex: 1 }}>
         {/* <AddDataScreen /> */}
         <ReadDataScreen />
-      </View>
+      </SafeAreaView>
     );
   }
 }

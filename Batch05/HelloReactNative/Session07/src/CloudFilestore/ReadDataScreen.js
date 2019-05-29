@@ -37,7 +37,7 @@ export default class ReadDataScreen extends Component {
             data={this.state.users}
             keyExtractor={(item, index) => 'user-' + index}
             renderItem={({ item, index }) => (
-              <Card>
+              <Card elevation={0}>
                 <Card.Title title={item.first + ' ' + item.last} subtitle={item.email} left={(props) => <Avatar.Icon {...props} icon='folder' />} />
                 <Card.Content>
                   <Title>Card title</Title>
@@ -50,7 +50,7 @@ export default class ReadDataScreen extends Component {
                 </Card.Actions>
               </Card>
             )}
-            ItemSeparatorComponent={() => <View style={{ height: 1 / 2, backgroundColor: 'black' }} />}
+            // ItemSeparatorComponent={() => <View style={{ height: 1 / 2, backgroundColor: 'black' }} />}
           />
         )}
       </View>
