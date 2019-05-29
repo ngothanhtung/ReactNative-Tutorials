@@ -160,6 +160,11 @@ Continue: README of this project
 
 ## Cloud Filestore
 
+- Dashboard -> Database -> Filestore
+- Start in test mode -> Click button [Enable]
+- https://rnfirebase.io/docs/v5.x.x/getting-started
+- https://firebase.google.com/docs/firestore/manage-data/structure-data
+
 1. Cloud Firestore: https://firebase.google.com/docs/firestore/quickstart
 2. Query Data: https://firebase.google.com/docs/firestore/query-data/queries
 3. Get Data: https://firebase.google.com/docs/firestore/query-data/get-data
