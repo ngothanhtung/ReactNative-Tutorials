@@ -139,14 +139,24 @@ const AppContainer = createAppContainer(AppNavigator);
 3. React Native Firebase: https://rnfirebase.io/
 4. Basic: http://invertase.link/get-started-basic
 
-## Cloud Function
+- Download sourcecode (ZIP)
+- Unzip
+- Install packages: Root project: type: npm install / yarn install
+- Root project: type: npm run rename, project name: jobs, company name: softech
+- Package name: com.softech.jobs
 
-1. Setup firebase tools: npm install -g firebase-tools
-2. Login / Logout: firebase login
-3. Init project: firebase init => Choose Cloud Function => Choose Project => Choose Language => SELECT DEFAULT OPTIONS => DONE
-4. Hello Function: Uncomment
-5. Deploy: firebase deploy
-6. Test API
+5. Add Google Services files (plist & JSON):
+
+- Login: https://console.firebase.google.com/ (email / password)
+- Add firebase project: project name: softech - jobs
+- Go to project dashboard
+- Go to project setting: Project Overview -> Setting Icon -> Project settings
+- Add mobile app: Your apps -> Select android app -> type package name: com.softech.jobs, app name: Softech Jobs -> Click Button [Register app]
+- Download config file: Root project / android / app / google-services.json
+
+6. Run project: react-native run-android
+
+Continue: README of this project
 
 ## Cloud Filestore
 
@@ -156,6 +166,15 @@ const AppContainer = createAppContainer(AppNavigator);
 4. Add / Update Data: https://firebase.google.com/docs/firestore/manage-data/add-data
 5. Delete Data: https://firebase.google.com/docs/firestore/manage-data/delete-data
 6. Realtime Update: https://firebase.google.com/docs/firestore/query-data/listen
+
+## Cloud Function
+
+1. Setup firebase tools: npm install -g firebase-tools
+2. Login / Logout: firebase login
+3. Init project: firebase init => Choose Cloud Function => Choose Project => Choose Language => SELECT DEFAULT OPTIONS => DONE
+4. Hello Function: Uncomment
+5. Deploy: firebase deploy
+6. Test API
 
 ## React Native With Firebase
 
