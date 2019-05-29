@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "226398420996",
+    "firebase_url": "https://softech-jobs.firebaseio.com",
+    "project_id": "softech-jobs",
+    "storage_bucket": "softech-jobs.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:226398420996:android:c2ca0721eec5d7cd",
+        "android_client_info": {
+          "package_name": "com.softech.jobs"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "226398420996-31strnttl3qbkv179t4iaf0mio5necol.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCAKbBNBWG9xYr8cqSm4TdNYntM6Fzaxu8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "226398420996-31strnttl3qbkv179t4iaf0mio5necol.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
