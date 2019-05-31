@@ -172,6 +172,12 @@ Continue: README of this project
 5. Delete Data: https://firebase.google.com/docs/firestore/manage-data/delete-data
 6. Realtime Update: https://firebase.google.com/docs/firestore/query-data/listen
 
+## Realtime
+
+1. Dashboard -> Database -> Realtime
+2. Rules: Set: read: true, write: true
+3.
+
 ## Cloud Function
 
 1. Setup firebase tools: npm install -g firebase-tools

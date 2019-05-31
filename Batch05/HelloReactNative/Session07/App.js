@@ -3,6 +3,8 @@ import { View, SafeAreaView } from 'react-native';
 
 import AddDataScreen from './src/CloudFilestore/AddDataScreen';
 import ReadDataScreen from './src/CloudFilestore/ReadDataScreen';
+// REALTIME
+import ChatScreen from './src/Realtime/ChatScreen';
 export default class App extends React.Component {
   constructor() {
     super();
@@ -20,7 +22,8 @@ export default class App extends React.Component {
     return (
       <SafeAreaView style={{ flex: 1 }}>
         {/* <AddDataScreen /> */}
-        <ReadDataScreen />
+        {/* <ReadDataScreen /> */}
+        <ChatScreen />
       </SafeAreaView>
     );
   }
