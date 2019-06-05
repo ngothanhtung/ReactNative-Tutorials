@@ -176,7 +176,32 @@ Continue: README of this project
 
 1. Dashboard -> Database -> Realtime
 2. Rules: Set: read: true, write: true
-3.
+
+## Notification
+
+1. Token:
+2. Send:
+
+- Project Settings -> Cloud Message
+- POSTMAN: POST: https://fcm.googleapis.com/fcm/send
+- HEADER: Content-Type: application/json, Authorization: key: [copy Server Key]
+- Body: https://firebase.google.com/docs/cloud-messaging/http-server-ref?authuser=0
+  {
+  "to": "dMIRpQFyq3M:APA91bHZyAnwiyJjGvhAqGSjbrrSxVcQvYJXZSTesnL_yYEeAvy4deRUbeaQxwQH_dPttfuDTPr0EPbYpH_L6uHjcFwDHT0fE79aSWmoLSlDDB0s0KToBMtZqKiO2FlscLjaLGrGUkZJ",
+  "notification": {
+  "body": "Chi tiet lich nghi TET o Google",
+  "title": "THONG BAO NGHI TET",
+  "content_available": false,
+  "priority": "normal",
+  "sound": "default",
+  "tag": "postid",
+  "color": "#000000",
+  "icon": "default"
+  },
+  "data": {
+  "bonus": "BAI TAP VE NHA"
+  }
+  }
 
 ## Cloud Function
 

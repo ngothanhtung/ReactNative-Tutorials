@@ -5,6 +5,9 @@ import AddDataScreen from './src/CloudFilestore/AddDataScreen';
 import ReadDataScreen from './src/CloudFilestore/ReadDataScreen';
 // REALTIME
 import ChatScreen from './src/Realtime/ChatScreen';
+// NOtification
+import Notification from './src/Notification';
+
 export default class App extends React.Component {
   constructor() {
     super();
@@ -23,7 +26,8 @@ export default class App extends React.Component {
       <SafeAreaView style={{ flex: 1 }}>
         {/* <AddDataScreen /> */}
         {/* <ReadDataScreen /> */}
-        <ChatScreen />
+        {/* <ChatScreen /> */}
+        <Notification />
       </SafeAreaView>
     );
   }
