@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, Button } from 'react-native';
+import { Text, View, Button, TextInput } from 'react-native';
 import firebase from 'react-native-firebase';
 
 export default class LoginScreen extends Component {
@@ -77,7 +77,7 @@ export default class LoginScreen extends Component {
         />
 
         <Button
-          title='Login with phone'
+          title='Login with phone number'
           onPress={() => {
             firebase
               .auth()
@@ -89,9 +89,17 @@ export default class LoginScreen extends Component {
               });
           }}
         />
+
+        <TextInput
+          style={{ height: 44, backgroundColor: 'yellow', paddingHorizontal: 8, borderRadius: 8 }}
+          onChangeText={(text) => {
+            this.setState({ verificationCode: text });
+          }}
+        />
         <Button
+          title='Verify'
           onPress={() => {
-            this.state.confirmResult.confirm('VERIFIED CODE HERE (6 digit)').then((result) => {
+            this.state.confirmResult.confirm(this.state.verificationCode).then((result) => {
               // Login ok
               console.log(result);
             });
