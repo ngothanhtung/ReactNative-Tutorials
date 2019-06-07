@@ -205,6 +205,16 @@ Continue: README of this project
   }
   ```
 
+## Authentication
+
+1. Dashboard -> Authencation -> Sign-in Method -> Enable: Email / Password, Phone
+2. Docs: https://rnfirebase.io/docs/v5.x.x/auth/getting-started
+3. Refs: https://rnfirebase.io/docs/v5.x.x/auth/reference/auth
+4. Phone Authentication:
+
+-
+- Get SHA-1 key: https://stackoverflow.com/questions/27609442/how-to-get-the-sha-1-fingerprint-certificate-in-android-studio-for-debug-mode
+
 ## Cloud Function
 
 1. Setup firebase tools: npm install -g firebase-tools

@@ -81,9 +81,17 @@ export default class LoginScreen extends Component {
             firebase
               .auth()
               .signInWithPhoneNumber('+84905157803')
-              .then((result) => {
-                console.log(result);
-                // firebase.auth().verifyPhoneNumber();
+              .then((confirmResult) => {
+                // Send verification Code OK
+                console.log(confirmResult);
+                this.setState({ confirmResult: confirmResult });
+                //
+                // Other button
+                // this.state.confirmResult
+                confirmResult.confirm('123456').then((result) => {
+                  // Login ok
+                  console.log(result);
+                });
               });
           }}
         />
