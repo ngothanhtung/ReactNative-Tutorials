@@ -8,6 +8,7 @@ export default class LoginScreen extends Component {
     this.unsubscriber = null;
     this.state = {
       user: null,
+      confirmResult: null,
     };
   }
 
@@ -85,14 +86,15 @@ export default class LoginScreen extends Component {
                 // Send verification Code OK
                 console.log(confirmResult);
                 this.setState({ confirmResult: confirmResult });
-                //
-                // Other button
-                // this.state.confirmResult
-                confirmResult.confirm('123456').then((result) => {
-                  // Login ok
-                  console.log(result);
-                });
               });
+          }}
+        />
+        <Button
+          onPress={() => {
+            this.state.confirmResult.confirm('VERIFIED CODE HERE (6 digit)').then((result) => {
+              // Login ok
+              console.log(result);
+            });
           }}
         />
       </View>

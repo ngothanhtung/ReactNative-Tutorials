@@ -212,8 +212,9 @@ Continue: README of this project
 3. Refs: https://rnfirebase.io/docs/v5.x.x/auth/reference/auth
 4. Phone Authentication:
 
--
+- Dashboard -> Authencation -> Sign-in Method -> Phone numbers for testing (optional)
 - Get SHA-1 key: https://stackoverflow.com/questions/27609442/how-to-get-the-sha-1-fingerprint-certificate-in-android-studio-for-debug-mode
+- Dashboard -> Project Settings -> General -> Select Android App -> Paste SHA-1
 
 ## Cloud Function
 
