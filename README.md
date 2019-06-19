@@ -260,7 +260,8 @@ Continue: README of this project
 - actions
 - reducers
 - components
-- store
+- store (store.js)
+- App.js (config Provider with store)
 
 6. Debug:
 
