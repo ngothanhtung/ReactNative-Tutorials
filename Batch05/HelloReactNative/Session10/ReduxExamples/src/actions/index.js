@@ -15,3 +15,13 @@ export const decreaseCount = (number) => ({
 	type: ActionTypes.DECREASE_COUNT,
 	number: number,
 });
+
+export const withDraw = (money) => ({
+	type: ActionTypes.ATM_WITH_DRAW,
+	money: money,
+});
+
+export const deposit = (money) => ({
+	type: ActionTypes.ATM_DEPOSITE,
+	money: money,
+});

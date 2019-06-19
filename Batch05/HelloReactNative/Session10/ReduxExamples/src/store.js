@@ -4,8 +4,10 @@ import { combineReducers } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
 
 import counterReducer from './reducers/counterReducer';
+import atmReducer from './reducers/atmReducer';
 const rootReducer = combineReducers({
 	counterReducer,
+	atmReducer,
 	// themeReducer,
 });
 
