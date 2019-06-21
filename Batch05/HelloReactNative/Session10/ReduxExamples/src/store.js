@@ -5,14 +5,18 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 
 import counterReducer from './reducers/counterReducer';
 import atmReducer from './reducers/atmReducer';
+import photoReducer from './reducers/photoReducer';
+// REDUX THUNK
+import thunkMiddleware from 'redux-thunk';
 const rootReducer = combineReducers({
 	counterReducer,
 	atmReducer,
+	photoReducer,
 	// themeReducer,
 });
 
 // MIDDLEWARE
-const middewares = [];
+const middewares = [thunkMiddleware];
 
 // Create Store
 const store = createStore(

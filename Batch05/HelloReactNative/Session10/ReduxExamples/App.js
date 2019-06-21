@@ -6,14 +6,17 @@ import store from './src/store';
 import Counter from './src/components/Counter';
 import IncreaseButton from './src/components/IncreaseButton';
 import ATM from './src/components/ATM';
+import Photos from './src/components/Photos';
+
 export default class App extends Component {
 	render() {
 		return (
 			<Provider store={store}>
 				<SafeAreaView style={{ flex: 1, justifyContent: 'center' }}>
-					<Counter />
+					{/* <Counter />
 					<IncreaseButton />
-					<ATM />
+					<ATM /> */}
+					<Photos />
 				</SafeAreaView>
 			</Provider>
 		);

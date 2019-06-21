@@ -1,4 +1,5 @@
 import * as ActionTypes from './types';
+import axios from 'axios';
 // COUNTER
 export const increaseCount = (number) => {
 	return {
@@ -25,3 +26,29 @@ export const deposit = (money) => ({
 	type: ActionTypes.ATM_DEPOSITE,
 	money: money,
 });
+// PHOTO
+
+export const getPhotosAsync = () => {
+	return (dispatch) => {
+		// LOADING
+		dispatch({ type: ActionTypes.GET_PHOTOS_PENDING });
+
+		axios
+			.get('https://jsonplaceholder.typicode.com/photos')
+			.then((response) => {
+				// SUCCESS
+				dispatch({
+					type: ActionTypes.GET_PHOTOS_SUCCESS,
+					photos: response.data,
+				});
+			})
+			.catch((error) => {
+				// ERROR
+				console.log(error);
+				dispatch({
+					type: ActionTypes.GET_PHOTOS_ERROR,
+					error: error,
+				});
+			});
+	};
+};
