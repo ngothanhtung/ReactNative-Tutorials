@@ -7,6 +7,7 @@ import Counter from './src/components/Counter';
 import IncreaseButton from './src/components/IncreaseButton';
 import ATM from './src/components/ATM';
 import Photos from './src/components/Photos';
+import Login from './src/components/Login';
 
 export default class App extends Component {
 	render() {
@@ -16,7 +17,8 @@ export default class App extends Component {
 					{/* <Counter />
 					<IncreaseButton />
 					<ATM /> */}
-					<Photos />
+					{/* <Photos /> */}
+					<Login />
 				</SafeAreaView>
 			</Provider>
 		);

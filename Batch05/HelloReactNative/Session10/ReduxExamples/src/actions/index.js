@@ -52,3 +52,37 @@ export const getPhotosAsync = () => {
 			});
 	};
 };
+
+// LOGIN
+
+export const loginAsync = (email, password) => {
+	return (dispatch) => {
+		// LOADING
+		dispatch({ type: ActionTypes.LOGIN_PENDING });
+		// https://reqres.in/
+		axios
+			.post('https://reqres.in/api/login', {
+				email,
+				password,
+			})
+			.then((response) => {
+				// SUCCESS
+				dispatch({
+					type: ActionTypes.LOGIN_SUCCESS,
+					user: {
+						email,
+						password,
+						token: response.data.token,
+					},
+				});
+			})
+			.catch((error) => {
+				// ERROR
+				console.log(error);
+				dispatch({
+					type: ActionTypes.LOGIN_ERROR,
+					error: error,
+				});
+			});
+	};
+};

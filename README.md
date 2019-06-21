@@ -262,6 +262,7 @@ Continue: README of this project
 
 5. Coding:
 
+- types (constants)
 - actions
 - reducers
 - components
