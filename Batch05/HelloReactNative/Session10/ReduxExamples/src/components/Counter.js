@@ -1,12 +1,18 @@
 import React, { Component } from 'react';
 import { Text, View } from 'react-native';
 import { connect } from 'react-redux';
-import { increaseCount, decreaseCount } from '../actions';
+
 class Counter extends Component {
 	render() {
 		return (
-			<View style={{ justifyContent: 'center', alignItems: 'center' }}>
+			<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
 				<Text style={{ fontSize: 32 }}> {this.props.count} </Text>
+				{/* {this.props.user && (
+					<View style={{ flex: 1 }}>
+						<Text>Email: {this.props.user.email}</Text>
+						<Text>Token: {this.props.user.token}</Text>
+					</View>
+				)} */}
 			</View>
 		);
 	}
@@ -16,6 +22,7 @@ class Counter extends Component {
 const mapStateToProps = (state) => ({
 	// this.props.count
 	count: state.counterReducer.count,
+	// user: state.loginReducer.user,
 });
 // Nối các functions vào props (functions) của View Component
 const mapDispatchToProps = (dispatch) => ({

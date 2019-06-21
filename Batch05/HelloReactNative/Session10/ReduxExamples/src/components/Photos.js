@@ -41,6 +41,7 @@ class Photos extends Component {
 const mapStateToProps = (state) => ({
 	photos: state.photoReducer.photos,
 	loading: state.photoReducer.loading,
+	// user: state.loginReducer.user,
 });
 
 // Nối các functions vào props (functions) của View Component

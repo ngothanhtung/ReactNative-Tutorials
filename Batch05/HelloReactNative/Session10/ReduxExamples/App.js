@@ -14,7 +14,8 @@ export default class App extends Component {
 		return (
 			<Provider store={store}>
 				<SafeAreaView style={{ flex: 1, justifyContent: 'center' }}>
-					{/* <Counter />
+					<Counter />
+					{/* 
 					<IncreaseButton />
 					<ATM /> */}
 					{/* <Photos /> */}
