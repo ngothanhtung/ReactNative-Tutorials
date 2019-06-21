@@ -267,6 +267,13 @@ Continue: README of this project
 
 - Download tool: https://github.com/jhen0409/react-native-debugger/releases
 
+7. redux-thunk
+
+- Install: npm install --save redux-thunk
+- Actions: PENDING, SUCCESS, ERROR
+- Async Action (axios)
+- Config middleware (store.js)
+
 # Session 11 React Native Elements & NativeBase
 
 # Session 12 Practice
