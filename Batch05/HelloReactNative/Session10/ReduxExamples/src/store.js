@@ -17,8 +17,12 @@ const rootReducer = combineReducers({
 	// themeReducer,
 });
 
+// SAGA: MIDDLEWARE
+import createSagaMiddleware from 'redux-saga';
+const sagaMiddleware = createSagaMiddleware();
+
 // MIDDLEWARE
-const middewares = [thunkMiddleware];
+const middewares = [thunkMiddleware, sagaMiddleware];
 
 // Create Store
 const store = createStore(
@@ -26,5 +30,9 @@ const store = createStore(
 	// debug
 	composeWithDevTools(applyMiddleware(...middewares)),
 );
+
+import rootSagas from './rootSagas';
+// SAGA: RUN
+sagaMiddleware.run(rootSagas);
 
 export default store;

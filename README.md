@@ -281,6 +281,10 @@ Continue: README of this project
 - Async Action (axios)
 - Config middleware (store.js)
 
+8. redux-saga
+
+- Install: npm install --save redux-saga / yarn add redux-saga
+
 # Session 11 React Native Elements & NativeBase
 
 # Session 12 Practice
