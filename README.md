@@ -285,7 +285,22 @@ Continue: README of this project
 
 - Install: npm install --save redux-saga / yarn add redux-saga
 
-# Session 11 React Native Elements & NativeBase
+# Session 11 Backend with Google Cloud Function
+
+1. Setup firebase tools: npm install -g firebase-tools
+2. Login / Logout: firebase login
+3. Init project:
+
+- firebase init =>
+- Choose Cloud Function =>
+- Choose Project =>
+- Choose Language =>
+- SELECT DEFAULT
+
+4. OPTIONS => DONE
+5. Hello Function: Uncomment
+6. Deploy: firebase deploy
+7. Test API
 
 # Session 12 Practice
 
