@@ -287,15 +287,19 @@ Continue: README of this project
 
 # Session 11 Backend with Google Cloud Function
 
-1. Setup firebase tools: npm install -g firebase-tools
-2. Login / Logout: firebase login
-3. Init project:
+1. Setup firebase tools:
 
-- firebase init =>
-- Choose Cloud Function =>
-- Choose Project =>
-- Choose Language =>
-- SELECT DEFAULT
+- npm install -g firebase-tools
+- yarn add global firebase-tools
+
+2. Login / Logout: firebase login / firebase logout
+3. Init project: (Project folder)
+
+- Terminal: firebase init =>
+- OPTIONS: => Choose Cloud Function =>
+- OPTIONS: => Choose Project =>
+- OPTION: => Choose Language => Javascript
+- SELECT DEFAULTS
 
 4. OPTIONS => DONE
 5. Hello Function: Uncomment
