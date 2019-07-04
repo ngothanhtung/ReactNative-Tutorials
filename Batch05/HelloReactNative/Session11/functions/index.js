@@ -93,3 +93,7 @@ exports.deleteProduct = functions.https.onRequest((request, response) => {
 			response.send('Error deleting document: ' + err);
 		});
 });
+
+exports.sendWelcomeEmail = functions.auth.user().onCreate((user) => {
+	console.log(user);
+});
