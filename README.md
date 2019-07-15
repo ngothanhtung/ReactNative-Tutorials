@@ -68,6 +68,7 @@
 5. Browse Icons: https://oblador.github.io/react-native-vector-icons/
 6. Face Stock: http://pravatar.cc/
 7. Stock: http://thestocks.im/
+8. https://github.com/vhpoet/react-native-styling-cheat-sheet
 
 # Session 05 Handling Events & ListView & Networking
 
