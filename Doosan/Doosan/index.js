@@ -9,8 +9,8 @@ import LifeCycleSample from './Session03/LifeCycleSample';
 import HandlingTextInputSample from './Session03/HandlingTextInputSample';
 import StyleSample from './Session03/StyleSample';
 import Login from './Session03/Login';
-import Instagram2 from './Session03/Instagram/Instagram2';
+import Instagram from './Session03/Instagram/Instagram';
 import { name as appName } from './app.json';
 
 // AppRegistry.registerComponent(appName, () => App);
-AppRegistry.registerComponent(appName, () => Instagram2);
+AppRegistry.registerComponent(appName, () => Instagram);
