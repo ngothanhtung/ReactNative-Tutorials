@@ -55,9 +55,10 @@
 
 # Session 03: State
 
-1. State: https://facebook.github.io/react-native/docs/state
-2. Handle Event within state: https://facebook.github.io/react-native/docs/handling-text-input
-3. TextInput ref: https://facebook.github.io/react-native/docs/textinput
+1. https://reactjs.org/docs/state-and-lifecycle.html
+2. State: https://facebook.github.io/react-native/docs/state
+3. Handle Event within state: https://facebook.github.io/react-native/docs/handling-text-input
+4. TextInput ref: https://facebook.github.io/react-native/docs/textinput
 
 # Session 04 Styles & Layout
 
