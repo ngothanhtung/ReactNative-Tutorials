@@ -47,17 +47,17 @@
 5. Create new react native project: react-native init HelloWorldApp
 6. Component Examples: https://facebook.github.io/react-native/docs/tutorial
 
-# Session 02 Basic of Props & State
+# Session 02: Props
 
 1. Props: https://facebook.github.io/react-native/docs/props
-2. State: https://facebook.github.io/react-native/docs/state
+2. Type-Checking: https://reactjs.org/docs/typechecking-with-proptypes.html
+3. Install Package: https://www.npmjs.com/package/prop-types
 
-# Session 03 More Props & State
+# Session 03: State
 
-1. Type-Checking: https://reactjs.org/docs/typechecking-with-proptypes.html
-2. Install Package: https://www.npmjs.com/package/prop-types
-3. Handle Event within state: https://facebook.github.io/react-native/docs/handling-text-input
-4. TextInput ref: https://facebook.github.io/react-native/docs/textinput
+1. State: https://facebook.github.io/react-native/docs/state
+2. Handle Event within state: https://facebook.github.io/react-native/docs/handling-text-input
+3. TextInput ref: https://facebook.github.io/react-native/docs/textinput
 
 # Session 04 Styles & Layout
 
