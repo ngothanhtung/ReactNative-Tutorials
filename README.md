@@ -71,6 +71,7 @@
 6. Face Stock: http://pravatar.cc/
 7. Stock: http://thestocks.im/
 8. https://github.com/vhpoet/react-native-styling-cheat-sheet
+9. https://github.com/react-native-community/react-native-linear-gradient
 
 # Session 05 Handling Events & ListView & Networking
 

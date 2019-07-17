@@ -14,4 +14,4 @@ import StyleSheetSample from './Session04/StyleSheetSample';
 import { name as appName } from './app.json';
 
 // AppRegistry.registerComponent(appName, () => App);
-AppRegistry.registerComponent(appName, () => Instagram);
+AppRegistry.registerComponent(appName, () => StyleSheetSample);
