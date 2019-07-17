@@ -251,7 +251,8 @@ Continue: README of this project
 
 # Session 09 UI / UX
 
-1. 2.
+1. react-native-paper
+2. react-native-elements
 
 # Session 10 REDUX
 
@@ -322,6 +323,11 @@ Continue: README of this project
 6. Others: RoboMongo: https://robomongo.org/
 7. Nodejs Mongodb Driver: http://mongodb.github.io/node-mongodb-native/3.1/
 8. Databases with Express: https://expressjs.com/en/guide/database-integration.html
+
+# Project
+
+1. rnfirebase.io
+2.
 
 # Final: Release
 

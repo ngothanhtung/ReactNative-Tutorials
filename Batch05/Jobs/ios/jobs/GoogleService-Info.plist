@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>226398420996-bq702k41b18qkuffipfbu53akuh4rae2.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.226398420996-bq702k41b18qkuffipfbu53akuh4rae2</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>226398420996-oap63fpumittocr2glue2n2dfara33nn.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAvWndwNDwOg6F1bBpZg945awRzz9XWGqs</string>
+	<key>GCM_SENDER_ID</key>
+	<string>226398420996</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.softech.jobs</string>
+	<key>PROJECT_ID</key>
+	<string>softech-jobs</string>
+	<key>STORAGE_BUCKET</key>
+	<string>softech-jobs.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:226398420996:ios:c2ca0721eec5d7cd</string>
+	<key>DATABASE_URL</key>
+	<string>https://softech-jobs.firebaseio.com</string>
+</dict>
+</plist>
