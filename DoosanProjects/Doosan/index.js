@@ -10,7 +10,8 @@ import HandlingTextInputSample from './Session03/HandlingTextInputSample';
 import StyleSample from './Session03/StyleSample';
 import Login from './Session03/Login';
 import Instagram from './Session03/Instagram/Instagram';
+import StyleSheetSample from './Session04/StyleSheetSample';
 import { name as appName } from './app.json';
 
 // AppRegistry.registerComponent(appName, () => App);
-AppRegistry.registerComponent(appName, () => Instagram);
+AppRegistry.registerComponent(appName, () => StyleSheetSample);

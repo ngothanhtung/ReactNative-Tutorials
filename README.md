@@ -64,6 +64,7 @@
 
 1. Style: https://facebook.github.io/react-native/docs/style
 2. Height and Width: https://facebook.github.io/react-native/docs/height-and-width
+   https://facebook.github.io/react-native/docs/dimensions
 3. Layout with Flexbox: https://facebook.github.io/react-native/docs/flexbox
 4. Package: React-Native-Vector-Icons: https://github.com/oblador/react-native-vector-icons
 5. Browse Icons: https://oblador.github.io/react-native-vector-icons/
