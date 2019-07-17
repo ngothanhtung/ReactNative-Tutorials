@@ -22,8 +22,7 @@ export default class FlexDirectionBasics extends Component {
 						justifyContent: 'center',
 						alignItems: 'center',
 						alignContent: 'center',
-					}}
-				>
+					}}>
 					<View style={{ width: 70, height: 50, backgroundColor: 'red' }} />
 					<View
 						style={{
@@ -33,23 +32,13 @@ export default class FlexDirectionBasics extends Component {
 							alignSelf: 'flex-start',
 						}}
 					/>
-					<View
-						style={{ width: 80, height: 90, backgroundColor: 'steelblue' }}
-					/>
-					<View
-						style={{ width: 50, height: 50, backgroundColor: 'powderblue' }}
-					/>
+					<View style={{ width: 80, height: 90, backgroundColor: 'steelblue' }} />
+					<View style={{ width: 50, height: 50, backgroundColor: 'powderblue' }} />
 					<View style={{ width: 80, height: 70, backgroundColor: 'skyblue' }} />
-					<View
-						style={{ width: 50, height: 90, backgroundColor: 'steelblue' }}
-					/>
-					<View
-						style={{ width: 50, height: 50, backgroundColor: 'powderblue' }}
-					/>
+					<View style={{ width: 50, height: 90, backgroundColor: 'steelblue' }} />
+					<View style={{ width: 50, height: 50, backgroundColor: 'powderblue' }} />
 					<View style={{ width: 80, height: 70, backgroundColor: 'skyblue' }} />
-					<View
-						style={{ width: 50, height: 90, backgroundColor: 'steelblue' }}
-					/>
+					<View style={{ width: 50, height: 90, backgroundColor: 'steelblue' }} />
 				</View>
 
 				<View
@@ -58,15 +47,10 @@ export default class FlexDirectionBasics extends Component {
 						flexDirection: 'row',
 						backgroundColor: 'green',
 						justifyContent: 'center',
-					}}
-				>
-					<View
-						style={{ width: 50, height: 50, backgroundColor: 'powderblue' }}
-					/>
+					}}>
+					<View style={{ width: 50, height: 50, backgroundColor: 'powderblue' }} />
 					<View style={{ width: 50, height: 50, backgroundColor: 'skyblue' }} />
-					<View
-						style={{ width: 50, height: 50, backgroundColor: 'steelblue' }}
-					/>
+					<View style={{ width: 50, height: 50, backgroundColor: 'steelblue' }} />
 				</View>
 
 				<View
@@ -75,15 +59,10 @@ export default class FlexDirectionBasics extends Component {
 						flexDirection: 'column',
 						backgroundColor: 'blue',
 						alignItems: 'center',
-					}}
-				>
-					<View
-						style={{ width: 50, height: 50, backgroundColor: 'powderblue' }}
-					/>
+					}}>
+					<View style={{ width: 50, height: 50, backgroundColor: 'powderblue' }} />
 					<View style={{ width: 50, height: 50, backgroundColor: 'skyblue' }} />
-					<View
-						style={{ width: 50, height: 50, backgroundColor: 'steelblue' }}
-					/>
+					<View style={{ width: 50, height: 50, backgroundColor: 'steelblue' }} />
 				</View>
 			</View>
 		);
