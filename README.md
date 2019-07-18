@@ -60,7 +60,7 @@
 3. Handle Event within state: https://facebook.github.io/react-native/docs/handling-text-input
 4. TextInput ref: https://facebook.github.io/react-native/docs/textinput
 
-# Session 04 Styles & Layout
+# Session 04: Styles & Layout
 
 1. Style: https://facebook.github.io/react-native/docs/style
 2. Height and Width: https://facebook.github.io/react-native/docs/height-and-width
@@ -73,7 +73,7 @@
 8. https://github.com/vhpoet/react-native-styling-cheat-sheet
 9. https://github.com/react-native-community/react-native-linear-gradient
 
-# Session 05 Handling Events & ListView & Networking
+# Session 05: Handling Events & ListView & Networking
 
 1. Handling Text Input: https://facebook.github.io/react-native/docs/handling-text-input
 2. Handling Touches: https://facebook.github.io/react-native/docs/handling-touches
@@ -107,7 +107,7 @@
     13.1. https://github.com/react-native-community/react-native-linear-gradient
     13.2. https://akveo.github.io/react-native-ui-kitten/#/home
 
-# Session 06 React Navigation
+# Session 06: React Navigation
 
 1.  Docs: https://reactnavigation.org
 2.  Setup (Please carefully): https://reactnavigation.org/docs/en/getting-started.html
@@ -136,7 +136,7 @@ const AppNavigator = createSwitchNavigator({
 const AppContainer = createAppContainer(AppNavigator);
 ```
 
-# Session 07 Firebase
+# Session 07: Firebase
 
 1. https://firebase.google.com/
 2. Register a Google account
@@ -243,18 +243,18 @@ Continue: README of this project
 - Send a notification (Admin SDK - Cloud Function): https://firebase.google.com/docs/cloud-messaging/admin/send-messages
 - Manage Topic: https://firebase.google.com/docs/cloud-messaging/admin/manage-topic-subscriptions
 
-# Session 08 React Component & Lifecycle
+# Session 08: React Component & Lifecycle
 
 1. Theory: https://reactjs.org/docs/react-component.html
 2. Diagram: http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 3. Examples:
 
-# Session 09 UI / UX
+# Session 09: UI / UX
 
 1. react-native-paper
 2. react-native-elements
 
-# Session 10 REDUX
+# Session 10: REDUX & SAGA
 
 1. Theory: https://redux.js.org/introduction/getting-started
 2. Usage with React: https://react-redux.js.org
@@ -290,7 +290,7 @@ Continue: README of this project
 
 - Install: npm install --save redux-saga / yarn add redux-saga
 
-# Session 11 Backend with Google Cloud Function
+# Session 11: Backend with Google Cloud Function
 
 1. Setup firebase tools:
 
@@ -311,9 +311,9 @@ Continue: README of this project
 6. Deploy: firebase deploy
 7. Test API
 
-# Session 12 Practice
+# Session 12: Practice
 
-# Session 13 EXPRESSJS & MONGODB
+# Session 13: EXPRESSJS & MONGODB (BONUS)
 
 1. Expressjs: https://expressjs.com/en/starter/generator.html
 2. Basic Routing: https://expressjs.com/en/starter/basic-routing.html
@@ -324,17 +324,16 @@ Continue: README of this project
 7. Nodejs Mongodb Driver: http://mongodb.github.io/node-mongodb-native/3.1/
 8. Databases with Express: https://expressjs.com/en/guide/database-integration.html
 
-# Project
-
-1. rnfirebase.io
-2.
-
-# Final: Release
+# Session 14: Release
 
 1. Android icon: https://romannurik.github.io/AndroidAssetStudio/index.html
 2. iOs icon: https://appicon.co/
 3. https://facebook.github.io/react-native/docs/signed-apk-android
 4. https://play.google.com/apps/publish
+
+# Project:
+
+1. rnfirebase.io
 
 # A. Some useful websites
 
