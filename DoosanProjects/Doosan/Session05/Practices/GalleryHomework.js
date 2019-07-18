@@ -6,19 +6,14 @@ import axios from 'axios';
 const { width, height } = Dimensions.get('window');
 
 export default class GalleryHomework extends Component {
-	static navigationOptions = {
-		title: 'Picsum Photos',
-		headerBackTitle: null,
-	};
-
 	constructor(props) {
 		super(props);
 		this.state = {
 			photos: [],
-			done: false,
+			loading: false,
 			mode: 'grid',
-			selectedImage: null,
-			loadedHighQualityImage: false,
+			selectedPhoto: null,
+			highQuality: false,
 			groupPhotos: [],
 		};
 	}
@@ -29,7 +24,7 @@ export default class GalleryHomework extends Component {
 			.then((response) => {
 				this.setState({ photos: response.data });
 				console.log(response);
-				this.setState({ done: true });
+				this.setState({ loading: true });
 			})
 			.catch((error) => {
 				Alert.alert('Error', error);
@@ -46,7 +41,7 @@ export default class GalleryHomework extends Component {
 				<View style={{ width: '100%', height: this.state.mode === 'list' ? height / 3 : height / 6 }}>
 					<TouchableOpacity
 						onPress={() => {
-							this.setState({ mode: 'view', groupPhotos: this.state.photos.slice(item.id, 5), selectedImage: item, loadedHighQualityImage: false });
+							this.setState({ mode: 'view', groupPhotos: this.state.photos.slice(item.id, 5), selectedIPhoto: item, highQuality: false });
 							console.log(this.state.groupPhotos);
 						}}>
 						<Image resizeMode='cover' source={{ uri: 'https://picsum.photos/600/600/?image=' + item.id }} style={{ height: '100%', width: '100%' }} />
@@ -94,7 +89,7 @@ export default class GalleryHomework extends Component {
 				</View>
 
 				{/* SLIDE MODE */}
-				{this.state.done && this.state.mode === 'slide' && (
+				{this.state.loading && this.state.mode === 'slide' && (
 					<View style={{ flex: 1, justifyContent: 'center' }}>
 						<FlatList
 							style={{ marginLeft: 2, marginRight: 2 }}
@@ -113,7 +108,7 @@ export default class GalleryHomework extends Component {
 					</View>
 				)}
 				{/* LIST | GRID MODE */}
-				{this.state.done && this.state.mode !== 'slide' && (
+				{this.state.loading && this.state.mode !== 'slide' && (
 					<View>
 						<FlatList
 							style={{ marginLeft: 2, marginRight: 2 }}
@@ -128,7 +123,7 @@ export default class GalleryHomework extends Component {
 
 				{/* VIEW MODE */}
 				{this.state.mode === 'view' && (
-					<View style={{ zIndex: 999, position: 'absolute', height: '100%', width: width, backgroundColor: '#000000' }}>
+					<View style={{ zIndex: 999, position: 'absolute', height: height, width: width, backgroundColor: '#000000' }}>
 						<View style={{ flex: 1, justifyContent: 'center' }}>
 							<TouchableOpacity
 								style={{}}
@@ -137,18 +132,18 @@ export default class GalleryHomework extends Component {
 								}}>
 								<Image
 									onLoad={() => {
-										this.setState({ loadedHighQualityImage: true });
+										this.setState({ highQuality: true });
 									}}
 									resizeMode='contain'
-									source={{ uri: 'https://picsum.photos/1600/1200/?image=' + this.state.selectedImage.id }}
+									source={{ uri: 'https://picsum.photos/1600/1200/?image=' + this.state.selectedIPhoto.id }}
 									style={{ height: '100%', width: '100%' }}
 								/>
 							</TouchableOpacity>
 						</View>
 					</View>
 				)}
-				{this.state.mode === 'view' && this.state.loadedHighQualityImage === false && (
-					<View style={{ zIndex: 999, position: 'absolute', height: '100%', width: width, backgroundColor: '#000000' }}>
+				{this.state.mode === 'view' && this.state.highQuality === false && (
+					<View style={{ zIndex: 999, position: 'absolute', height: height, width: width, backgroundColor: '#000000' }}>
 						<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
 							<ActivityIndicator size='large' color='#ffffff' />
 						</View>
@@ -156,7 +151,7 @@ export default class GalleryHomework extends Component {
 				)}
 
 				{/* WAITING MODE */}
-				{this.state.done === false && (
+				{this.state.loading === false && (
 					<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
 						<ActivityIndicator size='large' color='#2d3436' />
 					</View>
