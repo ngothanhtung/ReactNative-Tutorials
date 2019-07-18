@@ -72,7 +72,13 @@ export default class NetworkingComponent extends Component {
 				<View style={{ flex: 1, justifyContent: 'center', padding: 24 }}>
 					{this.state.users && (
 						<View style={{ marginBottom: 24 }}>
-							<FlatList data={this.state.users} renderItem={this.renderUserItem} keyExtractor={(item, index) => 'user_' + index.toString()} horizontal={true} ItemSeparatorComponent={() => <View style={{ width: 6 }} />} />
+							<FlatList
+								data={this.state.users}
+								renderItem={this.renderUserItem}
+								keyExtractor={(item, index) => 'user_' + index.toString()}
+								horizontal={true}
+								ItemSeparatorComponent={() => <View style={{ width: 6 }} />}
+							/>
 						</View>
 					)}
 					{this.state.posts && (

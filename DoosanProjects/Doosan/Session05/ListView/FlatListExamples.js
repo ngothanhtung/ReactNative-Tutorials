@@ -37,7 +37,11 @@ export default class ScrollViewComponent extends Component {
 	render() {
 		return (
 			<View>
-				<FlatList data={this.state.photos} keyExtractor={(item, index) => index.toString()} renderItem={this.renderItem} />
+				<FlatList
+					data={this.state.photos}
+					keyExtractor={(item, index) => 'photo-' + index.toString()}
+					renderItem={this.renderItem}
+				/>
 			</View>
 		);
 	}

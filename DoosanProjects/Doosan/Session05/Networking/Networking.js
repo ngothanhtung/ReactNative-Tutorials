@@ -32,26 +32,34 @@ export default class NetworkingComponent extends Component {
 	}
 
 	// CU PHAP MOI ASYNC:  ASYNC / AWAIT
-	async getMovies() {
-		try {
-			let response = await fetch('https://facebook.github.io/react-native/movies.json');
-			let responseJson = await response.json();
-			this.setState({ movies: responseJson.movies });
-			console.log('DONE');
-		} catch (error) {}
-	}
+	// async getMovies() {
+	// 	try {
+	// 		let response = await fetch('https://facebook.github.io/react-native/movies.json');
+	// 		let responseJson = await response.json();
+	// 		this.setState({ movies: responseJson.movies });
+	// 		console.log('DONE');
+	// 	} catch (error) {}
+	// }
 
 	render() {
+		console.log('RENDER');
 		return (
 			<SafeAreaView style={{ flex: 1 }}>
 				<View style={{ flex: 1, justifyContent: 'center', padding: 24 }}>
-					{this.state.loading && <ActivityIndicator size='large' />}
+					{this.state.loading && (
+						<View style={{ justifyContent: 'center', alignItems: 'center' }}>
+							<ActivityIndicator size='large' />
+							<View style={{ height: 16 }} />
+							<Text>Đang tải dữ liệu ...</Text>
+						</View>
+					)}
 					{this.state.loading === false &&
 						this.state.movies &&
 						this.state.movies.map((item, index) => {
 							return (
-								<View key={index}>
+								<View key={'movie-' + index}>
 									<Text style={{ fontSize: 18 }}>{item.title}</Text>
+									<Text style={{ fontSize: 18 }}>{item.releaseYear}</Text>
 								</View>
 							);
 						})}

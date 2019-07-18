@@ -99,7 +99,13 @@ export default class GalleryHomework extends Component {
 						<FlatList
 							style={{ marginLeft: 2, marginRight: 2 }}
 							data={this.state.photos}
-							renderItem={({ item }) => <Image resizeMode='contain' source={{ uri: 'https://picsum.photos/1600/1200/?image=' + item.id }} style={{ height: '100%', width: width - 4 }} />}
+							renderItem={({ item }) => (
+								<Image
+									resizeMode='contain'
+									source={{ uri: 'https://picsum.photos/1600/1200/?image=' + item.id }}
+									style={{ height: '100%', width: width - 4 }}
+								/>
+							)}
 							keyExtractor={(item, index) => index.toString()}
 							pagingEnabled={true}
 							horizontal={true}

@@ -24,6 +24,10 @@ export default class MoreHandleEvent extends Component {
 		this.setState({ text: 'Hello' });
 	};
 
+	// clickMeType3() {
+	// 	this.setState({ text: 'Hello' });
+	// };
+
 	// 4. Bind in constructor()
 	clickMeType4() {
 		this.setState({ text: 'Hello' });

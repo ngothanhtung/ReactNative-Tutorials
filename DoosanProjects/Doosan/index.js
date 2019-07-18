@@ -11,7 +11,16 @@ import StyleSample from './Session03/StyleSample';
 import Login from './Session03/Login';
 import Instagram from './Session03/Instagram/Instagram';
 import StyleSheetSample from './Session04/StyleSheetSample';
+
+import BasicNetworking from './Session05/Networking/BasicNetworking';
+import Networking from './Session05/Networking/Networking';
+
+import BasicScrollView from './Session05/ListView/BasicScrollView';
+import ScrollViewExamples from './Session05/ListView/ScrollViewExamples';
+import FlatListExamples from './Session05/ListView/FlatListExamples';
+import SectionListExamples from './Session05/ListView/SectionListExamples';
+import GalleryHomework from './Session05/Practices/GalleryHomework';
 import { name as appName } from './app.json';
 
 // AppRegistry.registerComponent(appName, () => App);
-AppRegistry.registerComponent(appName, () => StyleSheetSample);
+AppRegistry.registerComponent(appName, () => GalleryHomework);

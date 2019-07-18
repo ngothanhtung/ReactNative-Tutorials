@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
-import { SectionList, StyleSheet, Text, View, SafeAreaView } from 'react-native';
+import { FlatList, SectionList, StyleSheet, Text, View, SafeAreaView } from 'react-native';
 
-const data = [{ title: 'A. MARKETING', data: ['Devin', 'Peter'] }, { title: 'B. ACCOUNTING', data: ['Jackson', 'Mary', 'Willian', 'Jimmy', 'Joe', 'John', 'Julie'] }];
+const data = [
+	{ title: 'A. MARKETING', data: ['Devin', 'Peter'] },
+	{ title: 'B. ACCOUNTING', data: ['Jackson', 'Mary', 'Willian', 'Jimmy', 'Joe', 'John', 'Julie'] },
+];
 
 export default class SectionListExamples extends Component {
 	render() {
 		return (
 			<SafeAreaView style={styles.container}>
-				<SectionList
+				{/* <SectionList
 					sections={data}
 					renderItem={({ item }) => (
 						<View style={styles.item}>
@@ -27,6 +30,31 @@ export default class SectionListExamples extends Component {
 					ItemSeparatorComponent={() => <View style={{ height: 1, backgroundColor: '#dfe6e9' }} />}
 					SectionSeparatorComponent={() => <View style={{ height: 1, backgroundColor: '#dfe6e9' }} />}
 					keyExtractor={(item, index) => index}
+				/> */}
+
+				<FlatList
+					data={data}
+					keyExtractor={(item, index) => 'section-' + index.toString()}
+					renderItem={({ item, index }) => {
+						return (
+							<View style={{ backgroundColor: 'green', padding: 8 }}>
+								<Text style={{ fontSize: 18, color: 'white', fontWeight: 'bold' }}>{item.title}</Text>
+								<View>
+									<FlatList
+										data={item.data}
+										keyExtractor={(item, index) => 'data-' + index.toString()}
+										renderItem={({ item, index }) => {
+											return (
+												<View>
+													<Text>{item}</Text>
+												</View>
+											);
+										}}
+									/>
+								</View>
+							</View>
+						);
+					}}
 				/>
 			</SafeAreaView>
 		);
