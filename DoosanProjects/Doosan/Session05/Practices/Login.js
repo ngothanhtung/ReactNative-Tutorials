@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, TextInput, Button, Alert, ActivityIndicator } from 'react-native';
+import { SafeAreaView, Text, View, TextInput, Button, Alert, ActivityIndicator } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import * as Animatable from 'react-native-animatable';
 import axios from 'axios';
@@ -45,48 +45,50 @@ export default class Login extends Component {
 	};
 	render() {
 		return (
-			<Animatable.View animation='zoomIn' duration={1000} style={{ flex: 1, padding: 12 }}>
-				<View />
-				{/* EMAIL --------------------------------- */}
-				<View style={{ flexDirection: 'row', backgroundColor: '#b2bec3', borderRadius: 24 }}>
-					<View style={{ justifyContent: 'center', paddingLeft: 16 }}>
-						<Icon name='email' size={24} />
+			<SafeAreaView style={{ flex: 1 }}>
+				<Animatable.View animation='zoomIn' duration={1000} style={{ flex: 1, padding: 12 }}>
+					<View />
+					{/* EMAIL --------------------------------- */}
+					<View style={{ flexDirection: 'row', backgroundColor: '#b2bec3', borderRadius: 24 }}>
+						<View style={{ justifyContent: 'center', paddingLeft: 16 }}>
+							<Icon name='email' size={24} />
+						</View>
+						<View style={{ flex: 1 }}>
+							<TextInput
+								style={{ height: 48, paddingHorizontal: 8 }}
+								placeholder='Enter your email'
+								onChangeText={(text) => {
+									this.setState({ emailError: text.length === 0 });
+									this.setState({ email: text });
+								}}
+							/>
+						</View>
+						{this.state.emailError && (
+							<Animatable.View animation='flash' duration={1000} delay={200} style={{ justifyContent: 'center', paddingRight: 16 }}>
+								<Icon name='alert-circle' size={24} color='red' />
+							</Animatable.View>
+						)}
 					</View>
-					<View style={{ flex: 1 }}>
+					{/* PASSWORD ------------------------------ */}
+					<View>
 						<TextInput
-							style={{ height: 48, paddingHorizontal: 8 }}
-							placeholder='Enter your email'
+							placeholder='Enter your password'
+							secureTextEntry={true}
 							onChangeText={(text) => {
-								this.setState({ emailError: text.length === 0 });
-								this.setState({ email: text });
+								this.setState({ password: text });
 							}}
 						/>
 					</View>
-					{this.state.emailError && (
-						<Animatable.View animation='flash' duration={1000} delay={200} style={{ justifyContent: 'center', paddingRight: 16 }}>
-							<Icon name='alert-circle' size={24} color='red' />
-						</Animatable.View>
-					)}
-				</View>
-				{/* PASSWORD ------------------------------ */}
-				<View>
-					<TextInput
-						placeholder='Enter your password'
-						secureTextEntry={true}
-						onChangeText={(text) => {
-							this.setState({ password: text });
-						}}
-					/>
-				</View>
-				<View>
-					<Button title='Login' onPress={this.login} />
-				</View>
-				{this.state.loading && (
 					<View>
-						<ActivityIndicator size='large' />
+						<Button title='Login' onPress={this.login} />
 					</View>
-				)}
-			</Animatable.View>
+					{this.state.loading && (
+						<View>
+							<ActivityIndicator size='large' />
+						</View>
+					)}
+				</Animatable.View>
+			</SafeAreaView>
 		);
 	}
 }

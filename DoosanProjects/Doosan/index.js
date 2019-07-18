@@ -8,7 +8,7 @@ import StateSample from './Session03/StateSample';
 import LifeCycleSample from './Session03/LifeCycleSample';
 import HandlingTextInputSample from './Session03/HandlingTextInputSample';
 import StyleSample from './Session03/StyleSample';
-import Login from './Session03/Login';
+// import Login from './Session03/Login';
 import Instagram from './Session03/Instagram/Instagram';
 import StyleSheetSample from './Session04/StyleSheetSample';
 
@@ -20,7 +20,8 @@ import ScrollViewExamples from './Session05/ListView/ScrollViewExamples';
 import FlatListExamples from './Session05/ListView/FlatListExamples';
 import SectionListExamples from './Session05/ListView/SectionListExamples';
 import GalleryHomework from './Session05/Practices/GalleryHomework';
+import Login from './Session05/Practices/Login';
 import { name as appName } from './app.json';
 
 // AppRegistry.registerComponent(appName, () => App);
-AppRegistry.registerComponent(appName, () => GalleryHomework);
+AppRegistry.registerComponent(appName, () => Login);

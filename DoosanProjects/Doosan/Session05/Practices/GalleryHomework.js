@@ -88,6 +88,32 @@ export default class GalleryHomework extends Component {
 					</View>
 				</View>
 
+				{/* GRID MODE */}
+				{this.state.loading && this.state.mode === 'grid' && (
+					<View>
+						<FlatList
+							style={{ marginLeft: 2, marginRight: 2 }}
+							data={this.state.photos}
+							renderItem={this.renderItem}
+							keyExtractor={(item, index) => index.toString()}
+							numColumns={3}
+						/>
+					</View>
+				)}
+
+				{/* LIST MODE */}
+				{this.state.loading && this.state.mode === 'list' && (
+					<View>
+						<FlatList
+							style={{ marginLeft: 2, marginRight: 2 }}
+							data={this.state.photos}
+							renderItem={this.renderItem}
+							keyExtractor={(item, index) => index.toString()}
+							numColumns={1}
+						/>
+					</View>
+				)}
+
 				{/* SLIDE MODE */}
 				{this.state.loading && this.state.mode === 'slide' && (
 					<View style={{ flex: 1, justifyContent: 'center' }}>
@@ -104,30 +130,6 @@ export default class GalleryHomework extends Component {
 							keyExtractor={(item, index) => index.toString()}
 							pagingEnabled={true}
 							horizontal={true}
-						/>
-					</View>
-				)}
-				{/* LIST | GRID MODE */}
-				{this.state.loading && this.state.mode === 'grid' && (
-					<View>
-						<FlatList
-							style={{ marginLeft: 2, marginRight: 2 }}
-							data={this.state.photos}
-							renderItem={this.renderItem}
-							keyExtractor={(item, index) => index.toString()}
-							numColumns={3}
-						/>
-					</View>
-				)}
-
-				{this.state.loading && this.state.mode === 'list' && (
-					<View>
-						<FlatList
-							style={{ marginLeft: 2, marginRight: 2 }}
-							data={this.state.photos}
-							renderItem={this.renderItem}
-							keyExtractor={(item, index) => index.toString()}
-							numColumns={1}
 						/>
 					</View>
 				)}
@@ -153,6 +155,8 @@ export default class GalleryHomework extends Component {
 						</View>
 					</View>
 				)}
+
+				{/* WAITING MODE */}
 				{this.state.mode === 'view' && this.state.highQuality === false && (
 					<View style={{ zIndex: 999, position: 'absolute', height: height, width: width, backgroundColor: '#000000' }}>
 						<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
