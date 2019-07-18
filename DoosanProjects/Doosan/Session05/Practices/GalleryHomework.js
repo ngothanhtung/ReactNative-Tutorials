@@ -108,15 +108,26 @@ export default class GalleryHomework extends Component {
 					</View>
 				)}
 				{/* LIST | GRID MODE */}
-				{this.state.loading && this.state.mode !== 'slide' && (
+				{this.state.loading && this.state.mode === 'grid' && (
 					<View>
 						<FlatList
 							style={{ marginLeft: 2, marginRight: 2 }}
 							data={this.state.photos}
 							renderItem={this.renderItem}
 							keyExtractor={(item, index) => index.toString()}
-							numColumns={this.state.mode === 'list' ? 1 : 3}
-							key={this.state.mode === 'list' ? 1 : 0}
+							numColumns={3}
+						/>
+					</View>
+				)}
+
+				{this.state.loading && this.state.mode === 'list' && (
+					<View>
+						<FlatList
+							style={{ marginLeft: 2, marginRight: 2 }}
+							data={this.state.photos}
+							renderItem={this.renderItem}
+							keyExtractor={(item, index) => index.toString()}
+							numColumns={1}
 						/>
 					</View>
 				)}
