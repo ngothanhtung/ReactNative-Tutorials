@@ -24,4 +24,4 @@ import Login from './Session05/Practices/Login';
 import { name as appName } from './app.json';
 
 // AppRegistry.registerComponent(appName, () => App);
-AppRegistry.registerComponent(appName, () => Login);
+AppRegistry.registerComponent(appName, () => StyleSheetSample);

@@ -37,6 +37,14 @@ export default class StyleSheetSample extends Component {
 				/>
 
 				<MyTextInput
+					ref={(c) => (this.t1 = c)}
+					onChangeText={(text) => {}}
+					onEndEditing={() => {
+						this.t2.focus();
+					}}
+				/>
+				<MyTextInput
+					ref={(c) => (this.t2 = c)}
 					onChangeText={(text) => {
 						//
 					}}
