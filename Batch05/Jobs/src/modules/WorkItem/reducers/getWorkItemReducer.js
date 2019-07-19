@@ -5,7 +5,7 @@ const defaultState = {
   loading: false,
 };
 
-const workItemReducer = (state = defaultState, action) => {
+const getWorkItemReducer = (state = defaultState, action) => {
   switch (action.type) {
     /* GET PHOTO ---------------------------------------------------------- */
 
@@ -38,4 +38,4 @@ const workItemReducer = (state = defaultState, action) => {
   }
 };
 
-export default workItemReducer;
+export default getWorkItemReducer;

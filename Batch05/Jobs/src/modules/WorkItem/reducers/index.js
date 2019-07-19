@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import workItemReducer from './workItemReducer';
+import getWorkItemReducer from './getWorkItemReducer';
 import addWorkItemReducer from './addWorkItemReducer';
 
-const workitemReducer = combineReducers({
-  workItemReducer,
+const workItemReducer = combineReducers({
+  getWorkItemReducer,
   addWorkItemReducer,
 });
 
-export default workitemReducer;
+export default workItemReducer;
