@@ -3,7 +3,14 @@ import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 import firebase from 'react-native-firebase';
 // Provider of Redux
 import { Provider } from 'react-redux';
+
+// REDUX
+import { sagaMiddleware } from './middlewares';
+import rootSagas from './sagas';
 import store from './store';
+
+sagaMiddleware.run(rootSagas);
+
 import AppNavigator from './screens/AppNavigator';
 import { setUser } from './modules/Auth/actions';
 

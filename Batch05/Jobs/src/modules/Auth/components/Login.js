@@ -24,7 +24,6 @@ class Login extends Component {
       .auth()
       .signInWithEmailAndPassword(email, password)
       .then((result) => {
-        // SET REDUX
         console.log(result);
         // this.props.navigation.navigate('Tab');
       })

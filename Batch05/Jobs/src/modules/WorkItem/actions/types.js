@@ -1,6 +1,6 @@
 // WORKITEM (ASYNC)
-export const WORKITEM_PENDING = 'WORKITEM_PENDING';
-export const WORKITEM_SUCCESS = 'WORKITEM_SUCCESS';
-export const WORKITEM_ERROR = 'WORKITEM_ERROR';
-export const WORKITEM = 'WORKITEM';
+export const GET_WORKITEMS_PENDING = 'GET_WORKITEMS_PENDING';
+export const GET_WORKITEMS_SUCCESS = 'GET_WORKITEMS_SUCCESS';
+export const GET_WORKITEMS_ERROR = 'GET_WORKITEMS_ERROR';
+export const GET_WORKITEMS = 'GET_WORKITEMS';
 // --------------------------------------------------
