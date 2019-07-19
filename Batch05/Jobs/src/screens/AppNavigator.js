@@ -1,20 +1,9 @@
 import React, { Component } from 'react';
-import { createSwitchNavigator, createAppContainer } from 'react-navigation';
-import StackNavigator from './StackNavigator';
-
+import { createAppContainer } from 'react-navigation';
 import NavigationService from '../NavigationService';
 import NotificationService from '../NotificationService';
 import firebase from 'react-native-firebase';
-
-const RouteConfigs = {
-  Stack: { screen: StackNavigator },
-};
-
-const SwitchNavigatorConfig = {
-  initialRouteName: 'Stack',
-};
-
-const SwitchNavigator = createSwitchNavigator(RouteConfigs, SwitchNavigatorConfig);
+import SwitchNavigator from './SwitchNavigator';
 const AppContainer = createAppContainer(SwitchNavigator);
 
 function getActiveRouteName(navigationState) {

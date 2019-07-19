@@ -3,14 +3,22 @@ import React from 'react';
 import { TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { createStackNavigator } from 'react-navigation';
-import HomeScreen from './HomeScreen';
+import LoginScreen from './LoginScreen';
+import RegisterScreen from './RegisterScreen';
 
 const RouteConfigs = {
   // RouteName:
-  HomeScreen: {
-    screen: HomeScreen, // Component
+  LoginScreen: {
+    screen: LoginScreen, // Component
     navigationOptions: () => ({
-      title: 'Trang chủ',
+      title: 'Đăng nhập',
+    }),
+  },
+
+  RegisterScreen: {
+    screen: RegisterScreen, // Component
+    navigationOptions: () => ({
+      title: 'Đăng ký',
     }),
   },
 };
@@ -19,26 +27,27 @@ const RouteConfigs = {
 const StackNavigatorConfig = {
   // Chỉ định màn hình đầu tiên xuất hiện, mặc định nếu khong có thì sẽ lấy cái thứ 1.
   initialRouteName: 'LoginScreen',
-  initialRouteParams: { message: 'Hello from Config' },
+  initialRouteParams: { message: 'Hello' },
   // Các option áp dụng chung cho tất cả các màn hình trong StackNavigation
   defaultNavigationOptions: ({ navigation }) => ({
     // header: null,
     headerStyle: {
-      backgroundColor: '#192a56',
+      // backgroundColor: '#192a56',
     },
     headerTitleStyle: {
       // color: 'white',
     },
-    headerTintColor: 'yellow',
-    headerBackTitleStyle: { color: 'white' },
-    headerTransparent: true,
-    headerBackgroundTransitionPreset: 'fade',
+    // headerTintColor: 'yellow',
+    // headerBackTitleStyle: { color: 'white' },
+    // headerTransparent: true,
+    // headerBackgroundTransitionPreset: 'fade',
     headerRight: (
       <TouchableOpacity
+        style={{ paddingHorizontal: 8 }}
         onPress={() => {
           navigation.navigate('HomeScreen');
         }}>
-        <Icon name='home' size={24} />
+        <Icon name='menu' size={24} />
       </TouchableOpacity>
     ),
   }),

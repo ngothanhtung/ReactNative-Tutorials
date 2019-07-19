@@ -7,7 +7,15 @@ const defaultState = {
 
 const loginReducer = (state = defaultState, action) => {
   switch (action.type) {
-    /* GET PHOTO ---------------------------------------------------------- */
+    // ================================================================================================================
+    case ActionTypes.AUTH_SET_USER: {
+      return {
+        ...state,
+        loading: false,
+        loggedInUser: action.user,
+        error: null,
+      };
+    }
 
     case ActionTypes.LOGIN_PENDING: {
       return {
@@ -19,7 +27,7 @@ const loginReducer = (state = defaultState, action) => {
     case ActionTypes.LOGIN_SUCCESS: {
       return {
         ...state,
-        user: action.user,
+        loggedInUser: action.user,
         loading: false,
       };
     }
@@ -27,7 +35,7 @@ const loginReducer = (state = defaultState, action) => {
     case ActionTypes.LOGIN_ERROR: {
       return {
         ...state,
-        user: null,
+        loggedInUser: null,
         loading: false,
         error: action.error,
       };

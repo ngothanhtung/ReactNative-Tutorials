@@ -1,3 +1,5 @@
+export const AUTH_SET_USER = 'AUTH_SET_USER';
+
 // LOGIN (ASYNC)
 export const LOGIN_PENDING = 'LOGIN_PENDING';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
