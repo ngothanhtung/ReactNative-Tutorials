@@ -21,7 +21,9 @@ import FlatListExamples from './Session05/ListView/FlatListExamples';
 import SectionListExamples from './Session05/ListView/SectionListExamples';
 import GalleryHomework from './Session05/Practices/GalleryHomework';
 import Login from './Session05/Practices/Login';
+
+import AppNavigator from './Session06/AppNavigator';
 import { name as appName } from './app.json';
 
 // AppRegistry.registerComponent(appName, () => App);
-AppRegistry.registerComponent(appName, () => StyleSheetSample);
+AppRegistry.registerComponent(appName, () => AppNavigator);

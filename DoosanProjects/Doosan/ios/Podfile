@@ -30,5 +30,7 @@ target 'Doosan' do
   pod 'Folly', :podspec => '../node_modules/react-native/third-party-podspecs/Folly.podspec'
 
   use_native_modules!
+  # pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
+
 end
 
