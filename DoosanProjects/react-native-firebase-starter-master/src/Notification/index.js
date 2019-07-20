@@ -20,6 +20,8 @@ export default class NotificationScreen extends React.Component {
         if (fcmToken) {
           // user has a device token
           console.log('Token: ', fcmToken);
+          // add to topic
+          firebase.messaging().subscribeToTopic('IT');
         } else {
           // user doesn't have a device token yet
         }
