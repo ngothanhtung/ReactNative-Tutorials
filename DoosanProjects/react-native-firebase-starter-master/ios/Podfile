@@ -23,6 +23,8 @@ target 'Tutorials' do
   pod 'Fabric', '~> 1.10.2'
   pod 'Crashlytics', '~> 3.13.2'
 
+  pod 'react-native-document-picker', :path => '../node_modules/react-native-document-picker'
+
 end
 
 target 'Tutorials-tvOS' do
