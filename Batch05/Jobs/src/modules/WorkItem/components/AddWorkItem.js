@@ -29,11 +29,11 @@ class AddWorkItem extends Component {
           <View style={{ flex: 2 }}>
             <TextInput
               theme={{ colors: { background: 'white' } }}
-              ref={(c) => (this.emailInput = c)}
-              value={this.state.email}
+              ref={(c) => (this.titleInput = c)}
+              value={this.state.title}
               mode='outlined'
               label='Title:'
-              // placeholder={'Enter yout email'}
+              placeholder={'Enter the title'}
               autoFocus={true}
               autoCapitalize='none'
               autoCorrect={false}
@@ -46,12 +46,12 @@ class AddWorkItem extends Component {
             <View style={{ height: 12 }} />
             <TextInput
               theme={{ colors: { background: 'white' } }}
-              ref={(c) => (this.emailInput = c)}
-              value={this.state.email}
+              ref={(c) => (this.descriptionInput = c)}
+              value={this.state.description}
               mode='outlined'
               label='Description:'
-              // placeholder={'Enter yout email'}
-              autoFocus={true}
+              placeholder={'Enter the description'}
+              autoFocus={false}
               autoCapitalize='none'
               autoCorrect={false}
               keyboardType={'default'}
@@ -63,12 +63,12 @@ class AddWorkItem extends Component {
             <View style={{ height: 12 }} />
             <TextInput
               theme={{ colors: { background: 'white' } }}
-              ref={(c) => (this.emailInput = c)}
-              value={this.state.email}
+              ref={(c) => (this.addressInput = c)}
+              value={this.state.address}
               mode='outlined'
               label='Address:'
-              // placeholder={'Enter yout email'}
-              autoFocus={true}
+              placeholder={'Enter the address'}
+              autoFocus={false}
               autoCapitalize='none'
               autoCorrect={false}
               keyboardType={'default'}

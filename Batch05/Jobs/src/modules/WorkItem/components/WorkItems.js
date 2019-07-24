@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, FlatList, RefreshControl } from 'react-native';
+import { Text, View, FlatList, RefreshControl, StyleSheet } from 'react-native';
 import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
 import { FAB, Portal } from 'react-native-paper';
 import { withNavigation } from 'react-navigation';
@@ -7,10 +7,20 @@ import { withNavigation } from 'react-navigation';
 import { connect } from 'react-redux';
 import * as ActionTypes from '../actions/types';
 
+const styles = StyleSheet.create({
+  fab: {
+    backgroundColor: 'orange',
+    position: 'absolute',
+    margin: 16,
+    right: 0,
+    bottom: 0,
+  },
+});
+
 class WorkItems extends Component {
   render() {
     return (
-      <View style={{ flex: 1 }}>
+      <React.Fragment>
         <FlatList
           refreshControl={
             <RefreshControl
@@ -41,14 +51,14 @@ class WorkItems extends Component {
           }}
         />
         <FAB
-          style={{}}
+          style={styles.fab}
           small
           icon='add'
           onPress={() => {
             this.props.navigation.navigate('AddWorkItemScreen');
           }}
         />
-      </View>
+      </React.Fragment>
     );
   }
 
