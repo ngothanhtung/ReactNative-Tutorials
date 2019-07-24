@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
+import { DefaultTheme, Provider as PaperProvider, Portal } from 'react-native-paper';
 import firebase from 'react-native-firebase';
 // Provider of Redux
 import { Provider } from 'react-redux';
 
 // REDUX
 import { sagaMiddleware } from './middlewares';
-import rootSagas from './sagas';
+import rootSagas from './rootSagas';
 import store from './store';
 
 sagaMiddleware.run(rootSagas);
@@ -33,11 +33,13 @@ const theme = {
 export default class App extends Component {
   render() {
     return (
-      <Provider store={store}>
-        <PaperProvider theme={theme}>
-          <AppNavigator />
-        </PaperProvider>
-      </Provider>
+      <React.Fragment>
+        <Provider store={store}>
+          <PaperProvider theme={theme}>
+            <AppNavigator />
+          </PaperProvider>
+        </Provider>
+      </React.Fragment>
     );
   }
 

@@ -9,14 +9,14 @@ const addWorkItemReducer = (state = defaultState, action) => {
   switch (action.type) {
     /* GET PHOTO ---------------------------------------------------------- */
 
-    case ActionTypes.WORKITEM_PENDING: {
+    case ActionTypes.ADD_WORKITEM_PENDING: {
       return {
         ...state,
         loading: true,
       };
     }
 
-    case ActionTypes.WORKITEM_SUCCESS: {
+    case ActionTypes.ADD_WORKITEM_SUCCESS: {
       return {
         ...state,
         workitem: action.workitem,
@@ -24,7 +24,7 @@ const addWorkItemReducer = (state = defaultState, action) => {
       };
     }
 
-    case ActionTypes.WORKITEM_ERROR: {
+    case ActionTypes.ADD_WORKITEM_ERROR: {
       return {
         ...state,
         workitem: null,

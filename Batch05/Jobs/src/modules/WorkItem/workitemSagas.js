@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Alert } from 'react-native';
 // FIREBASE
 import firebase from 'react-native-firebase';
+import NavigationService from '../../NavigationService';
 
 const db = firebase.firestore();
 // ====================================================================================================================
@@ -23,9 +24,21 @@ function* getWorkItemsAsync(action) {
     console.log('Error getting documents', err);
   }
 }
+// ====================================================================================================================
+// add a workitem & save to filestore
+function* addWorkItemAsync(action) {
+  try {
+    yield put({ type: ActionTypes.ADD_WORKITEM_PENDING });
+    yield db.collection('WorkItems').add(action.workitem);
 
+    yield put({ type: ActionTypes.ADD_WORKITEM_SUCCESS, workitem: action.workitem });
+    NavigationService.navigate('WorkItemsScreen');
+  } catch (error) {
+    yield put({ type: ActionTypes.ADD_WORKITEM_ERROR, error });
+  }
+}
 // ====================================================================================================================
 export default function* sagas() {
   yield takeLatest(ActionTypes.GET_WORKITEMS, getWorkItemsAsync);
-  // yield takeLatest(ActionTypes.WORKITEM, addWorkItemAsync);
+  yield takeLatest(ActionTypes.ADD_WORKITEM, addWorkItemAsync);
 }

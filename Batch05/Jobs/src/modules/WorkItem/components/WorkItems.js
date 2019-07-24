@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
-import { Text, View, FlatList } from 'react-native';
+import { Text, View, FlatList, RefreshControl } from 'react-native';
 import { Avatar, Button, Card, Title, Paragraph } from 'react-native-paper';
-
+import { FAB, Portal } from 'react-native-paper';
+import { withNavigation } from 'react-navigation';
 //REDUX
 import { connect } from 'react-redux';
 import * as ActionTypes from '../actions/types';
@@ -11,6 +12,14 @@ class WorkItems extends Component {
     return (
       <View style={{ flex: 1 }}>
         <FlatList
+          refreshControl={
+            <RefreshControl
+              refreshing={this.props.loading}
+              onRefresh={() => {
+                this.props.getWorkItems();
+              }}
+            />
+          }
           data={this.props.workitems}
           keyExtractor={(item, index) => 'workitem-' + index}
           ItemSeparatorComponent={() => <View style={{ height: 32 }} />}
@@ -29,6 +38,14 @@ class WorkItems extends Component {
                 </Card.Actions>
               </Card>
             );
+          }}
+        />
+        <FAB
+          style={{}}
+          small
+          icon='add'
+          onPress={() => {
+            this.props.navigation.navigate('AddWorkItemScreen');
           }}
         />
       </View>
@@ -53,4 +70,4 @@ const mapDispatchToProps = (dispatch) => ({
 export default connect(
   mapStateToProps,
   mapDispatchToProps,
-)(WorkItems);
+)(withNavigation(WorkItems));

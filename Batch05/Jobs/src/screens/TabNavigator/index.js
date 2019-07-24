@@ -12,8 +12,20 @@ import NewsStackNavigator from './NewsStackNavigator';
 import colors from '../../constants/colors';
 import sizes from '../../constants/sizes';
 
+import WorkItemNavigator from './WorkItemNavigator';
+
 // Screens
 const RouteConfigs = {
+  // RouteName:
+  WorkItemTab: {
+    screen: WorkItemNavigator, // Component
+    navigationOptions: ({ navigation }) => ({
+      title: 'Workitems',
+      tabBarIcon: ({ focused, horizontal, tintColor }) => {
+        return <Icon color={tintColor} name='home' size={sizes.ICON} />;
+      },
+    }),
+  },
   // RouteName:
   Tab1Screen: {
     screen: Tab1Screen, // Component

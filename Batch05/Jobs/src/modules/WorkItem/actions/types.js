@@ -4,3 +4,7 @@ export const GET_WORKITEMS_SUCCESS = 'GET_WORKITEMS_SUCCESS';
 export const GET_WORKITEMS_ERROR = 'GET_WORKITEMS_ERROR';
 export const GET_WORKITEMS = 'GET_WORKITEMS';
 // --------------------------------------------------
+export const ADD_WORKITEM_PENDING = 'ADD_WORKITEM_PENDING';
+export const ADD_WORKITEM_SUCCESS = 'ADD_WORKITEM_SUCCESS';
+export const ADD_WORKITEM_ERROR = 'ADD_WORKITEM_ERROR';
+export const ADD_WORKITEM = 'ADD_WORKITEM';
