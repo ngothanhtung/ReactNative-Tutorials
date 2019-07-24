@@ -24,7 +24,7 @@ function* getAlbumsAsync(action) {
 		yield put({ type: ActionTypes.GALLERY_GET_ALBUMS_ERROR, error: error });
 	}
 }
-// root saga
+
 function* sagas() {
 	yield takeEvery(ActionTypes.GALLERY_GET_PHOTOS, getPhotosAsync);
 	// yield takeLatest(ActionTypes.GALLERY_GET_PHOTOS, getPhotosAsync);
