@@ -6,6 +6,7 @@ import store from './ReduxApp/store';
 
 import Counter from './ReduxApp/components/Counter';
 import ATM from './ReduxApp/components/ATM';
+import Photos from './ReduxApp/components/Photos';
 
 export default class App extends Component {
 	render() {
@@ -14,6 +15,7 @@ export default class App extends Component {
 				<View style={{ flex: 1 }}>
 					<Counter />
 					<ATM />
+					<Photos />
 				</View>
 			</Provider>
 		);

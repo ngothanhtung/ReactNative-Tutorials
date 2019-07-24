@@ -36,3 +36,19 @@ export const deposite = (money) => {
 		money: money,
 	};
 };
+
+// get photos (Async)
+export const getPhotosAsync = () => {
+	return (dispatch) => {
+		dispatch({ type: ActionTypes.GALLERY_GET_PHOTOS_PENDING });
+
+		fetch('https://jsonplaceholder.typicode.com/photos')
+			.then((response) => response.json())
+			.then((json) => {
+				dispatch({ type: ActionTypes.GALLERY_GET_PHOTOS_SUCCESS, photos: json });
+			})
+			.catch((error) => {
+				dispatch({ type: ActionTypes.GALLERY_GET_PHOTOS_ERROR, error: error });
+			});
+	};
+};
