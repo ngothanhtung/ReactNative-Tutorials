@@ -253,6 +253,7 @@ Continue: README of this project
 
 1. react-native-paper
 2. react-native-elements
+3. native base
 
 # Session 10: REDUX & SAGA
 
@@ -283,12 +284,15 @@ Continue: README of this project
 
 - Install: npm install --save redux-thunk
 - Actions: PENDING, SUCCESS, ERROR
-- Async Action (axios)
+- Async Action (axios / fetch)
 - Config middleware (store.js)
 
 8. redux-saga
 
 - Install: npm install --save redux-saga / yarn add redux-saga
+- sagas
+- rootSagas
+-
 
 # Session 11: Backend with Google Cloud Function
 
@@ -311,9 +315,7 @@ Continue: README of this project
 6. Deploy: firebase deploy
 7. Test API
 
-# Session 12: Practice
-
-# Session 13: EXPRESSJS & MONGODB (BONUS)
+# Session 12: EXPRESSJS & MONGODB (BONUS)
 
 1. Expressjs: https://expressjs.com/en/starter/generator.html
 2. Basic Routing: https://expressjs.com/en/starter/basic-routing.html
@@ -324,7 +326,7 @@ Continue: README of this project
 7. Nodejs Mongodb Driver: http://mongodb.github.io/node-mongodb-native/3.1/
 8. Databases with Express: https://expressjs.com/en/guide/database-integration.html
 
-# Session 14: Release
+# Session 13: Release
 
 1. Android icon: https://romannurik.github.io/AndroidAssetStudio/index.html
 2. iOs icon: https://appicon.co/
