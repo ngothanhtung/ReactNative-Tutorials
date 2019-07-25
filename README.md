@@ -357,6 +357,11 @@ Continue: README of this project
 - redux-saga
 
 5. UI: react-native-elements / react-native-paper / nativebase
+
+- npm install react-native-elements --save
+6. axios
+
+
 6. Open File / Camera / Maps / ...
 
 # A. Some useful websites

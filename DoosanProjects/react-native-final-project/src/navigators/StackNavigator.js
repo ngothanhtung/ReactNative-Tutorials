@@ -29,7 +29,7 @@ const RouteConfigs = {
 };
 
 const StackNavigatorConfig = {
-	initialRouteName: 'AlbumsScreen',
+	initialRouteName: 'LoginScreen',
 	initialRouteParams: { message: 'Hello' },
 	defaultNavigationOptions: {},
 	mode: 'modal',
