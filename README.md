@@ -335,7 +335,29 @@ Continue: README of this project
 
 # Project:
 
-1. rnfirebase.io
+1. react-native-firebase
+
+- rnfirebase.io
+
+2. react-navigation
+
+- npm install --save react-navigation
+- npm install --save react-native-gesture-handler
+- react-native link react-native-gesture-handler
+
+3. react-native-vector-icons
+
+- npm install --save react-native-vector-icons
+- react-native link react-native-vector-icons
+
+4. redux-saga
+
+- redux
+- react-redux
+- redux-saga
+
+5. UI: react-native-elements / react-native-paper / nativebase
+6. Open File / Camera / Maps / ...
 
 # A. Some useful websites
 

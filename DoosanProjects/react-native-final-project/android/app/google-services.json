@@ -1,0 +1,91 @@
+{
+  "project_info": {
+    "project_number": "530882735933",
+    "firebase_url": "https://doosan-tutorials.firebaseio.com",
+    "project_id": "doosan-tutorials",
+    "storage_bucket": "doosan-tutorials.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:530882735933:android:b66c73a46af1208d",
+        "android_client_info": {
+          "package_name": "com.doosan.finalproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "530882735933-5bmubovnqv67g0u3g7sp9jaa9j86bfqk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxv4-S46d-d-yXYWDaupr2N3slAgUE9sE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "530882735933-5bmubovnqv67g0u3g7sp9jaa9j86bfqk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "530882735933-0trc2es3gmp36mmd8iroicnvg2rv8517.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.doosan.tutorials"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:530882735933:android:c03aa69f8a9d966e",
+        "android_client_info": {
+          "package_name": "com.doosan.tutorials"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "530882735933-ig11ltcaiqv1l8fcn5q7m9jqp69a7hg4.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.doosan.tutorials",
+            "certificate_hash": "7132b5233c8c1a588c4a2ba19a5c71602589e6ba"
+          }
+        },
+        {
+          "client_id": "530882735933-5bmubovnqv67g0u3g7sp9jaa9j86bfqk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxv4-S46d-d-yXYWDaupr2N3slAgUE9sE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "530882735933-5bmubovnqv67g0u3g7sp9jaa9j86bfqk.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "530882735933-0trc2es3gmp36mmd8iroicnvg2rv8517.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.doosan.tutorials"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
