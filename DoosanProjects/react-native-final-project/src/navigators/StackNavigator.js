@@ -2,8 +2,17 @@ import { createStackNavigator } from 'react-navigation';
 import LoginScreen from './screens/StacKScreens/LoginScreen';
 import RegisterScreen from './screens/StacKScreens/RegisterScreen';
 import AlbumsScreen from './screens/StacKScreens/AlbumsScreen';
+import UploadFileScreen from './screens/StacKScreens/UploadFileScreen';
 
 const RouteConfigs = {
+	UploadFileScreen: {
+		screen: UploadFileScreen,
+		navigationOptions: ({ navigation }) => ({
+			title: 'UPLOAD',
+			header: null,
+		}),
+	},
+
 	AlbumsScreen: {
 		screen: AlbumsScreen,
 		navigationOptions: ({ navigation }) => ({
@@ -29,7 +38,7 @@ const RouteConfigs = {
 };
 
 const StackNavigatorConfig = {
-	initialRouteName: 'LoginScreen',
+	initialRouteName: 'UploadFileScreen',
 	initialRouteParams: { message: 'Hello' },
 	defaultNavigationOptions: {},
 	mode: 'modal',

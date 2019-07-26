@@ -361,8 +361,10 @@ Continue: README of this project
 - npm install react-native-elements --save
 6. axios
 
-
-6. Open File / Camera / Maps / ...
+7. Open File:
+- https://github.com/Elyx0/react-native-document-picker
+8. Open Camera / Photos gallery
+- https://github.com/ivpusic/react-native-image-crop-picker
 
 # A. Some useful websites
 
