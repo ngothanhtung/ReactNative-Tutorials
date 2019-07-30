@@ -27,6 +27,9 @@ target 'jobs' do
 
   # pod 'RNGestureHandler', :path => '../node_modules/react-native-gesture-handler'
 
+
+  pod 'RNImageCropPicker', :path => '../node_modules/react-native-image-crop-picker'
+
 end
 
 target 'jobs-tvOS' do

@@ -56,7 +56,8 @@ class WorkItems extends Component {
           icon='add'
           onPress={() => {
             // this.props.navigation.navigate('AddWorkItemScreen');
-            this.props.navigation.navigate('AddWorkItemFormScreen');
+            // this.props.navigation.navigate('AddWorkItemFormScreen');
+            this.props.navigation.navigate('UploadPictureScreen');
           }}
         />
       </React.Fragment>

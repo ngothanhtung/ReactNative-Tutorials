@@ -3,6 +3,7 @@ import { createStackNavigator } from 'react-navigation';
 import AddWorkItemScreen from './AddWorkItemScreen';
 import WorkItemsScreen from './WorkItemsScreen';
 import AddWorkItemFormScreen from './AddWorkItemFormScreen';
+import UploadPictureScreen from './UploadPictureScreen';
 
 // createStackNavigator(RouteConfigs, StackNavigatorConfig);
 // Screens
@@ -28,6 +29,8 @@ const RouteConfigs = {
       title: 'Add work item (FORM)',
     }),
   },
+
+  UploadPictureScreen: { screen: UploadPictureScreen },
 };
 
 // Settings
