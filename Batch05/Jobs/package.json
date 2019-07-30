@@ -22,7 +22,7 @@
     "react-navigation": "^3.11.1",
     "react-redux": "^7.1.0",
     "redux": "^4.0.4",
-    "redux-form": "^8.2.4",
+    "redux-form": "^8.2.5",
     "redux-saga": "^1.0.5"
   },
   "devDependencies": {
