@@ -1,4 +1,4 @@
-package com.helloreactnative;
+package com.softech.hireactnative;
 
 import android.app.Application;
 

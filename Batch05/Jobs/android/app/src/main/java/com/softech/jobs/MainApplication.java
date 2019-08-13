@@ -3,7 +3,7 @@ package com.softech.jobs;
 import android.support.multidex.MultiDexApplication;
 
 import com.facebook.react.ReactApplication;
-import com.reactnative.ivpusic.imagepicker.PickerPackage;
+import io.github.elyx0.reactnativedocumentpicker.DocumentPickerPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.facebook.react.ReactNativeHost;
@@ -43,7 +43,7 @@ public class MainApplication extends MultiDexApplication implements ReactApplica
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
         new MainReactPackage(),
-            new PickerPackage(),
+            new DocumentPickerPackage(),
             new RNGestureHandlerPackage(),
             new VectorIconsPackage(),
         new RNFirebasePackage(),

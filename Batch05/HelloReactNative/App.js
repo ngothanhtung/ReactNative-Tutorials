@@ -4,8 +4,8 @@ import { SafeAreaView, View, Text, TouchableOpacity } from 'react-native';
 // import Post from './components/Post';
 // import Button from './components/Button';
 // import LoginScreen from './Login/LoginScreen';
-import TextBox from './Session03/TypeChecking/TextBox';
-import Button from './Session03/TypeChecking/Button';
+// import TextBox from './Session03/TypeChecking/TextBox';
+// import Button from './Session03/TypeChecking/Button';
 // import StateExample from './Session03/StateExample';
 // import ConditionalRender from './Session03/ConditionalRender';
 // import GenderComponent from './Session03/GenderComponent';
@@ -14,24 +14,27 @@ import Button from './Session03/TypeChecking/Button';
 // import Instagram from './Session04/Instagram';
 // import Instagram2 from './Session04/Instagram2';
 // SESSION 05
-//
-import BasicNetworking from './Session05/Networking/BasicNetworking';
-import Networking from './Session05/Networking/Networking';
-import NetworkingMoreExamples from './Session05/Networking/NetworkingMoreExamples';
-import BasicScrollView from './Session05/ListView/BasicScrollView';
-import ScrollViewExamples from './Session05/ListView/ScrollViewExamples';
-import FlatListExamples from './Session05/ListView/FlatListExamples';
-import SectionListExamples from './Session05/ListView/SectionListExamples';
-// PRACTICE
-import GalleryHomework from './Session05/Practices/GalleryHomework';
-import GetUsers from './Session05/Practices/GetUsers';
-import Login from './Session05/Practices/Login';
-import LoginV2 from './Session05/Practices/LoginV2';
-// SESSION 06
-// import StackNavigator from './Session06/StackNavigator';
-import TabNavigator from './Session06/screens/TabNavigator';
-import DrawerNavigator from './Session06/screens/DrawerNavigator';
-import SwitchNavigator from './Session06/screens/SwitchNavigator';
+// //
+// import BasicNetworking from './Session05/Networking/BasicNetworking';
+// import Networking from './Session05/Networking/Networking';
+// import NetworkingMoreExamples from './Session05/Networking/NetworkingMoreExamples';
+// import BasicScrollView from './Session05/ListView/BasicScrollView';
+// import ScrollViewExamples from './Session05/ListView/ScrollViewExamples';
+// import FlatListExamples from './Session05/ListView/FlatListExamples';
+// import SectionListExamples from './Session05/ListView/SectionListExamples';
+// // PRACTICE
+// import GalleryHomework from './Session05/Practices/GalleryHomework';
+// import GetUsers from './Session05/Practices/GetUsers';
+// import Login from './Session05/Practices/Login';
+// import LoginV2 from './Session05/Practices/LoginV2';
+// // SESSION 06
+// // import StackNavigator from './Session06/StackNavigator';
+// import TabNavigator from './Session06/screens/TabNavigator';
+// import DrawerNavigator from './Session06/screens/DrawerNavigator';
+// import SwitchNavigator from './Session06/screens/SwitchNavigator';
+// SESSION 08
+
+import Session08 from './session08/index';
 
 export default class App extends Component {
 	constructor(props) {
@@ -79,7 +82,8 @@ export default class App extends Component {
 				{/* <StackNavigator /> */}
 				{/* <TabNavigator /> */}
 				{/* <DrawerNavigator /> */}
-				<SwitchNavigator />
+				{/* <SwitchNavigator /> */}
+				<Session08 />
 			</View>
 		);
 	}
