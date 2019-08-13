@@ -18,6 +18,10 @@
     "react-native-document-picker": "^3.2.4",
     "react-native-firebase": "^5.5.4",
     "react-native-gesture-handler": "^1.3.0",
+<<<<<<< HEAD
+=======
+    "react-native-image-crop-picker": "^0.25.0",
+>>>>>>> 826edfcb4976142b843b67b5b977151b6f9f9a8c
     "react-native-paper": "^2.16.0",
     "react-native-vector-icons": "^6.6.0",
     "react-navigation": "^3.11.1",
