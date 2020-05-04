@@ -1,6 +1,6 @@
-# Get Started (Setup environment)
+# A. Get Started (Setup environment)
 
-1. Nodejs: https://nodejs.org/en/
+1. Nodejs: https://nodejs.org/en/ (Cài bản LTS)
 2. Yarn (https://yarnpkg.com/lang/en/docs/install/#windows-stable)
 3. Java SDK 8: https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 4. Visual Studio Code: https://code.visualstudio.com/Download
@@ -11,36 +11,22 @@
 9. Add platform-tools to Path (c:\Users\YOUR_USERNAME\AppData\Local\Android\Sdk\platform-tools)
 10. Setup JAVA_HOME (https://confluence.atlassian.com/doc/setting-the-java_home-variable-in-windows-8895.html)
 
-# Visual Studio Code Extensions:
+# B. Setup Visual Studio Code Extensions:
 
-1. Auto Rename Tag: (Downloads: 1.1M)
-2. Bracket Pair Colorizer 2 (Donwloads: 66K)
-3. ES7 React/Redux/GraphQL/React-Native snippets (Downloads: 1.1M)
-4. React Native Tools (Downloads: 2.9M)
-5. Material Icon Theme (Downloads: 5M)
-6. One Dark Pro (Downloads: 7.8M)
-7. Debugger for Chrome (Downloads: 15.4M)
-8. Prettier (Downloads: 7.8M)
+1. Auto Rename Tag: (Downloads: 2.7M)
+2. Bracket Pair Colorizer 2 (Donwloads: 842K)
+3. ES7 React/Redux/GraphQL/React-Native snippets (Downloads: 1.3M)
+4. Visual Studio IntelliCode (5.1M)
+5. ESLint (8.9M)
+6. React Native Tools (Downloads: 1.2M)
+7. Prettier - Code Formatter (Downloads: 6.3M)
+8. Debugger for Chrome (Downloads: 15.4M)
+9. Material Icon Theme (Downloads: 5M)
+10. One Dark Pro (Downloads: 7.8M)
 
-# Stocks:
+# C. Prequisite
 
-1. All stocks: http://thestocks.im
-2. Font Icons: https://oblador.github.io/react-native-vector-icons
-3. Image Icons: https://www.flaticon.com
-4. Color: https://flatuicolors.com
-5. Face / Avatar: http://pravatar.cc
-6. Animatable (Animation): https://github.com/oblador/react-native-animatable
-
-# Videos:
-
-1. Videos: https://www.youtube.com/watch?v=kNHuLOXR5T0&list=PLWBrqglnjNl31S91FFE63DtuRc9v9LSGl
-2. Style Cheat Sheet
-   https://github.com/vhpoet/react-native-styling-cheat-sheet
-3. FlexBox: https://www.youtube.com/watch?v=Y8zMYaD1bz0&list=PL4cUxeGkcC9i3FXJSUfmsNOx8E7u6UuhG
-
-# Prequisite
-
-## Main Concepts:
+## C.1. Main Concepts:
 
 1. Hello World
 2. Introduction JSX
@@ -83,18 +69,34 @@
 6. Create new react native project: react-native init HelloWorldApp
 7. Component Examples: https://facebook.github.io/react-native/docs/tutorial
 
-# Session 02: Props
+# Session 02: Props & State
 
-1. Props: https://facebook.github.io/react-native/docs/props
-2. Type-Checking: https://reactjs.org/docs/typechecking-with-proptypes.html
-3. Install Package: https://www.npmjs.com/package/prop-types
+1. Props:
 
-# Session 03: State
+   > https://reactjs.org/docs/components-and-props.html
+
+   > https://reactnative.dev/docs/props
+
+2. Type-Checking:
+
+   > Ref: https://reactjs.org/docs/typechecking-with-proptypes.html
+
+   > Install Package: https://www.npmjs.com/package/prop-types
+
+3. State: https://facebook.github.io/react-native/docs/state
+4. Handle Event within state:
+
+   > https://reactnative.dev/docs/handling-text-input
+
+   > https://reactnative.dev/docs/textinput
+
+5. Handling Touches: https://reactnative.dev/docs/handling-touches
+
+# Session 03: React Component & Lifecycle
 
 1. https://reactjs.org/docs/state-and-lifecycle.html
-2. State: https://facebook.github.io/react-native/docs/state
-3. Handle Event within state: https://facebook.github.io/react-native/docs/handling-text-input
-4. TextInput ref: https://facebook.github.io/react-native/docs/textinput
+2. Theory: https://reactjs.org/docs/react-component.html
+3. Diagram: http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 
 # Session 04: Styles & Layout
 
@@ -102,27 +104,40 @@
 2. Height and Width: https://facebook.github.io/react-native/docs/height-and-width
    https://facebook.github.io/react-native/docs/dimensions
 3. Layout with Flexbox: https://facebook.github.io/react-native/docs/flexbox
-4. Package: React-Native-Vector-Icons: https://github.com/oblador/react-native-vector-icons
-5. Browse Icons: https://oblador.github.io/react-native-vector-icons/
-6. Face Stock: http://pravatar.cc/
-7. Stock: http://thestocks.im/
-8. https://github.com/vhpoet/react-native-styling-cheat-sheet
-9. https://github.com/react-native-community/react-native-linear-gradient
+4. Image: https://reactnative.dev/docs/image
+5. ImageBackground: https://reactnative.dev/docs/imagebackground
+6. StatusBar: https://reactnative.dev/docs/statusbar
+7. Packages:
 
-# Session 05: Handling Events & ListView & Networking
+   > react-native-vector-icons: https://github.com/oblador/react-native-vector-icons
 
-1. Handling Text Input: https://facebook.github.io/react-native/docs/handling-text-input
-2. Handling Touches: https://facebook.github.io/react-native/docs/handling-touches
-3. ScrollView: https://facebook.github.io/react-native/docs/using-a-scrollview
-4. ListView: https://facebook.github.io/react-native/docs/using-a-listview
-5. FlatList: https://facebook.github.io/react-native/docs/flatlist
-6. SectionList: https://facebook.github.io/react-native/docs/sectionlist
-7. Networking: https://facebook.github.io/react-native/docs/network
-8. Fetch API: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
-9. Axios Package: https://github.com/axios/axios
-10. JSON samples: https://jsonplaceholder.typicode.com/
-11. Download POSTMAN Tool: https://www.getpostman.com/postman
-12. UI + API Practices:
+   > https://github.com/react-native-community/react-native-linear-gradient
+
+   > react-native-svg
+
+   > Browse Icons: https://oblador.github.io/react-native-vector-icons/
+
+   > Face Stock: http://pravatar.cc/
+
+   > Stock: http://thestocks.im/
+
+   > https://github.com/vhpoet/react-native-styling-cheat-sheet
+
+# Session 05: ListView
+
+2. ScrollView: https://reactnative.dev/docs/using-a-scrollview
+3. ListView: https://reactnative.dev/docs/using-a-listview
+4. FlatList: https://reactnative.dev/docs/flatlist
+5. SectionList: https://facebook.github.io/react-native/docs/sectionlist
+
+# Session 06: Networking
+
+1. Networking: https://facebook.github.io/react-native/docs/network
+2. Fetch API: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
+3. Axios Package: https://github.com/axios/axios
+4. JSON samples: https://jsonplaceholder.typicode.com/
+5. Download POSTMAN Tool: https://www.getpostman.com/postman
+6. API Practices:
 
 ```
 - https://softech.dev/api/training/users
@@ -139,40 +154,44 @@
 - Notes: POSTMAN: Method: POST, Body: Raw => JSON
 ```
 
-13. UI Practices:
-    13.1. https://github.com/react-native-community/react-native-linear-gradient
-    13.2. https://akveo.github.io/react-native-ui-kitten/#/home
+# Session 06: React Hooks
 
-# Session 06: React Navigation
+1. Basic Hooks
+
+- useState
+- useEffect
+
+2. Additional Hooks
+
+- useCallback
+- useMemo
+- useRef
+
+3. Advanced Hooks
+
+- useContext
+- useReducer
+
+# Session 07: React Navigation (Version 5.x)
 
 1.  Docs: https://reactnavigation.org
 2.  Setup (Please carefully): https://reactnavigation.org/docs/en/getting-started.html
 3.  StackNavigation
 4.  TabNavigation
 5.  DrawerNavigation
-6.  SwitchNavigation
 
-```
-export default class App extends React.Component {
-  render() {
-    return <AppContainer />;
-  }
-}
+# Session 08: UI / UX:
 
-const AuthenticationNavigator = createStackNavigator({
-  SignIn: SignInScreen,
-  ForgotPassword: ForgotPasswordScreen
-});
+1. React Native Papers
+2. React Native Elements
 
-const AppNavigator = createSwitchNavigator({
-  Auth: AuthenticationNavigator,
-  Home: HomeScreen
-});
+# Session 09: Working with Form & Entry Data Validation
 
-const AppContainer = createAppContainer(AppNavigator);
-```
+1. Working with form: Formik
+2. Working with entry data validation: Yup
+3. KeyboardAvoidingView: https://reactnative.dev/docs/keyboardavoidingview
 
-# Session 07: Firebase
+# Session 10: Firebase
 
 1. https://firebase.google.com/
 2. Register a Google account
@@ -217,34 +236,6 @@ Continue: README of this project
 1. Dashboard -> Database -> Realtime
 2. Rules: Set: read: true, write: true
 
-## Notification
-
-1. Token:
-2. Send:
-
-- Project Settings -> Cloud Message
-- POSTMAN: POST: https://fcm.googleapis.com/fcm/send
-- HEADER (2 fields): Content-Type: application/json, Authorization: key:[Server Key]
-- Body: https://firebase.google.com/docs/cloud-messaging/http-server-ref?authuser=0
-  ```
-  {
-    "to": "dMIRpQFyq3M:APA91bHZyAnwiyJjGvhAqGSjbrrSxVcQvYJXZSTesnL_yYEeAvy4deRUbeaQxwQH_dPttfuDTPr0EPbYpH_L6uHjcFwDHT0fE79aSWmoLSlDDB0s0KToBMtZqKiO2FlscLjaLGrGUkZJ",
-    "notification": {
-      "body": "Chi tiet lich nghi HE 2019",
-      "title": "THONG BAO NGHI HE",
-      "content_available": false,
-      "priority": "high",
-      "sound": "default",
-      "tag": "thongbao",
-      "color": "#ff0099",
-      "icon": "default"
-    },
-    "data": {
-      "bonus": "BAI TAP VE NHA"
-    }
-  }
-  ```
-
 ## Authentication
 
 1. Dashboard -> Authencation -> Sign-in Method -> Enable: Email / Password, Phone
@@ -278,18 +269,6 @@ Continue: README of this project
 
 - Send a notification (Admin SDK - Cloud Function): https://firebase.google.com/docs/cloud-messaging/admin/send-messages
 - Manage Topic: https://firebase.google.com/docs/cloud-messaging/admin/manage-topic-subscriptions
-
-# Session 08: React Component & Lifecycle
-
-1. Theory: https://reactjs.org/docs/react-component.html
-2. Diagram: http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
-3. Examples:
-
-# Session 09: UI / UX
-
-1. react-native-paper
-2. react-native-elements
-3. native base
 
 # Session 10: REDUX & SAGA
 
@@ -351,7 +330,7 @@ Continue: README of this project
 6. Deploy: firebase deploy
 7. Test API
 
-# Session 12: EXPRESSJS & MONGODB (BONUS)
+# Session 12: EXPRESSJS & MONGODB (BONUS & OPTIONAL)
 
 1. Expressjs: https://expressjs.com/en/starter/generator.html
 2. Basic Routing: https://expressjs.com/en/starter/basic-routing.html
@@ -432,3 +411,23 @@ Continue: README of this project
 # C. Firebase
 
 1. https://firebase.googleblog.com/2016/01/the-beginners-guide-to-react-native-and_84.html
+
+```
+
+```
+
+# Stocks:
+
+1. All stocks: http://thestocks.im
+2. Font Icons: https://oblador.github.io/react-native-vector-icons
+3. Image Icons: https://www.flaticon.com
+4. Color: https://flatuicolors.com
+5. Face / Avatar: http://pravatar.cc
+6. Animatable (Animation): https://github.com/oblador/react-native-animatable
+
+# Videos:
+
+1. Videos: https://www.youtube.com/watch?v=kNHuLOXR5T0&list=PLWBrqglnjNl31S91FFE63DtuRc9v9LSGl
+2. Style Cheat Sheet
+   https://github.com/vhpoet/react-native-styling-cheat-sheet
+3. FlexBox: https://www.youtube.com/watch?v=Y8zMYaD1bz0&list=PL4cUxeGkcC9i3FXJSUfmsNOx8E7u6UuhG
