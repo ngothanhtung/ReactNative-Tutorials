@@ -38,14 +38,50 @@
    https://github.com/vhpoet/react-native-styling-cheat-sheet
 3. FlexBox: https://www.youtube.com/watch?v=Y8zMYaD1bz0&list=PL4cUxeGkcC9i3FXJSUfmsNOx8E7u6UuhG
 
-# Session 01: Setup
+# Prequisite
+
+## Main Concepts:
+
+1. Hello World
+2. Introduction JSX
+3. Render Elements
+4. Components & Props
+5. Typechecking With PropTypes
+6. State & Lifecycle
+7. Handling Events
+8. Conditional Rendering
+9. List & Keys
+10. Refs and the DOM
+
+# Session 01: Setup React & React Native
+
+## Setup React JS:
+
+1. Setup React App:
+
+   > npx create-react-app my-app
+
+   > cd my-app
+
+   > npm start
+
+## Setup React Native:
 
 1. https://facebook.github.io/react-native/
 2. https://facebook.github.io/react-native/docs/getting-started
 3. Get started: Select tab: Building Projects with Native Code
-4. npm install -g react-native-cli
-5. Create new react native project: react-native init HelloWorldApp
-6. Component Examples: https://facebook.github.io/react-native/docs/tutorial
+
+- https://reactnative.dev/docs/environment-setup
+
+  > npx react-native init AwesomeProject
+
+  > cd AwesomeProject
+
+  > npx react-native start
+
+5. npm install -g react-native-cli
+6. Create new react native project: react-native init HelloWorldApp
+7. Component Examples: https://facebook.github.io/react-native/docs/tutorial
 
 # Session 02: Props
 
@@ -359,11 +395,15 @@ Continue: README of this project
 5. UI: react-native-elements / react-native-paper / nativebase
 
 - npm install react-native-elements --save
+
 6. axios
 
 7. Open File:
+
 - https://github.com/Elyx0/react-native-document-picker
+
 8. Open Camera / Photos gallery
+
 - https://github.com/ivpusic/react-native-image-crop-picker
 
 # A. Some useful websites
