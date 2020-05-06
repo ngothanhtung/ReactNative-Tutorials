@@ -41,33 +41,31 @@
 
 # Session 01: Setup React & React Native
 
-## Setup React JS:
+## 1. Setup React JS:
 
-1. Setup React App:
+> npx create-react-app my-app
 
-   > npx create-react-app my-app
+> cd my-app
 
-   > cd my-app
+> npm start
 
-   > npm start
+## 2. Setup React Native:
 
-## Setup React Native:
+1. https://reactnative.dev/
+2. https://reactnative.dev/docs/getting-started
+3. https://reactnative.dev/docs/environment-setup
 
-1. https://facebook.github.io/react-native/
-2. https://facebook.github.io/react-native/docs/getting-started
-3. Get started: Select tab: Building Projects with Native Code
+> Get started: Select tab: React Native CLI Quickstart
 
-- https://reactnative.dev/docs/environment-setup
+> npx react-native init AwesomeProject
 
-  > npx react-native init AwesomeProject
+> cd AwesomeProject
 
-  > cd AwesomeProject
+> npx react-native start
 
-  > npx react-native start
-
-5. npm install -g react-native-cli
-6. Create new react native project: react-native init HelloWorldApp
-7. Component Examples: https://facebook.github.io/react-native/docs/tutorial
+4. npm install -g react-native-cli
+5. Create new react native project: react-native init HelloWorldApp
+6. Component Examples: https://facebook.github.io/react-native/docs/tutorial
 
 # Session 02: Props & State
 
@@ -174,16 +172,29 @@
 
 # Session 07: React Navigation (Version 5.x)
 
-1.  Docs: https://reactnavigation.org
-2.  Setup (Please carefully): https://reactnavigation.org/docs/en/getting-started.html
+1.  Docs: https://reactnavigation.org/
+2.  Setup (Important):
+    > https://reactnavigation.org/docs/getting-started
 3.  StackNavigation
+    > https://reactnavigation.org/docs/stack-navigator
 4.  TabNavigation
-5.  DrawerNavigation
 
-# Session 08: UI / UX:
+    > https://reactnavigation.org/docs/bottom-tab-navigator
+
+    > https://reactnavigation.org/docs/material-bottom-tab-navigator
+
+    > https://reactnavigation.org/docs/material-top-tab-navigator
+
+5.  DrawerNavigation
+    > https://reactnavigation.org/docs/drawer-navigator
+6.
+
+# Session 08: UI / UX & Utilities:
 
 1. React Native Papers
 2. React Native Elements
+3. AsyncStorage
+4. moment / numeral / lodash
 
 # Session 09: Working with Form & Entry Data Validation
 
@@ -192,6 +203,8 @@
 3. KeyboardAvoidingView: https://reactnative.dev/docs/keyboardavoidingview
 
 # Session 10: Firebase
+
+## 10.1. Setup:
 
 1. https://firebase.google.com/
 2. Register a Google account
@@ -217,7 +230,7 @@
 
 Continue: README of this project
 
-## Cloud Filestore
+## 10.2. Cloud Filestore & Realtime
 
 - Dashboard -> Database -> Filestore
 - Start in test mode -> Click button [Enable]
@@ -231,12 +244,7 @@ Continue: README of this project
 5. Delete Data: https://firebase.google.com/docs/firestore/manage-data/delete-data
 6. Realtime Update: https://firebase.google.com/docs/firestore/query-data/listen
 
-## Realtime
-
-1. Dashboard -> Database -> Realtime
-2. Rules: Set: read: true, write: true
-
-## Authentication
+## 10.3. Authentication
 
 1. Dashboard -> Authencation -> Sign-in Method -> Enable: Email / Password, Phone
 2. Docs: https://rnfirebase.io/docs/v5.x.x/auth/getting-started
@@ -247,30 +255,30 @@ Continue: README of this project
 - Get SHA-1 key: https://stackoverflow.com/questions/27609442/how-to-get-the-sha-1-fingerprint-certificate-in-android-studio-for-debug-mode
 - Dashboard -> Project Settings -> General -> Select Android App -> Paste SHA-1
 
-## Cloud Function
+# 10.4. Backend with Google Cloud Function
 
-1. Setup firebase tools: npm install -g firebase-tools
-2. Login / Logout: firebase login
-3. Init project: firebase init => Choose Cloud Function => Choose Project => Choose Language => SELECT DEFAULT OPTIONS => DONE
-4. Hello Function: Uncomment
-5. Deploy: firebase deploy
-6. Test API
+1. Setup firebase tools:
 
-## React Native With Firebase
+- npm install -g firebase-tools
+- yarn add global firebase-tools
 
-1. https://rnfirebase.io/
-2. Documents: https://rnfirebase.io/docs/v5.x.x/getting-started
-3. Starter Kit: https://rnfirebase.io/docs/v5.x.x/installation/basic-kit
+2. Login / Logout: firebase login / firebase logout
+3. Init project: (Project folder)
 
-- Manual install for Android (Video): https://youtu.be/_7iKm233n_M
-- Manual install for iOS (Video): https://youtu.be/qiOGMcX6Xtw
+- Terminal: firebase init =>
+- OPTIONS: => Choose Cloud Function =>
+- OPTIONS: => Choose Project =>
+- OPTION: => Choose Language => Javascript
+- SELECT DEFAULTS
 
-4. Send Notification (Google API): https://firebase.google.com/docs/cloud-messaging/http-server-ref
+4. OPTIONS => DONE
+5. Hello Function: Uncomment
+6. Deploy: firebase deploy
+7. Test API
 
-- Send a notification (Admin SDK - Cloud Function): https://firebase.google.com/docs/cloud-messaging/admin/send-messages
-- Manage Topic: https://firebase.google.com/docs/cloud-messaging/admin/manage-topic-subscriptions
+# Session 11 Notification with OneSignal
 
-# Session 10: REDUX & SAGA
+# Session 12: REDUX & SAGA (BONUS & OPTIONAL)
 
 1. Theory: https://redux.js.org/introduction/getting-started
 2. Usage with React: https://react-redux.js.org
@@ -309,28 +317,7 @@ Continue: README of this project
 - rootSagas
 -
 
-# Session 11: Backend with Google Cloud Function
-
-1. Setup firebase tools:
-
-- npm install -g firebase-tools
-- yarn add global firebase-tools
-
-2. Login / Logout: firebase login / firebase logout
-3. Init project: (Project folder)
-
-- Terminal: firebase init =>
-- OPTIONS: => Choose Cloud Function =>
-- OPTIONS: => Choose Project =>
-- OPTION: => Choose Language => Javascript
-- SELECT DEFAULTS
-
-4. OPTIONS => DONE
-5. Hello Function: Uncomment
-6. Deploy: firebase deploy
-7. Test API
-
-# Session 12: EXPRESSJS & MONGODB (BONUS & OPTIONAL)
+# Session 13: EXPRESSJS & MONGODB (BONUS & OPTIONAL)
 
 1. Expressjs: https://expressjs.com/en/starter/generator.html
 2. Basic Routing: https://expressjs.com/en/starter/basic-routing.html
@@ -341,7 +328,7 @@ Continue: README of this project
 7. Nodejs Mongodb Driver: http://mongodb.github.io/node-mongodb-native/3.1/
 8. Databases with Express: https://expressjs.com/en/guide/database-integration.html
 
-# Session 13: Release
+# Session 14: Release
 
 1. Android icon: https://romannurik.github.io/AndroidAssetStudio/index.html
 2. iOs icon: https://appicon.co/
