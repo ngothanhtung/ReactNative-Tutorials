@@ -49,7 +49,11 @@
 
 > npm start
 
-## 1.2. Read more:
+## 1.2. Practice:
+
+> https://github.com/ngothanhtung/ReactNative-Tutorials/tree/master/Batch07/my-react-web
+
+## 1.3. Read more:
 
 > https://reactjs.org/docs/components-and-props.html
 
