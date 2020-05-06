@@ -57,6 +57,12 @@
 
 > https://reactjs.org/docs/components-and-props.html
 
+## 1.4. Resources:
+
+> https://uifaces.co/
+
+> https://picsum.photos/
+
 ## 2. Setup React Native:
 
 1. https://reactnative.dev/
