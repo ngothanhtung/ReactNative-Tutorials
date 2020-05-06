@@ -41,13 +41,17 @@
 
 # Session 01: Setup React & React Native
 
-## 1. Setup React JS:
+## 1.1 Setup React JS:
 
 > npx create-react-app my-app
 
 > cd my-app
 
 > npm start
+
+## 1.2. Read more:
+
+> https://reactjs.org/docs/components-and-props.html
 
 ## 2. Setup React Native:
 
