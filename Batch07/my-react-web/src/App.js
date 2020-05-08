@@ -6,6 +6,8 @@ import Content from './Content';
 
 import Post from './Post';
 
+import Gallery from './Gallery';
+
 export default class App extends Component {
   render() {
     return (
@@ -23,6 +25,8 @@ export default class App extends Component {
         <Title text='Ban tin cuoi ngay' />
         <Avatar imageUrl='https://cdn.pixabay.com/photo/2016/10/07/12/35/man-1721463__340.png' />
         <Content text='Diem tin cuoi ngay' />
+
+        <Gallery />
       </div>
     );
   }
