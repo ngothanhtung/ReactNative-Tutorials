@@ -9,6 +9,17 @@ export default class Gallery extends Component {
     };
   }
 
+  componentDidMount() {
+    setInterval(() => {
+      if (this.state.number >= 3) {
+        this.setState({ number: 1 });
+      } else {
+        const newNumber = this.state.number + 1;
+        this.setState({ number: newNumber });
+      }
+    }, 1000);
+  }
+
   render() {
     return (
       <div>
@@ -38,6 +49,7 @@ export default class Gallery extends Component {
         </p>
         <div>
           <img
+            alt=''
             src='/images/1.jpg'
             style={{ height: 60, opacity: this.state.number === 1 ? 1 : 0.5 }}
             onClick={() => {
@@ -45,6 +57,7 @@ export default class Gallery extends Component {
             }}
           />
           <img
+            alt=''
             src='/images/2.jpg'
             style={{ height: 60, opacity: this.state.number === 2 ? 1 : 0.5 }}
             onClick={() => {
@@ -52,6 +65,7 @@ export default class Gallery extends Component {
             }}
           />
           <img
+            alt=''
             src='/images/3.jpg'
             style={{ height: 60, opacity: this.state.number === 3 ? 1 : 0.5 }}
             onClick={() => {
