@@ -15,6 +15,7 @@ import FlatListExample from './Session05/FlatListExample';
 import SectionListExample from './Session05/SectionListExample';
 import SectionListAdvancedExample from './Session05/SectionListAdvancedExample';
 import NetworkingExample from './Session06/NetworkingExample';
+import GalleryHomework from './Session06/GalleryHomework';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => NetworkingExample);
+AppRegistry.registerComponent(appName, () => GalleryHomework);
