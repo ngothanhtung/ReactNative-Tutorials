@@ -113,6 +113,7 @@
 # Session 04: Styles & Layout
 
 1. Style: https://facebook.github.io/react-native/docs/style
+
 - add react-native-vector-icons
 
 > yarn add react-native-vector-icons
@@ -160,14 +161,14 @@
 6. API Practices:
 
 ```
-- https://softech.dev/api/training/users
+- https://training.softech.cloud/api/users
   + Method: GET
 
-- https://softech.dev/api/training/users/login
+- https://training.softech.cloud/api/users/login
   + Method: POST
   + Body: {"email": "youremail@gmail.com", "password": "123"}
 
-- https://softech.dev/api/training/users/register
+- https://training.softech.cloud/api/users/register
   + Method: POST
   + Body: {"email": "youremail@gmail.com", "password": "123", "name": "Your Name"}
 
