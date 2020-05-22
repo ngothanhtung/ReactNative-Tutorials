@@ -16,6 +16,8 @@ import SectionListExample from './Session05/SectionListExample';
 import SectionListAdvancedExample from './Session05/SectionListAdvancedExample';
 import NetworkingExample from './Session06/NetworkingExample';
 import GalleryHomework from './Session06/GalleryHomework';
+import Users from './Session06/Users';
+import Login_Session6 from './Session06/Login';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => GalleryHomework);
+AppRegistry.registerComponent(appName, () => Login_Session6);
