@@ -175,7 +175,7 @@
 - Notes: POSTMAN: Method: POST, Body: Raw => JSON
 ```
 
-# Session 06: React Hooks
+# Session 07: React Hooks
 
 1. Basic Hooks
 
@@ -193,7 +193,7 @@
 - useContext
 - useReducer
 
-# Session 07: React Navigation (Version 5.x)
+# Session 08: React Navigation (Version 5.x)
 
 1.  Docs: https://reactnavigation.org/
 2.  Setup (Important):
@@ -212,22 +212,22 @@
     > https://reactnavigation.org/docs/drawer-navigator
 6.
 
-# Session 08: UI / UX & Utilities:
+# Session 09: UI / UX & Utilities:
 
 1. React Native Papers
 2. React Native Elements
 3. AsyncStorage
 4. moment / numeral / lodash
 
-# Session 09: Working with Form & Entry Data Validation
+# Session 10: Working with Form & Entry Data Validation
 
 1. Working with form: Formik
 2. Working with entry data validation: Yup
 3. KeyboardAvoidingView: https://reactnative.dev/docs/keyboardavoidingview
 
-# Session 10: Firebase
+# Session 11: Firebase
 
-## 10.1. Setup:
+## 11.1. Setup:
 
 1. https://firebase.google.com/
 2. Register a Google account
@@ -253,7 +253,7 @@
 
 Continue: README of this project
 
-## 10.2. Cloud Filestore & Realtime
+## 11.2. Cloud Filestore & Realtime
 
 - Dashboard -> Database -> Filestore
 - Start in test mode -> Click button [Enable]
@@ -267,7 +267,7 @@ Continue: README of this project
 5. Delete Data: https://firebase.google.com/docs/firestore/manage-data/delete-data
 6. Realtime Update: https://firebase.google.com/docs/firestore/query-data/listen
 
-## 10.3. Authentication
+## 11.3. Authentication
 
 1. Dashboard -> Authencation -> Sign-in Method -> Enable: Email / Password, Phone
 2. Docs: https://rnfirebase.io/docs/v5.x.x/auth/getting-started
@@ -278,7 +278,7 @@ Continue: README of this project
 - Get SHA-1 key: https://stackoverflow.com/questions/27609442/how-to-get-the-sha-1-fingerprint-certificate-in-android-studio-for-debug-mode
 - Dashboard -> Project Settings -> General -> Select Android App -> Paste SHA-1
 
-# 10.4. Backend with Google Cloud Function
+# 11.4. Backend with Google Cloud Function
 
 1. Setup firebase tools:
 
@@ -299,9 +299,9 @@ Continue: README of this project
 6. Deploy: firebase deploy
 7. Test API
 
-# Session 11 Notification with OneSignal
+# Session 12 Notification with OneSignal
 
-# Session 12: REDUX & SAGA (BONUS & OPTIONAL)
+# Session 13: REDUX & SAGA (BONUS & OPTIONAL)
 
 1. Theory: https://redux.js.org/introduction/getting-started
 2. Usage with React: https://react-redux.js.org
@@ -340,7 +340,7 @@ Continue: README of this project
 - rootSagas
 -
 
-# Session 13: EXPRESSJS & MONGODB (BONUS & OPTIONAL)
+# Bonus 1: EXPRESSJS & MONGODB (BONUS & OPTIONAL)
 
 1. Expressjs: https://expressjs.com/en/starter/generator.html
 2. Basic Routing: https://expressjs.com/en/starter/basic-routing.html
@@ -351,14 +351,14 @@ Continue: README of this project
 7. Nodejs Mongodb Driver: http://mongodb.github.io/node-mongodb-native/3.1/
 8. Databases with Express: https://expressjs.com/en/guide/database-integration.html
 
-# Session 14: Release
+# Bonus 2: Release
 
 1. Android icon: https://romannurik.github.io/AndroidAssetStudio/index.html
 2. iOs icon: https://appicon.co/
 3. https://facebook.github.io/react-native/docs/signed-apk-android
 4. https://play.google.com/apps/publish
 
-# Project:
+# Bonus 3: Project:
 
 1. react-native-firebase
 
