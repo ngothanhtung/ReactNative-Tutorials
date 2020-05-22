@@ -113,6 +113,14 @@
 # Session 04: Styles & Layout
 
 1. Style: https://facebook.github.io/react-native/docs/style
+- add react-native-vector-icons
+
+> yarn add react-native-vector-icons
+
+> Open: android/app/build.gradle
+
+> Go to end of file: paste: apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
+
 2. Height and Width: https://facebook.github.io/react-native/docs/height-and-width
    https://facebook.github.io/react-native/docs/dimensions
 3. Layout with Flexbox: https://facebook.github.io/react-native/docs/flexbox
