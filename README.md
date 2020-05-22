@@ -170,7 +170,7 @@
 
 - https://training.softech.cloud/api/users/register
   + Method: POST
-  + Body: {"email": "youremail@gmail.com", "password": "123", "name": "Your Name"}
+  + Body: {"email": "youremail@gmail.com", "password": "123", "fullname": "Your Name"}
 
 - Notes: POSTMAN: Method: POST, Body: Raw => JSON
 ```
