@@ -22,6 +22,8 @@ import Example01 from './Session07/Example01';
 import Example02 from './Session07/Example02';
 import Example03 from './Session07/Example03';
 import Example04 from './Session07/Example04';
+
+import LoginWithHook from './Session07/LoginWithHook';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => Example03);
+AppRegistry.registerComponent(appName, () => LoginWithHook);

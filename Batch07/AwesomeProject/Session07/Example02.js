@@ -1,7 +1,8 @@
 import React from 'react';
 import {View, Text, FlatList, Image, RefreshControl} from 'react-native';
+import {Button} from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const Example01 = () => {
+const PhotoList = ({x}) => {
   const [loading, setLoading] = React.useState(false);
   const [refreshCount, setRefreshCount] = React.useState(0);
   const [photos, setPhotos] = React.useState([]);
@@ -20,7 +21,7 @@ const Example01 = () => {
       });
   };
 
-  React.useEffect(getPhotos, [refreshCount]);
+  React.useEffect(getPhotos, [refreshCount, x]);
 
   const renderItem = ({item}) => {
     return (
@@ -44,6 +45,21 @@ const Example01 = () => {
             }}
           />
         }
+      />
+    </View>
+  );
+};
+
+const Example01 = () => {
+  const [x, setX] = React.useState(0);
+  return (
+    <View style={{flex: 1}}>
+      <PhotoList x={x} />
+      <Button
+        title="Change X"
+        onPress={() => {
+          setX(x + 1);
+        }}
       />
     </View>
   );

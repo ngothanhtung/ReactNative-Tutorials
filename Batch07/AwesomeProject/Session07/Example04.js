@@ -9,7 +9,7 @@ import {
 // Use custom hook
 import useMyHook from './useMyHook';
 
-const Example01 = () => {
+const Example04 = () => {
   const [loading, photos, refresh] = useMyHook(false, []);
 
   const renderItem = ({item}) => {
@@ -35,4 +35,4 @@ const Example01 = () => {
   );
 };
 
-export default Example01;
+export default Example04;
