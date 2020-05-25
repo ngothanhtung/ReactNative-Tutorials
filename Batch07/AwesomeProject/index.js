@@ -18,6 +18,8 @@ import NetworkingExample from './Session06/NetworkingExample';
 import GalleryHomework from './Session06/GalleryHomework';
 import Users from './Session06/Users';
 import Login_Session6 from './Session06/Login';
+import Example01 from './Session07/Example01';
+import Example02 from './Session07/Example02';
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => Login_Session6);
+AppRegistry.registerComponent(appName, () => Example02);
