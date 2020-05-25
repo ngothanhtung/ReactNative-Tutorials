@@ -3,7 +3,7 @@ import {View, Text, FlatList, Image, RefreshControl} from 'react-native';
 
 import {getPhotos} from './Helpers';
 
-const Example01 = () => {
+const Example03 = () => {
   const [loading, setLoading] = React.useState(false);
   const [refreshCount, setRefreshCount] = React.useState(0);
   const [photos, setPhotos] = React.useState([]);
@@ -51,4 +51,4 @@ const Example01 = () => {
   );
 };
 
-export default Example01;
+export default Example03;
