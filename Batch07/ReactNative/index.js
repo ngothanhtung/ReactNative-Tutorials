@@ -1,7 +1,7 @@
 /**
  * @format
  */
-
+import 'react-native-gesture-handler';
 import {AppRegistry} from 'react-native';
 import App from './App';
 import FlexLayoutExample from './FlexLayoutExample';
@@ -24,6 +24,8 @@ import Example03 from './Session07/Example03';
 import Example04 from './Session07/Example04';
 
 import LoginWithHook from './Session07/LoginWithHook';
+import StackNavigatorExample from './Session08/StackNavigatorExample';
+
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => Example04);
+AppRegistry.registerComponent(appName, () => StackNavigatorExample);
