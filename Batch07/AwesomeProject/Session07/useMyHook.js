@@ -7,6 +7,7 @@ export default () => {
 
   const refresh = () => {
     setRefreshCount(refreshCount + 1);
+    alert('OK');
   };
 
   React.useEffect(() => {
