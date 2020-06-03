@@ -1,10 +1,14 @@
 import * as React from 'react';
+import {View} from 'react-native';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Octicon from 'react-native-vector-icons/Octicons';
 import HomeScreen from './screens/HomeScreen';
 import NotificationScreen from './screens/NotificationScreen';
 import AccountScreen from './screens/AccountScreen';
 import ProductStackNavigator from './ProductStackNavigator';
+import MenuScreen from './MenuStackNavigator';
+import MenuStackNavigator from './MenuStackNavigator';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -52,9 +56,21 @@ export default function MainTabNavigator() {
         name="AccountScreen"
         component={AccountScreen}
         options={{
-          title: 'Profile',
+          title: 'Account',
           tabBarIcon: ({color}) => {
             return <Icon name="account" size={24} style={{color: color}} />;
+          },
+        }}
+      />
+      <Tab.Screen
+        name="MenuStackNavigator"
+        component={MenuStackNavigator}
+        options={{
+          title: 'Menu',
+          tabBarIcon: ({color}) => {
+            return (
+              <Octicon name="three-bars" size={24} style={{color: color}} />
+            );
           },
         }}
       />

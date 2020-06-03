@@ -28,7 +28,8 @@ import StackNavigatorExample from './Session08/StackNavigatorExample';
 import TabNavigatorExample from './Session08/TabNavigatorExample';
 import MaterialBottomNavigatorExample from './Session08/MaterialBottomNavigatorExample';
 import AppNavigator from './Session08/AppNavigator';
+import DrawerNavigatorExample from './Session08/DrawerNavigatorExample';
 
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => AppNavigator);
+AppRegistry.registerComponent(appName, () => DrawerNavigatorExample);
