@@ -12,11 +12,10 @@ export default function MainTabNavigator() {
   return (
     <Tab.Navigator
       barStyle={{backgroundColor: '#0984e3'}}
+      shifting={false}
       tabBarOptions={{
         activeColor: '#ffffff',
         inactiveColor: '#dfe6e9',
-        shifting: false,
-        // labeled: true,
       }}>
       <Tab.Screen
         name="HomeScreen"

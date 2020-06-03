@@ -210,7 +210,8 @@
 
 5.  DrawerNavigation
     > https://reactnavigation.org/docs/drawer-navigator
-6.
+6.  Nesting Navigatord
+    > https://reactnavigation.org/docs/nesting-navigators
 
 # Session 09: UI / UX & Utilities:
 
