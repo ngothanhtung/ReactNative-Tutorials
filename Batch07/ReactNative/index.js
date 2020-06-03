@@ -26,7 +26,8 @@ import Example04 from './Session07/Example04';
 import LoginWithHook from './Session07/LoginWithHook';
 import StackNavigatorExample from './Session08/StackNavigatorExample';
 import TabNavigatorExample from './Session08/TabNavigatorExample';
+import MaterialBottomNavigatorExample from './Session08/MaterialBottomNavigatorExample';
 
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => TabNavigatorExample);
+AppRegistry.registerComponent(appName, () => MaterialBottomNavigatorExample);
