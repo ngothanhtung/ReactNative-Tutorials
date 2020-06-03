@@ -17,6 +17,12 @@ const LoginScreen = ({navigation}) => {
           navigation.navigate('RegisterScreen', {message: 'I am from Login'});
         }}
       />
+      <Button
+        title="Go to Tab"
+        onPress={() => {
+          navigation.navigate('MainTabNavigator');
+        }}
+      />
     </View>
   );
 };
