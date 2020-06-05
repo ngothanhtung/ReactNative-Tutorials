@@ -50,14 +50,15 @@ const AppNavigator = () => {
     <NavigationContainer>
       <Drawer.Navigator
         drawerPosition="right"
-        drawerContent={(props) => <CustomDrawerContent {...props} />}>
+        // drawerContent={(props) => <CustomDrawerContent {...props} />}
+      >
         <Drawer.Screen
           name="MainTabNavigator"
           component={MainTabNavigator}
-          options={{title: 'Menu'}}
+          options={{title: 'Main Tab'}}
         />
-        {/* <Drawer.Screen name="Menu1Screen" component={Menu1Screen} />
-        <Drawer.Screen name="Menu2Screen" component={Menu2Screen} /> */}
+        <Drawer.Screen name="Menu1Screen" component={Menu1Screen} />
+        <Drawer.Screen name="Menu2Screen" component={Menu2Screen} />
       </Drawer.Navigator>
     </NavigationContainer>
   );
