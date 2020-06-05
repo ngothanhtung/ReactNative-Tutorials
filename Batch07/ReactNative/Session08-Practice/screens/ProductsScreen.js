@@ -50,15 +50,19 @@ const ProductsScreen = ({navigation}) => {
 
   useEffect(getProducts, []);
 
-  const renderItem = ({item}) => {
+  const renderItem = ({item, index}) => {
     return (
       <TouchableOpacity
-        style={styles.productContainer}
+        style={[
+          styles.productContainer,
+          {marginRight: index % 2 === 0 ? 0 : 12},
+        ]}
         onPress={() => {
           navigation.navigate('ProductDetailsScreen', {product: item});
         }}>
         <Image source={{uri: item.pictureUrl}} style={styles.productImage} />
         <View style={styles.productNameContainer}>
+          <Text style={styles.productName}>{index}</Text>
           <Text style={styles.productName}>{item.name}</Text>
           <Text style={styles.productName}>{item.price}</Text>
           <Text style={styles.productName}>{item.discount}</Text>
