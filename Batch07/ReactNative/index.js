@@ -27,9 +27,10 @@ import LoginWithHook from './Session07/LoginWithHook';
 import StackNavigatorExample from './Session08/StackNavigatorExample';
 import TabNavigatorExample from './Session08/TabNavigatorExample';
 import MaterialBottomNavigatorExample from './Session08/MaterialBottomNavigatorExample';
-import AppNavigator from './Session08/AppNavigator';
+// import AppNavigator from './Session08/AppNavigator';
 import DrawerNavigatorExample from './Session08/DrawerNavigatorExample';
+import AppNavigator from './Session08-Practice/AppNavigator';
 
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => DrawerNavigatorExample);
+AppRegistry.registerComponent(appName, () => AppNavigator);
