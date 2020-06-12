@@ -217,8 +217,9 @@
 
 1. React Native Papers
 2. React Native Elements
-3. AsyncStorage
-4. moment / numeral / lodash
+3. NativeBase
+4. AsyncStorage (https://github.com/react-native-community/async-storage)
+5. moment / numeral / lodash
 
 # Session 10: Working with Form & Entry Data Validation
 

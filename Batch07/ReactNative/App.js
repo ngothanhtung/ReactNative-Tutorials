@@ -1,59 +1,96 @@
 import React, {Component} from 'react';
-import {Text, View, Button} from 'react-native';
+import {
+  DefaultTheme,
+  Provider as PaperProvider,
+  Button,
+  Appbar,
+  Paragraph,
+  Dialog,
+  Portal,
+  FAB,
+} from 'react-native-paper';
+import {Text, View, SafeAreaView, StyleSheet} from 'react-native';
 
-import Header from './Header';
+const theme = {
+  ...DefaultTheme,
+  roundness: 8,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: '#e84393',
+    accent: '#f1c40f',
+  },
+};
 
-class MyComponent extends Component {
-  componentWillUnmount() {
-    console.log('MyComponent: componentWillUnmount');
-  }
+const styles = StyleSheet.create({
+  bottom: {
+    position: 'absolute',
+    left: 0,
+    right: 0,
+    top: 0,
+  },
 
-  render() {
-    return (
-      <View>
-        <Text>This is my component</Text>
-      </View>
-    );
-  }
-}
+  fab: {
+    position: 'absolute',
+    margin: 16,
+    right: 0,
+    bottom: 0,
+  },
+});
 
-export default class App extends Component {
-  constructor(props) {
-    super(props);
-    //
-    console.log('constructor');
-    this.state = {
-      count: 0,
-    };
-  }
+export default function App() {
+  const [visible, setVisible] = React.useState(false);
 
-  componentDidMount() {
-    console.log('componentDidMount');
-  }
+  return (
+    <PaperProvider theme={theme}>
+      <SafeAreaView style={{flex: 1}}>
+        <Appbar.Header>
+          <Appbar.BackAction onPress={() => {}} />
+          <Appbar.Content title="Title" subtitle="Subtitle" />
+          <Appbar.Action icon="magnify" onPress={() => {}} />
+          <Appbar.Action icon="dots-vertical" onPress={() => {}} />
+        </Appbar.Header>
+        <View style={{flex: 1, padding: 12}}>
+          <Button
+            loading={false}
+            disabled={false}
+            icon="home"
+            mode="contained"
+            onPress={() => {
+              setVisible(true);
+            }}>
+            Press me
+          </Button>
 
-  componentWillUnmount() {
-    console.log('componentWillUnmount');
-  }
+          {/* <Portal>
+            <Dialog
+              visible={visible}
+              onDismiss={() => {
+                setVisible(false);
+              }}>
+              <Dialog.Title>Alert</Dialog.Title>
+              <Dialog.Content>
+                <Paragraph>This is simple dialog</Paragraph>
+              </Dialog.Content>
+              <Dialog.Actions>
+                <Button
+                  onPress={() => {
+                    // code here...
+                    setVisible(false);
+                  }}>
+                  Done
+                </Button>
+              </Dialog.Actions>
+            </Dialog>
+          </Portal> */}
 
-  render() {
-    console.log('render');
-    return (
-      <View>
-        <Header text="This is header" desc="This is desc" />
-
-        <Text> Hello React Native </Text>
-        <Button
-          onPress={() => {
-            this.setState({count: this.state.count + 1});
-          }}
-          title="Click me"
-        />
-
-        <Text style={{fontSize: 48}}>{this.state.count}</Text>
-        {this.state.count < 5 && <MyComponent />}
-
-        <Button onPress={() => {}} title="Unmount" />
-      </View>
-    );
-  }
+          <FAB
+            style={styles.fab}
+            small
+            icon="plus"
+            onPress={() => console.log('Pressed')}
+          />
+        </View>
+      </SafeAreaView>
+    </PaperProvider>
+  );
 }
