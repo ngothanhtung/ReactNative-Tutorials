@@ -31,7 +31,8 @@ import MaterialBottomNavigatorExample from './Session08/MaterialBottomNavigatorE
 import DrawerNavigatorExample from './Session08/DrawerNavigatorExample';
 import AppNavigator from './Session08-Practice/AppNavigator';
 import AsyncStorageExample from './Session09/AsyncStorageExample';
+import CallbackExample from './Session10/CallbackExample';
 
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => AsyncStorageExample);
+AppRegistry.registerComponent(appName, () => CallbackExample);
