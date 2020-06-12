@@ -40,6 +40,7 @@ export default function FormikExample() {
                 onChangeText={handleChange('name')}
                 onBlur={handleBlur('name')}
                 value={values.name}
+                style={{color: errors.name && touched.name ? 'red' : 'black'}}
               />
               {errors.name && touched.name && <Text>{errors.name}</Text>}
               <Button onPress={handleSubmit} title="Submit" />
