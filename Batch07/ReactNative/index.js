@@ -32,7 +32,9 @@ import DrawerNavigatorExample from './Session08/DrawerNavigatorExample';
 import AppNavigator from './Session08-Practice/AppNavigator';
 import AsyncStorageExample from './Session09/AsyncStorageExample';
 import CallbackExample from './Session10/CallbackExample';
+import FormExample from './Session10/FormExample';
+import FormikExample from './Session10/FormikExample';
 
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => CallbackExample);
+AppRegistry.registerComponent(appName, () => FormikExample);

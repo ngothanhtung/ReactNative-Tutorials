@@ -223,8 +223,8 @@
 
 # Session 10: Working with Form & Entry Data Validation
 
-1. Working with form: Formik
-2. Working with entry data validation: Yup
+1. Working with form: Formik (https://jaredpalmer.com/formik/docs/guides/react-native)
+2. Working with entry data validation: Yup (https://github.com/jquense/yup)
 3. KeyboardAvoidingView: https://reactnative.dev/docs/keyboardavoidingview
 
 # Session 11: Firebase
