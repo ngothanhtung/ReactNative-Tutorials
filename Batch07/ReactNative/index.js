@@ -30,7 +30,8 @@ import MaterialBottomNavigatorExample from './Session08/MaterialBottomNavigatorE
 // import AppNavigator from './Session08/AppNavigator';
 import DrawerNavigatorExample from './Session08/DrawerNavigatorExample';
 import AppNavigator from './Session08-Practice/AppNavigator';
+import AsyncStorageExample from './Session09/AsyncStorageExample';
 
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => App);
+AppRegistry.registerComponent(appName, () => AsyncStorageExample);
