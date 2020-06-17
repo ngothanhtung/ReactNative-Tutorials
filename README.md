@@ -231,9 +231,34 @@
 
 ## 11.1. Setup:
 
-1. https://firebase.google.com/
-2. Register a Google account
+1. https://console.firebase.google.com/
+2. Login / Register a Google account
 3. React Native Firebase: https://rnfirebase.io/
+
+- Download google-service.json
+
+```
+Download the google-services.json file and place it inside of your project at the following location: /android/app/google-services.json.
+```
+
+- First, add the google-services plugin as a dependency inside of your /android/build.gradle file:
+
+```
+buildscript {
+  dependencies {
+    // ... other dependencies
+    classpath 'com.google.gms:google-services:4.2.0'
+    // Add me --- /\
+  }
+}
+```
+
+- Lastly, execute the plugin by adding the following to the very bottom of your /android/app/build.gradle file:
+
+```
+apply plugin: 'com.google.gms.google-services'
+```
+
 4. Basic: http://invertase.link/get-started-basic
 
 - Download sourcecode (ZIP)
