@@ -259,7 +259,10 @@ buildscript {
 apply plugin: 'com.google.gms.google-services'
 ```
 
-4. Basic: http://invertase.link/get-started-basic
+4. Firestore basic:
+   > https://rnfirebase.io/firestore/usage#main
+
+4) Basic: http://invertase.link/get-started-basic
 
 - Download sourcecode (ZIP)
 - Unzip
