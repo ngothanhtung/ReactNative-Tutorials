@@ -260,9 +260,28 @@ apply plugin: 'com.google.gms.google-services'
 ```
 
 4. Firestore basic:
+
    > https://rnfirebase.io/firestore/usage#main
 
-4) Basic: http://invertase.link/get-started-basic
+5. Build & Run (FirestoreExample)
+
+- Error: The number of method references in a .dex file cannot exceed 64k API 17
+- Link: https://stackoverflow.com/questions/36785014/the-number-of-method-references-in-a-dex-file-cannot-exceed-64k-api-17
+- Xử lý: Just add these lines in the app/build.gradle:
+
+```
+android {
+    defaultConfig {
+        ...
+        // Enabling multidex support.
+        multiDexEnabled true
+    }
+    ...
+}
+
+```
+
+4. Basic: http://invertase.link/get-started-basic
 
 - Download sourcecode (ZIP)
 - Unzip

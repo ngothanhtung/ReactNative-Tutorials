@@ -34,7 +34,8 @@ import AsyncStorageExample from './Session09/AsyncStorageExample';
 import CallbackExample from './Session10/CallbackExample';
 import FormExample from './Session10/FormExample';
 import FormikExample from './Session10/FormikExample';
+import FirestoreExample from './Session11/FirestoreExample';
 
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => FormikExample);
+AppRegistry.registerComponent(appName, () => FirestoreExample);
