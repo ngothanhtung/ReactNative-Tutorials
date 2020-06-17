@@ -1,14 +1,35 @@
 import React from 'react';
-import {View, Text, Button} from 'react-native';
+import {View, Text, Button, FlatList} from 'react-native';
 import firestore from '@react-native-firebase/firestore';
 
 export default function FireStoreExample() {
-  const addData = () => {
+  const [users, setUsers] = React.useState([]);
+
+  const getUsers = () => {
+    const data = [];
+    firestore()
+      .collection('Users')
+      .get()
+      .then((querySnapshot) => {
+        // lặp qua từng document
+        querySnapshot.forEach((documentSnapshot) => {
+          data.push(documentSnapshot.data());
+          console.log(
+            'User ID: ',
+            documentSnapshot.id,
+            documentSnapshot.data(),
+          );
+        });
+        setUsers(data);
+      });
+  };
+
+  const addUser = () => {
     firestore()
       .collection('Users')
       .add({
-        name: 'Ada Lovelace',
-        age: 30,
+        name: 'Peter Jackson',
+        age: 31,
       })
       .then(() => {
         console.log('User added!');
@@ -18,7 +39,19 @@ export default function FireStoreExample() {
   return (
     <View>
       <Text>Firestore Example</Text>
-      <Button title="Add data" onPress={addData} />
+      <Button title="Add user" onPress={addUser} />
+      <Button title="Get users" onPress={getUsers} />
+      <FlatList
+        data={users}
+        keyExtractor={(item, index) => index}
+        renderItem={({item}) => {
+          return (
+            <View>
+              <Text>{item.name}</Text>
+            </View>
+          );
+        }}
+      />
     </View>
   );
 }
