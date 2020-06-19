@@ -234,14 +234,18 @@
 1. https://console.firebase.google.com/
 2. Login / Register a Google account
 3. React Native Firebase: https://rnfirebase.io/
+4. Download google-service.json
 
-- Download google-service.json
+- Go to project dashboard
+- Go to project setting: Project Overview -> Setting Icon -> Project settings
+- Add mobile app: Your apps -> Select android app -> type package name: com.softech.jobs, app name: Softech Jobs -> Click Button [Register app]
+- Download the google-services.json file and place it inside of your project at the following location:
 
 ```
-Download the google-services.json file and place it inside of your project at the following location: /android/app/google-services.json.
+/android/app/google-services.json.
 ```
 
-- First, add the google-services plugin as a dependency inside of your /android/build.gradle file:
+- Add the google-services plugin as a dependency inside of your /android/build.gradle file:
 
 ```
 buildscript {
@@ -253,61 +257,85 @@ buildscript {
 }
 ```
 
-- Lastly, execute the plugin by adding the following to the very bottom of your /android/app/build.gradle file:
+- Execute the plugin by adding the following to the very bottom of your /android/app/build.gradle file:
 
 ```
 apply plugin: 'com.google.gms.google-services'
 ```
 
-4. Firestore basic:
-
-   > https://rnfirebase.io/firestore/usage#main
-
-5. Build & Run (FirestoreExample)
+5. Build & Run
 
 - Error: The number of method references in a .dex file cannot exceed 64k API 17
-- Link: https://stackoverflow.com/questions/36785014/the-number-of-method-references-in-a-dex-file-cannot-exceed-64k-api-17
-- Xử lý: Just add these lines in the app/build.gradle:
+- Link: (https://stackoverflow.com/questions/36785014/the-number-of-method-references-in-a-dex-file-cannot-exceed-64k-api-17)
+- Xử lý lỗi: Just add these lines in the app/build.gradle:
 
 ```
+
 android {
-    defaultConfig {
-        ...
-        // Enabling multidex support.
-        multiDexEnabled true
-    }
-    ...
+   defaultConfig {
+      ...
+      // Enabling multidex support.
+      multiDexEnabled true
+   }
+   ...
 }
 
 ```
 
-4. Basic: http://invertase.link/get-started-basic
+## 11.2. Firestore for React Native:
 
-- Download sourcecode (ZIP)
-- Unzip
-- Install packages: Root project: type: npm install / yarn install
-- Root project: type: npm run rename, project name: jobs, company name: softech
-- Package name: com.softech.jobs
+- On the right menu of console.firebase.google.com -> Choose [Database] -> Create database
+- Link (https://rnfirebase.io/firestore/usage#main)
+- Setup:
 
-5. Add Google Services files (plist & JSON):
+```
+# Install & setup the app module
+yarn add @react-native-firebase/app
 
-- Login: https://console.firebase.google.com/ (email / password)
-- Add firebase project: project name: softech - jobs
-- Go to project dashboard
-- Go to project setting: Project Overview -> Setting Icon -> Project settings
-- Add mobile app: Your apps -> Select android app -> type package name: com.softech.jobs, app name: Softech Jobs -> Click Button [Register app]
-- Download config file: Root project / android / app / google-services.json
+# Install the firestore module
+yarn add @react-native-firebase/firestore
+```
 
-6. Run project: react-native run-android
+## 11.2.1. Example - QuerySnapshot:
 
-Continue: README of this project
+> A QuerySnapshot returned from a collection query allows you to inspect the collection, such as how many documents exist within it, access to the documents within the collection, any changes since the last query and more. To access the documents within a QuerySnapshot, call the forEach method:
 
-## 11.2. Cloud Filestore & Realtime
+```
+import firestore from '@react-native-firebase/firestore';
 
-- Dashboard -> Database -> Filestore
-- Start in test mode -> Click button [Enable]
-- https://rnfirebase.io/docs/v5.x.x/getting-started
-- https://firebase.google.com/docs/firestore/manage-data/structure-data
+firestore()
+  .collection('Users')
+  .get()
+  .then(querySnapshot => {
+    console.log('Total users: ', querySnapshot.size);
+
+    querySnapshot.forEach(documentSnapshot => {
+      console.log('User ID: ', documentSnapshot.id, documentSnapshot.data());
+    });
+  });
+```
+
+## 11.2.2. Example - DocumentSnapshot:
+
+> A DocumentSnapshot is returned from a query to a specific document, or as part of the documents returned via a QuerySnapshot. The snapshot provides the ability to view a documents data, metadata and whether a document actually exists. To view a documents data, call the data method on the snapshot:
+
+```
+import firestore from '@react-native-firebase/firestore';
+
+firestore()
+  .collection('Users')
+  .doc('ABC')
+  .get()
+  .then(documentSnapshot => {
+    console.log('User exists: ', documentSnapshot.exists);
+
+    if (documentSnapshot.exists) {
+      console.log('User data: ', documentSnapshot.data());
+    }
+  });
+```
+
+## 11.2.3. More documents at google
 
 1. Cloud Firestore: https://firebase.google.com/docs/firestore/quickstart
 2. Query Data: https://firebase.google.com/docs/firestore/query-data/queries
@@ -315,6 +343,8 @@ Continue: README of this project
 4. Add / Update Data: https://firebase.google.com/docs/firestore/manage-data/add-data
 5. Delete Data: https://firebase.google.com/docs/firestore/manage-data/delete-data
 6. Realtime Update: https://firebase.google.com/docs/firestore/query-data/listen
+
+---
 
 ## 11.3. Authentication
 
@@ -327,7 +357,9 @@ Continue: README of this project
 - Get SHA-1 key: https://stackoverflow.com/questions/27609442/how-to-get-the-sha-1-fingerprint-certificate-in-android-studio-for-debug-mode
 - Dashboard -> Project Settings -> General -> Select Android App -> Paste SHA-1
 
-# 11.4. Backend with Google Cloud Function
+---
+
+## 11.4. Backend with Google Cloud Function
 
 1. Setup firebase tools:
 
@@ -490,3 +522,11 @@ Continue: README of this project
 2. Style Cheat Sheet
    https://github.com/vhpoet/react-native-styling-cheat-sheet
 3. FlexBox: https://www.youtube.com/watch?v=Y8zMYaD1bz0&list=PL4cUxeGkcC9i3FXJSUfmsNOx8E7u6UuhG
+
+```
+
+```
+
+```
+
+```
