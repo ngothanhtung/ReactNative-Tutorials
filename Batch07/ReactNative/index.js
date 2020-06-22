@@ -36,7 +36,8 @@ import FormExample from './Session10/FormExample';
 import FormikExample from './Session10/FormikExample';
 import FirestoreExample from './Session11/FirestoreExample';
 import FirestoreRealtimeExample from './Session11/FirestoreRealtimeExample';
+import StorageUploadImageExample from './Session11/StorageUploadImageExample';
 
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => FirestoreRealtimeExample);
+AppRegistry.registerComponent(appName, () => StorageUploadImageExample);
