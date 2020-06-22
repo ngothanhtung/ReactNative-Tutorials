@@ -1,9 +1,9 @@
 {
-  "name": "AwesomeProject",
+  "name": "react-native-examples",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "a": "react-native run-android",
+    "android": "react-native run-android",
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
@@ -21,6 +21,9 @@
     "@react-navigation/stack": "^5.4.1",
     "axios": "^0.19.2",
     "formik": "^2.1.4",
+    "lodash": "^4.17.15",
+    "moment": "^2.27.0",
+    "numeral": "^2.0.6",
     "prop-types": "^15.7.2",
     "react": "16.11.0",
     "react-native": "0.62.2",

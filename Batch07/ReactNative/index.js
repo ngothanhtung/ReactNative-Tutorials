@@ -35,7 +35,8 @@ import CallbackExample from './Session10/CallbackExample';
 import FormExample from './Session10/FormExample';
 import FormikExample from './Session10/FormikExample';
 import FirestoreExample from './Session11/FirestoreExample';
+import FirestoreRealtimeExample from './Session11/FirestoreRealtimeExample';
 
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => FirestoreExample);
+AppRegistry.registerComponent(appName, () => FirestoreRealtimeExample);
