@@ -1,4 +1,5 @@
 {
   "git.ignoreLimitWarning": true,
-  "workbench.colorCustomizations": {}
+  "workbench.colorCustomizations": {},
+  "python.pythonPath": "/usr/local/bin/python3"
 }

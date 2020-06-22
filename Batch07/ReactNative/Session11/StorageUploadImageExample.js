@@ -14,7 +14,11 @@ export default function StorageUploadImageExample() {
       <Button
         title="Upload a picture"
         onPress={() => {
-          ImagePicker.openPicker({}).then(async (image) => {
+          ImagePicker.openCamera({
+            width: 300,
+            height: 400,
+            cropping: true,
+          }).then(async (image) => {
             // create bucket storage reference to not yet existing image
             console.log(image);
             if (image) {

@@ -34,12 +34,14 @@ export default function FireStoreRealtimeExample() {
   };
 
   React.useEffect(() => {
+    // componentDidMount
     const subscriber = firestore()
       .collection('Users')
       // Sắp xếp asc / desc
       .orderBy('name', 'asc')
       .onSnapshot(onResult, onError);
 
+    // componentWillUnmount
     // Stop listening for updates when no longer required
     return () => subscriber();
   }, []);
