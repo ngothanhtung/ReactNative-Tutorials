@@ -398,6 +398,48 @@ firestore()
 1. At OneSignal Dashboard: Choose menu Audience (on the top navigation bar), and then choose All Users and add a user to Test Users
 2. At OneSignal Dashboard: Choose menu Messages (on the top navigation bar), and send a test message to a device.
 
+## Send a test message by POSTMAN
+
+1. Url: https://onesignal.com/api/v1/notifications
+2. Method: POST
+3. Headers:
+
+> Content-Type: application/json
+
+> Authorization: Basic <REST API KEY của OneSignal>
+
+4. Body (Raw -> JSON):
+
+```
+{
+    "app_id": "YOUR ONE SIGNAL APP ID",
+    "include_player_ids": [
+    	"user id of one signal"
+    ],
+    "large_icon": "ic_action_cloud_upload",
+    "android_group": "group-1",
+    "android_group_message": {"en": "You have $[notif_count] new messages"},
+    "ios_badgeType": "Increase",
+    "ios_badgeCount": 1,
+    "thread_id": 1,
+    "summary_arg_count": 1,
+    "summary_arg": "React Native",
+    "data": {
+        "foo": "bar"
+    },
+    "headings": {
+        "en": "React Native - Thông báo lịch thi"
+    },
+    "contents": {
+        "en": "Nội dung thông báo"
+    },
+    "big_picture": "https://images.unsplash.com/photo-1491672736592-902f2f08d0b7?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1331&q=80",
+    "ios_attachments": {
+        "id1": "https://images.unsplash.com/photo-1530555328699-3ac77bc66854?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=500&q=60"
+    }
+}
+```
+
 # Session 13: REDUX & SAGA (BONUS & OPTIONAL)
 
 1. Theory: https://redux.js.org/introduction/getting-started
