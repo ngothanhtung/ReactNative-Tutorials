@@ -382,6 +382,22 @@ firestore()
 
 # Session 12 Notification with OneSignal
 
+## Setup OneSignal Package:
+
+> https://documentation.onesignal.com/docs/react-native-sdk-setup
+
+## Register a account & create an OneSignal App:
+
+1. Login at: https://app.onesignal.com/login
+2. Create an OneSignal App: Choose Google Android (FCM) + [Next]
+3. Open Firebase dashboard, project settings and copy: Firebase Server Key & Firebase Sender ID, then paste to OneSignal Panel
+4. Next and Close panel.
+
+## Send a test message
+
+1. At OneSignal Dashboard: Choose menu Audience (on the top navigation bar), and then choose All Users and add a user to Test Users
+2. At OneSignal Dashboard: Choose menu Messages (on the top navigation bar), and send a test message to a device.
+
 # Session 13: REDUX & SAGA (BONUS & OPTIONAL)
 
 1. Theory: https://redux.js.org/introduction/getting-started
