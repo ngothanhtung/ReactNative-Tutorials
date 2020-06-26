@@ -38,7 +38,8 @@ import FirestoreExample from './Session11/FirestoreExample';
 import FirestoreRealtimeExample from './Session11/FirestoreRealtimeExample';
 import ChatExample from './Session11/ChatExample';
 import StorageUploadImageExample from './Session11/StorageUploadImageExample';
+import ChatApplication from './Session11/ChatApplication';
 
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => StorageUploadImageExample);
+AppRegistry.registerComponent(appName, () => ChatApplication);
