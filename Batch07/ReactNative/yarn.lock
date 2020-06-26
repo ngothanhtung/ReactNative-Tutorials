@@ -3215,7 +3215,7 @@ internal-slot@^1.0.2:
     has "^1.0.3"
     side-channel "^1.0.2"
 
-invariant@^2.2.4:
+invariant@^2.2.2, invariant@^2.2.4:
   version "2.2.4"
   resolved "https://registry.yarnpkg.com/invariant/-/invariant-2.2.4.tgz#610f3c92c9359ce1db616e538008d23ff35158e6"
   dependencies:
@@ -5169,6 +5169,13 @@ react-native-linear-gradient@^2.5.6:
   version "2.5.6"
   resolved "https://registry.yarnpkg.com/react-native-linear-gradient/-/react-native-linear-gradient-2.5.6.tgz#96215cbc5ec7a01247a20890888aa75b834d44a0"
   integrity sha512-HDwEaXcQIuXXCV70O+bK1rizFong3wj+5Q/jSyifKFLg0VWF95xh8XQgfzXwtq0NggL9vNjPKXa016KuFu+VFg==
+
+react-native-onesignal@^3.8.1:
+  version "3.8.1"
+  resolved "https://registry.yarnpkg.com/react-native-onesignal/-/react-native-onesignal-3.8.1.tgz#908272d16eff434a72a240aac03de8ec7242597a"
+  integrity sha512-ugyS0sJsU1KJp40BKYHnwGQUSESjITZpOH4E8qTusxCUmIxXqETlM6LHV2TyvSN8Rtj2EC/R6YEIGT3tFb6hiQ==
+  dependencies:
+    invariant "^2.2.2"
 
 react-native-paper@^3.10.1:
   version "3.10.1"
