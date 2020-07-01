@@ -41,8 +41,8 @@ import StorageUploadImageExample from './Session11/StorageUploadImageExample';
 import ChatApplication from './Session11/ChatApplication';
 import AuthExample from './Session11/AuthExample';
 import OneSignalExample from './Session12/OneSignalExample';
-import CounterApp from './Session13/CounterApp';
+import Session13 from './Session13/';
 
 import {name as appName} from './app.json';
 
-AppRegistry.registerComponent(appName, () => CounterApp);
+AppRegistry.registerComponent(appName, () => Session13);

@@ -3,16 +3,17 @@ import React from 'react';
 import {View, SafeAreaView, Text} from 'react-native';
 
 // COMPONENT
-import Counter from './components/Counter';
-import DisplayCount from './components/DisplayCount';
+import Products from './components/Products';
+import ShoppingCart from './components/ShoppingCart';
 
 export default function CounterApp() {
   return (
     <SafeAreaView style={{flex: 1}}>
       <View style={{flex: 1, padding: 24}}>
-        <Text>Welcome to Redux</Text>
-        <Counter />
-        <DisplayCount />
+        <Products />
+      </View>
+      <View style={{flex: 1, padding: 24}}>
+        <ShoppingCart />
       </View>
     </SafeAreaView>
   );
