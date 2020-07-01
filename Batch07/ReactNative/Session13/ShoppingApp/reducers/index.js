@@ -20,6 +20,7 @@ export default function (state = defaultState, action) {
       }
 
       // ELSE ADD NEW ITEM WITH QUANTITY = 1
+      // PUSH
       var addedProducts = [
         ...state.addedProducts,
         {product: action.product, quantity: action.quantity},
