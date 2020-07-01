@@ -445,17 +445,19 @@ firestore()
 1. Theory: https://redux.js.org/introduction/getting-started
 2. Usage with React: https://react-redux.js.org
 3. Diagram: https://kuanhsuh.github.io/2017/09/28/What-s-Redux-and-how-to-use-it/
-4. Install packages: redux, react-redux,
+4. Install packages: redux, react-redux:
 
-- (npm install --save redux),
-- (npm isntall --save react-redux),
-- (npm isntall --save --dev redux-devtools-extension)
+> npm install --save redux || hoặc || yarn add redux
+
+> npm isntall --save react-redux || hoặc || yarn add react-redux
+
+> npm isntall --save --dev redux-devtools-extension || hoặc || yarn add --dev redux-devtools-extension
 
 5. Coding:
 
-- types (constants)
-- actions
-- reducers
+- actions / types.js (constants)
+- actions / index.js
+- reducers / index.js
 - components
 - root reducers (store.js)
 - store (store.js)
@@ -477,7 +479,6 @@ firestore()
 - Install: npm install --save redux-saga / yarn add redux-saga
 - sagas
 - rootSagas
--
 
 # Bonus 1: EXPRESSJS & MONGODB (BONUS & OPTIONAL)
 
