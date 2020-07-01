@@ -9,10 +9,12 @@ import counterReducer from './reducers';
 
 // COMPONENT
 import Counter from './components/Counter';
+import DisplayCount from './components/DisplayCount';
 
 // ROOT REDUCER
 const rootReducer = combineReducers({
   counterReducer,
+  // authReducer
 });
 
 // MIDDLEWARE
@@ -24,6 +26,7 @@ const middewares = [
 // STORE
 const store = createStore(
   rootReducer,
+  // ONLY FOR DEBUG
   composeWithDevTools(applyMiddleware(...middewares)),
 );
 
@@ -34,6 +37,7 @@ export default function CounterApp() {
         <View style={{flex: 1, padding: 24}}>
           <Text>Welcome to Redux</Text>
           <Counter />
+          <DisplayCount />
         </View>
       </SafeAreaView>
     </Provider>

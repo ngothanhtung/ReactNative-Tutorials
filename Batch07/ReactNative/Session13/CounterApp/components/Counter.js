@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {View, Text, Button} from 'react-native';
 
@@ -6,7 +7,7 @@ import {increaseCountAction, decreaseCountAction} from '../actions';
 
 export default function Counter() {
   const dispatch = useDispatch();
-
+  // const [count, setCount] = React.useState(0);
   const count = useSelector((state) => state.counterReducer.count);
 
   return (
