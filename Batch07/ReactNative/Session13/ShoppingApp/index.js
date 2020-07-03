@@ -6,11 +6,14 @@ import {View, SafeAreaView, Text} from 'react-native';
 import Products from './components/Products';
 import ShoppingCart from './components/ShoppingCart';
 
+import ProductsSaga from './components/ProductsSaga';
+
 export default function CounterApp() {
   return (
     <SafeAreaView style={{flex: 1}}>
       <View style={{flex: 1, padding: 24}}>
-        <Products />
+        {/* <Products /> */}
+        <ProductsSaga />
       </View>
       <View style={{flex: 1, padding: 24}}>
         <ShoppingCart />

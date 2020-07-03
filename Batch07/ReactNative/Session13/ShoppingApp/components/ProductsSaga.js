@@ -1,6 +1,6 @@
 import React from 'react';
 import {useSelector, useDispatch} from 'react-redux';
-import {View, Text} from 'react-native';
+import {View, FlatList, Text} from 'react-native';
 import {getProducts} from '../actions';
 
 export default function ProductsSaga() {
@@ -15,7 +15,17 @@ export default function ProductsSaga() {
 
   return (
     <View>
-      <Text></Text>
+      <FlatList
+        data={products}
+        keyExtractor={(item, index) => 'product-' + index}
+        renderItem={({item}) => {
+          return (
+            <View>
+              <Text>{item.name}</Text>
+            </View>
+          );
+        }}
+      />
     </View>
   );
 }
