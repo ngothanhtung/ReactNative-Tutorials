@@ -1,7 +1,10 @@
 import * as ActionTypes from '../actions/types';
 
 const defaultState = {
+  loading: false,
+  products: [],
   addedProducts: [],
+  error: null,
 };
 
 export default function (state = defaultState, action) {
@@ -39,6 +42,26 @@ export default function (state = defaultState, action) {
       return {
         ...state,
         addedProducts: addedProducts,
+      };
+
+    case ActionTypes.GET_PRODUCTS:
+      return {
+        ...state,
+        loading: true,
+      };
+    case ActionTypes.GET_PRODUCTS_SUCCESS:
+      return {
+        ...state,
+        loading: false,
+        products: action.products,
+        error: null,
+      };
+    case ActionTypes.GET_PRODUCTS_FAILURE:
+      return {
+        ...state,
+        loading: false,
+        products: [],
+        error: action.error,
       };
     default:
       return state;

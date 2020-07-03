@@ -10,3 +10,7 @@ export const removeFromCart = (productId) => ({
   type: ActionTypes.REMOVE_FROM_CART,
   productId: productId,
 });
+
+export const getProducts = () => ({
+  type: ActionTypes.GET_PRODUCTS,
+});

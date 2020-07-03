@@ -1,20 +1,26 @@
 import * as ActionTypes from '../actions/types';
-import {all, put, call, select, takeEvery} from 'redux-saga/effects';
+import {
+  all,
+  put,
+  call,
+  select,
+  takeEvery,
+  takeLatest,
+} from 'redux-saga/effects';
+import axios from 'axios';
 
 function* getProducts(action) {
   console.log('Action', action);
   try {
-    // const data = yield getPeopleFromApi({});
-    // const data = yield call(getPeopleFromApi, {});
-    // const data = yield all([
-    //   call(getPeopleFromApi),
-    //   call(getPeopleFromApi),
-    //   call(getPeopleFromApi)
-    // ]);
-    // yield put({type: ActionTypes.GET_PRODUCTS_SUCCESS, data});
-    // NavigationService.navigate('MainScreen');
+    const url = 'https://api.softech.cloud/products';
+    const response = yield axios.get(url);
+    yield put({
+      type: ActionTypes.GET_PRODUCTS_SUCCESS,
+      products: response.data,
+    });
   } catch (e) {
-    yield put({type: ActionTypes.GET_PRODUCTS_FAILURE});
+    console.log(e);
+    yield put({type: ActionTypes.GET_PRODUCTS_FAILURE, error: e});
   }
 }
 
@@ -25,7 +31,8 @@ function* sagas() {
   //   takeEvery(FETCHING_PEOPLE, getPeople),
   //   takeEvery(FETCHING_PEOPLE, getPeople)
   // ])
-  yield takeEvery(ActionTypes.GET_PRODUCTS, getProducts);
+  yield takeLatest(ActionTypes.GET_PRODUCTS, getProducts);
+  // yield takeLatest(ActionTypes.LOGIN, login);
 
   // yield takeEvery('*', function* logger(action) {
   //   const state = yield select()

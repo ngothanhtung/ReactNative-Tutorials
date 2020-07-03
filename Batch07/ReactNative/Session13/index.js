@@ -2,7 +2,7 @@
 import React from 'react';
 import {View, SafeAreaView, Text} from 'react-native';
 import {createStore, combineReducers, applyMiddleware} from 'redux';
-// Saga
+// Saga (import)
 import createSagaMiddleware from 'redux-saga';
 import {Provider} from 'react-redux';
 import {composeWithDevTools} from 'redux-devtools-extension';
@@ -14,6 +14,9 @@ import shoppingReducer from './ShoppingApp/reducers';
 import CounterApp from './CounterApp';
 import ShoppingApp from './ShoppingApp';
 
+// Saga (root)
+import rootSagas from './rootSagas';
+
 // ROOT REDUCER
 const rootReducer = combineReducers({
   counterReducer,
@@ -21,7 +24,7 @@ const rootReducer = combineReducers({
 });
 
 // MIDDLEWARE
-//Saga
+//Saga (middleware)
 const sagaMiddleware = createSagaMiddleware();
 const middewares = [
   // Custom Middleware
@@ -37,9 +40,10 @@ const store = createStore(
   // ONLY FOR DEBUG
   composeWithDevTools(applyMiddleware(...middewares)),
 );
+// Root Saga
 
-// Run Saga
-sagaMiddleware.run(sagas);
+// Saga (run)
+sagaMiddleware.run(rootSagas);
 
 export default function Session13() {
   return (
