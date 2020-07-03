@@ -2,6 +2,8 @@
 import React from 'react';
 import {View, SafeAreaView, Text} from 'react-native';
 import {createStore, combineReducers, applyMiddleware} from 'redux';
+// Saga
+import createSagaMiddleware from 'redux-saga';
 import {Provider} from 'react-redux';
 import {composeWithDevTools} from 'redux-devtools-extension';
 
@@ -19,9 +21,14 @@ const rootReducer = combineReducers({
 });
 
 // MIDDLEWARE
+//Saga
+const sagaMiddleware = createSagaMiddleware();
 const middewares = [
   // Custom Middleware
   // logger
+
+  // SAGA
+  sagaMiddleware,
 ];
 
 // STORE
@@ -30,6 +37,9 @@ const store = createStore(
   // ONLY FOR DEBUG
   composeWithDevTools(applyMiddleware(...middewares)),
 );
+
+// Run Saga
+sagaMiddleware.run(sagas);
 
 export default function Session13() {
   return (

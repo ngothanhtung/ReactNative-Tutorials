@@ -476,6 +476,7 @@ firestore()
 
 8. redux-saga
 
+- https://redux-saga.js.org/docs/introduction/BeginnerTutorial.html
 - Install: npm install --save redux-saga / yarn add redux-saga
 - sagas
 - rootSagas
