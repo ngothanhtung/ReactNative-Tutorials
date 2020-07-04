@@ -53,7 +53,7 @@ export default function (state = defaultState, action) {
       return {
         ...state,
         loading: false,
-        products: [...action.products],
+        products: action.products,
         error: null,
       };
     case ActionTypes.GET_PRODUCTS_FAILURE:
