@@ -7,6 +7,7 @@ import LoginScreen from './LoginScreen';
 import RegisterScreen from './RegisterScreen';
 import TabNavigator from './TabNavigator';
 
+import * as routes from '../routes';
 const Stack = createStackNavigator();
 
 const AppNavigator = () => {
@@ -14,12 +15,12 @@ const AppNavigator = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen
-          name="LoginScreen"
+          name={routes.AUTH_LOGIN_SCREEN}
           component={LoginScreen}
           options={{title: 'Đăng nhập', headerShown: true}}
         />
         <Stack.Screen
-          name="RegisterScreen"
+          name={routes.AUTH_REGISTER_SCREEN}
           component={RegisterScreen}
           options={{title: 'Đăng ký', headerShown: true}}
         />
