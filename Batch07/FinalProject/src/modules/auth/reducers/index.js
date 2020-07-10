@@ -2,7 +2,7 @@ import * as ActionTypes from '../actions/types';
 
 const defaultState = {
   loading: false,
-  loggedInUser: [],
+  loggedInUser: null,
   error: null,
 };
 
