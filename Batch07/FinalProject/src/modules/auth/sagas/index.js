@@ -7,9 +7,10 @@ function* login(action) {
   console.log('Action', action);
   try {
     const response = yield LoginService.login(action.email, action.password);
+
     yield put({
       type: ActionTypes.AUTH_LOGIN_SUCCESS,
-      loggedInUser: response.data,
+      loggedInUser: response.user._user,
     });
   } catch (error) {
     console.log(error);

@@ -14,6 +14,7 @@ export default function Login() {
     <View>
       <Text>Login</Text>
       <Button
+        title="Login"
         onPress={() => {
           // OnFinish of Formik
           // values.emails / values.password
