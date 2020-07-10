@@ -30,6 +30,12 @@ export default function (state = defaultState, action) {
         error: action.error,
       };
 
+    case ActionTypes.AUTH_LOGOUT:
+      return {
+        ...state,
+        loggedInUser: null,
+      };
+
     default:
       return state;
   }

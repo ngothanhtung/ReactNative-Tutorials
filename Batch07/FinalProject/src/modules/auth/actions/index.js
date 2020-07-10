@@ -11,3 +11,7 @@ export const registerAction = (email, password) => ({
   email,
   password,
 });
+
+export const logoutAction = () => ({
+  type: ActionTypes.AUTH_LOGOUT,
+});
