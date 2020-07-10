@@ -2,7 +2,7 @@ import * as ActionTypes from '../actions/types';
 
 const defaultState = {
   loading: false,
-  user: [],
+  loggedInUser: [],
   error: null,
 };
 
@@ -18,7 +18,7 @@ export default function (state = defaultState, action) {
       return {
         ...state,
         loading: false,
-        user: action.user,
+        loggedInUser: action.loggedInUser,
         error: null,
       };
 
@@ -26,7 +26,7 @@ export default function (state = defaultState, action) {
       return {
         ...state,
         loading: false,
-        user: null,
+        loggedInUser: null,
         error: action.error,
       };
 
