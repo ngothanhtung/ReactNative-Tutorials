@@ -1,6 +1,6 @@
 import React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
-import LoginScreen from './LoginScreen';
+import SignInScreen from './SignInScreen';
 import RegisterScreen from './RegisterScreen';
 
 const Stack = createStackNavigator();
@@ -9,7 +9,7 @@ export default function index() {
   return (
     <Stack.Navigator
       // headerMode="none"
-      initialRouteName="LoginScreen"
+      initialRouteName="SignInScreen"
       screenOptions={{
         headerStyle: {
           backgroundColor: '#f4511e',
@@ -20,8 +20,8 @@ export default function index() {
         },
       }}>
       <Stack.Screen
-        name="LoginScreen"
-        component={LoginScreen}
+        name="SignInScreen"
+        component={SignInScreen}
         options={{title: 'Đăng nhập', headerShown: false}}
       />
       <Stack.Screen

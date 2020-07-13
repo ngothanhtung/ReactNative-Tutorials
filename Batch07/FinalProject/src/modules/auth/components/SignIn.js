@@ -3,22 +3,22 @@ import {View, Text, Button} from 'react-native';
 
 import {useDispatch} from 'react-redux';
 
-import {loginAction} from '../actions';
+import {signInAction} from '../actions';
 
-export default function Login() {
+export default function SignIn() {
   const dispatch = useDispatch();
   // const [count, setCount] = React.useState(0);
   // const count = useSelector((state) => state.counterReducer.count);
 
   return (
     <View>
-      <Text>Login</Text>
+      <Text>Sign in</Text>
       <Button
-        title="Login"
+        title="Sign in"
         onPress={() => {
           // OnFinish of Formik
           // values.emails / values.password
-          dispatch(loginAction('tungnt@softech.vn', '123456789'));
+          dispatch(signInAction('tungnt@softech.vn', '123456789'));
         }}
       />
     </View>
