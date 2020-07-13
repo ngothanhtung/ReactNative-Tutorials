@@ -8,6 +8,7 @@ function* signIn(action) {
   try {
     const response = yield AuthService.signIn(action.email, action.password);
 
+    // Get profile theo uid
     const profile = yield AuthService.getProfile(response.user._user.uid);
 
     let user = response.user._user;

@@ -49,13 +49,14 @@ function register(email, password, role) {
     auth()
       .createUserWithEmailAndPassword(email, password)
       .then(() => {
-        resolve('User account created');
         let uid = auth().currentUser.uid;
         // auth().currentUser.updateProfile({displayName: 'Ngo Thanh Tung'});
         // Update role
         firestore().collection('Profiles').doc(uid).set({
           role: role,
         });
+
+        resolve('User account created');
       })
       .catch((error) => {
         if (error.code === 'auth/email-already-in-use') {
