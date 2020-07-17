@@ -26,7 +26,7 @@ const AuthenticationStackNavigator = () => {
     );
   }
 
-  return signedInInUser.profile.role === 'Users' ? (
+  return signedInInUser.profile.roles === 'Users' ? (
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen
         name={routes.USER_TAB_NAVIGATOR}
