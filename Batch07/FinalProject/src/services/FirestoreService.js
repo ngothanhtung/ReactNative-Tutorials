@@ -27,9 +27,9 @@ function getServices() {
       .collection('Services')
       .get()
       .then((querySnapshot) => {
-        const services = [];
+        let services = [];
         querySnapshot.forEach((documentSnapshot) => {
-          const service = documentSnapshot.data();
+          let service = documentSnapshot.data();
 
           service.vendor.get().then((vendorDocumentSnapshot) => {
             service.vendor = vendorDocumentSnapshot.data();
