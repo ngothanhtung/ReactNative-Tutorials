@@ -27,7 +27,7 @@ export default function SignIn() {
   };
 
   return (
-    <View style={{flex: 1, padding: 12}}>
+    <View style={{flex: 1}}>
       {loading ? (
         <Loading />
       ) : (

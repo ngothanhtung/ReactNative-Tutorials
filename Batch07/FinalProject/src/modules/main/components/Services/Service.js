@@ -23,10 +23,10 @@ function Service({service}) {
           borderRadius: 12,
           paddingBottom: 24,
         }}>
-        {service.images && (
+        {service.pictureUrl && (
           <Card.Cover
             style={{borderTopLeftRadius: 12, borderTopRightRadius: 12}}
-            source={{uri: service.images[0].src}}
+            source={{uri: service.pictureUrl}}
           />
         )}
         <Card.Title
@@ -40,7 +40,7 @@ function Service({service}) {
 
         <Card.Content>
           <Paragraph style={{textAlign: 'justify'}}>
-            {service.short_description}
+            {service.description}
           </Paragraph>
           <React.Fragment>
             <View style={{height: 12}} />
@@ -68,6 +68,25 @@ function Service({service}) {
                     <Text>{`Giá gốc: ${numeral(service.old_price).format(
                       '0,0',
                     )} VNĐ`}</Text>
+                  </Chip>
+                </View>
+              </React.Fragment>
+            )}
+
+            {service.duration > 0 && (
+              <React.Fragment>
+                <View style={{height: 4}} />
+                <View style={{flexDirection: 'row'}}>
+                  <Chip
+                    mode="flat"
+                    style={{
+                      flex: 1,
+                      backgroundColor: Colors.LIGHT_GRAY,
+                    }}
+                    icon="clock">
+                    <Text>{`Thời gian: ${numeral(service.duration).format(
+                      '0,0',
+                    )} phút`}</Text>
                   </Chip>
                 </View>
               </React.Fragment>
