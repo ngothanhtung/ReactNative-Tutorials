@@ -1,11 +1,10 @@
 import React from 'react';
-import {View, Text} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
-import HomeScreen from './HomeScreen';
 import NotificationScreen from './NotificationScreen';
 import ProfileScreen from './ProfileScreen';
-import ProductStackNavigator from './ProductStackNavigator';
+import VendorStackNavigator from './VendorStackNavigator';
+import ServiceStackNavigator from './ServiceStackNavigator';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -13,8 +12,8 @@ const TabNavigator = () => {
   return (
     <Tab.Navigator>
       <Tab.Screen
-        name="HomeScreen"
-        component={HomeScreen}
+        name="Nhà cung cấp"
+        component={VendorStackNavigator}
         options={{
           title: 'Home',
           tabBarIcon: ({focused, color}) => {
@@ -24,10 +23,10 @@ const TabNavigator = () => {
       />
 
       <Tab.Screen
-        name="ProductStackNavigator"
-        component={ProductStackNavigator}
+        name="ServiceStackNavigator"
+        component={ServiceStackNavigator}
         options={{
-          title: 'Products',
+          title: 'Services',
           tabBarIcon: ({focused, color}) => {
             return <Icon name="apps" size={24} style={{color: color}} />;
           },
