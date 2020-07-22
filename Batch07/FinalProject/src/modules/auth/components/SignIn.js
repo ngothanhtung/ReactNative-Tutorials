@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   Keyboard,
   KeyboardAvoidingView,
+  ScrollView,
 } from 'react-native';
 
 import * as Animatable from 'react-native-animatable';
@@ -57,41 +58,65 @@ export default function SignIn() {
 
   return (
     <SafeAreaView style={{flex: 1}}>
-      <TouchableOpacity
-        activeOpacity={1}
-        style={{flex: 1, backgroundColor: 'white'}}
-        onPress={Keyboard.dismiss}>
-        <KeyboardAvoidingView
-          behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-          style={{flex: 1}}>
-          <Animatable.View
-            style={{
-              height: 240,
-              justifyContent: 'center',
-              alignItems: 'center',
-              backgroundColor: 'green',
-            }}
-            ref={logoRef}>
-            <Icon name="cloud-upload" color="white" size={120} />
-            <Text style={{color: 'white', fontWeight: '700', fontSize: 20}}>
-              GRAB SERVER
-            </Text>
-          </Animatable.View>
-          <View height={4} />
-          <TextInput placeholder="Enter your email" />
-          <View height={4} />
-          <TextInput placeholder="Enter your password" />
-
-          <Button
-            title="Sign in"
-            onPress={() => {
-              // OnFinish of Formik
-              // values.emails / values.password
-              dispatch(signInAction('tungnt@softech.vn', '123456789'));
-            }}
-          />
-        </KeyboardAvoidingView>
-      </TouchableOpacity>
+      <ScrollView>
+        <TouchableOpacity
+          activeOpacity={1}
+          style={{flex: 1, backgroundColor: 'white'}}
+          onPress={Keyboard.dismiss}>
+          <KeyboardAvoidingView
+            behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+            style={{flex: 1}}>
+            <Animatable.View
+              style={{
+                height: 240,
+                justifyContent: 'center',
+                alignItems: 'center',
+                backgroundColor: 'green',
+              }}
+              ref={logoRef}>
+              <Icon name="cloud-upload" color="white" size={120} />
+              <Text style={{color: 'white', fontWeight: '700', fontSize: 20}}>
+                GRAB SERVER
+              </Text>
+            </Animatable.View>
+            <View height={4} />
+            <TextInput placeholder="Enter your email" />
+            <View height={4} />
+            <TextInput placeholder="Enter your password" />
+            <View height={4} />
+            <TextInput placeholder="Enter your password" />
+            <View height={4} />
+            <TextInput placeholder="Enter your password" />
+            <View height={4} />
+            <TextInput placeholder="Enter your password" />
+            <View height={4} />
+            <TextInput placeholder="Enter your password" />
+            <View height={4} />
+            <TextInput placeholder="Enter your password" />
+            <View height={4} />
+            <TextInput placeholder="Enter your password" />
+            <View height={4} />
+            <TextInput placeholder="Enter your password" />
+            <View height={4} />
+            <TextInput placeholder="Enter your password" />
+            <View height={4} />
+            <TextInput placeholder="Enter your password" />
+            <View height={4} />
+            <TextInput placeholder="Enter your password" />
+            <View height={4} />
+            <TextInput placeholder="Enter your password" />
+            <View height={4} />
+          </KeyboardAvoidingView>
+        </TouchableOpacity>
+      </ScrollView>
+      <Button
+        title="Sign in"
+        onPress={() => {
+          // OnFinish of Formik
+          // values.emails / values.password
+          dispatch(signInAction('tungnt@softech.vn', '123456789'));
+        }}
+      />
     </SafeAreaView>
   );
 }
