@@ -10,12 +10,12 @@ const Tab = createMaterialBottomTabNavigator();
 
 const TabNavigator = () => {
   return (
-    <Tab.Navigator>
+    <Tab.Navigator shifting={false}>
       <Tab.Screen
-        name="Nhà cung cấp"
+        name="VendorStackNavigator"
         component={VendorStackNavigator}
         options={{
-          title: 'Home',
+          title: 'Vendors',
           tabBarIcon: ({focused, color}) => {
             return <Icon name="home" size={24} style={{color: color}} />;
           },
