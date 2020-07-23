@@ -6,7 +6,7 @@ import {useNavigation} from '@react-navigation/native';
 import {Card, Paragraph, Chip, TouchableRipple} from 'react-native-paper';
 
 import numeral from 'numeral';
-import Colors from '../../../../constants/Colors';
+import colors from '../../../../constants/colors';
 
 function Service({service}) {
   const navigation = useNavigation();
@@ -14,12 +14,12 @@ function Service({service}) {
   return (
     <TouchableRipple
       style={{margin: 12}}
-      rippleColor={Colors.WHITE}
+      rippleColor={colors.WHITE}
       onPress={() => {}}>
       <View
         style={{
           flex: 1,
-          backgroundColor: Colors.WHITE,
+          backgroundColor: colors.WHITE,
           borderRadius: 12,
           paddingBottom: 24,
         }}>
@@ -34,7 +34,7 @@ function Service({service}) {
           titleStyle={{
             fontSize: 16,
             fontWeight: '700',
-            color: Colors.PRIMARY,
+            color: colors.PRIMARY,
           }}
         />
 
@@ -47,7 +47,7 @@ function Service({service}) {
             <View style={{flexDirection: 'row'}}>
               <Chip
                 mode="flat"
-                style={{flex: 1, backgroundColor: Colors.LIGHT_GRAY}}
+                style={{flex: 1, backgroundColor: colors.LIGHT_GRAY}}
                 icon="currency-usd">
                 <Text>{`Giá: ${numeral(service.price).format(
                   '0,0',
@@ -62,7 +62,7 @@ function Service({service}) {
                     mode="flat"
                     style={{
                       flex: 1,
-                      backgroundColor: Colors.LIGHT_GRAY,
+                      backgroundColor: colors.LIGHT_GRAY,
                     }}
                     icon="currency-usd">
                     <Text>{`Giá gốc: ${numeral(service.old_price).format(
@@ -81,7 +81,7 @@ function Service({service}) {
                     mode="flat"
                     style={{
                       flex: 1,
-                      backgroundColor: Colors.LIGHT_GRAY,
+                      backgroundColor: colors.LIGHT_GRAY,
                     }}
                     icon="clock">
                     <Text>{`Thời gian: ${numeral(service.duration).format(

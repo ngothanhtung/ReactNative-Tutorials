@@ -1,6 +1,7 @@
 import React from 'react';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
+import {useTheme} from 'react-native-paper';
 import NotificationScreen from './NotificationScreen';
 import ProfileScreen from './ProfileScreen';
 import VendorStackNavigator from './VendorStackNavigator';
@@ -9,8 +10,12 @@ import ServiceStackNavigator from './ServiceStackNavigator';
 const Tab = createMaterialBottomTabNavigator();
 
 const TabNavigator = () => {
+  const {colors} = useTheme();
+
   return (
-    <Tab.Navigator shifting={false}>
+    <Tab.Navigator
+      shifting={false}
+      barStyle={{backgroundColor: colors.primary}}>
       <Tab.Screen
         name="VendorStackNavigator"
         component={VendorStackNavigator}

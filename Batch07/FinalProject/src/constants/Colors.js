@@ -15,4 +15,5 @@ export default {
   PRIMARY_BORDER: '#ecf0f1',
   NAVIGATION_COLOR: '#01BAC6',
   LOGO_GREEN_COLOR: '#01BAC6',
+  THEME_GREEN: '#01BAC6',
 };

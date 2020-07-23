@@ -11,9 +11,7 @@ import * as routes from '../routes';
 const Stack = createStackNavigator();
 
 const AuthenticationStackNavigator = () => {
-  const signedInInUser = useSelector(
-    (state) => state.authReducer.signedInInUser,
-  );
+  const signedInInUser = useSelector((state) => state.auth.signedInInUser);
 
   if (!signedInInUser) {
     return (

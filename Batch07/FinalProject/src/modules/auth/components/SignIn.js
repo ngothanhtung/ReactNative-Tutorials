@@ -1,41 +1,54 @@
 /* eslint-disable react-native/no-inline-styles */
-import React from 'react';
-import {
-  View,
-  Text,
-  Button,
-  Platform,
-  TouchableOpacity,
-  Keyboard,
-  KeyboardAvoidingView,
-  ScrollView,
-} from 'react-native';
+/* eslint-disable react/prop-types */
 
 import * as Animatable from 'react-native-animatable';
+import * as Yup from 'yup';
 
+import React from 'react';
+import {Button, Headline, useTheme} from 'react-native-paper';
+import {
+  Keyboard,
+  KeyboardAvoidingView,
+  Platform,
+  Text,
+  TouchableOpacity,
+  TouchableWithoutFeedback,
+  View,
+} from 'react-native';
+import {useDispatch, useSelector} from 'react-redux';
+import {useNavigation} from '@react-navigation/native';
+import {Formik} from 'formik';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
-import {useDispatch} from 'react-redux';
+import TextBox from '../../../components/TextBox';
+import colors from '../../../constants/colors';
 
-import {signInAction} from '../actions';
-import {TextInput} from 'react-native-paper';
-import {SafeAreaView} from 'react-native-safe-area-context';
+// YUP
+const SignInSchema = Yup.object().shape({
+  username: Yup.string().required(),
+  password: Yup.string().required(),
+});
 
-export default function SignIn() {
+const SignIn = () => {
+  const Touch =
+    Platform.OS === 'ios' ? TouchableOpacity : TouchableWithoutFeedback;
+  // REDUX
+  const loading = useSelector((state) => state.auth.loading);
   const dispatch = useDispatch();
-
+  // NAVIGATION
+  const navigation = useNavigation();
+  // REFS
+  const containerRef = React.useRef(null);
   const logoRef = React.useRef(null);
-
-  // const [count, setCount] = React.useState(0);
-  // const count = useSelector((state) => state.counterReducer.count);
-
+  // HOOKS
+  const paperColor = useTheme().colors;
   // EFFECTS
   React.useEffect(() => {
     const keyboardDidShowListener = Keyboard.addListener(
       'keyboardDidShow',
       () => {
-        // containerRef.current.transitionTo({height: 0}, 1000);
-        // containerRef.current.fadeOutUpBig(750);
+        containerRef.current.transitionTo({height: 0}, 1000);
+        containerRef.current.fadeOutUpBig(750);
         logoRef.current.transitionTo({height: 0}, 750);
         logoRef.current.fadeOutUpBig(500);
       },
@@ -43,8 +56,9 @@ export default function SignIn() {
     const keyboardDidHideListener = Keyboard.addListener(
       'keyboardDidHide',
       () => {
-        // containerRef.current.transitionTo({height: 240}, 500);
-        // containerRef.current.fadeInDownBig(750);
+        containerRef.current.transitionTo({height: 240}, 500);
+        containerRef.current.fadeInDownBig(750);
+
         logoRef.current.transitionTo({height: 240}, 750);
         logoRef.current.fadeInDownBig(1000);
       },
@@ -55,68 +69,149 @@ export default function SignIn() {
       keyboardDidShowListener.remove();
     };
   }, []);
-
+  // RENDER
   return (
-    <SafeAreaView style={{flex: 1}}>
-      <ScrollView>
-        <TouchableOpacity
-          activeOpacity={1}
-          style={{flex: 1, backgroundColor: 'white'}}
-          onPress={Keyboard.dismiss}>
-          <KeyboardAvoidingView
-            behavior={Platform.OS === 'ios' ? 'padding' : undefined}
-            style={{flex: 1}}>
-            <Animatable.View
-              style={{
-                height: 240,
-                justifyContent: 'center',
-                alignItems: 'center',
-                backgroundColor: 'green',
-              }}
-              ref={logoRef}>
-              <Icon name="cloud-upload" color="white" size={120} />
-              <Text style={{color: 'white', fontWeight: '700', fontSize: 20}}>
-                GRAB SERVER
-              </Text>
-            </Animatable.View>
-            <View height={4} />
-            <TextInput placeholder="Enter your email" />
-            <View height={4} />
-            <TextInput placeholder="Enter your password" />
-            <View height={4} />
-            <TextInput placeholder="Enter your password" />
-            <View height={4} />
-            <TextInput placeholder="Enter your password" />
-            <View height={4} />
-            <TextInput placeholder="Enter your password" />
-            <View height={4} />
-            <TextInput placeholder="Enter your password" />
-            <View height={4} />
-            <TextInput placeholder="Enter your password" />
-            <View height={4} />
-            <TextInput placeholder="Enter your password" />
-            <View height={4} />
-            <TextInput placeholder="Enter your password" />
-            <View height={4} />
-            <TextInput placeholder="Enter your password" />
-            <View height={4} />
-            <TextInput placeholder="Enter your password" />
-            <View height={4} />
-            <TextInput placeholder="Enter your password" />
-            <View height={4} />
-            <TextInput placeholder="Enter your password" />
-            <View height={4} />
-          </KeyboardAvoidingView>
-        </TouchableOpacity>
-      </ScrollView>
-      <Button
-        title="Sign in"
-        onPress={() => {
-          // OnFinish of Formik
-          // values.emails / values.password
-          dispatch(signInAction('tungnt@softech.vn', '123456789'));
-        }}
-      />
-    </SafeAreaView>
+    <View style={{flex: 1}}>
+      <TouchableOpacity
+        activeOpacity={1}
+        style={{flex: 1, backgroundColor: colors.WHITE}}
+        onPress={Keyboard.dismiss}>
+        <KeyboardAvoidingView
+          behavior={Platform.OS === 'ios' ? 'padding' : undefined}
+          style={{flex: 1}}>
+          <Formik
+            initialValues={{
+              username: '',
+              password: '',
+            }}
+            validationSchema={SignInSchema}
+            onSubmit={(values) => {
+              // dispatch(loginAction(values.username, values.password));
+            }}>
+            {(formik) => (
+              <React.Fragment>
+                <Animatable.View
+                  ref={containerRef}
+                  duration={1000}
+                  animation="slideInDown"
+                  style={{
+                    height: 240,
+                    backgroundColor: paperColor.primary,
+                    justifyContent: 'center',
+                  }}>
+                  <View
+                    style={{justifyContent: 'center', alignItems: 'center'}}>
+                    <Animatable.View
+                      style={{
+                        height: 240,
+                        justifyContent: 'center',
+                        alignItems: 'center',
+                      }}
+                      ref={logoRef}>
+                      <Icon name="cloud-upload" color="white" size={120} />
+                      <Text
+                        style={{
+                          color: 'white',
+                          fontWeight: '700',
+                          fontSize: 20,
+                        }}>
+                        GRAB SERVICES
+                      </Text>
+                      <View height={4} />
+                      <Text style={{color: 'white', fontWeight: '700'}}>
+                        Final Project of React Native Course
+                      </Text>
+                    </Animatable.View>
+                  </View>
+                </Animatable.View>
+                <View
+                  style={{alignItems: 'center', padding: 16, paddingTop: 36}}>
+                  <Headline
+                    style={{color: paperColor.primary, fontWeight: '400'}}>
+                    ĐĂNG NHẬP
+                  </Headline>
+                </View>
+                <View
+                  style={{flex: 0, justifyContent: 'flex-start', padding: 16}}>
+                  <TextBox
+                    name="username"
+                    autoCapitalize="none"
+                    iconName="account"
+                    disabled={loading}
+                    placeholder="Tên đăng nhập"
+                    containerStyle={{borderWidth: 0, backgroundColor: 'white'}}
+                    inputContainerStyle={{borderBottomWidth: 1.5}}
+                    leftIconContainerStyle={{marginLeft: 12}}
+                    onBlur={() => formik.handleBlur('username')}
+                    onChangeText={formik.handleChange('username')}
+                    value={formik.values.username}
+                  />
+                  <View height={16} />
+                  <TextBox
+                    name="password"
+                    iconName="lock"
+                    secureTextEntry
+                    disabled={loading}
+                    placeholder="Mật khẩu"
+                    containerStyle={{borderWidth: 0, backgroundColor: 'white'}}
+                    inputContainerStyle={{borderBottomWidth: 1.5}}
+                    leftIconContainerStyle={{marginLeft: 12}}
+                    onBlur={() => formik.handleBlur('password')}
+                    onChangeText={formik.handleChange('password')}
+                    value={formik.values.password}
+                  />
+
+                  <View
+                    style={{
+                      alignItems: 'flex-end',
+                      marginBottom: 12,
+                      marginTop: 12,
+                    }}>
+                    <Text style={{color: colors.PRIMARY_FONT}}>
+                      Quên mật khẩu?
+                    </Text>
+                  </View>
+                </View>
+                <Animatable.View
+                  animation="slideInUp"
+                  duration={1000}
+                  style={{flex: 1, padding: 16, justifyContent: 'flex-end'}}>
+                  <Button
+                    disabled={loading}
+                    loading={loading}
+                    labelStyle={{fontSize: 18}}
+                    contentStyle={{
+                      height: 48,
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}
+                    style={{elevation: 0}}
+                    uppercase={false}
+                    icon="key"
+                    mode="contained"
+                    onPress={formik.handleSubmit}
+                    dark>
+                    {loading ? 'Đang đăng nhập ...' : 'Đăng nhập'}
+                  </Button>
+
+                  <Touch
+                    onPress={() => {
+                      // navigation.navigate(UserRoutes.ACCOUNT_REGISTER_SCREEN);
+                    }}>
+                    <View style={{alignItems: 'center', padding: 12}}>
+                      <Text style={{color: colors.PRIMARY_FONT}}>
+                        Bạn chưa có tài khoản? Đăng ký
+                      </Text>
+                    </View>
+                  </Touch>
+                </Animatable.View>
+              </React.Fragment>
+            )}
+          </Formik>
+        </KeyboardAvoidingView>
+      </TouchableOpacity>
+    </View>
   );
-}
+};
+
+export default SignIn;

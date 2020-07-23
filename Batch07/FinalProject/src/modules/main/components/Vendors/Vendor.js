@@ -6,7 +6,7 @@ import {View, Text} from 'react-native';
 import numeral from 'numeral';
 
 import {Avatar, Card, Chip, TouchableRipple} from 'react-native-paper';
-import Colors from '../../../../constants/Colors';
+import colors from '../../../../constants/colors';
 
 function Vendor({vendor}) {
   const navigation = useNavigation();
@@ -14,12 +14,12 @@ function Vendor({vendor}) {
   return (
     <TouchableRipple
       style={{margin: 12}}
-      rippleColor={Colors.WHITE}
+      rippleColor={colors.WHITE}
       onPress={() => {}}>
       <View
         style={{
           flex: 1,
-          backgroundColor: Colors.WHITE,
+          backgroundColor: colors.WHITE,
           borderRadius: 12,
           paddingBottom: 24,
         }}>
@@ -32,7 +32,7 @@ function Vendor({vendor}) {
           titleStyle={{
             fontSize: 16,
             fontWeight: '700',
-            color: Colors.PRIMARY_FONT,
+            color: colors.PRIMARY_FONT,
             textTransform: 'uppercase',
           }}
           left={(props) => (
@@ -44,7 +44,7 @@ function Vendor({vendor}) {
           <View style={{flexDirection: 'row', marginVertical: 3}}>
             <Chip
               mode="flat"
-              style={{backgroundColor: Colors.LIGHT_GRAY, flex: 1}}
+              style={{backgroundColor: colors.LIGHT_GRAY, flex: 1}}
               icon="phone">
               <Text>{vendor.phone}</Text>
             </Chip>
@@ -53,7 +53,7 @@ function Vendor({vendor}) {
           <View style={{flexDirection: 'row', marginVertical: 3}}>
             <Chip
               mode="flat"
-              style={{backgroundColor: Colors.LIGHT_GRAY, flex: 1}}
+              style={{backgroundColor: colors.LIGHT_GRAY, flex: 1}}
               icon="email">
               <Text>{vendor.email}</Text>
             </Chip>
@@ -62,7 +62,7 @@ function Vendor({vendor}) {
           <View style={{flexDirection: 'row', marginVertical: 3}}>
             <Chip
               mode="flat"
-              style={{backgroundColor: Colors.LIGHT_GRAY, flex: 1}}
+              style={{backgroundColor: colors.LIGHT_GRAY, flex: 1}}
               icon="currency-usd">
               <Text>{numeral(vendor.minPrice).format('0,0')}</Text>
               <Text> - </Text>
