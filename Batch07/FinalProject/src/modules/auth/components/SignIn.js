@@ -22,10 +22,11 @@ import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 
 import TextBox from '../../../components/TextBox';
 import colors from '../../../constants/colors';
+import {signInAction} from '../actions';
 
 // YUP
 const SignInSchema = Yup.object().shape({
-  username: Yup.string().required(),
+  email: Yup.string().required(),
   password: Yup.string().required(),
 });
 
@@ -35,13 +36,15 @@ const SignIn = () => {
   // REDUX
   const loading = useSelector((state) => state.auth.loading);
   const dispatch = useDispatch();
+  // THEMNE
+  const paperColor = useTheme().colors;
+
   // NAVIGATION
   const navigation = useNavigation();
   // REFS
   const containerRef = React.useRef(null);
   const logoRef = React.useRef(null);
-  // HOOKS
-  const paperColor = useTheme().colors;
+
   // EFFECTS
   React.useEffect(() => {
     const keyboardDidShowListener = Keyboard.addListener(
@@ -81,12 +84,12 @@ const SignIn = () => {
           style={{flex: 1}}>
           <Formik
             initialValues={{
-              username: '',
+              email: '',
               password: '',
             }}
             validationSchema={SignInSchema}
             onSubmit={(values) => {
-              // dispatch(loginAction(values.username, values.password));
+              dispatch(signInAction(values.email, values.password));
             }}>
             {(formik) => (
               <React.Fragment>
@@ -134,7 +137,7 @@ const SignIn = () => {
                 <View
                   style={{flex: 0, justifyContent: 'flex-start', padding: 16}}>
                   <TextBox
-                    name="username"
+                    name="email"
                     autoCapitalize="none"
                     iconName="account"
                     disabled={loading}
@@ -142,9 +145,9 @@ const SignIn = () => {
                     containerStyle={{borderWidth: 0, backgroundColor: 'white'}}
                     inputContainerStyle={{borderBottomWidth: 1.5}}
                     leftIconContainerStyle={{marginLeft: 12}}
-                    onBlur={() => formik.handleBlur('username')}
-                    onChangeText={formik.handleChange('username')}
-                    value={formik.values.username}
+                    onBlur={() => formik.handleBlur('email')}
+                    onChangeText={formik.handleChange('email')}
+                    value={formik.values.email}
                   />
                   <View height={16} />
                   <TextBox
