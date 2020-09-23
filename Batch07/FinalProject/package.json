@@ -3,7 +3,11 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "react-native run-android",
+    "android": "rm -rf ./android/app/build && rm -rf ./node_modules/react-native-onesignal/android/build && react-native run-android",
+    "build:apk": "cd android && ./gradlew assembleRelease",
+    "clean:apk": "cd android && ./gradlew cleanBuildCache",
+    "uninstall": "adb uninstall com.finalproject",
+    "keyevent": "adb shell input keyevent 82",
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
