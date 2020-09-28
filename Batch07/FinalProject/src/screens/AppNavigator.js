@@ -8,6 +8,8 @@ import UserTabNavigator from './UserTabNavigator';
 import WorkerTabNavigator from './WorkerTabNavigator';
 
 import * as routes from '../routes';
+import useOneSignal from '../hooks/useOneSignal';
+
 const Stack = createStackNavigator();
 
 const AuthenticationStackNavigator = () => {
@@ -42,6 +44,8 @@ const AuthenticationStackNavigator = () => {
 };
 
 const AppNavigator = () => {
+  useOneSignal();
+
   return (
     <NavigationContainer>
       <AuthenticationStackNavigator />

@@ -1,0 +1,83 @@
+{
+  "project_info": {
+    "project_number": "900117337974",
+    "firebase_url": "https://reactnative-firebase-examples.firebaseio.com",
+    "project_id": "reactnative-firebase-examples",
+    "storage_bucket": "reactnative-firebase-examples.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:900117337974:android:f3baed9d16eb61fb8d4c57",
+        "android_client_info": {
+          "package_name": "com.awesomeproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "900117337974-ub39lg5802utrmqk6q0601htder36tro.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDw8-VnKTBddn36E2xwa4wyiy1DslR8xEs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "900117337974-ub39lg5802utrmqk6q0601htder36tro.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "900117337974-ifl6ogq27gu0c7jnahhauh7eql43884i.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.finalproject"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:900117337974:android:cc09ded7498a2c5b8d4c57",
+        "android_client_info": {
+          "package_name": "com.finalproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "900117337974-ub39lg5802utrmqk6q0601htder36tro.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDw8-VnKTBddn36E2xwa4wyiy1DslR8xEs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "900117337974-ub39lg5802utrmqk6q0601htder36tro.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "900117337974-ifl6ogq27gu0c7jnahhauh7eql43884i.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.finalproject"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
