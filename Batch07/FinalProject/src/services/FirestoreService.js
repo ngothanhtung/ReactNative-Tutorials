@@ -47,6 +47,26 @@ function getServices() {
   });
 }
 
+function getService(id) {
+  return new Promise((resolve, reject) => {
+    firestore()
+      .collection('Services')
+      .doc(id)
+      .get()
+      .then((documentSnapshot) => {
+        if (documentSnapshot.exists) {
+          resolve(documentSnapshot.data());
+        } else {
+          resolve(null);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+        reject(error);
+      });
+  });
+}
+
 function getServicesOfVendor(id) {
   return new Promise((resolve, reject) => {
     const vendorRef = firestore().collection('Vendors').doc(id);
@@ -79,5 +99,6 @@ function getServicesOfVendor(id) {
 export default {
   getVendors,
   getServices,
+  getService,
   getServicesOfVendor,
 };

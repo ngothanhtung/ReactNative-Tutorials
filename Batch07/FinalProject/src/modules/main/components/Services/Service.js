@@ -15,7 +15,9 @@ function Service({service}) {
     <TouchableRipple
       style={{margin: 12}}
       rippleColor={colors.WHITE}
-      onPress={() => {}}>
+      onPress={() => {
+        navigation.navigate('ServiceDetailsScreen', service.id);
+      }}>
       <View
         style={{
           flex: 1,
