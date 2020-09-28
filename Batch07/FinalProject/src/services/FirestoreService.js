@@ -30,7 +30,7 @@ function getServices() {
         let services = [];
         querySnapshot.forEach((documentSnapshot) => {
           let service = documentSnapshot.data();
-
+          service.id = documentSnapshot.id;
           service.vendor.get().then((vendorDocumentSnapshot) => {
             service.vendor = vendorDocumentSnapshot.data();
           });

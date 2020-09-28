@@ -16,7 +16,7 @@ function Service({service}) {
       style={{margin: 12}}
       rippleColor={colors.WHITE}
       onPress={() => {
-        navigation.navigate('ServiceDetailsScreen', service.id);
+        navigation.navigate('ServiceDetailsScreen', {serviceId: service.id});
       }}>
       <View
         style={{

@@ -84,8 +84,8 @@ const SignIn = () => {
           style={{flex: 1}}>
           <Formik
             initialValues={{
-              email: '',
-              password: '',
+              email: 'tungnt@softech.vn',
+              password: '123456789',
             }}
             validationSchema={SignInSchema}
             onSubmit={(values) => {
