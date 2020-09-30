@@ -61,7 +61,7 @@ const TabNavigator = () => {
         component={ShoppingCartScreen}
         options={{
           title: 'Carts',
-          tabBarBadge: addedServices.length,
+          tabBarBadge: addedServices.length === 0 ? null : addedServices.length,
           tabBarIcon: ({ focused, color }) => {
             return <Icon name="cart" size={24} style={{ color: color }} />;
           },
