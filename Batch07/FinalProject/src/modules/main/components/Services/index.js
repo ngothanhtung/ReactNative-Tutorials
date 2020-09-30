@@ -1,10 +1,10 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {View, FlatList} from 'react-native';
+import { View, FlatList } from 'react-native';
 import FirestoreService from '../../../../services/FirestoreService';
 import Loading from '../../../../components/Loading';
 
-import Service from './Service';
+import Service from './components/Service';
 
 export default function SignIn() {
   const [loading, setLoading] = React.useState(false);
@@ -18,7 +18,7 @@ export default function SignIn() {
     });
   }, []);
 
-  const renderItem = ({item}) => {
+  const renderItem = ({ item }) => {
     return (
       <View>
         <Service service={item} />
@@ -27,7 +27,7 @@ export default function SignIn() {
   };
 
   return (
-    <View style={{flex: 1}}>
+    <View style={{ flex: 1 }}>
       {loading ? (
         <Loading />
       ) : (

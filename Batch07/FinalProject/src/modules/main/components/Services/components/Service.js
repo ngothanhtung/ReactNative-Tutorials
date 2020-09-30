@@ -1,22 +1,22 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import PropTypes from 'prop-types';
-import {View, Text} from 'react-native';
-import {useNavigation} from '@react-navigation/native';
-import {Card, Chip, TouchableRipple} from 'react-native-paper';
+import { View, Text } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { Card, Chip, TouchableRipple } from 'react-native-paper';
 
 import numeral from 'numeral';
-import colors from '../../../../constants/colors';
+import colors from '../../../../../constants/colors';
 
-function Service({service}) {
+function Service({ service }) {
   const navigation = useNavigation();
 
   return (
     <TouchableRipple
-      style={{margin: 12}}
+      style={{ margin: 12 }}
       rippleColor={colors.WHITE}
       onPress={() => {
-        navigation.navigate('ServiceDetailsScreen', {serviceId: service.id});
+        navigation.navigate('ServiceDetailsScreen', { serviceId: service.id });
       }}>
       <View
         style={{
@@ -27,8 +27,8 @@ function Service({service}) {
         }}>
         {service.pictureUrl && (
           <Card.Cover
-            style={{borderTopLeftRadius: 12, borderTopRightRadius: 12}}
-            source={{uri: service.pictureUrl}}
+            style={{ borderTopLeftRadius: 12, borderTopRightRadius: 12 }}
+            source={{ uri: service.pictureUrl }}
           />
         )}
         <Card.Title
@@ -45,11 +45,11 @@ function Service({service}) {
             {service.description}
           </Paragraph> */}
           <React.Fragment>
-            <View style={{height: 12}} />
-            <View style={{flexDirection: 'row'}}>
+            <View style={{ height: 12 }} />
+            <View style={{ flexDirection: 'row' }}>
               <Chip
                 mode="flat"
-                style={{flex: 1, backgroundColor: colors.LIGHT_GRAY}}
+                style={{ flex: 1, backgroundColor: colors.LIGHT_GRAY }}
                 icon="currency-usd">
                 <Text>{`Giá: ${numeral(service.price).format(
                   '0,0',
@@ -58,8 +58,8 @@ function Service({service}) {
             </View>
             {service.old_price > 0 && (
               <React.Fragment>
-                <View style={{height: 4}} />
-                <View style={{flexDirection: 'row'}}>
+                <View style={{ height: 4 }} />
+                <View style={{ flexDirection: 'row' }}>
                   <Chip
                     mode="flat"
                     style={{
@@ -77,8 +77,8 @@ function Service({service}) {
 
             {service.duration > 0 && (
               <React.Fragment>
-                <View style={{height: 4}} />
-                <View style={{flexDirection: 'row'}}>
+                <View style={{ height: 4 }} />
+                <View style={{ flexDirection: 'row' }}>
                   <Chip
                     mode="flat"
                     style={{
