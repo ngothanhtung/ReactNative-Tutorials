@@ -3,14 +3,15 @@
 import 'react-native-gesture-handler';
 
 import React from 'react';
-import {DefaultTheme, Provider as PaperProvider} from 'react-native-paper';
-import {createStore, combineReducers, applyMiddleware} from 'redux';
+import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
 // Saga (import)
 import createSagaMiddleware from 'redux-saga';
-import {Provider} from 'react-redux';
-import {composeWithDevTools} from 'redux-devtools-extension';
+import { Provider } from 'react-redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
 
-import auth from '../modules/auth/reducers';
+import authReducer from '../modules/auth/reducers';
+import mainReducer from '../modules/main/reducers';
 
 // Saga (root)
 import rootSagas from './rootSagas';
@@ -20,7 +21,8 @@ import colors from '../constants/colors';
 
 // ROOT REDUCER
 const rootReducer = combineReducers({
-  auth,
+  auth: authReducer,
+  main: mainReducer,
   // shoppingReducer,
 });
 

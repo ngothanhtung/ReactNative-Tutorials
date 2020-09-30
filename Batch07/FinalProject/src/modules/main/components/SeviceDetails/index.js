@@ -1,12 +1,16 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {View, Text, ScrollView, Alert} from 'react-native';
+import { useDispatch } from 'react-redux';
+import { View, Text, ScrollView } from 'react-native';
 import numeral from 'numeral';
-import {Card, Paragraph, Chip, Button} from 'react-native-paper';
+import { Card, Paragraph, Chip, Button } from 'react-native-paper';
 import FirestoreService from '../../../../services/FirestoreService';
 import colors from '../../../../constants/colors';
+import { addToCart } from '../../actions';
 
-const ServiceDetails = ({serviceId}) => {
+const ServiceDetails = ({ serviceId }) => {
+  // Redux hooks
+  const dispatch = useDispatch();
   // Dùng để hiển thị trong khi load data
   const [loading, setLoading] = React.useState(true);
   const [service, setService] = React.useState(null);
@@ -24,11 +28,11 @@ const ServiceDetails = ({serviceId}) => {
       });
   }, [serviceId]);
   return (
-    <View style={{flex: 1, backgroundColor: 'white'}}>
+    <View style={{ flex: 1, backgroundColor: 'white' }}>
       {service && (
-        <ScrollView style={{flex: 1}}>
+        <ScrollView style={{ flex: 1 }}>
           {service.pictureUrl && (
-            <Card.Cover source={{uri: service.pictureUrl}} />
+            <Card.Cover source={{ uri: service.pictureUrl }} />
           )}
           <Card.Title
             title={service.name}
@@ -40,15 +44,15 @@ const ServiceDetails = ({serviceId}) => {
           />
 
           <Card.Content>
-            <Paragraph style={{textAlign: 'justify'}}>
+            <Paragraph style={{ textAlign: 'justify' }}>
               {service.description}
             </Paragraph>
             <React.Fragment>
-              <View style={{height: 12}} />
-              <View style={{flexDirection: 'row'}}>
+              <View style={{ height: 12 }} />
+              <View style={{ flexDirection: 'row' }}>
                 <Chip
                   mode="flat"
-                  style={{flex: 1, backgroundColor: colors.LIGHT_GRAY}}
+                  style={{ flex: 1, backgroundColor: colors.LIGHT_GRAY }}
                   icon="currency-usd">
                   <Text>{`Giá: ${numeral(service.price).format(
                     '0,0',
@@ -57,8 +61,8 @@ const ServiceDetails = ({serviceId}) => {
               </View>
               {service.old_price > 0 && (
                 <React.Fragment>
-                  <View style={{height: 4}} />
-                  <View style={{flexDirection: 'row'}}>
+                  <View style={{ height: 4 }} />
+                  <View style={{ flexDirection: 'row' }}>
                     <Chip
                       mode="flat"
                       style={{
@@ -76,8 +80,8 @@ const ServiceDetails = ({serviceId}) => {
 
               {service.duration > 0 && (
                 <React.Fragment>
-                  <View style={{height: 4}} />
-                  <View style={{flexDirection: 'row'}}>
+                  <View style={{ height: 4 }} />
+                  <View style={{ flexDirection: 'row' }}>
                     <Chip
                       mode="flat"
                       style={{
@@ -98,7 +102,8 @@ const ServiceDetails = ({serviceId}) => {
       )}
       <Button
         onPress={() => {
-          Alert.alert('Thông báo', 'Chức năng đang được phát triển');
+          // Alert.alert('Thông báo', 'Chức năng đang được phát triển');
+          dispatch(addToCart(service, 1));
         }}>
         Thêm vào giỏ hàng
       </Button>
