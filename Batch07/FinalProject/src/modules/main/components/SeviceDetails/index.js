@@ -100,13 +100,16 @@ const ServiceDetails = ({ serviceId }) => {
           </Card.Content>
         </ScrollView>
       )}
-      <Button
-        onPress={() => {
-          // Alert.alert('Thông báo', 'Chức năng đang được phát triển');
-          dispatch(addToCart(service, 1));
-        }}>
-        Thêm vào giỏ hàng
-      </Button>
+      <View padding={12}>
+        <Button
+          mode="contained"
+          onPress={() => {
+            // Alert.alert('Thông báo', 'Chức năng đang được phát triển');
+            dispatch(addToCart(service, 1));
+          }}>
+          Thêm vào giỏ hàng
+        </Button>
+      </View>
     </View>
   );
 };
