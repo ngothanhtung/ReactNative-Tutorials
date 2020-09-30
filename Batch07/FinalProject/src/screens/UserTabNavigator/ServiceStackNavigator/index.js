@@ -12,7 +12,7 @@ const ServiceStackNavigator = () => {
       <Stack.Screen
         name="ServicesScreen"
         component={ServicesScreen}
-        options={{title: 'Dịch vụ', headerShown: true}}
+        options={{title: 'Dịch vụ', headerShown: false}}
       />
       <Stack.Screen
         name="ServiceDetailsScreen"

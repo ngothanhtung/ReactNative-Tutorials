@@ -3,7 +3,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import {View, Text} from 'react-native';
 import {useNavigation} from '@react-navigation/native';
-import {Card, Paragraph, Chip, TouchableRipple} from 'react-native-paper';
+import {Card, Chip, TouchableRipple} from 'react-native-paper';
 
 import numeral from 'numeral';
 import colors from '../../../../constants/colors';
@@ -41,9 +41,9 @@ function Service({service}) {
         />
 
         <Card.Content>
-          <Paragraph style={{textAlign: 'justify'}}>
+          {/* <Paragraph style={{textAlign: 'justify'}}>
             {service.description}
-          </Paragraph>
+          </Paragraph> */}
           <React.Fragment>
             <View style={{height: 12}} />
             <View style={{flexDirection: 'row'}}>

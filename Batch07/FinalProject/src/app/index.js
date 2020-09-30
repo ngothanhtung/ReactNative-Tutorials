@@ -16,6 +16,7 @@ import auth from '../modules/auth/reducers';
 import rootSagas from './rootSagas';
 
 import AppNavigator from '../screens/AppNavigator';
+import colors from '../constants/colors';
 
 // ROOT REDUCER
 const rootReducer = combineReducers({
@@ -50,8 +51,8 @@ const theme = {
   roundness: 2,
   colors: {
     ...DefaultTheme.colors,
-    // primary: 'red',
-    // accent: '#f1c40f',
+    primary: colors.PRIMARY,
+    accent: '#f1c40f',
   },
 };
 
