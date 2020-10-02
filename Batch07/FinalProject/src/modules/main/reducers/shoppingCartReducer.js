@@ -43,7 +43,14 @@ export default function (state = defaultState, action) {
         ...state,
         addedServices: addedServices,
       };
-
+    // ------------------------------------------------------------------------
+    // CLEAR CART
+    // ------------------------------------------------------------------------
+    case ActionTypes.CLEAR_CART:
+      return defaultState;
+    // ------------------------------------------------------------------------
+    // DEFAULT
+    // ------------------------------------------------------------------------
     default:
       return state;
   }

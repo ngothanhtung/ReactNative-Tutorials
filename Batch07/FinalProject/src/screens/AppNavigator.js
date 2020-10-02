@@ -1,7 +1,7 @@
 import React from 'react';
-import {useSelector} from 'react-redux';
-import {NavigationContainer} from '@react-navigation/native';
-import {createStackNavigator} from '@react-navigation/stack';
+import { useSelector } from 'react-redux';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 
 import LoginStackNavigator from './LoginStackNavigator';
 import UserTabNavigator from './UserTabNavigator';
@@ -13,11 +13,11 @@ import useOneSignal from '../hooks/useOneSignal';
 const Stack = createStackNavigator();
 
 const AuthenticationStackNavigator = () => {
-  const signedInInUser = useSelector((state) => state.auth.signedInInUser);
+  const signedInUser = useSelector((state) => state.auth.signedInUser);
 
-  if (!signedInInUser) {
+  if (!signedInUser) {
     return (
-      <Stack.Navigator screenOptions={{headerShown: false}}>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen
           name={routes.AUTH_SIGNIN_STACK_NAVIGATOR}
           component={LoginStackNavigator}
@@ -26,15 +26,15 @@ const AuthenticationStackNavigator = () => {
     );
   }
 
-  return signedInInUser.profile.roles === 'Users' ? (
-    <Stack.Navigator screenOptions={{headerShown: false}}>
+  return signedInUser.profile.roles === 'Users' ? (
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen
         name={routes.USER_TAB_NAVIGATOR}
         component={UserTabNavigator}
       />
     </Stack.Navigator>
   ) : (
-    <Stack.Navigator screenOptions={{headerShown: false}}>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen
         name={routes.WORKER_TAB_NAVIGATOR}
         component={WorkerTabNavigator}

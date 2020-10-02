@@ -2,7 +2,7 @@ import * as ActionTypes from '../actions/types';
 
 const defaultState = {
   loading: false,
-  signedInInUser: null,
+  signedInUser: null,
   error: null,
 };
 
@@ -18,7 +18,7 @@ export default function (state = defaultState, action) {
       return {
         ...state,
         loading: false,
-        signedInInUser: action.signedInInUser,
+        signedInUser: action.signedInUser,
         error: null,
       };
 
@@ -26,14 +26,14 @@ export default function (state = defaultState, action) {
       return {
         ...state,
         loading: false,
-        signedInInUser: null,
+        signedInUser: null,
         error: action.error,
       };
 
     case ActionTypes.AUTH_SIGNOUT:
       return {
         ...state,
-        signedInInUser: null,
+        signedInUser: null,
       };
 
     default:

@@ -10,3 +10,7 @@ export const removeFromCart = (serviceId) => ({
   type: ActionTypes.REMOVE_FROM_CART,
   serviceId: serviceId,
 });
+
+export const clearCart = () => ({
+  type: ActionTypes.CLEAR_CART,
+});

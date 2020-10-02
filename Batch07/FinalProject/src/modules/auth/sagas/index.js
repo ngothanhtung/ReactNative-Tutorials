@@ -1,5 +1,5 @@
 import * as ActionTypes from '../actions/types';
-import {put, takeLatest} from 'redux-saga/effects';
+import { put, takeLatest } from 'redux-saga/effects';
 
 import AuthService from '../../../services/AuthService';
 
@@ -15,13 +15,13 @@ function* signIn(action) {
     user.profile = profile;
     yield put({
       type: ActionTypes.AUTH_SIGNIN_SUCCESS,
-      signedInInUser: user,
+      signedInUser: user,
     });
 
     console.log(profile);
   } catch (error) {
     console.log(error);
-    yield put({type: ActionTypes.AUTH_SIGNIN_FAILED, error: error});
+    yield put({ type: ActionTypes.AUTH_SIGNIN_FAILED, error: error });
   }
 }
 
