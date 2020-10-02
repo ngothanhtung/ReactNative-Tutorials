@@ -8,14 +8,19 @@ import {
   FlatList,
   TouchableOpacity,
 } from 'react-native';
+
+import { Button } from 'react-native-paper';
+
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import numeral from 'numeral';
 
+import colors from '../../../../constants/colors';
 import { removeFromCart } from '../../actions';
 
 const styles = StyleSheet.create({
   text: {
     fontSize: 12,
+    color: colors.PRIMARY_FONT,
   },
 });
 
@@ -84,14 +89,14 @@ export default function ShoppingCarts() {
               alignItems: 'flex-end',
               paddingRight: 8,
             }}>
-            <Text style={styles.text}>{sum}</Text>
+            <Text style={styles.text}>{sum} đ</Text>
           </View>
           <TouchableOpacity
             style={{ padding: 6 }}
             onPress={() => {
               dispatch(removeFromCart(item.service.id));
             }}>
-            <Icon name="cart-off" size={16} color="#d63031" />
+            <Icon name="cart-off" size={16} color={colors.DARK_RED} />
           </TouchableOpacity>
         </View>
       </View>
@@ -99,7 +104,7 @@ export default function ShoppingCarts() {
   };
 
   return (
-    <View style={{ padding: 12 }}>
+    <View style={{ flex: 1, padding: 12, backgroundColor: 'white' }}>
       <FlatList
         style={{ marginLeft: 2, marginRight: 2 }}
         data={addedServices}
@@ -108,11 +113,31 @@ export default function ShoppingCarts() {
       />
 
       <View
-        style={{ backgroundColor: '#b2bec3', height: 1, marginVertical: 4 }}
+        style={{
+          backgroundColor: colors.PRIMARY_BORDER,
+          height: 1,
+          marginVertical: 4,
+        }}
       />
-      <Text style={{ fontWeight: '700', color: '#d63031', textAlign: 'right' }}>
-        Total: {getTotal()}
+      <Text
+        style={{
+          fontWeight: '700',
+          color: colors.PRIMARY,
+          textAlign: 'right',
+        }}>
+        Tổng cộng: {getTotal()} đ
       </Text>
+
+      <View style={{ height: 12 }} />
+
+      <Button
+        mode="contained"
+        onPress={() => {
+          // Alert.alert('Thông báo', 'Chức năng đang được phát triển');
+          // dispatch(addToCart(service, 1));
+        }}>
+        Xác nhận đơn hàng
+      </Button>
     </View>
   );
 }
