@@ -2,6 +2,7 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 import { View, Text, ScrollView } from 'react-native';
+
 import numeral from 'numeral';
 import { Card, Paragraph, Chip, Button } from 'react-native-paper';
 import FirestoreService from '../../../../services/FirestoreService';

@@ -55,7 +55,9 @@ function getService(id) {
       .get()
       .then((documentSnapshot) => {
         if (documentSnapshot.exists) {
-          resolve(documentSnapshot.data());
+          let service = documentSnapshot.data();
+          service.id = documentSnapshot.id;
+          resolve(service);
         } else {
           resolve(null);
         }
