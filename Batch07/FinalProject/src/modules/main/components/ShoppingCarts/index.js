@@ -142,7 +142,7 @@ export default function ShoppingCarts() {
             // Create order
             FirestoreService.createOrder({
               createdDate: firestore.Timestamp.now(),
-              schedule: moment().add(1, 'd'),
+              schedule: moment().add(2, 'days').toDate(),
               services: addedServices,
               status: 'confirmed',
               uid: signedInUser.uid,

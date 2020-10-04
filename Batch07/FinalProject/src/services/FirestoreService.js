@@ -103,18 +103,21 @@ function createOrder(order) {
     firestore()
       .collection('Orders')
       .add(order)
-      .then((refId) => {
+      .then((ref) => {
         // OK
         // TODO: Send a email to customers (THANK YOU)
         // TODO: Send notification to call center
-        firestore
-          .collection('Orders')
-          .doc(refId)
+        ref
           .get()
           .then((documentSnapshot) => {
             let createdOrder = documentSnapshot.data();
-            createdOrder.id = refId;
+            createdOrder.id = documentSnapshot.id;
+            console.log(createdOrder);
             resolve(createdOrder);
+          })
+          .catch((error) => {
+            console.log(error);
+            reject(error);
           });
       })
       .catch((error) => {
