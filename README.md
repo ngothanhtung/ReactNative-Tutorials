@@ -481,25 +481,14 @@ firestore()
 - sagas
 - rootSagas
 
-# Bonus 1: EXPRESSJS & MONGODB (BONUS & OPTIONAL)
-
-1. Expressjs: https://expressjs.com/en/starter/generator.html
-2. Basic Routing: https://expressjs.com/en/starter/basic-routing.html
-3. Routing: https://expressjs.com/en/guide/routing.html
-4. Mongodb: https://www.mongodb.com/download-center/community
-5. Tools: https://www.mongodb.com/download-center/compass
-6. Others: RoboMongo: https://robomongo.org/
-7. Nodejs Mongodb Driver: http://mongodb.github.io/node-mongodb-native/3.1/
-8. Databases with Express: https://expressjs.com/en/guide/database-integration.html
-
-# Bonus 2: Release
+# Session 15: Release
 
 1. Android icon: https://romannurik.github.io/AndroidAssetStudio/index.html
 2. iOs icon: https://appicon.co/
 3. https://facebook.github.io/react-native/docs/signed-apk-android
 4. https://play.google.com/apps/publish
 
-# Bonus 3: Project:
+# Final: Project:
 
 1. react-native-firebase
 
@@ -566,6 +555,17 @@ firestore()
 ```
 
 ```
+
+# D: EXPRESSJS & MONGODB (BONUS & OPTIONAL)
+
+1. Expressjs: https://expressjs.com/en/starter/generator.html
+2. Basic Routing: https://expressjs.com/en/starter/basic-routing.html
+3. Routing: https://expressjs.com/en/guide/routing.html
+4. Mongodb: https://www.mongodb.com/download-center/community
+5. Tools: https://www.mongodb.com/download-center/compass
+6. Others: RoboMongo: https://robomongo.org/
+7. Nodejs Mongodb Driver: http://mongodb.github.io/node-mongodb-native/3.1/
+8. Databases with Express: https://expressjs.com/en/guide/database-integration.html
 
 # Stocks:
 
