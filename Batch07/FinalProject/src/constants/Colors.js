@@ -3,6 +3,7 @@ export default {
   PRIMARY: '#6200EE',
   PRIMARY_FONT: '#2c3e50',
   PRIMARY_ICON: '#2c3e50',
+  BACKGROUND: '#f5f6fa',
   DARK_FONT: '#000000',
   BLACK: '#000000',
   DARK_GRAY: '#95a5a6',

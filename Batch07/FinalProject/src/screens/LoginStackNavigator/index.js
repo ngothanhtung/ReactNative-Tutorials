@@ -11,7 +11,7 @@ export default function index() {
   return (
     <Stack.Navigator
       // headerMode="none"
-      initialRouteName="MapScreen"
+      initialRouteName="SignInScreen"
       screenOptions={{
         headerStyle: {
           backgroundColor: '#f4511e',

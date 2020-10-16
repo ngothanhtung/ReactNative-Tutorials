@@ -6,6 +6,11 @@ export const signInAction = (email, password) => ({
   password,
 });
 
+export const autoSignInAction = (user) => ({
+  type: ActionTypes.AUTH_AUTO_SIGNIN,
+  user,
+});
+
 export const registerAction = (email, password) => ({
   type: ActionTypes.AUTH_REGISTER,
   email,

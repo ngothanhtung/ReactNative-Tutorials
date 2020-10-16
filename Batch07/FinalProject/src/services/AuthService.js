@@ -1,4 +1,4 @@
-import auth, {firebase} from '@react-native-firebase/auth';
+import auth, { firebase } from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
 
 function getProfile(uid) {
@@ -33,14 +33,17 @@ function signIn(email, password) {
 
 function signOut() {
   return new Promise((resolve, reject) => {
-    auth()
-      .signOut.then((result) => {
-        resolve(result);
-      })
-      .catch((error) => {
-        console.log(error);
-        reject(error);
-      });
+    if (auth().currentUser) {
+      auth()
+        .signOut()
+        .then((result) => {
+          resolve(result);
+        })
+        .catch((error) => {
+          console.log(error);
+          reject(error);
+        });
+    }
   });
 }
 

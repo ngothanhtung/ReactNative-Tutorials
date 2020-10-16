@@ -25,12 +25,7 @@ function Service({ service }) {
           borderRadius: 12,
           paddingBottom: 24,
         }}>
-        {service.pictureUrl && (
-          <Card.Cover
-            style={{ borderTopLeftRadius: 12, borderTopRightRadius: 12 }}
-            source={{ uri: service.pictureUrl }}
-          />
-        )}
+        {service.pictureUrl && <Card.Cover style={{ borderTopLeftRadius: 12, borderTopRightRadius: 12 }} source={{ uri: service.pictureUrl }} />}
         <Card.Title
           title={service.name}
           titleStyle={{
@@ -47,13 +42,8 @@ function Service({ service }) {
           <React.Fragment>
             <View style={{ height: 12 }} />
             <View style={{ flexDirection: 'row' }}>
-              <Chip
-                mode="flat"
-                style={{ flex: 1, backgroundColor: colors.LIGHT_GRAY }}
-                icon="currency-usd">
-                <Text>{`Giá: ${numeral(service.price).format(
-                  '0,0',
-                )} VNĐ`}</Text>
+              <Chip mode="flat" style={{ flex: 1, backgroundColor: colors.LIGHT_GRAY }} icon="currency-usd">
+                <Text>{`Giá: ${numeral(service.price).format('0,0')} VNĐ`}</Text>
               </Chip>
             </View>
             {service.old_price > 0 && (
@@ -67,9 +57,7 @@ function Service({ service }) {
                       backgroundColor: colors.LIGHT_GRAY,
                     }}
                     icon="currency-usd">
-                    <Text>{`Giá gốc: ${numeral(service.old_price).format(
-                      '0,0',
-                    )} VNĐ`}</Text>
+                    <Text>{`Giá gốc: ${numeral(service.old_price).format('0,0')} VNĐ`}</Text>
                   </Chip>
                 </View>
               </React.Fragment>
@@ -86,9 +74,7 @@ function Service({ service }) {
                       backgroundColor: colors.LIGHT_GRAY,
                     }}
                     icon="clock">
-                    <Text>{`Thời gian: ${numeral(service.duration).format(
-                      '0,0',
-                    )} phút`}</Text>
+                    <Text>{`Thời gian: ${numeral(service.duration).format('0,0')} phút`}</Text>
                   </Chip>
                 </View>
               </React.Fragment>

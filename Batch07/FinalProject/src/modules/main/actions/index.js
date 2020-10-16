@@ -1,16 +1,28 @@
 import * as ActionTypes from './types';
 
-export const addToCart = (service, quantity = 1) => ({
-  type: ActionTypes.ADD_TO_CART,
+export const addToCartAction = (service, quantity = 1) => ({
+  type: ActionTypes.MAIN_ADD_TO_CART,
   service: service,
   quantity: quantity,
 });
 
-export const removeFromCart = (serviceId) => ({
-  type: ActionTypes.REMOVE_FROM_CART,
+export const increaseCartAction = (service, quantity = 1) => ({
+  type: ActionTypes.MAIN_INCREASE_CART,
+  service: service,
+  quantity: quantity,
+});
+
+export const decreaseCartAction = (service, quantity = 1) => ({
+  type: ActionTypes.MAIN_DECREASE_CART,
+  service: service,
+  quantity: quantity,
+});
+
+export const removeFromCartAction = (serviceId) => ({
+  type: ActionTypes.MAIN_REMOVE_FROM_CART,
   serviceId: serviceId,
 });
 
-export const clearCart = () => ({
-  type: ActionTypes.CLEAR_CART,
+export const clearCartAction = () => ({
+  type: ActionTypes.MAIN_CLEAR_CART,
 });

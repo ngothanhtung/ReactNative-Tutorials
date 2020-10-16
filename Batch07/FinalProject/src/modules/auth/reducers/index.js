@@ -30,7 +30,7 @@ export default function (state = defaultState, action) {
         error: action.error,
       };
 
-    case ActionTypes.AUTH_SIGNOUT:
+    case ActionTypes.AUTH_SIGNOUT_SUCCESS:
       return {
         ...state,
         signedInUser: null,
