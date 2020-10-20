@@ -5,11 +5,12 @@
 3. Java SDK 8: https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
 4. Visual Studio Code: https://code.visualstudio.com/Download
 5. Git SCM: https://git-scm.com/download/
-6. https://chocolatey.org (For Windows)
-7. Xcode, Android Studio: https://developer.android.com/studio/
-8. Setup ANDROID_HOME (c:\Users\YOUR_USERNAME\AppData\Local\Android\Sdk)
-9. Add platform-tools to Path (c:\Users\YOUR_USERNAME\AppData\Local\Android\Sdk\platform-tools)
-10. Setup JAVA_HOME (https://confluence.atlassian.com/doc/setting-the-java_home-variable-in-windows-8895.html)
+6. Setup IDE: Xcode, Android Studio
+
+- Android Studio: https://developer.android.com/studio/
+- Configure ANDROID_HOME (c:\Users\YOUR_USERNAME\AppData\Local\Android\Sdk)
+- Add platform-tools to Path (c:\Users\YOUR_USERNAME\AppData\Local\Android\Sdk\platform-tools)
+- Setup JAVA_HOME (https://confluence.atlassian.com/doc/setting-the-java_home-variable-in-windows-8895.html)
 
 # B. Setup Visual Studio Code Extensions:
 
@@ -28,10 +29,10 @@
 
 ## C.1. Main Concepts:
 
-1. Hello World
+1. Create a React application: Hello World
 2. Introduction JSX
 3. Render Elements
-4. Components & Props
+4. Components & Props, Callback functions
 5. Typechecking With PropTypes
 6. State & Lifecycle
 7. Handling Events
@@ -43,11 +44,11 @@
 
 ## 1.1 Setup React JS:
 
-> npx create-react-app my-app
+> npx create-react-app my-app-name
 
-> cd my-app
+> cd my-app-name
 
-> npm start
+> npm start hoặc yarn start
 
 ## 1.2. Practice:
 
@@ -76,10 +77,6 @@
 > cd AwesomeProject
 
 > npx react-native start
-
-4. npm install -g react-native-cli
-5. Create new react native project: react-native init HelloWorldApp
-6. Component Examples: https://facebook.github.io/react-native/docs/tutorial
 
 # Session 02: Props & State
 
@@ -481,7 +478,7 @@ firestore()
 - sagas
 - rootSagas
 
-# Session 15: Release
+# Session 14: Release
 
 1. Android icon: https://romannurik.github.io/AndroidAssetStudio/index.html
 2. iOs icon: https://appicon.co/
