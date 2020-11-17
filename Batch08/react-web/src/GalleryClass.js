@@ -16,6 +16,7 @@ export default class GalleryClass extends Component {
         <div>
           <img alt='' style={{ width: 600 }} src={'/images/' + this.state.index + '.jpg'} />
         </div>
+
         <div>
           <button
             disabled={this.state.index === 1}
