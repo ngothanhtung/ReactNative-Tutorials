@@ -1,0 +1,25 @@
+.container {
+  display: flex;
+  height: 200px;
+  width: 400px;
+  background-color: aqua;
+  border-radius: 16px;
+}
+.image {
+  background-color: yellow;
+  height: 200px;
+  width: 40%;
+}
+.main {
+}
+
+.product-price {
+  display: flex;
+  align-items: center;
+}
+
+.price {
+  color: #7331c5;
+  font-size: 32px;
+  font-weight: 700;
+}

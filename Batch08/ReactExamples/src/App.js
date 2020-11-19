@@ -14,6 +14,7 @@ import CheckBox from './C1.7/CheckBox';
 import MoreHandleEvent from './C1.7/MoreHandleEvent';
 import Articles from './C1.8/Articles';
 import Friends from './C1.8/Friends';
+import Products from './C1.8/Products';
 
 function App() {
   const [state, setState] = React.useState({ visible: true });
@@ -51,8 +52,9 @@ function App() {
       <CheckBox></CheckBox> */}
       {/* <MoreHandleEvent></MoreHandleEvent> */}
 
-      <Articles></Articles>
-      <Friends></Friends>
+      {/* <Articles></Articles> */}
+      {/* <Friends></Friends> */}
+      <Products></Products>
     </div>
   );
 }
