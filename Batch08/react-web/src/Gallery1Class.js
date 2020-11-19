@@ -45,7 +45,7 @@ export default class Gallery1Class extends Component {
   }
 
   changeImage() {
-    console.log('tick: ' + new Date());
+    // console.log('tick: ' + new Date());
 
     let newIndex = this.state.index + 1;
     if (newIndex > 3) newIndex = 1;

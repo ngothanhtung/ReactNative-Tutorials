@@ -7,7 +7,7 @@ export default function Gallery1() {
   const [state, setState] = React.useState({ index: 1 });
 
   const changeImage = () => {
-    console.log('tick: ' + new Date());
+    // console.log('tick: ' + new Date());
 
     let newIndex = state.index + 1;
     if (newIndex > 3) newIndex = 1;

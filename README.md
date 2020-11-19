@@ -42,9 +42,9 @@
 
 6. State & Lifecycle (https://reactjs.org/docs/state-and-lifecycle.html)
    > Example: https://github.com/ngothanhtung/ReactNative-Tutorials/blob/master/Batch08/react-web/src/Gallery1Class.js
-7. Handling Events
-8. Conditional Rendering
-9. List & Keys
+7. Handling Events (https://reactjs.org/docs/handling-events.html)
+8. Conditional Rendering (https://reactjs.org/docs/conditional-rendering.html)
+9. List & Keys (https://reactjs.org/docs/lists-and-keys.html)
 10. Refs and the DOM
 
 # Session 01: Setup React & React Native
