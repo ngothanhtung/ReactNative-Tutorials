@@ -32,9 +32,9 @@
 1. Create a React application: Hello World
 2. Introduction JSX
 3. Render Elements
-4. Components & Props, Callback functions
-5. Typechecking With PropTypes
-6. State & Lifecycle
+4. Components & Props, Callback functions (https://reactjs.org/docs/components-and-props.html)
+5. Typechecking With PropTypes (https://reactjs.org/docs/typechecking-with-proptypes.html)
+6. State & Lifecycle (https://reactjs.org/docs/state-and-lifecycle.html)
 7. Handling Events
 8. Conditional Rendering
 9. List & Keys

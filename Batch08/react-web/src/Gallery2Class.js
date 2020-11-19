@@ -6,7 +6,7 @@ const images = [
   { id: 3, caption: 'Desert' },
 ];
 
-export default class GalleryClass extends Component {
+export default class Gallery2Class extends Component {
   constructor(props) {
     super(props);
     this.state = {

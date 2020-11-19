@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { FaHeart } from 'react-icons/fa';
+
 export default class HeartButtonClass extends Component {
   constructor(props) {
     super(props);

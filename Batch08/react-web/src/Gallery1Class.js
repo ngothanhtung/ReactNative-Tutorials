@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 const count = 3;
 
-export default class GalleryClass extends Component {
+export default class Gallery1Class extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -45,6 +45,8 @@ export default class GalleryClass extends Component {
   }
 
   changeImage() {
+    console.log('tick: ' + new Date());
+
     let newIndex = this.state.index + 1;
     if (newIndex > 3) newIndex = 1;
     this.setState({ index: newIndex });
