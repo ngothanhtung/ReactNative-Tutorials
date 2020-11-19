@@ -11,22 +11,24 @@ export default class TextInput extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      value: '',
+      fullname: '',
     };
   }
 
   render() {
     return (
-      <input
-        style={{ width: 300, marginTop: 8, padding: 8, borderWidth: 1, borderStyle: 'solid', borderColor: '#555555', borderRadius: 4, fontSize: 14 }}
-        onChange={(e) => {
-          let text = toTitleCase(e.target.value);
-
-          console.log(text);
-          this.setState({ value: text });
-        }}
-        value={this.state.value}
-      ></input>
+      <div>
+        <input
+          style={{ width: 300, marginTop: 8, padding: 8, borderWidth: 1, borderStyle: 'solid', borderColor: '#555555', borderRadius: 4, fontSize: 14 }}
+          onChange={(e) => {
+            let text = toTitleCase(e.target.value);
+            // console.log(text);
+            this.setState({ fullname: text });
+          }}
+          value={this.state.fullname}
+        ></input>
+        <h2>{this.state.fullname}</h2>
+      </div>
     );
   }
 }

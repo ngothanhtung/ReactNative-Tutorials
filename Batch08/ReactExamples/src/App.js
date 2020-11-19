@@ -12,42 +12,45 @@ import TextInput from './C1.7/TextInput';
 import SelectInput from './C1.7/SelectInput';
 import CheckBox from './C1.7/CheckBox';
 import MoreHandleEvent from './C1.7/MoreHandleEvent';
+import Articles from './C1.8/Articles';
 
 function App() {
   const [state, setState] = React.useState({ visible: true });
 
   return (
     <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-      <Friends></Friends>
+      {/* <Friends></Friends> */}
 
       {/* <HeartButtonClass></HeartButtonClass> */}
       {/* <Gallery1Class></Gallery1Class> */}
-      {state.visible && <Gallery1Class></Gallery1Class>}
+      {/* {state.visible && <Gallery1Class></Gallery1Class>} */}
       {/* {state.visible && <Gallery1></Gallery1>} */}
       {/* <Gallery2Class></Gallery2Class> */}
       {/* <Gallery2></Gallery2> */}
-      <button
+      {/* <button
         onClick={() => {
           let newValue = !state.visible;
           setState({ visible: newValue });
         }}
       >
         Click me
-      </button>
+      </button> */}
 
-      <LikeButtonClass
-        count={2}
-        color='white'
+      {/* <LikeButtonClass
+        // count={9}
+        color='green'
         onClick={() => {
           alert('DONE');
         }}
-      ></LikeButtonClass>
-      <LikeButton count={4}></LikeButton>
+      ></LikeButtonClass> */}
+      {/* <LikeButton count={4}></LikeButton> */}
 
-      <TextInput></TextInput>
+      {/* <TextInput></TextInput>
       <SelectInput></SelectInput>
-      <CheckBox></CheckBox>
-      <MoreHandleEvent></MoreHandleEvent>
+      <CheckBox></CheckBox> */}
+      {/* <MoreHandleEvent></MoreHandleEvent> */}
+
+      <Articles></Articles>
     </div>
   );
 }

@@ -11,6 +11,10 @@ class LikeButtonClass extends Component {
   }
 
   render() {
+    let color = 'grey';
+    if (this.state.count > 0) {
+      color = this.props.color;
+    }
     return (
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', borderRadius: 16, width: 32, height: 32, cursor: 'pointer', margin: 2, backgroundColor: '#1197F5' }}>
@@ -24,10 +28,10 @@ class LikeButtonClass extends Component {
                 this.props.onClick();
               }
             }}
-            color={this.props.color}
+            color={color}
           />
         </div>
-        <span style={{ fontSize: 14, marginLeft: 4 }}>{this.state.count}</span>
+        {this.state.count > 0 && <span style={{ fontSize: 14, marginLeft: 4 }}>{this.state.count}</span>}
       </div>
     );
   }
@@ -42,7 +46,7 @@ LikeButtonClass.propTypes = {
 
 // default props
 LikeButtonClass.defaultProps = {
-  count: 1,
+  count: 0,
   color: 'red',
 };
 

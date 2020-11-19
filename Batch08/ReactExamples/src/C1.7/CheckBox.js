@@ -10,15 +10,19 @@ export default class SelectInput extends Component {
 
   render() {
     return (
-      <input
-        type='checkbox'
-        style={{ marginTop: 8 }}
-        onChange={() => {
-          let c = !this.state.checked;
-          this.setState({ checked: c });
-        }}
-        checked={this.state.checked}
-      ></input>
+      <div>
+        <input
+          type='checkbox'
+          style={{ marginTop: 8 }}
+          onChange={() => {
+            let c = !this.state.checked;
+            this.setState({ checked: c });
+            console.log(this.state.checked);
+          }}
+          checked={this.state.checked}
+        ></input>
+        {this.state.checked && <h2>Hello Check</h2>}
+      </div>
     );
   }
 }
