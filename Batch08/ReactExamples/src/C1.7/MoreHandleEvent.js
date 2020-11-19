@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
-import { Text, View, Button, SafeAreaView } from 'react-native';
 
 export default class MoreHandleEvent extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      text: 0,
+      text: '',
     };
+
     // 3. Bind in constructor()
     this.clickMeType3 = this.clickMeType3.bind(this);
   }
@@ -40,34 +40,40 @@ export default class MoreHandleEvent extends Component {
 
   render() {
     return (
-      <SafeAreaView>
+      <div style={{ textAlign: 'center' }}>
+        <h1>{this.state.text}</h1>
+
+        {/* --------------------------------------------------------------- */}
         {/* 1. Dynamic binding in render() */}
-        <Button title='Click me 1' onPress={this.clickMeType1.bind(this, 'This is a parameter')} />
+        <button onClick={this.clickMeType1.bind(this, 'This is a parameter - Type 1')}>Click me 1</button>
 
         {/* 2. Use Arrow Function in Render, similar to #1: (Quick Code) */}
-        <Button
-          title='Click me 2'
-          onPress={() => {
-            this.clickMeType2('This is a parameter');
+        <button
+          onClick={() => {
+            this.clickMeType2('This is a parameter - Type 2');
           }}
-        />
+        >
+          Click me 2
+        </button>
 
-        {/* 3 Bind in constructor() */}
-        <Button title='Click me 3' onPress={this.clickMeType3} />
+        {/* 3 Bind in constructor() Nên dùng: nhưng rườm rà */}
+        <button onClick={this.clickMeType3}>Click me 3</button>
 
         {/* 4. Use Arrow Function in Class Property (Without Parameters): Nên dùng */}
-        <Button title='Click me 4' onPress={this.clickMeType4} />
+        <button onClick={this.clickMeType4}>Click me 4</button>
 
         {/* 5. Use Arrow Function in Class Property (Within Parameters): Nên dùng  */}
-        <Button title='Click me 5' onPress={this.clickMeType5('This is a parameter')} />
+        <button onClick={this.clickMeType5('This is a parameter')}>Click me 5</button>
 
-        <Button
-          title='Click me 6 (Quick Code)'
-          onPress={() => {
+        {/* 6. Use Arrow Function */}
+        <button
+          onClick={() => {
             console.log('Click me (Hay gặp ở các ví dụ)');
           }}
-        />
-      </SafeAreaView>
+        >
+          Click me 6 (Quick Code)
+        </button>
+      </div>
     );
   }
 }

@@ -29,49 +29,40 @@
 
 ## C.1. Main Concepts:
 
-1. Create a React application: Hello World
-2. Introduction JSX
-3. Render Elements
-4. Components & Props, Callback functions (https://reactjs.org/docs/components-and-props.html)
+1.  Create a React application: ReactExamples
 
-   > Example: https://github.com/ngothanhtung/ReactNative-Tutorials/blob/master/Batch08/react-web/src/FriendAvatarClass.js
+```
+    npx create-react-app ReactExamples
 
-5. Typechecking With PropTypes (https://reactjs.org/docs/typechecking-with-proptypes.html)
+    cd ReactExamples
 
-   > Example: https://github.com/ngothanhtung/ReactNative-Tutorials/blob/master/Batch08/react-web/src/LikeButtonClass.js
+    npm run start hoặc yarn start
+```
 
-6. State & Lifecycle (https://reactjs.org/docs/state-and-lifecycle.html)
-   > Example: https://github.com/ngothanhtung/ReactNative-Tutorials/blob/master/Batch08/react-web/src/Gallery1Class.js
-7. Handling Events (https://reactjs.org/docs/handling-events.html)
-8. Conditional Rendering (https://reactjs.org/docs/conditional-rendering.html)
-9. List & Keys (https://reactjs.org/docs/lists-and-keys.html)
+2.  Introduction JSX
+3.  Render Elements
+4.  Components & Props, Callback functions (https://reactjs.org/docs/components-and-props.html)
+
+    - Resources:
+
+      > https://uifaces.co/
+
+      > https://picsum.photos/
+
+5.  Typechecking With PropTypes (https://reactjs.org/docs/typechecking-with-proptypes.html)
+
+    > https://github.com/ngothanhtung/ReactNative-Tutorials/blob/master/Batch08/ReactExamples/src/LikeButtonClass.js
+
+6.  State & Lifecycle (https://reactjs.org/docs/state-and-lifecycle.html)
+
+    > https://github.com/ngothanhtung/ReactNative-Tutorials/blob/master/Batch08/ReactExamples/src/Gallery1Class.js
+
+7.  Handling Events (https://reactjs.org/docs/handling-events.html)
+8.  Conditional Rendering (https://reactjs.org/docs/conditional-rendering.html)
+9.  List & Keys (https://reactjs.org/docs/lists-and-keys.html)
 10. Refs and the DOM
 
-# Session 01: Setup React & React Native
-
-## 1.1 Setup React JS:
-
-> npx create-react-app my-app-name
-
-> cd my-app-name
-
-> npm start hoặc yarn start
-
-## 1.2. Practice:
-
-> https://github.com/ngothanhtung/ReactNative-Tutorials/tree/master/Batch07/my-react-web
-
-## 1.3. Read more:
-
-> https://reactjs.org/docs/components-and-props.html
-
-## 1.4. Resources:
-
-> https://uifaces.co/
-
-> https://picsum.photos/
-
-## 2. Setup React Native:
+# Session 01: Setup React Native
 
 1. https://reactnative.dev/
 2. https://reactnative.dev/docs/getting-started
