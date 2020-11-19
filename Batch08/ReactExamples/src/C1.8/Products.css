@@ -2,10 +2,11 @@
   display: flex;
   height: 200px;
   width: 400px;
-  background-color: aqua;
+  background-color: #ffffff;
   border-radius: 16px;
 }
 .image {
+  border-radius: 16px;
   background-color: yellow;
   height: 200px;
   width: 40%;
@@ -18,8 +19,21 @@
   align-items: center;
 }
 
+.product-buttons {
+  display: flex;
+}
+
 .price {
   color: #7331c5;
   font-size: 32px;
   font-weight: 700;
+}
+.circle-button {
+  margin-inline: 4px;
+  height: 60px;
+  width: 60px;
+  border-radius: 30px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #f4f4f5;
 }
