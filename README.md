@@ -33,8 +33,15 @@
 2. Introduction JSX
 3. Render Elements
 4. Components & Props, Callback functions (https://reactjs.org/docs/components-and-props.html)
+
+   > Example: https://github.com/ngothanhtung/ReactNative-Tutorials/blob/master/Batch08/react-web/src/FriendAvatarClass.js
+
 5. Typechecking With PropTypes (https://reactjs.org/docs/typechecking-with-proptypes.html)
+
+   > Example: https://github.com/ngothanhtung/ReactNative-Tutorials/blob/master/Batch08/react-web/src/LikeButtonClass.js
+
 6. State & Lifecycle (https://reactjs.org/docs/state-and-lifecycle.html)
+   > Example: https://github.com/ngothanhtung/ReactNative-Tutorials/blob/master/Batch08/react-web/src/Gallery1Class.js
 7. Handling Events
 8. Conditional Rendering
 9. List & Keys
