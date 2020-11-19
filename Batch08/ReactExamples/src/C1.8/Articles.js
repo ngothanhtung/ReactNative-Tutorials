@@ -59,9 +59,9 @@ class Article extends Component {
 export default class Articles extends Component {
   render() {
     return (
-      <div>
+      <div style={{ margin: 12 }}>
         {articles.map((a, index) => {
-          return <Article data={a}></Article>;
+          return <Article key={'article-' + index} data={a}></Article>;
         })}
       </div>
     );

@@ -11,7 +11,7 @@ export default class FriendAvatarClass extends Component {
           this.props.onClick();
         }}
       >
-        <img style={{ width: 80, height: 80, borderRadius: 40 }} alt='Ngo Thanh Tung' src={this.props.avatarUrl} />
+        <img style={{ width: 80, height: 80, borderRadius: 40 }} alt={this.props.name} src={this.props.avatarUrl} />
       </div>
     );
   }

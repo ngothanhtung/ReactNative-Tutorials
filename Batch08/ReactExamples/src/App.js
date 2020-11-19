@@ -1,6 +1,6 @@
 import './App.css';
 import React from 'react';
-import Friends from './C1.4/Friends';
+// import Friends from './C1.4/Friends';
 import HeartButtonClass from './C1.6/HeartButtonClass';
 import Gallery1Class from './C1.6/Gallery1Class';
 import Gallery2Class from './C1.6/Gallery2Class';
@@ -13,6 +13,7 @@ import SelectInput from './C1.7/SelectInput';
 import CheckBox from './C1.7/CheckBox';
 import MoreHandleEvent from './C1.7/MoreHandleEvent';
 import Articles from './C1.8/Articles';
+import Friends from './C1.8/Friends';
 
 function App() {
   const [state, setState] = React.useState({ visible: true });
@@ -51,6 +52,7 @@ function App() {
       {/* <MoreHandleEvent></MoreHandleEvent> */}
 
       <Articles></Articles>
+      <Friends></Friends>
     </div>
   );
 }
