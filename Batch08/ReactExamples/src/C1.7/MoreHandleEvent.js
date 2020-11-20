@@ -24,19 +24,22 @@ export default class MoreHandleEvent extends Component {
 
   // 3. Bind in constructor(): this.clickMeType3 = this.clickMeType3.bind(this);
   clickMeType3() {
-    this.setState({ text: 'This is a parameter - Type 3' });
+    this.setState({ text: 'This is a type 3' });
   }
 
+  /* --------------------------------------------------------------- */
+  /* --------------------------------------------------------------- */
   // 4. Nên dùng: Use Arrow Function in Class Property (Without Parameters)
   clickMeType4 = () => {
-    this.setState({ text: 'This is a parameter - Type 4' });
+    this.setState({ text: 'This is a type 4' });
   };
 
   // 5. Nên dùng: Use Arrow Function in Class Property (Within Parameters)
   clickMeType5 = (text) => () => {
     this.setState({ text: text });
-    console.log(text);
   };
+  /* --------------------------------------------------------------- */
+  /* --------------------------------------------------------------- */
 
   render() {
     return (
@@ -59,16 +62,21 @@ export default class MoreHandleEvent extends Component {
         {/* 3 Bind in constructor() Nên dùng: nhưng rườm rà */}
         <button onClick={this.clickMeType3}>Click me 3</button>
 
+        {/* --------------------------------------------------------------- */}
+        {/* --------------------------------------------------------------- */}
         {/* 4. Use Arrow Function in Class Property (Without Parameters): Nên dùng */}
         <button onClick={this.clickMeType4}>Click me 4</button>
 
         {/* 5. Use Arrow Function in Class Property (Within Parameters): Nên dùng  */}
-        <button onClick={this.clickMeType5('This is a parameter')}>Click me 5</button>
+        <button onClick={this.clickMeType5('This is a parameter - Type 5')}>Click me 5</button>
+        {/* --------------------------------------------------------------- */}
+        {/* --------------------------------------------------------------- */}
 
         {/* 6. Use Arrow Function */}
         <button
           onClick={() => {
             console.log('Click me (Hay gặp ở các ví dụ)');
+            this.setState({ text: 'This is type 6' });
           }}
         >
           Click me 6 (Quick Code)
