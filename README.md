@@ -74,7 +74,7 @@
 
 > cd AwesomeProject
 
-> npx react-native start
+> yarn android
 
 # Session 02: Props & State
 
