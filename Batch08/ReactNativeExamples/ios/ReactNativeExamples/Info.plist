@@ -53,5 +53,42 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>UIAppFonts</key>
+ <array>
+ <string>Loraa-Bold.ttf</string>
+ <string>Loraa-BoldItalic.ttf</string>
+ <string>Loraa-Italic.ttf</string>
+ <string>Loraa-Medium.ttf</string>
+ <string>Loraa-MediumItalic.ttf</string>
+ <string>Loraa-Regular.ttf</string>
+ <string>Loraa-SemiBold.ttf</string>
+ <string>Loraa-SemiBoldItalic.ttf</string>
+ <string>AntDesign.ttf</string>
+ <string>Entypo.ttf</string>
+ <string>EvilIcons.ttf</string>
+ <string>Feather.ttf</string>
+ <string>FontAwesome.ttf</string>
+ <string>FontAwesome5_Brands.ttf</string>
+ <string>FontAwesome5_Regular.ttf</string>
+ <string>FontAwesome5_Solid.ttf</string>
+ <string>Fontisto.ttf</string>
+ <string>Foundation.ttf</string>
+ <string>Ionicons.ttf</string>
+ <string>MaterialCommunityIcons.ttf</string>
+ <string>MaterialIcons.ttf</string>
+ <string>Octicons.ttf</string>
+ <string>SimpleLineIcons.ttf</string>
+ <string>Zocial.ttf</string>
+ <string>Calistoga-Regular.ttf</string>
+ <string>Kastelov - NolanNext-Light.otf</string>
+ <string>Nabila.ttf</string>
+ <string>FontAwesome5_Pro_Brands.ttf</string>
+ <string>FontAwesome5_Pro_Light.ttf</string>
+ <string>FontAwesome5_Pro_Regular.ttf</string>
+ <string>FontAwesome5_Pro_Solid.ttf</string>
+ <string>Roboto_medium.ttf</string>
+ <string>Roboto.ttf</string>
+ <string>rubicon-icon-font.ttf</string>
+ </array>
 </dict>
 </plist>
