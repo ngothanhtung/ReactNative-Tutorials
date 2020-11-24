@@ -66,11 +66,11 @@ export default class Product extends Component {
           <Image
             style={{
               flex: 1,
-              borderRadius: 12,
+              borderRadius: 8,
             }}
             source={{
               uri:
-                'https://vcdn-sohoa.vnecdn.net/2020/11/09/14102-1604890703-1681-1604890903.jpg?w=0&h=0&q=100&dpr=1&fit=crop&s=5bKzjzmF_Eo09PdAlVGpxQ',
+                'https://ae01.alicdn.com/kf/HTB1ZrrYNXXXXXc9aXXXq6xXFXXXP/New-2016-Hot-Sale-Kids-Overalls-Spring-Autumn-Denim-Jumpsuit-Kids-Children-Cotton-Loose-Blue-Jeans.jpg',
             }}
           />
         </View>
@@ -95,7 +95,7 @@ export default class Product extends Component {
             <Text style={{ color: '#7331C6', fontSize: 32, fontWeight: '700' }}>
               $39.00
             </Text>
-            <View style={{ width: 12 }}></View>
+            <View style={{ width: 12 }} />
             <Text>In stock</Text>
           </View>
           <View
@@ -104,34 +104,39 @@ export default class Product extends Component {
               backgroundColor: 'white',
               flexDirection: 'row',
             }}>
-            <CircleButton
-              backgroundColor="#7331C6"
-              borderColor="#7331C6"></CircleButton>
+            <CircleButton backgroundColor="#7331C6" borderColor="#7331C6" />
             <CircleButton
               backgroundColor="#ffffff"
-              borderColor="#bdc3c7"
-              text="M"></CircleButton>
+              borderColor="#eeeeee"
+              text="M"
+            />
             <CircleButton
               backgroundColor="#ffffff"
-              borderColor="#bdc3c7"
-              text="L"></CircleButton>
+              borderColor="#eeeeee"
+              text="L"
+            />
           </View>
           <View style={{ backgroundColor: 'white', flexDirection: 'row' }}>
             <ActionButton
               color="white"
               backgroundColor="#7331C6"
-              text="Buy now"></ActionButton>
+              text="Buy now"
+            />
             <ActionButton
               color="#7331C6"
-              backgroundColor="#bdc3c7"
-              text="Add to cart"></ActionButton>
+              backgroundColor="#eeeeee"
+              text="Add to cart"
+            />
           </View>
           <View
             style={{
               backgroundColor: 'white',
               justifyContent: 'flex-end',
+              padding: 4,
             }}>
-            <Text>Free shipping on all orders</Text>
+            <Text style={{ fontSize: 11, color: '#757575' }}>
+              Free shipping on all orders
+            </Text>
           </View>
         </View>
       </View>
