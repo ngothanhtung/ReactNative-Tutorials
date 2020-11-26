@@ -13,6 +13,7 @@ import ImageBgExample from './src/Session04/ImageBgExample';
 import Login1 from './src/Session04/Login/Login1';
 
 import UI01 from './src/Session04/UI01';
+import UI02 from './src/Session04/UI02';
 
 const App = () => {
   return (
@@ -25,7 +26,8 @@ const App = () => {
       {/* <FlexExample /> */}
       {/* <ImageBgExample /> */}
       {/* <Login1 /> */}
-      <UI01 />
+      {/* <UI01 /> */}
+      <UI02 />
     </View>
   );
 };
