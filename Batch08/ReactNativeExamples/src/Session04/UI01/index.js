@@ -8,8 +8,10 @@ import {
   SafeAreaView,
 } from 'react-native';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
+import FontistoIcon from 'react-native-vector-icons/Fontisto';
 import AntDesignIcon from 'react-native-vector-icons/AntDesign';
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
+import Ionicon from 'react-native-vector-icons/Ionicons';
 import LinearGradient from 'react-native-linear-gradient';
 
 const W = Dimensions.get('window').width;
@@ -44,7 +46,7 @@ const Item = ({ text, icon, color1, color2 }) => (
 
 const index = () => {
   return (
-    <SafeAreaView style={styles.container}>
+    <View style={styles.container}>
       <StatusBar barStyle="light-content" />
       <View style={styles.container}>
         <HeaderBlock />
@@ -139,7 +141,22 @@ const index = () => {
           </View>
         </View>
       </View>
-    </SafeAreaView>
+      <View style={styles.footer}>
+        <View style={styles.footerIcon}>
+          <FontAwesomeIcon
+            name="shopping-cart"
+            size={22}
+            style={{ color: '#ff4081' }}
+          />
+        </View>
+        <View style={styles.footerIcon}>
+          <Ionicon name="md-stats-chart" size={22} style={styles.icon} />
+        </View>
+        <View style={styles.footerIcon}>
+          <FontistoIcon name="person" size={22} style={styles.icon} />
+        </View>
+      </View>
+    </View>
   );
 };
 
@@ -207,4 +224,19 @@ const styles = StyleSheet.create({
   },
 
   text: { fontWeight: '700' },
+
+  footer: {
+    flexDirection: 'row',
+    // height: 60,
+    backgroundColor: '#282B47',
+    paddingBottom: 20,
+  },
+
+  footerIcon: {
+    padding: 16,
+    flex: 1,
+    // backgroundColor: 'red',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
 });
