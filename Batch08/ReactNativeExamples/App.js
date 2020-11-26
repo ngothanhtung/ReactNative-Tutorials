@@ -26,8 +26,8 @@ const App = () => {
       {/* <FlexExample /> */}
       {/* <ImageBgExample /> */}
       {/* <Login1 /> */}
-      {/* <UI01 /> */}
-      <UI02 />
+      <UI01 />
+      {/* <UI02 /> */}
     </View>
   );
 };

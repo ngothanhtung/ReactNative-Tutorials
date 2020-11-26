@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import {
   Text,
   StyleSheet,
@@ -28,21 +28,45 @@ const HeaderBlock = () => (
   </View>
 );
 
-const Item = ({ text, icon, color1, color2 }) => (
-  <View style={styles.itemContainer}>
-    <LinearGradient
-      start={{ x: 0.0, y: 0.25 }}
-      end={{ x: 0.5, y: 1.0 }}
-      locations={[0, 0.75]}
-      colors={[color1, color2]}
-      style={styles.iconContainer}>
-      {icon}
-    </LinearGradient>
-    <View style={styles.textContainer}>
-      <Text style={[styles.text, { color: color2 }]}>{text}</Text>
+const Item = ({ text, icon, color1, color2 }) => {
+  return (
+    <View style={styles.itemContainer}>
+      <LinearGradient
+        start={{ x: 0.0, y: 0.25 }}
+        end={{ x: 0.5, y: 1.0 }}
+        locations={[0, 0.75]}
+        colors={[color1, color2]}
+        style={styles.iconContainer}>
+        {icon}
+      </LinearGradient>
+      <View style={styles.textContainer}>
+        <Text style={[styles.text, { color: color2 }]}>{text}</Text>
+      </View>
     </View>
-  </View>
-);
+  );
+};
+
+// class Item extends Component {
+//   render() {
+//     return (
+//       <View style={styles.itemContainer}>
+//         <LinearGradient
+//           start={{ x: 0.0, y: 0.25 }}
+//           end={{ x: 0.5, y: 1.0 }}
+//           locations={[0, 0.75]}
+//           colors={[this.props.color1, this.props.color2]}
+//           style={styles.iconContainer}>
+//           {this.props.icon}
+//         </LinearGradient>
+//         <View style={styles.textContainer}>
+//           <Text style={[styles.text, { color: this.props.color2 }]}>
+//             {this.props.text}
+//           </Text>
+//         </View>
+//       </View>
+//     );
+//   }
+// }
 
 const index = () => {
   return (
