@@ -6,6 +6,7 @@ import {
   StyleSheet,
   TouchableOpacity,
   TextInput,
+  StatusBar,
 } from 'react-native';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -27,7 +28,7 @@ const styles = StyleSheet.create({
 
   formContainer: {
     flex: 1,
-    backgroundColor: 'white',
+    // backgroundColor: '',
   },
 
   inputContainer: {
@@ -82,6 +83,7 @@ class LoginForm extends Component {
 
     return (
       <React.Fragment>
+        <StatusBar barStyle="light-content" />
         <View style={styles.formContainer}>
           <View style={styles.inputContainer}>
             <View style={{ flex: 1 }}>

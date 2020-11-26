@@ -11,9 +11,12 @@ import Basic from './src/Session04/Basic';
 import FlexExample from './src/Session04/FlexExample';
 import ImageBgExample from './src/Session04/ImageBgExample';
 import Login1 from './src/Session04/Login/Login1';
+
+import UI01 from './src/Session04/UI01';
+
 const App = () => {
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: '#fff' }}>
+    <View style={{ flex: 1 }}>
       {/* <Text>Hello React Native 1</Text> */}
       {/* <FriendAvatar></FriendAvatar> */}
       {/* <HeartButton></HeartButton> */}
@@ -21,8 +24,9 @@ const App = () => {
       {/* <Products></Products> */}
       {/* <FlexExample /> */}
       {/* <ImageBgExample /> */}
-      <Login1 />
-    </SafeAreaView>
+      {/* <Login1 /> */}
+      <UI01 />
+    </View>
   );
 };
 
