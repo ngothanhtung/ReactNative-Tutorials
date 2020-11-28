@@ -15,6 +15,13 @@ import Login1 from './src/Session04/Login/Login1';
 import UI01 from './src/Session04/UI01';
 import UI02 from './src/Session04/UI02';
 
+// SESION 05
+import ScrollViewExample from './src/Session05/ScrollViewExample';
+import ScrollViewWithManyDataExample from './src/Session05/ScrollViewWithManyDataExample';
+import FlatListExample from './src/Session05/FlatListExample';
+import SectionListExample from './src/Session05/SectionListExample';
+import SectionListAdvancedExample from './src/Session05/SectionListAdvancedExample';
+
 const App = () => {
   return (
     <View style={{ flex: 1 }}>
@@ -26,8 +33,13 @@ const App = () => {
       {/* <FlexExample /> */}
       {/* <ImageBgExample /> */}
       {/* <Login1 /> */}
-      <UI01 />
+      {/* <UI01 /> */}
       {/* <UI02 /> */}
+      {/* <ScrollViewExample /> */}
+      {/* <ScrollViewWithManyDataExample /> */}
+      {/* <FlatListExample /> */}
+      {/* <SectionListExample /> */}
+      <SectionListAdvancedExample />
     </View>
   );
 };
