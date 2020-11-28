@@ -3,17 +3,78 @@ import React, { Component } from 'react';
 import {
   Dimensions,
   View,
-  Text,
   StyleSheet,
   FlatList,
   TouchableOpacity,
   SafeAreaView,
   Image,
   ActivityIndicator,
+  Text,
 } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const { width, height } = Dimensions.get('window');
+
+class ToolBar extends Component {
+  render() {
+    return (
+      <View style={{ height: 40, backgroundColor: '#ecf0f1', marginBottom: 4 }}>
+        <View
+          style={{
+            flex: 1,
+            flexDirection: 'row',
+            justifyContent: 'flex-end',
+            alignItems: 'center',
+            paddingRight: 6,
+          }}>
+          <TouchableOpacity
+            onPress={() => {
+              this.props.onPress('grid');
+              // this.setState({ mode: 'grid' });
+            }}>
+            <Ionicons
+              name="ios-grid"
+              size={24}
+              style={{
+                color: this.props.mode === 'grid' ? '#2980b9' : '#bdc3c7',
+              }}
+            />
+          </TouchableOpacity>
+
+          <View style={{ width: 6 }} />
+
+          <TouchableOpacity
+            onPress={() => {
+              this.props.onPress('list');
+            }}>
+            <Ionicons
+              name="list"
+              size={24}
+              style={{
+                color: this.props.mode === 'list' ? '#2980b9' : '#bdc3c7',
+              }}
+            />
+          </TouchableOpacity>
+
+          <View style={{ width: 6 }} />
+
+          <TouchableOpacity
+            onPress={() => {
+              this.props.onPress('slide');
+            }}>
+            <Ionicons
+              name="ios-square"
+              size={24}
+              style={{
+                color: this.props.mode === 'slide' ? '#2980b9' : '#bdc3c7',
+              }}
+            />
+          </TouchableOpacity>
+        </View>
+      </View>
+    );
+  }
+}
 
 export default class GalleryHomework extends Component {
   static navigationOptions = {
@@ -28,8 +89,6 @@ export default class GalleryHomework extends Component {
       loading: false,
       mode: 'grid',
       selectedImage: null,
-      loadedHighQualityImage: false,
-      groupPhotos: [],
     };
   }
 
@@ -42,7 +101,7 @@ export default class GalleryHomework extends Component {
 
         this.setState({ loading: false });
       })
-      .catch((error) => {
+      .catch(() => {
         this.setState({ loading: false });
       });
   };
@@ -51,7 +110,7 @@ export default class GalleryHomework extends Component {
     this.getPhotosAsync();
   }
 
-  renderItem = ({ item, index }) => {
+  renderItem = ({ item }) => {
     return (
       <View style={{ flex: 1, margin: 2 }}>
         <View
@@ -63,11 +122,8 @@ export default class GalleryHomework extends Component {
             onPress={() => {
               this.setState({
                 mode: 'view',
-                groupPhotos: this.state.photos.slice(item.id, 5),
                 selectedImage: item,
-                loadedHighQualityImage: false,
               });
-              console.log(this.state.groupPhotos);
             }}>
             <Image
               resizeMode="cover"
@@ -82,68 +138,14 @@ export default class GalleryHomework extends Component {
     );
   };
 
-  componentWillUnmount() {
-    this.setState({ albums: [] });
-  }
-
   render() {
     return (
       <SafeAreaView style={styles.container}>
-        {/* SELECT MODE */}
-        <View
-          style={{ height: 40, backgroundColor: '#ecf0f1', marginBottom: 4 }}>
-          <View
-            style={{
-              flex: 1,
-              flexDirection: 'row',
-              justifyContent: 'flex-end',
-              alignItems: 'center',
-              paddingRight: 6,
-            }}>
-            <TouchableOpacity
-              onPress={() => {
-                this.setState({ mode: 'grid' });
-              }}>
-              <Ionicons
-                name="ios-grid"
-                size={24}
-                style={{
-                  color: this.state.mode === 'grid' ? '#2980b9' : '#bdc3c7',
-                }}
-              />
-            </TouchableOpacity>
-
-            <View style={{ width: 6 }} />
-
-            <TouchableOpacity
-              onPress={() => {
-                this.setState({ mode: 'list' });
-              }}>
-              <Ionicons
-                name="list"
-                size={24}
-                style={{
-                  color: this.state.mode === 'list' ? '#2980b9' : '#bdc3c7',
-                }}
-              />
-            </TouchableOpacity>
-
-            <View style={{ width: 6 }} />
-
-            <TouchableOpacity
-              onPress={() => {
-                this.setState({ mode: 'slide' });
-              }}>
-              <Ionicons
-                name="ios-square"
-                size={24}
-                style={{
-                  color: this.state.mode === 'slide' ? '#2980b9' : '#bdc3c7',
-                }}
-              />
-            </TouchableOpacity>
-          </View>
-        </View>
+        {/* TOOLBAR */}
+        <ToolBar
+          mode={this.state.mode}
+          onPress={(mode) => this.setState({ mode: mode })}
+        />
 
         {/* SLIDE MODE */}
         {!this.state.loading && this.state.mode === 'slide' && (
@@ -182,56 +184,35 @@ export default class GalleryHomework extends Component {
 
         {/* VIEW MODE */}
         {this.state.mode === 'view' && (
-          <View
+          <TouchableOpacity
             style={{
-              zIndex: 999,
               position: 'absolute',
-              height: '100%',
+              height: height,
               width: width,
               backgroundColor: '#000000',
+              justifyContent: 'center',
+            }}
+            onPress={() => {
+              this.setState({ mode: 'grid' });
             }}>
-            <View style={{ flex: 1, justifyContent: 'center' }}>
-              <TouchableOpacity
-                style={{}}
-                onPress={() => {
-                  this.setState({ mode: 'grid' });
-                }}>
-                <Image
-                  onLoad={() => {
-                    this.setState({ loadedHighQualityImage: true });
-                  }}
-                  resizeMode="contain"
-                  source={{
-                    uri:
-                      'https://picsum.photos/1600/1200/?image=' +
-                      this.state.selectedImage.id,
-                  }}
-                  style={{ height: '100%', width: '100%' }}
-                />
-              </TouchableOpacity>
+            <View style={{ justifyContent: 'center' }}>
+              <Image
+                resizeMode="contain"
+                source={{
+                  uri:
+                    'https://picsum.photos/800/600/?image=' +
+                    this.state.selectedImage.id,
+                }}
+                style={{ height: height / 3, width: '100%' }}
+              />
+
+              <Text
+                style={{ color: 'white', alignSelf: 'center', marginTop: 12 }}>
+                {this.state.selectedImage.author}
+              </Text>
             </View>
-          </View>
+          </TouchableOpacity>
         )}
-        {this.state.mode === 'view' &&
-          this.state.loadedHighQualityImage === false && (
-            <View
-              style={{
-                zIndex: 999,
-                position: 'absolute',
-                height: '100%',
-                width: width,
-                backgroundColor: '#000000',
-              }}>
-              <View
-                style={{
-                  flex: 1,
-                  justifyContent: 'center',
-                  alignItems: 'center',
-                }}>
-                <ActivityIndicator size="large" color="#ffffff" />
-              </View>
-            </View>
-          )}
 
         {/* WAITING MODE */}
         {this.state.loading && (
