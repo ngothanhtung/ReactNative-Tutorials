@@ -21,6 +21,8 @@ import ScrollViewWithManyDataExample from './src/Session05/ScrollViewWithManyDat
 import FlatListExample from './src/Session05/FlatListExample';
 import SectionListExample from './src/Session05/SectionListExample';
 import SectionListAdvancedExample from './src/Session05/SectionListAdvancedExample';
+import NetworkingExample from './src/Session06/NetworkingExample';
+import GalleryHomework from './src/Session06/GalleryHomework';
 
 const App = () => {
   return (
@@ -39,7 +41,9 @@ const App = () => {
       {/* <ScrollViewWithManyDataExample /> */}
       {/* <FlatListExample /> */}
       {/* <SectionListExample /> */}
-      <SectionListAdvancedExample />
+      {/* <SectionListAdvancedExample /> */}
+      {/* <NetworkingExample /> */}
+      <GalleryHomework />
     </View>
   );
 };
