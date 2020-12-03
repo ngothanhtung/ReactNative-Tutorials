@@ -24,6 +24,8 @@ import SectionListAdvancedExample from './src/Session05/SectionListAdvancedExamp
 import NetworkingExample from './src/Session06/NetworkingExample';
 import GalleryHomework from './src/Session06/GalleryHomework';
 
+// Session 06
+import Login from './src/Session06/Login';
 const App = () => {
   return (
     <View style={{ flex: 1 }}>
@@ -43,7 +45,8 @@ const App = () => {
       {/* <SectionListExample /> */}
       {/* <SectionListAdvancedExample /> */}
       {/* <NetworkingExample /> */}
-      <GalleryHomework />
+      {/* <GalleryHomework /> */}
+      <Login />
     </View>
   );
 };
