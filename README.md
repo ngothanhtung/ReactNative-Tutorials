@@ -152,7 +152,7 @@
 2. Fetch API: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
 3. Axios Package: https://github.com/axios/axios
 4. JSON samples: https://jsonplaceholder.typicode.com/
-5. Download POSTMAN Tool: https://www.getpostman.com/postman
+5. Download POSTMAN Tool: https://www.postman.com/downloads/
 6. API Practices:
 
 ```
