@@ -14,7 +14,7 @@ export default class NetworkingExample extends Component {
     };
   }
 
-  componentDidMount() {
+  getPhotos = () => {
     console.log('Start: get data');
 
     this.setState({ loading: true });
@@ -31,6 +31,10 @@ export default class NetworkingExample extends Component {
       });
 
     console.log('End: get data');
+  };
+
+  componentDidMount() {
+    this.getPhotos();
   }
 
   renderItem = ({ item }) => {

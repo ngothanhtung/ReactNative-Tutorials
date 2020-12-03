@@ -4,8 +4,8 @@ import { View, Text, SafeAreaView } from 'react-native';
 
 import FriendAvatar from './src/components/FriendAvatar';
 import HeartButton from './src/components/HeartButton';
-import Product from './src/components/Product';
-import Products from './src/components/Products';
+// import Product from './src/components/Product';
+// import Products from './src/components/Products';
 
 import Basic from './src/Session04/Basic';
 import FlexExample from './src/Session04/FlexExample';
@@ -26,6 +26,11 @@ import GalleryHomework from './src/Session06/GalleryHomework';
 
 // Session 06
 import Login from './src/Session06/Login';
+import Product from './src/Session06/Product';
+// Session 07
+
+import Example01 from './src/Session07/Example01';
+
 const App = () => {
   return (
     <View style={{ flex: 1 }}>
@@ -46,7 +51,10 @@ const App = () => {
       {/* <SectionListAdvancedExample /> */}
       {/* <NetworkingExample /> */}
       {/* <GalleryHomework /> */}
-      <Login />
+      {/* <Login /> */}
+      {/* <Product /> */}
+
+      <Example01 />
     </View>
   );
 };
