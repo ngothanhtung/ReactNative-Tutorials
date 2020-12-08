@@ -6,9 +6,12 @@ import {
   TouchableOpacity,
   FlatList,
   ActivityIndicator,
+  Dimensions,
 } from 'react-native';
 import axios from 'axios';
 import Product from './components/Product2';
+
+const width = Dimensions.get('screen').width;
 
 const products = [
   {
@@ -21,6 +24,14 @@ const products = [
   },
   {
     id: 2,
+    name: 'Modern Lamp',
+    coverImageUrl:
+      'https://cb2.scene7.com/is/image/CB2/AdaIIWhiteTableLampSHF16',
+    price: 39,
+    categoryName: 'Funiture',
+  },
+  {
+    id: 3,
     name: 'Modern Lamp',
     coverImageUrl:
       'https://cb2.scene7.com/is/image/CB2/AdaIIWhiteTableLampSHF16',
@@ -45,7 +56,7 @@ export default function ProductsScreen({ navigation }) {
         renderItem={({ item }) => {
           return (
             <TouchableOpacity
-              style={{ flex: 1 }}
+              style={{ width: width / 2 - 8 }}
               onPress={() => {
                 navigation.navigate('ProductDetail', { item: item });
               }}>
