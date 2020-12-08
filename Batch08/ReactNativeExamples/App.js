@@ -30,7 +30,8 @@ import Product from './src/Session06/Product';
 // Session 07
 
 import Example01 from './src/Session07/Example01';
-
+// Session08
+import StackNavigationExample from './src/Session08/StackNavigationExample';
 const App = () => {
   return (
     <View style={{ flex: 1 }}>
@@ -54,7 +55,8 @@ const App = () => {
       {/* <Login /> */}
       {/* <Product /> */}
 
-      <Example01 />
+      {/* <Example01 /> */}
+      <StackNavigationExample />
     </View>
   );
 };
