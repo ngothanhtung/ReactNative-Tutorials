@@ -9,30 +9,30 @@ import {
 } from 'react-native';
 import axios from 'axios';
 import Product from './components/Product';
-const products = [
-  {
-    id: 1,
-    name: 'Kids Dress',
-    coverImageUrl:
-      'https://ae01.alicdn.com/kf/HTB1ZrrYNXXXXXc9aXXXq6xXFXXXP/New-2016-Hot-Sale-Kids-Overalls-Spring-Autumn-Denim-Jumpsuit-Kids-Children-Cotton-Loose-Blue-Jeans.jpg',
-    price: 25,
-    status: 'In stock',
-    color: '#7432C5',
-    sizes: ['M', 'L'],
-    freeShip: true,
-  },
-  {
-    id: 2,
-    name: 'Kids Jumpsuit',
-    coverImageUrl:
-      'https://ae01.alicdn.com/kf/HTB1ZrrYNXXXXXc9aXXXq6xXFXXXP/New-2016-Hot-Sale-Kids-Overalls-Spring-Autumn-Denim-Jumpsuit-Kids-Children-Cotton-Loose-Blue-Jeans.jpg',
-    price: 39,
-    status: 'In stock',
-    color: 'red',
-    sizes: ['M', 'L', 'XL'],
-    freeShip: false,
-  },
-];
+// const products = [
+//   {
+//     id: 1,
+//     name: 'Kids Dress',
+//     coverImageUrl:
+//       'https://ae01.alicdn.com/kf/HTB1ZrrYNXXXXXc9aXXXq6xXFXXXP/New-2016-Hot-Sale-Kids-Overalls-Spring-Autumn-Denim-Jumpsuit-Kids-Children-Cotton-Loose-Blue-Jeans.jpg',
+//     price: 25,
+//     status: 'In stock',
+//     color: '#7432C5',
+//     sizes: ['M', 'L'],
+//     freeShip: true,
+//   },
+//   {
+//     id: 2,
+//     name: 'Kids Jumpsuit',
+//     coverImageUrl:
+//       'https://ae01.alicdn.com/kf/HTB1ZrrYNXXXXXc9aXXXq6xXFXXXP/New-2016-Hot-Sale-Kids-Overalls-Spring-Autumn-Denim-Jumpsuit-Kids-Children-Cotton-Loose-Blue-Jeans.jpg',
+//     price: 39,
+//     status: 'In stock',
+//     color: 'red',
+//     sizes: ['M', 'L', 'XL'],
+//     freeShip: false,
+//   },
+// ];
 
 export default function ProductsScreen({ navigation }) {
   const [loading, setLoading] = React.useState(false);
@@ -40,6 +40,8 @@ export default function ProductsScreen({ navigation }) {
 
   React.useEffect(() => {
     setLoading(true);
+
+    // call api to get data from remote server
     const url = 'https://training.softech.cloud/api/products';
     axios
       .get(url)
@@ -51,9 +53,6 @@ export default function ProductsScreen({ navigation }) {
         setLoading(false);
         console.log(error);
       });
-    // call api to get data from remote server
-    // then =>
-    // setProducts(response.data);
   }, []);
 
   return (

@@ -8,12 +8,14 @@ import RegisterScreen from './screens/RegisterScreen';
 import ProductsScreen from './screens/ProductsScreen';
 import ProductDetailScreen from './screens/ProductDetailScreen';
 
+import Products2Screen from './screens/Products2Screen';
+
 const Stack = createStackNavigator();
 
 export default function StackNavigationExample() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator initialRouteName="Products2">
         <Stack.Screen name="Home" component={HomeScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="Register" component={RegisterScreen} />
@@ -30,6 +32,16 @@ export default function StackNavigationExample() {
           name="ProductDetail"
           component={ProductDetailScreen}
           options={{ title: 'Product Detail' }}
+        />
+
+        <Stack.Screen
+          name="Products2"
+          component={Products2Screen}
+          options={{
+            title: 'Products 2',
+            headerStyle: { backgroundColor: 'white' },
+            // headerShown: false,
+          }}
         />
       </Stack.Navigator>
     </NavigationContainer>

@@ -32,9 +32,11 @@ import Product from './src/Session06/Product';
 import Example01 from './src/Session07/Example01';
 // Session08
 import StackNavigationExample from './src/Session08/StackNavigationExample';
+
+import Product2 from './src/Session08/screens/components/Product2';
 const App = () => {
   return (
-    <View style={{ flex: 1 }}>
+    <View style={{ flex: 1, backgroundColor: 'gray' }}>
       {/* <Text>Hello React Native 1</Text> */}
       {/* <FriendAvatar></FriendAvatar> */}
       {/* <HeartButton></HeartButton> */}
@@ -57,6 +59,19 @@ const App = () => {
 
       {/* <Example01 /> */}
       <StackNavigationExample />
+      {/* <Product2
+        data={{
+          id: 1,
+          name: 'Kids Jumpsuit',
+          coverImageUrl:
+            'https://cb2.scene7.com/is/image/CB2/SnakeTableLampSHF19',
+          price: 39,
+          status: 'In stock',
+          color: 'red',
+          sizes: ['M', 'L', 'XL'],
+          freeShip: false,
+        }}
+      /> */}
     </View>
   );
 };
