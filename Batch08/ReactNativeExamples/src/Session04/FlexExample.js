@@ -38,11 +38,7 @@ export default class FlexExample extends Component {
         <View style={styles.block2} />
         <View style={styles.block3} />
         <View style={styles.block3} />
-        <Image
-          source={avatarImage}
-          style={{ width: 400, height: 120 }}
-          resizeMode="repeat"
-        />
+        <Image source={avatarImage} style={{ width: 400, height: 120 }} resizeMode="repeat" />
         {/* <Image
           style={{ width: 200, height: 200 }}
           source={{

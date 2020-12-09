@@ -3,15 +3,7 @@
  * https://github.com/react-native-community/react-native-blur
  */
 import React, { Component } from 'react';
-import {
-  Image,
-  SegmentedControlIOS,
-  StyleSheet,
-  Platform,
-  Switch,
-  Text,
-  View,
-} from 'react-native';
+import { Image, SegmentedControlIOS, StyleSheet, Platform, Switch, Text, View } from 'react-native';
 
 import { BlurView, VibrancyView } from '@react-native-community/blur';
 
@@ -61,14 +53,8 @@ export default class Basic extends Component {
             absolutely positioned behind your unblurred views, and it
             cannot contain any child views.
           */}
-          <BlurView
-            blurType={this.state.blurBlurType}
-            blurAmount={100}
-            reducedTransparencyFallbackColor={'pink'}
-            style={[styles.blurView]}>
-            <Text style={[styles.text, { color: tintColor }]}>
-              Blur component ({platform})
-            </Text>
+          <BlurView blurType={this.state.blurBlurType} blurAmount={100} reducedTransparencyFallbackColor={'pink'} style={[styles.blurView]}>
+            <Text style={[styles.text, { color: tintColor }]}>Blur component ({platform})</Text>
             {Platform.OS === 'ios' && (
               <SegmentedControlIOS
                 values={['xlight', 'light', 'dark', 'regular', 'prominent']}
@@ -119,19 +105,12 @@ export default class Basic extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Image
-          source={require('./bgimage.jpeg')}
-          resizeMode="cover"
-          style={styles.img}
-        />
+        <Image source={require('./bgimage.jpeg')} resizeMode="cover" style={styles.img} />
 
         {this.state.showBlurs ? this.renderBlurs() : null}
 
         <View style={styles.blurToggle}>
-          <Switch
-            onValueChange={(value) => this.setState({ showBlurs: value })}
-            value={this.state.showBlurs}
-          />
+          <Switch onValueChange={(value) => this.setState({ showBlurs: value })} value={this.state.showBlurs} />
         </View>
       </View>
     );

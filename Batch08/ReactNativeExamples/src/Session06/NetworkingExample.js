@@ -42,10 +42,7 @@ export default class NetworkingExample extends Component {
       <View style={{ backgroundColor: 'white' }}>
         <View style={{ flex: 1, flexDirection: 'row' }}>
           <View style={{ width: 120, height: 120 }}>
-            <Image
-              source={{ uri: item.thumbnailUrl }}
-              style={{ height: 120, width: 120 }}
-            />
+            <Image source={{ uri: item.thumbnailUrl }} style={{ height: 120, width: 120 }} />
           </View>
           <View style={{ flex: 1 }}>
             <View style={{ padding: 6 }}>
@@ -61,8 +58,7 @@ export default class NetworkingExample extends Component {
     return (
       <View style={{ flex: 1 }}>
         {this.state.loading && (
-          <View
-            style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <ActivityIndicator size="large" />
           </View>
         )}

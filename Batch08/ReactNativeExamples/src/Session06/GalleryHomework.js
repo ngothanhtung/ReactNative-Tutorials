@@ -1,16 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, { Component } from 'react';
-import {
-  Dimensions,
-  View,
-  StyleSheet,
-  FlatList,
-  TouchableOpacity,
-  SafeAreaView,
-  Image,
-  ActivityIndicator,
-  Text,
-} from 'react-native';
+import { Dimensions, View, StyleSheet, FlatList, TouchableOpacity, SafeAreaView, Image, ActivityIndicator, Text } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 const { width, height } = Dimensions.get('window');
@@ -142,10 +132,7 @@ export default class GalleryHomework extends Component {
     return (
       <SafeAreaView style={styles.container}>
         {/* TOOLBAR */}
-        <ToolBar
-          mode={this.state.mode}
-          onPress={(mode) => this.setState({ mode: mode })}
-        />
+        <ToolBar mode={this.state.mode} onPress={(mode) => this.setState({ mode: mode })} />
 
         {/* SLIDE MODE */}
         {!this.state.loading && this.state.mode === 'slide' && (
@@ -199,25 +186,19 @@ export default class GalleryHomework extends Component {
               <Image
                 resizeMode="contain"
                 source={{
-                  uri:
-                    'https://picsum.photos/800/600/?image=' +
-                    this.state.selectedImage.id,
+                  uri: 'https://picsum.photos/800/600/?image=' + this.state.selectedImage.id,
                 }}
                 style={{ height: height / 3, width: '100%' }}
               />
 
-              <Text
-                style={{ color: 'white', alignSelf: 'center', marginTop: 12 }}>
-                {this.state.selectedImage.author}
-              </Text>
+              <Text style={{ color: 'white', alignSelf: 'center', marginTop: 12 }}>{this.state.selectedImage.author}</Text>
             </View>
           </TouchableOpacity>
         )}
 
         {/* WAITING MODE */}
         {this.state.loading && (
-          <View
-            style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <ActivityIndicator size="large" color="#2d3436" />
           </View>
         )}

@@ -1,14 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  FlatList,
-  ActivityIndicator,
-  Dimensions,
-} from 'react-native';
-import axios from 'axios';
+import { View, TouchableOpacity, FlatList, Dimensions } from 'react-native';
 import Product from './components/Product2';
 
 const width = Dimensions.get('screen').width;
@@ -17,24 +9,21 @@ const products = [
   {
     id: 1,
     name: 'Wood Lamp',
-    coverImageUrl:
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz14PBfiEJcDUTCkgv754F_xqlMOlqbMc7Mw&usqp=CAU',
+    coverImageUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQz14PBfiEJcDUTCkgv754F_xqlMOlqbMc7Mw&usqp=CAU',
     price: 25,
     categoryName: 'Funiture',
   },
   {
     id: 2,
     name: 'Modern Lamp',
-    coverImageUrl:
-      'https://cb2.scene7.com/is/image/CB2/AdaIIWhiteTableLampSHF16',
+    coverImageUrl: 'https://cb2.scene7.com/is/image/CB2/AdaIIWhiteTableLampSHF16',
     price: 39,
     categoryName: 'Funiture',
   },
   {
     id: 3,
     name: 'Modern Lamp',
-    coverImageUrl:
-      'https://cb2.scene7.com/is/image/CB2/AdaIIWhiteTableLampSHF16',
+    coverImageUrl: 'https://cb2.scene7.com/is/image/CB2/AdaIIWhiteTableLampSHF16',
     price: 39,
     categoryName: 'Funiture',
   },

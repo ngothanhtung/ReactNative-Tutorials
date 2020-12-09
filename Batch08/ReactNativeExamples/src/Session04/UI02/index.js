@@ -4,13 +4,7 @@
 // https://smooth.ie/blogs/news/svg-wavey-transitions-between-sections
 
 import React from 'react';
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  TouchableOpacity,
-} from 'react-native';
+import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import FontAwesome5Icon from 'react-native-vector-icons/FontAwesome5';
 import LinearGradient from 'react-native-linear-gradient';
 
@@ -137,11 +131,7 @@ const Logo = () => {
             alignItems: 'center',
             borderRadius: 80,
           }}>
-          <FontAwesome5Icon
-            name="spa"
-            size={75}
-            style={{ color: MAIN_COLOR }}
-          />
+          <FontAwesome5Icon name="spa" size={75} style={{ color: MAIN_COLOR }} />
         </View>
       </LinearGradient>
     </View>
@@ -161,56 +151,20 @@ const UI = () => {
         <Logo />
         <View style={{ flex: 1, justifyContent: 'flex-start', padding: 24 }}>
           <View style={styles.inputContainer}>
-            <FontAwesome5Icon
-              name="id-card-alt"
-              size={20}
-              style={{ paddingRight: 16 }}
-              color={ICON_COLOR}
-            />
-            <TextInput
-              placeholder="Username"
-              placeholderTextColor={PLACEHOLDER_TEXT_COLOR}
-              style={styles.textInput}
-            />
+            <FontAwesome5Icon name="id-card-alt" size={20} style={{ paddingRight: 16 }} color={ICON_COLOR} />
+            <TextInput placeholder="Username" placeholderTextColor={PLACEHOLDER_TEXT_COLOR} style={styles.textInput} />
           </View>
           <View style={styles.inputContainer}>
-            <FontAwesome5Icon
-              name="user-alt"
-              size={20}
-              style={{ paddingRight: 16 }}
-              color={ICON_COLOR}
-            />
-            <TextInput
-              placeholder="Full Name"
-              placeholderTextColor={PLACEHOLDER_TEXT_COLOR}
-              style={styles.textInput}
-            />
+            <FontAwesome5Icon name="user-alt" size={20} style={{ paddingRight: 16 }} color={ICON_COLOR} />
+            <TextInput placeholder="Full Name" placeholderTextColor={PLACEHOLDER_TEXT_COLOR} style={styles.textInput} />
           </View>
           <View style={styles.inputContainer}>
-            <FontAwesome5Icon
-              name="phone"
-              size={20}
-              style={{ paddingRight: 16 }}
-              color={ICON_COLOR}
-            />
-            <TextInput
-              placeholder="Phone"
-              placeholderTextColor={PLACEHOLDER_TEXT_COLOR}
-              style={styles.textInput}
-            />
+            <FontAwesome5Icon name="phone" size={20} style={{ paddingRight: 16 }} color={ICON_COLOR} />
+            <TextInput placeholder="Phone" placeholderTextColor={PLACEHOLDER_TEXT_COLOR} style={styles.textInput} />
           </View>
           <View style={styles.inputContainer}>
-            <FontAwesome5Icon
-              name="lock"
-              size={20}
-              style={{ paddingRight: 16 }}
-              color={ICON_COLOR}
-            />
-            <TextInput
-              placeholder="Password"
-              placeholderTextColor={PLACEHOLDER_TEXT_COLOR}
-              style={styles.textInput}
-            />
+            <FontAwesome5Icon name="lock" size={20} style={{ paddingRight: 16 }} color={ICON_COLOR} />
+            <TextInput placeholder="Password" placeholderTextColor={PLACEHOLDER_TEXT_COLOR} style={styles.textInput} />
           </View>
 
           <TouchableOpacity style={styles.button}>
@@ -226,10 +180,7 @@ const UI = () => {
                 justifyContent: 'center',
                 alignItems: 'center',
               }}>
-              <Text
-                style={{ fontWeight: '700', fontSize: 18, color: '#ffffff' }}>
-                Register
-              </Text>
+              <Text style={{ fontWeight: '700', fontSize: 18, color: '#ffffff' }}>Register</Text>
             </LinearGradient>
           </TouchableOpacity>
         </View>

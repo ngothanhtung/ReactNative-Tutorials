@@ -31,9 +31,8 @@ import Product from './src/Session06/Product';
 
 import Example01 from './src/Session07/Example01';
 // Session08
-import StackNavigationExample from './src/Session08/StackNavigationExample';
+import AppNavigator from './src/Session08/AppNavigator';
 
-import Product2 from './src/Session08/screens/components/Product2';
 const App = () => {
   return (
     <View style={{ flex: 1, backgroundColor: 'gray' }}>
@@ -58,7 +57,7 @@ const App = () => {
       {/* <Product /> */}
 
       {/* <Example01 /> */}
-      <StackNavigationExample />
+      <AppNavigator />
       {/* <Product2
         data={{
           id: 1,

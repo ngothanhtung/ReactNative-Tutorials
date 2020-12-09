@@ -35,14 +35,7 @@ export default class SectionListAdvancedExamples extends Component {
   };
 
   render() {
-    return (
-      <SectionList
-        style={styles.container}
-        sections={sections}
-        renderSectionHeader={this.renderSectionHeader}
-        keyExtractor={extractKey}
-      />
-    );
+    return <SectionList style={styles.container} sections={sections} renderSectionHeader={this.renderSectionHeader} keyExtractor={extractKey} />;
   }
 }
 

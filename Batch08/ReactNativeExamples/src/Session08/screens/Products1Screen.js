@@ -1,12 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  FlatList,
-  ActivityIndicator,
-} from 'react-native';
+import { View, TouchableOpacity, FlatList, ActivityIndicator } from 'react-native';
 import axios from 'axios';
 import Product from './components/Product';
 // const products = [

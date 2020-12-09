@@ -37,10 +37,7 @@ class ActionButton extends Component {
           justifyContent: 'center',
           alignItems: 'center',
         }}>
-        <Text
-          style={{ color: this.props.color, fontWeight: '700', fontSize: 12 }}>
-          {this.props.text}
-        </Text>
+        <Text style={{ color: this.props.color, fontWeight: '700', fontSize: 12 }}>{this.props.text}</Text>
       </TouchableOpacity>
     );
   }
@@ -90,9 +87,7 @@ export default function Product({ data }) {
             flexDirection: 'row',
             alignItems: 'center',
           }}>
-          <Text style={{ color: '#7331C6', fontSize: 32, fontWeight: '700' }}>
-            ${data.price}
-          </Text>
+          <Text style={{ color: '#7331C6', fontSize: 32, fontWeight: '700' }}>${data.price}</Text>
           <View style={{ width: 12 }} />
           <Text>{data.status}</Text>
         </View>
@@ -105,27 +100,12 @@ export default function Product({ data }) {
           <CircleButton backgroundColor={data.color} borderColor={data.color} />
 
           {data.sizes.map((s) => {
-            return (
-              <CircleButton
-                key={s}
-                backgroundColor="#ffffff"
-                borderColor="#eeeeee"
-                text={s}
-              />
-            );
+            return <CircleButton key={s} backgroundColor="#ffffff" borderColor="#eeeeee" text={s} />;
           })}
         </View>
         <View style={{ backgroundColor: 'white', flexDirection: 'row' }}>
-          <ActionButton
-            color="white"
-            backgroundColor="#7331C6"
-            text="Buy now"
-          />
-          <ActionButton
-            color="#7331C6"
-            backgroundColor="#eeeeee"
-            text="Add to cart"
-          />
+          <ActionButton color="white" backgroundColor="#7331C6" text="Buy now" />
+          <ActionButton color="#7331C6" backgroundColor="#eeeeee" text="Add to cart" />
         </View>
         <View
           style={{
@@ -133,11 +113,7 @@ export default function Product({ data }) {
             justifyContent: 'flex-end',
             padding: 4,
           }}>
-          {data.freeShip && (
-            <Text style={{ fontSize: 11, color: '#757575' }}>
-              Free shipping on all orders
-            </Text>
-          )}
+          {data.freeShip && <Text style={{ fontSize: 11, color: '#757575' }}>Free shipping on all orders</Text>}
         </View>
       </View>
     </View>

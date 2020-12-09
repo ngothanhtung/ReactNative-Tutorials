@@ -12,10 +12,7 @@ export default class ScrollViewWithManyDataExample extends Component {
           return (
             <View key={item.id}>
               <Text style={{ fontWeight: '700' }}>{item.title}</Text>
-              <Image
-                source={{ uri: item.thumbnailUrl }}
-                style={{ height: 150, width: 150 }}
-              />
+              <Image source={{ uri: item.thumbnailUrl }} style={{ height: 150, width: 150 }} />
             </View>
           );
         })}

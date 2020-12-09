@@ -1,11 +1,5 @@
 import React, { Component } from 'react';
-import {
-  SafeAreaView,
-  SectionList,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import { SafeAreaView, SectionList, StyleSheet, Text, View } from 'react-native';
 
 const data = [
   {
@@ -27,9 +21,7 @@ export default class SectionListExamples extends Component {
     );
   };
 
-  renderSectionHeader = ({ section }) => (
-    <Text style={styles.sectionHeader}>{section.title}</Text>
-  );
+  renderSectionHeader = ({ section }) => <Text style={styles.sectionHeader}>{section.title}</Text>;
 
   render() {
     return (

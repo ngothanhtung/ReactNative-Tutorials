@@ -37,10 +37,7 @@ class ActionButton extends Component {
           justifyContent: 'center',
           alignItems: 'center',
         }}>
-        <Text
-          style={{ color: this.props.color, fontWeight: '700', fontSize: 12 }}>
-          {this.props.text}
-        </Text>
+        <Text style={{ color: this.props.color, fontWeight: '700', fontSize: 12 }}>{this.props.text}</Text>
       </Pressable>
     );
   }
@@ -92,9 +89,7 @@ export default class Product extends Component {
               flexDirection: 'row',
               alignItems: 'center',
             }}>
-            <Text style={{ color: '#7331C6', fontSize: 32, fontWeight: '700' }}>
-              $39.00
-            </Text>
+            <Text style={{ color: '#7331C6', fontSize: 32, fontWeight: '700' }}>$39.00</Text>
             <View style={{ width: 12 }} />
             <Text>In stock</Text>
           </View>
@@ -105,28 +100,12 @@ export default class Product extends Component {
               flexDirection: 'row',
             }}>
             <CircleButton backgroundColor="#7331C6" borderColor="#7331C6" />
-            <CircleButton
-              backgroundColor="#ffffff"
-              borderColor="#eeeeee"
-              text="M"
-            />
-            <CircleButton
-              backgroundColor="#ffffff"
-              borderColor="#eeeeee"
-              text="L"
-            />
+            <CircleButton backgroundColor="#ffffff" borderColor="#eeeeee" text="M" />
+            <CircleButton backgroundColor="#ffffff" borderColor="#eeeeee" text="L" />
           </View>
           <View style={{ backgroundColor: 'white', flexDirection: 'row' }}>
-            <ActionButton
-              color="white"
-              backgroundColor="#7331C6"
-              text="Buy now"
-            />
-            <ActionButton
-              color="#7331C6"
-              backgroundColor="#eeeeee"
-              text="Add to cart"
-            />
+            <ActionButton color="white" backgroundColor="#7331C6" text="Buy now" />
+            <ActionButton color="#7331C6" backgroundColor="#eeeeee" text="Add to cart" />
           </View>
           <View
             style={{
@@ -134,9 +113,7 @@ export default class Product extends Component {
               justifyContent: 'flex-end',
               padding: 4,
             }}>
-            <Text style={{ fontSize: 11, color: '#757575' }}>
-              Free shipping on all orders
-            </Text>
+            <Text style={{ fontSize: 11, color: '#757575' }}>Free shipping on all orders</Text>
           </View>
         </View>
       </View>

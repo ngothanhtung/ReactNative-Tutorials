@@ -44,9 +44,7 @@ export default function Product({ data }) {
         }}>
         <Text style={{ fontWeight: '700' }}>{data.name}</Text>
         <View height={4} />
-        <Text style={{ fontWeight: '400', color: 'grey' }}>
-          {data.categoryName}
-        </Text>
+        <Text style={{ fontWeight: '400', color: 'grey' }}>{data.categoryName}</Text>
       </View>
       <View
         style={{
@@ -56,9 +54,7 @@ export default function Product({ data }) {
           borderBottomRightRadius: 16,
         }}>
         <View style={{ flex: 1, paddingHorizontal: 24, paddingVertical: 24 }}>
-          <Text style={{ fontWeight: '700', color: 'black' }}>
-            {data.price} $
-          </Text>
+          <Text style={{ fontWeight: '700', color: 'black' }}>{data.price} $</Text>
         </View>
         <View
           style={{

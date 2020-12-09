@@ -7,7 +7,7 @@ export default class Complex extends Component {
     return (
       <ScrollView style={{ flex: 1, backgroundColor: 'green' }}>
         <View style={{ flex: 2, backgroundColor: 'pink', height: 100 }}>
-          <View style={{ backgroundColor: 'orange', flex: 1 }}></View>
+          <View style={{ backgroundColor: 'orange', flex: 1 }} />
         </View>
         {/* <View style={{ flex: 1, backgroundColor: 'yellow' }}>
           </View>

@@ -25,8 +25,7 @@ export default class Products extends Component {
     return (
       <View flex={1}>
         {!this.state.products && (
-          <View
-            style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+          <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
             <ActivityIndicator color="green" />
           </View>
         )}

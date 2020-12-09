@@ -1,13 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, { Component } from 'react';
-import {
-  View,
-  Text,
-  Image,
-  FlatList,
-  StyleSheet,
-  SafeAreaView,
-} from 'react-native';
+import { View, Text, Image, FlatList, StyleSheet, SafeAreaView } from 'react-native';
 
 import data from './data';
 
@@ -30,10 +23,7 @@ export default class FlatListExamples extends Component {
       <View style={{ backgroundColor: 'white' }}>
         <View style={{ flex: 1, flexDirection: 'row' }}>
           <View style={{ width: 120, height: 120 }}>
-            <Image
-              source={{ uri: item.thumbnailUrl }}
-              style={{ height: 120, width: 120 }}
-            />
+            <Image source={{ uri: item.thumbnailUrl }} style={{ height: 120, width: 120 }} />
           </View>
           <View style={{ flex: 1 }}>
             <View style={{ padding: 6 }}>

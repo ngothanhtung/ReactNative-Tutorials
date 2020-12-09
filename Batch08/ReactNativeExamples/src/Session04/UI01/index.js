@@ -1,12 +1,5 @@
 import React, { Component } from 'react';
-import {
-  Text,
-  StyleSheet,
-  Dimensions,
-  View,
-  StatusBar,
-  SafeAreaView,
-} from 'react-native';
+import { Text, StyleSheet, Dimensions, View, StatusBar, SafeAreaView } from 'react-native';
 import FontAwesomeIcon from 'react-native-vector-icons/FontAwesome';
 import FontistoIcon from 'react-native-vector-icons/Fontisto';
 import AntDesignIcon from 'react-native-vector-icons/AntDesign';
@@ -21,22 +14,14 @@ const ICON_SIZE = 26;
 
 const HeaderBlock = () => (
   <View>
-    <LinearGradient
-      colors={['#f48fb1', '#ff4081']}
-      style={styles.headerBlock}
-    />
+    <LinearGradient colors={['#f48fb1', '#ff4081']} style={styles.headerBlock} />
   </View>
 );
 
 const Item = ({ text, icon, color1, color2 }) => {
   return (
     <View style={styles.itemContainer}>
-      <LinearGradient
-        start={{ x: 0.0, y: 0.25 }}
-        end={{ x: 0.5, y: 1.0 }}
-        locations={[0, 0.75]}
-        colors={[color1, color2]}
-        style={styles.iconContainer}>
+      <LinearGradient start={{ x: 0.0, y: 0.25 }} end={{ x: 0.5, y: 1.0 }} locations={[0, 0.75]} colors={[color1, color2]} style={styles.iconContainer}>
         {icon}
       </LinearGradient>
       <View style={styles.textContainer}>
@@ -77,89 +62,28 @@ const index = () => {
         <View style={styles.headerTextContainer}>
           <Text style={styles.headerText}>Classify transaction</Text>
           <View height={12} />
-          <Text style={styles.subHeaderText}>
-            Classify this transaction into a
-          </Text>
+          <Text style={styles.subHeaderText}>Classify this transaction into a</Text>
           <Text style={styles.subHeaderText}>particular category</Text>
         </View>
 
         <View style={styles.block}>
           <View style={styles.row}>
-            <Item
-              color1="#81d4fa"
-              color2="#039be5"
-              text="General"
-              icon={
-                <AntDesignIcon
-                  name="appstore1"
-                  size={ICON_SIZE}
-                  style={styles.icon}
-                />
-              }
-            />
-            <Item
-              color1="#b39ddb"
-              color2="#651fff"
-              text="Transport"
-              icon={
-                <FontAwesome5Icon
-                  name="bus"
-                  size={ICON_SIZE}
-                  style={styles.icon}
-                />
-              }
-            />
+            <Item color1="#81d4fa" color2="#039be5" text="General" icon={<AntDesignIcon name="appstore1" size={ICON_SIZE} style={styles.icon} />} />
+            <Item color1="#b39ddb" color2="#651fff" text="Transport" icon={<FontAwesome5Icon name="bus" size={ICON_SIZE} style={styles.icon} />} />
           </View>
           <View style={styles.row}>
-            <Item
-              color1="#f48fb1"
-              color2="#ff4081"
-              text="Shopping"
-              icon={
-                <FontAwesome5Icon
-                  name="shopping-bag"
-                  size={ICON_SIZE}
-                  style={styles.icon}
-                />
-              }
-            />
-            <Item
-              color1="#ffcc80"
-              color2="#ff6d00"
-              text="Bills"
-              icon={
-                <FontAwesomeIcon
-                  name="file-text"
-                  size={ICON_SIZE}
-                  style={styles.icon}
-                />
-              }
-            />
+            <Item color1="#f48fb1" color2="#ff4081" text="Shopping" icon={<FontAwesome5Icon name="shopping-bag" size={ICON_SIZE} style={styles.icon} />} />
+            <Item color1="#ffcc80" color2="#ff6d00" text="Bills" icon={<FontAwesomeIcon name="file-text" size={ICON_SIZE} style={styles.icon} />} />
           </View>
           <View style={styles.row}>
-            <Item
-              color1="#90caf9"
-              color2="#2962ff"
-              text="Entertainment"
-              icon={
-                <FontAwesomeIcon
-                  name="youtube-play"
-                  size={ICON_SIZE}
-                  style={styles.icon}
-                />
-              }
-            />
+            <Item color1="#90caf9" color2="#2962ff" text="Entertainment" icon={<FontAwesomeIcon name="youtube-play" size={ICON_SIZE} style={styles.icon} />} />
             <Item
               color1="#a5d6a7"
               color2="#00c853"
               text="Grocery"
               icon={
                 // <SvgIcon color="white" size={ICON_SIZE} data={groceryData} />
-                <FontAwesomeIcon
-                  name="shopping-basket"
-                  size={ICON_SIZE}
-                  style={styles.icon}
-                />
+                <FontAwesomeIcon name="shopping-basket" size={ICON_SIZE} style={styles.icon} />
               }
             />
           </View>
@@ -167,11 +91,7 @@ const index = () => {
       </View>
       <View style={styles.footer}>
         <View style={styles.footerIcon}>
-          <FontAwesomeIcon
-            name="shopping-cart"
-            size={22}
-            style={{ color: '#ff4081' }}
-          />
+          <FontAwesomeIcon name="shopping-cart" size={22} style={{ color: '#ff4081' }} />
         </View>
         <View style={styles.footerIcon}>
           <Ionicon name="md-stats-chart" size={22} style={styles.icon} />

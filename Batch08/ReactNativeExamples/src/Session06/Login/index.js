@@ -1,15 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, { Component } from 'react';
-import {
-  Alert,
-  Text,
-  View,
-  StyleSheet,
-  TouchableOpacity,
-  TextInput,
-  StatusBar,
-  ActivityIndicator,
-} from 'react-native';
+import { Alert, Text, View, StyleSheet, TouchableOpacity, TextInput, StatusBar, ActivityIndicator } from 'react-native';
 import axios from 'axios';
 
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -57,13 +48,9 @@ class LoginHeader extends Component {
           justifyContent: 'center',
           alignItems: 'center',
         }}>
-        <Text style={[styles.text, { fontSize: 48, fontWeight: '700' }]}>
-          Hello
-        </Text>
+        <Text style={[styles.text, { fontSize: 48, fontWeight: '700' }]}>Hello</Text>
         <View style={{ height: 16 }} />
-        <Text style={[styles.text, { fontSize: 16 }]}>
-          Sign in to your account
-        </Text>
+        <Text style={[styles.text, { fontSize: 16 }]}>Sign in to your account</Text>
       </View>
     );
   }
@@ -145,9 +132,7 @@ class LoginForm extends Component {
   };
 
   render() {
-    let disabled = !(
-      this.state.email.length > 0 && this.state.password.length > 0
-    );
+    let disabled = !(this.state.email.length > 0 && this.state.password.length > 0);
 
     return (
       <React.Fragment>
@@ -168,12 +153,7 @@ class LoginForm extends Component {
               />
             </View>
             <View style={{ justifyContent: 'center' }}>
-              <Icon
-                name="account"
-                size={24}
-                color="#CCD1DD"
-                style={{ marginHorizontal: 8 }}
-              />
+              <Icon name="account" size={24} color="#CCD1DD" style={{ marginHorizontal: 8 }} />
             </View>
           </View>
           <View style={styles.inputContainer}>
@@ -202,9 +182,7 @@ class LoginForm extends Component {
             </View>
           </View>
           <View style={{ marginTop: 12, alignItems: 'flex-end' }}>
-            <Text style={{ marginRight: 12, color: 'gray' }}>
-              Forgot your password?
-            </Text>
+            <Text style={{ marginRight: 12, color: 'gray' }}>Forgot your password?</Text>
           </View>
         </View>
         <View
@@ -222,19 +200,10 @@ class LoginForm extends Component {
             {this.state.loading && <ActivityIndicator />}
             {!this.state.loading && (
               <TouchableOpacity
-                style={[
-                  styles.button,
-                  { backgroundColor: disabled ? 'gray' : PRIMARY_COLOR },
-                ]}
+                style={[styles.button, { backgroundColor: disabled ? 'gray' : PRIMARY_COLOR }]}
                 disabled={disabled}
                 onPress={this.onSignInWithAxios}>
-                <Text
-                  style={[
-                    styles.text,
-                    { fontSize: 16, fontWeight: '700', alignSelf: 'center' },
-                  ]}>
-                  SIGN IN
-                </Text>
+                <Text style={[styles.text, { fontSize: 16, fontWeight: '700', alignSelf: 'center' }]}>SIGN IN</Text>
               </TouchableOpacity>
             )}
             <View height={12} />
