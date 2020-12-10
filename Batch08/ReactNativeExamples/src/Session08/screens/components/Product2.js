@@ -2,6 +2,7 @@
 import React from 'react';
 import { Text, View, Image, TouchableOpacity } from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
+
 const ActionButton = () => {
   return (
     <TouchableOpacity
@@ -17,6 +18,7 @@ const ActionButton = () => {
     </TouchableOpacity>
   );
 };
+
 export default function Product({ data }) {
   return (
     <View
@@ -33,7 +35,7 @@ export default function Product({ data }) {
         }}
         resizeMode="cover"
         source={{
-          uri: data.coverImageUrl,
+          uri: 'https://developer.aptech.io' + data.coverImage.formats.small.url,
         }}
       />
       <View
@@ -44,7 +46,7 @@ export default function Product({ data }) {
         }}>
         <Text style={{ fontWeight: '700' }}>{data.name}</Text>
         <View height={4} />
-        <Text style={{ fontWeight: '400', color: 'grey' }}>{data.categoryName}</Text>
+        <Text style={{ fontWeight: '400', color: 'grey', fontSize: 12 }}>{data.category.name}</Text>
       </View>
       <View
         style={{
