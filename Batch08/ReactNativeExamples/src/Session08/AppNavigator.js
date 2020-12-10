@@ -1,5 +1,6 @@
 import React from 'react';
-import StackNavigationExample from './StackNavigationExample';
+import StackNavigator from './StackNavigator';
+import TabNavigator from './TabNavigator';
 
 // Navigators
 import { NavigationContainer } from '@react-navigation/native';
@@ -7,7 +8,8 @@ import { NavigationContainer } from '@react-navigation/native';
 const AppNavigator = () => {
   return (
     <NavigationContainer>
-      <StackNavigationExample />
+      {/* <StackNavigator /> */}
+      <TabNavigator />
     </NavigationContainer>
   );
 };

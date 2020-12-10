@@ -35,7 +35,7 @@ import AppNavigator from './src/Session08/AppNavigator';
 
 const App = () => {
   return (
-    <View style={{ flex: 1, backgroundColor: 'gray' }}>
+    <SafeAreaView style={{ flex: 1, backgroundColor: 'gray' }}>
       {/* <Text>Hello React Native 1</Text> */}
       {/* <FriendAvatar></FriendAvatar> */}
       {/* <HeartButton></HeartButton> */}
@@ -71,7 +71,7 @@ const App = () => {
           freeShip: false,
         }}
       /> */}
-    </View>
+    </SafeAreaView>
   );
 };
 

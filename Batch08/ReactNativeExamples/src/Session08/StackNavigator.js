@@ -14,7 +14,7 @@ import ProductDetailScreen from './screens/ProductDetailScreen';
 // Create stack navigator
 const Stack = createStackNavigator();
 
-export default function StackNavigationExample() {
+export default function StackNavigator() {
   return (
     <Stack.Navigator initialRouteName="Products2">
       <Stack.Screen name="Home" component={HomeScreen} />
