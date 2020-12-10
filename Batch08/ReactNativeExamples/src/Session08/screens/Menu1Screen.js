@@ -1,6 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, Button } from 'react-native';
 
 const Menu1Screen = ({ navigation }) => {
   return (
@@ -12,6 +12,12 @@ const Menu1Screen = ({ navigation }) => {
         alignItems: 'center',
       }}>
       <Text>Menu 1</Text>
+      <Button
+        title="Open Menu"
+        onPress={() => {
+          navigation.openDrawer();
+        }}
+      />
     </View>
   );
 };

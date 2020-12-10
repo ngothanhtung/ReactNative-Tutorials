@@ -7,7 +7,9 @@ import HomeScreen from './screens/HomeScreen';
 import NotificationScreen from './screens/NotificationScreen';
 import AccountScreen from './screens/AccountScreen';
 
-import StackNavigator from './StackNavigator';
+import ProductStackNavigator from './ProductStackNavigator';
+
+import DrawerNavigator from './DrawerNavigator';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -27,7 +29,7 @@ export default function TabNavigator() {
 
       <Tab.Screen
         name="Product"
-        component={StackNavigator}
+        component={ProductStackNavigator}
         options={{
           title: 'Products',
           tabBarIcon: ({ focused, color }) => {
@@ -48,7 +50,7 @@ export default function TabNavigator() {
       />
       <Tab.Screen
         name="Account"
-        component={AccountScreen}
+        component={DrawerNavigator}
         options={{
           title: 'Account',
 
