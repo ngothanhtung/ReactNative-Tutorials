@@ -9,13 +9,19 @@ import AccountScreen from './screens/AccountScreen';
 
 import ProductStackNavigator from './ProductStackNavigator';
 
-import DrawerNavigator from './DrawerNavigator';
+// import DrawerNavigator from './DrawerNavigator';
+import CustomDrawerNavigator from './CustomDrawerNavigator';
 
 const Tab = createMaterialBottomTabNavigator();
 
 export default function TabNavigator() {
   return (
-    <Tab.Navigator shifting={false}>
+    <Tab.Navigator
+      shifting={false}
+      barStyle={{
+        // paddingBottom: 32,
+        backgroundColor: '# ',
+      }}>
       <Tab.Screen
         name="Home"
         component={HomeScreen}
@@ -50,12 +56,24 @@ export default function TabNavigator() {
       />
       <Tab.Screen
         name="Account"
-        component={DrawerNavigator}
+        component={AccountScreen}
         options={{
           title: 'Account',
 
           tabBarIcon: ({ focused, color }) => {
             return <Icon name="account" color={focused ? 'white' : color} size={24} />;
+          },
+        }}
+      />
+
+      <Tab.Screen
+        name="Menu"
+        component={CustomDrawerNavigator}
+        options={{
+          title: 'Settings',
+
+          tabBarIcon: ({ focused, color }) => {
+            return <Icon name="menu" color={focused ? 'white' : color} size={24} />;
           },
         }}
       />

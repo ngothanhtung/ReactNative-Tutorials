@@ -1,6 +1,8 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import { View, Text, SafeAreaView } from 'react-native';
+import { View, Text } from 'react-native';
+
+import { SafeAreaProvider, SafeAreaView } from 'react-native-safe-area-context';
 
 import FriendAvatar from './src/components/FriendAvatar';
 import HeartButton from './src/components/HeartButton';
@@ -35,7 +37,7 @@ import AppNavigator from './src/Session08/AppNavigator';
 
 const App = () => {
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: 'gray' }}>
+    <React.Fragment>
       {/* <Text>Hello React Native 1</Text> */}
       {/* <FriendAvatar></FriendAvatar> */}
       {/* <HeartButton></HeartButton> */}
@@ -71,7 +73,7 @@ const App = () => {
           freeShip: false,
         }}
       /> */}
-    </SafeAreaView>
+    </React.Fragment>
   );
 };
 
