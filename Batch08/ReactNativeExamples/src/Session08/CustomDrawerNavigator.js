@@ -29,6 +29,16 @@ function CustomDrawerContent(props) {
           props.navigation.closeDrawer();
         }}
       />
+
+      <DrawerItem
+        label="Log out"
+        labelStyle={{ fontWeight: '700' }}
+        icon={({ color, size }) => <Icon color={color} size={size} name="account" />}
+        onPress={() => {
+          // props.navigation.navigate('Menu2');
+          props.navigation.closeDrawer();
+        }}
+      />
     </DrawerContentScrollView>
   );
 }
