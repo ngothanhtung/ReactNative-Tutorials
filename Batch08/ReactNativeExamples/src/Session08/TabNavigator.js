@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 
@@ -17,10 +18,13 @@ const Tab = createMaterialBottomTabNavigator();
 export default function TabNavigator() {
   return (
     <Tab.Navigator
-      shifting={false}
+      shifting={true}
+      labeled={false}
+      // activeColor="red"
+      // inactiveColor="yellow"
       barStyle={{
         // paddingBottom: 32,
-        backgroundColor: '#2c3e50',
+        backgroundColor: '#474787',
       }}>
       <Tab.Screen
         name="Home"
@@ -30,6 +34,7 @@ export default function TabNavigator() {
           tabBarIcon: ({ focused, color }) => {
             return <Icon name="home" color={color} size={24} />;
           },
+          tabBarColor: 'red',
         }}
       />
 

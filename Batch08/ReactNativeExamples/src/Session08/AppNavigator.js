@@ -15,6 +15,7 @@ const Stack = createStackNavigator();
 const AppNavigator = () => {
   return (
     <NavigationContainer>
+      {/* <StackNavigator /> */}
       <TabNavigator />
     </NavigationContainer>
   );

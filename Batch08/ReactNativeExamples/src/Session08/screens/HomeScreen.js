@@ -2,7 +2,7 @@
 import React from 'react';
 import { View, Text, Button } from 'react-native';
 
-export default function HomeScreen({ navigation }) {
+export default function HomeScreen({ route, navigation }) {
   return (
     <View
       style={{
@@ -13,9 +13,9 @@ export default function HomeScreen({ navigation }) {
       }}>
       <Text>HOME SCREEN</Text>
       <Button
-        title="Products"
+        title="Register"
         onPress={() => {
-          navigation.navigate('Products');
+          navigation.navigate('Register');
         }}
       />
     </View>

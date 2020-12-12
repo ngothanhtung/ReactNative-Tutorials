@@ -7,15 +7,15 @@ export default function LoginScreen({ navigation }) {
     <View
       style={{
         flex: 1,
-        backgroundColor: 'green',
+        backgroundColor: 'white',
         justifyContent: 'center',
         alignItems: 'center',
       }}>
       <Text>LOGIN SCREEN</Text>
       <Button
-        title="Go to TAB"
+        title="Register"
         onPress={() => {
-          navigation.navigate('Tab');
+          navigation.navigate('Register');
         }}
       />
     </View>
