@@ -20,7 +20,7 @@ export default function TabNavigator() {
       shifting={false}
       barStyle={{
         // paddingBottom: 32,
-        backgroundColor: '# ',
+        backgroundColor: '#2c3e50',
       }}>
       <Tab.Screen
         name="Home"

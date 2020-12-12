@@ -4,9 +4,7 @@ import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 
 // Screens
-import HomeScreen from './screens/HomeScreen';
-import LoginScreen from './screens/LoginScreen';
-import RegisterScreen from './screens/RegisterScreen';
+import ProductsScreen from './screens/ProductsScreen';
 import Products1Screen from './screens/Products1Screen';
 import Products2Screen from './screens/Products2Screen';
 import ProductDetailScreen from './screens/ProductDetailScreen';
@@ -16,7 +14,17 @@ const Stack = createStackNavigator();
 
 export default function ProductStackNavigator() {
   return (
-    <Stack.Navigator initialRouteName="Products2">
+    <Stack.Navigator initialRouteName="Products">
+      <Stack.Screen
+        name="Products"
+        component={ProductsScreen}
+        options={{
+          title: 'Products',
+          headerStyle: { backgroundColor: 'white' },
+          headerShown: false,
+        }}
+      />
+
       <Stack.Screen
         name="Products1"
         component={Products1Screen}

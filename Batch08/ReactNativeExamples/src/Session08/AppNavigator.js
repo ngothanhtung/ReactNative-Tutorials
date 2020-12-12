@@ -7,15 +7,15 @@ import DrawerNavigator from './DrawerNavigator';
 
 // Navigators
 import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import { SafeAreaView } from 'react-native';
+
+const Stack = createStackNavigator();
 
 const AppNavigator = () => {
   return (
     <NavigationContainer>
-      <SafeAreaView style={{ flex: 1, backgroundColor: '#2c3e50' }}>
-        {/* <StackNavigator /> */}
-        <TabNavigator />
-      </SafeAreaView>
+      <TabNavigator />
     </NavigationContainer>
   );
 };
