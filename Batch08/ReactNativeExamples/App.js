@@ -35,6 +35,9 @@ import Example01 from './src/Session07/Example01';
 // Session08
 import AppNavigator from './src/Session08/AppNavigator';
 
+// Session 09
+import Session09 from './src/Session09';
+
 const App = () => {
   return (
     <React.Fragment>
@@ -59,7 +62,7 @@ const App = () => {
       {/* <Product /> */}
 
       {/* <Example01 /> */}
-      <AppNavigator />
+      {/* <AppNavigator /> */}
       {/* <Product2
         data={{
           id: 1,
@@ -73,6 +76,7 @@ const App = () => {
           freeShip: false,
         }}
       /> */}
+      <Session09 />
     </React.Fragment>
   );
 };
