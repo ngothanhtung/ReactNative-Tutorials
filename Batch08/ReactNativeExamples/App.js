@@ -37,6 +37,10 @@ import AppNavigator from './src/Session08/AppNavigator';
 
 // Session 09
 import Session09 from './src/Session09';
+import PaperExample from './src/Session09/PaperExample';
+import AsyncStorageExample from './src/Session09/AsyncStorageExample';
+import MomentExample from './src/Session09/MomentExample';
+import LoginFormikExample from './src/Session10/LoginFormikExample';
 
 const App = () => {
   return (
@@ -76,7 +80,11 @@ const App = () => {
           freeShip: false,
         }}
       /> */}
-      <Session09 />
+      {/* <Session09 /> */}
+      {/* <PaperExample /> */}
+      {/* <AsyncStorageExample /> */}
+      {/* <MomentExample /> */}
+      <LoginFormikExample />
     </React.Fragment>
   );
 };
