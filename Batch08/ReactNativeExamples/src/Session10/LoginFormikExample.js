@@ -4,11 +4,40 @@ import { Text, View, StyleSheet, TouchableOpacity, TextInput, StatusBar } from '
 import { Formik } from 'formik';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import axios from 'axios';
-import * as yup from 'yup';
+import * as Yup from 'yup';
+import moment from 'moment';
 
-let schema = yup.object().shape({
-  email: yup.string().email('Invalid email').required('Email is required'),
-  password: yup.string().min(8, 'Password is too short').required('Password is required'),
+let schema = Yup.object().shape({
+  email: Yup.string().email('Invalid email').required('Email is required'),
+  password: Yup.string().min(8, 'Password is too short').required('Password is required'),
+});
+
+// YUP
+const ValidationSchema = Yup.object().shape({
+  do_dien_thoai: Yup.mixed()
+    .test('so_dien_thoai-valid', 'Số điện thoại: Không hợp lệ', (val) => {
+      if (val.length === 10) {
+        return true;
+      }
+      return false;
+    })
+    .required('Số điện thoại: Chưa nhập'),
+  tu_ngay: Yup.mixed()
+    .test('tu_ngay-valid', 'Ngày đến: Không hợp lệ', (val) => moment(val, 'DD/MM/YYYY HH:mm:ss').isValid())
+    .test('tu_ngay-length', 'Ngày đến: Không hợp lệ', (val) => val && val.length === 19)
+    .required('Ngày đến: Chưa nhập'),
+  den_ngay: Yup.mixed()
+    .test('den_ngay-valid', 'Ngày đi: Không hợp lệ', (val) => moment(val, 'DD/MM/YYYY HH:mm:ss').isValid())
+    .test('den_ngay-length', 'Ngày đi: Không hợp lệ', (val) => val && val.length === 19)
+    .required('Ngày đi: Chưa nhập'),
+  phong_so: Yup.string().required('Số phòng: Chưa nhập'),
+  ho_va_ten: Yup.string().required('Họ và tên: Chưa nhập'),
+  ngay_sinh: Yup.mixed()
+    .test('ngay_sinh-valid', 'Ngày sinh: Không hợp lệ', (val) => moment(val, 'DD/MM/YYYY').isValid())
+    .test('ngay_sinh-length', 'Ngày sinh: Không hợp lệ', (val) => val && val.length === 10)
+    .required('Ngày sinh: Chưa nhập'),
+
+  so_giay_to: Yup.string().required('Số giấy tờ: Chưa nhập'),
 });
 
 const PRIMARY_COLOR = '#3466FE';
