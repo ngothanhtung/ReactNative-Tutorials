@@ -1,6 +1,19 @@
 /* eslint-disable react-native/no-inline-styles */
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, TouchableOpacity, TextInput, StatusBar } from 'react-native';
+import {
+  Keyboard,
+  Platform,
+  Text,
+  View,
+  StyleSheet,
+  TouchableWithoutFeedback,
+  TouchableOpacity,
+  TextInput,
+  StatusBar,
+  KeyboardAvoidingView,
+  ScrollView,
+} from 'react-native';
+import * as Animatable from 'react-native-animatable';
 import { Formik } from 'formik';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import axios from 'axios';
@@ -73,24 +86,6 @@ const styles = StyleSheet.create({
   },
 });
 
-class LoginHeader extends Component {
-  render() {
-    return (
-      <View
-        style={{
-          height: 240,
-          backgroundColor: PRIMARY_COLOR,
-          justifyContent: 'center',
-          alignItems: 'center',
-        }}>
-        <Text style={[styles.text, { fontSize: 48, fontWeight: '700' }]}>Hello</Text>
-        <View style={{ height: 16 }} />
-        <Text style={[styles.text, { fontSize: 16 }]}>Sign in to your account</Text>
-      </View>
-    );
-  }
-}
-
 class LoginForm extends Component {
   constructor(props) {
     super(props);
@@ -122,7 +117,7 @@ class LoginForm extends Component {
             // console.log(errors);
             let disabled = Object.keys(errors).length > 0;
             return (
-              <React.Fragment>
+              <View style={{ flex: 1 }}>
                 <View style={styles.formContainer}>
                   <View style={styles.inputContainer}>
                     <View style={{ flex: 1 }}>
@@ -192,7 +187,7 @@ class LoginForm extends Component {
                     <Text>Don't have an account? Create</Text>
                   </View>
                 </View>
-              </React.Fragment>
+              </View>
             );
           }}
         </Formik>
@@ -201,13 +196,49 @@ class LoginForm extends Component {
   }
 }
 
-export default class Login extends Component {
-  render() {
-    return (
-      <View style={{ flex: 1, backgroundColor: '#cddc39' }}>
-        <LoginHeader />
-        <LoginForm />
-      </View>
-    );
-  }
+export default function Login() {
+  const [height, setHeight] = React.useState(240);
+  const headerRef = React.useRef(null);
+  const formRef = React.useRef(null);
+
+  React.useEffect(() => {
+    formRef.current.zoomIn(500);
+
+    const keyboardDidShowListener = Keyboard.addListener('keyboardDidShow', () => {
+      headerRef.current.transitionTo({ height: 160 }, 750);
+      // headerRef.current.fadeOutUpBig(500);
+      // setHeight(160);
+    });
+    const keyboardDidHideListener = Keyboard.addListener('keyboardDidHide', () => {
+      headerRef.current.transitionTo({ height: 240 }, 250);
+      // setHeight(240);
+    });
+
+    return () => {
+      keyboardDidHideListener.remove();
+      keyboardDidShowListener.remove();
+    };
+  }, []);
+
+  return (
+    <TouchableWithoutFeedback activeOpacity={1} style={{ flex: 1, backgroundColor: 'white' }} onPress={Keyboard.dismiss}>
+      <KeyboardAvoidingView behavior={Platform.OS === 'ios' ? 'padding' : undefined} style={{ flex: 1 }}>
+        <Animatable.View style={{ flex: 1 }} ref={formRef}>
+          <Animatable.View
+            ref={headerRef}
+            style={{
+              height: height,
+              backgroundColor: PRIMARY_COLOR,
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+            <Text style={[styles.text, { fontSize: 48, fontWeight: '700' }]}>Hello</Text>
+            <View style={{ height: 16 }} />
+            <Text style={[styles.text, { fontSize: 16 }]}>Sign in to your account</Text>
+          </Animatable.View>
+          <LoginForm />
+        </Animatable.View>
+      </KeyboardAvoidingView>
+    </TouchableWithoutFeedback>
+  );
 }
