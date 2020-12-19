@@ -43,6 +43,7 @@ import MomentExample from './src/Session09/MomentExample';
 import LoginFormikExample from './src/Session10/LoginFormikExample';
 import FireStoreExample from './src/Session11/FirestoreExample';
 import FirestoreProducts from './src/Session11/FirestoreProducts';
+import FirestoreQuiz from './src/Session11/FirestoreQuiz';
 
 const App = () => {
   return (
@@ -88,7 +89,8 @@ const App = () => {
       {/* <MomentExample /> */}
       {/* <LoginFormikExample /> */}
       {/* <FireStoreExample /> */}
-      <FirestoreProducts />
+      {/* <FirestoreProducts /> */}
+      <FirestoreQuiz />
     </React.Fragment>
   );
 };

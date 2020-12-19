@@ -38,15 +38,24 @@ export default function FireStoreExample() {
   // Add a user
   const addUser = () => {
     firestore()
-      .collection('Products')
+      .collection('Questions')
       .add({
-        name: 'iPhone 12',
-        price: 1200,
-        status: 'In stock',
-        discount: 5,
-        imageUrl:
-          'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/iphone-12-pro-family-hero?wid=940&hei=1112&fmt=jpeg&qlt=80&op_usm=0.5,0.5&.v=1604021663000',
-        colors: ['Gold', 'Green', 'Pink'],
+        content: 'She arrived at 8 p.m., opened the door and shouted “Good ______!”',
+        options: [
+          {
+            text: 'morning',
+          },
+          {
+            text: 'evening',
+          },
+          {
+            text: 'night',
+            correct: true,
+          },
+          {
+            text: 'bye',
+          },
+        ],
       })
       .then(() => {
         console.log('User added!');
