@@ -228,8 +228,10 @@
 
 1. https://console.firebase.google.com/
 2. Login / Register a Google account
-3. React Native Firebase: https://rnfirebase.io/
-4. Download google-service.json
+3. Create a firebase project
+4. Install package React Native Firebase: https://rnfirebase.io/
+5. Add an application in this project (Example: Android application).
+6. Download google-service.json
 
 - Go to project dashboard
 - Go to project setting: Project Overview -> Setting Icon -> Project settings
@@ -258,7 +260,7 @@ buildscript {
 apply plugin: 'com.google.gms.google-services'
 ```
 
-5. Build & Run
+7. Build & Run
 
 - Error: The number of method references in a .dex file cannot exceed 64k API 17
 - Link: (https://stackoverflow.com/questions/36785014/the-number-of-method-references-in-a-dex-file-cannot-exceed-64k-api-17)
