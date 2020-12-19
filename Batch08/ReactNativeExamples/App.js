@@ -42,6 +42,7 @@ import AsyncStorageExample from './src/Session09/AsyncStorageExample';
 import MomentExample from './src/Session09/MomentExample';
 import LoginFormikExample from './src/Session10/LoginFormikExample';
 import FireStoreExample from './src/Session11/FirestoreExample';
+import FirestoreProducts from './src/Session11/FirestoreProducts';
 
 const App = () => {
   return (
@@ -86,7 +87,8 @@ const App = () => {
       {/* <AsyncStorageExample /> */}
       {/* <MomentExample /> */}
       {/* <LoginFormikExample /> */}
-      <FireStoreExample />
+      {/* <FireStoreExample /> */}
+      <FirestoreProducts />
     </React.Fragment>
   );
 };
