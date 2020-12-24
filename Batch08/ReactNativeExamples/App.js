@@ -46,6 +46,7 @@ import FirestoreProducts from './src/Session11/FirestoreProducts';
 import FirestoreQuiz from './src/Session11/FirestoreQuiz';
 import FirestoreRealtimeExample from './src/Session11/FirestoreRealtimeExample';
 import FirestoreRealtimeChat from './src/Session11/FirestoreRealtimeChat';
+import ChatApplication from './src/Session11/ChatApplication';
 
 const App = () => {
   return (
@@ -94,7 +95,8 @@ const App = () => {
       {/* <FirestoreProducts /> */}
       {/* <FirestoreQuiz /> */}
       {/* <FirestoreRealtimeExample /> */}
-      <FirestoreRealtimeChat />
+      {/* <FirestoreRealtimeChat /> */}
+      <ChatApplication />
     </React.Fragment>
   );
 };
