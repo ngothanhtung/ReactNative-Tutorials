@@ -44,6 +44,7 @@ import LoginFormikExample from './src/Session10/LoginFormikExample';
 import FireStoreExample from './src/Session11/FirestoreExample';
 import FirestoreProducts from './src/Session11/FirestoreProducts';
 import FirestoreQuiz from './src/Session11/FirestoreQuiz';
+import FirestoreRealtimeExample from './src/Session11/FirestoreRealtimeExample';
 
 const App = () => {
   return (
@@ -90,7 +91,8 @@ const App = () => {
       {/* <LoginFormikExample /> */}
       {/* <FireStoreExample /> */}
       {/* <FirestoreProducts /> */}
-      <FirestoreQuiz />
+      {/* <FirestoreQuiz /> */}
+      <FirestoreRealtimeExample />
     </React.Fragment>
   );
 };
