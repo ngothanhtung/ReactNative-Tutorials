@@ -41,13 +41,13 @@ import PaperExample from './src/Session09/PaperExample';
 import AsyncStorageExample from './src/Session09/AsyncStorageExample';
 import MomentExample from './src/Session09/MomentExample';
 import LoginFormikExample from './src/Session10/LoginFormikExample';
-import FireStoreExample from './src/Session11/FirestoreExample';
-import FirestoreProducts from './src/Session11/FirestoreProducts';
-import FirestoreQuiz from './src/Session11/FirestoreQuiz';
-import FirestoreRealtimeExample from './src/Session11/FirestoreRealtimeExample';
-import FirestoreRealtimeChat from './src/Session11/FirestoreRealtimeChat';
+import FireStoreExample from './src/Session11/FirestoreExamples/FirestoreExample';
+import FirestoreProducts from './src/Session11/FirestoreExamples/FirestoreProducts';
+import FirestoreQuiz from './src/Session11/FirestoreExamples/FirestoreQuiz';
+import FirestoreRealtimeExample from './src/Session11/FirestoreExamples/FirestoreRealtimeExample';
+import FirestoreRealtimeChat from './src/Session11/FirestoreExamples/FirestoreRealtimeChat';
 import ChatApplication from './src/Session11/ChatApplication';
-import StorageUploadImageExample from './src/Session11/StorageUploadImageExample';
+import StorageUploadImageExample from './src/Session11/StorageExamples/StorageUploadImageExample';
 
 const App = () => {
   return (

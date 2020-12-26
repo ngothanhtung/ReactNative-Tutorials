@@ -90,5 +90,9 @@
 	</array>
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>Ứng dụng React Native yêu cầu thư viện hình ảnh để chọn ảnh đính kèm</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Ứng dụng React Native yêu cầu camera để chụp ảnh đính kèm</string>
 </dict>
 </plist>
