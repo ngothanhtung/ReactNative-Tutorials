@@ -49,7 +49,8 @@ import FirestoreRealtimeChat from './src/Session11/FirestoreExamples/FirestoreRe
 import ChatApplication from './src/Session11/ChatApplication';
 import StorageUploadImageExample from './src/Session11/StorageExamples/StorageUploadImageExample';
 
-import AuthExample from './src/Session11/AuthenticationExamples/AuthExample';
+// import AuthExample from './src/Session11/AuthenticationExamples/AuthExample';
+import AnalyticsExample from './src/Session11/AnalyticsExample';
 
 const App = () => {
   return (
@@ -101,7 +102,8 @@ const App = () => {
       {/* <FirestoreRealtimeChat /> */}
       {/* <ChatApplication /> */}
       {/* <StorageUploadImageExample /> */}
-      <AuthExample />
+      {/* <AuthExample /> */}
+      <AnalyticsExample />
     </React.Fragment>
   );
 };
