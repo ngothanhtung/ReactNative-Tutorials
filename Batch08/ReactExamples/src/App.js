@@ -1,5 +1,8 @@
 import './App.css';
 import React from 'react';
+import firebase from 'firebase/app';
+import 'firebase/firestore';
+
 // import Friends from './C1.4/Friends';
 import HeartButtonClass from './C1.6/HeartButtonClass';
 import Gallery1Class from './C1.6/Gallery1Class';
@@ -17,6 +20,8 @@ import Friends from './C1.8/Friends';
 import Products from './C1.8/Products';
 // import Example1 from './Session04/Example1';
 
+import Users from './FirestoreExamples/Users';
+
 function App() {
   const [state, setState] = React.useState({ visible: true });
 
@@ -25,7 +30,7 @@ function App() {
       {/* <Friends></Friends> */}
 
       {/* <HeartButtonClass></HeartButtonClass> */}
-      <Gallery1Class></Gallery1Class>
+      {/* <Gallery1Class></Gallery1Class> */}
       {/* {state.visible && <Gallery1Class></Gallery1Class>} */}
       {/* {state.visible && <Gallery1></Gallery1>} */}
       {/* <Gallery2Class></Gallery2Class> */}
@@ -57,6 +62,7 @@ function App() {
       {/* <Friends></Friends> */}
       {/* <Products></Products> */}
       {/* <Example1 /> */}
+      <Users />
     </div>
   );
 }
