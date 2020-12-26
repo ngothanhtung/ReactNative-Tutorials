@@ -15,7 +15,8 @@ import MoreHandleEvent from './C1.7/MoreHandleEvent';
 import Articles from './C1.8/Articles';
 import Friends from './C1.8/Friends';
 import Products from './C1.8/Products';
-import Example1 from './Session04/Example1';
+// import Example1 from './Session04/Example1';
+
 function App() {
   const [state, setState] = React.useState({ visible: true });
 
@@ -24,7 +25,7 @@ function App() {
       {/* <Friends></Friends> */}
 
       {/* <HeartButtonClass></HeartButtonClass> */}
-      {/* <Gallery1Class></Gallery1Class> */}
+      <Gallery1Class></Gallery1Class>
       {/* {state.visible && <Gallery1Class></Gallery1Class>} */}
       {/* {state.visible && <Gallery1></Gallery1>} */}
       {/* <Gallery2Class></Gallery2Class> */}
@@ -55,7 +56,7 @@ function App() {
       {/* <Articles></Articles> */}
       {/* <Friends></Friends> */}
       {/* <Products></Products> */}
-      <Example1 />
+      {/* <Example1 /> */}
     </div>
   );
 }

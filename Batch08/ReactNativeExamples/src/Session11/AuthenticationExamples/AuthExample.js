@@ -55,9 +55,9 @@ function AuthExample() {
 
                 if (error.code === 'auth/invalid-email') {
                   console.log('That email address is invalid!');
+                } else {
+                  console.error(error);
                 }
-
-                console.error(error);
               });
           }}
         />
