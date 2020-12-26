@@ -136,6 +136,11 @@ android {
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
         versionName "1.0"
+        
+        // Enabling multidex support.
+        multiDexEnabled true
+        
+        vectorDrawables.useSupportLibrary = true
     }
     splits {
         abi {

@@ -377,6 +377,10 @@ firestore()
 6. Deploy: firebase deploy
 7. Test API
 
+## 11.5 Storage
+
+https://rnfirebase.io/storage/usage
+
 # Session 12 Notification with OneSignal
 
 ## Setup OneSignal Package:
