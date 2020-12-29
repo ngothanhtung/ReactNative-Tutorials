@@ -12,7 +12,7 @@ export default function RemoteConfigExample() {
     // Firebase heavily caches the parameters (default is 12 hours).
     // By design, this prevents the values being able to change frequently and potentially cause users confusion.
     remoteConfig()
-      .fetch(15)
+      .fetch(5)
       .then((result) => {});
 
     remoteConfig()
