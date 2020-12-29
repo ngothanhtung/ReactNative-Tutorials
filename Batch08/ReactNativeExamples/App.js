@@ -53,6 +53,7 @@ import EmailAuthExample from './src/Session11/AuthenticationExamples/EmailAuthEx
 import PhoneAuthExample from './src/Session11/AuthenticationExamples/PhoneAuthExample';
 import AnalyticsExample from './src/Session11/AnalyticsExample';
 import RemoteConfigExample from './src/Session11/RemoteConfigExample';
+import AuthAppNavigator from './src/Session11/AuthenticationExamples/AuthenticationFlow/AppNavigator';
 
 const App = () => {
   return (
@@ -107,7 +108,8 @@ const App = () => {
       {/* <EmailAuthExample /> */}
       {/* <PhoneAuthExample /> */}
       {/* <AnalyticsExample /> */}
-      <RemoteConfigExample />
+      {/* <RemoteConfigExample /> */}
+      <AuthAppNavigator />
     </React.Fragment>
   );
 };
