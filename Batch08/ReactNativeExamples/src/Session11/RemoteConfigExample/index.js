@@ -3,8 +3,6 @@ import React from 'react';
 import { SafeAreaView, Text, View } from 'react-native';
 import remoteConfig from '@react-native-firebase/remote-config';
 
-remoteConfig().fetch(5);
-
 export default function RemoteConfigExample() {
   const [promotion, setPromotion] = React.useState(0);
   const [themeColor, setThemeColor] = React.useState('#8e44ad');
@@ -13,6 +11,9 @@ export default function RemoteConfigExample() {
     // Although Remote Config is a data-store, it is not designed for frequent reads
     // Firebase heavily caches the parameters (default is 12 hours).
     // By design, this prevents the values being able to change frequently and potentially cause users confusion.
+    remoteConfig()
+      .fetch(15)
+      .then((result) => {});
 
     remoteConfig()
       .setDefaults({
@@ -27,11 +28,15 @@ export default function RemoteConfigExample() {
           console.log('No configs were fetched from the backend, and the local configs were already activated');
         }
 
-        const holiday_promotion = remoteConfig().getValue('holiday_promotion');
-        setPromotion(holiday_promotion.asNumber());
+        // get single value
+        // const holiday_promotion = remoteConfig().getValue('holiday_promotion');
+        // setPromotion(holiday_promotion.asNumber());
 
-        const theme_color = remoteConfig().getValue('theme_color');
-        setThemeColor(theme_color.asString());
+        // get multi values
+        const values = remoteConfig().getAll();
+        setPromotion(values.holiday_promotion.asNumber());
+        setThemeColor(values.theme_color.asString());
+        console.log(values);
       });
   }, []);
 
