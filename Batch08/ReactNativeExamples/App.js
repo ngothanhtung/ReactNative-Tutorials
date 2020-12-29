@@ -106,8 +106,8 @@ const App = () => {
       {/* <StorageUploadImageExample /> */}
       {/* <EmailAuthExample /> */}
       {/* <PhoneAuthExample /> */}
-      <AnalyticsExample />
-      {/* <RemoteConfigExample /> */}
+      {/* <AnalyticsExample /> */}
+      <RemoteConfigExample />
     </React.Fragment>
   );
 };
