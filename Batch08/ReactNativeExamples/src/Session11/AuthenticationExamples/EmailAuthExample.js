@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
-import { View, Text, Button, SafeAreaView } from 'react-native';
+import { Text, Button, SafeAreaView } from 'react-native';
 import auth from '@react-native-firebase/auth';
 
-function AuthExample() {
+export default function EmailAuthExample() {
   // Set an initializing state whilst Firebase connects
   const [initializing, setInitializing] = useState(true);
   const [user, setUser] = useState(null);
 
   // Handle user state changes
-  function onAuthStateChanged(user) {
-    setUser(user);
+  function onAuthStateChanged(u) {
+    setUser(u);
     if (initializing) setInitializing(false);
   }
 
@@ -79,5 +79,3 @@ function AuthExample() {
     </SafeAreaView>
   );
 }
-
-export default AuthExample;

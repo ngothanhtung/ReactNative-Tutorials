@@ -351,8 +351,13 @@ firestore()
 4. Phone Authentication:
 
 - Dashboard -> Authencation -> Sign-in Method -> Phone numbers for testing (optional)
-- Get SHA-1 key: https://stackoverflow.com/questions/27609442/how-to-get-the-sha-1-fingerprint-certificate-in-android-studio-for-debug-mode
+- Get SHA-1 key: https://stackoverflow.com/questions/27609442/how-to-get-the-sha-1-fingerprint-certificate-in-android-studio-for-debug-mode or cd android && ./gradlew signingReport
 - Dashboard -> Project Settings -> General -> Select Android App -> Paste SHA-1
+
+5. Enable Android Device Verification (Real devices)
+
+- https://firebase.google.com/docs/auth/android/phone-auth#enable-app-verification
+- https://console.cloud.google.com/apis/library/androidcheck.googleapis.com?authuser=1&project=reactnative-firebase-examples&folder=&organizationId=
 
 ---
 
