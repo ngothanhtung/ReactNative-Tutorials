@@ -16,6 +16,8 @@ import Login1 from './src/Session04/Login/Login1';
 
 import UI01 from './src/Session04/UI01';
 import UI02 from './src/Session04/UI02';
+import UI03 from './src/Session04/UI03';
+import UI04 from './src/Session04/UI04';
 
 // SESION 05
 import ScrollViewExample from './src/Session05/ScrollViewExample';
@@ -53,6 +55,7 @@ import EmailAuthExample from './src/Session11/AuthenticationExamples/EmailAuthEx
 import PhoneAuthExample from './src/Session11/AuthenticationExamples/PhoneAuthExample';
 import AnalyticsExample from './src/Session11/AnalyticsExample';
 import RemoteConfigExample from './src/Session11/RemoteConfigExample';
+import AuthAppNavigator from './src/Session11/AuthenticationExamples/AuthenticationFlow/AppNavigator';
 
 const App = () => {
   return (
@@ -107,7 +110,10 @@ const App = () => {
       {/* <EmailAuthExample /> */}
       {/* <PhoneAuthExample /> */}
       {/* <AnalyticsExample /> */}
-      <RemoteConfigExample />
+      {/* <RemoteConfigExample /> */}
+      {/* <AuthAppNavigator /> */}
+      {/* <UI03 /> */}
+      <UI04 />
     </React.Fragment>
   );
 };
