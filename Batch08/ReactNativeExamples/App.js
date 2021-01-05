@@ -57,6 +57,9 @@ import AnalyticsExample from './src/Session11/AnalyticsExample';
 import RemoteConfigExample from './src/Session11/RemoteConfigExample';
 import AuthAppNavigator from './src/Session11/AuthenticationExamples/AuthenticationFlow/AppNavigator';
 
+// Sessopn 12
+import OneSignalExample from './src/Session12/OneSignalExample';
+
 const App = () => {
   return (
     <React.Fragment>
@@ -113,7 +116,8 @@ const App = () => {
       {/* <RemoteConfigExample /> */}
       {/* <AuthAppNavigator /> */}
       {/* <UI03 /> */}
-      <UI04 />
+      {/* <UI04 /> */}
+      <OneSignalExample />
     </React.Fragment>
   );
 };
