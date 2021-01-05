@@ -416,6 +416,7 @@ PODS:
     - nanopb/encode (= 2.30906.0)
   - nanopb/decode (2.30906.0)
   - nanopb/encode (2.30906.0)
+  - OneSignal (2.16.1)
   - OpenSSL-Universal (1.0.2.19):
     - OpenSSL-Universal/Static (= 1.0.2.19)
   - OpenSSL-Universal/Static (1.0.2.19)
@@ -588,6 +589,9 @@ PODS:
   - React-jsinspector (0.63.3)
   - react-native-blur (0.8.0):
     - React
+  - react-native-onesignal (3.9.3):
+    - OneSignal (= 2.16.1)
+    - React (< 1.0.0, >= 0.13.0)
   - react-native-safe-area-context (3.1.9):
     - React-Core
   - React-RCTActionSheet (0.63.3):
@@ -740,6 +744,7 @@ DEPENDENCIES:
   - React-jsiexecutor (from `../node_modules/react-native/ReactCommon/jsiexecutor`)
   - React-jsinspector (from `../node_modules/react-native/ReactCommon/jsinspector`)
   - "react-native-blur (from `../node_modules/@react-native-community/blur`)"
+  - react-native-onesignal (from `../node_modules/react-native-onesignal`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - React-RCTActionSheet (from `../node_modules/react-native/Libraries/ActionSheetIOS`)
   - React-RCTAnimation (from `../node_modules/react-native/Libraries/NativeAnimation`)
@@ -799,6 +804,7 @@ SPEC REPOS:
     - GTMSessionFetcher
     - leveldb-library
     - nanopb
+    - OneSignal
     - OpenSSL-Universal
     - PromisesObjC
     - TOCropViewController
@@ -839,6 +845,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/jsinspector"
   react-native-blur:
     :path: "../node_modules/@react-native-community/blur"
+  react-native-onesignal:
+    :path: "../node_modules/react-native-onesignal"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
   React-RCTActionSheet:
@@ -929,6 +937,7 @@ SPEC CHECKSUMS:
   GTMSessionFetcher: b3503b20a988c4e20cc189aa798fd18220133f52
   leveldb-library: 55d93ee664b4007aac644a782d11da33fba316f7
   nanopb: 1bf24dd71191072e120b83dd02d08f3da0d65e53
+  OneSignal: 5f6514ec2b931306eb067acb124afbb2e49970af
   OpenSSL-Universal: 8b48cc0d10c1b2923617dfe5c178aa9ed2689355
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
   RCTRequired: 48884c74035a0b5b76dbb7a998bd93bcfc5f2047
@@ -942,6 +951,7 @@ SPEC CHECKSUMS:
   React-jsiexecutor: b56c03e61c0dd5f5801255f2160a815f4a53d451
   React-jsinspector: 8e68ffbfe23880d3ee9bafa8be2777f60b25cbe2
   react-native-blur: cad4d93b364f91e7b7931b3fa935455487e5c33c
+  react-native-onesignal: f92b6fae16388422f1b5d73b2c31e7000f481ae8
   react-native-safe-area-context: b6e0e284002381d2ff29fa4fff42b4d8282e3c94
   React-RCTActionSheet: 53ea72699698b0b47a6421cb1c8b4ab215a774aa
   React-RCTAnimation: 1befece0b5183c22ae01b966f5583f42e69a83c2
