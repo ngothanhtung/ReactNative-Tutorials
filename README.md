@@ -446,6 +446,10 @@ https://rnfirebase.io/storage/usage
 }
 ```
 
+## Working with Server REST API Reference
+
+> https://documentation.onesignal.com/reference/create-notification
+
 # Session 13: REDUX & SAGA (BONUS & OPTIONAL)
 
 1. Theory: https://redux.js.org/introduction/getting-started
