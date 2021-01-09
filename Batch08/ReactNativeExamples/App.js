@@ -59,6 +59,7 @@ import AuthAppNavigator from './src/Session11/AuthenticationExamples/Authenticat
 
 // Sessopn 12
 import OneSignalExample from './src/Session12/OneSignalExample';
+import CloudMessageExample from './src/Session12/CloudMessageExample';
 
 const App = () => {
   return (
@@ -117,7 +118,8 @@ const App = () => {
       {/* <AuthAppNavigator /> */}
       {/* <UI03 /> */}
       {/* <UI04 /> */}
-      <OneSignalExample />
+      {/* <OneSignalExample /> */}
+      <CloudMessageExample />
     </React.Fragment>
   );
 };
