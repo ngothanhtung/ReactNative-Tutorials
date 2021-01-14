@@ -245,6 +245,9 @@ PODS:
   - Firebase/Firestore (7.3.0):
     - Firebase/CoreOnly
     - FirebaseFirestore (~> 7.3.0)
+  - Firebase/Messaging (7.3.0):
+    - Firebase/CoreOnly
+    - FirebaseMessaging (~> 7.3.0)
   - Firebase/RemoteConfig (7.3.0):
     - Firebase/CoreOnly
     - FirebaseRemoteConfig (~> 7.3.0)
@@ -293,6 +296,18 @@ PODS:
     - GoogleUtilities/Environment (~> 7.0)
     - GoogleUtilities/UserDefaults (~> 7.0)
     - PromisesObjC (~> 1.2)
+  - FirebaseInstanceID (7.3.0):
+    - FirebaseCore (~> 7.0)
+    - FirebaseInstallations (~> 7.0)
+    - GoogleUtilities/Environment (~> 7.0)
+    - GoogleUtilities/UserDefaults (~> 7.0)
+  - FirebaseMessaging (7.3.0):
+    - FirebaseCore (~> 7.0)
+    - FirebaseInstanceID (~> 7.0)
+    - GoogleUtilities/AppDelegateSwizzler (~> 7.0)
+    - GoogleUtilities/Environment (~> 7.0)
+    - GoogleUtilities/Reachability (~> 7.0)
+    - GoogleUtilities/UserDefaults (~> 7.0)
   - FirebaseRemoteConfig (7.3.0):
     - FirebaseABTesting (~> 7.0)
     - FirebaseCore (~> 7.0)
@@ -658,26 +673,30 @@ PODS:
     - React
   - RNCMaskedView (0.1.10):
     - React
-  - RNFBAnalytics (10.3.1):
+  - RNFBAnalytics (10.4.1):
     - Firebase/Analytics (~> 7.3.0)
     - React-Core
     - RNFBApp
-  - RNFBApp (10.3.0):
+  - RNFBApp (10.4.0):
     - Firebase/CoreOnly (~> 7.3.0)
     - React-Core
-  - RNFBAuth (10.3.1):
+  - RNFBAuth (10.4.1):
     - Firebase/Auth (~> 7.3.0)
     - React-Core
     - RNFBApp
-  - RNFBFirestore (10.3.1):
+  - RNFBFirestore (10.4.1):
     - Firebase/Firestore (~> 7.3.0)
     - React-Core
     - RNFBApp
-  - RNFBRemoteConfig (10.3.1):
+  - RNFBMessaging (10.4.1):
+    - Firebase/Messaging (~> 7.3.0)
+    - React-Core
+    - RNFBApp
+  - RNFBRemoteConfig (10.4.1):
     - Firebase/RemoteConfig (~> 7.3.0)
     - React-Core
     - RNFBApp
-  - RNFBStorage (10.3.1):
+  - RNFBStorage (10.4.1):
     - Firebase/Storage (~> 7.3.0)
     - React-Core
     - RNFBApp
@@ -694,7 +713,7 @@ PODS:
     - TOCropViewController
   - RNReanimated (1.13.2):
     - React-Core
-  - RNScreens (2.15.0):
+  - RNScreens (2.16.1):
     - React-Core
   - RNSVG (12.1.0):
     - React
@@ -763,6 +782,7 @@ DEPENDENCIES:
   - "RNFBApp (from `../node_modules/@react-native-firebase/app`)"
   - "RNFBAuth (from `../node_modules/@react-native-firebase/auth`)"
   - "RNFBFirestore (from `../node_modules/@react-native-firebase/firestore`)"
+  - "RNFBMessaging (from `../node_modules/@react-native-firebase/messaging`)"
   - "RNFBRemoteConfig (from `../node_modules/@react-native-firebase/remote-config`)"
   - "RNFBStorage (from `../node_modules/@react-native-firebase/storage`)"
   - RNGestureHandler (from `../node_modules/react-native-gesture-handler`)
@@ -788,6 +808,8 @@ SPEC REPOS:
     - FirebaseCoreDiagnostics
     - FirebaseFirestore
     - FirebaseInstallations
+    - FirebaseInstanceID
+    - FirebaseMessaging
     - FirebaseRemoteConfig
     - FirebaseStorage
     - Flipper
@@ -882,6 +904,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/@react-native-firebase/auth"
   RNFBFirestore:
     :path: "../node_modules/@react-native-firebase/firestore"
+  RNFBMessaging:
+    :path: "../node_modules/@react-native-firebase/messaging"
   RNFBRemoteConfig:
     :path: "../node_modules/@react-native-firebase/remote-config"
   RNFBStorage:
@@ -919,6 +943,8 @@ SPEC CHECKSUMS:
   FirebaseCoreDiagnostics: d50e11039e5984d92c8a512be2395f13df747350
   FirebaseFirestore: 1906bf163afdb7c432d2e3b5c40ceb9dd2df5820
   FirebaseInstallations: 971df89b48ae5ee4cc2bf6935f3857a525d28550
+  FirebaseInstanceID: 5ccdee6a84e6b4bb5316de0a8cd88bc749ba490d
+  FirebaseMessaging: 68d1bcb14880189558a8ae57167abe0b7e417232
   FirebaseRemoteConfig: 826fad8bec5ce1912ef97a124d6ec0ce4dcf6ec1
   FirebaseStorage: 5002b1895bfe74a5ce92ad54f966e6162d0da2e5
   Flipper: be611d4b742d8c87fbae2ca5f44603a02539e365
@@ -966,16 +992,17 @@ SPEC CHECKSUMS:
   ReactCommon: 4167844018c9ed375cc01a843e9ee564399e53c3
   RNCAsyncStorage: 05bae7ecfab1cbd5441993f1ca098f7c3b3f8d0e
   RNCMaskedView: 5a8ec07677aa885546a0d98da336457e2bea557f
-  RNFBAnalytics: 2fb60eedb8cead61797417cc7c33f087ce78e6c3
-  RNFBApp: d5bc110403b55ba26ac441716259bd514d559cc5
-  RNFBAuth: 4bf9e2c84d2e42651030eb80acf6b32f966f847a
-  RNFBFirestore: 9b4ce9ecf2b18a1840f744bdf432b17fcedaacb5
-  RNFBRemoteConfig: 5d0c44a0a0ad9cc013b4b57e5b5fe51c21a45d5f
-  RNFBStorage: 8ed073227f21a97b1de1c414aee286692b467d6f
+  RNFBAnalytics: a274c45ca741e12d1bdb3e0b8465dffc06a8d1b8
+  RNFBApp: a9af8372c9c2b2135ffa78817fd2d8baf3ee632e
+  RNFBAuth: 45d680dd8f6648927517c6ba1eb9cbef657296d5
+  RNFBFirestore: 0b8011f328214e0cf4fce1a92d3339d4b464fe92
+  RNFBMessaging: 643ec4102ee0d780f928718c2632bb1e90487f04
+  RNFBRemoteConfig: 012545766636fa34e52e2edc1dcf5efde5f181ae
+  RNFBStorage: c2bc6a221c38fe31a14b62f8e9d19267ffbd14fb
   RNGestureHandler: 9b7e605a741412e20e13c512738a31bd1611759b
   RNImageCropPicker: 9e0bf18cf4184a846fed55747c8e622208b39947
   RNReanimated: e03f7425cb7a38dcf1b644d680d1bfc91c3337ad
-  RNScreens: 2ad555d4d9fa10b91bb765ca07fe9b29d59573f0
+  RNScreens: 45c457af3d2ee9e08fc01e70da87e653d46b1198
   RNSVG: ce9d996113475209013317e48b05c21ee988d42e
   RNVectorIcons: bc69e6a278b14842063605de32bec61f0b251a59
   TOCropViewController: da59f531f8ac8a94ef6d6c0fc34009350f9e8bfe
@@ -984,4 +1011,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: db18039b9919d0e416ec6127d62e086899d552a0
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.0

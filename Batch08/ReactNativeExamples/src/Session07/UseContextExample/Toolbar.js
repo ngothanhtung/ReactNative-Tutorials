@@ -2,7 +2,7 @@ import React from 'react';
 import { View } from 'react-native';
 import AppContext from './AppContext';
 import ThemedButton from './ThemedButton';
-import { themes } from './AppContext';
+import themes  from './themes';
 
 export default function Toolbar() {
   const { count, setCount, theme, setTheme } = React.useContext(AppContext);

@@ -17,14 +17,14 @@ export default function Counter() {
       <Button
         title="Increase"
         onPress={() => {
-          dispatch(increaseCountAction(1));
+          dispatch(increaseCountAction(5));
         }}
       />
       <View height={4} />
       <Button
         title="Decrease"
         onPress={() => {
-          dispatch(decreaseCountAction(1));
+          dispatch(decreaseCountAction(5));
         }}
       />
     </View>

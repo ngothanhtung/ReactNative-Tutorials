@@ -1,10 +1,10 @@
 import * as ActionTypes from '../actions/types';
 
 const defaultState = {
-  loading: false,
-  products: [],
+  loading: false, //
+  products: [], //
   addedProducts: [],
-  error: null,
+  error: null, //
 };
 
 export default function (state = defaultState, action) {

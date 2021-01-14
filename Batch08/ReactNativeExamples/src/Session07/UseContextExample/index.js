@@ -1,8 +1,8 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, SafeAreaView } from 'react-native';
 import AppContext from './AppContext';
-import { themes } from './AppContext';
+import themes from './themes';
 import Toolbar from './Toolbar';
 
 export default function UseContextExample() {
@@ -17,11 +17,12 @@ export default function UseContextExample() {
         count,
         setCount,
       }}>
-      <Toolbar />
-
-      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text style={{ fontSize: 48 }}>{count}</Text>
-      </View>
+      <SafeAreaView style={{ flex: 1 }}>
+        <Toolbar />
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+          <Text style={{ fontSize: 48 }}>{count}</Text>
+        </View>
+      </SafeAreaView>
     </AppContext.Provider>
   );
 }

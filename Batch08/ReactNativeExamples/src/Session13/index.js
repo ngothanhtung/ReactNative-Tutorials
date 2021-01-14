@@ -11,6 +11,7 @@ import shoppingReducer from './ShoppingApp/reducers';
 // COMPONENT
 import CounterApp from './CounterApp';
 import ShoppingApp from './ShoppingApp';
+import Total from './ShoppingApp/components/Total';
 
 // ROOT REDUCER
 const rootReducer = combineReducers({
@@ -33,8 +34,9 @@ export default function Session13() {
     <Provider store={store}>
       <SafeAreaView style={{ flex: 1 }}>
         <View style={{ flex: 1, padding: 24 }}>
-          <CounterApp />
-          {/* <ShoppingApp /> */}
+          {/* <CounterApp /> */}
+          <ShoppingApp />
+          <Total />
         </View>
       </SafeAreaView>
     </Provider>

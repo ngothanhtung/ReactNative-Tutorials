@@ -1,4 +1,5 @@
 import React from 'react';
+import { SafeAreaView } from 'react-native'
 import Label from './Label';
 import { initialState, reducer } from './reducer';
 import AppContext from './AppContext';
@@ -10,9 +11,11 @@ export default function UseReducerExample() {
 
   return (
     <AppContext.Provider value={{ state, dispatch }}>
-      <Label />
-      <DecreaseButton text="Decrease" />
-      <IncreaseButton text="Increase" />
+      <SafeAreaView>
+        <Label />
+        <DecreaseButton text="Decrease" />
+        <IncreaseButton text="Increase" />
+      </SafeAreaView>
     </AppContext.Provider>
   );
 }
