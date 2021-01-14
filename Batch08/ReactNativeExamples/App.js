@@ -37,6 +37,8 @@ import UseEffectExample from './src/Session07/UseEffectExample';
 import CustomHookExample from './src/Session07/CustomHookExample';
 import UseContextExample from './src/Session07/UseContextExample';
 import UseReducerExample from './src/Session07/UseReducerExample';
+import UseCallbackExample from './src/Session07/UseCallbackExample';
+
 // Session08
 import AppNavigator from './src/Session08/AppNavigator';
 
@@ -126,7 +128,8 @@ const App = () => {
 
       {/* <CustomHookExample /> */}
       {/* <UseContextExample /> */}
-      <UseReducerExample />
+      {/* <UseReducerExample /> */}
+      <UseCallbackExample />
     </React.Fragment>
   );
 };
