@@ -66,6 +66,10 @@ import AuthAppNavigator from './src/Session11/AuthenticationExamples/Authenticat
 import OneSignalExample from './src/Session12/OneSignalExample';
 import CloudMessageExample from './src/Session12/CloudMessageExample';
 
+// Session 13
+
+import ReduxApp from './src/Session13/';
+
 const App = () => {
   return (
     <React.Fragment>
@@ -129,7 +133,9 @@ const App = () => {
       {/* <CustomHookExample /> */}
       {/* <UseContextExample /> */}
       {/* <UseReducerExample /> */}
-      <UseCallbackExample />
+      {/* <UseCallbackExample /> */}
+
+      <ReduxApp />
     </React.Fragment>
   );
 };
