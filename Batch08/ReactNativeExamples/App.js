@@ -33,7 +33,10 @@ import Login from './src/Session06/Login';
 import Product from './src/Session06/Product';
 // Session 07
 
-import Example01 from './src/Session07/Example01';
+import UseEffectExample from './src/Session07/UseEffectExample';
+import CustomHookExample from './src/Session07/CustomHookExample';
+import UseContextExample from './src/Session07/UseContextExample';
+import UseReducerExample from './src/Session07/UseReducerExample';
 // Session08
 import AppNavigator from './src/Session08/AppNavigator';
 
@@ -119,7 +122,11 @@ const App = () => {
       {/* <UI03 /> */}
       {/* <UI04 /> */}
       {/* <OneSignalExample /> */}
-      <CloudMessageExample />
+      {/* <CloudMessageExample /> */}
+
+      {/* <CustomHookExample /> */}
+      {/* <UseContextExample /> */}
+      <UseReducerExample />
     </React.Fragment>
   );
 };
