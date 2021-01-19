@@ -4,7 +4,6 @@ const defaultState = {
   loading: false,
   user: null,
   error: null,
-  loginStatus: false,
 };
 
 const authReducer = (state = defaultState, action) => {
@@ -15,7 +14,6 @@ const authReducer = (state = defaultState, action) => {
         loading: true,
         user: null,
         error: null,
-        loginStatus: false,
       };
     }
 
@@ -24,7 +22,15 @@ const authReducer = (state = defaultState, action) => {
         ...state,
         user: action.user,
         loading: false,
-        loginStatus: action.loginStatus,
+        error: null,
+      };
+    }
+
+    case ActionTypes.AUTH_LOGIN_FAILED: {
+      return {
+        ...state,
+        user: null,
+        loading: false,
         error: null,
       };
     }
@@ -34,7 +40,6 @@ const authReducer = (state = defaultState, action) => {
         ...state,
         loading: false,
         user: null,
-        loginStatus: false,
         error: { message: action.error },
       };
     default:

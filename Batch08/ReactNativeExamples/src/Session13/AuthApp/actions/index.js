@@ -10,11 +10,17 @@ export const loginAsync = (email, password) => {
     axios
       .post('https://training.softech.cloud/api/users/login', { email, password })
       .then((response) => {
-        dispatch({
-          type: ActionTypes.AUTH_LOGIN_SUCCESS,
-          user: response.data,
-          loginStatus: response.data.length > 0,
-        });
+        if (response.data.length === 0) {
+          dispatch({
+            type: ActionTypes.AUTH_LOGIN_FAILED,
+            user: null,
+          });
+        } else {
+          dispatch({
+            type: ActionTypes.AUTH_LOGIN_SUCCESS,
+            user: response.data[0],
+          });
+        }
       })
       .catch((error) => {
         dispatch({
