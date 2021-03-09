@@ -584,7 +584,8 @@ https://rnfirebase.io/storage/usage
 3. Image Icons: https://www.flaticon.com
 4. Color: https://flatuicolors.com
 5. Face / Avatar: http://pravatar.cc
-6. Animatable (Animation): https://github.com/oblador/react-native-animatable
+6. Faces: https://uifaces.co/
+7. Animatable (Animation): https://github.com/oblador/react-native-animatable
 
 # Videos:
 
