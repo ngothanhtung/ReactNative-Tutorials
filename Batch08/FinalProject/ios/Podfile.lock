@@ -574,8 +574,8 @@ PODS:
   - react-native-onesignal (3.8.1):
     - OneSignal (= 2.14.2)
     - React (< 1.0.0, >= 0.13.0)
-  - react-native-safe-area-context (3.0.7):
-    - React
+  - react-native-safe-area-context (3.2.0):
+    - React-Core
   - React-RCTActionSheet (0.62.2):
     - React-Core/RCTActionSheetHeaders (= 0.62.2)
   - React-RCTAnimation (0.62.2):
@@ -667,12 +667,12 @@ PODS:
     - TOCropViewController
   - RNReanimated (1.9.0):
     - React
-  - RNScreens (2.9.0):
-    - React
+  - RNScreens (2.18.1):
+    - React-Core
   - RNSVG (12.1.0):
     - React
-  - RNVectorIcons (7.0.0):
-    - React
+  - RNVectorIcons (8.1.0):
+    - React-Core
   - TOCropViewController (2.5.3)
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
@@ -914,7 +914,7 @@ SPEC CHECKSUMS:
   react-native-google-maps: 0a989abda71059db2caa98b9dacca7a8f38a47d0
   react-native-maps: f4b89da81626ad7f151a8bfcb79733295d31ce5c
   react-native-onesignal: 01fa850b002d60568a5a85857e1cbe643b58bdd2
-  react-native-safe-area-context: ef6f16c66b0797ecae1bf86c103dfb3dc16fc33d
+  react-native-safe-area-context: f0906bf8bc9835ac9a9d3f97e8bde2a997d8da79
   React-RCTActionSheet: f41ea8a811aac770e0cc6e0ad6b270c644ea8b7c
   React-RCTAnimation: 49ab98b1c1ff4445148b72a3d61554138565bad0
   React-RCTBlob: a332773f0ebc413a0ce85942a55b064471587a71
@@ -934,13 +934,13 @@ SPEC CHECKSUMS:
   RNGestureHandler: 8f09cd560f8d533eb36da5a6c5a843af9f056b38
   RNImageCropPicker: f0557a908758c4a3f83978894ec7227651529b45
   RNReanimated: b5ccb50650ba06f6e749c7c329a1bc3ae0c88b43
-  RNScreens: c526239bbe0e957b988dacc8d75ac94ec9cb19da
+  RNScreens: f7ad633b2e0190b77b6a7aab7f914fad6f198d8d
   RNSVG: ce9d996113475209013317e48b05c21ee988d42e
-  RNVectorIcons: da6fe858f5a65d7bbc3379540a889b0b12aa5976
+  RNVectorIcons: 31cebfcf94e8cf8686eb5303ae0357da64d7a5a4
   TOCropViewController: 20a14b6a7a098308bf369e7c8d700dc983a974e6
   Yoga: 3ebccbdd559724312790e7742142d062476b698e
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
 PODFILE CHECKSUM: 9bd76ec23cae516f02cfecde9c8c9669c831fc4a
 
-COCOAPODS: 1.9.3
+COCOAPODS: 1.10.0
