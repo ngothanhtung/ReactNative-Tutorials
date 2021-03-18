@@ -31,8 +31,14 @@ function* autoSignIn(action) {
     const profile = yield AuthService.getProfile(action.user.uid);
 
     // CHAY TEST
-    const parent = yield FirestoreService.getStudentOfParent('x6zVuiAu5HXU7eFsnOGmVwE6Wxi1');
-    console.log('parent: ', parent);
+    // const parent = yield FirestoreService.getStudentOfParent('x6zVuiAu5HXU7eFsnOGmVwE6Wxi1');
+    // console.log('parent: ', parent);
+
+    // const flashcards = yield FirestoreService.getFlashCardsOfCategory('animal');
+    // console.log(flashcards);
+
+    const flashcards = yield FirestoreService.getFlashCardsOfLevel('lv1');
+    console.log(flashcards);
 
     let user = action.user;
     user.profile = profile;

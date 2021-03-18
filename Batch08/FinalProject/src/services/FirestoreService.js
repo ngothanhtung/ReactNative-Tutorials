@@ -199,7 +199,7 @@ function getFlashCardsOfLevel(id) {
 
     firestore()
       .collection('FC-FlashCards')
-      .where('category', '==', levelRef)
+      .where('level', '==', levelRef)
       .get()
       .then((querySnapshot) => {
         const flashcards = [];
@@ -254,4 +254,8 @@ export default {
   createOrder,
 
   getStudentOfParent,
+
+  getFlashCardsOfCategory,
+  getFlashCardsOfLevel,
+  getFlashCardsOfCategoryAndLevel,
 };
