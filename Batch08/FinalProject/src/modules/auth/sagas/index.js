@@ -2,6 +2,7 @@ import * as ActionTypes from '../actions/types';
 import { put, takeLatest } from 'redux-saga/effects';
 
 import AuthService from '../../../services/AuthService';
+import FirestoreService from '../../../services/FirestoreService';
 
 function* signIn(action) {
   try {
@@ -28,6 +29,10 @@ function* autoSignIn(action) {
   try {
     // Get profile theo uid
     const profile = yield AuthService.getProfile(action.user.uid);
+
+    // CHAY TEST
+    const parent = yield FirestoreService.getStudentOfParent('x6zVuiAu5HXU7eFsnOGmVwE6Wxi1');
+    console.log('parent: ', parent);
 
     let user = action.user;
     user.profile = profile;

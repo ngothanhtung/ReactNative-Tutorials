@@ -21,11 +21,7 @@ export default function index() {
           fontWeight: 'bold',
         },
       }}>
-      <Stack.Screen
-        name="SignInScreen"
-        component={SignInScreen}
-        options={{ title: 'Đăng nhập', headerShown: false }}
-      />
+      <Stack.Screen name="SignInScreen" component={SignInScreen} options={{ title: 'Đăng nhập', headerShown: false }} />
       <Stack.Screen
         initialParams={{ message: 'Init text' }}
         name="RegisterScreen"
@@ -37,17 +33,9 @@ export default function index() {
         }}
       />
 
-      <Stack.Screen
-        name="MapScreen"
-        component={MapScreen}
-        options={{ title: 'Map', headerShown: false }}
-      />
+      <Stack.Screen name="MapScreen" component={MapScreen} options={{ title: 'Map', headerShown: false }} />
 
-      <Stack.Screen
-        name="SelectionScreen"
-        component={SelectionScreen}
-        options={{ title: 'Selection', headerShown: false }}
-      />
+      <Stack.Screen name="SelectionScreen" component={SelectionScreen} options={{ title: 'Selection', headerShown: false }} />
     </Stack.Navigator>
   );
 }
