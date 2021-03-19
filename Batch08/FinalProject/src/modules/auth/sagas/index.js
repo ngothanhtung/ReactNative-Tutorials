@@ -2,7 +2,6 @@ import * as ActionTypes from '../actions/types';
 import { put, takeLatest } from 'redux-saga/effects';
 
 import AuthService from '../../../services/AuthService';
-import FirestoreService from '../../../services/FirestoreService';
 import SLL_Service from '../../../services/SLL_Service';
 
 function* signIn(action) {
@@ -12,8 +11,13 @@ function* signIn(action) {
     // Get profile theo uid
     const profile = yield AuthService.getProfile(response.user._user.uid);
 
+    // Get parent theo uid
+    const parent = yield SLL_Service.getStudentsOfParent(response.user._user.uid);
+
     let user = response.user._user;
     user.profile = profile;
+    user.parent = parent;
+
     yield put({
       type: ActionTypes.AUTH_SIGNIN_SUCCESS,
       signedInUser: user,

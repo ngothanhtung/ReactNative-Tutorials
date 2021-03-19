@@ -15,8 +15,8 @@ const TabNavigator = () => {
   const { colors } = useTheme();
 
   return (
-    // <Tab.Navigator shifting={false} activeColor={colors.primary} barStyle={{ backgroundColor: 'white' }}>
-    <Tab.Navigator shifting={false} activeColor={'white'} inactiveColor="#bdc3c7" barStyle={{ backgroundColor: colors.primary }}>
+    <Tab.Navigator shifting={false} activeColor={colors.primary} inactiveColor="#A3A3AE" barStyle={{ backgroundColor: 'white' }}>
+      {/* <Tab.Navigator shifting={false} activeColor={'white'} inactiveColor="#bdc3c7" barStyle={{ backgroundColor: colors.primary }}> */}
       {/* --------------------------------------------------------------------------------------------- */}
       {/* HOME */}
       {/* --------------------------------------------------------------------------------------------- */}
@@ -24,7 +24,7 @@ const TabNavigator = () => {
         name="SSL_Parent_HomeStackNavigator"
         component={HomeStackNavigator}
         options={{
-          title: 'Trang chủ',
+          tabBarLabel: 'Trang chủ',
           tabBarIcon: ({ focused, color }) => {
             return <Icon name="home" size={24} style={{ color }} />;
           },
@@ -37,7 +37,7 @@ const TabNavigator = () => {
         name="SSL_Parent_ScoreStackNavigator"
         component={ScoreStackNavigator}
         options={{
-          title: 'Sổ điểm',
+          tabBarLabel: 'Sổ điểm',
           tabBarIcon: ({ focused, color }) => {
             return <Icon name="book-open" size={24} style={{ color }} />;
           },
@@ -50,7 +50,7 @@ const TabNavigator = () => {
         name="SSL_Parent_NotificationStackNavigator"
         component={NotificationStackNavigator}
         options={{
-          title: 'Thông báo',
+          tabBarLabel: 'Thông báo',
           tabBarBadge: 9,
           tabBarIcon: ({ focused, color }) => {
             return <Icon name="bell" size={24} style={{ color }} />;
@@ -64,7 +64,7 @@ const TabNavigator = () => {
         name="SSL_Parent_HealthStackNavigator"
         component={HealthStackNavigator}
         options={{
-          title: 'Sức khỏe',
+          tabBarLabel: 'Sức khỏe',
           tabBarIcon: ({ focused, color }) => {
             return <Icon name="heart-pulse" size={24} style={{ color }} />;
           },
@@ -77,7 +77,7 @@ const TabNavigator = () => {
         name="SSL_Parent_AccountStackNavigator"
         component={AccountStackNavigator}
         options={{
-          title: 'Tài khoản',
+          tabBarLabel: 'Tài khoản',
           tabBarIcon: ({ focused, color }) => {
             return <Icon name="account" size={24} style={{ color }} />;
           },
