@@ -5,9 +5,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 
+// GRAP SERVICE
 import LoginStackNavigator from './LoginStackNavigator';
 import UserTabNavigator from './UserTabNavigator';
 import WorkerTabNavigator from './WorkerTabNavigator';
+
+// SLL
+import SLL_Parent_TabNavigator from './SLL/ParentTabNavigator';
 
 import * as routes from '../routes';
 import useOneSignal from '../hooks/useOneSignal';
@@ -36,6 +40,14 @@ const AuthenticationStackNavigator = () => {
     return (
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name={routes.AUTH_SIGNIN_STACK_NAVIGATOR} component={LoginStackNavigator} />
+      </Stack.Navigator>
+    );
+  }
+
+  if (signedInUser && signedInUser.parent) {
+    return (
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="SLL_Parent_TabNavigator" component={SLL_Parent_TabNavigator} />
       </Stack.Navigator>
     );
   }

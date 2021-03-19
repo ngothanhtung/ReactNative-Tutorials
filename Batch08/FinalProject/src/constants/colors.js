@@ -1,6 +1,7 @@
 export default {
   WHITE: '#ffffff',
   PRIMARY: '#6200EE',
+  SLL_PRIMARY: '#31978D',
   PRIMARY_FONT: '#2c3e50',
   PRIMARY_ICON: '#2c3e50',
   BACKGROUND: '#f5f6fa',

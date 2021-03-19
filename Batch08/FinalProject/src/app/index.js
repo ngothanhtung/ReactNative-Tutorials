@@ -58,10 +58,11 @@ sagaMiddleware.run(rootSagas);
 
 const theme = {
   ...DefaultTheme,
-  roundness: 2,
+  roundness: 4,
   colors: {
     ...DefaultTheme.colors,
-    primary: colors.PRIMARY,
+    // primary: colors.PRIMARY,
+    primary: colors.SLL_PRIMARY,
     accent: '#f1c40f',
   },
 };

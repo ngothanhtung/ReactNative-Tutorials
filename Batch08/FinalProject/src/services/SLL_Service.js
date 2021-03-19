@@ -23,16 +23,6 @@ function getStudentsOfParent(id) {
           // WAITING FOR GET ALL STUDENTS
           Promise.all(getStudents).then((result) => {
             parent.students = result;
-            // GET CLASSSES
-            // parent.students.forEach((s) => {
-            //   const getClasses = s.class.map((studentRef) => {
-            //     return studentRef.get().then((studentDocumentSnapshot) => {
-            //       const student = studentDocumentSnapshot.data();
-            //       student.id = studentDocumentSnapshot.id;
-            //       return student;
-            //     });
-            //   });
-            // });
             resolve(parent);
           });
         } else {
