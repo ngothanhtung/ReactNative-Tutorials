@@ -31,18 +31,19 @@ function* autoSignIn(action) {
     // Get profile theo uid
     const profile = yield AuthService.getProfile(action.user.uid);
 
-    // CHAY TEST
-    const parent = yield SLL_Service.getStudentsOfParent('x6zVuiAu5HXU7eFsnOGmVwE6Wxi1');
-    console.log('parent: ', parent);
-
+    // Get parent theo uid
+    const parent = yield SLL_Service.getStudentsOfParent(action.user.uid);
+    console.log(parent);
     // const flashcards = yield FirestoreService.getFlashCardsOfCategory('animal');
     // console.log(flashcards);
 
     // const flashcards = yield FirestoreService.getFlashCardsOfLevel('lv1');
     // console.log(flashcards);
 
-    let user = action.user;
+    const user = action.user;
     user.profile = profile;
+    user.parent = parent;
+
     yield put({
       type: ActionTypes.AUTH_SIGNIN_SUCCESS,
       signedInUser: user,

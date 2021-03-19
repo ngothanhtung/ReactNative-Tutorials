@@ -29,6 +29,7 @@ export default function SignIn() {
   const onRefresh = () => {
     setLoading(true);
     FirestoreService.getServices().then((result) => {
+      console.log('Services: ', result);
       setServices(result);
       setLoading(false);
     });
@@ -42,9 +43,7 @@ export default function SignIn() {
         renderItem={renderItem}
         showsHorizontalScrollIndicator={false}
         showsVerticalScrollIndicator={false}
-        refreshControl={
-          <RefreshControl refreshing={loading} onRefresh={onRefresh} />
-        }
+        refreshControl={<RefreshControl refreshing={loading} onRefresh={onRefresh} />}
       />
     </View>
   );

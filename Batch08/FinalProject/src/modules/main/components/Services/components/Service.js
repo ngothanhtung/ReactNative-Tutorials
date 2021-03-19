@@ -27,7 +27,7 @@ function Service({ service }) {
         }}>
         {service.pictureUrl && <Card.Cover style={{ borderTopLeftRadius: 12, borderTopRightRadius: 12 }} source={{ uri: service.pictureUrl }} />}
         <Card.Title
-          title={service.name}
+          title={service.vendor.name + ' - ' + service.name}
           titleStyle={{
             fontSize: 16,
             fontWeight: '700',
