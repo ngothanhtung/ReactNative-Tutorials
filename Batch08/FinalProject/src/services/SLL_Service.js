@@ -11,28 +11,30 @@ function getStudentsOfParent(id) {
           const parent = documentSnapshot.data();
           parent.id = documentSnapshot.id;
 
-          parent.students = [];
-
           // GET STUDENTS
-
-          parent.students.forEach((studentRef) => {
-            studentRef.get().then((studentDocumentSnapshot) => {
+          const getStudents = parent.students.map((studentRef) => {
+            return studentRef.get().then((studentDocumentSnapshot) => {
               const student = studentDocumentSnapshot.data();
               student.id = studentDocumentSnapshot.id;
-
-              // GET CLASS
-              const classRef = student.class;
-              classRef.get().then((classDocumentSnapshot) => {
-                const cls = classDocumentSnapshot.data();
-                cls.id = classDocumentSnapshot.id;
-                student.class = cls;
-              });
-
-              parent.students.push(student);
+              return student;
             });
           });
 
-          resolve(parent);
+          // WAITING FOR GET ALL STUDENTS
+          Promise.all(getStudents).then((result) => {
+            parent.students = result;
+            // GET CLASSSES
+            // parent.students.forEach((s) => {
+            //   const getClasses = s.class.map((studentRef) => {
+            //     return studentRef.get().then((studentDocumentSnapshot) => {
+            //       const student = studentDocumentSnapshot.data();
+            //       student.id = studentDocumentSnapshot.id;
+            //       return student;
+            //     });
+            //   });
+            // });
+            resolve(parent);
+          });
         } else {
           resolve(null);
         }
