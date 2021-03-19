@@ -22,9 +22,9 @@ const TabNavigator = () => {
       barStyle={{
         backgroundColor: 'white',
         shadowColor: '#000',
-        shadowOffset: { width: 0, height: 4 },
+        shadowOffset: { width: 0, height: 5 },
         shadowOpacity: 0.5,
-        shadowRadius: 4,
+        shadowRadius: 10,
         elevation: 4,
         // marginTop: 0,
       }}>

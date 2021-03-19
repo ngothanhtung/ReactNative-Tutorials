@@ -58,6 +58,10 @@ export default function MainScreen() {
             return (
               <View
                 style={{
+                  // shadowColor: '#000',
+                  shadowOffset: { width: 1, height: 1 },
+                  shadowOpacity: 0.25,
+                  shadowRadius: 2,
                   elevation: 1,
                   flex: 1,
                   marginVertical: 6,
