@@ -1,3 +1,4 @@
+/* eslint-disable react-native/no-inline-styles */
 import React, { Component } from 'react';
 import { StatusBar } from 'react-native';
 import propTypes from 'prop-types';
@@ -8,13 +9,12 @@ import { useNavigation, useRoute } from '@react-navigation/native';
 import Loading from './Loading';
 import colors from '../constants/colors';
 
-const Container = ({ ready, title, showAppbar, showBackButton, style, children }) => {
+const Container = ({ ready, title, showAppbar, showBackButton, showActionButton, actionButton, style, children }) => {
   const navigation = useNavigation();
   // const route = useRoute();
   // console.log(route);
   return (
-    <View flex={1} style={{ backgroundColor: colors.YOPA_GREEN }}>
-      <StatusBar barStyle="light-content" />
+    <View flex={1} style={{ backgroundColor: colors.SLL_PRIMARY }}>
       {showAppbar && (
         <Appbar.Header dark>
           {showBackButton && (
@@ -24,7 +24,8 @@ const Container = ({ ready, title, showAppbar, showBackButton, style, children }
               }}
             />
           )}
-          <Appbar.Content title={title} />
+          <Appbar.Content title={title} style={{ alignItems: 'center' }} />
+          {showActionButton && <Appbar.Action onPress={() => {}} icon={actionButton.icon} />}
         </Appbar.Header>
       )}
       <SafeAreaView style={{ flex: 1 }}>
@@ -47,9 +48,10 @@ const Container = ({ ready, title, showAppbar, showBackButton, style, children }
 
 Container.defaultProps = {
   style: {},
-  title: 'YOPAA',
+  title: 'TITLE',
   showAppbar: false,
   showBackButton: false,
+  showMenuButton: false,
   ready: true,
   children: null,
 };
@@ -58,7 +60,7 @@ Container.propTypes = {
   ready: propTypes.bool,
   title: propTypes.string,
   showAppbar: propTypes.bool,
-  showBackButton: propTypes.bool,
+  showActionButton: propTypes.bool,
   style: propTypes.oneOfType([propTypes.object, propTypes.array]),
   children: propTypes.instanceOf(Object),
 };

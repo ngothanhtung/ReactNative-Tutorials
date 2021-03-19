@@ -15,7 +15,19 @@ const TabNavigator = () => {
   const { colors } = useTheme();
 
   return (
-    <Tab.Navigator shifting={false} activeColor={colors.primary} inactiveColor="#A3A3AE" barStyle={{ backgroundColor: 'white' }}>
+    <Tab.Navigator
+      shifting={false}
+      activeColor={colors.primary}
+      inactiveColor="#A3A3AE"
+      barStyle={{
+        backgroundColor: 'white',
+        shadowColor: '#000',
+        shadowOffset: { width: 0, height: 4 },
+        shadowOpacity: 0.5,
+        shadowRadius: 4,
+        elevation: 4,
+        // marginTop: 0,
+      }}>
       {/* <Tab.Navigator shifting={false} activeColor={'white'} inactiveColor="#bdc3c7" barStyle={{ backgroundColor: colors.primary }}> */}
       {/* --------------------------------------------------------------------------------------------- */}
       {/* HOME */}

@@ -3,6 +3,7 @@
 import 'react-native-gesture-handler';
 
 import React from 'react';
+import { StatusBar } from 'react-native';
 import { DefaultTheme, Provider as PaperProvider } from 'react-native-paper';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 // Saga (import)
@@ -71,6 +72,7 @@ export default function App() {
   return (
     <Provider store={store}>
       <PaperProvider theme={theme}>
+        <StatusBar animated={true} backgroundColor={colors.SLL_PRIMARY} />
         <AppNavigator />
       </PaperProvider>
     </Provider>
