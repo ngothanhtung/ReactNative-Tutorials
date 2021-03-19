@@ -27,9 +27,15 @@ const rootReducer = combineReducers({
 });
 
 // MIDDLEWARE
+
+if (__DEV__) {
+  const createFlipperDebugger = require('redux-flipper').default;
+  // middewares.push(createFlipperDebugger);
+}
+
 //Saga (middleware)
 const sagaMiddleware = createSagaMiddleware();
-const middewares = [
+const middlewares = [
   // Custom Middleware
   // logger
 
@@ -37,11 +43,18 @@ const middewares = [
   sagaMiddleware,
 ];
 
+if (__DEV__) {
+  const createDebugger = require('redux-flipper').default;
+  middlewares.push(createDebugger());
+}
+
 // STORE
+
 const store = createStore(
   rootReducer,
   // ONLY FOR DEBUG
-  composeWithDevTools(applyMiddleware(...middewares)),
+  // composeWithDevTools(applyMiddleware(...middlewares)),
+  applyMiddleware(...middlewares),
 );
 // Root Saga
 

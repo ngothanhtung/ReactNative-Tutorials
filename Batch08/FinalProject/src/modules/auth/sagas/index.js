@@ -42,7 +42,7 @@ function* autoSignIn(action) {
 
     const user = action.user;
     user.profile = profile;
-    user.parent = parent;
+    // user.parent = parent;
 
     yield put({
       type: ActionTypes.AUTH_SIGNIN_SUCCESS,

@@ -20,13 +20,13 @@ function getStudentsOfParent(id) {
               const student = studentDocumentSnapshot.data();
               student.id = studentDocumentSnapshot.id;
 
-              //     // GET CLASS
-              //     const classRef = student.class;
-              //     classRef.get().then((classDocumentSnapshot) => {
-              //       const cls = classDocumentSnapshot.data();
-              //       cls.id = classDocumentSnapshot.id;
-              //       student.class = cls;
-              //     });
+              // GET CLASS
+              const classRef = student.class;
+              classRef.get().then((classDocumentSnapshot) => {
+                const cls = classDocumentSnapshot.data();
+                cls.id = classDocumentSnapshot.id;
+                student.class = cls;
+              });
 
               parent.students.push(student);
             });
