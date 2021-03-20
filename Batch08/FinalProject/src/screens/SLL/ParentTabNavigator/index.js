@@ -1,5 +1,6 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
+import { Text } from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { useTheme } from 'react-native-paper';
@@ -8,27 +9,21 @@ import ScoreStackNavigator from './ScoreStackNavigator';
 import NotificationStackNavigator from './NotificationStackNavigator';
 import HealthStackNavigator from './HealthStackNavigator';
 import AccountStackNavigator from './AccountStackNavigator';
+import colors from '../../../constants/colors';
 
 const Tab = createMaterialBottomTabNavigator();
 
 const TabNavigator = () => {
-  const { colors } = useTheme();
+  const { colors: themeColors } = useTheme();
 
   return (
     <Tab.Navigator
       shifting={false}
-      activeColor={colors.primary}
-      inactiveColor="#A3A3AE"
+      activeColor={themeColors.primary}
+      inactiveColor={colors.PRIMARY_FONT}
       barStyle={{
         backgroundColor: 'white',
-        shadowColor: '#000',
-        shadowOffset: { width: 0, height: 5 },
-        shadowOpacity: 0.5,
-        shadowRadius: 10,
-        elevation: 4,
-        // marginTop: 0,
       }}>
-      {/* <Tab.Navigator shifting={false} activeColor={'white'} inactiveColor="#bdc3c7" barStyle={{ backgroundColor: colors.primary }}> */}
       {/* --------------------------------------------------------------------------------------------- */}
       {/* HOME */}
       {/* --------------------------------------------------------------------------------------------- */}
@@ -36,7 +31,7 @@ const TabNavigator = () => {
         name="SSL_Parent_HomeStackNavigator"
         component={HomeStackNavigator}
         options={{
-          tabBarLabel: 'Trang chủ',
+          tabBarLabel: <Text style={{ fontFamily: 'Roboto-Medium', textAlign: 'center' }}>Trang chủ</Text>,
           tabBarIcon: ({ focused, color }) => {
             return <Icon name="home" size={24} style={{ color }} />;
           },
@@ -49,7 +44,7 @@ const TabNavigator = () => {
         name="SSL_Parent_ScoreStackNavigator"
         component={ScoreStackNavigator}
         options={{
-          tabBarLabel: 'Sổ điểm',
+          tabBarLabel: <Text style={{ fontFamily: 'Roboto-Medium', textAlign: 'center' }}>Sổ điểm</Text>,
           tabBarIcon: ({ focused, color }) => {
             return <Icon name="book-open" size={24} style={{ color }} />;
           },
@@ -62,7 +57,7 @@ const TabNavigator = () => {
         name="SSL_Parent_NotificationStackNavigator"
         component={NotificationStackNavigator}
         options={{
-          tabBarLabel: 'Thông báo',
+          tabBarLabel: <Text style={{ fontFamily: 'Roboto-Medium', textAlign: 'center' }}>Thông báo</Text>,
           tabBarBadge: 9,
           tabBarIcon: ({ focused, color }) => {
             return <Icon name="bell" size={24} style={{ color }} />;
@@ -76,7 +71,7 @@ const TabNavigator = () => {
         name="SSL_Parent_HealthStackNavigator"
         component={HealthStackNavigator}
         options={{
-          tabBarLabel: 'Sức khỏe',
+          tabBarLabel: <Text style={{ fontFamily: 'Roboto-Medium', textAlign: 'center' }}>Sức khỏe</Text>,
           tabBarIcon: ({ focused, color }) => {
             return <Icon name="heart-pulse" size={24} style={{ color }} />;
           },
@@ -89,7 +84,7 @@ const TabNavigator = () => {
         name="SSL_Parent_AccountStackNavigator"
         component={AccountStackNavigator}
         options={{
-          tabBarLabel: 'Tài khoản',
+          tabBarLabel: <Text style={{ fontFamily: 'Roboto-Medium', textAlign: 'center' }}>Tài khoản</Text>,
           tabBarIcon: ({ focused, color }) => {
             return <Icon name="account" size={24} style={{ color }} />;
           },
