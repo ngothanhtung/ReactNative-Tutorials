@@ -2,6 +2,7 @@
 
 import React, { Fragment } from 'react';
 import { View, Text, FlatList } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 import { Button, Surface, Title, Paragraph, TouchableRipple } from 'react-native-paper';
 import { Icon, Image } from 'react-native-elements';
 import Container from '../../../../components/Container';
@@ -17,6 +18,7 @@ const blocks = [
   {
     id: 'thoi-khoa-bieu',
     title: 'Thời khóa biểu',
+    screen: 'SSL_Parent_Home_ScheduleScreen',
     icon: <Icon name="calendar" size={ICON_SIZE} type="material-community" color={colors.SLL_PRIMARY_FONT} />,
   },
   {
@@ -53,6 +55,7 @@ const blocks = [
 // BLOCK COMPONENT
 // ---------------------------------------------------------------------------------------------------
 const Block = ({ item, index }) => {
+  const navigation = useNavigation();
   return (
     <Surface
       style={{
@@ -71,7 +74,9 @@ const Block = ({ item, index }) => {
         style={{ flex: 1, justifyContent: 'center', alignItems: 'center', borderRadius: 12 }}
         borderless={true}
         rippleColor={colors.SLL_PRIMARY}
-        onPress={() => {}}>
+        onPress={() => {
+          navigation.navigate(item.screen);
+        }}>
         <React.Fragment>
           <View>{item.icon}</View>
           <View style={{ marginTop: 4 }}>
