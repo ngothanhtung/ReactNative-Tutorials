@@ -2,7 +2,8 @@
 import React from 'react';
 import propTypes from 'prop-types';
 import { View, SafeAreaView } from 'react-native';
-import { Appbar } from 'react-native-paper';
+
+import { Appbar, Button, Divider, Drawer, Menu } from 'react-native-paper';
 
 import { useNavigation } from '@react-navigation/native';
 import Loading from './Loading';
@@ -23,11 +24,19 @@ const Container = ({ ready, title, subTitle, showAppbar, showBackButton, showAct
               }}
             />
           )}
-          <Appbar.Content title={title} subtitle="Trang chủ" titleStyle={{ fontFamily: 'Roboto-Medium' }} subtitleStyle={{ fontFamily: 'Roboto-Regular' }} />
+          <Appbar.Content title={title} subtitle={subTitle} titleStyle={{ fontFamily: 'Roboto-Medium' }} subtitleStyle={{ fontFamily: 'Roboto-Regular' }} />
           <Appbar.Action icon="magnify" onPress={() => {}} />
-          {showActionButton && <Appbar.Action onPress={() => {}} icon={actionButton.icon} />}
+          {showActionButton && (
+            <Appbar.Action
+              onPress={() => {
+                navigation.openDrawer();
+              }}
+              icon={actionButton.icon}
+            />
+          )}
         </Appbar.Header>
       )}
+
       <SafeAreaView style={{ flex: 1 }}>
         <View style={[{ flex: 1, borderRadius: 0, backgroundColor: colors.BACKGROUND }, style]}>
           {!ready && <Loading />}

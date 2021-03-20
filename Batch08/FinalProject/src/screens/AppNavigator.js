@@ -12,6 +12,7 @@ import WorkerTabNavigator from './WorkerTabNavigator';
 
 // SLL
 import SLL_Parent_TabNavigator from './SLL/ParentTabNavigator';
+import SLL_Parent_DrawerNavigator from './SLL/ParentDrawerNavigator';
 
 import * as routes from '../routes';
 import useOneSignal from '../hooks/useOneSignal';
@@ -47,7 +48,8 @@ const AuthenticationStackNavigator = () => {
   if (signedInUser && signedInUser.parent) {
     return (
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="SLL_Parent_TabNavigator" component={SLL_Parent_TabNavigator} />
+        <Stack.Screen name="SLL_Parent_DrawerNavigator" component={SLL_Parent_DrawerNavigator} />
+        {/* <Stack.Screen name="SLL_Parent_TabNavigator" component={SLL_Parent_TabNavigator} /> */}
       </Stack.Navigator>
     );
   }

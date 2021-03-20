@@ -9,6 +9,10 @@ import colors from '../../../../constants/colors';
 import { ScrollView } from 'react-native-gesture-handler';
 
 const ICON_SIZE = 40;
+
+// ---------------------------------------------------------------------------------------------------
+// DATA
+// ---------------------------------------------------------------------------------------------------
 const blocks = [
   {
     id: 'thoi-khoa-bieu',
@@ -45,6 +49,9 @@ const blocks = [
   },
 ];
 
+// ---------------------------------------------------------------------------------------------------
+// BLOCK COMPONENT
+// ---------------------------------------------------------------------------------------------------
 const Block = ({ item, index }) => {
   return (
     <Surface
@@ -76,9 +83,28 @@ const Block = ({ item, index }) => {
   );
 };
 
+// ---------------------------------------------------------------------------------------------------
+// NEWS COMPONENT
+// ---------------------------------------------------------------------------------------------------
 const News = () => {
+  const Dot = ({ size = 12, mode = 'contained' }) => {
+    return (
+      <View
+        style={{
+          margin: size / 2,
+          height: size,
+          width: size,
+          borderRadius: size / 2,
+          backgroundColor: mode === 'contained' ? colors.SLL_PRIMARY : colors.WHITE,
+          borderWidth: 1,
+          borderColor: colors.SLL_PRIMARY,
+        }}
+      />
+    );
+  };
+
   return (
-    <View style={{ flex: 0, paddingHorizontal: 12, marginBottom: 24 }}>
+    <View style={{ flex: 0, paddingHorizontal: 12, marginBottom: 12 }}>
       <Image
         style={{ width: '100%', height: 200, borderRadius: 12, opacity: 0.8 }}
         source={{ uri: 'https://cdn.pixabay.com/photo/2015/07/31/11/45/library-869061_960_720.jpg' }}
@@ -94,9 +120,9 @@ const News = () => {
       </Button>
 
       <View style={{ marginTop: 24, justifyContent: 'center', flexDirection: 'row' }}>
-        <View style={{ margin: 2, height: 4, width: 4, borderRadius: 2, backgroundColor: colors.SLL_PRIMARY }} />
-        <View style={{ margin: 2, height: 4, width: 4, borderRadius: 2, backgroundColor: colors.SLL_PRIMARY }} />
-        <View style={{ margin: 2, height: 4, width: 4, borderRadius: 2, backgroundColor: colors.SLL_PRIMARY }} />
+        <Dot />
+        <Dot mode="outline" />
+        <Dot mode="outline" />
       </View>
       <View style={{ position: 'absolute', top: 64, alignSelf: 'center', alignItems: 'center' }}>
         <Title style={{ color: colors.WHITE, fontFamily: 'Roboto-Bold' }}>CÁC BIỆN PHÁP</Title>
@@ -106,27 +132,33 @@ const News = () => {
   );
 };
 
-const NotificationItem = ({ text }) => {
-  return (
-    <View style={{ flexDirection: 'row' }}>
-      <Icon name="chevron-right" size={20} color={colors.WHITE} />
-      <Paragraph style={{ color: colors.WHITE, fontFamily: 'Roboto-Medium' }}>{text}</Paragraph>
-    </View>
-  );
-};
-
+// ---------------------------------------------------------------------------------------------------
+// NOTIFICATION COMPONENT
+// ---------------------------------------------------------------------------------------------------
 const Notifications = () => {
+  const NotificationItem = ({ text }) => {
+    return (
+      <View style={{ flexDirection: 'row' }}>
+        <Icon name="chevron-right" size={20} color={colors.WHITE} />
+        <Paragraph style={{ color: colors.WHITE, fontFamily: 'Roboto-Medium' }}>{text}</Paragraph>
+      </View>
+    );
+  };
+
   return (
     <View style={{ minHeight: 64, paddingHorizontal: 12, marginTop: 12 }}>
       <TouchableRipple borderless rippleColor={colors.WHITE} onPress={() => {}} style={{ borderRadius: 12 }}>
-        <View style={{ flex: 1, borderRadius: 12, padding: 16, flexDirection: 'row', backgroundColor: colors.SLL_PRIMARY }}>
+        <View style={{ flex: 1, borderRadius: 12, paddingHorizontal: 12, paddingVertical: 16, flexDirection: 'row', backgroundColor: colors.SLL_PRIMARY }}>
           <View style={{ justifyContent: 'center' }}>
             <Icon name="bell-ring-outline" type="material-community" size={32} color={colors.WHITE} />
           </View>
-          <View style={{ flex: 1, paddingLeft: 16 }}>
-            <NotificationItem text="Có 1 nhận xét của GV chủ nhiệm" />
-            <NotificationItem text="Có 1 nhận xét của GV bộ môn: Vật lý" />
-            <NotificationItem text="Có 2 nhận xét của GV bộ môn: Kỹ năng sống" />
+          <View style={{ flex: 1, paddingHorizontal: 8 }}>
+            <NotificationItem text="Có 03 nhận xét của GV chủ nhiệm" />
+            <NotificationItem text="Có 01 nhận xét của GV bộ môn: Vật lý" />
+            <NotificationItem text="Có 02 nhận xét của GV bộ môn: Kỹ năng sống" />
+          </View>
+          <View style={{ justifyContent: 'center' }}>
+            <Icon name="chevron-right" type="material-community" size={32} color={colors.WHITE} />
           </View>
         </View>
       </TouchableRipple>
@@ -134,6 +166,9 @@ const Notifications = () => {
   );
 };
 
+// ---------------------------------------------------------------------------------------------------
+// MAINSCREEN
+// ---------------------------------------------------------------------------------------------------
 export default function MainScreen() {
   const renderItem = ({ item, index }) => {
     return <Block item={item} index={index} />;

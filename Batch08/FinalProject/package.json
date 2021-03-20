@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "android": "rm -rf ./android/app/build && rm -rf ./node_modules/react-native-onesignal/android/build && react-native run-android",
+    "android": "rm -rf ./android/app/build && rm -rf ./node_modules/react-native-onesignal/android/build && rm -rf ./node_modules/react-native-maps/android/build && react-native run-android",
     "build:apk": "cd android && ./gradlew assembleRelease",
     "clean:apk": "cd android && ./gradlew cleanBuildCache",
     "uninstall": "adb uninstall com.finalproject",
@@ -20,6 +20,7 @@
     "@react-native-firebase/auth": "^11.1.2",
     "@react-native-firebase/firestore": "^11.1.2",
     "@react-native-firebase/storage": "^11.1.2",
+    "@react-navigation/drawer": "^5.12.4",
     "@react-navigation/material-bottom-tabs": "^5.3.14",
     "@react-navigation/native": "^5.9.3",
     "@react-navigation/stack": "^5.14.3",
