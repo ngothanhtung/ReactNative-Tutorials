@@ -117,7 +117,7 @@ export default function ScheduleScreen() {
         {dayOfWeeks.map((dw) => {
           return (
             //  DAYS OF WEEK
-            <View style={{ flex: 1, flexDirection: 'row', marginBottom: 8, backgroundColor: colors.WHITE }}>
+            <View style={{ flex: 1, flexDirection: 'row', marginBottom: 6, backgroundColor: colors.WHITE }}>
               <View
                 style={{
                   padding: 10,
