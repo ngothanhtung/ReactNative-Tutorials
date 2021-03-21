@@ -5,6 +5,7 @@ import { Icon } from 'react-native-elements';
 import SLL_Service from '../../../../services/SLL_Service';
 import Container from '../../../../components/Container';
 import colors from '../../../../constants/colors';
+import { RefreshControl } from 'react-native';
 
 const styles = StyleSheet.create({
   dayOfWeek: {
@@ -16,88 +17,88 @@ const styles = StyleSheet.create({
   sessionOfDay: {
     margin: 8,
     fontFamily: 'Roboto-Bold',
-    fontSize: 16,
+    fontSize: 15,
     color: colors.PRIMARY_FONT,
   },
 });
 
+const dayOfWeeks = [
+  {
+    id: 'monday',
+    text: '2',
+    sessions: [
+      { id: 'morning', text: 'Sáng' },
+      { id: 'afternoon', text: 'Chiều' },
+      { id: 'evening', text: 'Tối' },
+    ],
+    color: colors.WHITE,
+  },
+  {
+    id: 'tuesday',
+    text: '3',
+    sessions: [
+      { id: 'morning', text: 'Sáng' },
+      { id: 'afternoon', text: 'Chiều' },
+      { id: 'evening', text: 'Tối' },
+    ],
+    color: colors.WHITE,
+  },
+  {
+    id: 'wednesday',
+    text: '4',
+    sessions: [
+      { id: 'morning', text: 'Sáng' },
+      { id: 'afternoon', text: 'Chiều' },
+      { id: 'evening', text: 'Tối' },
+    ],
+    color: colors.WHITE,
+  },
+  {
+    id: 'thursday',
+    text: '5',
+    sessions: [
+      { id: 'morning', text: 'Sáng' },
+      { id: 'afternoon', text: 'Chiều' },
+      { id: 'evening', text: 'Tối' },
+    ],
+    color: colors.WHITE,
+  },
+  {
+    id: 'friday',
+    text: '6',
+    sessions: [
+      { id: 'morning', text: 'Sáng' },
+      { id: 'afternoon', text: 'Chiều' },
+      { id: 'evening', text: 'Tối' },
+    ],
+    color: colors.WHITE,
+  },
+  {
+    id: 'saturday',
+    text: '7',
+    sessions: [
+      { id: 'morning', text: 'Sáng' },
+      { id: 'afternoon', text: 'Chiều' },
+      { id: 'evening', text: 'Tối' },
+    ],
+    color: colors.WHITE,
+  },
+  {
+    id: 'sunday',
+    text: 'CN',
+    sessions: [
+      { id: 'morning', text: 'Sáng' },
+      { id: 'afternoon', text: 'Chiều' },
+      // { id: 'evening', text: 'Tối' },
+    ],
+    color: colors.WHITE,
+  },
+];
+
 export default function ScheduleScreen() {
   const [loading, setLoading] = React.useState(true);
-
   const [schedules, setSchedules] = React.useState([]);
-
-  const dayOfWeeks = [
-    {
-      id: 'monday',
-      text: '2',
-      sessions: [
-        { id: 'morning', text: 'Sáng' },
-        { id: 'afternoon', text: 'Chiều' },
-        { id: 'evening', text: 'Tối' },
-      ],
-      color: colors.WHITE,
-    },
-    {
-      id: 'tuesday',
-      text: '3',
-      sessions: [
-        { id: 'morning', text: 'Sáng' },
-        { id: 'afternoon', text: 'Chiều' },
-        { id: 'evening', text: 'Tối' },
-      ],
-      color: colors.WHITE,
-    },
-    {
-      id: 'wednesday',
-      text: '4',
-      sessions: [
-        { id: 'morning', text: 'Sáng' },
-        { id: 'afternoon', text: 'Chiều' },
-        { id: 'evening', text: 'Tối' },
-      ],
-      color: colors.WHITE,
-    },
-    {
-      id: 'thursday',
-      text: '5',
-      sessions: [
-        { id: 'morning', text: 'Sáng' },
-        { id: 'afternoon', text: 'Chiều' },
-        { id: 'evening', text: 'Tối' },
-      ],
-      color: colors.WHITE,
-    },
-    {
-      id: 'friday',
-      text: '6',
-      sessions: [
-        { id: 'morning', text: 'Sáng' },
-        { id: 'afternoon', text: 'Chiều' },
-        { id: 'evening', text: 'Tối' },
-      ],
-      color: colors.WHITE,
-    },
-    {
-      id: 'saturday',
-      text: '7',
-      sessions: [
-        { id: 'morning', text: 'Sáng' },
-        { id: 'afternoon', text: 'Chiều' },
-        { id: 'evening', text: 'Tối' },
-      ],
-      color: colors.WHITE,
-    },
-    {
-      id: 'sunday',
-      text: 'CN',
-      sessions: [
-        { id: 'morning', text: 'Sáng' },
-        { id: 'afternoon', text: 'Chiều' },
-        // { id: 'evening', text: 'Tối' },
-      ],
-      color: colors.WHITE,
-    },
-  ];
+  const [refresh, setRefresh] = React.useState(0);
 
   React.useEffect(() => {
     SLL_Service.getSchedulesOfClass('rlPeLZfhJfZphj5yELDV', '2020-2021')
@@ -109,7 +110,7 @@ export default function ScheduleScreen() {
       .catch(() => {
         setLoading(false);
       });
-  }, []);
+  }, [refresh]);
 
   const renderItem = ({ item }) => {
     return (
@@ -117,7 +118,7 @@ export default function ScheduleScreen() {
         {dayOfWeeks.map((dw) => {
           return (
             //  DAYS OF WEEK
-            <View style={{ flex: 1, flexDirection: 'row', marginBottom: 8, backgroundColor: colors.WHITE }}>
+            <View style={{ flex: 1, flexDirection: 'row', marginBottom: 6, backgroundColor: colors.WHITE }}>
               <View
                 style={{
                   padding: 10,
@@ -171,7 +172,20 @@ export default function ScheduleScreen() {
 
   return (
     <Container showAppbar showBackButton title="THỜI KHÓA BIỂU" subTitle="Lớp 7 / 5" ready={!loading}>
-      <FlatList data={schedules} keyExtractor={(item, index) => 'schedule-' + index} renderItem={renderItem} />
+      <FlatList
+        showsVerticalScrollIndicator={false}
+        data={schedules}
+        keyExtractor={(item, index) => 'schedule-' + index}
+        renderItem={renderItem}
+        refreshControl={
+          <RefreshControl
+            refreshing={loading}
+            onRefresh={() => {
+              setRefresh(refresh + 1);
+            }}
+          />
+        }
+      />
     </Container>
   );
 }

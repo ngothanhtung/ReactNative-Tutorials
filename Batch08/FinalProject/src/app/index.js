@@ -72,7 +72,7 @@ export default function App() {
   return (
     <Provider store={store}>
       <PaperProvider theme={theme}>
-        <StatusBar animated={true} backgroundColor={colors.SLL_PRIMARY} />
+        <StatusBar animated={true} backgroundColor={colors.SLL_PRIMARY} barStyle="light-content" />
         <AppNavigator />
       </PaperProvider>
     </Provider>

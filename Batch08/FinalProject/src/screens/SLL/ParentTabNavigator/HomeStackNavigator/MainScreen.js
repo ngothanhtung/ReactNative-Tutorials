@@ -60,8 +60,8 @@ const Block = ({ item, index }) => {
     <Surface
       style={{
         borderColor: colors.LIGHT_GRAY,
-        borderWidth: 1,
-        // elevation: 1,
+        borderWidth: 0,
+        elevation: 1,
         flex: 1,
         marginVertical: 6,
         marginLeft: index % 2 === 0 ? 16 : 8,
@@ -116,10 +116,12 @@ const News = () => {
       />
 
       <Button
+        uppercase
         contentStyle={{ flexDirection: 'row-reverse' }}
+        labelStyle={{ fontFamily: 'Roboto-Regular', fontSize: 13 }}
         icon="chevron-right"
         mode="contained"
-        style={{ marginTop: -48, width: 135, alignSelf: 'center' }}
+        style={{ marginTop: -48, alignSelf: 'center' }}
         onPress={() => {}}>
         Xem chi tiết
       </Button>
