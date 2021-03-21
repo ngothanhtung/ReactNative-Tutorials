@@ -1,10 +1,12 @@
 export default {
   WHITE: '#ffffff',
+  WHITE_SMOKE: '#E5E5E5',
   PRIMARY: '#6200EE',
   SLL_PRIMARY: '#31978D',
   SLL_PRIMARY_FONT: '#238181',
   PRIMARY_FONT: '#2c3e50',
   PRIMARY_ICON: '#2c3e50',
+  DARK_BACKGROUND: '#2c3e50',
   BACKGROUND: '#E5E5E5',
   DARK_FONT: '#000000',
   BLACK: '#000000',
@@ -12,6 +14,7 @@ export default {
   LIGHT_GRAY: '#f4f4f8',
   LIGHT_BLACK: '#636e72',
   DARK_BLUE: '#0E4380',
+  LIGHT_RED: '#ef4f4f',
   DARK_RED: '#E80000',
   PRIMARY_BORDER: '#ecf0f1',
 };

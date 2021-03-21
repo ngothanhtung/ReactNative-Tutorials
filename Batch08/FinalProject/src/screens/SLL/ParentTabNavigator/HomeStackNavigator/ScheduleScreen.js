@@ -8,14 +8,14 @@ import colors from '../../../../constants/colors';
 
 const styles = StyleSheet.create({
   dayOfWeek: {
-    fontWeight: '700',
-    fontSize: 20,
+    fontFamily: 'Roboto-Bold',
+    fontSize: 18,
     color: colors.PRIMARY_FONT,
   },
 
   sessionOfDay: {
     margin: 8,
-    fontWeight: '700',
+    fontFamily: 'Roboto-Bold',
     fontSize: 16,
     color: colors.PRIMARY_FONT,
   },
@@ -26,7 +26,78 @@ export default function ScheduleScreen() {
 
   const [schedules, setSchedules] = React.useState([]);
 
-  const dayOfWeeks = ['THỨ 2', 'THỨ 3', 'THỨ 4', 'THỨ 5', 'THỨ 6', 'THỨ 7', 'CN'];
+  const dayOfWeeks = [
+    {
+      id: 'monday',
+      text: '2',
+      sessions: [
+        { id: 'morning', text: 'Sáng' },
+        { id: 'afternoon', text: 'Chiều' },
+        { id: 'evening', text: 'Tối' },
+      ],
+      color: colors.WHITE,
+    },
+    {
+      id: 'tuesday',
+      text: '3',
+      sessions: [
+        { id: 'morning', text: 'Sáng' },
+        { id: 'afternoon', text: 'Chiều' },
+        { id: 'evening', text: 'Tối' },
+      ],
+      color: colors.WHITE,
+    },
+    {
+      id: 'wednesday',
+      text: '4',
+      sessions: [
+        { id: 'morning', text: 'Sáng' },
+        { id: 'afternoon', text: 'Chiều' },
+        { id: 'evening', text: 'Tối' },
+      ],
+      color: colors.WHITE,
+    },
+    {
+      id: 'thursday',
+      text: '5',
+      sessions: [
+        { id: 'morning', text: 'Sáng' },
+        { id: 'afternoon', text: 'Chiều' },
+        { id: 'evening', text: 'Tối' },
+      ],
+      color: colors.WHITE,
+    },
+    {
+      id: 'friday',
+      text: '6',
+      sessions: [
+        { id: 'morning', text: 'Sáng' },
+        { id: 'afternoon', text: 'Chiều' },
+        { id: 'evening', text: 'Tối' },
+      ],
+      color: colors.WHITE,
+    },
+    {
+      id: 'saturday',
+      text: '7',
+      sessions: [
+        { id: 'morning', text: 'Sáng' },
+        { id: 'afternoon', text: 'Chiều' },
+        { id: 'evening', text: 'Tối' },
+      ],
+      color: colors.WHITE,
+    },
+    {
+      id: 'sunday',
+      text: 'CN',
+      sessions: [
+        { id: 'morning', text: 'Sáng' },
+        { id: 'afternoon', text: 'Chiều' },
+        // { id: 'evening', text: 'Tối' },
+      ],
+      color: colors.WHITE,
+    },
+  ];
 
   React.useEffect(() => {
     SLL_Service.getSchedulesOfClass('rlPeLZfhJfZphj5yELDV', '2020-2021')
@@ -45,65 +116,51 @@ export default function ScheduleScreen() {
       <View>
         {dayOfWeeks.map((dw) => {
           return (
-            //  DAY OF WEEK
+            //  DAYS OF WEEK
             <View style={{ flex: 1, flexDirection: 'row', marginBottom: 8, backgroundColor: colors.WHITE }}>
-              {/* DAY OF WEEK */}
-              <View style={{ padding: 8, minWidth: 80, justifyContent: 'center', borderRightWidth: 1, borderRightColor: colors.PRIMARY_BORDER }}>
-                <Text style={styles.dayOfWeek}>{dw}</Text>
+              <View
+                style={{
+                  padding: 10,
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  borderRightWidth: 1,
+                  borderRightColor: colors.PRIMARY_BORDER,
+                }}>
+                <View
+                  style={{
+                    backgroundColor: colors.SLL_PRIMARY,
+                    height: 44,
+                    width: 44,
+                    borderRadius: 24,
+                    justifyContent: 'center',
+                    alignItems: 'center',
+                  }}>
+                  <Text style={[styles.dayOfWeek, { color: dw.color }]}>{dw.text}</Text>
+                </View>
               </View>
+              {/* SESSIONS OF DAY */}
               <View style={{ flex: 1 }}>
-                {/* MORNING */}
-                <View style={{ borderBottomWidth: 1, borderBottomColor: colors.PRIMARY_BORDER }}>
-                  <Text style={styles.sessionOfDay}>Sáng</Text>
-                  {item.monday &&
-                    item.monday.morning &&
-                    item.monday.morning.sessions &&
-                    item.monday.morning.sessions.map((s) => {
-                      return (
-                        <View style={{ flexDirection: 'row', marginLeft: 24, marginVertical: 2 }}>
-                          <Icon name="chevron-right" type="material-community" size={16} color={colors.PRIMARY_ICON} />
-                          <Text style={{ marginLeft: 6, color: colors.PRIMARY_ICON }}>
-                            {s.fromTime} - {s.toTime}
-                          </Text>
-                          <Text style={{ marginLeft: 6, fontWeight: '700', color: colors.PRIMARY_ICON }}>{s.subject}</Text>
-                        </View>
-                      );
-                    })}
-                </View>
-                {/* AFTERNOON */}
-                <View style={{ borderBottomWidth: 1, borderBottomColor: colors.PRIMARY_BORDER }}>
-                  <Text style={styles.sessionOfDay}>Chiều</Text>
-                  {item.monday &&
-                    item.monday.afternoon &&
-                    item.monday.afternoon.sessions &&
-                    item.monday.afternoon.sessions.map((s) => {
-                      return (
-                        <View style={{ flexDirection: 'row' }}>
-                          <Text style={{ marginLeft: 48 }}>
-                            {s.fromTime} - {s.toTime}
-                          </Text>
-                          <Text style={{ marginLeft: 6, fontWeight: '700' }}>{s.subject}</Text>
-                        </View>
-                      );
-                    })}
-                </View>
-                {/* EVENING */}
-                <View>
-                  <Text style={styles.sessionOfDay}>Tối</Text>
-                  {item.monday &&
-                    item.monday.evening &&
-                    item.monday.evening.sessions &&
-                    item.monday.evening.sessions.map((s) => {
-                      return (
-                        <View style={{ flexDirection: 'row' }}>
-                          <Text style={{ marginLeft: 48 }}>
-                            {s.fromTime} - {s.toTime}
-                          </Text>
-                          <Text style={{ marginLeft: 6, fontWeight: '700' }}>{s.subject}</Text>
-                        </View>
-                      );
-                    })}
-                </View>
+                {dw.sessions.map((sod) => {
+                  return (
+                    <View style={{ borderBottomWidth: sod.id === 'evening' ? 0 : 1, borderBottomColor: colors.PRIMARY_BORDER }}>
+                      <Text style={styles.sessionOfDay}>{sod.text}</Text>
+                      {item[dw.id] &&
+                        item[dw.id][sod.id] &&
+                        item[dw.id][sod.id].sessions &&
+                        item[dw.id][sod.id].sessions.map((s) => {
+                          return (
+                            <View style={{ flexDirection: 'row', marginLeft: 16, marginBottom: 3 }}>
+                              <Icon name="chevron-right" type="material-community" size={16} color={colors.PRIMARY_ICON} />
+                              <Text style={{ marginLeft: 2, color: colors.PRIMARY_FONT, fontFamily: 'Roboto-Regular' }}>
+                                {s.fromTime} - {s.toTime}
+                              </Text>
+                              <Text style={{ marginLeft: 6, color: colors.PRIMARY_FONT, fontFamily: 'Roboto-Bold' }}>{s.subject}</Text>
+                            </View>
+                          );
+                        })}
+                    </View>
+                  );
+                })}
               </View>
             </View>
           );
