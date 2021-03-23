@@ -19,7 +19,7 @@ const blocks = [
     id: 'thoi-khoa-bieu',
     title: 'Thời khóa biểu',
     screen: 'SSL_Parent_Home_ScheduleScreen',
-    icon: <Icon name="calendar" size={ICON_SIZE} type="material-community" color={colors.SLL_PRIMARY_FONT} />,
+    icon: <Icon name="calendar-month" size={ICON_SIZE} type="material-community" color={colors.SLL_PRIMARY_FONT} />,
   },
   {
     id: 'vang-nghi',
@@ -29,7 +29,7 @@ const blocks = [
   {
     id: 'hoc-phi',
     title: 'Học phí / Phí',
-    icon: <Icon name="cash-usd-outline" size={ICON_SIZE} type="material-community" color={colors.SLL_PRIMARY_FONT} />,
+    icon: <Icon name="currency-usd" size={ICON_SIZE} type="material-community" color={colors.SLL_PRIMARY_FONT} />,
   },
 
   {
@@ -182,7 +182,7 @@ export default function MainScreen() {
   };
 
   return (
-    <Container showAppbar title="INTERNATIONAL SCHOOL" showBackButton={false} showActionButton actionButton={{ icon: 'dots-vertical' }}>
+    <Container showAppbar title="INTERNATIONAL SCHOOL" subTitle="Trang chủ" showBackButton={false} showActionButton actionButton={{ icon: 'dots-vertical' }}>
       <ScrollView style={{ flex: 1, backgroundColor: '#FAFAFA' }}>
         <View style={{ flex: 1, paddingTop: 12 }}>
           <News />

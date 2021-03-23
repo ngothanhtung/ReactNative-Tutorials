@@ -50,7 +50,7 @@ const Container = ({ ready, title, subTitle, showAppbar, showBackButton, showAct
 Container.defaultProps = {
   style: {},
   title: 'TITLE',
-  subTitle: 'Sub title',
+  subTitle: '',
   showAppbar: false,
   showBackButton: false,
   showMenuButton: false,

@@ -1,4 +1,6 @@
 import * as ActionTypes from '../actions/types';
+
+import { MAIN_CLEAR_CART } from '../../main/actions/types';
 import { put, takeLatest } from 'redux-saga/effects';
 
 import AuthService from '../../../services/AuthService';
@@ -63,6 +65,11 @@ function* autoSignIn(action) {
 function* signOut() {
   try {
     yield AuthService.signOut();
+
+    // EMPTY SHOPPING CART
+    yield put({
+      type: MAIN_CLEAR_CART,
+    });
 
     yield put({
       type: ActionTypes.AUTH_SIGNOUT_SUCCESS,

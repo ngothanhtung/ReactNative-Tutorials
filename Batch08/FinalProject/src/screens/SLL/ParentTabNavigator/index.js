@@ -33,7 +33,8 @@ const TabNavigator = () => {
         options={{
           tabBarLabel: <Text style={{ fontFamily: 'Roboto-Medium', textAlign: 'center' }}>Trang chủ</Text>,
           tabBarIcon: ({ focused, color }) => {
-            return <Icon name="home" size={24} style={{ color }} />;
+            let iconName = focused ? 'home' : 'home-outline';
+            return <Icon name={iconName} size={24} style={{ color }} />;
           },
         }}
       />
@@ -46,7 +47,8 @@ const TabNavigator = () => {
         options={{
           tabBarLabel: <Text style={{ fontFamily: 'Roboto-Medium', textAlign: 'center' }}>Sổ điểm</Text>,
           tabBarIcon: ({ focused, color }) => {
-            return <Icon name="book-open" size={24} style={{ color }} />;
+            let iconName = focused ? 'clipboard-list' : 'clipboard-list-outline';
+            return <Icon name={iconName} size={24} style={{ color }} />;
           },
         }}
       />
@@ -60,7 +62,8 @@ const TabNavigator = () => {
           tabBarLabel: <Text style={{ fontFamily: 'Roboto-Medium', textAlign: 'center' }}>Thông báo</Text>,
           tabBarBadge: 9,
           tabBarIcon: ({ focused, color }) => {
-            return <Icon name="bell" size={24} style={{ color }} />;
+            let iconName = focused ? 'bell' : 'bell-outline';
+            return <Icon name={iconName} size={24} style={{ color }} />;
           },
         }}
       />
@@ -73,7 +76,8 @@ const TabNavigator = () => {
         options={{
           tabBarLabel: <Text style={{ fontFamily: 'Roboto-Medium', textAlign: 'center' }}>Sức khỏe</Text>,
           tabBarIcon: ({ focused, color }) => {
-            return <Icon name="heart-pulse" size={24} style={{ color }} />;
+            let iconName = focused ? 'clipboard-pulse' : 'clipboard-pulse-outline';
+            return <Icon name={iconName} size={24} style={{ color }} />;
           },
         }}
       />
@@ -86,7 +90,8 @@ const TabNavigator = () => {
         options={{
           tabBarLabel: <Text style={{ fontFamily: 'Roboto-Medium', textAlign: 'center' }}>Tài khoản</Text>,
           tabBarIcon: ({ focused, color }) => {
-            return <Icon name="account" size={24} style={{ color }} />;
+            let iconName = focused ? 'account' : 'account-outline';
+            return <Icon name={iconName} size={24} style={{ color }} />;
           },
         }}
       />
