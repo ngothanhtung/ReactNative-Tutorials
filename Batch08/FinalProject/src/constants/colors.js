@@ -7,7 +7,7 @@ export default {
   PRIMARY_FONT: '#2c3e50',
   PRIMARY_ICON: '#2c3e50',
   DARK_BACKGROUND: '#2c3e50',
-  BACKGROUND: '#E5E5E5',
+  BACKGROUND: '#FAFAFA',
   DARK_FONT: '#000000',
   BLACK: '#000000',
   DARK_GRAY: '#95a5a6',

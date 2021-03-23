@@ -36,7 +36,10 @@ const WelcomeScreen = ({ navigation }) => {
             mode="contained"
             contentStyle={{ height: 48, flexDirection: 'row-reverse', justifyContent: 'center' }}
             style={{ elevation: 0 }}
-            icon="chevron-right">
+            icon="chevron-right"
+            onPress={() => {
+              navigation.navigate('SignInScreen');
+            }}>
             Get Started
           </Button>
         </View>

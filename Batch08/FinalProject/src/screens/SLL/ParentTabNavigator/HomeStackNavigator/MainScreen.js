@@ -182,7 +182,7 @@ export default function MainScreen() {
   };
 
   return (
-    <Container showAppbar title="INTERNATIONAL SCHOOL" subTitle="Trang chủ" showBackButton={false} showActionButton actionButton={{ icon: 'dots-vertical' }}>
+    <Container showAppbar title="INTERNATIONAL SCHOOL" subTitle="Trang chủ" showBackButton={false} showActionButton>
       <ScrollView style={{ flex: 1, backgroundColor: '#FAFAFA' }}>
         <View style={{ flex: 1, paddingTop: 12 }}>
           <News />

@@ -14,7 +14,7 @@ const Container = ({ ready, title, subTitle, showAppbar, showBackButton, showAct
   // const route = useRoute();
   // console.log(route);
   return (
-    <View flex={1} style={{ backgroundColor: colors.SLL_PRIMARY }}>
+    <View flex={1} style={{ backgroundColor: colors.BACKGROUND }}>
       {showAppbar && (
         <Appbar.Header dark>
           {showBackButton && (
@@ -54,6 +54,9 @@ Container.defaultProps = {
   showAppbar: false,
   showBackButton: false,
   showMenuButton: false,
+  actionButton: {
+    icon: 'dots-vertical',
+  },
   ready: true,
   children: null,
 };
@@ -64,6 +67,9 @@ Container.propTypes = {
   subTitle: propTypes.string,
   showAppbar: propTypes.bool,
   showActionButton: propTypes.bool,
+  actionButton: propTypes.shape({
+    icon: propTypes.string,
+  }),
   style: propTypes.oneOfType([propTypes.object, propTypes.array]),
   children: propTypes.instanceOf(Object),
 };
