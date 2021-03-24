@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, Image } from 'react-native';
+
+import { MaterialCommunityIcons as Icon } from '@expo/vector-icons';
 
 const styles = StyleSheet.create({
   container: {
@@ -10,31 +12,33 @@ const styles = StyleSheet.create({
   logoContainer: {
     justifyContent: 'flex-end',
     alignItems: 'center',
-    backgroundColor: 'yellow',
-    flex: 1,
+    backgroundColor: '#bdc3c7',
+    flex: 2,
   },
 
   logo: {
     height: 160,
     width: 160,
     backgroundColor: 'white',
+    borderRadius: 80,
   },
 
   inputContainer: {
-    backgroundColor: 'pink',
-    flex: 2,
+    backgroundColor: '#bdc3c7',
+    flex: 3,
+    padding: 16,
   },
 
   emailContainer: {
     height: 60,
-    backgroundColor: 'green',
+    // backgroundColor: 'green',
     marginTop: 12,
     flexDirection: 'row',
   },
 
   passwordContainer: {
     height: 60,
-    backgroundColor: 'green',
+    // backgroundColor: 'green',
     marginTop: 12,
     flexDirection: 'row',
   },
@@ -42,23 +46,40 @@ const styles = StyleSheet.create({
   icon: {
     width: 60,
     height: 60,
+    borderTopLeftRadius: 8,
+    borderBottomLeftRadius: 8,
     backgroundColor: 'white',
+    justifyContent: 'center',
+    alignItems: 'center',
   },
 
   input: {
     height: 60,
     flex: 1,
-    backgroundColor: 'gray',
+    backgroundColor: 'white',
+    justifyContent: 'center',
+    borderTopRightRadius: 8,
+    borderBottomRightRadius: 8,
+  },
+
+  forgotPasswordContainer: {
+    marginTop: 12,
+    alignItems: 'flex-end',
+  },
+  forgotPasswordText: {
+    color: '#2980b9',
   },
 
   footerContainer: {
-    backgroundColor: 'violet',
+    backgroundColor: '#bdc3c7',
     // flex: 1,
     height: 120,
+    padding: 16,
   },
 
   loginButton: {
     height: 54,
+    borderRadius: 8,
     backgroundColor: 'orange',
     justifyContent: 'center',
     alignItems: 'center',
@@ -68,6 +89,14 @@ const styles = StyleSheet.create({
     fontSize: 18,
     fontWeight: '700',
   },
+
+  signUpContainer: {
+    marginTop: 12,
+    alignItems: 'center',
+  },
+  signUpText: {
+    color: '#2980b9',
+  },
 });
 
 export default class Login extends Component {
@@ -76,18 +105,29 @@ export default class Login extends Component {
       <View style={styles.container}>
         {/* LOGO */}
         <View style={styles.logoContainer}>
-          <View style={styles.logo}></View>
+          <Image style={styles.logo} source={{ uri: 'https://randomuser.me/api/portraits/women/44.jpg' }} />
         </View>
 
         {/* INPUT */}
         <View style={styles.inputContainer}>
           <View style={styles.emailContainer}>
-            <View style={styles.icon}></View>
-            <View style={styles.input}></View>
+            <View style={styles.icon}>
+              <Icon name='email-outline' size={32} color='#7f8c8d' />
+            </View>
+            <View style={styles.input}>
+              <Text>Enter your email</Text>
+            </View>
           </View>
           <View style={styles.passwordContainer}>
-            <View style={styles.icon}></View>
-            <View style={styles.input}></View>
+            <View style={styles.icon}>
+              <Icon name='lock-outline' size={32} color='#7f8c8d' />
+            </View>
+            <View style={styles.input}>
+              <Text>Enter your password</Text>
+            </View>
+          </View>
+          <View style={styles.forgotPasswordContainer}>
+            <Text style={styles.forgotPasswordText}>Forgot password?</Text>
           </View>
         </View>
 
@@ -95,6 +135,10 @@ export default class Login extends Component {
         <View style={styles.footerContainer}>
           <View style={styles.loginButton}>
             <Text style={styles.loginText}>LOGIN</Text>
+          </View>
+
+          <View style={styles.signUpContainer}>
+            <Text style={styles.signUpText}>Haven't account? Sign up</Text>
           </View>
         </View>
       </View>
