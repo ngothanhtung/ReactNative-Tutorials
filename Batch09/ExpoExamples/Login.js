@@ -90,6 +90,15 @@ const styles = StyleSheet.create({
     fontWeight: '700',
   },
 
+  loginFacebookButton: {
+    flexDirection: 'row',
+    height: 54,
+    borderRadius: 8,
+    backgroundColor: '#0064C0',
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+
   signUpContainer: {
     marginTop: 12,
     alignItems: 'center',
@@ -129,6 +138,16 @@ export default class Login extends Component {
           <View style={styles.forgotPasswordContainer}>
             <Text style={styles.forgotPasswordText}>Forgot password?</Text>
           </View>
+
+          {/* <View style={styles.loginFacebookButton}>
+            <View>
+              <Icon name='facebook' size={24} color='white' />
+            </View>
+            <View width={8} />
+            <View>
+              <Text style={styles.loginText}>LOGIN</Text>
+            </View>
+          </View> */}
         </View>
 
         {/* FOOTER */}
