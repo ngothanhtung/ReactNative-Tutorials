@@ -2,6 +2,9 @@ import React from 'react';
 import _ from 'lodash';
 import auth from '@react-native-firebase/auth';
 
+import { StatusBar } from 'react-native';
+import { useTheme } from 'react-native-paper';
+
 import { useSelector, useDispatch } from 'react-redux';
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
@@ -12,7 +15,7 @@ import UserTabNavigator from './UserTabNavigator';
 import WorkerTabNavigator from './WorkerTabNavigator';
 
 // SLL
-import SLL_Parent_TabNavigator from './SLL/ParentTabNavigator';
+// import SLL_Parent_TabNavigator from './SLL/ParentTabNavigator';
 import SLL_Parent_DrawerNavigator from './SLL/ParentDrawerNavigator';
 
 import * as routes from '../routes';
@@ -28,7 +31,6 @@ const AuthenticationStackNavigator = () => {
 
   // Handle user state changes
   const onAuthStateChanged = (user) => {
-    console.log('User: ', user);
     if (user) {
       dispatch(autoSignInAction(user._user));
     }
@@ -69,9 +71,11 @@ const AuthenticationStackNavigator = () => {
 
 const AppNavigator = () => {
   useOneSignal();
+  const { colors: themeColors } = useTheme();
 
   return (
     <NavigationContainer>
+      <StatusBar backgroundColor={themeColors.primary} barStyle="light-content" />
       <AuthenticationStackNavigator />
     </NavigationContainer>
   );

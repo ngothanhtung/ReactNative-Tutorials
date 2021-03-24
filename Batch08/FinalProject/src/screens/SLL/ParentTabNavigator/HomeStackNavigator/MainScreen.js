@@ -3,7 +3,7 @@
 import React, { Fragment } from 'react';
 import { View, Text, FlatList } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
-import { Button, Surface, Title, Paragraph, TouchableRipple } from 'react-native-paper';
+import { Button, Surface, Title, Paragraph, TouchableRipple, useTheme } from 'react-native-paper';
 import { Icon, Image } from 'react-native-elements';
 import Container from '../../../../components/Container';
 import colors from '../../../../constants/colors';
@@ -19,35 +19,35 @@ const blocks = [
     id: 'thoi-khoa-bieu',
     title: 'Thời khóa biểu',
     screen: 'SSL_Parent_Home_ScheduleScreen',
-    icon: <Icon name="calendar-month" size={ICON_SIZE} type="material-community" color={colors.SLL_PRIMARY_FONT} />,
+    icon: 'calendar-month',
   },
   {
     id: 'vang-nghi',
     title: 'Vắng nghỉ',
-    icon: <Icon name="calendar-check" size={ICON_SIZE} type="material-community" color={colors.SLL_PRIMARY_FONT} />,
+    icon: 'calendar-check',
   },
   {
     id: 'hoc-phi',
     title: 'Học phí / Phí',
-    icon: <Icon name="currency-usd" size={ICON_SIZE} type="material-community" color={colors.SLL_PRIMARY_FONT} />,
+    icon: 'currency-usd',
   },
 
   {
     id: 'dang-ky-dich-vu',
     title: 'Đăng ký dịch vụ',
-    icon: <Icon name="apps" size={ICON_SIZE} type="material-community" color={colors.SLL_PRIMARY_FONT} />,
+    icon: 'apps',
   },
 
   {
     id: 'thu-vien-anh',
     title: 'Thư viện ảnh / video',
-    icon: <Icon name="image-outline" size={ICON_SIZE} type="material-community" color={colors.SLL_PRIMARY_FONT} />,
+    icon: 'image-outline',
   },
 
   {
     id: 'gop-y',
     title: 'Góp ý',
-    icon: <Icon name="message-text-outline" size={ICON_SIZE} type="material-community" color={colors.SLL_PRIMARY_FONT} />,
+    icon: 'message-text-outline',
   },
 ];
 
@@ -55,6 +55,7 @@ const blocks = [
 // BLOCK COMPONENT
 // ---------------------------------------------------------------------------------------------------
 const Block = ({ item, index }) => {
+  const { colors: themeColors } = useTheme();
   const navigation = useNavigation();
   return (
     <Surface
@@ -73,14 +74,14 @@ const Block = ({ item, index }) => {
       <TouchableRipple
         style={{ flex: 1, justifyContent: 'center', alignItems: 'center', borderRadius: 12 }}
         borderless={true}
-        rippleColor={colors.SLL_PRIMARY}
+        rippleColor={themeColors.primary}
         onPress={() => {
           navigation.navigate(item.screen);
         }}>
         <React.Fragment>
-          <View>{item.icon}</View>
+          <Icon name={item.icon} size={ICON_SIZE} type="material-community" color={themeColors.primary} />
           <View style={{ marginTop: 4 }}>
-            <Text style={{ fontFamily: 'Roboto-Medium', color: colors.SLL_PRIMARY_FONT }}>{item.title}</Text>
+            <Text style={{ fontFamily: 'Roboto-Medium', color: themeColors.primary }}>{item.title}</Text>
           </View>
         </React.Fragment>
       </TouchableRipple>
@@ -92,6 +93,7 @@ const Block = ({ item, index }) => {
 // NEWS COMPONENT
 // ---------------------------------------------------------------------------------------------------
 const News = () => {
+  const { colors: themeColors } = useTheme();
   const Dot = ({ size = 12, mode = 'contained' }) => {
     return (
       <View
@@ -100,9 +102,9 @@ const News = () => {
           height: size,
           width: size,
           borderRadius: size / 2,
-          backgroundColor: mode === 'contained' ? colors.SLL_PRIMARY : colors.WHITE,
+          backgroundColor: mode === 'contained' ? themeColors.primary : colors.WHITE,
           borderWidth: 1,
-          borderColor: colors.SLL_PRIMARY,
+          borderColor: themeColors.primary,
         }}
       />
     );
@@ -143,6 +145,8 @@ const News = () => {
 // NOTIFICATION COMPONENT
 // ---------------------------------------------------------------------------------------------------
 const Notifications = () => {
+  const { colors: themeColors } = useTheme();
+
   const NotificationItem = ({ text }) => {
     return (
       <View style={{ flexDirection: 'row' }}>
@@ -155,7 +159,7 @@ const Notifications = () => {
   return (
     <View style={{ minHeight: 64, paddingHorizontal: 12, marginTop: 12 }}>
       <TouchableRipple borderless rippleColor={colors.WHITE} onPress={() => {}} style={{ borderRadius: 12 }}>
-        <View style={{ flex: 1, borderRadius: 12, paddingHorizontal: 12, paddingVertical: 16, flexDirection: 'row', backgroundColor: colors.SLL_PRIMARY }}>
+        <View style={{ flex: 1, borderRadius: 12, paddingHorizontal: 12, paddingVertical: 16, flexDirection: 'row', backgroundColor: themeColors.primary }}>
           <View style={{ justifyContent: 'center' }}>
             <Icon name="bell-ring-outline" type="material-community" size={32} color={colors.WHITE} />
           </View>

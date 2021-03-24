@@ -1,6 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import { View, Text, FlatList, StyleSheet } from 'react-native';
+import { useTheme } from 'react-native-paper';
 import { Icon } from 'react-native-elements';
 import SLL_Service from '../../../../services/SLL_Service';
 import Container from '../../../../components/Container';
@@ -89,7 +90,7 @@ const dayOfWeeks = [
     sessions: [
       { id: 'morning', text: 'Sáng' },
       { id: 'afternoon', text: 'Chiều' },
-      // { id: 'evening', text: 'Tối' },
+      { id: 'evening', text: 'Tối' },
     ],
     color: colors.WHITE,
   },
@@ -99,6 +100,8 @@ export default function ScheduleScreen() {
   const [loading, setLoading] = React.useState(true);
   const [schedules, setSchedules] = React.useState([]);
   const [refresh, setRefresh] = React.useState(0);
+
+  const { colors: themeColors } = useTheme();
 
   React.useEffect(() => {
     SLL_Service.getSchedulesOfClass('rlPeLZfhJfZphj5yELDV', '2020-2021')
@@ -118,18 +121,19 @@ export default function ScheduleScreen() {
         {dayOfWeeks.map((dw) => {
           return (
             //  DAYS OF WEEK
-            <View style={{ flex: 1, flexDirection: 'row', marginBottom: 6, backgroundColor: colors.WHITE }}>
+            <View key={dw.id} style={{ flex: 1, flexDirection: 'row', marginBottom: 6, backgroundColor: colors.WHITE }}>
               <View
                 style={{
                   padding: 10,
                   justifyContent: 'center',
                   alignItems: 'center',
-                  borderRightWidth: 1,
-                  borderRightColor: colors.PRIMARY_BORDER,
+                  borderWidth: 1,
+                  borderColor: colors.PRIMARY_BORDER,
+                  borderLeftWidth: 0,
                 }}>
                 <View
                   style={{
-                    backgroundColor: colors.SLL_PRIMARY,
+                    backgroundColor: themeColors.primary,
                     height: 44,
                     width: 44,
                     borderRadius: 24,
@@ -143,14 +147,21 @@ export default function ScheduleScreen() {
               <View style={{ flex: 1 }}>
                 {dw.sessions.map((sod) => {
                   return (
-                    <View style={{ borderBottomWidth: sod.id === 'evening' ? 0 : 1, borderBottomColor: colors.PRIMARY_BORDER }}>
+                    <View
+                      key={sod.id}
+                      style={{
+                        borderWidth: 0,
+                        borderTopWidth: sod.id !== 'evening' ? 1 : 0,
+                        borderBottomWidth: sod.id !== 'morning' ? 1 : 0,
+                        borderColor: colors.PRIMARY_BORDER,
+                      }}>
                       <Text style={styles.sessionOfDay}>{sod.text}</Text>
                       {item[dw.id] &&
                         item[dw.id][sod.id] &&
                         item[dw.id][sod.id].sessions &&
-                        item[dw.id][sod.id].sessions.map((s) => {
+                        item[dw.id][sod.id].sessions.map((s, index) => {
                           return (
-                            <View style={{ flexDirection: 'row', marginLeft: 16, marginBottom: 3 }}>
+                            <View key={'session-' + index} style={{ flexDirection: 'row', marginLeft: 16, marginBottom: 3 }}>
                               <Icon name="chevron-right" type="material-community" size={16} color={colors.PRIMARY_ICON} />
                               <Text style={{ marginLeft: 2, color: colors.PRIMARY_FONT, fontFamily: 'Roboto-Regular' }}>
                                 {s.fromTime} - {s.toTime}

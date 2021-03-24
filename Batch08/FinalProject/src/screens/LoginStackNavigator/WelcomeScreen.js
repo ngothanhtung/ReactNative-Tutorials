@@ -1,7 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
-import { Button, Title } from 'react-native-paper';
+import { Button, Title, useTheme } from 'react-native-paper';
 import { Icon } from 'react-native-elements';
 import { SvgXml } from 'react-native-svg';
 import Swiper from 'react-native-swiper';
@@ -68,20 +68,31 @@ const Screen = ({ navigation, text, xml }) => (
 );
 
 const WelcomeScreen = ({ navigation }) => {
+  const { colors: themeColors } = useTheme();
+
   return (
     <Container>
       <Swiper
         loop={false}
         showsButtons={true}
         showsPagination={true}
-        nextButton={<Icon name="chevron-right" color={colors.SLL_PRIMARY_FONT} size={32} />}
-        prevButton={<Icon name="chevron-left" color={colors.SLL_PRIMARY_FONT} size={32} />}
+        nextButton={<Icon name="chevron-right" color={themeColors.primary} size={32} />}
+        prevButton={<Icon name="chevron-left" color={themeColors.primary} size={32} />}
         dot={
           <View
-            style={{ backgroundColor: 'rgba(0,0,0,.2)', width: 8, height: 8, borderRadius: 4, marginLeft: 3, marginRight: 3, marginTop: -120, marginBottom: 3 }}
+            style={{
+              backgroundColor: colors.DARK_GRAY,
+              width: 8,
+              height: 8,
+              borderRadius: 4,
+              marginLeft: 3,
+              marginRight: 3,
+              marginTop: -120,
+              marginBottom: 3,
+            }}
           />
         }
-        activeDotStyle={{ backgroundColor: colors.SLL_PRIMARY, marginTop: -120 }}>
+        activeDotStyle={{ backgroundColor: themeColors.primary, marginTop: -120 }}>
         {screens.map((s) => (
           <Screen key={s.id} navigation={navigation} text={s.text} xml={s.xml} />
         ))}
