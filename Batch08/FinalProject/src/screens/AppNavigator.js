@@ -1,4 +1,5 @@
 import React from 'react';
+import _ from 'lodash';
 import auth from '@react-native-firebase/auth';
 
 import { useSelector, useDispatch } from 'react-redux';
@@ -27,6 +28,7 @@ const AuthenticationStackNavigator = () => {
 
   // Handle user state changes
   const onAuthStateChanged = (user) => {
+    console.log('User: ', user);
     if (user) {
       dispatch(autoSignInAction(user._user));
     }
@@ -45,7 +47,7 @@ const AuthenticationStackNavigator = () => {
     );
   }
 
-  if (signedInUser && signedInUser.parent) {
+  if (signedInUser && signedInUser.profile.applicationName === 'SLL' && signedInUser.profile.roles && _.indexOf(signedInUser.profile.roles, 'parent') >= 0) {
     return (
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="SLL_Parent_DrawerNavigator" component={SLL_Parent_DrawerNavigator} />
