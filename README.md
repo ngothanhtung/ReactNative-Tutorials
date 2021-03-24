@@ -29,12 +29,14 @@
 
 ## C.1. Main Concepts:
 
-1.  Create a React application: ReactExamples
+1.  Create a React application: reactexamples
+
+    > Tại của số terminal hoặc command line, gõ
 
 ```
-    npx create-react-app ReactExamples
+    npx create-react-app reactexamples
 
-    cd ReactExamples
+    cd reactexamples
 
     npm run start hoặc yarn start
 ```
@@ -63,6 +65,53 @@
 10. Refs and the DOM
 
 # Session 01: Setup React Native
+
+## 1.1 EXPO-CLI
+
+> Tham khảo: https://reactnative.dev/docs/environment-setup
+
+> Tham khảo: https://docs.expo.io/get-started/installation/
+
+**1. Cài đặt công cụ expo-cli**:
+
+> Tại của sổ terminal hoặc bash, gõ:
+
+```
+npm install -g expo-cli
+```
+
+hoặc
+
+```
+yarn global add expo-cli
+```
+
+**2. Tạo mới 1 project**:
+
+> Tại của sổ terminal hoặc bash, gõ (chọn blank):
+
+```
+expo init AwesomeProject
+
+cd AwesomeProject
+npm start # you can also use: expo start
+```
+
+> hoặc
+
+```
+expo init AwesomeProject
+
+cd AwesomeProject
+yarn start # you can also use: expo start
+```
+
+**3. Chạy ứng dụng React Native trên Expo Client**
+
+- 🤖 [Android Play Store](https://play.google.com/store/apps/details?id=host.exp.exponent) - Android Lollipop (5) and greater.
+- 🍎 [iOS App Store](https://itunes.com/apps/exponent) - iOS 10 and greater.
+
+## 1.2 REACT NATIVE CLI
 
 1. https://reactnative.dev/
 2. https://reactnative.dev/docs/getting-started
