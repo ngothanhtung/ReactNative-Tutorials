@@ -14,6 +14,8 @@ import LoginStackNavigator from './LoginStackNavigator';
 import UserTabNavigator from './UserTabNavigator';
 import WorkerTabNavigator from './WorkerTabNavigator';
 
+// SHOP
+import SHOP_User_TabNavigator from './SHOP/UserTabNavigator';
 // SLL
 // import SLL_Parent_TabNavigator from './SLL/ParentTabNavigator';
 import SLL_Parent_DrawerNavigator from './SLL/ParentDrawerNavigator';
@@ -49,11 +51,34 @@ const AuthenticationStackNavigator = () => {
     );
   }
 
+  // SHOP
+  if (signedInUser && signedInUser.profile.applicationName === 'SHOP' && signedInUser.profile.roles && _.indexOf(signedInUser.profile.roles, 'user') >= 0) {
+    return (
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name={routes.USER_TAB_NAVIGATOR} component={SHOP_User_TabNavigator} />
+      </Stack.Navigator>
+    );
+  }
+  // SLL
   if (signedInUser && signedInUser.profile.applicationName === 'SLL' && signedInUser.profile.roles && _.indexOf(signedInUser.profile.roles, 'parent') >= 0) {
     return (
       <Stack.Navigator screenOptions={{ headerShown: false }}>
         <Stack.Screen name="SLL_Parent_DrawerNavigator" component={SLL_Parent_DrawerNavigator} />
         {/* <Stack.Screen name="SLL_Parent_TabNavigator" component={SLL_Parent_TabNavigator} /> */}
+      </Stack.Navigator>
+    );
+  }
+
+  // FLASHCARD
+  if (
+    signedInUser &&
+    signedInUser.profile.applicationName === 'FLASHCARD' &&
+    signedInUser.profile.roles &&
+    _.indexOf(signedInUser.profile.roles, 'user') >= 0
+  ) {
+    return (
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name={routes.USER_TAB_NAVIGATOR} component={UserTabNavigator} />
       </Stack.Navigator>
     );
   }
