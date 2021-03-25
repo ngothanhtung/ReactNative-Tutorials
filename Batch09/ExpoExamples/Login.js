@@ -142,7 +142,7 @@ export default class Login extends Component {
             <Text style={styles.forgotPasswordText}>Forgot password?</Text>
           </View>
 
-          {/* <View style={styles.loginFacebookButton}>
+          <View style={styles.loginFacebookButton}>
             <View>
               <Icon name='facebook' size={24} color='white' />
             </View>
@@ -150,7 +150,7 @@ export default class Login extends Component {
             <View>
               <Text style={styles.loginText}>LOGIN</Text>
             </View>
-          </View> */}
+          </View>
         </View>
 
         {/* FOOTER */}
