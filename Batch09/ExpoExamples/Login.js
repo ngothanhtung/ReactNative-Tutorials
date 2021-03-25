@@ -6,38 +6,37 @@ import { MaterialCommunityIcons as Icon } from '@expo/vector-icons';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'green',
+    backgroundColor: '#F4F4F8',
   },
 
   logoContainer: {
     justifyContent: 'flex-end',
     alignItems: 'center',
-    backgroundColor: '#bdc3c7',
-    flex: 2,
+    backgroundColor: '#F4F4F8',
+    flex: 1.5,
+    // marginBottom: 24,
   },
 
   logo: {
-    height: 160,
-    width: 160,
-    backgroundColor: 'white',
-    borderRadius: 80,
+    height: 90,
+    width: 286,
+    // backgroundColor: 'white',
+    // borderRadius: 80,
   },
 
   inputContainer: {
-    backgroundColor: '#bdc3c7',
+    backgroundColor: '#F4F4F8',
     flex: 3,
     padding: 16,
   },
 
   emailContainer: {
-    height: 60,
     // backgroundColor: 'green',
     marginTop: 12,
     flexDirection: 'row',
   },
 
   passwordContainer: {
-    height: 60,
     // backgroundColor: 'green',
     marginTop: 12,
     flexDirection: 'row',
@@ -71,7 +70,7 @@ const styles = StyleSheet.create({
   },
 
   footerContainer: {
-    backgroundColor: '#bdc3c7',
+    backgroundColor: '#F4F4F8',
     // flex: 1,
     height: 120,
     padding: 16,
@@ -114,7 +113,11 @@ export default class Login extends Component {
       <View style={styles.container}>
         {/* LOGO */}
         <View style={styles.logoContainer}>
-          <Image style={styles.logo} source={{ uri: 'https://randomuser.me/api/portraits/women/44.jpg' }} />
+          {/* LOAD REMOTE IMAGE */}
+          {/* <Image style={styles.logo} source={{ uri: 'https://randomuser.me/api/portraits/women/44.jpg' }} /> */}
+
+          {/* LOAD LOCAL IMAGE */}
+          <Image style={styles.logo} source={require('./assets/logo-eatme.png')} />
         </View>
 
         {/* INPUT */}
