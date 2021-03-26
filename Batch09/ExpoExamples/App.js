@@ -5,6 +5,7 @@ import * as Font from 'expo-font';
 
 import Login from './Login';
 import Eatme_Login from './Eatme/Login';
+import LoginScreen from './Eatme/LoginScreen';
 
 export default class App extends Component {
   constructor(props) {
@@ -30,7 +31,7 @@ export default class App extends Component {
 
   render() {
     if (this.state.fontsLoaded) {
-      return <Eatme_Login />;
+      return <LoginScreen />;
     } else {
       return null;
     }

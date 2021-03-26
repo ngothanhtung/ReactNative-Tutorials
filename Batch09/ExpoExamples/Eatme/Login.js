@@ -6,7 +6,7 @@ import { Ionicons } from '@expo/vector-icons';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#FFFFFF',
+    backgroundColor: '#FFFFFf',
   },
 
   logoContainer: {
