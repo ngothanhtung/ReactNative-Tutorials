@@ -3,12 +3,11 @@ import { Text, View, Switch, StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   container: {
-    marginHorizontal: 12,
     flexDirection: 'row',
     alignItems: 'center',
   },
   saveMeText: {
-    marginLeft: 8,
+    marginLeft: 4,
     fontFamily: 'SVN-Gilroy-Regular',
     color: '#898B9A',
   },

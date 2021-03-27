@@ -5,8 +5,6 @@ import { Ionicons as Icon } from '@expo/vector-icons';
 const styles = StyleSheet.create({
   loginButton: {
     flexDirection: 'row',
-    marginHorizontal: 12,
-    marginTop: 12,
     height: 56,
     borderRadius: 8,
     justifyContent: 'center',
@@ -24,7 +22,7 @@ const styles = StyleSheet.create({
 export default class Button extends Component {
   render() {
     return (
-      <View style={[styles.loginButton, { backgroundColor: this.props.color }]}>
+      <View style={[styles.loginButton, this.props.style]}>
         {this.props.icon}
         {this.props.image}
         <Text style={[styles.loginText, { color: this.props.titleColor }]}>{this.props.title}</Text>

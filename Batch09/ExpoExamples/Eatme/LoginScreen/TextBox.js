@@ -4,7 +4,7 @@ import { MaterialCommunityIcons as Icon } from '@expo/vector-icons';
 
 const styles = StyleSheet.create({
   container: {
-    margin: 12,
+    marginBottom: 16,
   },
 
   labelText: {
@@ -24,9 +24,9 @@ const styles = StyleSheet.create({
   inputContainer: {
     height: 56,
     borderRadius: 12,
-    backgroundColor: '#E4E4E4',
+    backgroundColor: '#F5F5F8',
     paddingHorizontal: 24,
-    marginTop: 12,
+    marginTop: 9,
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',

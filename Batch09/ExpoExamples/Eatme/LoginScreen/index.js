@@ -12,28 +12,36 @@ import Button from './Button';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginHorizontal: 8,
+    marginHorizontal: 24,
     backgroundColor: 'white',
   },
 
   logoContainer: {
-    flex: 1,
+    marginTop: 48,
     // backgroundColor: 'yellow',
-    justifyContent: 'flex-end',
   },
+
   headerContainer: {
-    height: 60,
+    height: 64,
+    marginTop: 40,
     // backgroundColor: '#2ecc71',
-    marginTop: 24,
   },
+
   inputContainer: {
+    marginTop: 40,
     flex: 3,
     backgroundColor: 'white',
   },
 
+  signupContainer: {
+    marginTop: 24,
+    justifyContent: 'center',
+    flexDirection: 'row',
+  },
+
   footerContainer: {
-    flex: 0,
     // backgroundColor: '#9b59b6',
+    marginVertical: 12,
   },
 });
 
@@ -51,7 +59,7 @@ export default class LoginScreen extends Component {
 
         {/* Begin: HEADER */}
         <View style={styles.headerContainer}>
-          <Header title="Let's You Sign In" subTitle="Welcome back, you've been missed" />
+          <Header title="Let's Sign You In" subTitle="Welcome back, you've been missed!" />
         </View>
         {/* End: HEADER */}
 
@@ -64,12 +72,18 @@ export default class LoginScreen extends Component {
 
           {/* SAVE ME & FORGOT PASSWORD */}
           <View flexDirection='row' alignItems='center' justifyContent='space-between'>
-            <SwitchButton title='Remember me' />
-            <GilroyText>Forgot password?</GilroyText>
+            <SwitchButton title='Save me' />
+            <GilroyText>Forgot Password?</GilroyText>
           </View>
-          <View height={12} />
+          <View height={32} />
           {/* LOGIN BUTTON */}
-          <Button color='#FF6C44' titleColor='white' title='Sign In' />
+          <Button style={{ backgroundColor: '#FF6C44' }} titleColor='white' title='Sign In' />
+
+          {/* SIGNUP */}
+          <View style={styles.signupContainer}>
+            <GilroyText style={{ fontSize: 16 }}>Don't have an account?</GilroyText>
+            <GilroyText style={{ fontSize: 16, color: '#FF6C44', fontFamily: 'SVN-Gilroy-SemiBold', marginLeft: 4 }}>Sign Up</GilroyText>
+          </View>
         </View>
         {/* End: INPUT */}
 
@@ -78,10 +92,10 @@ export default class LoginScreen extends Component {
         {/* Begin: FOOTER */}
         <View style={styles.footerContainer}>
           {/* FACEBOOK LOGIN */}
-          <Button color='#0064C0' titleColor='white' title='Continue With Facebook' icon={<Icon name='logo-facebook' size={18} color='white' />} />
-
+          <Button style={{ backgroundColor: '#0064C0', height: 50 }} titleColor='white' title='Continue With Facebook' icon={<Icon name='logo-facebook' size={18} color='white' />} />
+          <View height={16} />
           {/* GOOGLE LOGIN */}
-          <Button color='#F5F5F8' titleColor='#898B9A' title='Continue With Google' image={<Image style={{ height: 16, width: 16 }} source={require('../../assets/google-icon.png')} />} />
+          <Button style={{ backgroundColor: '#F5F5F8', height: 50 }} titleColor='#898B9A' title='Continue With Google' image={<Image style={{ height: 16, width: 16 }} source={require('../../assets/google-icon.png')} />} />
         </View>
         {/* End: FOOTER */}
       </SafeAreaView>

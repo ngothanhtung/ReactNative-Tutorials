@@ -12,6 +12,7 @@ const styles = StyleSheet.create({
     color: '#111A2C',
     fontFamily: 'SVN-Gilroy-Bold',
   },
+
   subTitleText: {
     marginTop: 8,
     fontSize: 14,
