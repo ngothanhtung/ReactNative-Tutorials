@@ -111,7 +111,7 @@ yarn start # you can also use: expo start
 - 🤖 [Android Play Store](https://play.google.com/store/apps/details?id=host.exp.exponent) - Android Lollipop (5) and greater.
 - 🍎 [iOS App Store](https://itunes.com/apps/exponent) - iOS 10 and greater.
 
-**4. Homework **
+**4. Homeworks**
 
 > https://www.figma.com/file/kUPJvUtB8ch6f9frDKn97I/Eatme-Food-Delivery-UI-Kit?node-id=58%3A30
 
