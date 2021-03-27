@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
 
   footerContainer: {
     // backgroundColor: '#9b59b6',
-    marginVertical: 12,
+    marginBottom: 24,
   },
 });
 
