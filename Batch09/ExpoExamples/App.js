@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { Platform, SafeAreaView, View } from 'react-native';
 
 import * as Font from 'expo-font';
 
@@ -31,7 +31,13 @@ export default class App extends Component {
 
   render() {
     if (this.state.fontsLoaded) {
-      return <LoginScreen />;
+      return (
+        <SafeAreaView style={{ flex: 1, alignItems: 'center' }}>
+          <View style={{ minWidth: 414, height: Platform.OS === 'web' ? '100vh' : null }}>
+            <LoginScreen />
+          </View>
+        </SafeAreaView>
+      );
     } else {
       return null;
     }

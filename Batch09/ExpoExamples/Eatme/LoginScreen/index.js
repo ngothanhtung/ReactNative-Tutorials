@@ -33,6 +33,12 @@ const styles = StyleSheet.create({
     backgroundColor: 'white',
   },
 
+  savemeContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+  },
+
   signupContainer: {
     marginTop: 24,
     justifyContent: 'center',
@@ -48,7 +54,7 @@ const styles = StyleSheet.create({
 export default class LoginScreen extends Component {
   render() {
     return (
-      <SafeAreaView style={styles.container}>
+      <View style={styles.container}>
         {/* Begin: LOGO */}
         <View style={styles.logoContainer}>
           <Logo />
@@ -71,11 +77,11 @@ export default class LoginScreen extends Component {
           <TextBox label='Password' icon='eye-outline' placeholder='Please enter your password' />
 
           {/* SAVE ME & FORGOT PASSWORD */}
-          <View flexDirection='row' alignItems='center' justifyContent='space-between'>
+          <View style={styles.savemeContainer}>
             <SwitchButton title='Save me' />
             <GilroyText>Forgot Password?</GilroyText>
           </View>
-          <View height={32} />
+          <View style={{ height: 32 }} />
           {/* LOGIN BUTTON */}
           <Button style={{ backgroundColor: '#FF6C44' }} titleColor='white' title='Sign In' />
 
@@ -93,12 +99,12 @@ export default class LoginScreen extends Component {
         <View style={styles.footerContainer}>
           {/* FACEBOOK LOGIN */}
           <Button style={{ backgroundColor: '#0064C0', height: 50 }} titleColor='white' title='Continue With Facebook' icon={<Icon name='logo-facebook' size={18} color='white' />} />
-          <View height={16} />
+          <View style={{ height: 16 }} />
           {/* GOOGLE LOGIN */}
           <Button style={{ backgroundColor: '#F5F5F8', height: 50 }} titleColor='#898B9A' title='Continue With Google' image={<Image style={{ height: 16, width: 16 }} source={require('../../assets/google-icon.png')} />} />
         </View>
         {/* End: FOOTER */}
-      </SafeAreaView>
+      </View>
     );
   }
 }
