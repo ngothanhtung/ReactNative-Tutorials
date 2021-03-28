@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "ExpoExamples",
-    "slug": "ExpoExamples",
+    "name": "Eatme",
+    "slug": "eatme",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -23,7 +23,8 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "io.aptech.eatme"
     },
     "web": {
       "favicon": "./assets/favicon.png"
