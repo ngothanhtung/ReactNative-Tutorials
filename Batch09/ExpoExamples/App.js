@@ -33,7 +33,7 @@ export default class App extends Component {
     if (this.state.fontsLoaded) {
       return (
         <SafeAreaView style={{ flex: 1, alignItems: 'center' }}>
-          <View style={{ minWidth: 414, height: Platform.OS === 'web' ? '100vh' : null }}>
+          <View style={{ minWidth: 414, minHeight: Platform.OS === 'web' ? 812 : null }}>
             <LoginScreen />
           </View>
         </SafeAreaView>
