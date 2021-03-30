@@ -1,5 +1,28 @@
 import firestore from '@react-native-firebase/firestore';
 
+function getCategories() {
+  return new Promise((resolve, reject) => {
+    firestore()
+      .collection('FC-Categories')
+      .orderBy('name')
+      .get()
+      .then((querySnapshot) => {
+        const categories = [];
+        querySnapshot.forEach((documentSnapshot) => {
+          const category = documentSnapshot.data();
+          category.id = documentSnapshot.id;
+
+          categories.push(category);
+        });
+        resolve(categories);
+      })
+      .catch((error) => {
+        console.log(error);
+        reject(error);
+      });
+  });
+}
+
 function getFlashCardsOfCategory(id) {
   return new Promise((resolve, reject) => {
     let catgoryRef = firestore().collection('FC-Categories').doc(id);
@@ -78,6 +101,7 @@ function getFlashCardsOfCategoryAndLevel(categoryId, levelId) {
 }
 
 export default {
+  getCategories,
   getFlashCardsOfCategory,
   getFlashCardsOfLevel,
   getFlashCardsOfCategoryAndLevel,

@@ -4,31 +4,24 @@
 /* eslint-disable react/prop-types */
 import React from 'react';
 import propTypes from 'prop-types';
-import {View, Text, Alert} from 'react-native';
-import {useTheme} from 'react-native-paper';
-import {Input} from 'react-native-elements';
+import { View, Text, Alert } from 'react-native';
+import { useTheme } from 'react-native-paper';
+import { Input } from 'react-native-elements';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import {useField} from 'formik';
+import { useField } from 'formik';
 import colors from '../constants/colors';
 
-const TextBox = ({loading, ...props}) => {
+const TextBox = ({ loading, ...props }) => {
   // HOOKS
   const paperColors = useTheme().colors;
   const [inputIsFocused, setInputIsFocused] = React.useState(false);
   const [field, meta, helpers] = useField(props);
-  const {
-    containerStyle,
-    inputContainerStyle,
-    onBlur,
-    label,
-    iconName,
-    required,
-  } = props;
+  const { containerStyle, inputContainerStyle, onBlur, label, iconName, required } = props;
 
   return (
     <View>
       {label && (
-        <View style={{padding: 8}}>
+        <View style={{ padding: 8 }}>
           <Text
             style={{
               fontWeight: '700',
@@ -66,14 +59,8 @@ const TextBox = ({loading, ...props}) => {
             inputContainerStyle,
           ]}
           underlineColorAndroid="transparent"
-          leftIcon={
-            <Icon
-              name={iconName}
-              size={24}
-              color={inputIsFocused ? paperColors.primary : colors.PRIMARY_ICON}
-            />
-          }
-          leftIconContainerStyle={{marginLeft: 2, marginRight: 8}}
+          leftIcon={<Icon name={iconName} size={24} color={inputIsFocused ? paperColors.primary : colors.PRIMARY_ICON} />}
+          leftIconContainerStyle={{ marginLeft: 2, marginRight: 8 }}
           rightIcon={
             <Icon
               name="alert-circle"

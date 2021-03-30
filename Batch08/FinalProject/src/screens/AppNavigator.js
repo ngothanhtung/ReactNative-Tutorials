@@ -14,6 +14,10 @@ import LoginStackNavigator from './LoginStackNavigator';
 import UserTabNavigator from './UserTabNavigator';
 import WorkerTabNavigator from './WorkerTabNavigator';
 
+// FLASHCARD
+
+import FLASHCARD_User_UserTabNavigator from './FLASHCARD/UserTabNavigator';
+
 // SHOP
 import SHOP_User_TabNavigator from './SHOP/UserTabNavigator';
 // SLL
@@ -51,7 +55,9 @@ const AuthenticationStackNavigator = () => {
     );
   }
 
+  // ----------------------------------------------------------------------------------------------
   // SHOP
+  // ----------------------------------------------------------------------------------------------
   if (signedInUser && signedInUser.profile.applicationName === 'SHOP' && signedInUser.profile.roles && _.indexOf(signedInUser.profile.roles, 'user') >= 0) {
     return (
       <Stack.Navigator screenOptions={{ headerShown: false }}>
@@ -59,7 +65,10 @@ const AuthenticationStackNavigator = () => {
       </Stack.Navigator>
     );
   }
+
+  // ----------------------------------------------------------------------------------------------
   // SLL
+  // ----------------------------------------------------------------------------------------------
   if (signedInUser && signedInUser.profile.applicationName === 'SLL' && signedInUser.profile.roles && _.indexOf(signedInUser.profile.roles, 'parent') >= 0) {
     return (
       <Stack.Navigator screenOptions={{ headerShown: false }}>
@@ -68,8 +77,9 @@ const AuthenticationStackNavigator = () => {
       </Stack.Navigator>
     );
   }
-
+  // ----------------------------------------------------------------------------------------------
   // FLASHCARD
+  // ----------------------------------------------------------------------------------------------
   if (
     signedInUser &&
     signedInUser.profile.applicationName === 'FLASHCARD' &&
@@ -78,7 +88,7 @@ const AuthenticationStackNavigator = () => {
   ) {
     return (
       <Stack.Navigator screenOptions={{ headerShown: false }}>
-        <Stack.Screen name={routes.USER_TAB_NAVIGATOR} component={UserTabNavigator} />
+        <Stack.Screen name="FLASHCARD_User_TabNavigator" component={FLASHCARD_User_UserTabNavigator} />
       </Stack.Navigator>
     );
   }

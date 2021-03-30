@@ -17,4 +17,5 @@ export default {
   LIGHT_RED: '#ef4f4f',
   DARK_RED: '#E80000',
   PRIMARY_BORDER: '#ecf0f1',
+  STAR: '#F2C94C',
 };
