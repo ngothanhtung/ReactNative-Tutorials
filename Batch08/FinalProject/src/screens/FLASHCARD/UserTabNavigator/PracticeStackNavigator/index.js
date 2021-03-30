@@ -16,7 +16,7 @@ export default function HealthStackNavigator() {
         headerStyle: {
           backgroundColor: themeColors.primary,
         },
-        headerTintColor: '#fff',
+        headerTintColor: '#ffffff',
         headerTitleStyle: {
           fontFamily: 'Roboto-Medium',
         },
@@ -26,7 +26,7 @@ export default function HealthStackNavigator() {
         name="FLASHCARD_User_Practice_FlashCardScreen"
         component={FlashCardScreen}
         initialParams={{ name: 'FLASH CARD' }}
-        options={({ route }) => ({ title: route.params.category.name.toUpperCase(), headerShown: true })}
+        options={({ route }) => ({ title: route.params.category.name.toUpperCase(), headerShown: true, headerBackTitleVisible: false })}
       />
     </Stack.Navigator>
   );
