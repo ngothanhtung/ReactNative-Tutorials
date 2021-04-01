@@ -7,6 +7,8 @@ import Login from './src/Session01/Login';
 import Eatme_Login from './src/Session02/Eatme/LoginScreen';
 import Eatme_OnboardingScreen from './src/Session02/Eatme/OnboardingScreen';
 
+import Example01 from './src/Session02/Animations/Example01';
+
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -36,7 +38,8 @@ export default class App extends Component {
           <View style={{ minWidth: 414, minHeight: Platform.OS === 'web' ? 812 : null }}>
             {/* <Login /> */}
             {/* <Eatme_Login /> */}
-            <Eatme_OnboardingScreen />
+            {/* <Eatme_OnboardingScreen /> */}
+            <Example01 />
           </View>
         </SafeAreaView>
       );
