@@ -2,12 +2,12 @@ import React, { Component } from 'react';
 import { Text, View, StyleSheet, Image, SafeAreaView } from 'react-native';
 import { Ionicons as Icon } from '@expo/vector-icons';
 
-import Logo from './Logo';
-import Header from './Header';
-import TextBox from './TextBox';
-import SwitchButton from './SwitchButton';
-import GilroyText from './GilroyText';
-import Button from './Button';
+import Logo from '../components/Logo';
+import Header from '../components/Header';
+import TextBox from '../components/TextBox';
+import SwitchButton from '../components/SwitchButton';
+import GilroyText from '../components/GilroyText';
+import Button from '../components/Button';
 
 const styles = StyleSheet.create({
   container: {
@@ -102,7 +102,7 @@ export default class LoginScreen extends Component {
           <Button style={{ backgroundColor: '#0064C0', height: 50 }} titleColor='white' title='Continue With Facebook' icon={<Icon name='logo-facebook' size={18} color='white' />} />
           <View style={{ height: 16 }} />
           {/* GOOGLE LOGIN */}
-          <Button style={{ backgroundColor: '#F5F5F8', height: 50 }} titleColor='#898B9A' title='Continue With Google' image={<Image style={{ height: 16, width: 16 }} source={require('../../assets/google-icon.png')} />} />
+          <Button style={{ backgroundColor: '#F5F5F8', height: 50 }} titleColor='#898B9A' title='Continue With Google' image={<Image style={{ height: 16, width: 16 }} source={require('../../../../assets/google-icon.png')} />} />
         </View>
         {/* End: FOOTER */}
       </View>

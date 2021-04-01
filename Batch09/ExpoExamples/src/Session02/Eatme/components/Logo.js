@@ -19,7 +19,7 @@ export default class Logo extends Component {
     return (
       <View style={{ justifyContent: 'center', alignItems: 'center' }}>
         {/* WEB PWA */}
-        {Platform.OS === 'web' && <Image style={{ width: 190, height: 60 }} source={require('../../assets/logo-eatme.png')} />}
+        {Platform.OS === 'web' && <Image style={{ width: 190, height: 60 }} source={require('../../../../assets/logo-eatme.png')} />}
         {/* Sử dụng Svg (trong Figma, copy as Svg) */}
 
         {/* // MOBILE APPS */}

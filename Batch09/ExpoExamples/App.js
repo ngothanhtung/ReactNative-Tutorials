@@ -3,10 +3,9 @@ import { Platform, SafeAreaView, View } from 'react-native';
 
 import * as Font from 'expo-font';
 
-import Login from './Login';
-import Eatme_Login from './Eatme/Login';
-import LoginScreen from './Eatme/LoginScreen';
-import OnboardingScreen from './Eatme/OnboardingScreen';
+import Login from './src/Session01/Login';
+import Eatme_Login from './src/Session02/Eatme/LoginScreen';
+import Eatme_OnboardingScreen from './src/Session02/Eatme/OnboardingScreen';
 
 export default class App extends Component {
   constructor(props) {
@@ -35,8 +34,9 @@ export default class App extends Component {
       return (
         <SafeAreaView style={{ flex: 1, alignItems: 'center' }}>
           <View style={{ minWidth: 414, minHeight: Platform.OS === 'web' ? 812 : null }}>
-            {/* <LoginScreen /> */}
-            <OnboardingScreen />
+            {/* <Login /> */}
+            {/* <Eatme_Login /> */}
+            <Eatme_OnboardingScreen />
           </View>
         </SafeAreaView>
       );

@@ -10,10 +10,9 @@ const styles = StyleSheet.create({
   },
 
   logoContainer: {
-    justifyContent: 'flex-end',
+    marginTop: 48,
+    justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#FFFFFF',
-    flex: 1.5,
   },
 
   logo: {
@@ -161,12 +160,12 @@ export default class Login extends Component {
         {/* LOGO & HEADER TEXT*/}
         <View style={styles.logoContainer}>
           {/* LOGO */}
-          <Image style={styles.logo} source={require('../assets/logo-eatme.png')} />
+          <Image style={styles.logo} source={require('../../assets/logo-eatme.png')} />
 
           {/* HEADER TEXT */}
           <View style={styles.headerContainer}>
             <Text style={styles.headerText}>Let's Sign You In</Text>
-            <Text style={styles.welcomeText}>Welcome back, you've been missed</Text>
+            <Text style={styles.welcomeText}>Welcome back, you've been missed!</Text>
           </View>
         </View>
 
@@ -196,7 +195,7 @@ export default class Login extends Component {
               <Switch trackColor={{ false: '#898B9A', true: '#FF6C44' }} ios_backgroundColor='#898B9A' thumbColor={'#ffffff'} onValueChange={() => {}} value={false} />
               <Text style={styles.saveMeText}>Save me</Text>
             </View>
-            <Text style={styles.forgotPasswordText}>Forgot password?</Text>
+            <Text style={styles.forgotPasswordText}>Forgot Password?</Text>
           </View>
 
           {/* SIGN IN BUTTON */}
@@ -207,7 +206,7 @@ export default class Login extends Component {
           {/* DONT'T HAVE AN ACCOUNT? SIGN UP */}
           <View style={styles.signUpContainer}>
             <Text style={styles.notHaveAccountText}>Don't have an account? </Text>
-            <Text style={styles.signUpText}>Sign up</Text>
+            <Text style={styles.signUpText}>Sign Up</Text>
           </View>
         </View>
 
@@ -227,7 +226,7 @@ export default class Login extends Component {
           {/* GOOGLE LOGIN BUTTON */}
           <View style={styles.googleLoginButton}>
             <View>
-              <Image style={{ height: 16, width: 16 }} source={require('../assets/google-icon.png')} />
+              <Image style={{ height: 16, width: 16 }} source={require('../../assets/google-icon.png')} />
             </View>
             <View width={8} />
             <View>

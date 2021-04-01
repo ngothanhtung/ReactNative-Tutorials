@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, Image } from 'react-native';
-import { Ionicons as Icon } from '@expo/vector-icons';
+import { Text, View, StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
   loginButton: {
@@ -19,7 +18,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default class Button extends Component {
+export default class SocialButton extends Component {
   render() {
     return (
       <View style={[styles.loginButton, this.props.style]}>
