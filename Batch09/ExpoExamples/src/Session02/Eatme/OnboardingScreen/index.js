@@ -2,7 +2,7 @@
 // - expo install react-native-svg
 
 import React, { Component } from 'react';
-import { View } from 'react-native';
+import { StatusBar, View } from 'react-native';
 import Button from '../components/Button';
 import GilroyText from '../components/GilroyText';
 
@@ -28,8 +28,11 @@ export default class OnboardingScreen extends Component {
     }
 
     return (
-      <View>
+      <React.Fragment>
+        <StatusBar backgroundColor='rgba(255, 92, 1, 0.2)' barStyle='dark-content' />
+        {/* SCREEN */}
         <CurrentScreen />
+        {/* BUTTON */}
         <View style={{ marginBottom: 32, marginHorizontal: 24, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
           <GilroyText fontStyle='Medium' style={{ fontSize: 16, color: '#757D85' }}>
             Skip
@@ -46,7 +49,7 @@ export default class OnboardingScreen extends Component {
             }}
           />
         </View>
-      </View>
+      </React.Fragment>
     );
   }
 }
