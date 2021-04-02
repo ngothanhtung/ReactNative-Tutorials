@@ -21,10 +21,10 @@ class GilroyText extends Component {
 
 // Type checking
 GilroyText.propTypes = {
+  children: PropTypes.element.isRequired,
   direction: PropTypes.oneOf(['row', 'column']),
   fontStyle: PropTypes.oneOf(['Regular', 'Medium', 'SemiBold', 'Bold']),
   style: PropTypes.object,
-  children: PropTypes.node.isRequired,
 };
 
 GilroyText.defaultProps = {
