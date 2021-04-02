@@ -3,6 +3,7 @@
 
 import React, { Component } from 'react';
 import { Dimensions, View, StyleSheet } from 'react-native';
+import Animated, { Easing } from 'react-native-reanimated';
 import { SvgXml } from 'react-native-svg';
 import GilroyText from '../components/GilroyText';
 import Logo from '../components/Logo';
@@ -30,7 +31,24 @@ const styles = StyleSheet.create({
   },
 });
 
+const { Value, timing } = Animated;
+
 export default class OnboardingScreen extends Component {
+  constructor(props) {
+    super(props);
+
+    this._transX = new Value(0);
+    this._anim = timing(this._transX, {
+      duration: 1000,
+      toValue: 700 / 2,
+      easing: Easing.inOut(Easing.ease),
+    });
+  }
+
+  componentDidMount() {
+    this._anim.start();
+  }
+
   render() {
     return (
       <View style={styles.container}>
@@ -38,7 +56,9 @@ export default class OnboardingScreen extends Component {
         <View style={styles.logoContainer}>
           <Logo />
           <View style={{ height: 64 }} />
-          <SvgXml xml={svg1} style={styles.logo} />
+          <Animated.View style={[{ marginLeft: -700 }, { transform: [{ translateX: this._transX }] }]}>
+            <SvgXml xml={svg1} style={styles.logo} />
+          </Animated.View>
         </View>
         <View style={{ marginTop: 56, alignItems: 'center' }}>
           <GilroyText style={{ fontSize: 24, color: '#111A2C', lineHeight: 32 }} fontStyle='SemiBold'>

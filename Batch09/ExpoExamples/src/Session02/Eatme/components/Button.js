@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet } from 'react-native';
+import PropTypes from 'prop-types';
 
 const styles = StyleSheet.create({
   loginButton: {
@@ -18,7 +19,7 @@ const styles = StyleSheet.create({
   },
 });
 
-export default class SocialButton extends Component {
+class Button extends Component {
   render() {
     return (
       <View style={[styles.loginButton, this.props.style]}>
@@ -29,3 +30,22 @@ export default class SocialButton extends Component {
     );
   }
 }
+
+// Type checking
+Button.propTypes = {
+  title: PropTypes.string.isRequired,
+  titleColor: PropTypes.string,
+  style: PropTypes.object,
+  icon: PropTypes.element,
+  image: PropTypes.element,
+};
+
+// default props
+Button.defaultProps = {
+  titleColor: 'white',
+  style: null,
+  icon: null,
+  image: null,
+};
+
+export default Button;

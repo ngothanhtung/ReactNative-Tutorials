@@ -131,26 +131,41 @@ yarn start # you can also use: expo start
 
 # Session 02: Props & State
 
-1. Props:
+## 2.1 Props:
 
-   > https://reactjs.org/docs/components-and-props.html
+### 2.1.1 Props:
 
-   > https://reactnative.dev/docs/props
+> https://reactjs.org/docs/components-and-props.html
 
-2. Type-Checking:
+> https://reactnative.dev/docs/props
 
-   > Ref: https://reactjs.org/docs/typechecking-with-proptypes.html
+### 2.1.2 Type-Checking:
 
-   > Install Package: https://www.npmjs.com/package/prop-types
+> https://reactjs.org/docs/typechecking-with-proptypes.html
 
-3. State: https://facebook.github.io/react-native/docs/state
-4. Handle Event within state:
+> Install Package: At root folder of project, open terminal (Ctrl + ` ), type:
 
-   > https://reactnative.dev/docs/handling-text-input
+```
+npm install --save prop-types
 
-   > https://reactnative.dev/docs/textinput
+hoặc
 
-5. Handling Touches: https://reactnative.dev/docs/handling-touches
+yarn add prop-types
+```
+
+### 2.1.3. Xem lại các ví dụ tại [Session02](https://github.com/ngothanhtung/ReactNative-Tutorials/tree/master/Batch09/ExpoExamples/src/Session02/Eatme/components)
+
+## 2.2 State
+
+### 2.2.1 State: https://reactnative.dev/docs/state
+
+### 2.2.2 Handle Event within state:
+
+> https://reactnative.dev/docs/handling-text-input
+
+> https://reactnative.dev/docs/textinput
+
+### 2.2.3 Handling Touches: https://reactnative.dev/docs/handling-touches
 
 # Session 03: React Component & Lifecycle
 

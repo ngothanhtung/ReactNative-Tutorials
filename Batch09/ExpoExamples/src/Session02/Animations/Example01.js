@@ -11,6 +11,14 @@ export default class Example01 extends React.Component {
 
     this._transX = new Value(0);
 
+    this._color = new Value(0);
+
+    this._colorAnim = timing(this._color, {
+      duration: 2000,
+      toValue: 150,
+      easing: Easing.inOut(Easing.ease),
+    });
+
     this._anim = timing(this._transX, {
       duration: 1000,
       toValue: 300,
@@ -20,13 +28,26 @@ export default class Example01 extends React.Component {
 
   componentDidMount() {
     this._anim.start();
+    this._colorAnim.start();
   }
 
   render() {
-    console.log(this._transX);
+    const interpolateColor = Animated.interpolateColors(this._color, {
+      inputRange: [0, 150],
+      outputColorRange: ['red', 'green'],
+    });
+
     return (
       <View style={styles.container}>
         <Animated.View style={[styles.box, { transform: [{ translateX: this._transX }] }]} />
+
+        <Animated.View
+          style={{
+            height: 300,
+            width: 300,
+            backgroundColor: interpolateColor,
+          }}
+        ></Animated.View>
       </View>
     );
   }
