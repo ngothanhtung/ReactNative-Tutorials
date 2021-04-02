@@ -44,13 +44,13 @@ export default class App extends Component {
           <View style={{ minWidth: 414, minHeight: Platform.OS === 'web' ? 812 : null }}>
             {/* <Login /> */}
             {/* <Eatme_Login /> */}
-            {/* <Eatme_OnboardingScreen /> */}
+            <Eatme_OnboardingScreen />
             {/* <Example01 /> */}
             {/* <Avatar imageUrl='https://randomuser.me/api/portraits/women/47.jpg' size={120} />
             <Avatar imageUrl='https://randomuser.me/api/portraits/women/44.jpg' />
             <LikeButton />
             <CheckBox /> */}
-            <ImageSlider />
+            {/* <ImageSlider /> */}
           </View>
         </SafeAreaView>
       );
