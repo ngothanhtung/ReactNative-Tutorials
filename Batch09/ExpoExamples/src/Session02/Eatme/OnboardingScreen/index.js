@@ -2,86 +2,49 @@
 // - expo install react-native-svg
 
 import React, { Component } from 'react';
-import { Dimensions, View, StyleSheet } from 'react-native';
-import Animated, { Easing } from 'react-native-reanimated';
-import { SvgXml } from 'react-native-svg';
-import GilroyText from '../components/GilroyText';
-import Logo from '../components/Logo';
+import { View } from 'react-native';
 import Button from '../components/Button';
-import svg1 from './svg/svg1';
+import GilroyText from '../components/GilroyText';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-  },
-
-  circle: {
-    alignSelf: 'center',
-    position: 'absolute',
-    width: 750,
-    height: 750,
-    borderRadius: 750 / 2,
-    backgroundColor: 'rgba(255, 92, 1, 0.2)',
-    marginTop: -300,
-  },
-
-  logoContainer: {
-    marginTop: 48,
-    alignItems: 'center',
-  },
-});
-
-const { Value, timing } = Animated;
+import Screen1 from './Screen1';
+import Screen2 from './Screen2';
+import Screen3 from './Screen3';
 
 export default class OnboardingScreen extends Component {
   constructor(props) {
     super(props);
 
-    this._transX = new Value(0);
-    this._anim = timing(this._transX, {
-      duration: 1000,
-      toValue: 700 / 2,
-      easing: Easing.inOut(Easing.ease),
-    });
-  }
-
-  componentDidMount() {
-    this._anim.start();
+    this.state = {
+      screenName: 1,
+    };
   }
 
   render() {
+    let CurrentScreen = Screen1;
+    if (this.state.screenName === 2) {
+      CurrentScreen = Screen2;
+    } else if (this.state.screenName === 3) {
+      CurrentScreen = Screen3;
+    }
+
     return (
-      <View style={styles.container}>
-        <View style={styles.circle}></View>
-        <View style={styles.logoContainer}>
-          <Logo />
-          <View style={{ height: 64 }} />
-          <Animated.View style={[{ marginLeft: -700 }, { transform: [{ translateX: this._transX }] }]}>
-            <SvgXml xml={svg1} style={styles.logo} />
-          </Animated.View>
-        </View>
-        <View style={{ marginTop: 56, alignItems: 'center' }}>
-          <GilroyText style={{ fontSize: 24, color: '#111A2C', lineHeight: 32 }} fontStyle='SemiBold'>
-            Choose a Favourite Food
-          </GilroyText>
-
-          <View style={{ height: 16 }} />
-          <GilroyText>When you oder Eat Steet, we’ll hook you up with</GilroyText>
-          <GilroyText>exclusive coupon, specials and rewards</GilroyText>
-        </View>
-
-        <View style={{ flexDirection: 'row', justifyContent: 'center', marginTop: 40 }}>
-          <View style={{ backgroundColor: '#FF6C44', width: 30, height: 8, borderRadius: 4, marginHorizontal: 5 }}></View>
-          <View style={{ backgroundColor: 'rgba(255,108,68,0.4)', width: 10, height: 8, borderRadius: 4, marginHorizontal: 5 }}></View>
-          <View style={{ backgroundColor: 'rgba(255,108,68,0.4)', width: 10, height: 8, borderRadius: 4, marginHorizontal: 5 }}></View>
-        </View>
-        <View style={{ flex: 1 }} />
-
+      <View>
+        <CurrentScreen />
         <View style={{ marginBottom: 32, marginHorizontal: 24, flexDirection: 'row', justifyContent: 'space-between', alignItems: 'center' }}>
           <GilroyText fontStyle='Medium' style={{ fontSize: 16, color: '#757D85' }}>
             Skip
           </GilroyText>
-          <Button style={{ backgroundColor: '#FF6C44', width: 168, height: 56 }} titleColor='white' title='Next' />
+          <Button
+            style={{ backgroundColor: '#FF6C44', width: 168, height: 56 }}
+            titleColor='white'
+            title='Next'
+            onPress={() => {
+              let s = this.state.screenName;
+              s++;
+              if (s > 3) s = 1;
+              this.setState({ screenName: s });
+            }}
+          />
         </View>
       </View>
     );

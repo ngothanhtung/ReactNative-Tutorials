@@ -37,8 +37,8 @@ export default class App extends Component {
         <SafeAreaView style={{ flex: 1, alignItems: 'center' }}>
           <View style={{ minWidth: 414, minHeight: Platform.OS === 'web' ? 812 : null }}>
             {/* <Login /> */}
-            <Eatme_Login />
-            {/* <Eatme_OnboardingScreen /> */}
+            {/* <Eatme_Login /> */}
+            <Eatme_OnboardingScreen />
             {/* <Example01 /> */}
           </View>
         </SafeAreaView>

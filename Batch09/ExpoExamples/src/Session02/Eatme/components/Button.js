@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, StyleSheet, TouchableOpacity } from 'react-native';
 import PropTypes from 'prop-types';
 
 const styles = StyleSheet.create({
@@ -22,11 +22,11 @@ const styles = StyleSheet.create({
 class Button extends Component {
   render() {
     return (
-      <View style={[styles.loginButton, this.props.style]}>
+      <TouchableOpacity style={[styles.loginButton, this.props.style]} onPress={this.props.onPress}>
         {this.props.icon}
         {this.props.image}
         <Text style={[styles.loginText, { color: this.props.titleColor }]}>{this.props.title}</Text>
-      </View>
+      </TouchableOpacity>
     );
   }
 }
