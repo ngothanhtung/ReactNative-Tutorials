@@ -10,6 +10,7 @@ const styles = StyleSheet.create({
 
   icon: {
     fontSize: 24,
+    color: 'blue',
   },
   text: {
     marginLeft: 4,
@@ -18,10 +19,31 @@ const styles = StyleSheet.create({
 });
 
 export default class LikeButton extends Component {
+  constructor(props) {
+    super(props);
+    // định nghĩa các biến trong state
+    this.state = {
+      isLike: false,
+    };
+  }
+
   render() {
+    let iconName = 'like2';
+    if (this.state.isLike) {
+      iconName = 'like1';
+    }
+
     return (
       <View style={styles.container}>
-        <ADIcon name='like1' style={styles.icon} />
+        <ADIcon
+          name={iconName}
+          style={styles.icon}
+          onPress={() => {
+            // thay đổi giá trị của state.isLike
+            let x = !this.state.isLike;
+            this.setState({ isLike: x });
+          }}
+        />
         <Text style={styles.text}>Like</Text>
       </View>
     );

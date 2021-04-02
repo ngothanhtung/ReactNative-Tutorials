@@ -12,6 +12,8 @@ import Example01 from './src/Session02/Animations/Example01';
 // SESSION 02
 import LikeButton from './src/Session02/LikeButton';
 import Avatar from './src/Session02/Avatar';
+import CheckBox from './src/Session02/CheckBox';
+import ImageSlider from './src/Session02/ImageSlider';
 
 export default class App extends Component {
   constructor(props) {
@@ -44,9 +46,11 @@ export default class App extends Component {
             {/* <Eatme_Login /> */}
             {/* <Eatme_OnboardingScreen /> */}
             {/* <Example01 /> */}
-            <Avatar imageUrl='https://randomuser.me/api/portraits/women/47.jpg' size={120} />
+            {/* <Avatar imageUrl='https://randomuser.me/api/portraits/women/47.jpg' size={120} />
             <Avatar imageUrl='https://randomuser.me/api/portraits/women/44.jpg' />
             <LikeButton />
+            <CheckBox /> */}
+            <ImageSlider />
           </View>
         </SafeAreaView>
       );
