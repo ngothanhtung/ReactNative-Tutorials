@@ -52,6 +52,8 @@ export default class SizeBox extends Component {
               style={this.state.selectedIndex === index ? styles.selectedBox : styles.box}
               onPress={() => {
                 this.setState({ selectedIndex: index });
+
+                this.props.onPress(index);
               }}
             >
               <Text style={this.state.selectedIndex === index ? styles.selectedText : styles.text}>{item}</Text>

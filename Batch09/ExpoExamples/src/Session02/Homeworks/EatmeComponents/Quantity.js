@@ -16,6 +16,9 @@ export default class Quantity extends Component {
 
             let q = this.state.quantity - 1;
             this.setState({ quantity: q });
+
+            // Callback a function from parent
+            this.props.onPress(q);
           }}
         >
           <Text style={{ color: '#898B9A' }}>-</Text>
@@ -28,6 +31,9 @@ export default class Quantity extends Component {
           onPress={() => {
             let q = this.state.quantity + 1;
             this.setState({ quantity: q });
+
+            // Callback a function from parent
+            this.props.onPress(q);
           }}
         >
           <Text style={{ color: '#FF6C44' }}>+</Text>
