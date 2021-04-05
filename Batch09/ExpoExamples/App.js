@@ -17,6 +17,7 @@ import ImageSlider from './src/Session02/ImageSlider';
 import SizeBox from './src/Session02/Eatme/components/SizeBox';
 
 import Star from './src/Session02/Homeworks/EatmeComponents/Star';
+import Star10 from './src/Session02/Homeworks/EatmeComponents/Star10';
 
 import Menu from './src/Session02/Homeworks/Menu';
 import StarAndNumber from './src/Session02/Homeworks/EatmeComponents/StarAndNumber';
@@ -60,7 +61,8 @@ export default class App extends Component {
             <SizeBox sizes={['XS', 'S', 'M', 'L', 'XL', 'XXL']} /> */}
             {/* <Menu /> */}
             {/* <StarAndNumber number='5.0' /> */}
-            <Star number={4} />
+            {/* <Star number={4} /> */}
+            <Star10 number={3.5} />
           </View>
         </SafeAreaView>
       );
