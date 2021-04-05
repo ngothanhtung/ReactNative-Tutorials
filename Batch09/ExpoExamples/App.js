@@ -21,6 +21,7 @@ import Star10 from './src/Session02/Homeworks/EatmeComponents/Star10';
 
 import Menu from './src/Session02/Homeworks/Menu';
 import StarAndNumber from './src/Session02/Homeworks/EatmeComponents/StarAndNumber';
+import Quantity from './src/Session02/Homeworks/EatmeComponents/Quantity';
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -62,7 +63,8 @@ export default class App extends Component {
             {/* <Menu /> */}
             {/* <StarAndNumber number='5.0' /> */}
             {/* <Star number={4} /> */}
-            <Star10 number={3.5} />
+            {/* <Star10 number={3.5} /> */}
+            <Quantity />
           </View>
         </SafeAreaView>
       );
