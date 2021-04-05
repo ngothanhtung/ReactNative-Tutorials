@@ -58,6 +58,7 @@ export default class App extends Component {
             <SizeBox sizes={['XS', 'S', 'M', 'L', 'XL', 'XXL']} /> */}
             {/* <Menu /> */}
             <StarAndNumber number='7' />
+            <SizeBox sizes={['XS', 'S', 'M', 'L', 'XL', 'XXL']} />
           </View>
         </SafeAreaView>
       );
