@@ -16,6 +16,8 @@ import CheckBox from './src/Session02/CheckBox';
 import ImageSlider from './src/Session02/ImageSlider';
 import SizeBox from './src/Session02/Eatme/components/SizeBox';
 
+import Menu from './src/Session02/Homeworks/Menu';
+
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -52,8 +54,9 @@ export default class App extends Component {
             <LikeButton />
             <CheckBox /> */}
             {/* <ImageSlider /> */}
-            <SizeBox sizes={['12"', '14"', '16"', '18', '36"']} />
-            <SizeBox sizes={['XS', 'S', 'M', 'L', 'XL', 'XXL']} />
+            {/* <SizeBox sizes={['12"', '14"', '16"', '18', '36"']} />
+            <SizeBox sizes={['XS', 'S', 'M', 'L', 'XL', 'XXL']} /> */}
+            <Menu />
           </View>
         </SafeAreaView>
       );
