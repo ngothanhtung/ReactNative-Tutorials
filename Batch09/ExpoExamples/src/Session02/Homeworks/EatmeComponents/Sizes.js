@@ -56,7 +56,7 @@ export default class SizeBox extends Component {
                 this.props.onPress(index);
               }}
             >
-              <Text style={this.state.selectedIndex === index ? styles.selectedText : styles.text}>{item}</Text>
+              <Text style={this.state.selectedIndex === index ? styles.selectedText : styles.text}>{item.name}</Text>
             </TouchableOpacity>
           );
         })}
