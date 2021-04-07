@@ -22,8 +22,6 @@ export default class HandleEvent extends Component {
   render() {
     return (
       <SafeAreaView>
-        <Text></Text>
-
         {/* Use Dynamic Arrow Function in Render, (Quick Code, không nên dùng) */}
         <Button
           title='Click me (Quick Code)'
@@ -33,10 +31,16 @@ export default class HandleEvent extends Component {
         />
 
         {/* Use Arrow Function in Class Property (Without Parameters): Nên dùng */}
-        <Button title='Click me (Without Parameters)' onPress={this.clickMeWithoutParamaters} />
+        <Button
+          title='Click me (Without Parameters)'
+          onPress={this.clickMeWithoutParamaters}
+        />
 
         {/* Use Arrow Function in Class Property (Within Parameters): Nên dùng  */}
-        <Button title='Click me (Within Parameters)' onPress={this.clickMeWithinParamaters('Click me (Within Parameters)')} />
+        <Button
+          title='Click me (Within Parameters)'
+          onPress={this.clickMeWithinParamaters('Click me (Within Parameters)')}
+        />
       </SafeAreaView>
     );
   }

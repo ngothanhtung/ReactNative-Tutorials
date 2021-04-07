@@ -34,7 +34,7 @@ export default class LifeCycleComponent extends Component {
     console.log('3. SHOULD UPDATE');
     console.log('   nextProps: ', nextProps);
     console.log('   nextState: ', nextState);
-    return false;
+    return true;
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
@@ -51,7 +51,8 @@ export default class LifeCycleComponent extends Component {
     console.log('3. RENDER');
     return (
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>{this.state.count}</Text>
+        <Text>COUNT: {this.state.count}</Text>
+        <Text>PROPERTY: {this.props.property}</Text>
         <Button
           title='Click me'
           onPress={() => {
