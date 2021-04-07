@@ -1,5 +1,17 @@
 import React, { Component } from 'react';
-import { Text, View, TextInput, Button, TouchableHighlight } from 'react-native';
+import { Text, View, TextInput, Button, StyleSheet } from 'react-native';
+
+const styles = StyleSheet.create({
+  container: {
+    padding: 24,
+  },
+  textInput: {
+    height: 56,
+    backgroundColor: '#bdc3c7',
+    borderRadius: 8,
+    paddingHorizontal: 12,
+  },
+});
 
 export default class HandlingTextInput extends Component {
   constructor(props) {
@@ -9,46 +21,53 @@ export default class HandlingTextInput extends Component {
       password: '',
     };
   }
+
   render() {
     return (
-      <View style={{ padding: 12 }}>
+      <View style={styles.container}>
+        {/* USERNAME */}
         <TextInput
           autoCapitalize='none'
           autoFocus={true}
           clearButtonMode='always'
-          keyboardType='numbers-and-punctuation'
+          keyboardType='default'
           keyboardAppearance='dark'
-          style={{ height: 48, backgroundColor: '#bdc3c7', borderRadius: 12, paddingHorizontal: 8 }}
+          style={styles.textInput}
           onChangeText={(text) => {
             this.setState({ username: text });
           }}
           onEndEditing={() => {
-            // alert('END');
+            alert('onEndEditing');
           }}
           placeholder='Enter your username'
-          placeholderTextColor='red'
+          placeholderTextColor='blue'
           underlineColorAndroid='transparent'
         />
+
         <View style={{ height: 12 }} />
+
+        {/* PASSWORD */}
         <TextInput
           secureTextEntry={true}
-          style={{ height: 48, backgroundColor: '#bdc3c7', borderRadius: 12, paddingHorizontal: 8 }}
+          style={styles.textInput}
+          underlineColorAndroid='transparent'
+          placeholder='Enter your password'
           onChangeText={(text) => {
             this.setState({ password: text });
           }}
         />
-        <Text>
-          {this.state.username} : {this.state.password}
-        </Text>
-        <Button title='Click me' />
-        <TouchableHighlight
-          style={{ height: 48, backgroundColor: 'gray' }}
+
+        {/* BUTTON */}
+        <Button
+          title='Click me'
           onPress={() => {
-            alert('TouchableHighlight');
+            alert(this.state.username + ' - ' + this.state.password);
           }}
-        >
-          <Text>TouchableHighlight</Text>
-        </TouchableHighlight>
+        />
+
+        <Text>
+          {this.state.username} - {this.state.password}
+        </Text>
       </View>
     );
   }

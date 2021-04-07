@@ -2,11 +2,16 @@ import React, { Component } from 'react';
 import { Text, StyleSheet, View, TouchableOpacity } from 'react-native';
 
 export default class Quantity extends Component {
-  state = {
-    quantity: 1,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      quantity: 1,
+    };
+  }
 
   render() {
+    console.log('Quantity - render');
+
     return (
       <View style={styles.container}>
         <TouchableOpacity

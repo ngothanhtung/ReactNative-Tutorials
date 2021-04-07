@@ -3,26 +3,8 @@ import { Platform, SafeAreaView, View } from 'react-native';
 
 import * as Font from 'expo-font';
 
-import Login from './src/Session01/Login';
-import Eatme_Login from './src/Session02/Eatme/LoginScreen';
-import Eatme_OnboardingScreen from './src/Session02/Eatme/OnboardingScreen';
+import LifeCycle from './src/Session03/Examples/LifeCycle';
 
-import Example01 from './src/Session02/Animations/Example01';
-
-// SESSION 02
-import LikeButton from './src/Session02/LikeButton';
-import Avatar from './src/Session02/Avatar';
-import CheckBox from './src/Session02/CheckBox';
-import ImageSlider from './src/Session02/ImageSlider';
-import SizeBox from './src/Session02/Eatme/components/SizeBox';
-
-import Star from './src/Session02/Homeworks/EatmeComponents/Star';
-import Star10 from './src/Session02/Homeworks/EatmeComponents/Star10';
-
-import Menu from './src/Session02/Homeworks/Menu';
-import StarAndNumber from './src/Session02/Homeworks/EatmeComponents/StarAndNumber';
-import Quantity from './src/Session02/Homeworks/EatmeComponents/Quantity';
-import FoodDetail from './src/Session02/Homeworks/EatmeComponents/FoodDetail';
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -49,24 +31,13 @@ export default class App extends Component {
     if (this.state.fontsLoaded) {
       return (
         <SafeAreaView style={{ flex: 1, alignItems: 'center' }}>
-          <View style={{ minWidth: 414, minHeight: Platform.OS === 'web' ? 812 : null }}>
-            {/* <Login /> */}
-            {/* <Eatme_Login /> */}
-            {/* <Eatme_OnboardingScreen /> */}
-            {/* <Example01 /> */}
-            {/* <Avatar imageUrl='https://randomuser.me/api/portraits/women/47.jpg' size={120} />
-            <Avatar imageUrl='https://randomuser.me/api/portraits/women/44.jpg' />
-            <LikeButton />
-            <CheckBox /> */}
-            {/* <ImageSlider /> */}
-            {/* <SizeBox sizes={['12"', '14"', '16"', '18', '36"']} />
-            <SizeBox sizes={['XS', 'S', 'M', 'L', 'XL', 'XXL']} /> */}
-            {/* <Menu /> */}
-            {/* <StarAndNumber number='5.0' /> */}
-            {/* <Star number={4} /> */}
-            {/* <Star10 number={3.5} /> */}
-            {/* <Quantity /> */}
-            <FoodDetail />
+          <View
+            style={{
+              minWidth: 414,
+              minHeight: Platform.OS === 'web' ? 812 : null,
+            }}
+          >
+            <LifeCycle />
           </View>
         </SafeAreaView>
       );

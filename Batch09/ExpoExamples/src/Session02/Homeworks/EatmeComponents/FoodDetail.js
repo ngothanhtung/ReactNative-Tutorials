@@ -24,31 +24,27 @@ const sizes = [
 ];
 
 export default class FoodDetail extends Component {
-  state = {
-    size: null,
-    quantity: 1,
+  constructor(props) {
+    super(props);
+    this.state = {
+      size: null,
+      quantity: 1,
+    };
+  }
+
+  updateQuantity = (value) => {
+    this.setState({ quantity: value });
+  };
+
+  updateSize = (value) => {
+    this.setState({ size: value });
   };
 
   render() {
     return (
       <View>
-        <Quantity
-          onPress={(value) => {
-            this.setState({ quantity: value });
-          }}
-        />
-        <Sizes
-          sizes={sizes}
-          onPress={(value) => {
-            this.setState({ size: sizes[value] });
-          }}
-        />
-        {/* <Button
-          title='Buy Now'
-          onPress={() => {
-            console.log(this.state);
-          }}
-        /> */}
+        <Quantity onPress={this.updateQuantity} />
+        <Sizes sizes={sizes} onPress={this.updateSize} />
         <BuyNowButton total={this.state.size ? this.state.quantity * this.state.size.price : 0} />
       </View>
     );

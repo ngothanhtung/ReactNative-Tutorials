@@ -38,11 +38,16 @@ const styles = StyleSheet.create({
 });
 
 export default class SizeBox extends Component {
-  state = {
-    selectedIndex: -1,
-  };
+  constructor(props) {
+    super(props);
+    this.state = {
+      selectedIndex: -1,
+    };
+  }
 
   render() {
+    console.log('Sizes - render');
+
     return (
       <View style={styles.container}>
         {this.props.sizes.map((item, index) => {
@@ -53,7 +58,9 @@ export default class SizeBox extends Component {
               onPress={() => {
                 this.setState({ selectedIndex: index });
 
-                this.props.onPress(index);
+                let selectedSize = this.props.sizes[index];
+
+                this.props.onPress(selectedSize);
               }}
             >
               <Text style={this.state.selectedIndex === index ? styles.selectedText : styles.text}>{item.name}</Text>

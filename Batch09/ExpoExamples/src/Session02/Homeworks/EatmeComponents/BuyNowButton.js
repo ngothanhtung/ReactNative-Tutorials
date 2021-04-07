@@ -3,6 +3,8 @@ import { Text, StyleSheet, View } from 'react-native';
 
 export default class BuyNowButton extends Component {
   render() {
+    console.log('BuyNowButton - render');
+
     return (
       <View style={styles.container}>
         <Text style={styles.buttonText}> Buy Now </Text>
