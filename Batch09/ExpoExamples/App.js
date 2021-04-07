@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Platform, SafeAreaView, View } from 'react-native';
 
 import * as Font from 'expo-font';
-
+import HandlingTextInput from './src/Session03/Examples/HandlingEvent/HandlingTextInput';
 import LifeCycle from './src/Session03/Examples/LifeCycle';
 
 export default class App extends Component {
@@ -37,6 +37,7 @@ export default class App extends Component {
               minHeight: Platform.OS === 'web' ? 812 : null,
             }}
           >
+            {/* <HandlingTextInput /> */}
             <LifeCycle />
           </View>
         </SafeAreaView>

@@ -27,10 +27,11 @@ export default class HandlingTextInput extends Component {
       <View style={styles.container}>
         {/* USERNAME */}
         <TextInput
-          autoCapitalize='none'
+          autoCapitalize='words'
+          autoCorrect={false}
           autoFocus={true}
           clearButtonMode='always'
-          keyboardType='default'
+          keyboardType='visible-password'
           keyboardAppearance='dark'
           style={styles.textInput}
           onChangeText={(text) => {
