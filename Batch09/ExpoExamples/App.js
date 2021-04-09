@@ -5,6 +5,8 @@ import * as Font from 'expo-font';
 import HandlingTextInput from './src/Session03/Examples/HandlingEvent/HandlingTextInput';
 import LifeCycle from './src/Session03/Examples/LifeCycle';
 
+import LoginScreen from './src/Session02/Eatme/LoginScreen';
+
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -30,15 +32,26 @@ export default class App extends Component {
   render() {
     if (this.state.fontsLoaded) {
       return (
-        <SafeAreaView style={{ flex: 1, alignItems: 'center' }}>
+        <SafeAreaView
+          style={{
+            flex: 1,
+            // alignItems: Platform.OS === 'web' ? 'center' : null,
+          }}
+        >
           <View
             style={{
-              minWidth: 414,
+              flex: 1,
+              flexDirection: Platform.OS === 'web' ? 'row' : 'column',
+              minWidth: Platform.OS === 'web' ? 414 : '100%',
               minHeight: Platform.OS === 'web' ? 812 : null,
             }}
           >
+            {Platform.OS === 'web' && (
+              <View style={{ flex: 1, backgroundColor: 'orange' }}></View>
+            )}
+            <LoginScreen />
             {/* <HandlingTextInput /> */}
-            <LifeCycle />
+            {/* <LifeCycle /> */}
           </View>
         </SafeAreaView>
       );
