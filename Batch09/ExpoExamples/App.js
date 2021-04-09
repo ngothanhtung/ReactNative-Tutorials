@@ -9,6 +9,11 @@ import LifeCycle from './src/Session03/Examples/LifeCycle';
 // Session 04
 import Basic from './src/Session04/Basic';
 
+// Session 05
+import ScrollViewExample from './src/Session05/ScrollViewExample';
+import ScrollViewWithManyDataExample from './src/Session05/ScrollViewWithManyDataExample';
+import FlatListExample from './src/Session05/FlatListExample';
+
 // Eatme
 import LoginScreen from './src/Eatme/LoginScreen';
 
@@ -52,10 +57,13 @@ export default class App extends Component {
             }}
           >
             {Platform.OS === 'web' && <View style={{ flex: 1, backgroundColor: 'orange' }}></View>}
-            <LoginScreen />
+            {/* <LoginScreen /> */}
             {/* <HandlingTextInput /> */}
             {/* <LifeCycle /> */}
             {/* <Basic /> */}
+            {/* <ScrollViewExample /> */}
+            {/* <ScrollViewWithManyDataExample /> */}
+            <FlatListExample />
           </View>
         </SafeAreaView>
       );
