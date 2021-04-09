@@ -19,6 +19,8 @@ import SectionListAdvancedExample from './src/Session05/SectionListAdvancedExamp
 // Eatme
 import LoginScreen from './src/Eatme/LoginScreen';
 
+import Categories from './src/Session05/Homeworks/Categories';
+
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -67,7 +69,8 @@ export default class App extends Component {
             {/* <ScrollViewWithManyDataExample /> */}
             {/* <FlatListExample /> */}
             {/* <SectionListExample /> */}
-            <SectionListAdvancedExample />
+            {/* <SectionListAdvancedExample /> */}
+            <Categories />
           </View>
         </SafeAreaView>
       );
