@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View, StyleSheet, TextInput } from 'react-native';
+import PropTypes from 'prop-types';
+
 import { MaterialCommunityIcons as Icon } from '@expo/vector-icons';
 
 const styles = StyleSheet.create({
@@ -31,18 +33,41 @@ const styles = StyleSheet.create({
     justifyContent: 'space-between',
     alignItems: 'center',
   },
+
+  textInput: {
+    flex: 1,
+    height: '100%',
+    color: '#111A2C',
+  },
 });
 
-export default class TextBox extends Component {
+class TextBox extends Component {
   render() {
+    console.log(this.props.isValid);
     return (
       <View style={styles.container}>
         <Text style={styles.labelText}>{this.props.label}</Text>
         <View style={styles.inputContainer}>
-          <Text style={styles.placeholderText}>{this.props.placeholder}</Text>
-          <Icon style={styles.icon} name={this.props.icon} size={24} />
+          <TextInput style={styles.textInput} {...this.props} />
+          <Icon
+            style={[
+              styles.icon,
+              this.props.isValid && {
+                color: this.props.isValid === true ? '#27AE60' : '#FF1717',
+              },
+            ]}
+            name={this.props.icon}
+            size={24}
+          />
         </View>
       </View>
     );
   }
 }
+
+TextBox.propTypes = {
+  icon: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+};
+
+export default TextBox;

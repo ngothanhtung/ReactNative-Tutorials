@@ -2,10 +2,15 @@ import React, { Component } from 'react';
 import { Platform, SafeAreaView, View } from 'react-native';
 
 import * as Font from 'expo-font';
+// Session 03
 import HandlingTextInput from './src/Session03/Examples/HandlingEvent/HandlingTextInput';
 import LifeCycle from './src/Session03/Examples/LifeCycle';
 
-import LoginScreen from './src/Session02/Eatme/LoginScreen';
+// Session 04
+import Basic from './src/Session04/Basic';
+
+// Eatme
+// import LoginScreen from './src/Eatme/LoginScreen';
 
 export default class App extends Component {
   constructor(props) {
@@ -46,12 +51,11 @@ export default class App extends Component {
               minHeight: Platform.OS === 'web' ? 812 : null,
             }}
           >
-            {Platform.OS === 'web' && (
-              <View style={{ flex: 1, backgroundColor: 'orange' }}></View>
-            )}
-            <LoginScreen />
+            {Platform.OS === 'web' && <View style={{ flex: 1, backgroundColor: 'orange' }}></View>}
+            {/* <LoginScreen /> */}
             {/* <HandlingTextInput /> */}
             {/* <LifeCycle /> */}
+            <Basic />
           </View>
         </SafeAreaView>
       );
