@@ -52,7 +52,7 @@ class TextBox extends Component {
           <Icon
             style={[
               styles.icon,
-              this.props.isValid && {
+              this.props.isValid !== undefined && {
                 color: this.props.isValid === true ? '#27AE60' : '#FF1717',
               },
             ]}

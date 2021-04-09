@@ -12,14 +12,14 @@ const styles = StyleSheet.create({
     backgroundColor: 'yellow',
     justifyContent: 'center',
     alignContent: 'center',
-    alignItems: 'center',
+    // alignItems: 'center',
   },
 
   redBox: {
     width: 75,
     height: 50,
     backgroundColor: 'red',
-    alignSelf: 'flex-start',
+    // alignSelf: 'flex-start',
   },
 
   greenBox: {
@@ -51,8 +51,7 @@ const styles = StyleSheet.create({
 
   row2: {
     flex: 1,
-    flexWrap: 'wrap',
-    flexDirection: 'row-reverse',
+    flexDirection: 'column',
     backgroundColor: 'violet',
   },
   row3: {

@@ -79,10 +79,7 @@ export default class LoginScreen extends Component {
 
         {/* Begin: HEADER */}
         <View style={styles.headerContainer}>
-          <Header
-            title="Let's Sign You In"
-            subTitle="Welcome back, you've been missed!"
-          />
+          <Header title="Let's Sign You In" subTitle="Welcome back, you've been missed!" />
         </View>
         {/* End: HEADER */}
 
@@ -120,17 +117,11 @@ export default class LoginScreen extends Component {
           </View>
           <View style={{ height: 32 }} />
           {/* LOGIN BUTTON */}
-          <Button
-            style={{ backgroundColor: '#FF6C44' }}
-            titleColor='white'
-            title='Sign In'
-          />
+          <Button style={{ backgroundColor: '#FF6C44' }} titleColor='white' title='Sign In' />
 
           {/* SIGNUP */}
           <View style={styles.signupContainer}>
-            <GilroyText style={{ fontSize: 16 }}>
-              Don't have an account?
-            </GilroyText>
+            <GilroyText style={{ fontSize: 16 }}>Don't have an account?</GilroyText>
             <GilroyText
               style={{
                 fontSize: 16,
@@ -150,25 +141,10 @@ export default class LoginScreen extends Component {
         {/* Begin: FOOTER */}
         <View style={styles.footerContainer}>
           {/* FACEBOOK LOGIN */}
-          <Button
-            style={{ backgroundColor: '#0064C0', height: 50 }}
-            titleColor='white'
-            title='Continue With Facebook'
-            icon={<Icon name='logo-facebook' size={18} color='white' />}
-          />
+          <Button style={{ backgroundColor: '#0064C0', height: 50 }} titleColor='white' title='Continue With Facebook' icon={<Icon name='logo-facebook' size={18} color='white' />} />
           <View style={{ height: 16 }} />
           {/* GOOGLE LOGIN */}
-          <Button
-            style={{ backgroundColor: '#F5F5F8', height: 50 }}
-            titleColor='#898B9A'
-            title='Continue With Google'
-            image={
-              <Image
-                style={{ height: 16, width: 16 }}
-                source={require('../../../assets/google-icon.png')}
-              />
-            }
-          />
+          <Button style={{ backgroundColor: '#F5F5F8', height: 50 }} titleColor='#898B9A' title='Continue With Google' image={<Image style={{ height: 16, width: 16 }} source={require('../../../assets/google-icon.png')} />} />
         </View>
         {/* End: FOOTER */}
       </View>

@@ -10,7 +10,7 @@ import LifeCycle from './src/Session03/Examples/LifeCycle';
 import Basic from './src/Session04/Basic';
 
 // Eatme
-// import LoginScreen from './src/Eatme/LoginScreen';
+import LoginScreen from './src/Eatme/LoginScreen';
 
 export default class App extends Component {
   constructor(props) {
@@ -52,10 +52,10 @@ export default class App extends Component {
             }}
           >
             {Platform.OS === 'web' && <View style={{ flex: 1, backgroundColor: 'orange' }}></View>}
-            {/* <LoginScreen /> */}
+            <LoginScreen />
             {/* <HandlingTextInput /> */}
             {/* <LifeCycle /> */}
-            <Basic />
+            {/* <Basic /> */}
           </View>
         </SafeAreaView>
       );
