@@ -13,6 +13,8 @@ import Basic from './src/Session04/Basic';
 import ScrollViewExample from './src/Session05/ScrollViewExample';
 import ScrollViewWithManyDataExample from './src/Session05/ScrollViewWithManyDataExample';
 import FlatListExample from './src/Session05/FlatListExample';
+import SectionListExample from './src/Session05/SectionListExample';
+import SectionListAdvancedExample from './src/Session05/SectionListAdvancedExample';
 
 // Eatme
 import LoginScreen from './src/Eatme/LoginScreen';
@@ -63,7 +65,9 @@ export default class App extends Component {
             {/* <Basic /> */}
             {/* <ScrollViewExample /> */}
             {/* <ScrollViewWithManyDataExample /> */}
-            <FlatListExample />
+            {/* <FlatListExample /> */}
+            {/* <SectionListExample /> */}
+            <SectionListAdvancedExample />
           </View>
         </SafeAreaView>
       );
