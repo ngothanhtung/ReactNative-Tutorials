@@ -57,7 +57,7 @@ export default class LifeCycleComponent extends Component {
           title='Click me'
           onPress={() => {
             this.setState({ count: this.state.count + 1 });
-            this.forceUpdate();
+            // this.forceUpdate();
           }}
         />
       </View>
