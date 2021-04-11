@@ -18,7 +18,7 @@ import SectionListAdvancedExample from './src/Session05/SectionListAdvancedExamp
 
 // Eatme
 import LoginScreen from './src/Eatme/LoginScreen';
-
+import HomeScreen from './src/Eatme/HomeScreen';
 import Categories from './src/Session05/Homeworks/Categories';
 
 export default class App extends Component {
@@ -70,7 +70,7 @@ export default class App extends Component {
             {/* <FlatListExample /> */}
             {/* <SectionListExample /> */}
             {/* <SectionListAdvancedExample /> */}
-            <Categories />
+            <HomeScreen />
           </View>
         </SafeAreaView>
       );
