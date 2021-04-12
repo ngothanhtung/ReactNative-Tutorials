@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, StyleSheet, View, FlatList, Image, TouchableOpacity } from 'react-native';
 
-import categories from './data/categories';
+import categories from '../PopularProducts/data';
 
 export default class Categories extends Component {
   constructor(props) {

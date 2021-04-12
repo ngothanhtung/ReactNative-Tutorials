@@ -1,18 +1,21 @@
 import React, { Component } from 'react';
-import { Text, StyleSheet, View } from 'react-native';
+import { StyleSheet, View } from 'react-native';
 import PropTypes from 'prop-types';
-import GilroyText from '../components/GilroyText';
+import GilroyText from '../../components/GilroyText';
+import HeartButton from '../../components/HeartButton';
 
-class PopularProduct extends Component {
+class Product extends Component {
   render() {
     return (
       <View style={styles.container}>
         <View style={styles.top}>
           <View>
-            <GilroyText style={styles.caloriesText}>78 Calories</GilroyText>
+            <GilroyText style={styles.caloriesText}>{this.props.calories} Calories</GilroyText>
           </View>
 
-          <View></View>
+          <View>
+            <HeartButton />
+          </View>
         </View>
         <View style={styles.image}></View>
         <GilroyText fontStyle='Medium' style={styles.productName}>
@@ -31,17 +34,18 @@ class PopularProduct extends Component {
 }
 
 // Type checking
-PopularProduct.propTypes = {
+Product.propTypes = {
   name: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
+  calories: PropTypes.number.isRequired,
 };
 
-export default PopularProduct;
+export default Product;
 
 const styles = StyleSheet.create({
   container: {
-    width: 150,
+    width: 170,
     height: 220,
     backgroundColor: '#F5F5F8',
     borderRadius: 8,
@@ -49,6 +53,9 @@ const styles = StyleSheet.create({
   },
   top: {
     height: 16,
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    flexDirection: 'row',
     // backgroundColor: 'green',
   },
 
