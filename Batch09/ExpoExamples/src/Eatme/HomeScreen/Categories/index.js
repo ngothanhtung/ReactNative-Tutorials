@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, StyleSheet, View, FlatList, Image, TouchableOpacity } from 'react-native';
 
-import categories from '../PopularProducts/data';
+import categories from './data';
 
 export default class Categories extends Component {
   constructor(props) {
@@ -53,7 +53,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: 8,
+    paddingRight: 16,
+    paddingLeft: 8,
   },
 
   selectedButton: {
@@ -65,7 +66,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'center',
     alignItems: 'center',
-    paddingHorizontal: 8,
+    paddingRight: 16,
+    paddingLeft: 8,
   },
 
   image: {
