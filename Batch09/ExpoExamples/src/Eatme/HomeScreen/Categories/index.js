@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Text, StyleSheet, View, FlatList, Image, TouchableOpacity } from 'react-native';
+import Category from './Category';
 
 import categories from './data';
 
@@ -13,16 +14,14 @@ export default class Categories extends Component {
 
   renderItem = ({ item, index }) => {
     return (
-      <TouchableOpacity
+      <Category
         onPress={() => {
           this.setState({ selectedIndex: index });
         }}
-        style={this.state.selectedIndex === index ? styles.selectedButton : styles.button}
-      >
-        {/* <Image source={{ uri: item.imageUrl }} style={styles.image} /> */}
-        <Image source={item.image} style={styles.image} />
-        <Text style={this.state.selectedIndex === index ? styles.selectedText : styles.text}>{item.name}</Text>
-      </TouchableOpacity>
+        selected={this.state.selectedIndex === index}
+        name={item.name}
+        image={item.image}
+      />
     );
   };
 
