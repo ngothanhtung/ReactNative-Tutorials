@@ -11,24 +11,18 @@ const styles = StyleSheet.create({
 
 class GilroyText extends Component {
   render() {
-    return (
-      <View style={{ flexDirection: this.props.direction }}>
-        <Text style={[styles.text, this.props.style, { fontFamily: 'SVN-Gilroy-' + this.props.fontStyle }]}>{this.props.children}</Text>
-      </View>
-    );
+    return <Text style={[styles.text, this.props.style, { fontFamily: 'SVN-Gilroy-' + this.props.fontStyle }]}>{this.props.children}</Text>;
   }
 }
 
 // Type checking
 GilroyText.propTypes = {
   children: PropTypes.string.isRequired,
-  direction: PropTypes.oneOf(['row', 'column']),
   fontStyle: PropTypes.oneOf(['Regular', 'Medium', 'SemiBold', 'Bold']),
   style: PropTypes.object,
 };
 
 GilroyText.defaultProps = {
-  direction: 'row',
   fontStyle: 'Regular',
 };
 
