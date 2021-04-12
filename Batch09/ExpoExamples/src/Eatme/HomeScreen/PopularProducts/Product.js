@@ -60,6 +60,7 @@ const styles = StyleSheet.create({
   },
 
   image: {
+    borderRadius: 12,
     marginVertical: 16,
     alignSelf: 'center',
     height: 80,

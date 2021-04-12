@@ -5,7 +5,6 @@ import products from './data';
 
 export default class PopularProducts extends Component {
   renderItem = ({ item, index }) => {
-    console.log(item);
     return (
       <View>
         <Product name={item.name} description={item.description} price={item.price} calories={item.calories} />
