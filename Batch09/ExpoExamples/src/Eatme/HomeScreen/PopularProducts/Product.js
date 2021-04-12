@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { StyleSheet, View, Dimensions } from 'react-native';
 import PropTypes from 'prop-types';
 import GilroyText from '../../components/GilroyText';
 import HeartButton from '../../components/HeartButton';
 
+const WIDTH = Dimensions.get('window').width;
 class Product extends Component {
   render() {
     return (
@@ -45,8 +46,8 @@ export default Product;
 
 const styles = StyleSheet.create({
   container: {
-    width: 170,
-    height: 220,
+    width: (WIDTH - (24 + 35 + 16)) / 2,
+    height: 221,
     backgroundColor: '#F5F5F8',
     borderRadius: 8,
     padding: 16,
