@@ -80,7 +80,11 @@ export default class App extends Component {
             {/* <HomeScreen /> */}
             {/* <Example02 /> */}
             {/* <Example03 /> */}
-            <Example04 />
+            <Example04
+              onChange={(status) => {
+                console.log('STATUS ON APP', status);
+              }}
+            />
           </View>
         </SafeAreaView>
       );

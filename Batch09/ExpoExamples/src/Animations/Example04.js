@@ -1,12 +1,13 @@
+// SWITCH BUTTON
 import React from 'react';
 import { View } from 'react-native';
-import Animated, { useAnimatedGestureHandler, useSharedValue, withSpring, useAnimatedStyle, withTiming } from 'react-native-reanimated';
+import Animated, { runOnUI, runOnJS, useAnimatedGestureHandler, useSharedValue, withSpring, useAnimatedStyle, withTiming } from 'react-native-reanimated';
 import { PanGestureHandler } from 'react-native-gesture-handler';
 
 const WIDTH = 64;
 const HEIGHT = 32;
 
-export default function Example04() {
+export default function Example04({ onChange }) {
   const x = useSharedValue(0);
   const uasCircle = useAnimatedStyle(() => {
     return {
@@ -21,6 +22,12 @@ export default function Example04() {
       backgroundColor: withTiming(x.value < 32 ? 'green' : 'gray'),
     };
   });
+
+  // Ref: https://docs.swmansion.com/react-native-reanimated/docs/worklets
+  const workletFunction = (status) => {
+    'worklet';
+    runOnJS(onChange)(status);
+  };
 
   const eventHandler = useAnimatedGestureHandler({
     onStart: (event, ctx) => {
@@ -40,6 +47,12 @@ export default function Example04() {
       } else {
         x.value = 32;
       }
+      let status = x.value >= 32;
+
+      // Call a worklet function
+      // workletFunction(status);
+      // or
+      runOnJS(onChange)(status);
     },
   });
 
