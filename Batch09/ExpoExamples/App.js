@@ -3,12 +3,6 @@ import { Platform, SafeAreaView, View } from 'react-native';
 
 import * as Font from 'expo-font';
 
-import Example02 from './src/Animations/Example02';
-import Example03 from './src/Animations/Example03';
-import Example04 from './src/Animations/Example04';
-
-// Animations
-
 // Session 03
 import HandlingTextInput from './src/Session03/Examples/HandlingEvent/HandlingTextInput';
 import LifeCycle from './src/Session03/Examples/LifeCycle';
@@ -22,6 +16,10 @@ import ScrollViewWithManyDataExample from './src/Session05/ScrollViewWithManyDat
 import FlatListExample from './src/Session05/FlatListExample';
 import SectionListExample from './src/Session05/SectionListExample';
 import SectionListAdvancedExample from './src/Session05/SectionListAdvancedExample';
+
+// Session 06
+import BasicFetch from './src/Session06/BasicFetch';
+import NetworkingExample from './src/Session06/NetworkingExample';
 
 // Eatme
 import LoginScreen from './src/Eatme/LoginScreen';
@@ -80,11 +78,14 @@ export default class App extends Component {
             {/* <HomeScreen /> */}
             {/* <Example02 /> */}
             {/* <Example03 /> */}
-            <Example04
+            {/* <Example04
               onChange={(status) => {
                 console.log('STATUS ON APP', status);
               }}
-            />
+            /> */}
+
+            {/* <BasicFetch /> */}
+            <NetworkingExample />
           </View>
         </SafeAreaView>
       );
