@@ -235,6 +235,12 @@ yarn add prop-types
   + Method: POST
   + Body: {"email": "youremail@gmail.com", "password": "123", "fullname": "Your Name"}
 
+EATME:
+- https://training.softech.cloud/api/categories
+- https://training.softech.cloud/api/products/popular
+- https://training.softech.cloud/api/products/recommended
+
+
 - Notes: POSTMAN: Method: POST, Body: Raw => JSON
 ```
 
