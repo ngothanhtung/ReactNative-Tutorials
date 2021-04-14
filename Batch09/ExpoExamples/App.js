@@ -28,6 +28,8 @@ import LoginScreen from './src/Eatme/LoginScreen';
 import HomeScreen from './src/Eatme/HomeScreen';
 import Categories from './src/Session05/Homeworks/Categories';
 
+// Map
+import Map from './src/Map';
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -90,7 +92,8 @@ export default class App extends Component {
             {/* <NetworkingExample /> */}
 
             {/* <Login /> */}
-            <Products />
+            {/* <Products /> */}
+            <Map />
           </View>
         </SafeAreaView>
       );
