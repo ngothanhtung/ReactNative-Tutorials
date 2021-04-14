@@ -2,6 +2,13 @@ import React, { Component } from 'react';
 import { Platform, SafeAreaView, View } from 'react-native';
 
 import * as Font from 'expo-font';
+
+import Example02 from './src/Animations/Example02';
+import Example03 from './src/Animations/Example03';
+import Example04 from './src/Animations/Example04';
+
+// Animations
+
 // Session 03
 import HandlingTextInput from './src/Session03/Examples/HandlingEvent/HandlingTextInput';
 import LifeCycle from './src/Session03/Examples/LifeCycle';
@@ -70,7 +77,10 @@ export default class App extends Component {
             {/* <FlatListExample /> */}
             {/* <SectionListExample /> */}
             {/* <SectionListAdvancedExample /> */}
-            <HomeScreen />
+            {/* <HomeScreen /> */}
+            {/* <Example02 /> */}
+            {/* <Example03 /> */}
+            <Example04 />
           </View>
         </SafeAreaView>
       );
