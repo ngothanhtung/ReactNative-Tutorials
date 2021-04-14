@@ -1,23 +1,22 @@
 import React from 'react';
-import { View, Text, Button, Dimensions } from 'react-native';
-import Animated, { useAnimatedGestureHandler, useSharedValue, withSpring, useAnimatedStyle, withTiming, withDecay } from 'react-native-reanimated';
-import { TapGestureHandler, PanGestureHandler } from 'react-native-gesture-handler';
+import { View } from 'react-native';
+import Animated, { useAnimatedGestureHandler, useSharedValue, withSpring, useAnimatedStyle, withTiming } from 'react-native-reanimated';
+import { PanGestureHandler } from 'react-native-gesture-handler';
+
+const WIDTH = 64;
+const HEIGHT = 32;
 
 export default function Example04() {
-  const startingPosition = 0;
-  const x = useSharedValue(startingPosition);
-
-  // const pressed = useSharedValue(false);
-
-  const uas = useAnimatedStyle(() => {
+  const x = useSharedValue(0);
+  const uasCircle = useAnimatedStyle(() => {
     return {
       backgroundColor: withTiming(x.value < 32 ? '#001972' : 'yellow'),
-      borderColor: x.value < 32 ? 'green' : 'gray',
+      borderColor: withTiming(x.value < 32 ? 'green' : 'gray'),
       transform: [{ translateX: withSpring(x.value) }],
     };
   });
 
-  const uas2 = useAnimatedStyle(() => {
+  const uasContainer = useAnimatedStyle(() => {
     return {
       backgroundColor: withTiming(x.value < 32 ? 'green' : 'gray'),
     };
@@ -30,7 +29,7 @@ export default function Example04() {
     },
     onActive: (event, ctx) => {
       if (ctx.startX + event.translationX > 32) {
-        x.value = 32;
+        x.value = WIDTH / 2;
       } else {
         x.value = 0;
       }
@@ -47,8 +46,8 @@ export default function Example04() {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <PanGestureHandler onGestureEvent={eventHandler}>
-        <Animated.View style={[{ height: 32, width: 64, backgroundColor: 'gray', borderRadius: 16 }, uas2]}>
-          <Animated.View style={[{ borderColor: 'white', borderWidth: 3, height: 32, width: 32, borderRadius: 16, backgroundColor: 'blue' }, uas]} />
+        <Animated.View style={[{ height: HEIGHT, width: WIDTH, backgroundColor: 'gray', borderRadius: 16 }, uasContainer]}>
+          <Animated.View style={[{ borderColor: 'white', borderWidth: 2, height: HEIGHT, width: HEIGHT, borderRadius: HEIGHT / 2, backgroundColor: 'blue' }, uasCircle]} />
         </Animated.View>
       </PanGestureHandler>
     </View>
