@@ -21,6 +21,7 @@ import SectionListAdvancedExample from './src/Session05/SectionListAdvancedExamp
 import BasicFetch from './src/Session06/BasicFetch';
 import NetworkingExample from './src/Session06/NetworkingExample';
 import Login from './src/Session06/Login';
+import Products from './src/Session06/Products';
 
 // Eatme
 import LoginScreen from './src/Eatme/LoginScreen';
@@ -87,7 +88,9 @@ export default class App extends Component {
 
             {/* <BasicFetch /> */}
             {/* <NetworkingExample /> */}
-            <Login />
+
+            {/* <Login /> */}
+            <Products />
           </View>
         </SafeAreaView>
       );
