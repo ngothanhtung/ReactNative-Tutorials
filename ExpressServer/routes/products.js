@@ -37,18 +37,73 @@ const products = [
 ];
 
 router.get('/', function (req, res) {
-  // findDocuments({}, 'products')
-  //   .then((result) => {
-  //     res.json(result);
-  //   })
-  //   .catch((error) => {
-  //     res.status(500).json({
-  //       ok: false,
-  //       error,
-  //     });
-  //   });
+  res.status(200).json({ ok: true, products });
+});
 
-  res.status(200).json(products);
+router.get('/popular', function (req, res) {
+  res.status(200).json({
+    ok: true,
+    products: [
+      {
+        id: 1,
+        name: 'Hamburger',
+        description: 'Chicken patty hamburger',
+        price: 15.99,
+        calories: 78,
+        imageUrl: 'https://training.softech.cloud/images/products/1.png',
+      },
+      {
+        id: 2,
+        name: 'Hot Tacos',
+        description: 'Mexican tortilla & tacos',
+        price: 10.99,
+        calories: 78,
+        imageUrl: 'https://training.softech.cloud/images/products/2.png',
+      },
+
+      {
+        id: 3,
+        name: 'Wrap Sandwich',
+        description: 'Grilled vegetables sandwich',
+        price: 10.99,
+        calories: 65,
+        imageUrl: 'https://training.softech.cloud/images/products/3.png',
+      },
+    ],
+  });
+});
+
+router.get('/recommended', function (req, res) {
+  res.status(200).json({
+    ok: true,
+    products: [
+      {
+        id: 1,
+        name: 'Wrap Sandwich',
+        description: 'Grilled vegetables sandwich',
+        price: 10.99,
+        calories: 78,
+        imageUrl: 'https://training.softech.cloud/images/products/1.png',
+      },
+      {
+        id: 2,
+        name: 'Hot Tacos',
+        description: 'Mexican tortilla & tacos',
+        price: 10.99,
+        calories: 78,
+        imageUrl: 'https://training.softech.cloud/images/products/2.png',
+      },
+
+      {
+        id: 3,
+        name: 'Hamburger',
+        description: 'Chicken patty hamburger',
+        price: 15.99,
+        calories: 78,
+        imageUrl: 'https://training.softech.cloud/images/products/3.png',
+      },
+    ],
+  });
 });
 
 router.get('/:id', function (req, res) {
