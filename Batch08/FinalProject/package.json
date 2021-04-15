@@ -5,6 +5,8 @@
   "scripts": {
     "android": "rm -rf ./android/app/build && rm -rf ./node_modules/react-native-onesignal/android/build && rm -rf ./node_modules/react-native-maps/android/build && react-native run-android",
     "build:apk": "cd android && ./gradlew assembleRelease",
+    "build:aab": "cd android && ./gradlew bundleRelease",
+    "test:android": "npx react-native run-android --variant=release",
     "clean:apk": "cd android && ./gradlew cleanBuildCache",
     "uninstall": "adb uninstall com.finalproject",
     "ke": "adb shell input keyevent 82",
