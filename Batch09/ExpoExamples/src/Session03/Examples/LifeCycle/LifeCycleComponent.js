@@ -28,13 +28,14 @@ export default class LifeCycleComponent extends Component {
     console.log('   PRE STATE: ', prevState);
     return { count: 999 };
   }
+
   shouldComponentUpdate(nextProps, nextState) {
     // this method is invoked before rendering when new props or state are being received. Defaults to true
     // this method only exists as a performance optimization. Do not rely on it to “prevent” a rendering, as this can lead to bugs. Consider using the built-in PureComponent instead of writing shouldComponentUpdate() by hand. PureComponent performs a shallow comparison of props and state, and reduces the chance that you’ll skip a necessary update.
     console.log('3. SHOULD UPDATE');
     console.log('   nextProps: ', nextProps);
     console.log('   nextState: ', nextState);
-    return true;
+    return false;
   }
 
   componentDidUpdate(prevProps, prevState, snapshot) {
