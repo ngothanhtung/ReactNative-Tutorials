@@ -233,7 +233,15 @@ yarn add prop-types
 
 - https://training.softech.cloud/api/users/register
   + Method: POST
-  + Body: {"email": "youremail@gmail.com", "password": "123", "fullname": "Your Name"}
+  + Body: {"email": "youremail@gmail.com", "password": "1234", "fullname": "Your Name"}
+
+-- https://training.softech.cloud/api/users/change-password
+  + Method: POST
+  + Body: {"email": "youremail@gmail.com", "password": "1234", "newPassword": "4321"}
+
+-- https://training.softech.cloud/api/users/forgot-password
+  + Method: POST
+  + Body: {"email": "youremail@gmail.com"}
 
 EATME:
 - https://training.softech.cloud/api/categories

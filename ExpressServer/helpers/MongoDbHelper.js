@@ -73,11 +73,13 @@ function updateDocument(id, data, collectionName) {
             resolve(result);
           })
           .catch((err) => {
+            console.log(err);
             client.close();
             reject(err);
           });
       })
       .catch((err) => {
+        console.log(err);
         reject(err);
       });
   });

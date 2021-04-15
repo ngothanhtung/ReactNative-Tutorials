@@ -1,6 +1,7 @@
 var express = require('express');
+const { body, validationResult, checkSchema } = require('express-validator');
 var router = express.Router();
-var { findDocuments, findDocument, insertDocument } = require('../helpers/MongoDbHelper');
+var { findDocuments, findDocument, insertDocument, updateDocument } = require('../helpers/MongoDbHelper');
 
 router.get('/', function (req, res) {
   findDocuments({}, 'users')
@@ -22,70 +23,171 @@ router.get('/get/:email', function (req, res) {
   });
 });
 
-router.post('/login', function (req, res) {
+// ------------------------------------------------------------------------------------------------
+// LOGIN
+// ------------------------------------------------------------------------------------------------
+const loginValidationSchema = checkSchema({
+  email: {
+    isEmail: { errorMessage: 'Email is not valid' },
+  },
+  password: {
+    isLength: { options: { min: 4 }, errorMessage: 'Password is too short (Password must be >= 4 letters)' },
+  },
+});
+
+router.post('/login', loginValidationSchema, function (req, res) {
   var email = req.body.email;
   var password = req.body.password;
 
   findDocuments({ email: email, password: password }, 'users').then((result) => {
-    res.json(result);
+    if (result.length > 0) {
+      res.json({ ok: true, result });
+    } else {
+      res.json({ ok: false, result, errors: [{ msg: 'Login failed' }] });
+    }
   });
 });
+// ------------------------------------------------------------------------------------------------
+// REGISTER
+// ------------------------------------------------------------------------------------------------
+const registerValidationSchema = checkSchema({
+  email: {
+    isEmail: { errorMessage: 'Email is not valid' },
+  },
+  password: {
+    isLength: { options: { min: 4 }, errorMessage: 'Password is too short (Password must be >= 4 letters)' },
+  },
+  fullname: {
+    isLength: { options: { min: 1 }, errorMessage: 'Fullname is required' },
+  },
+});
 
-router.post('/register', function (req, res) {
+router.post('/register', registerValidationSchema, function (req, res) {
+  const errors = validationResult(req);
+  if (!errors.isEmpty()) {
+    return res.status(400).json({ errors: errors.array() });
+  }
+
   var data = {
     email: req.body.email,
     password: req.body.password,
     fullname: req.body.fullname,
   };
 
-  insertDocument(data, 'users').then((result) => {
-    res.json(result);
+  findDocuments({ email: data.email }, 'users').then((result) => {
+    if (result.length > 0) {
+      res.status(400).json({ ok: false, errors: [{ value: data.email, msg: 'Email is exists', param: 'email', location: 'body' }] });
+    } else {
+      insertDocument(data, 'users').then((result) => {
+        res.json({ ok: true, result: result.data });
+      });
+    }
   });
 });
 
-router.post('/forgotten-password', function (req, res) {
+// ------------------------------------------------------------------------------------------------
+// FORGOT PASSWORD
+// ------------------------------------------------------------------------------------------------
+router.post('/forgot-password', function (req, res) {
   var email = req.body.email;
   // FIND USER
-  findDocuments({ email: email }, 'users', function (result) {
+  findDocuments({ email: email }, 'users').then((result) => {
     if (result.length > 0) {
       // FOUND USER
       // SEND EMAIL
-      var subject = 'Recovery your password';
+      var subject = 'Forgot your password';
       var html = `<html>`;
       html += `<header><link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' rel='stylesheet' /></header>`;
       html += `<body class='container' style='margin-top: 48px'>`;
-      html += `<h1 class='text-center'>Click here to reset your password: http://localhost:9000/user/reset-password/${result[0]._id}</h1>`;
+      html += `<h3 class='text-center'>Click here to reset your password: https://training.softech.cloud/api/users/reset-password/${result[0]._id}</h3>`;
       html += `</body>`;
 
       sendMail(result[0].email, subject, html);
       res.status(200).json({
         success: true,
-        message: 'OK',
-        result: result,
+        message: 'Your new password was sent to the email: ' + email,
+        // result: result,
       });
     } else {
       res.json({
         success: false,
         message: 'Cannot found email',
-        result: result,
+        // result: result,
       });
     }
   });
 });
+
+// ------------------------------------------------------------------------------------------------
+// CHANGE PASSWORD
+// ------------------------------------------------------------------------------------------------
+const changePasswordValidationSchema = checkSchema({
+  email: {
+    isEmail: { errorMessage: 'Email is not valid' },
+  },
+  password: {
+    isLength: { options: { min: 1 }, errorMessage: 'Old Password is required' },
+  },
+  newPassword: {
+    isLength: { options: { min: 4 }, errorMessage: 'New Password is too short (New Password must be >= 4 letters)' },
+  },
+});
+
+router.post('/change-password', changePasswordValidationSchema, function (req, res) {
+  var data = {
+    email: req.body.email,
+    password: req.body.password,
+    newPassword: req.body.newPassword,
+  };
+
+  // FIND USER
+  findDocuments({ email: data.email, password: data.password }, 'users')
+    .then((result) => {
+      if (result.length > 0) {
+        const user = result[0];
+        console.log(user._id);
+        updateDocument(user._id, { password: data.newPassword }, 'users')
+          .then((result) => {
+            res.status(200).json({ ok: true });
+          })
+          .catch((err) => {
+            res.status(500).json({ error: err });
+          });
+      } else {
+        res.json({ ok: false });
+      }
+    })
+    .catch((err) => {
+      res.status(500).json({ error: err });
+    });
+});
+
 router.get('/reset-password/:id', function (req, res) {
   var id = req.params.id;
+
   // FIND USER
-  findDocument(id, 'users', function (result) {
-    console.log(result);
+  findDocument(id, 'users').then((result) => {
     if (result) {
+      console.log(result);
       // FOUND USER
+      const email = result.email;
       // UPDATE NEW PASSWORD
       var newPassword = Math.random().toString(36).substring(2, 6) + Math.random().toString(36).substring(2, 6);
-      updateDocument(id, { password: newPassword }, 'users', function (result) {
+      updateDocument(id, { password: newPassword }, 'users').then((result) => {
+        var subject = 'Reset your password';
+
+        var htmlMail = `<html>`;
+        htmlMail += `<header><link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' rel='stylesheet' /></header>`;
+        htmlMail += `<body class='container' style='margin-top: 48px'>`;
+        htmlMail += `<h3 class='text-center'>Your new password: ${newPassword}</h3>`;
+        htmlMail += `</body>`;
+        htmlMail += `</html>`;
+        sendMail(email, subject, htmlMail);
+
         var html = `<html>`;
         html += `<header><link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' rel='stylesheet' /></header>`;
         html += `<body class='container' style='margin-top: 48px'>`;
-        html += `<h1 class='text-center'>Your new password is: ${newPassword}</h1>`;
+        html += `<h3 class='text-center'>Your new password was sent to your email: ${email}</h3>`;
         html += `</body>`;
         html += `</html>`;
         res.send(html);
@@ -95,7 +197,7 @@ router.get('/reset-password/:id', function (req, res) {
       var html = `<html>`;
       html += `<header><link href='https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css' rel='stylesheet' /></header>`;
       html += `<body class='container' style='margin-top: 48px'>`;
-      html += `<h1 class='text-center'>Cannot find user id</h1>`;
+      html += `<h3 class='text-center'>Cannot find user id</h3>`;
       html += `</body>`;
       html += `</html>`;
       res.send(html);
@@ -110,12 +212,14 @@ function sendMail(toEmail, subject, body) {
   nodemailer.createTestAccount((err, account) => {
     // create reusable transporter object using the default SMTP transport
     let transporter = nodemailer.createTransport({
+      service: 'gmail',
       host: 'smtp.gmail.com',
-      port: 587,
-      secure: false, // true for 465, false for other ports
+      port: 465,
+      secure: false,
+      requireTLS: true,
       auth: {
         user: 'aptech.reactnative@gmail.com', // generated ethereal user
-        pass: 'abc@123!!', // generated ethereal password
+        pass: 'Aptech@38yenbai', // generated ethereal password
       },
     });
 
@@ -128,11 +232,12 @@ function sendMail(toEmail, subject, body) {
     };
 
     // send mail with defined transport object
-    transporter.sendMail(mailOptions, (error, info) => {
+    transporter.sendMail(mailOptions, function (error, info) {
       if (error) {
-        return console.log(error);
+        console.log(error);
+      } else {
+        console.log('Email sent: ' + info.response);
       }
-      console.log('Message sent: %s', info.messageId);
     });
   });
 }
