@@ -34,6 +34,7 @@ import Categories from './src/Session05/Homeworks/Categories';
 
 //
 import UI02 from './src/UI-Change/UI02';
+import MoreAxiosExamples from './src/Session06/Examples/MoreAxiosExamples';
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -86,7 +87,8 @@ export default class App extends Component {
             {/* <Products /> */}
             {/* <Map /> */}
             {/* <AxiosExample /> */}
-            <UI02 />
+            {/* <UI02 /> */}
+            <MoreAxiosExamples />
           </View>
         </SafeAreaView>
       );
