@@ -270,8 +270,7 @@ Products
 - https://training.softech.cloud/api/products/recommended
 
 Riders - Reviews:
-- https://training.softech.cloud/api/riders/6079678f2acd793445f939cd
-- https://training.softech.cloud/api/riders/6079678f2acd793445f939cd/review
+- https://github.com/ngothanhtung/ReactNative-Tutorials/tree/master/Batch09/ExpoExamples/src/Session06/HomeWorks/ReviewRider
 
 
 SPACEX:

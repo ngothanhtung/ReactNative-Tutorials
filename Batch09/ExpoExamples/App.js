@@ -11,18 +11,18 @@ import LifeCycle from './src/Session03/Examples/LifeCycle';
 import Basic from './src/Session04/Basic';
 
 // Session 05
-import ScrollViewExample from './src/Session05/ScrollViewExample';
-import ScrollViewWithManyDataExample from './src/Session05/ScrollViewWithManyDataExample';
-import FlatListExample from './src/Session05/FlatListExample';
-import SectionListExample from './src/Session05/SectionListExample';
-import SectionListAdvancedExample from './src/Session05/SectionListAdvancedExample';
+// import ScrollViewExample from './src/Session05/Examples/ScrollViewExample';
+// import ScrollViewWithManyDataExample from './src/Session05/Examples/ScrollViewWithManyDataExample';
+// import FlatListExample from './src/Session05/Examples/FlatListExample';
+// import SectionListExample from './src/Session05/Examples/SectionListExample';
+// import SectionListAdvancedExample from './src/Session05/Examples/SectionListAdvancedExample';
 
 // Session 06
-import BasicFetch from './src/Session06/BasicFetch';
-import NetworkingExample from './src/Session06/NetworkingExample';
-import Login from './src/Session06/Login';
-import Products from './src/Session06/Products';
-import AxiosExample from './src/Session06/AxiosExample';
+// import BasicFetch from './src/Session06/Examples/BasicFetch';
+// import NetworkingExample from './src/Session06/Examples/NetworkingExample';
+// import Login from './src/Session06/Examples/Login';
+// import Products from './src/Session06/Examples/Products';
+// import AxiosExample from './src/Session06/Examples/AxiosExample';
 
 // Eatme
 import LoginScreen from './src/Eatme/LoginScreen';
