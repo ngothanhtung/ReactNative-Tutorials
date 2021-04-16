@@ -262,14 +262,21 @@ yarn add prop-types
   + Example: https://training.softech.cloud/api/users/607794d7754c104db4e4b379
 
 EATME:
+Categories
 - https://training.softech.cloud/api/categories
+
+Products
 - https://training.softech.cloud/api/products/popular
 - https://training.softech.cloud/api/products/recommended
+
+Riders - Reviews:
+- https://github.com/ngothanhtung/ReactNative-Tutorials/tree/master/Batch09/ExpoExamples/src/Session06/HomeWorks/ReviewRider
 
 
 SPACEX:
 - https://github.com/r-spacex/SpaceX-API/blob/master/docs/v4/README.md
 
+POSTMAN:
 - Notes: POSTMAN: Method: POST, Body: Raw => JSON
 ```
 

@@ -17,14 +17,8 @@ const categories = [
   },
   {
     id: 3,
-    name: 'Hamburger',
-    imageUrl: 'https://training.softech.cloud/images/categories/1.png',
-    // image: require('../images/1.png'),
-  },
-  {
-    id: 4,
-    name: 'Coffee',
-    imageUrl: 'https://training.softech.cloud/images/categories/2.png',
+    name: 'Rich Item',
+    imageUrl: 'https://training.softech.cloud/images/categories/3.png',
     // image: require('../images/1.png'),
   },
 ];
