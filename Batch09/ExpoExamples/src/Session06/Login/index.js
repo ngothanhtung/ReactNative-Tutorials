@@ -59,8 +59,8 @@ class Login extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      email: 'tungnt@softech.vn',
-      password: '123456789',
+      email: 'tungnt@softech.com',
+      password: '987654321',
       loading: false,
     };
   }
@@ -87,12 +87,11 @@ class Login extends Component {
       .then((response) => response.json())
       .then((json) => {
         this.setState({ loading: false });
-        // console.log(json);
         // json === array
-        if (json.length === 0) {
-          Alert.alert('Thông báo', 'Đăng nhập không thành công');
-        } else {
+        if (json.ok) {
           Alert.alert('Thông báo', 'Đăng nhập thành công');
+        } else {
+          Alert.alert('Thông báo', 'Đăng nhập không thành công');
         }
       })
       .catch((error) => {

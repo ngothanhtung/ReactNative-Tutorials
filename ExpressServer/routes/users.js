@@ -1,7 +1,7 @@
 var express = require('express');
 const { body, validationResult, checkSchema } = require('express-validator');
 var router = express.Router();
-var { findDocuments, findDocument, insertDocument, updateDocument } = require('../helpers/MongoDbHelper');
+var { findDocuments, findDocument, insertDocument, updateDocument, deleteDocument } = require('../helpers/MongoDbHelper');
 
 router.get('/', function (req, res) {
   findDocuments({}, 'users')
@@ -16,11 +16,15 @@ router.get('/', function (req, res) {
     });
 });
 
-router.get('/get/:email', function (req, res) {
-  var email = req.params.email;
-  findDocuments({ email: email }, 'users').then((result) => {
-    res.json(result);
-  });
+router.get('/:id', function (req, res) {
+  var id = req.params.id;
+  findDocument(id, 'users')
+    .then((result) => {
+      res.json({ ok: true, result });
+    })
+    .catch((error) => {
+      res.status(400).json({ ok: false, error });
+    });
 });
 
 // ------------------------------------------------------------------------------------------------
@@ -105,7 +109,7 @@ router.post('/forgot-password', function (req, res) {
       sendMail(result[0].email, subject, html);
       res.status(200).json({
         success: true,
-        message: 'Your new password was sent to the email: ' + email,
+        message: 'The link to reset your password was sent to the email: ' + email,
         // result: result,
       });
     } else {
@@ -162,6 +166,9 @@ router.post('/change-password', changePasswordValidationSchema, function (req, r
     });
 });
 
+// ------------------------------------------------------------------------------------------------
+// RESET PASSWORD
+// ------------------------------------------------------------------------------------------------
 router.get('/reset-password/:id', function (req, res) {
   var id = req.params.id;
 
@@ -203,6 +210,20 @@ router.get('/reset-password/:id', function (req, res) {
       res.send(html);
     }
   });
+});
+
+// ------------------------------------------------------------------------------------------------
+// DELETE USER
+// ------------------------------------------------------------------------------------------------
+router.delete('/:id', function (req, res) {
+  var id = req.params.id;
+  deleteDocument(id, 'users')
+    .then((result) => {
+      res.status(200).json({ ok: result.result.n > 0, result: result.result });
+    })
+    .catch((err) => {
+      res.status(400).json({ ok: false, error: err });
+    });
 });
 
 function sendMail(toEmail, subject, body) {

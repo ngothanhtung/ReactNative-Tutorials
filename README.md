@@ -225,29 +225,50 @@ yarn add prop-types
 
 ```
 - https://training.softech.cloud/api/users
+  + Description: Get all users
   + Method: GET
 
+- https://training.softech.cloud/api/users/?id
+  + Description: Get a user by id
+  + Method: GET
+  + Params ?id is indentity of user
+  + Example: https://training.softech.cloud/api/users/607794d7754c104db4e4b379
+
+
 - https://training.softech.cloud/api/users/login
+  + Description: Login
   + Method: POST
   + Body: {"email": "youremail@gmail.com", "password": "123"}
 
 - https://training.softech.cloud/api/users/register
+  + Description: Register a new user
   + Method: POST
   + Body: {"email": "youremail@gmail.com", "password": "1234", "fullname": "Your Name"}
 
+-- https://training.softech.cloud/api/users/forgot-password
+  + Description: Forgot password
+  + Method: POST
+  + Body: {"email": "youremail@gmail.com"}
+
 -- https://training.softech.cloud/api/users/change-password
+  + Description: Change password
   + Method: POST
   + Body: {"email": "youremail@gmail.com", "password": "1234", "newPassword": "4321"}
 
--- https://training.softech.cloud/api/users/forgot-password
-  + Method: POST
-  + Body: {"email": "youremail@gmail.com"}
+-- https://training.softech.cloud/api/users/?id
+  + Description: Delete a use by id
+  + Method: DELETE
+  + Params ?id is indentity of user
+  + Example: https://training.softech.cloud/api/users/607794d7754c104db4e4b379
 
 EATME:
 - https://training.softech.cloud/api/categories
 - https://training.softech.cloud/api/products/popular
 - https://training.softech.cloud/api/products/recommended
 
+
+SPACEX:
+- https://github.com/r-spacex/SpaceX-API/blob/master/docs/v4/README.md
 
 - Notes: POSTMAN: Method: POST, Body: Raw => JSON
 ```

@@ -35,12 +35,12 @@ android_library(
 
 android_build_config(
     name = "build_config",
-    package = "com.finalproject",
+    package = "vn.softech.grabservices",
 )
 
 android_resource(
     name = "res",
-    package = "com.finalproject",
+    package = "vn.softech.grabservices",
     res = "src/main/res",
 )
 

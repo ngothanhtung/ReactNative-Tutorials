@@ -8,12 +8,20 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:900117337974:android:f3baed9d16eb61fb8d4c57",
+        "mobilesdk_app_id": "1:900117337974:android:675015fd68a163be8d4c57",
         "android_client_info": {
-          "package_name": "com.awesomeproject"
+          "package_name": "com.reactnativeexamples"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "900117337974-davm0o15oc0hprim543getihi3s19lir.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.reactnativeexamples",
+            "certificate_hash": "12458ba5a140c8e981621b22c694aa248c7cb668"
+          }
+        },
         {
           "client_id": "900117337974-ub39lg5802utrmqk6q0601htder36tro.apps.googleusercontent.com",
           "client_type": 3
@@ -32,10 +40,10 @@
               "client_type": 3
             },
             {
-              "client_id": "900117337974-ifl6ogq27gu0c7jnahhauh7eql43884i.apps.googleusercontent.com",
+              "client_id": "900117337974-8nsmt90ocsdl8g2l1eaajmb5jekfdnsa.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.finalproject"
+                "bundle_id": "org.reactjs.native.example.AwesomeProject"
               }
             }
           ]
@@ -44,9 +52,9 @@
     },
     {
       "client_info": {
-        "mobilesdk_app_id": "1:900117337974:android:cc09ded7498a2c5b8d4c57",
+        "mobilesdk_app_id": "1:900117337974:android:95451368ebb5edaf8d4c57",
         "android_client_info": {
-          "package_name": "com.finalproject"
+          "package_name": "vn.softech.grabservices"
         }
       },
       "oauth_client": [
@@ -68,10 +76,10 @@
               "client_type": 3
             },
             {
-              "client_id": "900117337974-ifl6ogq27gu0c7jnahhauh7eql43884i.apps.googleusercontent.com",
+              "client_id": "900117337974-8nsmt90ocsdl8g2l1eaajmb5jekfdnsa.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "com.finalproject"
+                "bundle_id": "org.reactjs.native.example.AwesomeProject"
               }
             }
           ]

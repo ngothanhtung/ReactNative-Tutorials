@@ -22,6 +22,7 @@ import BasicFetch from './src/Session06/BasicFetch';
 import NetworkingExample from './src/Session06/NetworkingExample';
 import Login from './src/Session06/Login';
 import Products from './src/Session06/Products';
+import AxiosExample from './src/Session06/AxiosExample';
 
 // Eatme
 import LoginScreen from './src/Eatme/LoginScreen';
@@ -29,7 +30,8 @@ import HomeScreen from './src/Eatme/HomeScreen';
 import Categories from './src/Session05/Homeworks/Categories';
 
 // Map
-import Map from './src/Map';
+// import Map from './src/Map';
+
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -55,21 +57,8 @@ export default class App extends Component {
   render() {
     if (this.state.fontsLoaded) {
       return (
-        <SafeAreaView
-          style={{
-            flex: 1,
-            // alignItems: Platform.OS === 'web' ? 'center' : null,
-          }}
-        >
-          <View
-            style={{
-              flex: 1,
-              flexDirection: Platform.OS === 'web' ? 'row' : 'column',
-              minWidth: Platform.OS === 'web' ? 414 : '100%',
-              minHeight: Platform.OS === 'web' ? 812 : null,
-            }}
-          >
-            {Platform.OS === 'web' && <View style={{ flex: 1, backgroundColor: 'orange' }}></View>}
+        <SafeAreaView style={{ flex: 1, alignItems: 'center' }}>
+          <View style={{ minWidth: 414, minHeight: Platform.OS === 'web' ? 812 : null }}>
             {/* <LoginScreen /> */}
             {/* <HandlingTextInput /> */}
             {/* <LifeCycle /> */}
@@ -91,9 +80,10 @@ export default class App extends Component {
             {/* <BasicFetch /> */}
             {/* <NetworkingExample /> */}
 
-            {/* <Login /> */}
+            <Login />
             {/* <Products /> */}
-            <Map />
+            {/* <Map /> */}
+            {/* <AxiosExample /> */}
           </View>
         </SafeAreaView>
       );
