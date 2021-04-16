@@ -61,7 +61,7 @@ const Block = ({ item, index }) => {
     <Surface
       style={{
         borderColor: colors.LIGHT_GRAY,
-        borderWidth: 0,
+        borderWidth: 1,
         // elevation: 1,
         flex: 1,
         marginVertical: 6,
