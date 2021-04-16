@@ -32,6 +32,8 @@ import Categories from './src/Session05/Homeworks/Categories';
 // Map
 // import Map from './src/Map';
 
+//
+import UI02 from './src/UI-Change/UI02';
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -80,10 +82,11 @@ export default class App extends Component {
             {/* <BasicFetch /> */}
             {/* <NetworkingExample /> */}
 
-            <Login />
+            {/* <Login /> */}
             {/* <Products /> */}
             {/* <Map /> */}
             {/* <AxiosExample /> */}
+            <UI02 />
           </View>
         </SafeAreaView>
       );
