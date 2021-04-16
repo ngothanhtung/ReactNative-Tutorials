@@ -5,6 +5,12 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy;
+var BasicStrategy = require('passport-http').BasicStrategy;
+
+var { findDocuments } = require('./helpers/MongoDbHelper');
+
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 
@@ -21,6 +27,56 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// Passportjs
+
+// Passport
+
+// app.use(express.session({ secret: 'keyboard cat' }));
+app.use(passport.initialize());
+// app.use(passport.session());
+
+// Passport: Http
+passport.use(
+  new BasicStrategy(function (email, password, done) {
+    console.log('BasicStrategy');
+    findDocuments({ email: email, password: password }, 'users')
+      .then((result) => {
+        if (result.length > 0) {
+          return done(null, result[0]);
+        } else {
+          return done(null, false);
+        }
+      })
+      .catch((err) => {
+        return done(err);
+      });
+  }),
+);
+
+// Passport: Local
+passport.use(
+  new LocalStrategy(
+    {
+      usernameField: 'email',
+      passwordField: 'password',
+    },
+    function (email, password, done) {
+      console.log('LocalStrategy');
+      findDocuments({ email: email, password: password }, 'users')
+        .then((result) => {
+          if (result.length > 0) {
+            return done(null, result[0]);
+          } else {
+            return done(null, false);
+          }
+        })
+        .catch((err) => {
+          return done(err);
+        });
+    },
+  ),
+);
+
 app.use('/', indexRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/products', require('./routes/products'));
@@ -33,7 +89,7 @@ app.use(function (req, res, next) {
 });
 
 // error handler
-app.use(function (err, req, res, next) {
+app.use(function (err, req, res) {
   // set locals, only providing error in development
   res.locals.message = err.message;
   res.locals.error = req.app.get('env') === 'development' ? err : {};

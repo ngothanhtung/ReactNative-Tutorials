@@ -1,4 +1,6 @@
 var express = require('express');
+var passport = require('passport');
+
 const { body, validationResult, checkSchema } = require('express-validator');
 var router = express.Router();
 var { findDocuments, findDocument, insertDocument, updateDocument, deleteDocument } = require('../helpers/MongoDbHelper');
@@ -51,6 +53,12 @@ router.post('/login', loginValidationSchema, function (req, res) {
     }
   });
 });
+
+// curl --user john@gmail.com:1234 --basic -X POST https://training.softech.cloud/api/users/passport-login
+router.post('/passport-login', passport.authenticate('basic', { session: false }), function (req, res) {
+  res.json({ user: req.user });
+});
+
 // ------------------------------------------------------------------------------------------------
 // REGISTER
 // ------------------------------------------------------------------------------------------------
