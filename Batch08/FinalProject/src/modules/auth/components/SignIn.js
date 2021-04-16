@@ -100,7 +100,7 @@ const SignIn = () => {
                         GRAB SERVICES
                       </Text>
                       <View height={4} />
-                      <Text style={{ color: 'white', fontWeight: '700' }}>Final Project of React Native Course</Text>
+                      <Text style={{ color: 'white', fontWeight: '700' }}>A project of Aptech Education</Text>
                     </Animatable.View>
                   </View>
                 </Animatable.View>

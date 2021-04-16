@@ -42,7 +42,7 @@ const screens = [
 ];
 
 const Screen = ({ navigation, text, xml }) => (
-  <View style={{ flex: 1, padding: 12 }}>
+  <View style={{ flex: 1, paddingHorizontal: 12, marginBottom: 24 }}>
     <View flex={1} justifyContent="center">
       <SvgXml xml={xml} width="100%" />
       <Title style={styles.titleText}>{text}</Title>
@@ -76,8 +76,8 @@ const WelcomeScreen = ({ navigation }) => {
         loop={false}
         showsButtons={true}
         showsPagination={true}
-        nextButton={<Icon name="chevron-right" color={themeColors.primary} size={32} />}
-        prevButton={<Icon name="chevron-left" color={themeColors.primary} size={32} />}
+        nextButton={<Icon name="chevron-right" color={themeColors.primary} size={36} />}
+        prevButton={<Icon name="chevron-left" color={themeColors.primary} size={36} />}
         dot={
           <View
             style={{

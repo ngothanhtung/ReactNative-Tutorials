@@ -1,7 +1,7 @@
 /* eslint-disable react-native/no-inline-styles */
 
 import React, { Fragment } from 'react';
-import { View, Text, FlatList } from 'react-native';
+import { Alert, View, Text, FlatList } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { Button, Surface, Title, Paragraph, TouchableRipple, useTheme } from 'react-native-paper';
 import { Icon, Image } from 'react-native-elements';
@@ -62,7 +62,7 @@ const Block = ({ item, index }) => {
       style={{
         borderColor: colors.LIGHT_GRAY,
         borderWidth: 0,
-        elevation: 1,
+        // elevation: 1,
         flex: 1,
         marginVertical: 6,
         marginLeft: index % 2 === 0 ? 16 : 8,
@@ -76,7 +76,11 @@ const Block = ({ item, index }) => {
         borderless={true}
         rippleColor={themeColors.primary}
         onPress={() => {
-          navigation.navigate(item.screen);
+          if (item.screen) {
+            navigation.navigate(item.screen);
+          } else {
+            Alert.alert('Thông báo', 'Chức năng này đang phát triển');
+          }
         }}>
         <React.Fragment>
           <Icon name={item.icon} size={ICON_SIZE} type="material-community" color={themeColors.primary} />

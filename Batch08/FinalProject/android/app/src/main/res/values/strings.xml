@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Grab Services</string>
+     <string moduleConfig="true" name="CodePushDeploymentKey">br4Wyb0uwSi40yk41PQ2YfjoIerzgMCWJDCgd</string>
 </resources>
