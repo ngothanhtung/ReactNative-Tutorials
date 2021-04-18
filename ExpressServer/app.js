@@ -12,9 +12,12 @@ var BasicStrategy = require('passport-http').BasicStrategy;
 var JwtStrategy = require('passport-jwt').Strategy;
 var ExtractJwt = require('passport-jwt').ExtractJwt;
 
+<<<<<<< HEAD
 var GoogleAuthenticator = require('passport-2fa-totp').GoogeAuthenticator;
 var TwoFAStartegy = require('passport-2fa-totp').Strategy;
 
+=======
+>>>>>>> de5eabf810fb8557338827c11cc645c7226d1152
 var { findDocuments, findDocument } = require('./helpers/MongoDbHelper');
 
 var indexRouter = require('./routes/index');
