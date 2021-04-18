@@ -59,6 +59,11 @@ router.post('/passport-login', passport.authenticate('basic', { session: false }
   res.json({ user: req.user });
 });
 
+// curl --user john@gmail.com:1234 --basic -X POST https://training.softech.cloud/api/users/passport-login
+router.post('/passport-jwt', passport.authenticate('jwt', { session: false }), function (req, res) {
+  res.json({ profile: req.user.profile });
+});
+
 // ------------------------------------------------------------------------------------------------
 // REGISTER
 // ------------------------------------------------------------------------------------------------

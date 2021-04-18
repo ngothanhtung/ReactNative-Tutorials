@@ -9,6 +9,9 @@ var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var BasicStrategy = require('passport-http').BasicStrategy;
 
+var JwtStrategy = require('passport-jwt').Strategy;
+var ExtractJwt = require('passport-jwt').ExtractJwt;
+
 var { findDocuments } = require('./helpers/MongoDbHelper');
 
 var indexRouter = require('./routes/index');
@@ -75,6 +78,29 @@ passport.use(
         });
     },
   ),
+);
+
+// Passport: jwt
+var opts = {};
+opts.jwtFromRequest = ExtractJwt.fromAuthHeaderAsBearerToken();
+opts.secretOrKey = 'secret';
+opts.issuer = 'softech.cloud';
+opts.audience = 'training.softech.cloud';
+
+passport.use(
+  new JwtStrategy(opts, function (jwt_payload, done) {
+    User.findOne({ id: jwt_payload.sub }, function (err, user) {
+      if (err) {
+        return done(err, false);
+      }
+      if (user) {
+        return done(null, user);
+      } else {
+        return done(null, false);
+        // or you could create a new account
+      }
+    });
+  }),
 );
 
 app.use('/', indexRouter);
