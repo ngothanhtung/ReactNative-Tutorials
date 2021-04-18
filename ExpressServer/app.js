@@ -12,7 +12,7 @@ var BasicStrategy = require('passport-http').BasicStrategy;
 var JwtStrategy = require('passport-jwt').Strategy;
 var ExtractJwt = require('passport-jwt').ExtractJwt;
 
-var { findDocuments } = require('./helpers/MongoDbHelper');
+var { findDocuments, findDocument } = require('./helpers/MongoDbHelper');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -88,18 +88,19 @@ opts.issuer = 'softech.cloud';
 opts.audience = 'training.softech.cloud';
 
 passport.use(
-  new JwtStrategy(opts, function (jwt_payload, done) {
-    User.findOne({ id: jwt_payload.sub }, function (err, user) {
-      if (err) {
-        return done(err, false);
-      }
-      if (user) {
-        return done(null, user);
-      } else {
+  new JwtStrategy(opts, function (payload, done) {
+    findDocument(payload.sub, 'users')
+      .then((result) => {
+        if (result) {
+          return done(null, result);
+        } else {
+          return done(null, false);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
         return done(null, false);
-        // or you could create a new account
-      }
-    });
+      });
   }),
 );
 
