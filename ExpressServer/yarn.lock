@@ -409,7 +409,7 @@ jade@~1.11.0:
     void-elements "~2.0.1"
     with "~4.0.0"
 
-jsonwebtoken@^8.2.0:
+jsonwebtoken@^8.2.0, jsonwebtoken@^8.5.1:
   version "8.5.1"
   resolved "https://registry.yarnpkg.com/jsonwebtoken/-/jsonwebtoken-8.5.1.tgz#00e71e0b8df54c2121a1f26137df2280673bcc0d"
   integrity sha512-XjwVfRS6jTMsqYs0EsuJ4LGxXV14zQybNd4L2r0UvbVnSF9Af8x7p5MzbJ90Ioz/9TI41/hTCvznF/loiSzn8w==
@@ -607,6 +607,11 @@ nodemailer@^6.5.0:
   resolved "https://registry.yarnpkg.com/nodemailer/-/nodemailer-6.5.0.tgz#d12c28d8d48778918e25f1999d97910231b175d9"
   integrity sha512-Tm4RPrrIZbnqDKAvX+/4M+zovEReiKlEXWDzG4iwtpL9X34MJY+D5LnQPH/+eghe8DLlAVshHAJZAZWBGhkguw==
 
+notp@^2.0.3:
+  version "2.0.3"
+  resolved "https://registry.yarnpkg.com/notp/-/notp-2.0.3.tgz#a9fd11e25cfe1ccb39fc6689544ee4c10ef9a577"
+  integrity sha1-qf0R4lz+HMs5/GaJVE7kwQ75pXc=
+
 object-assign@^4:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
@@ -635,6 +640,16 @@ parseurl@~1.3.2:
   version "1.3.3"
   resolved "https://registry.yarnpkg.com/parseurl/-/parseurl-1.3.3.tgz#9da19e7bee8d12dff0513ed5b76957793bc2e8d4"
   integrity sha512-CiyeOxFT/JZyN5m0z9PfXw4SCBJ6Sygz1Dpl0wqjlhDEGGBP1GnsUVEL0p63hoG1fcj3fHynXi9NYO4nWOL+qQ==
+
+passport-2fa-totp@^0.0.1:
+  version "0.0.1"
+  resolved "https://registry.yarnpkg.com/passport-2fa-totp/-/passport-2fa-totp-0.0.1.tgz#953890d6d4e8b00f31ab550d94e19802f09c83d2"
+  integrity sha1-lTiQ1tTosA8xq1UNlOGYAvCcg9I=
+  dependencies:
+    notp "^2.0.3"
+    passport-strategy "^1.0.0"
+    qr-image "^3.1.0"
+    thirty-two "^1.0.1"
 
 passport-http@^0.3.0:
   version "0.3.0"
@@ -707,6 +722,11 @@ proxy-addr@~2.0.4:
   dependencies:
     forwarded "~0.1.2"
     ipaddr.js "1.9.1"
+
+qr-image@^3.1.0:
+  version "3.2.0"
+  resolved "https://registry.yarnpkg.com/qr-image/-/qr-image-3.2.0.tgz#9fa8295beae50c4a149cf9f909a1db464a8672e8"
+  integrity sha1-n6gpW+rlDEoUnPn5CaHbRkqGcug=
 
 qs@6.5.2:
   version "6.5.2"
@@ -869,6 +889,11 @@ string_decoder@~1.1.1:
   integrity sha512-n/ShnvDi6FHbbVfviro+WojiFzv+s8MPMHBczVePfUpDJLwoLT0ht1l4YwBCbi8pJAveEEdnkHyPyTP/mzRfwg==
   dependencies:
     safe-buffer "~5.1.0"
+
+thirty-two@^1.0.1:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/thirty-two/-/thirty-two-1.0.2.tgz#4ca2fffc02a51290d2744b9e3f557693ca6b627a"
+  integrity sha1-TKL//AKlEpDSdEueP1V2k8prYno=
 
 transformers@2.1.0:
   version "2.1.0"

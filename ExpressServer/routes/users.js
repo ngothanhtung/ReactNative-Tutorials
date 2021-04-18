@@ -1,9 +1,11 @@
 var express = require('express');
 var passport = require('passport');
+var jwt = require('jsonwebtoken');
+var GoogleAuthenticator = require('passport-2fa-totp').GoogeAuthenticator;
 
 const { body, validationResult, checkSchema } = require('express-validator');
 var router = express.Router();
-var { findDocuments, findDocument, insertDocument, updateDocument, deleteDocument } = require('../helpers/MongoDbHelper');
+var { findDocuments, findDocument, insertDocument, updateDocument, updateDocuments, deleteDocument } = require('../helpers/MongoDbHelper');
 
 router.get('/', function (req, res) {
   findDocuments({}, 'users')
@@ -41,13 +43,55 @@ const loginValidationSchema = checkSchema({
   },
 });
 
+router.get('/generate-google-code/:email', function (req, res) {
+  var token = GoogleAuthenticator.register('SOFTECH - ' + req.params.email);
+  updateDocuments({ email: req.params.email }, { secret: token.secret }, 'users')
+    .then((result) => {
+      res.json({ token });
+    })
+    .catch((error) => {
+      res.status(500).json({ error });
+    });
+});
+
+router.post(
+  '/google-2fa',
+  passport.authenticate('2fa-totp', {
+    // passReqToCallback: true,
+    session: false,
+  }),
+  function (req, res) {
+    res.json(req.user);
+  },
+);
+
 router.post('/login', loginValidationSchema, function (req, res) {
   var email = req.body.email;
   var password = req.body.password;
 
   findDocuments({ email: email, password: password }, 'users').then((result) => {
     if (result.length > 0) {
-      res.json({ ok: true, result });
+      const user = result[0];
+
+      console.log(user);
+      // jwt
+      var payload = {
+        user: {
+          fullname: user.fullname,
+          email: user.email,
+        },
+      };
+
+      var secret = 'secret';
+      var token = jwt.sign(payload, secret, {
+        expiresIn: 86400, // expires in 24 hours
+        audience: 'training.softech.cloud',
+        issuer: 'softech.cloud',
+        subject: user._id.toString(),
+        algorithm: 'HS512',
+      });
+
+      res.json({ ok: true, result, token: token });
     } else {
       res.json({ ok: false, result, errors: [{ msg: 'Login failed' }] });
     }
@@ -55,13 +99,13 @@ router.post('/login', loginValidationSchema, function (req, res) {
 });
 
 // curl --user john@gmail.com:1234 --basic -X POST https://training.softech.cloud/api/users/passport-login
+// Basic: username / password
 router.post('/passport-login', passport.authenticate('basic', { session: false }), function (req, res) {
   res.json({ user: req.user });
 });
 
-// curl --user john@gmail.com:1234 --basic -X POST https://training.softech.cloud/api/users/passport-login
 router.post('/passport-jwt', passport.authenticate('jwt', { session: false }), function (req, res) {
-  res.json({ profile: req.user.profile });
+  res.json({ user: req.user });
 });
 
 // ------------------------------------------------------------------------------------------------

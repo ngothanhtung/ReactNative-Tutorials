@@ -12,7 +12,10 @@ var BasicStrategy = require('passport-http').BasicStrategy;
 var JwtStrategy = require('passport-jwt').Strategy;
 var ExtractJwt = require('passport-jwt').ExtractJwt;
 
-var { findDocuments } = require('./helpers/MongoDbHelper');
+var GoogleAuthenticator = require('passport-2fa-totp').GoogeAuthenticator;
+var TwoFAStartegy = require('passport-2fa-totp').Strategy;
+
+var { findDocuments, findDocument } = require('./helpers/MongoDbHelper');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -88,19 +91,60 @@ opts.issuer = 'softech.cloud';
 opts.audience = 'training.softech.cloud';
 
 passport.use(
-  new JwtStrategy(opts, function (jwt_payload, done) {
-    User.findOne({ id: jwt_payload.sub }, function (err, user) {
-      if (err) {
-        return done(err, false);
-      }
-      if (user) {
-        return done(null, user);
-      } else {
+  new JwtStrategy(opts, function (payload, done) {
+    findDocument(payload.sub, 'users')
+      .then((result) => {
+        if (result) {
+          return done(null, result);
+        } else {
+          return done(null, false);
+        }
+      })
+      .catch((err) => {
+        console.log(err);
         return done(null, false);
-        // or you could create a new account
-      }
-    });
+      });
   }),
+);
+
+// Passport: 2fa-totp
+passport.use(
+  new TwoFAStartegy(
+    {
+      usernameField: 'email',
+      passwordField: 'password',
+      codeField: 'code',
+    },
+    function (email, password, done) {
+      console.log('2FA - Strategy');
+      findDocuments({ email: email, password: password }, 'users')
+        .then((result) => {
+          if (result.length > 0) {
+            return done(null, result[0]);
+          } else {
+            return done(null, false);
+          }
+        })
+        .catch((err) => {
+          return done(err);
+        });
+    },
+    function (user, done) {
+      console.log(user);
+      // 2nd step verification: TOTP code from Google Authenticator
+
+      if (!user.secret) {
+        done(new Error('Google Authenticator is not setup yet.'));
+      } else {
+        // Google Authenticator uses 30 seconds key period
+        // https://github.com/google/google-authenticator/wiki/Key-Uri-Format
+
+        var secret = GoogleAuthenticator.decodeSecret(user.secret);
+
+        done(null, secret, 30);
+      }
+    },
+  ),
 );
 
 app.use('/', indexRouter);
