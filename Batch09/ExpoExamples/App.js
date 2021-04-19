@@ -41,6 +41,7 @@ import Categories from './src/Session05/Homeworks/Categories';
 import UI02 from './src/UI-Change/UI02';
 import MoreAxiosExamples from './src/Session06/Examples/MoreAxiosExamples';
 import ReviewRider from './src/Session06/Homeworks/ReviewRider';
+import CustomHookExample from './src/Session07/Examples/CustomHookExample';
 
 export default class App extends Component {
   constructor(props) {
@@ -99,7 +100,8 @@ export default class App extends Component {
             {/* <ReviewRider /> */}
             {/* <BasicClass title='COUNTER - CLASS' /> */}
             {/* <BasicHook title='COUNTER - HOOK' /> */}
-            <BasicHookNetworking />
+            {/* <BasicHookNetworking /> */}
+            <CustomHookExample />
           </View>
         </SafeAreaView>
       );
