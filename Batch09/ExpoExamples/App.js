@@ -27,8 +27,10 @@ import Basic from './src/Session04/Basic';
 // Session 07
 import BasicClass from './src/Session07/Examples/BasicClass';
 import BasicHook from './src/Session07/Examples/BasicHook';
-
 import BasicHookNetworking from './src/Session07/Examples/BasicHookNetworking';
+
+// Session 08
+import StackNavigatorExample from './src/Session08/Examples/StackNavigatorExample';
 // Eatme
 import LoginScreen from './src/Eatme/LoginScreen';
 import HomeScreen from './src/Eatme/HomeScreen';
@@ -67,6 +69,7 @@ export default class App extends Component {
 
   render() {
     if (this.state.fontsLoaded) {
+      return <StackNavigatorExample />;
       return (
         <SafeAreaView style={{ flex: 1, alignItems: 'center' }}>
           <View style={{ minWidth: 414, minHeight: Platform.OS === 'web' ? 812 : null }}>
@@ -101,7 +104,7 @@ export default class App extends Component {
             {/* <BasicClass title='COUNTER - CLASS' /> */}
             {/* <BasicHook title='COUNTER - HOOK' /> */}
             {/* <BasicHookNetworking /> */}
-            <CustomHookExample />
+            {/* <CustomHookExample /> */}
           </View>
         </SafeAreaView>
       );

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, SafeAreaView, FlatList, ActivityIndicator } from 'react-native';
+import { Text, View, SafeAreaView, FlatList, ActivityIndicator, RefreshControl } from 'react-native';
 import useProducts from './useProducts';
 
 const renderItem = ({ item, index }) => {
@@ -12,7 +12,7 @@ const renderItem = ({ item, index }) => {
 };
 
 export default function CustomHookExample() {
-  const [loading, products] = useProducts();
+  const [loading, products, onRefresh] = useProducts();
 
   return (
     <SafeAreaView style={{ flex: 1, padding: 24 }}>
@@ -27,6 +27,7 @@ export default function CustomHookExample() {
         ItemSeparatorComponent={() => {
           return <View style={{ height: 8 }} />;
         }}
+        refreshControl={<RefreshControl refreshing={loading} onRefresh={onRefresh} />}
       />
     </SafeAreaView>
   );
