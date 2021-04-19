@@ -286,8 +286,8 @@ POSTMAN:
 
 1. Basic Hooks
 
-- useState
-- useEffect
+- useState (https://reactjs.org/docs/hooks-state.html)
+- useEffect (https://reactjs.org/docs/hooks-effect.html)
 
 2. Additional Hooks
 
@@ -301,6 +301,21 @@ POSTMAN:
 - useReducer
 
 # Session 08: React Navigation (Version 5.x)
+
+## Setup Core:
+
+1. Step 1 (Core): npm install @react-navigation/native
+2. Step 2 (Expo):
+
+```
+expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
+```
+
+## Setup for Stack:
+
+- npm install @react-navigation/stack
+
+## Documents
 
 1.  Docs: https://reactnavigation.org/
 2.  Setup (Important):
