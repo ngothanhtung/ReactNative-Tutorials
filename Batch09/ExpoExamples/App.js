@@ -24,6 +24,11 @@ import Basic from './src/Session04/Basic';
 // import Products from './src/Session06/Examples/Products';
 // import AxiosExample from './src/Session06/Examples/AxiosExample';
 
+// Session 07
+import BasicClass from './src/Session07/Examples/BasicClass';
+import BasicHook from './src/Session07/Examples/BasicHook';
+
+import BasicHookNetworking from './src/Session07/Examples/BasicHookNetworking';
 // Eatme
 import LoginScreen from './src/Eatme/LoginScreen';
 import HomeScreen from './src/Eatme/HomeScreen';
@@ -36,6 +41,7 @@ import Categories from './src/Session05/Homeworks/Categories';
 import UI02 from './src/UI-Change/UI02';
 import MoreAxiosExamples from './src/Session06/Examples/MoreAxiosExamples';
 import ReviewRider from './src/Session06/Homeworks/ReviewRider';
+
 export default class App extends Component {
   constructor(props) {
     super(props);
@@ -90,7 +96,10 @@ export default class App extends Component {
             {/* <AxiosExample /> */}
             {/* <UI02 /> */}
             {/* <MoreAxiosExamples /> */}
-            <ReviewRider />
+            {/* <ReviewRider /> */}
+            {/* <BasicClass title='COUNTER - CLASS' /> */}
+            {/* <BasicHook title='COUNTER - HOOK' /> */}
+            <BasicHookNetworking />
           </View>
         </SafeAreaView>
       );
