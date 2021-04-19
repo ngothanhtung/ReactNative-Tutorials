@@ -302,6 +302,21 @@ POSTMAN:
 
 # Session 08: React Navigation (Version 5.x)
 
+## Setup Core:
+
+- npm install @react-navigation/native
+- expo:
+
+```
+expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
+```
+
+## Setup for Stack:
+
+- npm install @react-navigation/stack
+
+## Documents
+
 1.  Docs: https://reactnavigation.org/
 2.  Setup (Important):
     > https://reactnavigation.org/docs/getting-started
