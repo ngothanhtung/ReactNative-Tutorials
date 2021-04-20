@@ -1,7 +1,7 @@
 export default {
   WHITE: '#ffffff',
   WHITE_SMOKE: '#E5E5E5',
-  PRIMARY: '#6200EE',
+  PRIMARY: '#31978D',
   SLL_PRIMARY: '#31978D',
   SLL_PRIMARY_FONT: '#238181',
   PRIMARY_FONT: '#2c3e50',

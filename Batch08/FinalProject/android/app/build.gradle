@@ -144,8 +144,8 @@ android {
         applicationId "vn.softech.grabservices"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 1
-        versionName "1.0"
+        versionCode 3
+        versionName "1.1.1"
          // Enabling multidex support.
         multiDexEnabled true
     }

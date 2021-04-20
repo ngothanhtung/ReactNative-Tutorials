@@ -63,7 +63,86 @@ function getSchedulesOfClass(id, year) {
   });
 }
 
+function getScoresOfStudent(id, year) {
+  return new Promise((resolve, reject) => {
+    const studentRef = firestore().collection('SLL-Students').doc(id);
+
+    firestore()
+      .collection('SLL-Scores')
+      .where('student', '==', studentRef)
+      .where('year', '==', year)
+      .get()
+      .then((querySnapshot) => {
+        const scores = [];
+        querySnapshot.forEach((documentSnapshot) => {
+          const score = documentSnapshot.data();
+          score.id = documentSnapshot.id;
+          scores.push(score);
+        });
+
+        resolve(scores);
+      })
+      .catch((error) => {
+        console.log(error);
+        reject(error);
+      });
+  });
+}
+
+function getNotifications() {
+  return new Promise((resolve, reject) => {
+    firestore()
+      .collection('SLL-Announcements')
+      .where('type', '==', 'public')
+      // .orderBy('createdTime', 'desc')
+      .get()
+      .then((querySnapshot) => {
+        const items = [];
+        querySnapshot.forEach((documentSnapshot) => {
+          const item = documentSnapshot.data();
+          item.id = documentSnapshot.id;
+          items.push(item);
+        });
+
+        resolve(items);
+      })
+      .catch((error) => {
+        console.log(error);
+        reject(error);
+      });
+  });
+}
+
+function getGeneralHealthOfStudent(id) {
+  return new Promise((resolve, reject) => {
+    const studentRef = firestore().collection('SLL-Students').doc(id);
+
+    firestore()
+      .collection('SLL-HealthOfStudents')
+      .where('student', '==', studentRef)
+      // .orderBy('date', 'desc')
+      .get()
+      .then((querySnapshot) => {
+        const items = [];
+        querySnapshot.forEach((documentSnapshot) => {
+          const item = documentSnapshot.data();
+          item.id = documentSnapshot.id;
+          items.push(item);
+        });
+
+        resolve(items);
+      })
+      .catch((error) => {
+        console.log(error);
+        reject(error);
+      });
+  });
+}
+
 export default {
   getStudentsOfParent,
   getSchedulesOfClass,
+  getScoresOfStudent,
+  getNotifications,
+  getGeneralHealthOfStudent,
 };

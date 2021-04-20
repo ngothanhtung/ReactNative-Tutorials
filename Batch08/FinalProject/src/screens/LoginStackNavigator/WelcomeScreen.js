@@ -59,9 +59,10 @@ const Screen = ({ navigation, text, xml }) => (
         style={{ elevation: 0 }}
         icon="chevron-right"
         onPress={() => {
+          console.log('Get Started');
           navigation.navigate('SignInScreen');
         }}>
-        Get Started
+        Bắt đầu
       </Button>
     </View>
   </View>

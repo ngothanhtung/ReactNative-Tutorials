@@ -45,7 +45,7 @@ const TabNavigator = () => {
         name="SSL_Parent_ScoreStackNavigator"
         component={ScoreStackNavigator}
         options={{
-          tabBarLabel: <Text style={{ fontFamily: 'Roboto-Medium', textAlign: 'center' }}>Sổ điểm</Text>,
+          tabBarLabel: <Text style={{ fontFamily: 'Roboto-Medium', textAlign: 'center' }}>Bảng điểm</Text>,
           tabBarIcon: ({ focused, color }) => {
             let iconName = focused ? 'clipboard-list' : 'clipboard-list-outline';
             return <Icon name={iconName} size={24} style={{ color }} />;
