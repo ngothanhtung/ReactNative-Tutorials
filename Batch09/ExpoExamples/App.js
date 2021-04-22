@@ -32,7 +32,7 @@ import * as Font from 'expo-font';
 // import CustomHookExample from './src/Session07/Examples/CustomHookExample';
 
 // Session 08
-import StackNavigatorExample from './src/Session08/Examples/StackNavigatorExample';
+import AppNavigator from './src/Session08/Examples/AppNavigator';
 
 // Eatme
 // import LoginScreen from './src/Eatme/LoginScreen';
@@ -41,7 +41,7 @@ import StackNavigatorExample from './src/Session08/Examples/StackNavigatorExampl
 // import ReviewRider from './src/Session06/Homeworks/ReviewRider';
 
 // Animation
-import Animation_Example01 from './src/Animations/Example01';
+// import Animation_Example01 from './src/Animations/Example01';
 // More examples
 // import UI02 from './src/UI-Change/UI02';
 
@@ -69,7 +69,7 @@ export default class App extends Component {
 
   render() {
     if (this.state.fontsLoaded) {
-      return <StackNavigatorExample />;
+      return <AppNavigator />;
       return (
         <SafeAreaView style={{ flex: 1, alignItems: 'center' }}>
           <View style={{ minWidth: 414, minHeight: Platform.OS === 'web' ? 812 : null }}>
