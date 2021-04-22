@@ -1,5 +1,4 @@
 /* eslint-disable react-native/no-inline-styles */
-/* eslint-disable react/prop-types */
 import auth from '@react-native-firebase/auth';
 import * as Animatable from 'react-native-animatable';
 import * as Yup from 'yup';
