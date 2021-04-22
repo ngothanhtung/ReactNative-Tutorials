@@ -21,7 +21,7 @@ export default () => {
 
   React.useEffect(() => {
     // https://app.onesignal.com/apps/e973c5b3-897f-415c-95e5-279b1068654e/settings/keys_and_ids
-    OneSignal.init('560de176-2158-4579-a5b0-945777827c57');
+    OneSignal.init('6cd1520b-612f-4b7e-878d-2d965a2dec13');
 
     OneSignal.addEventListener('received', onReceived);
     OneSignal.addEventListener('opened', onOpened);

@@ -13,7 +13,7 @@ const Stack = createStackNavigator();
 export default function StackNavigatorExample() {
   return (
     <NavigationContainer>
-      <Stack.Navigator>
+      <Stack.Navigator headerMode='float'>
         <Stack.Screen name='Login' component={LoginScreen} options={{ title: 'Đăng nhập vào hệ thống bán hàng', headerShown: false }} />
         <Stack.Screen name='Register' component={RegisterScreen} options={{ title: 'Đăng ký tài khoản' }} />
         <Stack.Screen name='ForgotPassword' component={ForgotPasswordScreen} options={{ title: 'Quên mật khẩu' }} />

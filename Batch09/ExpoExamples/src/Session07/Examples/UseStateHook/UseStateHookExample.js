@@ -12,9 +12,9 @@ const styles = StyleSheet.create({
   },
 });
 
-export default function BasicHook({ title }) {
+// title is a props
+export default function UseStateHookExample({ title }) {
   const [count, setCount] = React.useState(0);
-  const [loading, setLoading] = React.useState(true);
 
   return (
     <View style={styles.container}>

@@ -8,7 +8,7 @@
     "build:aab": "cd android && ./gradlew bundleRelease",
     "test:android": "npx react-native run-android --variant=release",
     "clean:apk": "cd android && ./gradlew cleanBuildCache",
-    "uninstall": "adb uninstall vn.aptech.grabservices",
+    "uninstall": "adb uninstall vn.softech.grabservices",
     "codepush:android": "appcenter codepush release-react -a ngothanhtung.it-gmail.com/Grab-Services-Android -d Production -m",
     "ke": "adb shell input keyevent 82",
     "ios": "react-native run-ios",

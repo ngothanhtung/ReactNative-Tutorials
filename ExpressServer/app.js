@@ -8,10 +8,8 @@ var logger = require('morgan');
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy;
 var BasicStrategy = require('passport-http').BasicStrategy;
-
 var JwtStrategy = require('passport-jwt').Strategy;
 var ExtractJwt = require('passport-jwt').ExtractJwt;
-
 var GoogleAuthenticator = require('passport-2fa-totp').GoogeAuthenticator;
 var TwoFAStartegy = require('passport-2fa-totp').Strategy;
 
@@ -34,9 +32,6 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 // Passportjs
-
-// Passport
-
 // app.use(express.session({ secret: 'keyboard cat' }));
 app.use(passport.initialize());
 // app.use(passport.session());

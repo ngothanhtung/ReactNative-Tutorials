@@ -4,11 +4,11 @@ import { Platform, SafeAreaView, View } from 'react-native';
 import * as Font from 'expo-font';
 
 // Session 03
-import HandlingTextInput from './src/Session03/Examples/HandlingEvent/HandlingTextInput';
-import LifeCycle from './src/Session03/Examples/LifeCycle';
+// import HandlingTextInput from './src/Session03/Examples/HandlingEvent/HandlingTextInput';
+// import LifeCycle from './src/Session03/Examples/LifeCycle';
 
 // Session 04
-import Basic from './src/Session04/Basic';
+// import Basic from './src/Session04/Basic';
 
 // Session 05
 // import ScrollViewExample from './src/Session05/Examples/ScrollViewExample';
@@ -23,27 +23,27 @@ import Basic from './src/Session04/Basic';
 // import Login from './src/Session06/Examples/Login';
 // import Products from './src/Session06/Examples/Products';
 // import AxiosExample from './src/Session06/Examples/AxiosExample';
+// import MoreAxiosExamples from './src/Session06/Examples/MoreAxiosExamples';
 
 // Session 07
-import BasicClass from './src/Session07/Examples/BasicClass';
-import BasicHook from './src/Session07/Examples/BasicHook';
-import BasicHookNetworking from './src/Session07/Examples/BasicHookNetworking';
+// import BasicClass from './src/Session07/Examples/BasicClass';
+// import BasicHook from './src/Session07/Examples/BasicHook';
+// import BasicHookNetworking from './src/Session07/Examples/BasicHookNetworking';
+// import CustomHookExample from './src/Session07/Examples/CustomHookExample';
 
 // Session 08
 import StackNavigatorExample from './src/Session08/Examples/StackNavigatorExample';
+
 // Eatme
-import LoginScreen from './src/Eatme/LoginScreen';
-import HomeScreen from './src/Eatme/HomeScreen';
-import Categories from './src/Session05/Homeworks/Categories';
+// import LoginScreen from './src/Eatme/LoginScreen';
+// import HomeScreen from './src/Eatme/HomeScreen';
+// import Categories from './src/Session05/Homeworks/Categories';
+// import ReviewRider from './src/Session06/Homeworks/ReviewRider';
 
-// Map
-// import Map from './src/Map';
-
-//
-import UI02 from './src/UI-Change/UI02';
-import MoreAxiosExamples from './src/Session06/Examples/MoreAxiosExamples';
-import ReviewRider from './src/Session06/Homeworks/ReviewRider';
-import CustomHookExample from './src/Session07/Examples/CustomHookExample';
+// Animation
+import Animation_Example01 from './src/Animations/Example01';
+// More examples
+// import UI02 from './src/UI-Change/UI02';
 
 export default class App extends Component {
   constructor(props) {
@@ -83,6 +83,7 @@ export default class App extends Component {
             {/* <SectionListExample /> */}
             {/* <SectionListAdvancedExample /> */}
             {/* <HomeScreen /> */}
+            <Animation_Example01 />
             {/* <Example02 /> */}
             {/* <Example03 /> */}
             {/* <Example04
