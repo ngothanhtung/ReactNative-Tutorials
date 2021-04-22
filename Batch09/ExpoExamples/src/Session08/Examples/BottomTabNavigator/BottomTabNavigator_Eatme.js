@@ -10,12 +10,16 @@ import FavouriteScreen from './screens/FavouriteScreen';
 import CartScreen from './screens/CartScreen';
 import NotificationScreen from './screens/NotificationScreen';
 
+const ICON_SIZE = 24;
+const ACTIVE_COLOR = '#FF6C44';
+const INACTIVE_COLOR = '#898B9A';
+
 const Tab = createBottomTabNavigator();
 
-export default function BottomTabNavigator() {
+export default function BottomTabNavigator_Eatme() {
   return (
     <View style={{ flex: 1, backgroundColor: '#FBFBFB' }}>
-      <Tab.Navigator tabBarOptions={{ showLabel: false, style: { height: 88, paddingHorizontal: 24, borderTopLeftRadius: 32, borderTopRightRadius: 32 } }}>
+      <Tab.Navigator tabBarOptions={{ showLabel: false, style: { height: 88, paddingHorizontal: 24, borderTopLeftRadius: 32, borderTopRightRadius: 32, backgroundColor: '#ffffff' } }} sceneContainerStyle={{ backgroundColor: '#FBFBFB' }}>
         <Tab.Screen
           name='HomeScreen'
           component={HomeScreen}

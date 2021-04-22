@@ -1,26 +1,28 @@
 import React from 'react';
-import { Text, View, TouchableOpacity, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { MaterialCommunityIcons as Icon } from '@expo/vector-icons';
-import { Feather as Feather } from '@expo/vector-icons';
 
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import HomeScreen from './screens/HomeScreen';
 import SearchScreen from './screens/SearchScreen';
 import FavouriteScreen from './screens/FavouriteScreen';
 import CartScreen from './screens/CartScreen';
 import NotificationScreen from './screens/NotificationScreen';
 
-const Tab = createBottomTabNavigator();
+const ICON_SIZE = 24;
 
-export default function BottomTabNavigator() {
+const Tab = createMaterialBottomTabNavigator();
+
+export default function MaterialBottomTabNavigator() {
   return (
-    <Tab.Navigator tabBarOptions={{ showLabel: true }}>
+    <Tab.Navigator shifting={true} barStyle={{ backgroundColor: '#ffffff' }} activeColor='#ffffff' inactiveColor='#000000' initialRouteName='HomeScreen' backBehavior='history'>
       <Tab.Screen
         name='HomeScreen'
         component={HomeScreen}
         options={{
           title: 'Home',
-          tabBarIcon: ({ focused, color, size }) => <Feather name='home' size={size * 0.8} color={color} />,
+          tabBarIcon: ({ focused, color }) => <Icon name={focused ? 'home' : 'home-outline'} size={ICON_SIZE} color={color} />,
+          tabBarColor: '#ff4757',
         }}
       />
       <Tab.Screen
@@ -28,7 +30,8 @@ export default function BottomTabNavigator() {
         component={SearchScreen}
         options={{
           title: 'Search',
-          tabBarIcon: ({ focused, color, size }) => <Feather name='search' size={size * 0.8} color={color} />,
+          tabBarIcon: ({ focused, color }) => <Icon name={focused ? 'cloud-search' : 'cloud-search-outline'} size={ICON_SIZE} color={color} />,
+          tabBarColor: '#ff6b81',
         }}
       />
       <Tab.Screen
@@ -36,7 +39,8 @@ export default function BottomTabNavigator() {
         component={CartScreen}
         options={{
           title: 'Cart',
-          tabBarIcon: ({ focused, color, size }) => <Feather name='shopping-bag' size={size * 0.8} color={color} />,
+          tabBarIcon: ({ focused, color }) => <Icon name={focused ? 'cart' : 'cart-outline'} size={ICON_SIZE} color={color} />,
+          tabBarColor: '#ff6348',
         }}
       />
       <Tab.Screen
@@ -44,16 +48,18 @@ export default function BottomTabNavigator() {
         component={FavouriteScreen}
         options={{
           title: 'Favourite',
-          tabBarIcon: ({ focused, color, size }) => <Feather name='heart' size={size * 0.8} color={color} />,
+          tabBarIcon: ({ focused, color }) => <Icon name={focused ? 'heart' : 'heart-outline'} size={ICON_SIZE} color={color} />,
+          tabBarColor: '#ff7f50',
         }}
       />
-
       <Tab.Screen
         name='NotificationScreen'
         component={NotificationScreen}
         options={{
           title: 'Notifications',
-          tabBarIcon: ({ focused, color, size }) => <Feather name='bell' size={size * 0.8} color={color} />,
+          tabBarIcon: ({ focused, color }) => <Icon name={focused ? 'bell' : 'bell-outline'} size={ICON_SIZE} color={color} />,
+          tabBarBadge: 9,
+          tabBarColor: '#ffa502',
         }}
       />
     </Tab.Navigator>
