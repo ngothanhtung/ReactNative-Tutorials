@@ -15,7 +15,7 @@ const Tab = createBottomTabNavigator();
 export default function BottomTabNavigator() {
   return (
     <View style={{ flex: 1, backgroundColor: '#FBFBFB' }}>
-      <Tab.Navigator tabBarOptions={{ showLabel: false, style: { height: 88, paddingHorizontal: 24, borderTopLeftRadius: 32, borderTopRightRadius: 32, backgroundColor: 'white' } }}>
+      <Tab.Navigator tabBarOptions={{ showLabel: false, style: { height: 88, paddingHorizontal: 24, borderTopLeftRadius: 32, borderTopRightRadius: 32 } }}>
         <Tab.Screen
           name='HomeScreen'
           component={HomeScreen}
@@ -24,12 +24,12 @@ export default function BottomTabNavigator() {
               if (focused) {
                 return (
                   <View style={styles.tabButton}>
-                    <Feather name='home' size={size * 0.75} color='white' />
+                    <Feather name='home' size={size * 0.8} color='white' />
                     <Text style={styles.label}>Home</Text>
                   </View>
                 );
               } else {
-                return <Feather name='home' size={size * 0.75} color={color} />;
+                return <Feather name='home' size={size * 0.8} color={color} />;
               }
             },
           }}
@@ -42,12 +42,12 @@ export default function BottomTabNavigator() {
               if (focused) {
                 return (
                   <View style={styles.tabButton}>
-                    <Feather name='search' size={size * 0.75} color='white' />
+                    <Feather name='search' size={size * 0.8} color='white' />
                     <Text style={styles.label}>Search</Text>
                   </View>
                 );
               } else {
-                return <Feather name='search' size={size * 0.75} color={color} />;
+                return <Feather name='search' size={size * 0.8} color={color} />;
               }
             },
           }}
@@ -60,12 +60,12 @@ export default function BottomTabNavigator() {
               if (focused) {
                 return (
                   <View style={styles.tabButton}>
-                    <Feather name='shopping-bag' size={size * 0.75} color='white' />
+                    <Feather name='shopping-bag' size={size * 0.8} color='white' />
                     <Text style={styles.label}>Cart</Text>
                   </View>
                 );
               } else {
-                return <Feather name='shopping-bag' size={size * 0.75} color={color} />;
+                return <Feather name='shopping-bag' size={size * 0.8} color={color} />;
               }
             },
           }}
@@ -78,12 +78,12 @@ export default function BottomTabNavigator() {
               if (focused) {
                 return (
                   <View style={styles.tabButton}>
-                    <Feather name='heart' size={size * 0.75} color='white' />
+                    <Feather name='heart' size={size * 0.8} color='white' />
                     <Text style={styles.label}>Fav</Text>
                   </View>
                 );
               } else {
-                return <Feather name='heart' size={size * 0.75} color={color} />;
+                return <Feather name='heart' size={size * 0.8} color={color} />;
               }
             },
           }}
@@ -97,12 +97,12 @@ export default function BottomTabNavigator() {
               if (focused) {
                 return (
                   <View style={styles.tabButton}>
-                    <Feather name='bell' size={size * 0.75} color='white' />
+                    <Feather name='bell' size={size * 0.8} color='white' />
                     <Text style={styles.label}>Alert</Text>
                   </View>
                 );
               } else {
-                return <Feather name='bell' size={size * 0.75} color={color} />;
+                return <Feather name='bell' size={size * 0.8} color={color} />;
               }
             },
           }}
@@ -126,7 +126,7 @@ const styles = StyleSheet.create({
     height: 40,
     minWidth: 90,
     paddingHorizontal: 16,
-    borderRadius: 45,
+    borderRadius: 20,
     backgroundColor: '#FF6C44',
   },
   label: {
