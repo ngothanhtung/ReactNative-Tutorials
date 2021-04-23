@@ -6,7 +6,7 @@ import * as Yup from 'yup';
 import React from 'react';
 import { Button, Headline, useTheme } from 'react-native-paper';
 import { Alert, Keyboard, KeyboardAvoidingView, Platform, Text, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { useNavigation } from '@react-navigation/native';
 import { Formik } from 'formik';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
@@ -22,10 +22,11 @@ const SignInSchema = Yup.object().shape({
 });
 
 const SignIn = () => {
+  const [loading, setLoading] = React.useState(false);
   const [confirmationResult, setConfirmationResult] = React.useState(null);
+
   const Touch = Platform.OS === 'ios' ? TouchableOpacity : TouchableWithoutFeedback;
-  // REDUX
-  const loading = useSelector((state) => state.auth.loading);
+
   const dispatch = useDispatch();
   // THEMNE
   const themeColor = useTheme().colors;
@@ -98,31 +99,39 @@ const SignIn = () => {
           </View>
           <Formik
             initialValues={{
-              phone: '+84934933468',
+              phone: '+84905157803',
               confirmCode: '',
             }}
             validationSchema={SignInSchema}
             onSubmit={(values) => {
-              console.log(values);
-
               if (!confirmationResult) {
+                setLoading(true);
                 auth()
                   .signInWithPhoneNumber(values.phone, true)
                   .then((result) => {
-                    console.log(result);
+                    setLoading(false);
                     if (result) {
                       setConfirmationResult(result);
                     }
                   })
                   .catch((error) => {
+                    setLoading(false);
                     console.log(error);
                     Alert.alert('Thông báo', 'Có lỗi khi xác nhận mã đăng nhập');
                   });
               } else {
-                confirmationResult.confirm(values.confirmCode).then((result) => {
-                  const user = result.user;
-                  dispatch(autoSignInAction(user));
-                });
+                setLoading(true);
+                confirmationResult
+                  .confirm(values.confirmCode)
+                  .then((result) => {
+                    setLoading(false);
+                    const user = result.user;
+                    dispatch(autoSignInAction(user));
+                  })
+                  .catch((error) => {
+                    setLoading(false);
+                    Alert.alert('Thông báo', 'Có lỗi khi đăng nhập');
+                  });
               }
             }}>
             {(formik) => (
@@ -134,6 +143,7 @@ const SignIn = () => {
                     iconName="cellphone"
                     disabled={loading}
                     placeholder="Số điện thoại"
+                    keyboardType="phone-pad"
                     containerStyle={{ borderWidth: 0, backgroundColor: 'white' }}
                     inputContainerStyle={{ borderBottomWidth: 1.5 }}
                     leftIconContainerStyle={{ marginLeft: 12 }}
@@ -148,6 +158,7 @@ const SignIn = () => {
                       iconName="lock"
                       disabled={loading}
                       placeholder="Mã xác nhận"
+                      keyboardType="number-pad"
                       containerStyle={{ borderWidth: 0, backgroundColor: 'white' }}
                       inputContainerStyle={{ borderBottomWidth: 1.5 }}
                       leftIconContainerStyle={{ marginLeft: 12 }}
@@ -173,7 +184,7 @@ const SignIn = () => {
                     mode="contained"
                     onPress={formik.handleSubmit}
                     dark>
-                    {loading ? 'Đang đăng nhập ...' : confirmationResult ? 'Đăng nhập' : 'Xác nhận'}
+                    {loading ? 'Đang xử lý ...' : confirmationResult ? 'Đăng nhập' : 'Xác nhận'}
                   </Button>
 
                   <Touch

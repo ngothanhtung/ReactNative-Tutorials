@@ -28,24 +28,38 @@ import * as routes from '../routes';
 import useOneSignal from '../hooks/useOneSignal';
 
 import { autoSignInAction } from '../modules/auth/actions';
+import Container from '../components/Container';
 
 const Stack = createStackNavigator();
 
 const AuthenticationStackNavigator = () => {
   const dispatch = useDispatch();
   const signedInUser = useSelector((state) => state.auth.signedInUser);
+  const [initializing, setInitializing] = React.useState(true);
 
   // Handle user state changes
   const onAuthStateChanged = (user) => {
+    if (initializing) {
+      setInitializing(false);
+    }
+
     if (user) {
       dispatch(autoSignInAction(user._user));
     }
   };
 
   React.useEffect(() => {
-    const subscriber = auth().onAuthStateChanged(onAuthStateChanged);
-    return subscriber; // unsubscribe on unmount
+    const unsubscribe = auth().onAuthStateChanged(onAuthStateChanged);
+    return unsubscribe; // unsubscribe on unmount
   }, []);
+
+  if (initializing) {
+    return (
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="initializing" component={() => <Container ready={false} />} />
+      </Stack.Navigator>
+    );
+  }
 
   if (!signedInUser) {
     return (

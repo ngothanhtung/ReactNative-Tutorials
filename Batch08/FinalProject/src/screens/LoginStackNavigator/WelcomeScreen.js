@@ -52,19 +52,6 @@ const Screen = ({ navigation, text, xml }) => (
         </Text>
       </View>
     </View>
-    <View>
-      <Button
-        mode="contained"
-        contentStyle={{ height: 48, flexDirection: 'row-reverse', justifyContent: 'center' }}
-        style={{ elevation: 0 }}
-        icon="chevron-right"
-        onPress={() => {
-          console.log('Get Started');
-          navigation.navigate('SignInScreen');
-        }}>
-        Bắt đầu
-      </Button>
-    </View>
   </View>
 );
 
@@ -98,6 +85,19 @@ const WelcomeScreen = ({ navigation }) => {
           <Screen key={s.id} navigation={navigation} text={s.text} xml={s.xml} />
         ))}
       </Swiper>
+      <View style={{ paddingHorizontal: 12, marginBottom: 24 }}>
+        <Button
+          mode="contained"
+          contentStyle={{ height: 48, flexDirection: 'row-reverse', justifyContent: 'center' }}
+          style={{ elevation: 0 }}
+          icon="chevron-right"
+          onPress={() => {
+            console.log('Get Started');
+            navigation.navigate('SignInScreen');
+          }}>
+          Bắt đầu
+        </Button>
+      </View>
     </Container>
   );
 };

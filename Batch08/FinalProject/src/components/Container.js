@@ -3,7 +3,7 @@ import React from 'react';
 import propTypes from 'prop-types';
 import { View, SafeAreaView } from 'react-native';
 
-import { Appbar, Button, Divider, Drawer, Menu } from 'react-native-paper';
+import { Appbar } from 'react-native-paper';
 
 import { useNavigation } from '@react-navigation/native';
 import Loading from './Loading';
@@ -57,14 +57,11 @@ const Container = ({ ready, title, subTitle, showAppbar, showHomeButton, showBac
 
 Container.defaultProps = {
   style: {},
-  title: 'TITLE',
+  title: 'UNTITLED',
   subTitle: '',
   showAppbar: false,
   showBackButton: false,
   showMenuButton: false,
-  actionButton: {
-    icon: 'dots-vertical',
-  },
   ready: true,
   children: null,
 };
@@ -75,9 +72,6 @@ Container.propTypes = {
   subTitle: propTypes.string,
   showAppbar: propTypes.bool,
   showActionButton: propTypes.bool,
-  actionButton: propTypes.shape({
-    icon: propTypes.string,
-  }),
   style: propTypes.oneOfType([propTypes.object, propTypes.array]),
   children: propTypes.instanceOf(Object),
 };
