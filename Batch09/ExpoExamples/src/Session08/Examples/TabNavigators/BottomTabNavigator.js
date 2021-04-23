@@ -14,13 +14,15 @@ const Tab = createBottomTabNavigator();
 
 export default function BottomTabNavigator() {
   return (
-    <Tab.Navigator tabBarOptions={{ showLabel: true }} initialRouteName='HomeScreen' backBehavior='history' sceneContainerStyle={{ backgroundColor: '#FBFBFB' }}>
+    <Tab.Navigator tabBarOptions={{ showLabel: true, activeTintColor: '#FF6C44', inactiveTintColor: '#898B9A' }} initialRouteName='HomeScreen' backBehavior='history' sceneContainerStyle={{ backgroundColor: '#FBFBFB' }}>
       <Tab.Screen
         name='HomeScreen'
         component={HomeScreen}
         options={{
           title: 'Home',
-          tabBarIcon: ({ focused, color, size }) => <Feather name='home' size={size * 0.8} color={color} />,
+          tabBarIcon: ({ focused, color, size }) => {
+            return <Feather name='home' size={size * 0.8} color={color} />;
+          },
         }}
       />
       <Tab.Screen

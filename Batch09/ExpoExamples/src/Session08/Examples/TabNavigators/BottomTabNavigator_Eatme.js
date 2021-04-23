@@ -5,6 +5,7 @@ import { Feather as Feather } from '@expo/vector-icons';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import HomeScreen from './screens/HomeScreen';
+import HomeStackNavigator from './screens/HomeStackNavigator';
 import SearchScreen from './screens/SearchScreen';
 import FavouriteScreen from './screens/FavouriteScreen';
 import CartScreen from './screens/CartScreen';
@@ -21,8 +22,8 @@ export default function BottomTabNavigator_Eatme() {
     <View style={{ flex: 1, backgroundColor: '#FBFBFB' }}>
       <Tab.Navigator tabBarOptions={{ showLabel: false, style: { height: 88, paddingHorizontal: 24, borderTopLeftRadius: 32, borderTopRightRadius: 32, backgroundColor: '#ffffff' } }} sceneContainerStyle={{ backgroundColor: '#FBFBFB' }}>
         <Tab.Screen
-          name='HomeScreen'
-          component={HomeScreen}
+          name='HomeStackNavigator'
+          component={HomeStackNavigator}
           options={{
             tabBarIcon: ({ focused, color, size }) => {
               if (focused) {

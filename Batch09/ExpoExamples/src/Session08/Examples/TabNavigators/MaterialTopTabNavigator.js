@@ -23,11 +23,11 @@ export default function MaterialTopTabNavigator() {
         activeTintColor: ACTIVE_COLOR,
         inactiveTintColor: INACTIVE_COLOR,
         style: { backgroundColor: 'white' },
-        labelStyle: { textTransform: 'none', fontSize: 12 },
+        labelStyle: { textTransform: 'none', fontSize: 13 },
         scrollEnabled: true,
         showIcon: true,
         showLabel: true,
-        tabStyle: { width: 100 },
+        tabStyle: { width: 110 },
         indicatorStyle: {
           backgroundColor: ACTIVE_COLOR,
         },

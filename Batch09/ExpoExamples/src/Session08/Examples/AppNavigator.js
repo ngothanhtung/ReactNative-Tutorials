@@ -18,11 +18,11 @@ import CustomDrawerNavigator from './DrawerNavigators/CustomDrawerNavigator';
 export default function AppNavigator() {
   return (
     <NavigationContainer>
-      <StackNavigator />
+      {/* <StackNavigator /> */}
 
       {/* TAB NAVIGATORS */}
       {/* <BottomTabNavigator /> */}
-      {/* <BottomTabNavigator_Eatme /> */}
+      <BottomTabNavigator_Eatme />
       {/* <MaterialBottomTabNavigator /> */}
       {/* <MaterialBottomTabNavigator_Eatme /> */}
       {/* <MaterialTopTabNavigator /> */}

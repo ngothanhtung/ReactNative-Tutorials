@@ -20,7 +20,7 @@ function CustomDrawerContent(props) {
         icon={({ color, size }) => <Icon color={color} size={size} name='log-out' />}
         onPress={() => {
           console.log('Sign out');
-          // props.navigation.closeDrawer();
+          props.navigation.closeDrawer();
         }}
       />
     </DrawerContentScrollView>

@@ -34,10 +34,12 @@ export default function StackNavigator() {
         name='Register'
         component={RegisterScreen}
         options={{
+          // headerTitleAlign: 'left',
           title: 'Đăng ký tài khoản',
+          headerTitleStyle: { color: 'red' },
           headerStyle: { backgroundColor: 'green' },
           headerTintColor: 'yellow',
-          headerLeft: LeftIcon,
+          // headerLeft: LeftIcon,
           headerRight: RightIcon,
         }}
       />
