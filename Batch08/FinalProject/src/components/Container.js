@@ -3,13 +3,13 @@ import React from 'react';
 import propTypes from 'prop-types';
 import { View, SafeAreaView } from 'react-native';
 
-import { Appbar, Button, Divider, Drawer, Menu } from 'react-native-paper';
+import { Appbar } from 'react-native-paper';
 
 import { useNavigation } from '@react-navigation/native';
 import Loading from './Loading';
 import colors from '../constants/colors';
 
-const Container = ({ ready, title, subTitle, showAppbar, showBackButton, showActionButton, actionButton, style, children }) => {
+const Container = ({ ready, title, subTitle, showAppbar, showHomeButton, showBackButton, showSearchButton, onSearch, style, children }) => {
   const navigation = useNavigation();
   // const route = useRoute();
   // console.log(route);
@@ -17,6 +17,7 @@ const Container = ({ ready, title, subTitle, showAppbar, showBackButton, showAct
     <View flex={1} style={{ backgroundColor: colors.BACKGROUND }}>
       {showAppbar && (
         <Appbar.Header dark>
+          {showHomeButton && <Appbar.Action icon="home" onPress={() => navigation.navigate('SLL_Parent_TabNavigator')} />}
           {showBackButton && (
             <Appbar.BackAction
               onPress={() => {
@@ -25,15 +26,22 @@ const Container = ({ ready, title, subTitle, showAppbar, showBackButton, showAct
             />
           )}
           <Appbar.Content title={title} subtitle={subTitle} titleStyle={{ fontFamily: 'Roboto-Medium' }} subtitleStyle={{ fontFamily: 'Roboto-Regular' }} />
-          <Appbar.Action icon="magnify" onPress={() => {}} />
-          {showActionButton && (
+          {showSearchButton && (
             <Appbar.Action
+              icon="magnify"
               onPress={() => {
-                navigation.openDrawer();
+                if (typeof onSearch === 'function') {
+                  onSearch();
+                }
               }}
-              icon={actionButton.icon}
             />
           )}
+          <Appbar.Action
+            onPress={() => {
+              navigation.openDrawer();
+            }}
+            icon="dots-vertical"
+          />
         </Appbar.Header>
       )}
 
@@ -49,14 +57,11 @@ const Container = ({ ready, title, subTitle, showAppbar, showBackButton, showAct
 
 Container.defaultProps = {
   style: {},
-  title: 'TITLE',
+  title: 'UNTITLED',
   subTitle: '',
   showAppbar: false,
   showBackButton: false,
   showMenuButton: false,
-  actionButton: {
-    icon: 'dots-vertical',
-  },
   ready: true,
   children: null,
 };
@@ -67,9 +72,6 @@ Container.propTypes = {
   subTitle: propTypes.string,
   showAppbar: propTypes.bool,
   showActionButton: propTypes.bool,
-  actionButton: propTypes.shape({
-    icon: propTypes.string,
-  }),
   style: propTypes.oneOfType([propTypes.object, propTypes.array]),
   children: propTypes.instanceOf(Object),
 };

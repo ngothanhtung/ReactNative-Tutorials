@@ -2,7 +2,7 @@
 import * as React from 'react';
 import { View, Text } from 'react-native';
 import { useSelector, useDispatch } from 'react-redux';
-import { Avatar, Button, Title, Divider } from 'react-native-paper';
+import { Avatar, Button, Divider } from 'react-native-paper';
 import { ListItem, Icon } from 'react-native-elements';
 import { ScrollView } from 'react-native-gesture-handler';
 import Container from '../../../../components/Container';
@@ -32,9 +32,9 @@ const MainScreen = () => {
             </View>
           </View>
           <Divider style={{ height: 1 }} />
-          <View marginTop={12}>
+          {/* <View marginTop={12}>
             <Title style={{ color: colors.SLL_PRIMARY_FONT, fontSize: 16, marginLeft: 20 }}>Thiết lập, cấu hình tài khoản</Title>
-          </View>
+          </View> */}
           <ScrollView style={{ marginTop: 12, flex: 1 }}>
             <ListItem bottomDivider onPress={() => {}}>
               <Icon name="lock" color={colors.PRIMARY_ICON} size={24} />

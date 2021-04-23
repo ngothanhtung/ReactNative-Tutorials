@@ -1,12 +1,11 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import { View, Text, FlatList, StyleSheet } from 'react-native';
+import { View, Text, FlatList, StyleSheet, RefreshControl } from 'react-native';
 import { useTheme } from 'react-native-paper';
 import { Icon } from 'react-native-elements';
 import SLL_Service from '../../../../services/SLL_Service';
 import Container from '../../../../components/Container';
 import colors from '../../../../constants/colors';
-import { RefreshControl } from 'react-native';
 
 const styles = StyleSheet.create({
   dayOfWeek: {

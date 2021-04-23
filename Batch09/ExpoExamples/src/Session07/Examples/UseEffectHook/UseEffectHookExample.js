@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, SafeAreaView, FlatList, RefreshControl } from 'react-native';
+import { Text, View, SafeAreaView, FlatList, RefreshControl } from 'react-native';
 import axios from 'axios';
 
 const url = 'https://training.softech.cloud/api/products';
@@ -13,7 +13,7 @@ const renderItem = ({ item, index }) => {
   );
 };
 
-export default function BasicHookNetworking() {
+export default function UseEffectHookExample() {
   const [refresh, setRefresh] = React.useState(0);
   const [loading, setLoading] = React.useState(true);
   const [products, setProducts] = React.useState([]);
@@ -55,5 +55,3 @@ export default function BasicHookNetworking() {
     </SafeAreaView>
   );
 }
-
-const styles = StyleSheet.create({});

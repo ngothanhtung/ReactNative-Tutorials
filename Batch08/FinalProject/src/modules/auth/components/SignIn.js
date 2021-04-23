@@ -22,13 +22,13 @@ const SignInSchema = Yup.object().shape({
   password: Yup.string().required(),
 });
 
-const SignIn = () => {
+function SignInWithPhone() {
   const Touch = Platform.OS === 'ios' ? TouchableOpacity : TouchableWithoutFeedback;
   // REDUX
   const loading = useSelector((state) => state.auth.loading);
   const dispatch = useDispatch();
-  // THEMNE
-  const paperColor = useTheme().colors;
+  // THEME
+  const themeColor = useTheme().colors;
 
   // NAVIGATION
   const navigation = useNavigation();
@@ -79,7 +79,7 @@ const SignIn = () => {
                   animation="slideInDown"
                   style={{
                     height: 240,
-                    backgroundColor: paperColor.primary,
+                    backgroundColor: themeColor.primary,
                     justifyContent: 'center',
                   }}>
                   <View style={{ justifyContent: 'center', alignItems: 'center' }}>
@@ -105,7 +105,7 @@ const SignIn = () => {
                   </View>
                 </Animatable.View>
                 <View style={{ alignItems: 'center', padding: 16, paddingTop: 36 }}>
-                  <Headline style={{ color: paperColor.primary, fontWeight: '400' }}>ĐĂNG NHẬP</Headline>
+                  <Headline style={{ color: themeColor.primary, fontWeight: '400' }}>ĐĂNG NHẬP</Headline>
                 </View>
                 <View style={{ flex: 0, justifyContent: 'flex-start', padding: 16 }}>
                   <TextBox
@@ -149,7 +149,23 @@ const SignIn = () => {
                   <Button
                     disabled={loading}
                     loading={loading}
-                    labelStyle={{ fontSize: 18 }}
+                    labelStyle={{ fontSize: 16 }}
+                    contentStyle={{
+                      height: 48,
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                    }}
+                    style={{ elevation: 0 }}
+                    // uppercase={false}
+                    icon="key"
+                    mode="contained"
+                    onPress={formik.handleSubmit}
+                    dark>
+                    {loading ? 'Đang đăng nhập ...' : 'Đăng nhập'}
+                  </Button>
+                  <View height={16} />
+                  <Button
+                    labelStyle={{ fontSize: 16 }}
                     contentStyle={{
                       height: 48,
                       alignItems: 'center',
@@ -157,11 +173,13 @@ const SignIn = () => {
                     }}
                     style={{ elevation: 0 }}
                     uppercase={false}
-                    icon="key"
-                    mode="contained"
-                    onPress={formik.handleSubmit}
+                    icon="phone"
+                    mode="outlined"
+                    onPress={() => {
+                      navigation.navigate('SignInWithPhoneScreen');
+                    }}
                     dark>
-                    {loading ? 'Đang đăng nhập ...' : 'Đăng nhập'}
+                    Đăng nhập bằng điện thoại
                   </Button>
 
                   <Touch
@@ -180,6 +198,6 @@ const SignIn = () => {
       </TouchableOpacity>
     </View>
   );
-};
+}
 
-export default SignIn;
+export default SignInWithPhone;

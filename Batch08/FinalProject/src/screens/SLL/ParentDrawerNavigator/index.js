@@ -19,11 +19,11 @@ function CustomDrawerContent(props) {
       <DrawerItem
         {...props}
         focused={focused === 0}
-        label="Quay lại"
+        label="Trang chính"
         labelStyle={{ fontFamily: 'Roboto-Bold', marginLeft: -12 }}
-        icon={({ color, size }) => <Icon color={color} size={size} name="keyboard-backspace" />}
+        icon={({ color, size }) => <Icon color={color} size={size} name="home" />}
         onPress={() => {
-          console.log(props);
+          // console.log(props);
           setFocused(0);
           navigation.navigate('SLL_Parent_TabNavigator');
           navigation.closeDrawer();
@@ -36,7 +36,7 @@ function CustomDrawerContent(props) {
         labelStyle={{ fontFamily: 'Roboto-Bold', marginLeft: -12 }}
         icon={({ color, size }) => <Icon color={color} size={size} name="apps" />}
         onPress={() => {
-          console.log(props);
+          // console.log(props);
           setFocused(1);
           navigation.navigate('SLL_Parent_Drawer_Menu1');
           navigation.closeDrawer();
@@ -49,7 +49,7 @@ function CustomDrawerContent(props) {
         labelStyle={{ fontFamily: 'Roboto-Bold', marginLeft: -12 }}
         icon={({ color, size }) => <Icon color={color} size={size} name="apps" />}
         onPress={() => {
-          console.log(props);
+          // console.log(props);
           setFocused(2);
           navigation.navigate('SLL_Parent_Drawer_Menu2');
           navigation.closeDrawer();
@@ -63,7 +63,7 @@ const CustomDrawerNavigator = () => {
   return (
     <Drawer.Navigator
       drawerPosition="right"
-      drawerContentOptions={{ activeTintColor: colors.WHITE, inactiveTintColor: colors.PRIMARY_FONT, activeBackgroundColor: colors.SLL_PRIMARY }}
+      drawerContentOptions={{ activeTintColor: colors.SLL_PRIMARY, inactiveTintColor: colors.PRIMARY_FONT, activeBackgroundColor: colors.WHITE }}
       drawerContent={(props) => <CustomDrawerContent {...props} />}>
       <Drawer.Screen name="SLL_Parent_TabNavigator" component={ParentTabNavigator} />
       <Drawer.Screen name="SLL_Parent_Drawer_Menu1" component={Menu1Screen} />
