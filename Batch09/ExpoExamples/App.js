@@ -30,6 +30,7 @@ import * as Font from 'expo-font';
 // import BasicHook from './src/Session07/Examples/BasicHook';
 // import BasicHookNetworking from './src/Session07/Examples/BasicHookNetworking';
 // import CustomHookExample from './src/Session07/Examples/CustomHookExample';
+import LoginExamples from './src/Session07/Examples/LoginExamples';
 
 // Session 08
 import AppNavigator from './src/Session08/Examples/AppNavigator';
@@ -69,7 +70,7 @@ export default class App extends Component {
 
   render() {
     if (this.state.fontsLoaded) {
-      return <AppNavigator />;
+      // return <AppNavigator />;
       return (
         <SafeAreaView style={{ flex: 1, alignItems: 'center' }}>
           <View style={{ minWidth: 414, minHeight: Platform.OS === 'web' ? 812 : null }}>
@@ -83,7 +84,7 @@ export default class App extends Component {
             {/* <SectionListExample /> */}
             {/* <SectionListAdvancedExample /> */}
             {/* <HomeScreen /> */}
-            <Animation_Example01 />
+            {/* <Animation_Example01 /> */}
             {/* <Example02 /> */}
             {/* <Example03 /> */}
             {/* <Example04
@@ -106,6 +107,7 @@ export default class App extends Component {
             {/* <BasicHook title='COUNTER - HOOK' /> */}
             {/* <BasicHookNetworking /> */}
             {/* <CustomHookExample /> */}
+            <LoginExamples />
           </View>
         </SafeAreaView>
       );
