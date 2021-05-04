@@ -25,45 +25,6 @@
 9. Material Icon Theme (Downloads: 5M)
 10. One Dark Pro (Downloads: 7.8M)
 
-# C. Prequisite
-
-## C.1. Main Concepts:
-
-1.  Create a React application: reactexamples
-
-    > Tại của số terminal hoặc command line, gõ
-
-```
-    npx create-react-app reactexamples
-
-    cd reactexamples
-
-    npm run start hoặc yarn start
-```
-
-2.  Introduction JSX
-3.  Render Elements
-4.  Components & Props, Callback functions (https://reactjs.org/docs/components-and-props.html)
-
-    - Resources:
-
-      > https://uifaces.co/
-
-      > https://picsum.photos/
-
-5.  Typechecking With PropTypes (https://reactjs.org/docs/typechecking-with-proptypes.html)
-
-    > https://github.com/ngothanhtung/ReactNative-Tutorials/blob/master/Batch08/ReactExamples/src/LikeButtonClass.js
-
-6.  State & Lifecycle (https://reactjs.org/docs/state-and-lifecycle.html)
-
-    > https://github.com/ngothanhtung/ReactNative-Tutorials/blob/master/Batch08/ReactExamples/src/Gallery1Class.js
-
-7.  Handling Events (https://reactjs.org/docs/handling-events.html)
-8.  Conditional Rendering (https://reactjs.org/docs/conditional-rendering.html)
-9.  List & Keys (https://reactjs.org/docs/lists-and-keys.html)
-10. Refs and the DOM
-
 # Session 01: Setup React Native
 
 ## 1.1 EXPO-CLI
