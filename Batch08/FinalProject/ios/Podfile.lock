@@ -278,7 +278,7 @@ PODS:
   - Flipper (0.88.0):
     - Flipper-Folly (~> 2.6)
     - Flipper-RSocket (~> 1.4)
-  - Flipper-Boost-iOSX (1.76.0.1.10)
+  - Flipper-Boost-iOSX (1.76.0.1.11)
   - Flipper-DoubleConversion (1.1.7)
   - Flipper-Fmt (7.1.7)
   - Flipper-Folly (2.6.7):
@@ -950,7 +950,7 @@ SPEC CHECKSUMS:
   FirebaseFirestore: f495bb336b23eca23ea5d3605dce2a4cc214fde9
   FirebaseStorage: 8542711850ca181a3931c0ed483006a7b46039e7
   Flipper: bbba2bf26e3377be472c5afd4113a4c77c4af07a
-  Flipper-Boost-iOSX: df3765e7e26b44bc3e68a250ef1fa0afa15963bc
+  Flipper-Boost-iOSX: 0895bb5ff108435a09b830b0b53f5ef5358c5861
   Flipper-DoubleConversion: 38631e41ef4f9b12861c67d17cb5518d06badc41
   Flipper-Fmt: 60cbdd92fc254826e61d669a5d87ef7015396a9b
   Flipper-Folly: 83af37379faa69497529e414bd43fbfc7cae259a
@@ -1016,6 +1016,6 @@ SPEC CHECKSUMS:
   Yoga: 3ebccbdd559724312790e7742142d062476b698e
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
-PODFILE CHECKSUM: 598feaeb52f0cd5b3dd41118768c22822911fd4c
+PODFILE CHECKSUM: 2347a1021b5df1dd8a3c4b0166e966a6834f39b1
 
 COCOAPODS: 1.10.1

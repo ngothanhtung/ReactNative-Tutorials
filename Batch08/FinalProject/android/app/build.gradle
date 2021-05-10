@@ -141,7 +141,7 @@ android {
     }
 
     defaultConfig {
-        applicationId "vn.softech.grabservices"
+        applicationId "tech.jny.grabservices"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 3

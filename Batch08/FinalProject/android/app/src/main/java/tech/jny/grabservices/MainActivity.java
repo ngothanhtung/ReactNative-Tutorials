@@ -1,4 +1,4 @@
-package vn.softech.grabservices;
+package tech.jny.grabservices;
 
 import com.facebook.react.ReactActivity;
 

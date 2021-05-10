@@ -10,7 +10,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:900117337974:android:95451368ebb5edaf8d4c57",
         "android_client_info": {
-          "package_name": "vn.softech.grabservices"
+          "package_name": "tech.jny.grabservices"
         }
       },
       "oauth_client": [
@@ -18,7 +18,7 @@
           "client_id": "900117337974-jkoh6b98khk2354vtmsitlp0ubqfjerl.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "vn.softech.grabservices",
+            "package_name": "tech.jny.grabservices",
             "certificate_hash": "adcae22da2d347bde11f85af7fa55635a80fd5a8"
           }
         },

@@ -42,7 +42,6 @@
 		7E8D3751665E49AC9BDA76E4 /* Poppins-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 48A86868732C497AAC04C5C2 /* Poppins-BoldItalic.ttf */; };
 		7FC75D8DC3ED4027A13BD70D /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2DF6B6424CFF47CD954C648F /* Poppins-Bold.ttf */; };
 		8013668A9FB54C5896995204 /* Poppins-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3B394E55D64D49069081BEF5 /* Poppins-ThinItalic.ttf */; };
-		8996A18424B88B6500E67FEB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8996A18324B88B6500E67FEB /* GoogleService-Info.plist */; };
 		8B00235531CB4EBE85FC3CBF /* Poppins-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AA1DD23F2AE644529A75BB7F /* Poppins-Thin.ttf */; };
 		8E671FB6219244759AE12F38 /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0D471432B61C4B99BCC951DC /* Poppins-ExtraBold.ttf */; };
 		9801D0C471854DFFBDE6A655 /* Nunito-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 58612F3F294448CA91822850 /* Nunito-ExtraLightItalic.ttf */; };
@@ -51,7 +50,7 @@
 		A24E65429F434E5DBCD8808A /* Nunito-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D7E84C1CF7DD412B8EF9C63A /* Nunito-LightItalic.ttf */; };
 		A309F072C89B4A428FD9AA9E /* Roboto-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BE4F1C8D731F452C84DDE455 /* Roboto-BoldItalic.ttf */; };
 		A6C4F4874786409FAE2CCB85 /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 431376BBCA83481B91FA7387 /* Lato-LightItalic.ttf */; };
-		AB38DAB568D333E95440F0EF /* libPods-finalproject.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2260B4597E60913DCFB227FE /* libPods-finalproject.a */; };
+		AB38DAB568D333E95440F0EF /* libPods-grabservices.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 2260B4597E60913DCFB227FE /* libPods-grabservices.a */; };
 		ABFB72E725A6442B933B63C7 /* Lato-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = BDD30DB87F9A40639A6E03EE /* Lato-ThinItalic.ttf */; };
 		B463BE712C7244108AB7494E /* Oswald-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C4988431858E4419B548C80F /* Oswald-Bold.ttf */; };
 		BF79356645B243EAB367D28B /* Nunito-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59E2DE9EE4FC499DA725D50A /* Nunito-Black.ttf */; };
@@ -61,6 +60,7 @@
 		CC654199CC854851A1556131 /* Roboto-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 989CE10B88344610820E80A8 /* Roboto-BlackItalic.ttf */; };
 		CE96F04C5BF34B00BE7B40A4 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AF6F46BCA3EA4F6CB55203C5 /* Lato-Light.ttf */; };
 		CF5459B643364D7DA7E8B24F /* Roboto-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6284FE5C5C44486195CCBF0F /* Roboto-Light.ttf */; };
+		D14C7D1B2649729A003B99EF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D14C7D1A2649729A003B99EF /* GoogleService-Info.plist */; };
 		D4AC7848916B4BB982ACFF4E /* Oswald-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3AB75F7F7BC41D7BF8A5018 /* Oswald-ExtraLight.ttf */; };
 		DA0BED0D4155415FA6E703B1 /* Lato-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A704BD87792B4D0EB76A8E79 /* Lato-Thin.ttf */; };
 		DAC291928EC2472C9774D76E /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = EBB0B1527EF6418CAED20B94 /* Poppins-Medium.ttf */; };
@@ -85,18 +85,17 @@
 		0C67D696A4A746DD98014135 /* Nunito-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Regular.ttf"; path = "../src/assets/fonts/Nunito-Regular.ttf"; sourceTree = "<group>"; };
 		0D471432B61C4B99BCC951DC /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ExtraBold.ttf"; path = "../src/assets/fonts/Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* Final Project.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Final Project.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = finalproject/AppDelegate.h; sourceTree = "<group>"; };
-		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = finalproject/AppDelegate.m; sourceTree = "<group>"; };
+		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = grabservices/AppDelegate.h; sourceTree = "<group>"; };
+		13B07FB01A68108700A75B9A /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = AppDelegate.m; path = grabservices/AppDelegate.m; sourceTree = "<group>"; };
 		13B07FB21A68108700A75B9A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = finalproject/Images.xcassets; sourceTree = "<group>"; };
-		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = finalproject/Info.plist; sourceTree = "<group>"; };
-		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = finalproject/main.m; sourceTree = "<group>"; };
-		1444727F264928D2008CD353 /* Final Project.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "Final Project.entitlements"; path = "finalproject/Final Project.entitlements"; sourceTree = "<group>"; };
+		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = grabservices/Images.xcassets; sourceTree = "<group>"; };
+		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = grabservices/Info.plist; sourceTree = "<group>"; };
+		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = grabservices/main.m; sourceTree = "<group>"; };
 		19E9AB7F26E74C33A7CEF4C8 /* Poppins-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-MediumItalic.ttf"; path = "../src/assets/fonts/Poppins-MediumItalic.ttf"; sourceTree = "<group>"; };
 		1E1BA78171A84EF282ED6AF8 /* Roboto-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-LightItalic.ttf"; path = "../src/assets/fonts/Roboto-LightItalic.ttf"; sourceTree = "<group>"; };
 		200FA91B17E742F9A1393BB8 /* FontAwesome5_Brands.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Brands.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Brands.ttf"; sourceTree = "<group>"; };
 		2220DF38C46C4E1387FDA883 /* FontAwesome5_Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Regular.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome5_Regular.ttf"; sourceTree = "<group>"; };
-		2260B4597E60913DCFB227FE /* libPods-finalproject.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-finalproject.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2260B4597E60913DCFB227FE /* libPods-grabservices.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-grabservices.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		234D9BEAC95440C88D417A79 /* Poppins-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-LightItalic.ttf"; path = "../src/assets/fonts/Poppins-LightItalic.ttf"; sourceTree = "<group>"; };
 		2B086EA489FB49C39059F178 /* Poppins-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Regular.ttf"; path = "../src/assets/fonts/Poppins-Regular.ttf"; sourceTree = "<group>"; };
 		2DF6B6424CFF47CD954C648F /* Poppins-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Bold.ttf"; path = "../src/assets/fonts/Poppins-Bold.ttf"; sourceTree = "<group>"; };
@@ -106,9 +105,9 @@
 		32FAB24438074AAD8CD45778 /* Nunito-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Bold.ttf"; path = "../src/assets/fonts/Nunito-Bold.ttf"; sourceTree = "<group>"; };
 		37317F27EF974064AA31576C /* Roboto-MediumItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-MediumItalic.ttf"; path = "../src/assets/fonts/Roboto-MediumItalic.ttf"; sourceTree = "<group>"; };
 		374A476E122F43ED801A5E18 /* Nunito-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Italic.ttf"; path = "../src/assets/fonts/Nunito-Italic.ttf"; sourceTree = "<group>"; };
-		3855388B768280EF6199DDA9 /* Pods-finalproject.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-finalproject.release.xcconfig"; path = "Target Support Files/Pods-finalproject/Pods-finalproject.release.xcconfig"; sourceTree = "<group>"; };
+		3855388B768280EF6199DDA9 /* Pods-grabservices.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-grabservices.release.xcconfig"; path = "Target Support Files/Pods-grabservices/Pods-grabservices.release.xcconfig"; sourceTree = "<group>"; };
 		3B394E55D64D49069081BEF5 /* Poppins-ThinItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ThinItalic.ttf"; path = "../src/assets/fonts/Poppins-ThinItalic.ttf"; sourceTree = "<group>"; };
-		406F7C57757923ADDA2479A3 /* Pods-finalproject.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-finalproject.debug.xcconfig"; path = "Target Support Files/Pods-finalproject/Pods-finalproject.debug.xcconfig"; sourceTree = "<group>"; };
+		406F7C57757923ADDA2479A3 /* Pods-grabservices.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-grabservices.debug.xcconfig"; path = "Target Support Files/Pods-grabservices/Pods-grabservices.debug.xcconfig"; sourceTree = "<group>"; };
 		431376BBCA83481B91FA7387 /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-LightItalic.ttf"; path = "../src/assets/fonts/Lato-LightItalic.ttf"; sourceTree = "<group>"; };
 		48A86868732C497AAC04C5C2 /* Poppins-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-BoldItalic.ttf"; path = "../src/assets/fonts/Poppins-BoldItalic.ttf"; sourceTree = "<group>"; };
 		5584432C47584987A4CDD170 /* Roboto-ThinItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-ThinItalic.ttf"; path = "../src/assets/fonts/Roboto-ThinItalic.ttf"; sourceTree = "<group>"; };
@@ -124,13 +123,12 @@
 		79A0C636C08E4BC79D978AFF /* Foundation.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Foundation.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Foundation.ttf"; sourceTree = "<group>"; };
 		7DD582FFDD604E3C9C548D9A /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-BoldItalic.ttf"; path = "../src/assets/fonts/Lato-BoldItalic.ttf"; sourceTree = "<group>"; };
 		7E66AD81966B40489DA31D8F /* Poppins-ExtraLightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ExtraLightItalic.ttf"; path = "../src/assets/fonts/Poppins-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
-		873FC7B9E6B65E0224A8C3DA /* libPods-finalproject-finalprojectTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-finalproject-finalprojectTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		873FC7B9E6B65E0224A8C3DA /* libPods-grabservices-grabservicesTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-grabservices-grabservicesTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		88A084BF293347F99E60F7FE /* Roboto-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Regular.ttf"; path = "../src/assets/fonts/Roboto-Regular.ttf"; sourceTree = "<group>"; };
-		8996A18324B88B6500E67FEB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "finalproject/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		8D157A6DDBAD4BE08491741A /* Lato-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Regular.ttf"; path = "../src/assets/fonts/Lato-Regular.ttf"; sourceTree = "<group>"; };
 		95357406EE2E49C78C89E728 /* Oswald-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Oswald-Light.ttf"; path = "../src/assets/fonts/Oswald-Light.ttf"; sourceTree = "<group>"; };
 		95D8AC837ABF4B279523070F /* Oswald-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Oswald-SemiBold.ttf"; path = "../src/assets/fonts/Oswald-SemiBold.ttf"; sourceTree = "<group>"; };
-		968BC9E802D0A912B8E94B2A /* Pods-finalproject-finalprojectTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-finalproject-finalprojectTests.debug.xcconfig"; path = "Target Support Files/Pods-finalproject-finalprojectTests/Pods-finalproject-finalprojectTests.debug.xcconfig"; sourceTree = "<group>"; };
+		968BC9E802D0A912B8E94B2A /* Pods-grabservices-grabservicesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-grabservices-grabservicesTests.debug.xcconfig"; path = "Target Support Files/Pods-grabservices-grabservicesTests/Pods-grabservices-grabservicesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9839A780AD134FD8AA7ADB61 /* Poppins-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-ExtraBoldItalic.ttf"; path = "../src/assets/fonts/Poppins-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
 		989CE10B88344610820E80A8 /* Roboto-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-BlackItalic.ttf"; path = "../src/assets/fonts/Roboto-BlackItalic.ttf"; sourceTree = "<group>"; };
 		9CABD8ADDCE7440192E564AD /* FontAwesome.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome.ttf; path = "../node_modules/react-native-vector-icons/Fonts/FontAwesome.ttf"; sourceTree = "<group>"; };
@@ -148,7 +146,7 @@
 		B3B41A26D2124DC29CEF4594 /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = SimpleLineIcons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; };
 		B666E8F9C4E24189BE7D09DE /* Nunito-SemiBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-SemiBold.ttf"; path = "../src/assets/fonts/Nunito-SemiBold.ttf"; sourceTree = "<group>"; };
 		B7457D14D6C0457288938FD1 /* Poppins-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Poppins-Light.ttf"; path = "../src/assets/fonts/Poppins-Light.ttf"; sourceTree = "<group>"; };
-		B780642DDF6E731326C3050F /* Pods-finalproject-finalprojectTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-finalproject-finalprojectTests.release.xcconfig"; path = "Target Support Files/Pods-finalproject-finalprojectTests/Pods-finalproject-finalprojectTests.release.xcconfig"; sourceTree = "<group>"; };
+		B780642DDF6E731326C3050F /* Pods-grabservices-grabservicesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-grabservices-grabservicesTests.release.xcconfig"; path = "Target Support Files/Pods-grabservices-grabservicesTests/Pods-grabservices-grabservicesTests.release.xcconfig"; sourceTree = "<group>"; };
 		BCEA616960484512965C2DDD /* Oswald-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Oswald-Medium.ttf"; path = "../src/assets/fonts/Oswald-Medium.ttf"; sourceTree = "<group>"; };
 		BDD30DB87F9A40639A6E03EE /* Lato-ThinItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-ThinItalic.ttf"; path = "../src/assets/fonts/Lato-ThinItalic.ttf"; sourceTree = "<group>"; };
 		BE12F92B05C24BF1B77C3521 /* Octicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Octicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; };
@@ -157,6 +155,8 @@
 		C4988431858E4419B548C80F /* Oswald-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Oswald-Bold.ttf"; path = "../src/assets/fonts/Oswald-Bold.ttf"; sourceTree = "<group>"; };
 		C7CC59164E0C479BA200F33E /* Roboto-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Roboto-Bold.ttf"; path = "../src/assets/fonts/Roboto-Bold.ttf"; sourceTree = "<group>"; };
 		C93CC1A60D43403CA6114741 /* Ionicons.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = Ionicons.ttf; path = "../node_modules/react-native-vector-icons/Fonts/Ionicons.ttf"; sourceTree = "<group>"; };
+		D14C7D192649726F003B99EF /* grabservices.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; name = grabservices.entitlements; path = grabservices/grabservices.entitlements; sourceTree = "<group>"; };
+		D14C7D1A2649729A003B99EF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "grabservices/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D6DFA04377204D0887C4DAAE /* Nunito-ExtraBold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-ExtraBold.ttf"; path = "../src/assets/fonts/Nunito-ExtraBold.ttf"; sourceTree = "<group>"; };
 		D7E84C1CF7DD412B8EF9C63A /* Nunito-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-LightItalic.ttf"; path = "../src/assets/fonts/Nunito-LightItalic.ttf"; sourceTree = "<group>"; };
 		D9B41FED038E47CABFA318D0 /* Nunito-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Nunito-Light.ttf"; path = "../src/assets/fonts/Nunito-Light.ttf"; sourceTree = "<group>"; };
@@ -177,7 +177,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AB38DAB568D333E95440F0EF /* libPods-finalproject.a in Frameworks */,
+				AB38DAB568D333E95440F0EF /* libPods-grabservices.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -267,10 +267,11 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		13B07FAE1A68108700A75B9A /* finalproject */ = {
+		13B07FAE1A68108700A75B9A /* grabservices */ = {
 			isa = PBXGroup;
 			children = (
-				1444727F264928D2008CD353 /* Final Project.entitlements */,
+				D14C7D1A2649729A003B99EF /* GoogleService-Info.plist */,
+				D14C7D192649726F003B99EF /* grabservices.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.m */,
@@ -279,7 +280,7 @@
 				13B07FB11A68108700A75B9A /* LaunchScreen.xib */,
 				13B07FB71A68108700A75B9A /* main.m */,
 			);
-			name = finalproject;
+			name = grabservices;
 			sourceTree = "<group>";
 		};
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
@@ -287,8 +288,8 @@
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				ED2971642150620600B7C4FE /* JavaScriptCore.framework */,
-				2260B4597E60913DCFB227FE /* libPods-finalproject.a */,
-				873FC7B9E6B65E0224A8C3DA /* libPods-finalproject-finalprojectTests.a */,
+				2260B4597E60913DCFB227FE /* libPods-grabservices.a */,
+				873FC7B9E6B65E0224A8C3DA /* libPods-grabservices-grabservicesTests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -296,10 +297,10 @@
 		7358429E55038F30C7041923 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				406F7C57757923ADDA2479A3 /* Pods-finalproject.debug.xcconfig */,
-				3855388B768280EF6199DDA9 /* Pods-finalproject.release.xcconfig */,
-				968BC9E802D0A912B8E94B2A /* Pods-finalproject-finalprojectTests.debug.xcconfig */,
-				B780642DDF6E731326C3050F /* Pods-finalproject-finalprojectTests.release.xcconfig */,
+				406F7C57757923ADDA2479A3 /* Pods-grabservices.debug.xcconfig */,
+				3855388B768280EF6199DDA9 /* Pods-grabservices.release.xcconfig */,
+				968BC9E802D0A912B8E94B2A /* Pods-grabservices-grabservicesTests.debug.xcconfig */,
+				B780642DDF6E731326C3050F /* Pods-grabservices-grabservicesTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -314,8 +315,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
-				8996A18324B88B6500E67FEB /* GoogleService-Info.plist */,
-				13B07FAE1A68108700A75B9A /* finalproject */,
+				13B07FAE1A68108700A75B9A /* grabservices */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
@@ -338,9 +338,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		13B07F861A680F5B00A75B9A /* finalproject */ = {
+		13B07F861A680F5B00A75B9A /* grabservices */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "finalproject" */;
+			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "grabservices" */;
 			buildPhases = (
 				5BE5EA958B7E68AF31C79664 /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
@@ -356,8 +356,8 @@
 			);
 			dependencies = (
 			);
-			name = finalproject;
-			productName = finalproject;
+			name = grabservices;
+			productName = grabservices;
 			productReference = 13B07F961A680F5B00A75B9A /* Final Project.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -376,7 +376,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "finalproject" */;
+			buildConfigurationList = 83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "grabservices" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -389,7 +389,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				13B07F861A680F5B00A75B9A /* finalproject */,
+				13B07F861A680F5B00A75B9A /* grabservices */,
 			);
 		};
 /* End PBXProject section */
@@ -401,7 +401,6 @@
 			files = (
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				13B07FBD1A68108700A75B9A /* LaunchScreen.xib in Resources */,
-				8996A18424B88B6500E67FEB /* GoogleService-Info.plist in Resources */,
 				0F50533EDE034C89883FF6DC /* Lato-Black.ttf in Resources */,
 				E2EAFA41430941B7B42C017C /* Lato-BlackItalic.ttf in Resources */,
 				380BF644796B49A18E17BF39 /* Lato-Bold.ttf in Resources */,
@@ -420,6 +419,7 @@
 				2B109D8AF17A42AEA02DD87F /* Nunito-ExtraBoldItalic.ttf in Resources */,
 				F58396D9313F46AAAFEB3E32 /* Nunito-ExtraLight.ttf in Resources */,
 				9801D0C471854DFFBDE6A655 /* Nunito-ExtraLightItalic.ttf in Resources */,
+				D14C7D1B2649729A003B99EF /* GoogleService-Info.plist in Resources */,
 				35B80A5E528B44639727F4C8 /* Nunito-Italic.ttf in Resources */,
 				C1FC2B6F91D54C85A2AF79FA /* Nunito-Light.ttf in Resources */,
 				A24E65429F434E5DBCD8808A /* Nunito-LightItalic.ttf in Resources */,
@@ -488,7 +488,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-finalproject/Pods-finalproject-resources.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-grabservices/Pods-grabservices-resources.sh",
 				"${PODS_ROOT}/GoogleMaps/Maps/Frameworks/GoogleMaps.framework/Resources/GoogleMaps.bundle",
 				"${PODS_CONFIGURATION_BUILD_DIR}/RNImageCropPicker/QBImagePicker.bundle",
 				"${PODS_ROOT}/../../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf",
@@ -535,7 +535,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-finalproject/Pods-finalproject-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-grabservices/Pods-grabservices-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		5BE5EA958B7E68AF31C79664 /* [CP] Check Pods Manifest.lock */ = {
@@ -553,7 +553,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-finalproject-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-grabservices-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -579,7 +579,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-finalproject/Pods-finalproject-frameworks.sh",
+				"${PODS_ROOT}/Target Support Files/Pods-grabservices/Pods-grabservices-frameworks.sh",
 				"${PODS_XCFRAMEWORKS_BUILD_DIR}/OpenSSL/OpenSSL.framework/OpenSSL",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -588,7 +588,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-finalproject/Pods-finalproject-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-grabservices/Pods-grabservices-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		FD10A7F022414F080027D42C /* Start Packager */ = {
@@ -631,7 +631,7 @@
 				13B07FB21A68108700A75B9A /* Base */,
 			);
 			name = LaunchScreen.xib;
-			path = finalproject;
+			path = grabservices;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -639,11 +639,11 @@
 /* Begin XCBuildConfiguration section */
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 406F7C57757923ADDA2479A3 /* Pods-finalproject.debug.xcconfig */;
+			baseConfigurationReference = 406F7C57757923ADDA2479A3 /* Pods-grabservices.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "finalproject/Final Project.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "grabservices/grabservices.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -653,7 +653,7 @@
 					"$(inherited)",
 					"FB_SONARKIT_ENABLED=1",
 				);
-				INFOPLIST_FILE = finalproject/Info.plist;
+				INFOPLIST_FILE = grabservices/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -671,16 +671,16 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3855388B768280EF6199DDA9 /* Pods-finalproject.release.xcconfig */;
+			baseConfigurationReference = 3855388B768280EF6199DDA9 /* Pods-grabservices.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = "finalproject/Final Project.entitlements";
+				CODE_SIGN_ENTITLEMENTS = "grabservices/grabservices.entitlements";
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 685HK952M2;
-				INFOPLIST_FILE = finalproject/Info.plist;
+				INFOPLIST_FILE = grabservices/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = (
 					"$(inherited)",
@@ -811,7 +811,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "finalproject" */ = {
+		13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "grabservices" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				13B07F941A680F5B00A75B9A /* Debug */,
@@ -820,7 +820,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "finalproject" */ = {
+		83CBB9FA1A601CBA00E9B192 /* Build configuration list for PBXProject "grabservices" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				83CBBA201A601CBA00E9B192 /* Debug */,
