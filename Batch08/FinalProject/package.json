@@ -10,6 +10,7 @@
     "clean:apk": "cd android && ./gradlew cleanBuildCache",
     "uninstall": "adb uninstall vn.softech.grabservices",
     "codepush:android": "appcenter codepush release-react -a ngothanhtung.it-gmail.com/Grab-Services-Android -d Production -m",
+    "codepush:ios": "appcenter codepush release-react -a ngothanhtung.it-gmail.com/GrabServices-iOS -d Production -m",
     "ke": "adb shell input keyevent 82",
     "ios": "react-native run-ios",
     "start": "react-native start",

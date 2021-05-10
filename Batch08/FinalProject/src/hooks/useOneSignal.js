@@ -12,6 +12,7 @@ export default () => {
   };
 
   const onIds = (device) => {
+    console.log(device);
     AsyncStorage.setItem('OneSignal', JSON.stringify(device));
   };
 

@@ -3,9 +3,11 @@
 <plist version="1.0">
 <dict>
 	<key>CLIENT_ID</key>
-	<string>900117337974-ifl6ogq27gu0c7jnahhauh7eql43884i.apps.googleusercontent.com</string>
+	<string>900117337974-k2g9gmljf2gpm4nkoptsfc5djaptu0uk.apps.googleusercontent.com</string>
 	<key>REVERSED_CLIENT_ID</key>
-	<string>com.googleusercontent.apps.900117337974-ifl6ogq27gu0c7jnahhauh7eql43884i</string>
+	<string>com.googleusercontent.apps.900117337974-k2g9gmljf2gpm4nkoptsfc5djaptu0uk</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>900117337974-1th6qlrl2jn9b6h1qn4qiv6qu4lm86mh.apps.googleusercontent.com</string>
 	<key>API_KEY</key>
 	<string>AIzaSyDAoVVUiBT8fFKJ-Me59GKFmGdRg0waSGg</string>
 	<key>GCM_SENDER_ID</key>
@@ -13,7 +15,7 @@
 	<key>PLIST_VERSION</key>
 	<string>1</string>
 	<key>BUNDLE_ID</key>
-	<string>com.finalproject</string>
+	<string>tech.jny.grabservices</string>
 	<key>PROJECT_ID</key>
 	<string>reactnative-firebase-examples</string>
 	<key>STORAGE_BUCKET</key>
@@ -29,7 +31,7 @@
 	<key>IS_SIGNIN_ENABLED</key>
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
-	<string>1:900117337974:ios:ba5e3b1ab01f8ff38d4c57</string>
+	<string>1:900117337974:ios:cdd8917f281b3ec08d4c57</string>
 	<key>DATABASE_URL</key>
 	<string>https://reactnative-firebase-examples.firebaseio.com</string>
 </dict>
