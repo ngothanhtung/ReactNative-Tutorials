@@ -116,10 +116,7 @@ const News = () => {
 
   return (
     <View style={{ flex: 0, paddingHorizontal: 12, marginBottom: 12 }}>
-      <Image
-        style={{ width: '100%', height: 200, borderRadius: 12, opacity: 0.8 }}
-        source={{ uri: 'https://cdn.pixabay.com/photo/2015/07/31/11/45/library-869061_960_720.jpg' }}
-      />
+      <Image style={{ width: '100%', height: 160, borderRadius: 12 }} source={require('./assets/book.jpg')} />
 
       <Button
         uppercase
@@ -137,7 +134,7 @@ const News = () => {
         <Dot mode="outline" />
         <Dot mode="outline" />
       </View>
-      <View style={{ position: 'absolute', top: 64, alignSelf: 'center', alignItems: 'center' }}>
+      <View style={{ position: 'absolute', top: 24, alignSelf: 'center', alignItems: 'center' }}>
         <Title style={{ color: colors.WHITE, fontFamily: 'Roboto-Bold' }}>CÁC BIỆN PHÁP</Title>
         <Title style={{ color: colors.WHITE, fontFamily: 'Roboto-Bold' }}>PHÒNG CHỐNG DỊCH COVID-19</Title>
       </View>

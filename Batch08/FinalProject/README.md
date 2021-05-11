@@ -9,3 +9,7 @@
 ## Auth with phone
 
 > https://stackoverflow.com/questions/53034419/firebase-phone-auth-not-working-in-release-build
+
+## Appcenter CLI (Codpush)
+
+> https://github.com/microsoft/appcenter-cli
