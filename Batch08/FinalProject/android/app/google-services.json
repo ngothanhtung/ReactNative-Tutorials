@@ -10,16 +10,24 @@
       "client_info": {
         "mobilesdk_app_id": "1:900117337974:android:95451368ebb5edaf8d4c57",
         "android_client_info": {
-          "package_name": "tech.jny.grabservices"
+          "package_name": "vn.softech.grabservices"
         }
       },
       "oauth_client": [
         {
-          "client_id": "900117337974-jkoh6b98khk2354vtmsitlp0ubqfjerl.apps.googleusercontent.com",
+          "client_id": "900117337974-6nck5lam1fra6ognn7ieimv6hj8ur35i.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "tech.jny.grabservices",
-            "certificate_hash": "adcae22da2d347bde11f85af7fa55635a80fd5a8"
+            "package_name": "vn.softech.grabservices",
+            "certificate_hash": "5e8f16062ea3cd2c4a0d547876baa6f38cabf625"
+          }
+        },
+        {
+          "client_id": "900117337974-fvo333bb61bf3tubmsujbdedr3p3s1fr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "vn.softech.grabservices",
+            "certificate_hash": "69d41e39b720a93d30dd11cf7c5b79e1e2a7addb"
           }
         },
         {
@@ -40,10 +48,10 @@
               "client_type": 3
             },
             {
-              "client_id": "900117337974-8nsmt90ocsdl8g2l1eaajmb5jekfdnsa.apps.googleusercontent.com",
+              "client_id": "900117337974-7na5m33vd6svnq09dcuk025bi3arm2cc.apps.googleusercontent.com",
               "client_type": 2,
               "ios_info": {
-                "bundle_id": "org.reactjs.native.example.AwesomeProject"
+                "bundle_id": "jy.tech.grabservices"
               }
             }
           ]

@@ -660,7 +660,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = tech.jny.grabservices;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.softech.grabservices;
 				PRODUCT_NAME = "Final Project";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -687,7 +687,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = tech.jny.grabservices;
+				PRODUCT_BUNDLE_IDENTIFIER = vn.softech.grabservices;
 				PRODUCT_NAME = "Final Project";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 5.0;
