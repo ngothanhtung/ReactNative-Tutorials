@@ -58,7 +58,7 @@ const Block = ({ item, index }) => {
   const { colors: themeColors } = useTheme();
   const navigation = useNavigation();
   return (
-    <Surface
+    <View
       style={{
         borderColor: colors.LIGHT_GRAY,
         borderWidth: 1,
@@ -89,7 +89,7 @@ const Block = ({ item, index }) => {
           </View>
         </React.Fragment>
       </TouchableRipple>
-    </Surface>
+    </View>
   );
 };
 
@@ -158,7 +158,7 @@ const Notifications = () => {
   };
 
   return (
-    <View style={{ minHeight: 64, paddingHorizontal: 12, marginTop: 12 }}>
+    <View style={{ minHeight: 64, paddingHorizontal: 16, marginTop: 12 }}>
       <TouchableRipple borderless rippleColor={colors.WHITE} onPress={() => {}} style={{ borderRadius: 12 }}>
         <View style={{ flex: 1, borderRadius: 12, paddingHorizontal: 12, paddingVertical: 16, flexDirection: 'row', backgroundColor: themeColors.primary }}>
           <View style={{ justifyContent: 'center' }}>

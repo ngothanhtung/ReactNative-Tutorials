@@ -6785,10 +6785,10 @@ react-native-elements@^3.3.2:
     react-native-ratings "^7.3.0"
     react-native-size-matters "^0.3.1"
 
-react-native-flipper@^0.85.0:
-  version "0.85.0"
-  resolved "https://registry.yarnpkg.com/react-native-flipper/-/react-native-flipper-0.85.0.tgz#c5e682203e706d0a3a1b037ba4e6c417804ea8f2"
-  integrity sha512-a+LcJwhgN6Q298wYfXBKzT3Bx0Kp1aTFOoPT9XHWWE7g9tP4zoeFu6lHNW1rOdqp+wQ2/SlV5+RixZ0i4NKx5w==
+react-native-flipper@^0.91.1:
+  version "0.91.1"
+  resolved "https://registry.yarnpkg.com/react-native-flipper/-/react-native-flipper-0.91.1.tgz#c801710cca8e0057aa61f42f10b7a0855bb39078"
+  integrity sha512-cpzLYF5lVy4lyChfXdfl9qBYHGUdZlrWA1sDHJ0VSkAklrTRw0rESNwGSy8/NoSr+tt6dLCcZ8Q4hhjUAUVMdg==
 
 react-native-gesture-handler@^1.10.3:
   version "1.10.3"

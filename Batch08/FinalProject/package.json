@@ -71,7 +71,7 @@
     "jest": "^26.1.0",
     "metro-react-native-babel-preset": "^0.60.0",
     "patch-package": "^6.4.7",
-    "react-native-flipper": "^0.85.0",
+    "react-native-flipper": "^0.91.1",
     "react-test-renderer": "16.11.0",
     "redux-devtools-extension": "^2.13.8",
     "redux-flipper": "^1.4.2",
