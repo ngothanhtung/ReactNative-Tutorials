@@ -1,0 +1,10 @@
+{
+  "apps": [
+    {
+      "name": "training.softech.cloud",
+      "script": "./bin/www",
+      "instances": "2",
+      "exec_mode": "cluster"
+    }
+  ]
+}
