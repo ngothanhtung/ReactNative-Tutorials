@@ -6,7 +6,7 @@ import axios from 'axios';
 export default function Login() {
   const [loading, setLoading] = React.useState(false);
 
-  const [email, setEmail] = React.useState('tungnt@softech.vn');
+  const [username, setUsername] = React.useState('tungnt2');
   const [password, setPassword] = React.useState('123456789');
 
   // FETCH
@@ -14,9 +14,9 @@ export default function Login() {
     // before
     setLoading(true);
     // fetch
-    const url = 'https://training.softech.cloud/api/users/login';
+    const url = 'https://training.softech.cloud/api/training/users/login';
     const data = {
-      email: email,
+      username: username,
       password: password,
     };
 
@@ -51,9 +51,9 @@ export default function Login() {
     // before
     setLoading(true);
     // fetch
-    const url = 'https://training.softech.cloud/api/users/login';
+    const url = 'https://training.softech.cloud/api/training/users/login';
     const data = {
-      email: email,
+      username: username,
       password: password,
     };
 
@@ -85,9 +85,9 @@ export default function Login() {
             style={{ flex: 1, paddingHorizontal: 12 }}
             autoCapitalize='none'
             autoCorrect={false}
-            keyboardType='email-address'
-            placeholder='Email'
-            value={email}
+            keyboardType='default'
+            placeholder='Username'
+            value={username}
             onChangeText={(text) => {
               setEmail(text);
             }}

@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Button } from 'react-native';
 
-import Animated, { Easing } from 'react-native-reanimated';
+import Animated, { EasingNode } from 'react-native-reanimated';
 
 const { Value, timing } = Animated;
 
@@ -16,13 +16,13 @@ export default class Example01 extends React.Component {
     this._colorAnim = timing(this._color, {
       duration: 2000,
       toValue: 150,
-      easing: Easing.inOut(Easing.ease),
+      easing: EasingNode.inOut(EasingNode.ease),
     });
 
     this._anim = timing(this._transX, {
       duration: 1000,
       toValue: 300,
-      easing: Easing.inOut(Easing.ease),
+      easing: EasingNode.inOut(EasingNode.ease),
     });
   }
 

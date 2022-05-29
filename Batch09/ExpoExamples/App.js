@@ -30,7 +30,7 @@ import * as Font from 'expo-font';
 // import BasicHook from './src/Session07/Examples/BasicHook';
 // import BasicHookNetworking from './src/Session07/Examples/BasicHookNetworking';
 // import CustomHookExample from './src/Session07/Examples/CustomHookExample';
-import LoginExamples from './src/Session07/Examples/LoginExamples';
+// import LoginExamples from './src/Session07/Examples/LoginExamples';
 
 // Session 08
 import AppNavigator from './src/Session08/Examples/AppNavigator';
@@ -107,7 +107,8 @@ export default class App extends Component {
             {/* <BasicHook title='COUNTER - HOOK' /> */}
             {/* <BasicHookNetworking /> */}
             {/* <CustomHookExample /> */}
-            <LoginExamples />
+            {/* <LoginExamples /> */}
+            <AppNavigator />
           </View>
         </SafeAreaView>
       );

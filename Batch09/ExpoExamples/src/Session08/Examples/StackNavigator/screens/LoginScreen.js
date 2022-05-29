@@ -3,7 +3,7 @@ import { View, Text, Button } from 'react-native';
 
 export default function LoginScreen({ navigation }) {
   return (
-    <View style={{ flex: 1, backgroundColor: 'green', justifyContent: 'center', alignItems: 'center' }}>
+    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>LOGIN SCREEN</Text>
       <Button
         title='Register'
