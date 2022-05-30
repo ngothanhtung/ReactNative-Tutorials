@@ -34,6 +34,9 @@ import * as Font from 'expo-font';
 
 // Session 08
 import AppNavigator from './src/Session08/Examples/AppNavigator';
+import Example04 from './src/Animations/Example04';
+import Example03 from './src/Animations/Example03';
+import Example02 from './src/Animations/Example02';
 
 // Eatme
 // import LoginScreen from './src/Eatme/LoginScreen';
@@ -70,7 +73,6 @@ export default class App extends Component {
 
   render() {
     if (this.state.fontsLoaded) {
-      // return <AppNavigator />;
       return (
         <SafeAreaView style={{ flex: 1, alignItems: 'center' }}>
           <View style={{ minWidth: 414, minHeight: Platform.OS === 'web' ? 812 : null }}>
@@ -107,8 +109,10 @@ export default class App extends Component {
             {/* <BasicHook title='COUNTER - HOOK' /> */}
             {/* <BasicHookNetworking /> */}
             {/* <CustomHookExample /> */}
+
+            {/* SESSION 08: REACT NAVIGATION */}
             {/* <LoginExamples /> */}
-            <AppNavigator />
+            {/* <AppNavigator /> */}
           </View>
         </SafeAreaView>
       );

@@ -1,30 +1,14 @@
 import React from 'react';
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View, Animated } from 'react-native';
+import { StyleSheet, View } from 'react-native';
+import Movement from './src/components/Movement';
+import ReMovement from './src/components/Reanimated/ReMovement';
 
 export default function App() {
-  const animatedLeft = React.useRef(new Animated.Value(10)).current;
-
-  React.useEffect(() => {
-    Animated.timing(animatedLeft, {
-      toValue: 200,
-      duration: 1000,
-      delay: 200,
-      useNativeDriver: false,
-    }).start();
-  }, [animatedLeft]);
-
   return (
     <View style={styles.container}>
-      <Animated.View
-        style={{
-          height: 100,
-          width: 100,
-          marginTop: 100,
-          marginLeft: animatedLeft,
-          backgroundColor: 'violet',
-        }}
-      ></Animated.View>
+      {/* <Movement /> */}
+      <ReMovement />
       <StatusBar style='auto' />
     </View>
   );
