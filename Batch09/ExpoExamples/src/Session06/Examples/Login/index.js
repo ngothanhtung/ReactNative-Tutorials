@@ -69,7 +69,7 @@ class Login extends Component {
     // before
     this.setState({ loading: true });
     // fetch
-    const url = 'https://training.softech.cloud/api/users/login';
+    const url = 'https://training.softech.cloud/api/training/users/login';
     const data = {
       email: this.state.email,
       password: this.state.password,

@@ -3,7 +3,7 @@ import { ScrollView, Image, View, FlatList, Dimensions, ActivityIndicator, Style
 
 import GilroyText from '../Eatme/components/GilroyText';
 import HeartButton from '../Eatme/components/HeartButton';
-const url = 'https://training.softech.cloud/api/products';
+const url = 'https://aptech.io/api/training/products';
 
 class LoadingProducts extends Component {
   render() {

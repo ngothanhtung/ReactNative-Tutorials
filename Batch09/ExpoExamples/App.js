@@ -33,21 +33,24 @@ import * as Font from 'expo-font';
 // import LoginExamples from './src/Session07/Examples/LoginExamples';
 
 // Session 08
-import AppNavigator from './src/Session08/Examples/AppNavigator';
-import Example04 from './src/Animations/Example04';
-import Example03 from './src/Animations/Example03';
-import Example02 from './src/Animations/Example02';
+// import AppNavigator from './src/Session08/Examples/AppNavigator';
+// import Example04 from './src/Animations/Example04';
+// import Example03 from './src/Animations/Example03';
+// import Example02 from './src/Animations/Example02';
 
 // Eatme
-// import LoginScreen from './src/Eatme/LoginScreen';
-// import HomeScreen from './src/Eatme/HomeScreen';
-// import Categories from './src/Session05/Homeworks/Categories';
-// import ReviewRider from './src/Session06/Homeworks/ReviewRider';
+import Eatme_OnboardingScreen from './src/Eatme/OnboardingScreen';
+import Eatme_LoginScreen from './src/Eatme/LoginScreen';
+import Eatme_HomeScreen from './src/Eatme/HomeScreen';
+import Eatme_Categories from './src/Session05/Homeworks/Categories';
+import Eatme_ReviewRider from './src/Session06/HomeWorks/ReviewRider';
 
 // Animation
 // import Animation_Example01 from './src/Animations/Example01';
 // More examples
 // import UI02 from './src/UI-Change/UI02';
+
+import Example from './src/Example';
 
 export default class App extends Component {
   constructor(props) {
@@ -76,17 +79,29 @@ export default class App extends Component {
       return (
         <SafeAreaView style={{ flex: 1, alignItems: 'center' }}>
           <View style={{ minWidth: 414, minHeight: Platform.OS === 'web' ? 812 : null }}>
+            {/* <Eatme_OnboardingScreen /> */}
+            {/* <Eatme_HomeScreen /> */}
+            {/* <Eatme_Categories /> */}
+            <Eatme_LoginScreen />
+            {/* <Eatme_ReviewRider /> */}
+
             {/* <LoginScreen /> */}
             {/* <HandlingTextInput /> */}
             {/* <LifeCycle /> */}
+
+            {/* START: DEMO */}
             {/* <Basic /> */}
             {/* <ScrollViewExample /> */}
             {/* <ScrollViewWithManyDataExample /> */}
             {/* <FlatListExample /> */}
             {/* <SectionListExample /> */}
             {/* <SectionListAdvancedExample /> */}
+            {/* END: DEMO */}
+
             {/* <HomeScreen /> */}
+            {/* START: DEMO ANIMATION */}
             {/* <Animation_Example01 /> */}
+
             {/* <Example02 /> */}
             {/* <Example03 /> */}
             {/* <Example04
@@ -95,6 +110,7 @@ export default class App extends Component {
               }}
             /> */}
 
+            {/* SESSION 06 */}
             {/* <BasicFetch /> */}
             {/* <NetworkingExample /> */}
 
@@ -102,7 +118,11 @@ export default class App extends Component {
             {/* <Products /> */}
             {/* <Map /> */}
             {/* <AxiosExample /> */}
+
+            {/* START: DEMO */}
             {/* <UI02 /> */}
+            {/* END: DEMO */}
+
             {/* <MoreAxiosExamples /> */}
             {/* <ReviewRider /> */}
             {/* <BasicClass title='COUNTER - CLASS' /> */}
@@ -113,6 +133,8 @@ export default class App extends Component {
             {/* SESSION 08: REACT NAVIGATION */}
             {/* <LoginExamples /> */}
             {/* <AppNavigator /> */}
+
+            {/* <Example /> */}
           </View>
         </SafeAreaView>
       );
