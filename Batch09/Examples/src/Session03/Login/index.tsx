@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet, TextInput, TouchableOpacity, SafeAreaView } from 'react-native';
 import React from 'react';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
@@ -50,17 +50,19 @@ const Login = (props: Props) => {
       </View>
 
       {/* FOOTER */}
-      <View style={styles.footerContainer}>
-        <TouchableOpacity
-          style={styles.button}
-          onPress={() => {
-            console.log('Email:', email);
-            console.log('Password:', password);
-          }}
-        >
-          <Text style={styles.buttonText}>Sign In</Text>
-        </TouchableOpacity>
-      </View>
+      <SafeAreaView>
+        <View style={styles.footerContainer}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => {
+              console.log('Email:', email);
+              console.log('Password:', password);
+            }}
+          >
+            <Text style={styles.buttonText}>Sign In</Text>
+          </TouchableOpacity>
+        </View>
+      </SafeAreaView>
     </View>
   );
 };

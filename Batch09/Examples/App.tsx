@@ -1,9 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import Login from './components/Login';
-import Header from './components/Header';
-import LikeButton from './components/LikeButton';
-import RateButton from './components/RateButton';
+import { SafeAreaView, StyleSheet, Text, View } from 'react-native';
+import Menu from './src/Homeworks/Session02/Menu';
+import Login from './src/Session03/Login';
 
 export default function App() {
   return (
@@ -11,8 +9,9 @@ export default function App() {
       {/* <Header style={{ color: 'red', fontSize: 32 }} text='Hello' fontSize={24} status='waiting' />
       <LikeButton />
       <RateButton /> */}
-      <Login />
-      <StatusBar style='auto' />
+      {/* <Login /> */}
+      <StatusBar style='light' />
+      <Menu />
     </View>
   );
 }
