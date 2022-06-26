@@ -14,6 +14,7 @@ import ScrollViewExample from './src/Session05/ScrollViewExample';
 import ScrollViewWithManyDataExample from './src/Session05/ScrollViewWithManyDataExample';
 import SectionListAdvancedExample from './src/Session05/SectionListAdvancedExample';
 import SectionListExample from './src/Session05/SessionListExample';
+import SvgExample from './src/Session04/SvgExample';
 // import NetworkingExample from './src/Session04/NetworkingExample';
 // import NetworkingWithAxios from './src/Session04/NetworkingWithAxios';
 
@@ -59,11 +60,13 @@ export default function App() {
           {/* <StyleExample /> */}
           {/* <BasicFlexBox /> */}
           {/* <ImageExample /> */}
+          <SvgExample />
+
           {/* <ScrollViewExample /> */}
           {/* <ScrollViewWithManyDataExample /> */}
           {/* <FlatListExample /> */}
           {/* <SectionListExample /> */}
-          <SectionListAdvancedExample />
+          {/* <SectionListAdvancedExample /> */}
           {/* <NetworkingExample /> */}
           {/* <NetworkingWithAxios /> */}
         </View>
