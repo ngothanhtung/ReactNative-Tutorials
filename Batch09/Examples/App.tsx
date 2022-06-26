@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import * as Font from 'expo-font';
 import { Button, SafeAreaView, StyleSheet, Text, View } from 'react-native';
-import Menu from './src/Homeworks/Session02/Menu';
+import Menu from './src/Menu';
 import EffectExample from './src/Session03/EffectExample';
 import Login from './src/Session03/Login';
 import StateExample from './src/Session03/StateExamples';
@@ -63,7 +63,8 @@ export default function App() {
           {/* <BasicFlexBox /> */}
           {/* <ImageExample /> */}
           {/* <SvgExample /> */}
-          <LoginScreen />
+          <Menu />
+          {/* <LoginScreen /> */}
           {/* <OnboardingScreen /> */}
 
           {/* <ScrollViewExample /> */}
