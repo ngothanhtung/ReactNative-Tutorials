@@ -63,8 +63,8 @@ export default function App() {
           {/* <BasicFlexBox /> */}
           {/* <ImageExample /> */}
           {/* <SvgExample /> */}
-          {/* <LoginScreen /> */}
-          <OnboardingScreen />
+          <LoginScreen />
+          {/* <OnboardingScreen /> */}
 
           {/* <ScrollViewExample /> */}
           {/* <ScrollViewWithManyDataExample /> */}
