@@ -15,6 +15,8 @@ import ScrollViewWithManyDataExample from './src/Session05/ScrollViewWithManyDat
 import SectionListAdvancedExample from './src/Session05/SectionListAdvancedExample';
 import SectionListExample from './src/Session05/SessionListExample';
 import SvgExample from './src/Session04/SvgExample';
+import LoginScreen from './src/Eatme/LoginScreen';
+import OnboardingScreen from './src/Eatme/OnboardingScreen';
 // import NetworkingExample from './src/Session04/NetworkingExample';
 // import NetworkingWithAxios from './src/Session04/NetworkingWithAxios';
 
@@ -60,7 +62,9 @@ export default function App() {
           {/* <StyleExample /> */}
           {/* <BasicFlexBox /> */}
           {/* <ImageExample /> */}
-          <SvgExample />
+          {/* <SvgExample /> */}
+          {/* <LoginScreen /> */}
+          <OnboardingScreen />
 
           {/* <ScrollViewExample /> */}
           {/* <ScrollViewWithManyDataExample /> */}
