@@ -30,7 +30,7 @@ import {
 const Section: React.FC<{
   children: React.ReactNode;
   title: string;
-}> = ({children, title}) => {
+}> = ({ children, title }) => {
   const isDarkMode = useColorScheme() === 'dark';
   return (
     <View style={styles.sectionContainer}>
