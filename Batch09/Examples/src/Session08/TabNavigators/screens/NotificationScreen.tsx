@@ -1,7 +1,12 @@
+import { DrawerNavigationProp } from '@react-navigation/drawer';
 import React from 'react';
 import { View, Text, Button } from 'react-native';
 
-export default function NotificationScreen({ navigation }) {
+type Props = {
+  navigation: any;
+};
+
+export default function NotificationScreen({ navigation }: Props) {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>NOTIFICATION SCREEN</Text>

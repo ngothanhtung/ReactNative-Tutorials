@@ -1,6 +1,5 @@
 import React from 'react';
-import { Text, View, TouchableOpacity, StyleSheet } from 'react-native';
-import { MaterialCommunityIcons as Icon } from '@expo/vector-icons';
+import { StyleSheet } from 'react-native';
 import { Feather as Feather } from '@expo/vector-icons';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
@@ -9,17 +8,29 @@ import SearchScreen from './screens/SearchScreen';
 import FavouriteScreen from './screens/FavouriteScreen';
 import CartScreen from './screens/CartScreen';
 import NotificationScreen from './screens/NotificationScreen';
+import { color } from 'react-native-reanimated';
 
 const Tab = createBottomTabNavigator();
 
 export default function BottomTabNavigator() {
   return (
-    <Tab.Navigator screenOptions={{ showLabel: true, activeTintColor: '#FF6C44', inactiveTintColor: '#898B9A' }} initialRouteName='HomeScreen' backBehavior='history' sceneContainerStyle={{ backgroundColor: '#FBFBFB' }}>
+    <Tab.Navigator
+      screenOptions={{
+        headerShown: false,
+        tabBarShowLabel: true,
+        tabBarActiveTintColor: '#FF6C44',
+        tabBarInactiveTintColor: '#898B9A',
+      }}
+      initialRouteName='HomeScreen'
+      backBehavior='history'
+      sceneContainerStyle={{ backgroundColor: '#FBFBFB' }}
+    >
       <Tab.Screen
         name='HomeScreen'
         component={HomeScreen}
         options={{
           title: 'Home',
+
           tabBarIcon: ({ focused, color, size }) => {
             return <Feather name='home' size={size * 0.8} color={color} />;
           },
@@ -38,7 +49,9 @@ export default function BottomTabNavigator() {
         component={CartScreen}
         options={{
           title: 'Cart',
-          tabBarIcon: ({ focused, color, size }) => <Feather name='shopping-bag' size={size * 0.8} color={color} />,
+          tabBarLabel: () => null,
+          tabBarItemStyle: { marginTop: -40, backgroundColor: 'white', borderTopLeftRadius: '50%', borderTopRightRadius: '50%', backgroundColor: '#FF6C44' },
+          tabBarIcon: ({ focused, color, size }) => <Feather name='shopping-bag' size={size * 0.8} color={'white'} />,
         }}
       />
       <Tab.Screen
@@ -56,6 +69,7 @@ export default function BottomTabNavigator() {
         options={{
           title: 'Notifications',
           tabBarIcon: ({ focused, color, size }) => <Feather name='bell' size={size * 0.8} color={color} />,
+          tabBarBadge: 9,
         }}
       />
     </Tab.Navigator>

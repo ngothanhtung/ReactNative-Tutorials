@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet } from 'react-native';
+import { StyleSheet, Text } from 'react-native';
 import { MaterialCommunityIcons as Icon } from '@expo/vector-icons';
 
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
@@ -8,6 +8,7 @@ import SearchScreen from './screens/SearchScreen';
 import FavouriteScreen from './screens/FavouriteScreen';
 import CartScreen from './screens/CartScreen';
 import NotificationScreen from './screens/NotificationScreen';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 const Tab = createMaterialTopTabNavigator();
 
@@ -19,16 +20,17 @@ export default function MaterialTopTabNavigator() {
   return (
     <Tab.Navigator
       tabBarPosition='top'
-      tabBarOptions={{
-        activeTintColor: ACTIVE_COLOR,
-        inactiveTintColor: INACTIVE_COLOR,
-        style: { backgroundColor: 'white' },
-        labelStyle: { textTransform: 'none', fontSize: 13 },
-        scrollEnabled: true,
-        showIcon: true,
-        showLabel: true,
-        tabStyle: { width: 110 },
-        indicatorStyle: {
+      screenOptions={{
+        tabBarActiveTintColor: ACTIVE_COLOR,
+        tabBarInactiveTintColor: INACTIVE_COLOR,
+        tabBarLabelStyle: { textTransform: 'none' },
+        tabBarScrollEnabled: true,
+        tabBarBounces: false,
+        swipeEnabled: true,
+        tabBarShowIcon: true,
+        tabBarShowLabel: true,
+        tabBarItemStyle: { width: 120, height: 120, justifyContent: 'flex-end' },
+        tabBarIndicatorStyle: {
           backgroundColor: ACTIVE_COLOR,
         },
       }}
@@ -72,7 +74,6 @@ export default function MaterialTopTabNavigator() {
         options={{
           title: 'Notifications',
           tabBarIcon: ({ focused, color }) => <Icon name={focused ? 'bell' : 'bell-outline'} size={ICON_SIZE} color={color} />,
-          tabBarBadge: 9,
         }}
       />
     </Tab.Navigator>
