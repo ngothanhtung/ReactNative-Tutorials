@@ -12,7 +12,7 @@ import MaterialBottomTabNavigator_Eatme from './TabNavigators/MaterialBottomTabN
 import MaterialTopTabNavigator from './TabNavigators/MaterialTopTabNavigator';
 
 // Drawer Navigators
-// import DrawerNavigator from './DrawerNavigators/DrawerNavigator';
+import DrawerNavigator from './DrawerNavigators/DrawerNavigator';
 // import CustomDrawerNavigator from './DrawerNavigators/CustomDrawerNavigator';
 
 export default function AppNavigator() {
@@ -22,11 +22,11 @@ export default function AppNavigator() {
       {/* <StackNavigator /> */}
 
       {/* TAB NAVIGATORS */}
-      {/* <BottomTabNavigator /> */}
+      <BottomTabNavigator />
       {/* <BottomTabNavigator_Eatme /> */}
       {/* <MaterialBottomTabNavigator /> */}
       {/* <MaterialBottomTabNavigator_Eatme /> */}
-      <MaterialTopTabNavigator />
+      {/* <MaterialTopTabNavigator /> */}
 
       {/* DRAWER NAVIGATORS */}
       {/* <DrawerNavigator /> */}
