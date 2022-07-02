@@ -20,6 +20,8 @@ import OnboardingScreen from './src/Eatme/OnboardingScreen';
 // import NetworkingExample from './src/Session04/NetworkingExample';
 // import NetworkingWithAxios from './src/Session04/NetworkingWithAxios';
 
+import AppNavigator from './src/Session08/AppNavigator';
+
 export default function App() {
   const [visible, setVisible] = React.useState(true);
   const [fontsLoaded, setFontsLoaded] = React.useState(false);
@@ -63,7 +65,7 @@ export default function App() {
           {/* <BasicFlexBox /> */}
           {/* <ImageExample /> */}
           {/* <SvgExample /> */}
-          <Menu />
+          {/* <Menu /> */}
           {/* <LoginScreen /> */}
           {/* <OnboardingScreen /> */}
 
@@ -74,6 +76,8 @@ export default function App() {
           {/* <SectionListAdvancedExample /> */}
           {/* <NetworkingExample /> */}
           {/* <NetworkingWithAxios /> */}
+
+          <AppNavigator />
         </View>
       )}
     </React.Fragment>
