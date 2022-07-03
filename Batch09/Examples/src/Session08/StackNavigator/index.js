@@ -8,6 +8,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import LoginScreen from './screens/LoginScreen';
 import RegisterScreen from './screens/RegisterScreen';
 import ForgotPasswordScreen from './screens/ForgotPasswordScreen';
+import MaterialBottomTabNavigator from '../TabNavigators/MaterialBottomTabNavigator';
 
 const Stack = createStackNavigator();
 
@@ -53,6 +54,7 @@ export default function StackNavigator() {
         }}
       />
       <Stack.Screen name='ForgotPassword' component={ForgotPasswordScreen} options={{ title: 'Quên mật khẩu' }} />
+      <Stack.Screen name='MainTab' component={MaterialBottomTabNavigator} />
     </Stack.Navigator>
   );
 }

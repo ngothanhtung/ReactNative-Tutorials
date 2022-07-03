@@ -6,6 +6,13 @@ export default function LoginScreen({ navigation }) {
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text>LOGIN SCREEN</Text>
       <Button
+        title='Go to Tab'
+        onPress={() => {
+          navigation.navigate('MainTab');
+        }}
+      />
+
+      <Button
         title='Register'
         onPress={() => {
           navigation.navigate('Register', { email: 'tungnt@softech.vn' });

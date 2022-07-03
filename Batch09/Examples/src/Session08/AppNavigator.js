@@ -2,6 +2,8 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 
 // Stack Navigators
+
+import HelloStack from './HelloStack';
 import StackNavigator from './StackNavigator';
 
 // Tab Navigators
@@ -13,16 +15,22 @@ import MaterialTopTabNavigator from './TabNavigators/MaterialTopTabNavigator';
 
 // Drawer Navigators
 import DrawerNavigator from './DrawerNavigators/DrawerNavigator';
-// import CustomDrawerNavigator from './DrawerNavigators/CustomDrawerNavigator';
+import HelloTab from './HelloTab';
+import CustomDrawerNavigator from './DrawerNavigators/CustomDrawerNavigator';
 
 export default function AppNavigator() {
   return (
     <NavigationContainer>
+      {/* EXAMPLES */}
+      {/* <HelloStack /> */}
+      {/* <HelloTab /> */}
+
       {/* STACK */}
-      {/* <StackNavigator /> */}
+
+      <StackNavigator />
 
       {/* TAB NAVIGATORS */}
-      <BottomTabNavigator />
+      {/* <BottomTabNavigator /> */}
       {/* <BottomTabNavigator_Eatme /> */}
       {/* <MaterialBottomTabNavigator /> */}
       {/* <MaterialBottomTabNavigator_Eatme /> */}
