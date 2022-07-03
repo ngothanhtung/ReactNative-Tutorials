@@ -20,7 +20,7 @@ const Tab = createBottomTabNavigator();
 export default function BottomTabNavigator_Eatme() {
   return (
     <View style={{ flex: 1, backgroundColor: '#FBFBFB' }}>
-      <Tab.Navigator tabBarOptions={{ showLabel: false, style: { height: 88, paddingHorizontal: 24, borderTopLeftRadius: 32, borderTopRightRadius: 32, backgroundColor: '#ffffff' } }} sceneContainerStyle={{ backgroundColor: '#FBFBFB' }}>
+      <Tab.Navigator screenOptions={{ tabBarShowLabel: false, tabBarStyle: { height: 100, paddingHorizontal: 12 } }} sceneContainerStyle={{ backgroundColor: '#FBFBFB' }}>
         <Tab.Screen
           name='HomeStackNavigator'
           component={HomeStackNavigator}
@@ -118,12 +118,6 @@ export default function BottomTabNavigator_Eatme() {
 }
 
 const styles = StyleSheet.create({
-  tabButtonContainer: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-
   tabButton: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -131,13 +125,14 @@ const styles = StyleSheet.create({
     height: 40,
     minWidth: 90,
     paddingHorizontal: 16,
-    borderRadius: 20,
+    borderRadius: 45,
     backgroundColor: '#FF6C44',
   },
+
   label: {
     marginLeft: 8,
     color: 'white',
     fontFamily: 'SVN-Gilroy-Medium',
-    // fontSize: 14,
+    fontSize: 13,
   },
 });

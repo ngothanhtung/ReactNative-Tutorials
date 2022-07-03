@@ -30,7 +30,7 @@ export default function AppNavigator() {
       {/* <StackNavigator /> */}
 
       {/* TAB NAVIGATORS */}
-      <BottomTabNavigator />
+      {/* <BottomTabNavigator /> */}
       {/* <BottomTabNavigator_Eatme /> */}
       {/* <MaterialBottomTabNavigator /> */}
       {/* <MaterialBottomTabNavigator_Eatme /> */}
@@ -38,7 +38,7 @@ export default function AppNavigator() {
 
       {/* DRAWER NAVIGATORS */}
       {/* <DrawerNavigator /> */}
-      {/* <CustomDrawerNavigator /> */}
+      <CustomDrawerNavigator />
     </NavigationContainer>
   );
 }

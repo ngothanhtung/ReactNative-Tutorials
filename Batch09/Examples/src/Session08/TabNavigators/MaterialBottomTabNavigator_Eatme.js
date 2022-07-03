@@ -17,7 +17,7 @@ const Tab = createMaterialBottomTabNavigator();
 
 export default function MaterialBottomTabNavigator_Eatme() {
   return (
-    <Tab.Navigator style={{ backgroundColor: '#FBFBFB' }} shifting={false} barStyle={{ height: 88, paddingHorizontal: 24, borderTopLeftRadius: 32, borderTopRightRadius: 32, backgroundColor: '#ffffff', justifyContent: 'center' }} initialRouteName='HomeScreen' backBehavior='history' activeColor={ACTIVE_COLOR} inactiveColor={INACTIVE_COLOR}>
+    <Tab.Navigator shifting={false} style={{ backgroundColor: '#FAFAFA' }} barStyle={{ height: 88, paddingHorizontal: 24, borderTopLeftRadius: 32, borderTopRightRadius: 32, backgroundColor: '#ffffff', justifyContent: 'center' }} initialRouteName='HomeScreen' backBehavior='history' activeColor={ACTIVE_COLOR} inactiveColor={INACTIVE_COLOR}>
       <Tab.Screen
         name='HomeScreen'
         component={HomeScreen}

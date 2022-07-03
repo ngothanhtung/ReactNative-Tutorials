@@ -8,7 +8,7 @@ const Stack = createStackNavigator();
 
 export default function StackNavigator() {
   return (
-    <Stack.Navigator headerMode='screen'>
+    <Stack.Navigator>
       <Stack.Screen name='List' component={ListScreen} />
       <Stack.Screen name='Detail' component={DetailScreen} />
     </Stack.Navigator>
