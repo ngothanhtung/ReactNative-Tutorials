@@ -261,7 +261,7 @@ POSTMAN:
 - useContext
 - useReducer
 
-# Session 08: React Navigation (Version 5.x)
+# Session 08: React Navigation (Version 8.x)
 
 ## Setup Core:
 
