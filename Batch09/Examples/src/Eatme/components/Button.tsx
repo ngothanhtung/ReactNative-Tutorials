@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { Text, StyleSheet, TouchableOpacity, ViewStyle, GestureResponderEvent } from 'react-native';
 import PropTypes from 'prop-types';
 
 const styles = StyleSheet.create({
@@ -19,16 +19,25 @@ const styles = StyleSheet.create({
   },
 });
 
-class Button extends Component {
-  render() {
-    return (
-      <TouchableOpacity style={[styles.loginButton, this.props.style]} onPress={this.props.onPress}>
-        {this.props.icon}
-        {this.props.image}
-        <Text style={[styles.loginText, { color: this.props.titleColor }]}>{this.props.title}</Text>
-      </TouchableOpacity>
-    );
-  }
+type Props = {
+  style: ViewStyle;
+  onPress: ((event: GestureResponderEvent) => void) | undefined;
+  title: string;
+  titleColor: string;
+  icon: React.ReactElement;
+  image: React.ReactElement;
+};
+
+function Button(props: Props) {
+  return (
+    <TouchableOpacity style={[styles.loginButton, props.style]} onPress={props.onPress}>
+      <React.Fragment>
+        {props.icon}
+        {props.image}
+        <Text style={[styles.loginText, { color: props.titleColor }]}>{props.title}</Text>
+      </React.Fragment>
+    </TouchableOpacity>
+  );
 }
 
 // Type checking

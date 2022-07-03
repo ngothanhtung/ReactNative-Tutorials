@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View, StyleSheet, Image, SafeAreaView } from 'react-native';
+import { Text, View, StyleSheet, Image } from 'react-native';
 import { Ionicons as Icon } from '@expo/vector-icons';
 
 import Logo from '../components/Logo';

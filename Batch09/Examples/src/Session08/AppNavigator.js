@@ -27,10 +27,10 @@ export default function AppNavigator() {
 
       {/* STACK */}
 
-      <StackNavigator />
+      {/* <StackNavigator /> */}
 
       {/* TAB NAVIGATORS */}
-      {/* <BottomTabNavigator /> */}
+      <BottomTabNavigator />
       {/* <BottomTabNavigator_Eatme /> */}
       {/* <MaterialBottomTabNavigator /> */}
       {/* <MaterialBottomTabNavigator_Eatme /> */}

@@ -10,7 +10,19 @@ const Home = (props: Props) => {
       <Button
         title='Go to Login Screen'
         onPress={() => {
-          props.navigation.navigate('Login');
+          props.navigation.navigate('Login', { name: 'Aptech', score: 10 });
+        }}
+      />
+
+      <Button
+        title='Go to ViewDetails of Profile'
+        onPress={() => {
+          props.navigation.navigate('Profile', {
+            screen: 'ViewDetails',
+            params: {
+              price: 200,
+            },
+          });
         }}
       />
     </View>

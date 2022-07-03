@@ -9,6 +9,7 @@ import FavouriteScreen from './screens/FavouriteScreen';
 import CartScreen from './screens/CartScreen';
 import NotificationScreen from './screens/NotificationScreen';
 import { color } from 'react-native-reanimated';
+import NewsStack from './screens/NewsStack';
 
 const Tab = createBottomTabNavigator();
 
@@ -34,6 +35,14 @@ export default function BottomTabNavigator() {
           tabBarIcon: ({ focused, color, size }) => {
             return <Feather name='home' size={size * 0.8} color={color} />;
           },
+        }}
+      />
+      <Tab.Screen
+        name='NewsScreen'
+        component={NewsStack}
+        options={{
+          title: 'News',
+          tabBarIcon: ({ focused, color, size }) => <Feather name='bookmark' size={size * 0.8} color={color} />,
         }}
       />
       <Tab.Screen
