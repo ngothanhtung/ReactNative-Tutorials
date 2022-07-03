@@ -10,7 +10,6 @@ const styles = StyleSheet.create({
 });
 
 type Props = {
-  text: string;
   style: TextStyle;
   fontStyle: TextStyle;
   children: string;
