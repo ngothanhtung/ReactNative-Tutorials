@@ -21,6 +21,9 @@ import OnboardingScreen from './src/Eatme/OnboardingScreen';
 // import NetworkingWithAxios from './src/Session04/NetworkingWithAxios';
 
 import AppNavigator from './src/Session08/AppNavigator';
+import UseMemoHook from './src/Session07/UseMemoHook';
+import UseCallbackHook from './src/Session07/UseCallbackHook';
+import CustomHook from './src/Session07/CustomHook';
 
 export default function App() {
   const [visible, setVisible] = React.useState(true);
@@ -77,6 +80,13 @@ export default function App() {
           {/* <NetworkingExample /> */}
           {/* <NetworkingWithAxios /> */}
 
+          {/* REACT HOOKS */}
+
+          {/* <UseMemoHook /> */}
+          {/* <UseCallbackHook /> */}
+          {/* <CustomHook /> */}
+
+          {/* NAVIGATION */}
           <AppNavigator />
         </View>
       )}

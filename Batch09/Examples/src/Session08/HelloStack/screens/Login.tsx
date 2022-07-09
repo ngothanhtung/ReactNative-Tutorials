@@ -1,5 +1,6 @@
 import { View, Text } from 'react-native';
 import React from 'react';
+import BackButton from './components/BackButton';
 
 type Props = {};
 
@@ -11,6 +12,8 @@ const Login = (props: Props) => {
       <Text>Login</Text>
       <Text>Name: {name}</Text>
       <Text>Score: {score}</Text>
+
+      <BackButton />
     </View>
   );
 };

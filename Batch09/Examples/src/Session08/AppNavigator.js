@@ -22,7 +22,7 @@ export default function AppNavigator() {
   return (
     <NavigationContainer>
       {/* EXAMPLES */}
-      {/* <HelloStack /> */}
+      <HelloStack />
       {/* <HelloTab /> */}
 
       {/* STACK */}
@@ -38,7 +38,7 @@ export default function AppNavigator() {
 
       {/* DRAWER NAVIGATORS */}
       {/* <DrawerNavigator /> */}
-      <CustomDrawerNavigator />
+      {/* <CustomDrawerNavigator /> */}
     </NavigationContainer>
   );
 }
