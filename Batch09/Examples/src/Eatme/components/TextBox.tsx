@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Text, View, StyleSheet, TextInput } from 'react-native';
 import PropTypes from 'prop-types';
 
@@ -41,28 +41,25 @@ const styles = StyleSheet.create({
   },
 });
 
-class TextBox extends Component {
-  render() {
-    console.log(this.props.isValid);
-    return (
-      <View style={styles.container}>
-        <Text style={styles.labelText}>{this.props.label}</Text>
-        <View style={styles.inputContainer}>
-          <TextInput style={styles.textInput} {...this.props} />
-          <Icon
-            style={[
-              styles.icon,
-              this.props.isValid !== undefined && {
-                color: this.props.isValid === true ? '#27AE60' : '#FF1717',
-              },
-            ]}
-            name={this.props.icon}
-            size={24}
-          />
-        </View>
+function TextBox(props: any) {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.labelText}>{props.label}</Text>
+      <View style={styles.inputContainer}>
+        <TextInput style={styles.textInput} {...props} />
+        <Icon
+          style={[
+            styles.icon,
+            props.isValid !== undefined && {
+              color: props.isValid === true ? '#27AE60' : '#FF1717',
+            },
+          ]}
+          name={props.icon}
+          size={24}
+        />
       </View>
-    );
-  }
+    </View>
+  );
 }
 
 TextBox.propTypes = {

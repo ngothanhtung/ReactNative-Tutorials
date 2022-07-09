@@ -62,7 +62,6 @@ export default function LoginScreen() {
 
   return (
     <View style={styles.container}>
-      <View style={styles.greenLogo}></View>
       {/* Begin: LOGO */}
       <View style={styles.logoContainer}>
         <Logo />

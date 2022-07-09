@@ -11,11 +11,11 @@ import Screen2 from './Screen2';
 import Screen3 from './Screen3';
 
 export default function OnboardingScreen() {
-  const [screenName, setScreenName] = React.useState(1);
+  const [screenIndex, setScreenIndex] = React.useState(1);
   let CurrentScreen = Screen1;
-  if (screenName === 2) {
+  if (screenIndex === 2) {
     CurrentScreen = Screen2;
-  } else if (screenName === 3) {
+  } else if (screenIndex === 3) {
     CurrentScreen = Screen3;
   }
 
@@ -34,10 +34,10 @@ export default function OnboardingScreen() {
           titleColor='white'
           title='Next'
           onPress={() => {
-            let s = screenName;
-            s++;
-            if (s > 3) s = 1;
-            setScreenName(s);
+            let index = screenIndex;
+            index++;
+            if (index > 3) index = 1;
+            setScreenIndex(index);
           }}
         />
       </View>
