@@ -41,8 +41,8 @@ export default function Screen1() {
       <View style={styles.logoContainer}>
         <Logo />
         <View style={{ height: 64 }} />
-        {/* <SvgXml xml={svg1} style={styles.logo} /> */}
-        <Image source={require('./images/1.png')} style={styles.logo} />
+        <SvgXml xml={svg1} style={styles.logo} />
+        {/* <Image source={require('./images/1.png')} style={styles.logo} /> */}
       </View>
       <View style={{ marginTop: 56, alignItems: 'center' }}>
         <GilroyText style={{ fontSize: 24, color: '#111A2C', lineHeight: 32 }} fontStyle='SemiBold'>

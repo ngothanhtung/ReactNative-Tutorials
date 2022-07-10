@@ -10,8 +10,8 @@ const styles = StyleSheet.create({
 });
 
 type Props = {
-  style: TextStyle;
-  fontStyle: TextStyle;
+  style?: TextStyle;
+  fontStyle: 'Regular' | 'Medium' | 'SemiBold' | 'Bold';
   children: string;
 };
 function GilroyText(props: Props) {

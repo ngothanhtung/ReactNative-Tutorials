@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
@@ -21,13 +21,18 @@ const styles = StyleSheet.create({
   },
 });
 
-export default class Header extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        <Text style={styles.titleText}>{this.props.title}</Text>
-        <Text style={styles.subTitleText}>{this.props.subTitle}</Text>
-      </View>
-    );
-  }
+type Props = {
+  title: string;
+  subTitle: string;
+};
+
+function Header(props: Props) {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.titleText}>{props.title}</Text>
+      <Text style={styles.subTitleText}>{props.subTitle}</Text>
+    </View>
+  );
 }
+
+export default React.memo(Header);

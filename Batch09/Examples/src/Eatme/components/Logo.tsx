@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { View, Image, Platform } from 'react-native';
 import { SvgXml } from 'react-native-svg';
 
@@ -14,19 +14,19 @@ const xml = `
 </svg>
 `;
 
-export default class Logo extends Component {
-  render() {
-    return (
-      <View style={{ justifyContent: 'center', alignItems: 'center' }}>
-        {/* WEB PWA */}
-        {Platform.OS === 'web' && <Image style={{ width: 190, height: 60 }} source={require('../assets/logo-eatme.png')} />}
-        {/* Sử dụng Svg (trong Figma, copy as Svg) */}
+function Logo() {
+  return (
+    <View style={{ justifyContent: 'center', alignItems: 'center' }}>
+      {/* WEB PWA */}
+      {Platform.OS === 'web' && <Image style={{ width: 190, height: 60 }} source={require('../assets/logo-eatme.png')} />}
+      {/* Sử dụng Svg (trong Figma, copy as Svg) */}
 
-        {/* // MOBILE APPS */}
-        {Platform.OS !== 'web' && <SvgXml xml={xml} />}
+      {/* // MOBILE APPS */}
+      {Platform.OS !== 'web' && <SvgXml xml={xml} />}
 
-        {/* <SvgXml xml={xml} /> */}
-      </View>
-    );
-  }
+      {/* <SvgXml xml={xml} /> */}
+    </View>
+  );
 }
+
+export default React.memo(Logo);
