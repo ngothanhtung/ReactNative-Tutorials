@@ -1,6 +1,6 @@
-import { View, Text, TextInput, Button, StyleSheet } from 'react-native';
+import { View, Text, TextInput, Button, StyleSheet, KeyboardAvoidingView, Keyboard, ScrollView, TouchableWithoutFeedback, Platform } from 'react-native';
 import React from 'react';
-import { Formik } from 'formik';
+import { Formik, ErrorMessage, Field } from 'formik';
 import * as Yup from 'yup';
 
 const SignupSchema = Yup.object().shape({
@@ -13,41 +13,80 @@ type Props = {};
 
 const FormikExample = (props: Props) => {
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Formik
-        initialValues={{ email: '', fullName: 'John', address: '' }}
-        validationSchema={SignupSchema}
-        onSubmit={(values) => {
-          console.log(values);
-        }}
-      >
-        {({ handleChange, handleSubmit, handleReset, handleBlur, values, errors, touched }) => {
-          return (
-            <View>
-              <View style={styles.inputContainer}>
-                <TextInput style={styles.input} placeholder='Enter your email' onChangeText={handleChange('email')} onBlur={handleBlur('email')} value={values.email} />
-                {errors.email && touched.email ? <Text style={styles.errorText}>{errors.email}</Text> : null}
-              </View>
-              <View>
-                <TextInput style={styles.input} placeholder='Enter your full name' onChangeText={handleChange('fullName')} onBlur={handleBlur('fullName')} value={values.fullName} />
-                {errors.fullName && touched.fullName ? <Text style={styles.errorText}>{errors.fullName}</Text> : null}
-              </View>
-              <View>
-                <TextInput style={styles.input} placeholder='Enter your address' onChangeText={handleChange('address')} onBlur={handleBlur('address')} value={values.address} />
-                {errors.address && touched.address ? <Text style={styles.errorText}>{errors.address}</Text> : null}
-              </View>
-              <Button onPress={handleSubmit} title='Submit' />
-            </View>
-          );
-        }}
-      </Formik>
-    </View>
+    <KeyboardAvoidingView style={styles.container} behavior={Platform.OS === 'ios' ? 'padding' : 'height'}>
+      <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
+        <ScrollView style={{ flex: 1 }} showsVerticalScrollIndicator={false}>
+          <View style={styles.logoContainer}>
+            <View style={styles.logo} />
+          </View>
+
+          <Formik
+            initialValues={{ email: '', fullName: 'John', address: '', phone: '' }}
+            validationSchema={SignupSchema}
+            onSubmit={(values) => {
+              console.log(values);
+            }}
+          >
+            {({ handleChange, handleSubmit, handleReset, handleBlur, values, errors, touched }) => {
+              return (
+                <View>
+                  <View style={styles.inputContainer}>
+                    <TextInput style={styles.input} placeholder='Enter your email' onChangeText={handleChange('email')} onBlur={handleBlur('email')} value={values.email} />
+                    {errors.email && touched.email ? <Text style={styles.errorText}>{errors.email}</Text> : null}
+                  </View>
+                  <View style={styles.inputContainer}>
+                    <TextInput style={styles.input} placeholder='Enter your full name' onChangeText={handleChange('fullName')} onBlur={handleBlur('fullName')} value={values.fullName} />
+                    {errors.fullName && touched.fullName ? <Text style={styles.errorText}>{errors.fullName}</Text> : null}
+                  </View>
+                  <View style={styles.inputContainer}>
+                    <TextInput style={[styles.input, { borderWidth: errors.address && touched.address ? 1 : 0 }]} placeholder='Enter your address' onChangeText={handleChange('address')} onBlur={handleBlur('address')} value={values.address} />
+                    <Text style={styles.errorText}>
+                      <ErrorMessage name='address' />
+                    </Text>
+                    {/* {errors.address && touched.address ? <Text style={styles.errorText}>{errors.address}</Text> : null} */}
+                  </View>
+                  <View style={styles.inputContainer}>
+                    <TextInput style={[styles.input, { borderWidth: errors.job && touched.job ? 1 : 0 }]} placeholder='Enter your job name' onChangeText={handleChange('job')} onBlur={handleBlur('job')} value={values.job} />
+                    <Text style={styles.errorText}>
+                      <ErrorMessage name='job' />
+                    </Text>
+                  </View>
+                  <View style={styles.inputContainer}>
+                    <TextInput style={[styles.input, { borderWidth: errors.country && touched.country ? 1 : 0 }]} placeholder='Enter your country name' onChangeText={handleChange('country')} onBlur={handleBlur('country')} value={values.country} />
+                    <Text style={styles.errorText}>
+                      <ErrorMessage name='country' />
+                    </Text>
+                  </View>
+                  <Button onPress={handleSubmit} title='Submit' />
+                </View>
+              );
+            }}
+          </Formik>
+        </ScrollView>
+      </TouchableWithoutFeedback>
+    </KeyboardAvoidingView>
   );
 };
 
 export default FormikExample;
 
 const styles = StyleSheet.create({
+  container: { flex: 1, padding: 24 },
+  logoContainer: {
+    flex: 0,
+    alignItems: 'center',
+    paddingVertical: 32,
+  },
+
+  logo: {
+    height: 200,
+    width: 200,
+    backgroundColor: '#6c5ce7',
+    borderRadius: 100,
+  },
+
+  formContainer: { flex: 2 },
+
   inputContainer: {
     flexDirection: 'column',
     marginBottom: 16,
@@ -60,9 +99,12 @@ const styles = StyleSheet.create({
   input: {
     height: 56,
     backgroundColor: '#dfe6e9',
-    width: 320,
+    width: '100%',
     marginBottom: 4,
     paddingHorizontal: 12,
     borderRadius: 8,
+    borderWidth: 0,
+    borderStyle: 'solid',
+    borderColor: '#d63031',
   },
 });
