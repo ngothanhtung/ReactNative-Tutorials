@@ -25,6 +25,7 @@ import UseMemoHook from './src/Session07/UseMemoHook';
 import UseCallbackHook from './src/Session07/UseCallbackHook';
 import CustomHook from './src/Session07/CustomHook';
 import ReactNativePaperApp from './src/Session09/ReactNativePaperApp';
+import FormikExample from './src/Session10/FormikExample';
 
 export default function App() {
   const [visible, setVisible] = React.useState(true);
@@ -91,7 +92,10 @@ export default function App() {
           {/* <AppNavigator /> */}
 
           {/* PAPER */}
-          <ReactNativePaperApp />
+          {/* <ReactNativePaperApp /> */}
+
+          {/* FORMIK */}
+          <FormikExample />
         </View>
       )}
     </React.Fragment>
