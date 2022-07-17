@@ -29,7 +29,7 @@ function CustomDrawerContent(props) {
 
 const CustomDrawerNavigator = () => {
   return (
-    <Drawer.Navigator drawerPosition='right' screenOptions={{ drawerActiveBackgroundColor: '#FF6C44', drawerActiveTintColor: '#ffffff', drawerInactiveTintColor: '#111A2C', drawerLabelStyle: { fontWeight: '700' } }} drawerContent={(props) => <CustomDrawerContent {...props} />}>
+    <Drawer.Navigator screenOptions={{ drawerPosition: 'left', drawerActiveBackgroundColor: '#FF6C44', drawerActiveTintColor: '#ffffff', drawerInactiveTintColor: '#111A2C', drawerLabelStyle: { fontWeight: '700' } }} drawerContent={(props) => <CustomDrawerContent {...props} />}>
       <Drawer.Screen name='Home' component={BottomTabNavigator} options={{ title: 'Home', drawerIcon: ({ color, size }) => <Icon color={color} size={size} name='home' /> }} />
       <Drawer.Screen name='Menu1' component={Menu1Screen} options={{ title: 'Settings', drawerIcon: ({ color, size }) => <Icon color={color} size={size} name='settings' /> }} />
       <Drawer.Screen name='Menu2' component={Menu2Screen} options={{ title: 'Profile', drawerIcon: ({ color, size }) => <Icon color={color} size={size} name='user' /> }} />
