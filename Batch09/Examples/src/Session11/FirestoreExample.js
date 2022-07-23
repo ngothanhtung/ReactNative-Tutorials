@@ -1,6 +1,6 @@
 import { View, Text, Button } from 'react-native';
 import React from 'react';
-import { db } from '.';
+import { db } from './initializeApp';
 
 import { setDoc, getDoc, getDocs, collection, query, where, doc } from 'firebase/firestore';
 import { FlatList } from 'react-native-gesture-handler';
@@ -9,37 +9,45 @@ import { FlatList } from 'react-native-gesture-handler';
 const FirestoreExample = () => {
   const [products, setProducts] = React.useState([]);
   // Get a doc
-  React.useEffect(async () => {
-    const docRef = doc(db, 'products', 'product-1');
-    const docSnap = await getDoc(docRef);
+  React.useEffect(() => {
+    async function getProduct() {
+      const docRef = doc(db, 'products', 'product-1');
+      const docSnap = await getDoc(docRef);
 
-    if (docSnap.exists()) {
-      console.log('Document data:', docSnap.data());
-    } else {
-      // doc.data() will be undefined in this case
-      console.log('No such document!');
+      if (docSnap.exists()) {
+        console.log('Document data:', docSnap.data());
+      } else {
+        // doc.data() will be undefined in this case
+        console.log('No such document!');
+      }
     }
+
+    getProduct();
   }, []);
 
   // Get docs
-  React.useEffect(async () => {
-    // Get docs
-    const productsRef = collection(db, 'products');
-    // Get all
-    // const q = query(productsRef);
+  React.useEffect(() => {
+    async function getProducts() {
+      // Get docs
+      const productsRef = collection(db, 'products');
+      // Get all
+      // const q = query(productsRef);
 
-    // Get with where
-    const q = query(productsRef, where('stock', '>', 0));
-    const querySnapshot = await getDocs(q);
+      // Get with where
+      const q = query(productsRef, where('stock', '>', 0));
+      const querySnapshot = await getDocs(q);
 
-    let result = [];
-    querySnapshot.forEach((doc) => {
-      // doc.data() is never undefined for query doc snapshots
-      result.push(doc.data());
-      // console.log(doc.id, ' => ', doc.data());
-    });
+      let result = [];
+      querySnapshot.forEach((doc) => {
+        // doc.data() is never undefined for query doc snapshots
+        result.push(doc.data());
+        // console.log(doc.id, ' => ', doc.data());
+      });
 
-    setProducts(result);
+      setProducts(result);
+    }
+
+    getProducts();
   }, []);
 
   return (

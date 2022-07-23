@@ -318,12 +318,14 @@ expo install react-native-gesture-handler react-native-reanimated react-native-s
 2. Login / Register a Google account
 3. Create a firebase project
 4. Install package React Native Firebase: https://docs.expo.dev/guides/using-firebase/
-5. Add an application in this project (Example: Android application).
-6. Download google-service.json
+5. https://firebase.google.com/docs/firestore?hl=en&authuser=0
+   > Lưu ý: https://stackoverflow.com/questions/72158122/expo-firebase-authentication-while-trying-to-resolve-module-idb-from-file
+6. Add an application in this project (Example: Android application).
+7. Download google-service.json
 
 - Go to project dashboard
 - Go to project setting: Project Overview -> Setting Icon -> Project settings
-- Add mobile app: Your apps -> Select android app -> type package name: com.softech.jobs, app name: Softech Jobs -> Click Button [Register app]
+- Add mobile app: Your apps -> Select android app -> type package name, ex: com.softech.jobs, app name, ex: Softech Jobs -> Click Button [Register app]
 - Download the google-services.json file and place it inside of your project at the following location:
 
 ```

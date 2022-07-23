@@ -26,7 +26,7 @@ import UseCallbackHook from './src/Session07/UseCallbackHook';
 import CustomHook from './src/Session07/CustomHook';
 import ReactNativePaperApp from './src/Session09/ReactNativePaperApp';
 import FormikExample from './src/Session10/FormikExample';
-import FirebaseExample from './src/Session11';
+import FirebaseExample from './src/Session11/FirebaseApp';
 
 export default function App() {
   const [visible, setVisible] = React.useState(true);

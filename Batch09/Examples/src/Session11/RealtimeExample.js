@@ -1,6 +1,6 @@
 import { View, Text } from 'react-native';
 import React from 'react';
-import { db } from '.';
+import { db } from './initializeApp';
 
 import { collection, query, where, onSnapshot } from 'firebase/firestore';
 import { FlatList } from 'react-native-gesture-handler';
@@ -10,17 +10,22 @@ const RealtimeExample = () => {
   const [products, setProducts] = React.useState([]);
 
   // Get docs
-  React.useEffect(async () => {
-    const q = query(collection(db, 'products'), where('stock', '>', 0));
-    const unsubscribe = onSnapshot(q, (querySnapshot) => {
-      const result = [];
-      querySnapshot.forEach((doc) => {
-        result.push(doc.data());
+  React.useEffect(() => {
+    function initRealtime() {
+      const q = query(collection(db, 'products'), where('stock', '>', 0));
+      const unsubscribe = onSnapshot(q, (querySnapshot) => {
+        const result = [];
+        querySnapshot.forEach((doc) => {
+          result.push(doc.data());
+        });
+
+        setProducts(result);
       });
 
-      console.log(result);
-      setProducts(result);
-    });
+      return unsubscribe;
+    }
+
+    const unsubscribe = initRealtime();
 
     // Unmouting
     return () => {
