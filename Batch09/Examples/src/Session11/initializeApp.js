@@ -1,7 +1,6 @@
 import { initializeApp } from 'firebase/app';
 import { getFirestore } from 'firebase/firestore';
 
-// Production: App.tsx
 // Initialize Firebase
 const firebaseConfig = {
   // CONFIG HERE
