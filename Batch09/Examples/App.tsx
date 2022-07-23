@@ -26,6 +26,7 @@ import UseCallbackHook from './src/Session07/UseCallbackHook';
 import CustomHook from './src/Session07/CustomHook';
 import ReactNativePaperApp from './src/Session09/ReactNativePaperApp';
 import FormikExample from './src/Session10/FormikExample';
+import FirebaseExample from './src/Session11';
 
 export default function App() {
   const [visible, setVisible] = React.useState(true);
@@ -95,7 +96,10 @@ export default function App() {
           {/* <ReactNativePaperApp /> */}
 
           {/* FORMIK */}
-          <FormikExample />
+          {/* <FormikExample /> */}
+
+          {/* FIREBASE */}
+          <FirebaseExample />
         </View>
       )}
     </React.Fragment>
