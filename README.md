@@ -317,7 +317,7 @@ expo install react-native-gesture-handler react-native-reanimated react-native-s
 1. https://console.firebase.google.com/
 2. Login / Register a Google account
 3. Create a firebase project
-4. Install package React Native Firebase: https://rnfirebase.io/
+4. Install package React Native Firebase: https://docs.expo.dev/guides/using-firebase/
 5. Add an application in this project (Example: Android application).
 6. Download google-service.json
 
