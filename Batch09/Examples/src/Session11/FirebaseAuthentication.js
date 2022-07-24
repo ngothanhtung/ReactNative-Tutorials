@@ -1,4 +1,4 @@
-import { Button, Text, View } from 'react-native';
+import { Button, Platform, Text, View } from 'react-native';
 import React, { Component } from 'react';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from 'firebase/auth';
 
@@ -21,7 +21,8 @@ export function FirebaseAuthentication() {
 
   return (
     <View>
-      <Text>FirebaseAuthentication</Text>
+      <Text>{auth.currentUser?.uid}</Text>
+
       <Button
         title='Add new user'
         onPress={() => {
@@ -43,7 +44,7 @@ export function FirebaseAuthentication() {
       <Button
         title='Sign in'
         onPress={() => {
-          signInWithEmailAndPassword(auth, 'tungnt@softech.vn', '123456789')
+          signInWithEmailAndPassword(auth, Platform.OS === 'ios' ? 'tungnt@softech.vn' : 'hungtv@softech.vn', '123456789')
             .then((userCredential) => {
               // Signed in
               const user = userCredential.user;

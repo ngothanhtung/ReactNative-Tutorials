@@ -5,13 +5,15 @@ import './initializeApp';
 import FirestoreExample from './FirestoreExample';
 import RealtimeExample from './RealtimeExample';
 import FirebaseAuthentication from './FirebaseAuthentication';
+import Chat from './Chat';
 
 const FirebaseExample = () => {
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ flex: 1 }}>
       {/* <FirestoreExample /> */}
       {/* <RealtimeExample /> */}
       <FirebaseAuthentication />
+      <Chat />
     </SafeAreaView>
   );
 };
