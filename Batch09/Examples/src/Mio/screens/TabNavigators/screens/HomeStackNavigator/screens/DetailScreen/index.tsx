@@ -1,14 +1,14 @@
 import React from 'react';
 import { View, Text, Button } from 'react-native';
 
-export default function ListScreen({ navigation }) {
+export default function DetailScreen({ navigation, route }) {
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center', backgroundColor: '#FBFBFB' }}>
-      <Text>List</Text>
+      <Text>{route.params.productId}</Text>
       <Button
-        title='Go to detail'
+        title='Go back to List'
         onPress={() => {
-          navigation.navigate('Detail');
+          navigation.navigate('ListScreen');
         }}
       />
     </View>

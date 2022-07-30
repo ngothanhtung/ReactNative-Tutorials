@@ -10,7 +10,7 @@ const Stack = createStackNavigator();
 
 export default function StackNavigator() {
   return (
-    <Stack.Navigator screenOptions={{ headerMode: 'screen' }}>
+    <Stack.Navigator screenOptions={{ headerShown: false }}>
       <Stack.Screen name='MainTab' component={MaterialBottomTabNavigator} />
       <Stack.Screen name='Login' component={LoginScreen} options={{ title: 'Đăng nhập', headerShown: true }} />
       <Stack.Screen name='Register' component={RegisterScreen} />

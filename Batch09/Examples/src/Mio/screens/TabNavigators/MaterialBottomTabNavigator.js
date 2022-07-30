@@ -3,7 +3,7 @@ import { StyleSheet } from 'react-native';
 import { MaterialCommunityIcons as Icon } from '@expo/vector-icons';
 
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
-import HomeScreen from './screens/HomeScreen';
+import HomeStackNavigator from './screens/HomeStackNavigator';
 import SearchScreen from './screens/SearchScreen';
 import FavouriteScreen from './screens/FavouriteScreen';
 import CartScreen from './screens/CartScreen';
@@ -18,7 +18,7 @@ export default function MaterialBottomTabNavigator() {
     <Tab.Navigator shifting={true} barStyle={{ backgroundColor: '#ffffff' }} activeColor='#ffffff' inactiveColor='#000000' initialRouteName='HomeScreen' backBehavior='history'>
       <Tab.Screen
         name='HomeScreen'
-        component={HomeScreen}
+        component={HomeStackNavigator}
         options={{
           title: 'Home',
           tabBarIcon: ({ focused, color }) => <Icon name={focused ? 'home' : 'home-outline'} size={ICON_SIZE} color={color} />,
