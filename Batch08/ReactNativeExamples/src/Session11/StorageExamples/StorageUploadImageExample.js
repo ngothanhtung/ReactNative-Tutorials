@@ -39,7 +39,6 @@ export default function StorageUploadImageExample() {
               // uploading
               task.on('state_changed', (taskSnapshot) => {
                 let currentPercent = (taskSnapshot.bytesTransferred / taskSnapshot.totalBytes) * 100;
-                // console.log(`${taskSnapshot.bytesTransferred} transferred out of ${taskSnapshot.totalBytes}`);
                 setPercent(currentPercent);
               });
 

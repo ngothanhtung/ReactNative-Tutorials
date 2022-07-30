@@ -113,3 +113,5 @@ const styles = StyleSheet.create({
     // alignItems: 'center',
   },
 });
+
+// console.disableYellowBox = true;

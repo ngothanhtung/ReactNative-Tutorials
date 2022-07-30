@@ -4,16 +4,18 @@ import React from 'react';
 import './initializeApp';
 import FirestoreExample from './FirestoreExample';
 import RealtimeExample from './RealtimeExample';
-import FirebaseAuthentication from './FirebaseAuthentication';
+import FirebaseAuthExample from './FirebaseAuthExample';
 import Chat from './Chat';
+import FirebaseStorageExample from './FirebaseStorageExample';
 
 const FirebaseExample = () => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       {/* <FirestoreExample /> */}
       {/* <RealtimeExample /> */}
-      <FirebaseAuthentication />
-      <Chat />
+      {/* <FirebaseAuthExample /> */}
+      {/* <Chat /> */}
+      <FirebaseStorageExample />
     </SafeAreaView>
   );
 };

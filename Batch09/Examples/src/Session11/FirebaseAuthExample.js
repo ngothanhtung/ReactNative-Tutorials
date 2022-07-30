@@ -2,7 +2,7 @@ import { Button, Platform, Text, View } from 'react-native';
 import React, { Component } from 'react';
 import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged } from 'firebase/auth';
 
-export function FirebaseAuthentication() {
+export function FirebaseAuthExample() {
   const auth = getAuth();
 
   onAuthStateChanged(auth, (user) => {
@@ -70,4 +70,4 @@ export function FirebaseAuthentication() {
   );
 }
 
-export default FirebaseAuthentication;
+export default FirebaseAuthExample;
