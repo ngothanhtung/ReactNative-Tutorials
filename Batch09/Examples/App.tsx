@@ -28,6 +28,8 @@ import ReactNativePaperApp from './src/Session09/ReactNativePaperApp';
 import FormikExample from './src/Session10/FormikExample';
 import FirebaseExample from './src/Session11/FirebaseApp';
 
+import MioAppNavigator from './src/Mio/screens/AppNavigator';
+
 export default function App() {
   const [visible, setVisible] = React.useState(true);
   const [fontsLoaded, setFontsLoaded] = React.useState(false);
@@ -99,7 +101,10 @@ export default function App() {
           {/* <FormikExample /> */}
 
           {/* FIREBASE */}
-          <FirebaseExample />
+          {/* <FirebaseExample /> */}
+
+          {/* MIO APP */}
+          <MioAppNavigator />
         </View>
       )}
     </React.Fragment>
