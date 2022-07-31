@@ -29,6 +29,8 @@ import FormikExample from './src/Session10/FormikExample';
 import FirebaseExample from './src/Session11/FirebaseApp';
 
 import MioAppNavigator from './src/Mio/screens/AppNavigator';
+import ComponentToComponent from './src/Session13';
+import ReduxExamples from './src/Session13/ReduxExamples';
 
 export default function App() {
   const [visible, setVisible] = React.useState(true);
@@ -103,8 +105,13 @@ export default function App() {
           {/* FIREBASE */}
           {/* <FirebaseExample /> */}
 
+          {/* REDUX */}
+
+          {/* <ComponentToComponent /> */}
+          <ReduxExamples />
+
           {/* MIO APP */}
-          <MioAppNavigator />
+          {/* <MioAppNavigator /> */}
         </View>
       )}
     </React.Fragment>
