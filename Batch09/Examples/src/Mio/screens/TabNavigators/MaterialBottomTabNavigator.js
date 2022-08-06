@@ -8,12 +8,15 @@ import SearchScreen from './screens/SearchScreen';
 import FavouriteScreen from './screens/FavouriteScreen';
 import CartScreen from './screens/CartScreen';
 import NotificationScreen from './screens/NotificationScreen';
+import { useSelector } from 'react-redux';
 
 const ICON_SIZE = 24;
 
 const Tab = createMaterialBottomTabNavigator();
 
 export default function MaterialBottomTabNavigator() {
+  const addedProducts = useSelector((state) => state.shoppingReducer.addedProducts);
+  // console.log(addedProducts);
   return (
     <Tab.Navigator shifting={true} barStyle={{ backgroundColor: '#ffffff' }} activeColor='#ffffff' inactiveColor='#000000' initialRouteName='HomeScreen' backBehavior='history'>
       <Tab.Screen
@@ -40,6 +43,7 @@ export default function MaterialBottomTabNavigator() {
         options={{
           title: 'Cart',
           tabBarIcon: ({ focused, color }) => <Icon name={focused ? 'cart' : 'cart-outline'} size={ICON_SIZE} color={color} />,
+          tabBarBadge: addedProducts?.length,
           tabBarColor: '#ff6348',
         }}
       />
@@ -49,6 +53,7 @@ export default function MaterialBottomTabNavigator() {
         options={{
           title: 'Favourite',
           tabBarIcon: ({ focused, color }) => <Icon name={focused ? 'heart' : 'heart-outline'} size={ICON_SIZE} color={color} />,
+
           tabBarColor: '#ff7f50',
         }}
       />

@@ -4,9 +4,10 @@ import React from 'react';
 import numeral from 'numeral';
 
 // VIETNAMESE CONFIG
-import 'numeral/locales/vi';
+
 import { useNavigation } from '@react-navigation/native';
-numeral.locale('vi');
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../modules/Shopping/actions';
 
 const WIDTH_SCREEN = Dimensions.get('window').width;
 
@@ -18,7 +19,7 @@ type Props = {
 
 const Product = (props: Props) => {
   const navigation = useNavigation();
-
+  const dispatch = useDispatch();
   return (
     <Pressable
       style={[styles.container, props.style]}
@@ -42,7 +43,8 @@ const Product = (props: Props) => {
             <Pressable
               style={styles.button}
               onPress={() => {
-                Alert.alert('Online Store', 'Coming soon');
+                // Alert.alert('Online Store', 'Coming soon');
+                dispatch(addToCart(props.data, 1));
               }}
             >
               <Feather name='shopping-cart' size={24} color='white' />

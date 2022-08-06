@@ -28,7 +28,7 @@ import ReactNativePaperApp from './src/Session09/ReactNativePaperApp';
 import FormikExample from './src/Session10/FormikExample';
 import FirebaseExample from './src/Session11/FirebaseApp';
 
-import MioAppNavigator from './src/Mio/screens/AppNavigator';
+import MioApp from './src/Mio';
 import ComponentToComponent from './src/Session13';
 import ReduxExamples from './src/Session13/ReduxExamples';
 
@@ -108,10 +108,10 @@ export default function App() {
           {/* REDUX */}
 
           {/* <ComponentToComponent /> */}
-          <ReduxExamples />
+          {/* <ReduxExamples /> */}
 
           {/* MIO APP */}
-          {/* <MioAppNavigator /> */}
+          <MioApp />
         </View>
       )}
     </React.Fragment>
