@@ -1,7 +1,7 @@
 import { createStore, compose, applyMiddleware } from 'redux';
 import rootReducer from './rootReducer';
 // REDUX THUNK
-// import thunkMiddleware from 'redux-thunk';
+import thunkMiddleware from 'redux-thunk';
 
 // CUSTOM LOGGER MIDDLEWARE
 const loggerMiddleware = ({ getState }) => {
@@ -23,16 +23,16 @@ const loggerMiddleware = ({ getState }) => {
 // MIDDLEWARE
 const middewares = [
   // THUNK
-  // thunkMiddleware,
+  thunkMiddleware,
   // Others
-  loggerMiddleware,
+  // loggerMiddleware,
 ];
 
 // REDUX STORE
 const store = createStore(
   rootReducer,
   compose(
-    // applyMiddleware(...middewares),
+    applyMiddleware(...middewares),
     // REDUX TOOLS
     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
   ),

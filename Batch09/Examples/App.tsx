@@ -108,10 +108,10 @@ export default function App() {
           {/* REDUX */}
 
           {/* <ComponentToComponent /> */}
-          {/* <ReduxExamples /> */}
+          <ReduxExamples />
 
           {/* MIO APP */}
-          <MioApp />
+          {/* <MioApp /> */}
         </View>
       )}
     </React.Fragment>
