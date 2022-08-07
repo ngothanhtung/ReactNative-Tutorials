@@ -1,13 +1,11 @@
 import React from 'react';
-import CreateUser from './components/CreateUser';
 
 import Users from './components/Users';
 
 const UserApp = () => (
-  <div>
-    <CreateUser />
+  <React.Fragment>
     <Users />
-  </div>
+  </React.Fragment>
 );
 
 export default UserApp;
