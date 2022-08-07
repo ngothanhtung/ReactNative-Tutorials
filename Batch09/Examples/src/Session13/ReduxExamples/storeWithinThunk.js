@@ -25,7 +25,7 @@ const middewares = [
   // THUNK
   thunkMiddleware,
   // Others
-  // loggerMiddleware,
+  loggerMiddleware,
 ];
 
 // REDUX STORE
