@@ -18,16 +18,29 @@
       "**/*"
     ],
     "ios": {
+      "bundleIdentifier": "io.aptech.ecommerce",
       "supportsTablet": true
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
-      }
+      },
+      "package": "io.aptech.ecommerce"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "onesignal-expo-plugin",
+        {
+          "mode": "development"
+        }
+      ]
+    ],
+    "extra": {
+      "oneSignalAppId": "590a207e-e23b-490b-a18d-8c337fb3f801"
     }
   }
 }

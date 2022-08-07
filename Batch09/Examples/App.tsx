@@ -28,6 +28,8 @@ import ReactNativePaperApp from './src/Session09/ReactNativePaperApp';
 import FormikExample from './src/Session10/FormikExample';
 import FirebaseExample from './src/Session11/FirebaseApp';
 
+import Session12 from './src/Session12';
+
 import MioApp from './src/Mio';
 import ComponentToComponent from './src/Session13';
 import ReduxExamples from './src/Session13/ReduxExamples';
@@ -102,13 +104,16 @@ export default function App() {
           {/* FORMIK */}
           {/* <FormikExample /> */}
 
+          {/* ONESIGNAL */}
+          <Session12 />
+
           {/* FIREBASE */}
           {/* <FirebaseExample /> */}
 
           {/* REDUX */}
 
           {/* <ComponentToComponent /> */}
-          <ReduxExamples />
+          {/* <ReduxExamples /> */}
 
           {/* MIO APP */}
           {/* <MioApp /> */}
