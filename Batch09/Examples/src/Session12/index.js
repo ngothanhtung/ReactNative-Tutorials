@@ -13,6 +13,7 @@ export default function Session12() {
     OneSignal.promptForPushNotifications();
   }
 
+  OneSignal.promptForPushNotificationsWithUserResponse();
   //Method for handling notifications received while app in foreground
   OneSignal.setNotificationWillShowInForegroundHandler((notificationReceivedEvent) => {
     console.log('OneSignal: notification will show in foreground:', notificationReceivedEvent);
