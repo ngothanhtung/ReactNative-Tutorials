@@ -17,6 +17,7 @@ const FirebaseStorageExample = () => {
 
   const cameraRef = React.useRef(null);
 
+  // 1. Request camera permission
   React.useEffect(() => {
     (async () => {
       const { status } = await Camera.requestCameraPermissionsAsync();
@@ -38,6 +39,7 @@ const FirebaseStorageExample = () => {
         {status === 'off' && capturedImage && <Image source={{ uri: capturedImage.uri }} style={{ width: '100%', flex: 1 }} resizeMode='cover' />}
       </View>
 
+      {/* UI upload to firebase/storage */}
       {progress > 0 && (
         <View style={{ height: 56, justifyContent: 'center', alignItems: 'center' }}>
           <Text style={{ color: 'black' }}>Uploading: {progress.toFixed(0)}%</Text>
@@ -63,9 +65,10 @@ const FirebaseStorageExample = () => {
                   setCapturedImage(photo);
                   setStatus('off');
 
+                  // Convert and upload
                   const filename = photo.uri.replace(/^.*[\\/]/, '');
                   const file = photo.uri;
-
+                  // Convert to blob
                   const blob = await new Promise((resolve, reject) => {
                     const xhr = new XMLHttpRequest();
                     xhr.onload = function () {

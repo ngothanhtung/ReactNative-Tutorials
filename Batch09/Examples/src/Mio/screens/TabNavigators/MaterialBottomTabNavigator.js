@@ -18,7 +18,7 @@ export default function MaterialBottomTabNavigator() {
   const addedProducts = useSelector((state) => state.shoppingReducer.addedProducts);
   // console.log(addedProducts);
   return (
-    <Tab.Navigator shifting={true} barStyle={{ backgroundColor: '#ffffff' }} activeColor='#ffffff' inactiveColor='#000000' initialRouteName='HomeScreen' backBehavior='history'>
+    <Tab.Navigator shifting={true} barStyle={{ backgroundColor: '#ffffff' }} activeColor='#ffffff' inactiveColor='#2d3436' initialRouteName='HomeScreen' backBehavior='history'>
       <Tab.Screen
         name='HomeScreen'
         component={HomeStackNavigator}
@@ -44,7 +44,7 @@ export default function MaterialBottomTabNavigator() {
           title: 'Cart',
           tabBarIcon: ({ focused, color }) => <Icon name={focused ? 'cart' : 'cart-outline'} size={ICON_SIZE} color={color} />,
           tabBarBadge: addedProducts?.length,
-          tabBarColor: '#ff6348',
+          tabBarColor: '#ff4757',
         }}
       />
       <Tab.Screen
@@ -53,8 +53,7 @@ export default function MaterialBottomTabNavigator() {
         options={{
           title: 'Favourite',
           tabBarIcon: ({ focused, color }) => <Icon name={focused ? 'heart' : 'heart-outline'} size={ICON_SIZE} color={color} />,
-
-          tabBarColor: '#ff7f50',
+          tabBarColor: '#ff6b81',
         }}
       />
       <Tab.Screen
@@ -64,7 +63,7 @@ export default function MaterialBottomTabNavigator() {
           title: 'Notifications',
           tabBarIcon: ({ focused, color }) => <Icon name={focused ? 'bell' : 'bell-outline'} size={ICON_SIZE} color={color} />,
           tabBarBadge: 9,
-          tabBarColor: '#ffa502',
+          tabBarColor: '#ff4757',
         }}
       />
     </Tab.Navigator>

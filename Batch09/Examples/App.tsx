@@ -105,7 +105,7 @@ export default function App() {
           {/* <FormikExample /> */}
 
           {/* ONESIGNAL */}
-          <Session12 />
+          {/* <Session12 /> */}
 
           {/* FIREBASE */}
           {/* <FirebaseExample /> */}
@@ -116,7 +116,7 @@ export default function App() {
           {/* <ReduxExamples /> */}
 
           {/* MIO APP */}
-          {/* <MioApp /> */}
+          <MioApp />
         </View>
       )}
     </React.Fragment>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, Text, Button, SafeAreaView, StyleSheet } from 'react-native';
+import { View, Text, Button, SafeAreaView, StyleSheet, Image } from 'react-native';
 import { FlatList } from 'react-native-gesture-handler';
 import { useDispatch, useSelector } from 'react-redux';
 import FONTS from '../../../constants/FONTS';
@@ -26,6 +26,7 @@ export default function CartScreen({ navigation }) {
           return (
             <View style={styles.container}>
               <View style={styles.productContainer}>
+                {/* <Image source={require('@/Mio/components/assets/product-1.jpeg')} /> */}
                 <Text style={styles.name}>{item.product.name}</Text>
                 <Text style={styles.price}>{numeral(item.product.price).format('0,0$')}</Text>
                 <Text style={styles.quantity}>{item.quantity}</Text>
