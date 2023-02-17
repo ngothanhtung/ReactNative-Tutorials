@@ -46,9 +46,10 @@ export default function ReMovement() {
       {/* <View style={[{ height: 100, width: 100, backgroundColor: 'red' }]} /> */}
       <Animated.View style={[{ borderRadius: 12, height: 0, width: 0, backgroundColor: 'red' }, circleStyle]} />
       <A.View style={[{ borderRadius: 12, height: animatedSize, width: animatedSize, backgroundColor: 'green' }]} />
-      <Animated.View style={[{ height: 100, width: 100, backgroundColor: 'black', margin: 30 }, boxContainerStyle]}></Animated.View>
+      <Animated.View
+        style={[{ height: 100, width: 100, backgroundColor: 'black', margin: 30 }, boxContainerStyle]}></Animated.View>
       <Button
-        title='toogle'
+        title="toogle"
         onPress={() => {
           randomWidth.value = Math.random() * 350;
           randomFontSize.value = 32;
