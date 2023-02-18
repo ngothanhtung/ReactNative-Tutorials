@@ -14,6 +14,10 @@ import AnimatedFlatListExample from './src/components/Reanimated/AnimatedFlatLis
 import PerspectiveMenuExample from './src/components/Reanimated/PerspectiveMenuExample';
 import BottomSheetExample from './src/components/Reanimated/BottomSheetExample';
 
+//
+
+import WalkthroughtExample from './src/components/Reanimated/WalkthroughtExample';
+
 export default function App() {
   return (
     <View style={styles.container}>
@@ -28,7 +32,10 @@ export default function App() {
       {/* <RippleEffectExample /> */}
       {/* <AnimatedFlatListExample /> */}
       {/* <PerspectiveMenuExample /> */}
-      <BottomSheetExample />
+      {/* <BottomSheetExample /> */}
+
+      {/* <PanGestureWithScrollViewExample /> */}
+      <WalkthroughtExample />
     </View>
   );
 }

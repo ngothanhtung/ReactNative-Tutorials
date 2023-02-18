@@ -19,7 +19,7 @@ type ContextType = {
 
 const MAX_TRANSLATE_X = -PAGE_WIDTH * (titles.length - 1);
 
-function App() {
+function PanGestureWithScrollViewExample() {
   const translateX = useSharedValue(0);
 
   const clampedTranslateX = useDerivedValue(() => {
@@ -36,6 +36,7 @@ function App() {
     },
     onEnd: event => {
       translateX.value = withDecay({ velocity: event.velocityX });
+      console.log('event', event);
     },
   });
 
@@ -55,7 +56,7 @@ function App() {
 export default () => {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <App />
+      <PanGestureWithScrollViewExample />
     </GestureHandlerRootView>
   );
 };
