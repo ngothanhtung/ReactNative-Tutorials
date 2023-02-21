@@ -61,6 +61,7 @@ const WalkthroughtExample = (props: Props) => {
           useNativeDriver: true,
         })}
         viewabilityConfig={viewConfig}
+        disableIntervalMomentum={true}
       />
       <View style={{ width: '100%', position: 'absolute', bottom: 0, alignItems: 'center' }}>
         <View style={styles.pageination}>
@@ -94,13 +95,13 @@ export default WalkthroughtExample;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    // justifyContent: 'center',
-    // alignItems: 'center',
   },
 
   screen: {
     flex: 1,
     width: WIDTH,
+    justifyContent: 'center',
+    alignItems: 'center',
     // height: HEIGHT,
   },
 
@@ -120,6 +121,7 @@ const styles = StyleSheet.create({
   dotIndicator: {
     width: DOT_INDICATOR_SIZE,
     height: DOT_INDICATOR_SIZE,
+    backgroundColor: '#333',
     borderRadius: DOT_INDICATOR_SIZE,
     borderWidth: 1,
     borderColor: '#333',
