@@ -1,7 +1,5 @@
-import { StyleSheet, Text, View, Dimensions, Animated, ViewToken } from 'react-native';
+import { StyleSheet, Text, View, Dimensions, Animated } from 'react-native';
 import React from 'react';
-import { FlatList } from 'react-native-gesture-handler';
-
 const { width: WIDTH, height: HEIGHT } = Dimensions.get('window');
 
 type Props = {};
@@ -11,11 +9,11 @@ interface ItemInterface {
   name: string;
 }
 
-const data = [
+const slides = [
   {
     id: 1,
     name: 'Screen 1',
-    color: 'blue',
+    color: 'white',
   },
   {
     id: 2,
@@ -29,32 +27,29 @@ const data = [
   },
 ];
 
+const PAGE_WIDTH = Dimensions.get('window').width;
+const DOT_SIZE = 8;
+const DOT_SPACING = 8;
+const DOT_INDICATOR_SIZE = DOT_SIZE + DOT_SPACING;
+
 const WalkthroughtExample = (props: Props) => {
-  const [currentIndex, setCurrentIndex] = React.useState<number>(0);
   const scrollX = React.useRef(new Animated.Value(0)).current;
-
   const refFlatList = React.useRef().current;
-
-  const viewableItemsChanged = React.useRef(({ viewableItems }: { viewableItems: ViewToken[] }) => {
-    if (viewableItems[0].index) {
-      console.log('viewableItems[0].index', viewableItems);
-      setCurrentIndex(viewableItems[0].index);
-    }
-  }).current;
-
   const viewConfig = React.useRef({ viewAreaCoveragePercentThreshold: 50 }).current;
 
   return (
     <View style={styles.container}>
-      <FlatList
+      <Animated.FlatList
         ref={refFlatList}
         pagingEnabled
         horizontal
         showsHorizontalScrollIndicator={false}
         bounces={false}
-        scrollEventThrottle={32}
-        data={data}
+        scrollEventThrottle={50}
+        data={slides}
         keyExtractor={(item: ItemInterface) => `screen-${item.id}`}
+        snapToInterval={PAGE_WIDTH}
+        decelerationRate="normal"
         renderItem={({ item }) => {
           return (
             <View style={[styles.screen, { backgroundColor: item.color }]}>
@@ -63,12 +58,33 @@ const WalkthroughtExample = (props: Props) => {
           );
         }}
         onScroll={Animated.event([{ nativeEvent: { contentOffset: { x: scrollX } } }], {
-          useNativeDriver: false,
+          useNativeDriver: true,
         })}
-        onViewableItemsChanged={viewableItemsChanged}
         viewabilityConfig={viewConfig}
       />
-      <View style={{ height: 60, position: 'absolute', backgroundColor: 'red' }}></View>
+      <View style={{ width: '100%', position: 'absolute', bottom: 0, alignItems: 'center' }}>
+        <View style={styles.pageination}>
+          {slides.map((slide, index) => {
+            return <View key={`dot-${slide.id}`} style={[styles.dot]}></View>;
+          })}
+
+          <Animated.View
+            style={[
+              styles.dotIndicator,
+              {
+                transform: [
+                  {
+                    translateX: Animated.divide(scrollX, PAGE_WIDTH).interpolate({
+                      inputRange: [0, 1],
+                      outputRange: [0, DOT_INDICATOR_SIZE],
+                    }),
+                  },
+                ],
+              },
+            ]}
+          />
+        </View>
+      </View>
     </View>
   );
 };
@@ -86,5 +102,29 @@ const styles = StyleSheet.create({
     flex: 1,
     width: WIDTH,
     // height: HEIGHT,
+  },
+
+  pageination: {
+    flexDirection: 'row',
+    bottom: 12,
+  },
+
+  dot: {
+    width: DOT_SIZE,
+    height: DOT_SIZE,
+    borderRadius: DOT_SIZE,
+    marginRight: DOT_SPACING,
+    backgroundColor: '#333',
+  },
+
+  dotIndicator: {
+    width: DOT_INDICATOR_SIZE,
+    height: DOT_INDICATOR_SIZE,
+    borderRadius: DOT_INDICATOR_SIZE,
+    borderWidth: 1,
+    borderColor: '#333',
+    position: 'absolute',
+    top: -DOT_SIZE / 2,
+    left: -DOT_SIZE / 2,
   },
 });
