@@ -29,30 +29,26 @@
 
 ## 1.1 EXPO-CLI
 
-> Tham khảo: https://reactnative.dev/docs/environment-setup
+### Tham khảo
 
-> Tham khảo: https://docs.expo.io/get-started/installation/
+> https://docs.expo.dev/get-started/create-a-project/
+
+> https://docs.expo.dev/guides/typescript/
 
 **1. Cài đặt công cụ expo-cli**:
 
 > Tại của sổ terminal hoặc bash, gõ:
 
-```
-npm install -g expo-cli
-```
-
-hoặc
-
-```
-yarn global add expo-cli
+```bash
+npx create-expo-app -t expo-template-blank-typescript
 ```
 
-**2. Tạo mới 1 project**:
+**2. Chạy 1 project**:
 
 > Tại của sổ terminal hoặc bash, gõ (chọn blank):
 
-```
-expo init AwesomeProject
+```bash
+npm run start
 
 cd AwesomeProject
 npm start # you can also use: expo start
@@ -60,11 +56,8 @@ npm start # you can also use: expo start
 
 > hoặc
 
-```
-expo init AwesomeProject
-
-cd AwesomeProject
-yarn start # you can also use: expo start
+```bash
+yarn start
 ```
 
 **3. Chạy ứng dụng React Native trên Expo Client**
@@ -96,25 +89,15 @@ yarn start # you can also use: expo start
 
 ### 2.1.1 Props:
 
-> https://reactjs.org/docs/components-and-props.html
+> https://reactnative.dev/docs/intro-react
 
 > https://reactnative.dev/docs/props
 
-### 2.1.2 Type-Checking:
 
-> https://reactjs.org/docs/typechecking-with-proptypes.html
 
-> Install Package: At root folder of project, open terminal (Ctrl + ` ), type:
+### 2.1.2. Practice
 
-```
-npm install --save prop-types
-
-hoặc
-
-yarn add prop-types
-```
-
-### 2.1.3. Xem lại các ví dụ tại [Session02](https://github.com/ngothanhtung/ReactNative-Tutorials/tree/master/Batch09/ExpoExamples/src/Session02/Eatme/components)
+- Xem lại các ví dụ tại [Session02](https://github.com/ngothanhtung/ReactNative-Tutorials/tree/master/Batch09/ExpoExamples/src/Session02/Eatme/components)
 
 ## 2.2 State
 
@@ -136,7 +119,7 @@ yarn add prop-types
 
 # Session 04: Styles & Layout
 
-1. Style: https://facebook.github.io/react-native/docs/style
+1. Style: https://reactnative.dev/docs/style
 
 - add react-native-vector-icons
 
