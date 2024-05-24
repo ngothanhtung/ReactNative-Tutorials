@@ -17,6 +17,7 @@ import BottomSheetExample from './src/components/Reanimated/BottomSheetExample';
 //
 
 import WalkthroughtExample from './src/components/Reanimated/WalkthroughtExample';
+import FadeIn from '@/components/Moti/FadeIn';
 
 export default function App() {
   return (
@@ -35,7 +36,9 @@ export default function App() {
       {/* <BottomSheetExample /> */}
 
       {/* <PanGestureWithScrollViewExample /> */}
-      <WalkthroughtExample />
+      {/* <WalkthroughtExample /> */}
+
+      <FadeIn />
     </View>
   );
 }

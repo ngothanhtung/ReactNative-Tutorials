@@ -1,18 +1,18 @@
 # A. Get Started (Setup environment)
 
-1. Nodejs: https://nodejs.org/en/ (Cài bản LTS)
-2. Yarn (https://yarnpkg.com/lang/en/docs/install/#windows-stable)
-3. Java SDK 8: https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html
-4. Visual Studio Code: https://code.visualstudio.com/Download
-5. Git SCM: https://git-scm.com/download/
+1. Nodejs: <https://nodejs.org/en/> (Cài bản LTS)
+2. Yarn (<https://yarnpkg.com/lang/en/docs/install/#windows-stable>)
+3. Java SDK 8: <https://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html>
+4. Visual Studio Code: <https://code.visualstudio.com/Download>
+5. Git SCM: <https://git-scm.com/download/>
 6. Setup IDE: Xcode, Android Studio
 
-- Android Studio: https://developer.android.com/studio/
+- Android Studio: <https://developer.android.com/studio/>
 - Configure ANDROID_HOME (c:\Users\YOUR_USERNAME\AppData\Local\Android\Sdk)
 - Add platform-tools to Path (c:\Users\YOUR_USERNAME\AppData\Local\Android\Sdk\platform-tools)
-- Setup JAVA_HOME (https://confluence.atlassian.com/doc/setting-the-java_home-variable-in-windows-8895.html)
+- Setup JAVA_HOME (<https://confluence.atlassian.com/doc/setting-the-java_home-variable-in-windows-8895.html>)
 
-# B. Setup Visual Studio Code Extensions:
+# B. Setup Visual Studio Code Extensions
 
 1. Auto Rename Tag: (Downloads: 2.7M)
 2. Bracket Pair Colorizer 2 (Donwloads: 842K)
@@ -31,9 +31,9 @@
 
 ### Tham khảo
 
-> https://docs.expo.dev/get-started/create-a-project/
+> <https://docs.expo.dev/get-started/create-a-project/>
 
-> https://docs.expo.dev/guides/typescript/
+> <https://docs.expo.dev/guides/typescript/>
 
 **1. Cài đặt công cụ expo-cli**:
 
@@ -67,13 +67,13 @@ yarn start
 
 **4. Homeworks**
 
-> https://www.figma.com/file/kUPJvUtB8ch6f9frDKn97I/Eatme-Food-Delivery-UI-Kit?node-id=58%3A30
+> <https://www.figma.com/file/kUPJvUtB8ch6f9frDKn97I/Eatme-Food-Delivery-UI-Kit?node-id=58%3A30>
 
 ## 1.2 REACT NATIVE CLI
 
-1. https://reactnative.dev/
-2. https://reactnative.dev/docs/getting-started
-3. https://reactnative.dev/docs/environment-setup
+1. <https://reactnative.dev/>
+2. <https://reactnative.dev/docs/getting-started>
+3. <https://reactnative.dev/docs/environment-setup>
 
 > Get started: Select tab: React Native CLI Quickstart
 
@@ -85,41 +85,75 @@ yarn start
 
 # Session 02: Props & State
 
-## 2.1 Props:
+## Components
 
-### 2.1.1 Props:
+> <https://reactnative.dev/docs/intro-react>
 
-> https://reactnative.dev/docs/intro-react
+## Props
 
-> https://reactnative.dev/docs/props
+> <https://reactnative.dev/docs/props>
 
+## State
 
+> <https://reactnative.dev/docs/state>
 
-### 2.1.2. Practice
+## Basic components
 
-- Xem lại các ví dụ tại [Session02](https://github.com/ngothanhtung/ReactNative-Tutorials/tree/master/Batch09/ExpoExamples/src/Session02/Eatme/components)
+### View
 
-## 2.2 State
+> <https://reactnative.dev/docs/view>
 
-### 2.2.1 State: https://reactnative.dev/docs/state
+### Text
+>
+> <https://reactnative.dev/docs/text>
 
-### 2.2.2 Handle Event within state:
+### Button
 
-> https://reactnative.dev/docs/handling-text-input
+> <https://reactnative.dev/docs/button>
 
-> https://reactnative.dev/docs/textinput
+### Image
 
-### 2.2.3 Handling Touches: https://reactnative.dev/docs/handling-touches
+> <https://reactnative.dev/docs/image>
+
+### Touchable
+
+> <https://reactnative.dev/docs/touchablehighlight>
+> <https://reactnative.dev/docs/touchableopacity>
+> <https://reactnative.dev/docs/touchablewithoutfeedback>
+
+### Handle Event within state
+
+> <https://reactnative.dev/docs/handling-text-input>
+> <https://reactnative.dev/docs/textinput>
+
+## Setup Fonts & Icons
+
+### Expo fonts
+
+> <https://docs.expo.dev/develop/user-interface/fonts/>
+
+```bash
+expo install expo-font
+```
+
+### Expo icons
+
+```bash
+expo install @expo/vector-icons
+```
+
+> <https://docs.expo.dev/guides/icons/>
+> <https://icons.expo.fyi/Index>
 
 # Session 03: React Component & Lifecycle
 
-1. https://reactjs.org/docs/state-and-lifecycle.html
-2. Theory: https://reactjs.org/docs/react-component.html
-3. Diagram: http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+1. <https://reactjs.org/docs/state-and-lifecycle.html>
+2. Theory: <https://reactjs.org/docs/react-component.html>
+3. Diagram: <http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/>
 
 # Session 04: Styles & Layout
 
-1. Style: https://reactnative.dev/docs/style
+1. Style: <https://reactnative.dev/docs/style>
 
 - add react-native-vector-icons
 
@@ -129,42 +163,42 @@ yarn start
 
 > Go to end of file: paste: apply from: "../../node_modules/react-native-vector-icons/fonts.gradle"
 
-2. Height and Width: https://facebook.github.io/react-native/docs/height-and-width
-   https://facebook.github.io/react-native/docs/dimensions
-3. Layout with Flexbox: https://facebook.github.io/react-native/docs/flexbox
-4. Image: https://reactnative.dev/docs/image
-5. ImageBackground: https://reactnative.dev/docs/imagebackground
-6. StatusBar: https://reactnative.dev/docs/statusbar
+2. Height and Width: <https://facebook.github.io/react-native/docs/height-and-width>
+   <https://facebook.github.io/react-native/docs/dimensions>
+3. Layout with Flexbox: <https://facebook.github.io/react-native/docs/flexbox>
+4. Image: <https://reactnative.dev/docs/image>
+5. ImageBackground: <https://reactnative.dev/docs/imagebackground>
+6. StatusBar: <https://reactnative.dev/docs/statusbar>
 7. Packages:
 
-   > react-native-vector-icons: https://github.com/oblador/react-native-vector-icons
+   > react-native-vector-icons: <https://github.com/oblador/react-native-vector-icons>
 
-   > https://github.com/react-native-community/react-native-linear-gradient
+   > <https://github.com/react-native-community/react-native-linear-gradient>
 
    > react-native-svg
 
-   > Browse Icons: https://oblador.github.io/react-native-vector-icons/
+   > Browse Icons: <https://oblador.github.io/react-native-vector-icons/>
 
-   > Face Stock: http://pravatar.cc/
+   > Face Stock: <http://pravatar.cc/>
 
-   > Stock: http://thestocks.im/
+   > Stock: <http://thestocks.im/>
 
-   > https://github.com/vhpoet/react-native-styling-cheat-sheet
+   > <https://github.com/vhpoet/react-native-styling-cheat-sheet>
 
 # Session 05: ListView
 
-2. ScrollView: https://reactnative.dev/docs/using-a-scrollview
-3. ListView: https://reactnative.dev/docs/using-a-listview
-4. FlatList: https://reactnative.dev/docs/flatlist
-5. SectionList: https://facebook.github.io/react-native/docs/sectionlist
+2. ScrollView: <https://reactnative.dev/docs/using-a-scrollview>
+3. ListView: <https://reactnative.dev/docs/using-a-listview>
+4. FlatList: <https://reactnative.dev/docs/flatlist>
+5. SectionList: <https://facebook.github.io/react-native/docs/sectionlist>
 
 # Session 06: Networking
 
-1. Networking: https://facebook.github.io/react-native/docs/network
-2. Fetch API: https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
-3. Axios Package: https://github.com/axios/axios
-4. JSON samples: https://jsonplaceholder.typicode.com/
-5. Download POSTMAN Tool: https://www.postman.com/downloads/
+1. Networking: <https://facebook.github.io/react-native/docs/network>
+2. Fetch API: <https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API>
+3. Axios Package: <https://github.com/axios/axios>
+4. JSON samples: <https://jsonplaceholder.typicode.com/>
+5. Download POSTMAN Tool: <https://www.postman.com/downloads/>
 6. API Practices:
 
 ```
@@ -226,12 +260,12 @@ POSTMAN:
 
 # Session 07: React Hooks
 
-## Videos: https://www.youtube.com/watch?v=cF2lQ_gZeA8&list=PLC3y8-rFHvwisvxhZ135pogtX7_Oe3Q3A
+## Videos: <https://www.youtube.com/watch?v=cF2lQ_gZeA8&list=PLC3y8-rFHvwisvxhZ135pogtX7_Oe3Q3A>
 
 1. Basic Hooks
 
-- useState (https://reactjs.org/docs/hooks-state.html)
-- useEffect (https://reactjs.org/docs/hooks-effect.html)
+- useState (<https://reactjs.org/docs/hooks-state.html>)
+- useEffect (<https://reactjs.org/docs/hooks-effect.html>)
 
 2. Additional Hooks
 
@@ -246,7 +280,7 @@ POSTMAN:
 
 # Session 08: React Navigation (Version 8.x)
 
-## Setup Core:
+## Setup Core
 
 1. Step 1 (Core): npm install @react-navigation/native
 2. Step 2 (Expo):
@@ -255,54 +289,54 @@ POSTMAN:
 expo install react-native-gesture-handler react-native-reanimated react-native-screens react-native-safe-area-context @react-native-community/masked-view
 ```
 
-## Setup for Stack:
+## Setup for Stack
 
 - npm install @react-navigation/stack
 
 ## Documents
 
-1.  Docs: https://reactnavigation.org/
-2.  Setup (Important):
-    > https://reactnavigation.org/docs/getting-started
-3.  StackNavigation
-    > https://reactnavigation.org/docs/stack-navigator
-4.  TabNavigation
+1. Docs: <https://reactnavigation.org/>
+2. Setup (Important):
+    > <https://reactnavigation.org/docs/getting-started>
+3. StackNavigation
+    > <https://reactnavigation.org/docs/stack-navigator>
+4. TabNavigation
 
-    > https://reactnavigation.org/docs/bottom-tab-navigator
+    > <https://reactnavigation.org/docs/bottom-tab-navigator>
 
-    > https://reactnavigation.org/docs/material-bottom-tab-navigator
+    > <https://reactnavigation.org/docs/material-bottom-tab-navigator>
 
-    > https://reactnavigation.org/docs/material-top-tab-navigator
+    > <https://reactnavigation.org/docs/material-top-tab-navigator>
 
-5.  DrawerNavigation
-    > https://reactnavigation.org/docs/drawer-navigator
-6.  Nesting Navigatord
-    > https://reactnavigation.org/docs/nesting-navigators
+5. DrawerNavigation
+    > <https://reactnavigation.org/docs/drawer-navigator>
+6. Nesting Navigatord
+    > <https://reactnavigation.org/docs/nesting-navigators>
 
-# Session 09: UI / UX & Utilities:
+# Session 09: UI / UX & Utilities
 
 1. React Native Papers
 2. React Native Elements
 3. NativeBase
-4. AsyncStorage (https://github.com/react-native-community/async-storage)
+4. AsyncStorage (<https://github.com/react-native-community/async-storage>)
 5. moment / numeral / lodash
 
 # Session 10: Working with Form & Entry Data Validation
 
-1. Working with form: Formik (https://jaredpalmer.com/formik/docs/guides/react-native)
-2. Working with entry data validation: Yup (https://github.com/jquense/yup)
-3. KeyboardAvoidingView: https://reactnative.dev/docs/keyboardavoidingview
+1. Working with form: Formik (<https://jaredpalmer.com/formik/docs/guides/react-native>)
+2. Working with entry data validation: Yup (<https://github.com/jquense/yup>)
+3. KeyboardAvoidingView: <https://reactnative.dev/docs/keyboardavoidingview>
 
 # Session 11: Firebase
 
-## 11.1. Setup:
+## 11.1. Setup
 
-1. https://console.firebase.google.com/
+1. <https://console.firebase.google.com/>
 2. Login / Register a Google account
 3. Create a firebase project
-4. Install package React Native Firebase: https://docs.expo.dev/guides/using-firebase/
-5. https://firebase.google.com/docs/firestore?hl=en&authuser=0
-   > Lưu ý: https://stackoverflow.com/questions/72158122/expo-firebase-authentication-while-trying-to-resolve-module-idb-from-file
+4. Install package React Native Firebase: <https://docs.expo.dev/guides/using-firebase/>
+5. <https://firebase.google.com/docs/firestore?hl=en&authuser=0>
+   > Lưu ý: <https://stackoverflow.com/questions/72158122/expo-firebase-authentication-while-trying-to-resolve-module-idb-from-file>
 6. Add an application in this project (Example: Android application).
 7. Download google-service.json
 
@@ -336,7 +370,7 @@ apply plugin: 'com.google.gms.google-services'
 7. Build & Run
 
 - Error: The number of method references in a .dex file cannot exceed 64k API 17
-- Link: (https://stackoverflow.com/questions/36785014/the-number-of-method-references-in-a-dex-file-cannot-exceed-64k-api-17)
+- Link: (<https://stackoverflow.com/questions/36785014/the-number-of-method-references-in-a-dex-file-cannot-exceed-64k-api-17>)
 - Xử lý lỗi: Just add these lines in the app/build.gradle:
 
 ```
@@ -352,10 +386,10 @@ android {
 
 ```
 
-## 11.2. Firestore for React Native:
+## 11.2. Firestore for React Native
 
 - On the right menu of console.firebase.google.com -> Choose [Database] -> Create database
-- Link (https://rnfirebase.io/firestore/usage#main)
+- Link (<https://rnfirebase.io/firestore/usage#main>)
 - Setup:
 
 ```
@@ -366,7 +400,7 @@ yarn add @react-native-firebase/app
 yarn add @react-native-firebase/firestore
 ```
 
-## 11.2.1. Example - QuerySnapshot:
+## 11.2.1. Example - QuerySnapshot
 
 > A QuerySnapshot returned from a collection query allows you to inspect the collection, such as how many documents exist within it, access to the documents within the collection, any changes since the last query and more. To access the documents within a QuerySnapshot, call the forEach method:
 
@@ -385,7 +419,7 @@ firestore()
   });
 ```
 
-## 11.2.2. Example - DocumentSnapshot:
+## 11.2.2. Example - DocumentSnapshot
 
 > A DocumentSnapshot is returned from a query to a specific document, or as part of the documents returned via a QuerySnapshot. The snapshot provides the ability to view a documents data, metadata and whether a document actually exists. To view a documents data, call the data method on the snapshot:
 
@@ -407,30 +441,30 @@ firestore()
 
 ## 11.2.3. More documents at google
 
-1. Cloud Firestore: https://firebase.google.com/docs/firestore/quickstart
-2. Query Data: https://firebase.google.com/docs/firestore/query-data/queries
-3. Get Data: https://firebase.google.com/docs/firestore/query-data/get-data
-4. Add / Update Data: https://firebase.google.com/docs/firestore/manage-data/add-data
-5. Delete Data: https://firebase.google.com/docs/firestore/manage-data/delete-data
-6. Realtime Update: https://firebase.google.com/docs/firestore/query-data/listen
+1. Cloud Firestore: <https://firebase.google.com/docs/firestore/quickstart>
+2. Query Data: <https://firebase.google.com/docs/firestore/query-data/queries>
+3. Get Data: <https://firebase.google.com/docs/firestore/query-data/get-data>
+4. Add / Update Data: <https://firebase.google.com/docs/firestore/manage-data/add-data>
+5. Delete Data: <https://firebase.google.com/docs/firestore/manage-data/delete-data>
+6. Realtime Update: <https://firebase.google.com/docs/firestore/query-data/listen>
 
 ---
 
 ## 11.3. Authentication
 
 1. Dashboard -> Authencation -> Sign-in Method -> Enable: Email / Password, Phone
-2. Docs: https://rnfirebase.io/docs/v5.x.x/auth/getting-started
-3. Refs: https://rnfirebase.io/docs/v5.x.x/auth/reference/auth
+2. Docs: <https://rnfirebase.io/docs/v5.x.x/auth/getting-started>
+3. Refs: <https://rnfirebase.io/docs/v5.x.x/auth/reference/auth>
 4. Phone Authentication:
 
 - Dashboard -> Authencation -> Sign-in Method -> Phone numbers for testing (optional)
-- Get SHA-1 key: https://stackoverflow.com/questions/27609442/how-to-get-the-sha-1-fingerprint-certificate-in-android-studio-for-debug-mode or cd android && ./gradlew signingReport
+- Get SHA-1 key: <https://stackoverflow.com/questions/27609442/how-to-get-the-sha-1-fingerprint-certificate-in-android-studio-for-debug-mode> or cd android && ./gradlew signingReport
 - Dashboard -> Project Settings -> General -> Select Android App -> Paste SHA-1
 
 5. Enable Android Device Verification (Real devices)
 
-- https://firebase.google.com/docs/auth/android/phone-auth#enable-app-verification
-- https://console.cloud.google.com/apis/library/androidcheck.googleapis.com?authuser=1&project=reactnative-firebase-examples&folder=&organizationId=
+- <https://firebase.google.com/docs/auth/android/phone-auth#enable-app-verification>
+- <https://console.cloud.google.com/apis/library/androidcheck.googleapis.com?authuser=1&project=reactnative-firebase-examples&folder=&organizationId=>
 
 ---
 
@@ -457,17 +491,17 @@ firestore()
 
 ## 11.5 Storage
 
-https://rnfirebase.io/storage/usage
+<https://rnfirebase.io/storage/usage>
 
 # Session 12 Notification with OneSignal
 
-## Setup OneSignal Package:
+## Setup OneSignal Package
 
-> https://documentation.onesignal.com/docs/react-native-sdk-setup
+> <https://documentation.onesignal.com/docs/react-native-sdk-setup>
 
-## Register a account & create an OneSignal App:
+## Register a account & create an OneSignal App
 
-1. Login at: https://app.onesignal.com/login
+1. Login at: <https://app.onesignal.com/login>
 2. Create an OneSignal App: Choose Google Android (FCM) + [Next]
 3. Open Firebase dashboard, project settings and copy: Firebase Server Key & Firebase Sender ID, then paste to OneSignal Panel
 4. Next and Close panel.
@@ -479,7 +513,7 @@ https://rnfirebase.io/storage/usage
 
 ## Send a test message by POSTMAN
 
-1. Url: https://onesignal.com/api/v1/notifications
+1. Url: <https://onesignal.com/api/v1/notifications>
 2. Method: POST
 3. Headers:
 
@@ -493,7 +527,7 @@ https://rnfirebase.io/storage/usage
 {
     "app_id": "YOUR ONE SIGNAL APP ID",
     "include_player_ids": [
-    	"user id of one signal"
+     "user id of one signal"
     ],
     "large_icon": "ic_action_cloud_upload",
     "android_group": "group-1",
@@ -521,13 +555,13 @@ https://rnfirebase.io/storage/usage
 
 ## Working with Server REST API Reference
 
-> https://documentation.onesignal.com/reference/create-notification
+> <https://documentation.onesignal.com/reference/create-notification>
 
 # Session 13: REDUX & SAGA (BONUS & OPTIONAL)
 
-1. Theory: https://redux.js.org/introduction/getting-started
-2. Usage with React: https://react-redux.js.org
-3. Diagram: https://kuanhsuh.github.io/2017/09/28/What-s-Redux-and-how-to-use-it/
+1. Theory: <https://redux.js.org/introduction/getting-started>
+2. Usage with React: <https://react-redux.js.org>
+3. Diagram: <https://kuanhsuh.github.io/2017/09/28/What-s-Redux-and-how-to-use-it/>
 4. Install packages: redux, react-redux:
 
 > npm install --save redux || hoặc || yarn add redux
@@ -548,7 +582,7 @@ https://rnfirebase.io/storage/usage
 
 6. Debug:
 
-- Download tool: https://github.com/jhen0409/react-native-debugger/releases
+- Download tool: <https://github.com/jhen0409/react-native-debugger/releases>
 
 7. redux-thunk
 
@@ -559,19 +593,19 @@ https://rnfirebase.io/storage/usage
 
 8. redux-saga
 
-- https://redux-saga.js.org/docs/introduction/BeginnerTutorial.html
+- <https://redux-saga.js.org/docs/introduction/BeginnerTutorial.html>
 - Install: npm install --save redux-saga / yarn add redux-saga
 - sagas
 - rootSagas
 
 # Session 14: Release
 
-1. Android icon: https://romannurik.github.io/AndroidAssetStudio/index.html
-2. iOs icon: https://appicon.co/
-3. https://facebook.github.io/react-native/docs/signed-apk-android
-4. https://play.google.com/apps/publish
+1. Android icon: <https://romannurik.github.io/AndroidAssetStudio/index.html>
+2. iOs icon: <https://appicon.co/>
+3. <https://facebook.github.io/react-native/docs/signed-apk-android>
+4. <https://play.google.com/apps/publish>
 
-# Final: Project:
+# Final: Project
 
 1. react-native-firebase
 
@@ -602,30 +636,30 @@ https://rnfirebase.io/storage/usage
 
 7. Open File:
 
-- https://github.com/Elyx0/react-native-document-picker
+- <https://github.com/Elyx0/react-native-document-picker>
 
 8. Open Camera / Photos gallery
 
-- https://github.com/ivpusic/react-native-image-crop-picker
+- <https://github.com/ivpusic/react-native-image-crop-picker>
 
 # A. Some useful websites
 
-## References:
+## References
 
-1. https://flatuicolors.com
-2. https://github.com/oblador/react-native-vector-icons
+1. <https://flatuicolors.com>
+2. <https://github.com/oblador/react-native-vector-icons>
 
 # B. Expressjs
 
-## B.1 References:
+## B.1 References
 
-1. Offical Site: https://expressjs.com
-2. Install CLI tool: https://expressjs.com/en/starter/generator.html
-3. Basic Routing: https://expressjs.com/en/starter/basic-routing.html
-4. Run server forever: http://pm2.keymetrics.io/ (npm install pm2 -g)
-5. Nodemon is a utility that will monitor for any changes in your source and automatically restart your server. Perfect for development (https://nodemon.io)
+1. Offical Site: <https://expressjs.com>
+2. Install CLI tool: <https://expressjs.com/en/starter/generator.html>
+3. Basic Routing: <https://expressjs.com/en/starter/basic-routing.html>
+4. Run server forever: <http://pm2.keymetrics.io/> (npm install pm2 -g)
+5. Nodemon is a utility that will monitor for any changes in your source and automatically restart your server. Perfect for development (<https://nodemon.io>)
 
-## B.2 Step by step:
+## B.2 Step by step
 
 1. Install CLI
 2. Create a project with express tool
@@ -633,7 +667,7 @@ https://rnfirebase.io/storage/usage
 
 # C. Firebase
 
-1. https://firebase.googleblog.com/2016/01/the-beginners-guide-to-react-native-and_84.html
+1. <https://firebase.googleblog.com/2016/01/the-beginners-guide-to-react-native-and_84.html>
 
 ```
 
@@ -641,31 +675,31 @@ https://rnfirebase.io/storage/usage
 
 # D: EXPRESSJS & MONGODB (BONUS & OPTIONAL)
 
-1. Expressjs: https://expressjs.com/en/starter/generator.html
-2. Basic Routing: https://expressjs.com/en/starter/basic-routing.html
-3. Routing: https://expressjs.com/en/guide/routing.html
-4. Mongodb: https://www.mongodb.com/download-center/community
-5. Tools: https://www.mongodb.com/download-center/compass
-6. Others: RoboMongo: https://robomongo.org/
-7. Nodejs Mongodb Driver: http://mongodb.github.io/node-mongodb-native/3.1/
-8. Databases with Express: https://expressjs.com/en/guide/database-integration.html
+1. Expressjs: <https://expressjs.com/en/starter/generator.html>
+2. Basic Routing: <https://expressjs.com/en/starter/basic-routing.html>
+3. Routing: <https://expressjs.com/en/guide/routing.html>
+4. Mongodb: <https://www.mongodb.com/download-center/community>
+5. Tools: <https://www.mongodb.com/download-center/compass>
+6. Others: RoboMongo: <https://robomongo.org/>
+7. Nodejs Mongodb Driver: <http://mongodb.github.io/node-mongodb-native/3.1/>
+8. Databases with Express: <https://expressjs.com/en/guide/database-integration.html>
 
-# Stocks:
+# Stocks
 
-1. All stocks: http://thestocks.im
-2. Font Icons: https://oblador.github.io/react-native-vector-icons
-3. Image Icons: https://www.flaticon.com
-4. Color: https://flatuicolors.com
-5. Face / Avatar: http://pravatar.cc
-6. Faces: https://uifaces.co/
-7. Animatable (Animation): https://github.com/oblador/react-native-animatable
+1. All stocks: <http://thestocks.im>
+2. Font Icons: <https://oblador.github.io/react-native-vector-icons>
+3. Image Icons: <https://www.flaticon.com>
+4. Color: <https://flatuicolors.com>
+5. Face / Avatar: <http://pravatar.cc>
+6. Faces: <https://uifaces.co/>
+7. Animatable (Animation): <https://github.com/oblador/react-native-animatable>
 
-# Videos:
+# Videos
 
-1. Videos: https://www.youtube.com/watch?v=kNHuLOXR5T0&list=PLWBrqglnjNl31S91FFE63DtuRc9v9LSGl
+1. Videos: <https://www.youtube.com/watch?v=kNHuLOXR5T0&list=PLWBrqglnjNl31S91FFE63DtuRc9v9LSGl>
 2. Style Cheat Sheet
-   https://github.com/vhpoet/react-native-styling-cheat-sheet
-3. FlexBox: https://www.youtube.com/watch?v=Y8zMYaD1bz0&list=PL4cUxeGkcC9i3FXJSUfmsNOx8E7u6UuhG
+   <https://github.com/vhpoet/react-native-styling-cheat-sheet>
+3. FlexBox: <https://www.youtube.com/watch?v=Y8zMYaD1bz0&list=PL4cUxeGkcC9i3FXJSUfmsNOx8E7u6UuhG>
 
 ```
 
