@@ -2,10 +2,13 @@ import { StyleSheet, Text, TextInput, View } from 'react-native';
 import React from 'react';
 import Icon from './Icon';
 
-type Props = {};
+type Props = {
+  label: string;
+  isPassword?: boolean;
+};
 
-const EmailInput = (props: Props) => {
-  const [text, setText] = React.useState('tungnt@softech.vn');
+const EmailInput = ({ label = 'No label', isPassword = false }: Props) => {
+  const [text, setText] = React.useState('');
 
   const onChangeText = (value: string) => {
     setText(value);
@@ -14,10 +17,19 @@ const EmailInput = (props: Props) => {
   return (
     <View>
       <View>
-        <Text>Email</Text>
+        <Text>{label}</Text>
       </View>
       <View style={styles.container}>
-        <TextInput style={styles.input} value={text} onChangeText={onChangeText} />
+        <TextInput
+          secureTextEntry={isPassword}
+          keyboardType='email-address'
+          onEndEditing={() => {
+            console.log('onEndEditing');
+          }}
+          style={styles.input}
+          value={text}
+          onChangeText={onChangeText}
+        />
         <Icon />
       </View>
     </View>

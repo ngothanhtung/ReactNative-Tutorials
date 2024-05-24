@@ -1,7 +1,8 @@
 import { StyleSheet, Text, View, Image, SafeAreaView } from 'react-native';
 import React from 'react';
+import Ionicons from '@expo/vector-icons/Ionicons';
 
-import EmailInput from './EmailInput';
+import Input from './Input';
 import PasswordInput from './PasswordInput';
 import SaveMeButton from './SaveMeButton';
 
@@ -18,8 +19,8 @@ const LoginScreen = (props: Props) => {
         <Text style={styles.subHeaderText}>Welcome back, you’ve been missed!</Text>
       </View>
       <View style={styles.inputContainer}>
-        <EmailInput />
-        <PasswordInput />
+        <Input label='Email' />
+        <Input label='Password' isPassword={true} />
       </View>
       <View style={styles.saveMeContainer}>
         <SaveMeButton />
@@ -54,12 +55,14 @@ const styles = StyleSheet.create({
   headerText: {
     fontSize: 24,
     fontWeight: 'bold',
+    fontFamily: 'SVN-Gilroy-Bold',
   },
   subHeaderText: {
     marginTop: 8,
     fontSize: 14,
     fontWeight: 'medium',
     color: '#525C67',
+    fontFamily: 'SVN-Gilroy-Regular',
   },
 
   inputContainer: {
