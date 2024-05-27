@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, View, Text, Button, Image } from 'react-native';
+import { StyleSheet, View, Text, Button, Image, SafeAreaView } from 'react-native';
 
 import MyButton from './components/MyButton';
 import LoginScreen from './components/LoginScreen';
@@ -7,7 +7,17 @@ import LoginScreen from './components/LoginScreen';
 import LikeButton from './components/LikeButton';
 import Light from './components/Light';
 
+import LifecycleComponent from './components/Session03/LifecycleComponent';
+
 import { useFonts } from 'expo-font';
+import React from 'react';
+import LifecyleGetData from './components/Session03/LifecyleGetData';
+import Dimension from './components/Session04/Dimension';
+import BasicFlexBox from './components/Session04/BasicFlexBox';
+import Color from './components/Session04/Color';
+import GetStartedButton from './components/Exercises/GetStartedButton';
+import { Ionicons } from '@expo/vector-icons';
+import Block from './components/Exercises/Block';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -22,11 +32,15 @@ export default function App() {
   }
 
   return (
-    <View style={styles.container}>
-      <StatusBar style='auto' />
-      <LoginScreen />
+    <SafeAreaView>
+      <View style={styles.container}>
+        <StatusBar style='auto' />
+        {/* <LifecycleComponent /> */}
+        {/* <LifecyleGetData /> */}
 
-      {/* <LikeButton
+        {/* <LoginScreen /> */}
+
+        {/* <LikeButton
         size={9}
         color='#666888'
         isLiked={true}
@@ -37,18 +51,18 @@ export default function App() {
         }}
       /> */}
 
-      {/* <Light /> */}
-      {/* <Button
+        {/* <Light /> */}
+        {/* <Button
         title='Submit'
         onPress={() => {
           console.log('Submit');
         }}
       /> */}
 
-      {/* <Image style={{ width: 200, height: 200 }} resizeMode='cover' source={{ uri: 'https://images.unsplash.com/photo-1716369415085-4a6876f91840?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }} />
+        {/* <Image style={{ width: 200, height: 200 }} resizeMode='cover' source={{ uri: 'https://images.unsplash.com/photo-1716369415085-4a6876f91840?q=80&w=1587&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D' }} />
       <Image style={{ width: 200, height: 200 }} resizeMode='stretch' source={require('./assets/images/Logo/eatme.png')} /> */}
 
-      {/* <View style={styles.containerXinChao}>
+        {/* <View style={styles.containerXinChao}>
         <Text>Xin chào</Text>
       </View>
       <View style={styles.containerTamBiet}>
@@ -59,16 +73,48 @@ export default function App() {
       <View style={styles.containerDiaChi}>
         <Text>38 Yen Bai</Text>
       </View> */}
-    </View>
+
+        {/* <Dimension /> */}
+        {/* <BasicFlexBox /> */}
+        {/* <Color /> */}
+        {/* <View style={{ rowGap: 12 }}>
+          <GetStartedButton rightIcon={<Ionicons name='arrow-forward-outline' color='white' size={24} />} />
+          <GetStartedButton title='Continue with Apple' leftIcon={<Ionicons name='logo-apple' color='white' size={24} />} />
+          <GetStartedButton title='Continue with Google' backgroundColor='#ffffff' color='#000000' leftIcon={<Ionicons name='logo-google' color='black' size={24} />} />
+          <GetStartedButton title='Continue with Facebook' backgroundColor='#ffffff' color='#000000' leftIcon={<Ionicons name='logo-facebook' color='black' size={24} />} />
+        </View> */}
+        <View style={{ rowGap: 12 }}>
+          <Block title='Miriam Jimenez' avatars={[require('./assets/images/avatar-1.png')]} />
+          <Block
+            title='New Teams'
+            backgroundColor='#FFF614'
+            titleStyle={{
+              color: '#000000',
+            }}
+            avatars={[require('./assets/images/avatar-1.png'), require('./assets/images/avatar-2.png')]}
+          />
+          <Block
+            title='Teams'
+            subTitle='Two currently'
+            backgroundColor='#740EF5'
+            titleStyle={{
+              color: '#ffffff',
+            }}
+            subTitleStyle={{
+              color: '#ffffff',
+            }}
+            avatars={[require('./assets/images/avatar-1.png'), require('./assets/images/avatar-2.png'), require('./assets/images/avatar-3.png')]}
+          />
+        </View>
+      </View>
+    </SafeAreaView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'white',
+    padding: 24,
     flex: 1,
-    // justifyContent: 'center',
-    // alignItems: 'center',
   },
   title: {
     fontSize: 40,
