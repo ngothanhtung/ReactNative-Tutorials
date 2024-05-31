@@ -18,6 +18,14 @@ import Color from './components/Session04/Color';
 import GetStartedButton from './components/Exercises/GetStartedButton';
 import { Ionicons } from '@expo/vector-icons';
 import Block from './components/Exercises/Block';
+import ScrollViewExample from './components/Session05/ScrollViewExample';
+import ScrollViewWithManyDataExample from './components/Session05/ScrollViewWithManyDataExample';
+import FlatListExamples from './components/Session05/FlatListExamples';
+import SectionListExample from './components/Session05/SectionListExample';
+import ScrollViewInScrollView from './components/Session05/ScrollViewInScrollView';
+import SectionListAdvancedExample from './components/Session05/SectionListAdvancedExample';
+import BasicNetworking from './components/Session06/BasicNetworking';
+import LoginNetworking from './components/Session06/LoginNetworking';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -32,7 +40,7 @@ export default function App() {
   }
 
   return (
-    <SafeAreaView>
+    <SafeAreaView style={{ flex: 1 }}>
       <View style={styles.container}>
         <StatusBar style='auto' />
         {/* <LifecycleComponent /> */}
@@ -83,7 +91,7 @@ export default function App() {
           <GetStartedButton title='Continue with Google' backgroundColor='#ffffff' color='#000000' leftIcon={<Ionicons name='logo-google' color='black' size={24} />} />
           <GetStartedButton title='Continue with Facebook' backgroundColor='#ffffff' color='#000000' leftIcon={<Ionicons name='logo-facebook' color='black' size={24} />} />
         </View> */}
-        <View style={{ rowGap: 12 }}>
+        {/* <View style={{ rowGap: 12 }}>
           <Block title='Miriam Jimenez' avatars={[require('./assets/images/avatar-1.png')]} />
           <Block
             title='New Teams'
@@ -105,7 +113,16 @@ export default function App() {
             }}
             avatars={[require('./assets/images/avatar-1.png'), require('./assets/images/avatar-2.png'), require('./assets/images/avatar-3.png')]}
           />
-        </View>
+        </View> */}
+
+        {/* <ScrollViewExample /> */}
+        {/* <ScrollViewWithManyDataExample /> */}
+        {/* <FlatListExamples /> */}
+        {/* <SectionListExample /> */}
+        {/* <ScrollViewInScrollView /> */}
+        {/* <SectionListAdvancedExample /> */}
+        {/* <BasicNetworking /> */}
+        <LoginNetworking />
       </View>
     </SafeAreaView>
   );
@@ -115,6 +132,7 @@ const styles = StyleSheet.create({
   container: {
     padding: 24,
     flex: 1,
+    backgroundColor: 'green',
   },
   title: {
     fontSize: 40,
