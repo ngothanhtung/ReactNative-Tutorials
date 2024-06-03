@@ -3,7 +3,6 @@ import React from 'react';
 
 type Props = {};
 // https://jsonplaceholder.typicode.com/
-const url = 'https://jsonplaceholder.typicode.com/posts';
 
 const BasicNetworking = (props: Props) => {
   const [loading, setLoading] = React.useState(true);
@@ -18,7 +17,8 @@ const BasicNetworking = (props: Props) => {
   // Chỉ chạy 1 lần duy nhất khi component được mount
   React.useEffect(() => {
     // PROMISE: Mất 5s để lấy data từ server
-    fetch(url)
+    const url1 = 'https://jsonplaceholder.typicode.com/posts';
+    fetch(url1)
       .then((response) => {
         return response.json();
       })
@@ -32,6 +32,16 @@ const BasicNetworking = (props: Props) => {
       .catch((error) => {
         setMessage('Có lỗi lấy dữ liệu từ server');
         // console.error(error);
+      });
+
+    const url2 = 'https://jsonplaceholder.typicode.com/todos';
+    fetch(url2)
+      .then((response) => {
+        return response.json();
+      })
+      .then((json) => {})
+      .catch((error) => {
+        console.error(error);
       });
   }, []);
 
