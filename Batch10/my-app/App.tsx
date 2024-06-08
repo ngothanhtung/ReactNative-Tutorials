@@ -26,6 +26,8 @@ import ScrollViewInScrollView from './components/Session05/ScrollViewInScrollVie
 import SectionListAdvancedExample from './components/Session05/SectionListAdvancedExample';
 import BasicNetworking from './components/Session06/BasicNetworking';
 import LoginNetworking from './components/Session06/LoginNetworking';
+import UseMemoHook from './components/Session07/UseMemoHook';
+import UseCallbackHook from './components/Session07/UseCallbackHook';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -122,7 +124,11 @@ export default function App() {
         {/* <ScrollViewInScrollView /> */}
         {/* <SectionListAdvancedExample /> */}
         {/* <BasicNetworking /> */}
-        <LoginNetworking />
+        {/* <LoginNetworking /> */}
+
+        {/* <UseMemoHook /> */}
+
+        <UseCallbackHook />
       </View>
     </SafeAreaView>
   );
@@ -132,7 +138,7 @@ const styles = StyleSheet.create({
   container: {
     padding: 24,
     flex: 1,
-    backgroundColor: 'green',
+    backgroundColor: 'white',
   },
   title: {
     fontSize: 40,
