@@ -28,6 +28,7 @@ import BasicNetworking from './components/Session06/BasicNetworking';
 import LoginNetworking from './components/Session06/LoginNetworking';
 import UseMemoHook from './components/Session07/UseMemoHook';
 import UseCallbackHook from './components/Session07/UseCallbackHook';
+import AppNavigation from './components/Session08/AppNavigation';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -40,6 +41,8 @@ export default function App() {
   if (!fontsLoaded) {
     return null;
   }
+
+  return <AppNavigation />;
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -128,7 +131,7 @@ export default function App() {
 
         {/* <UseMemoHook /> */}
 
-        <UseCallbackHook />
+        {/* <UseCallbackHook /> */}
       </View>
     </SafeAreaView>
   );
