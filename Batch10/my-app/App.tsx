@@ -1,3 +1,5 @@
+import 'react-native-gesture-handler';
+
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, Text, Button, Image, SafeAreaView } from 'react-native';
 
@@ -29,6 +31,7 @@ import LoginNetworking from './components/Session06/LoginNetworking';
 import UseMemoHook from './components/Session07/UseMemoHook';
 import UseCallbackHook from './components/Session07/UseCallbackHook';
 import AppNavigation from './components/Session08/AppNavigation';
+import ReactNativePaperApp from './components/Session09/ReactNativePaperApp';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -42,7 +45,7 @@ export default function App() {
     return null;
   }
 
-  return <AppNavigation />;
+  // return <AppNavigation />;
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -132,6 +135,8 @@ export default function App() {
         {/* <UseMemoHook /> */}
 
         {/* <UseCallbackHook /> */}
+
+        <ReactNativePaperApp />
       </View>
     </SafeAreaView>
   );

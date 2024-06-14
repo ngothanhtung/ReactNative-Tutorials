@@ -4,6 +4,8 @@ import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import StackNavigator from './StackNavigator';
 import TabNavigator from './TabNavigator';
+import DrawerNavigator from './DrawerNavigator';
+import CustomDrawerNavigator from './CustomDrawerNavigator';
 
 type Props = {};
 
@@ -11,7 +13,9 @@ const AppNavigation = (props: Props) => {
   return (
     <NavigationContainer>
       {/* <StackNavigator /> */}
-      <TabNavigator />
+      {/* <TabNavigator /> */}
+      {/* <DrawerNavigator /> */}
+      <CustomDrawerNavigator />
     </NavigationContainer>
   );
 };
