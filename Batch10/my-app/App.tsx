@@ -32,6 +32,9 @@ import UseMemoHook from './components/Session07/UseMemoHook';
 import UseCallbackHook from './components/Session07/UseCallbackHook';
 import AppNavigation from './components/Session08/AppNavigation';
 import ReactNativePaperApp from './components/Session09/ReactNativePaperApp';
+import LoginForm from './components/Session10/LoginForm';
+import RegisterSchemaValidationForm from './components/Session10/RegisterSchemaValidationForm';
+import RegisterWithReactNativePaperForm from './components/Session10/RegisterWithReactNativePaperForm';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -136,7 +139,10 @@ export default function App() {
 
         {/* <UseCallbackHook /> */}
 
-        <ReactNativePaperApp />
+        {/* <ReactNativePaperApp /> */}
+        {/* <LoginForm /> */}
+        {/* <RegisterSchemaValidationForm /> */}
+        <RegisterWithReactNativePaperForm />
       </View>
     </SafeAreaView>
   );
