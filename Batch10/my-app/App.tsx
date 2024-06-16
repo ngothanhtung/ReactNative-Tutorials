@@ -35,6 +35,7 @@ import ReactNativePaperApp from './components/Session09/ReactNativePaperApp';
 import LoginForm from './components/Session10/LoginForm';
 import RegisterSchemaValidationForm from './components/Session10/RegisterSchemaValidationForm';
 import RegisterWithReactNativePaperForm from './components/Session10/RegisterWithReactNativePaperForm';
+import CreateCategory from './components/Session10/CreateCategory';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -142,7 +143,8 @@ export default function App() {
         {/* <ReactNativePaperApp /> */}
         {/* <LoginForm /> */}
         {/* <RegisterSchemaValidationForm /> */}
-        <RegisterWithReactNativePaperForm />
+        {/* <RegisterWithReactNativePaperForm /> */}
+        <CreateCategory />
       </View>
     </SafeAreaView>
   );
