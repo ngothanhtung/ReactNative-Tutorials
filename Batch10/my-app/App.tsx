@@ -30,26 +30,62 @@ import BasicNetworking from './components/Session06/BasicNetworking';
 import LoginNetworking from './components/Session06/LoginNetworking';
 import UseMemoHook from './components/Session07/UseMemoHook';
 import UseCallbackHook from './components/Session07/UseCallbackHook';
-import AppNavigation from './components/Session08/AppNavigation';
+// import AppNavigation from './components/Session08/AppNavigation';
 import ReactNativePaperApp from './components/Session09/ReactNativePaperApp';
 import LoginForm from './components/Session10/LoginForm';
 import RegisterSchemaValidationForm from './components/Session10/RegisterSchemaValidationForm';
 import RegisterWithReactNativePaperForm from './components/Session10/RegisterWithReactNativePaperForm';
 import CreateCategory from './components/Session10/CreateCategory';
 
+import AppNavigation from './src/AppNavigation';
+
 export default function App() {
   const [fontsLoaded] = useFonts({
+    // Gilroy
     'SVN-Gilroy-Regular': require('./assets/fonts/SVN-Gilroy-Regular.otf'),
     'SVN-Gilroy-Medium': require('./assets/fonts/SVN-Gilroy-Medium.otf'),
     'SVN-Gilroy-SemiBold': require('./assets/fonts/SVN-Gilroy-SemiBold.otf'),
     'SVN-Gilroy-Bold': require('./assets/fonts/SVN-Gilroy-Bold.otf'),
+    // Lato
+    'Lato-Light': require('./assets/fonts/Lato-Light.ttf'),
+    'Lato-Regular': require('./assets/fonts/Lato-Regular.ttf'),
+    'Lato-Bold': require('./assets/fonts/Lato-Bold.ttf'),
+    'Lato-Black': require('./assets/fonts/Lato-Black.ttf'),
+
+    //Nunito
+    'Nunito-Regular': require('./assets/fonts/Nunito-Regular.ttf'),
+    'Nunito-Bold': require('./assets/fonts/Nunito-Bold.ttf'),
+
+    //Poppins
+    'Poppins-Regular': require('./assets/fonts/Poppins-Regular.ttf'),
+    'Poppins-Italic': require('./assets/fonts/Poppins-Italic.ttf'),
+    'Poppins-Medium': require('./assets/fonts/Poppins-Medium.ttf'),
+    'Poppins-SemiBold': require('./assets/fonts/Poppins-SemiBold.ttf'),
+    'Poppins-Bold': require('./assets/fonts/Poppins-Bold.ttf'),
+    'Poppins-BoldItalic': require('./assets/fonts/Poppins-BoldItalic.ttf'),
+
+    // Oswald
+    'Oswald-Regular': require('./assets/fonts/Oswald-Regular.ttf'),
+    'Oswald-Medium': require('./assets/fonts/Oswald-Medium.ttf'),
+    'Oswald-Bold': require('./assets/fonts/Oswald-Bold.ttf'),
+
+    'Roboto-Light': require('./assets/fonts/Roboto-Light.ttf'),
+    'Roboto-Regular': require('./assets/fonts/Roboto-Regular.ttf'),
+    'Roboto-Medium': require('./assets/fonts/Roboto-Medium.ttf'),
+    'Roboto-Bold': require('./assets/fonts/Roboto-Bold.ttf'),
+    'Roboto-Black': require('./assets/fonts/Roboto-Black.ttf'),
   });
 
   if (!fontsLoaded) {
     return null;
   }
 
-  // return <AppNavigation />;
+  return (
+    <React.Fragment>
+      <StatusBar style='light' />
+      <AppNavigation />
+    </React.Fragment>
+  );
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
@@ -144,7 +180,7 @@ export default function App() {
         {/* <LoginForm /> */}
         {/* <RegisterSchemaValidationForm /> */}
         {/* <RegisterWithReactNativePaperForm /> */}
-        <CreateCategory />
+        {/* <CreateCategory /> */}
       </View>
     </SafeAreaView>
   );
