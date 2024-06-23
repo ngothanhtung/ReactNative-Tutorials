@@ -1,15 +1,16 @@
-import { StyleSheet, Text, View } from 'react-native';
 import React from 'react';
+import { StyleSheet, Text, View } from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
-import OnboardingStackNavigator from './OnboardingStackNavigator';
+
+import RootStackNavigator from './navigators/RootStackNavigator';
 
 type Props = {};
 
 const AppNavigation = (props: Props) => {
   return (
     <NavigationContainer>
-      <OnboardingStackNavigator />
+      <RootStackNavigator />
     </NavigationContainer>
   );
 };

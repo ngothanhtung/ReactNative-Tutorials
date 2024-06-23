@@ -2,7 +2,7 @@
 import React from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
 import Icon from '@expo/vector-icons/MaterialCommunityIcons';
-import COLORS from '../../constants/COLORS';
+import COLORS from '@/constants/COLORS';
 
 const height = 48;
 type Props = {

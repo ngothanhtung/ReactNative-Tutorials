@@ -1,12 +1,16 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import { Dimensions, Image, FlatList, StatusBar, StyleSheet, Text, View } from 'react-native';
+import { Dimensions, FlatList, Image, StatusBar, StyleSheet, Text, View } from 'react-native';
 
-import COLORS from '../../constants/COLORS';
+import Container from '@/components/Container';
+import COLORS from '@/constants/COLORS';
+
 import BigText from '../components/BigText';
 import Footer from '../components/Footer';
 import OutlineButton from '../components/OutlineButton';
 import PrimaryButton from '../components/PrimaryButton';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { RootStackParamList } from '@/navigators/RootStackNavigator/RootStackParamList';
 
 const Slide1 = () => {
   return (
@@ -80,49 +84,60 @@ function Dot({ color }: { color: string }) {
   return <View style={{ marginRight: 12, height: 8, width: 8, borderRadius: 4, backgroundColor: color }} />;
 }
 
-export default function Onboarding2Screen() {
+type Props = {
+  navigation: NativeStackNavigationProp<RootStackParamList>;
+};
+export default function Onboarding2Screen({ navigation }: Props) {
   return (
-    <View style={styles.container}>
-      <StatusBar barStyle='light-content' />
-      <View style={{ flex: 1 }}>
-        <FlatList
-          style={{ flex: 1 }}
-          horizontal={true}
-          pagingEnabled={true}
-          showsHorizontalScrollIndicator={false}
-          keyExtractor={(item, index) => 'screen-' + index}
-          data={slides}
-          renderItem={({ item, index }) => {
-            const Component = item.component;
-            return (
-              <View style={{ flex: 1, width: width }}>
-                <Component />
-              </View>
-            );
-          }}
-        />
+    <Container>
+      <View style={styles.container}>
+        <StatusBar barStyle='light-content' />
+        <View style={{ flex: 1 }}>
+          <FlatList
+            style={{ flex: 1 }}
+            horizontal={true}
+            pagingEnabled={true}
+            showsHorizontalScrollIndicator={false}
+            keyExtractor={(item, index) => 'screen-' + index}
+            data={slides}
+            renderItem={({ item, index }) => {
+              const Component = item.component;
+              return (
+                <View style={{ flex: 1, width: width }}>
+                  <Component />
+                </View>
+              );
+            }}
+          />
+        </View>
+        <View style={{ height: 176 }}>
+          <View style={{ paddingHorizontal: 48 }}>
+            <PrimaryButton
+              text='Continue with Email'
+              onPress={() => {
+                navigation.navigate('AuthStackNavigator', {
+                  screen: 'Login',
+                });
+              }}
+            />
+          </View>
+          <View style={{ height: 12 }} />
+          <View style={{ paddingHorizontal: 48, flexDirection: 'row', flex: 1 }}>
+            <OutlineButton icon='google' color='#FF968E' />
+            <View style={{ width: 12 }} />
+            <OutlineButton icon='facebook' color={COLORS.primary} />
+          </View>
+          <View style={{ marginTop: 16 }}>
+            <Footer />
+          </View>
+        </View>
       </View>
-      <View style={{ height: 176 }}>
-        <View style={{ paddingHorizontal: 48 }}>
-          <PrimaryButton text='Continue with Email' />
-        </View>
-        <View style={{ height: 12 }} />
-        <View style={{ paddingHorizontal: 48, flexDirection: 'row', flex: 1 }}>
-          <OutlineButton icon='google' color='#FF968E' />
-          <View style={{ width: 12 }} />
-          <OutlineButton icon='facebook' color={COLORS.primary} />
-        </View>
-        <View style={{ marginTop: 16 }}>
-          <Footer />
-        </View>
-      </View>
-    </View>
+    </Container>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#181A20',
   },
 });

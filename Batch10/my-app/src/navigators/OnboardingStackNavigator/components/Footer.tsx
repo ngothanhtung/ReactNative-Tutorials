@@ -1,7 +1,8 @@
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import { View, Text, Platform } from 'react-native';
-import COLORS from '../../constants/COLORS';
+import { Platform, Text, View } from 'react-native';
+
+import COLORS from '@/constants/COLORS';
 
 export default function Footer() {
   return (

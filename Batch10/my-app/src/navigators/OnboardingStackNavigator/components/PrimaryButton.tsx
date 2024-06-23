@@ -2,9 +2,8 @@
 import React from 'react';
 import { Text, TouchableOpacity } from 'react-native';
 
+import COLORS from '@/constants/COLORS';
 import Icon from '@expo/vector-icons/MaterialCommunityIcons';
-
-import COLORS from '../../constants/COLORS';
 
 const height = 48;
 

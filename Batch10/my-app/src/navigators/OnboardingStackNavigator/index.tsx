@@ -2,15 +2,15 @@ import React from 'react';
 
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
+import AuthStackNavigator from '../AuthStackNavigator';
+import { OnboardingStackParamList } from './OnboardingStackParamList';
 import Onboarding1Screen from './screens/Onboarding1Screen';
 import Onboarding2Screen from './screens/Onboarding2Screen';
 import SplashScreen from './screens/SplashScreen';
 
-const Stack = createNativeStackNavigator();
+const Stack = createNativeStackNavigator<OnboardingStackParamList>();
 
-type Props = {};
-
-const OnboardingStackNavigator = (props: Props) => {
+const OnboardingStackNavigator = () => {
   return (
     <Stack.Navigator
       initialRouteName='Splash'
