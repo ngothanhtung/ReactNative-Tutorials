@@ -3,41 +3,42 @@ import 'react-native-gesture-handler';
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, View, Text, Button, Image, SafeAreaView } from 'react-native';
 
-import MyButton from './components/MyButton';
-import LoginScreen from './components/LoginScreen';
+// import MyButton from './components/MyButton';
+// import LoginScreen from './components/LoginScreen';
 
-import LikeButton from './components/LikeButton';
-import Light from './components/Light';
+// import LikeButton from './components/LikeButton';
+// import Light from './components/Light';
 
-import LifecycleComponent from './components/Session03/LifecycleComponent';
+// import LifecycleComponent from './src/examples/Session03/LifecycleComponent';
 
 import { useFonts } from 'expo-font';
 import React from 'react';
-import LifecyleGetData from './components/Session03/LifecyleGetData';
-import Dimension from './components/Session04/Dimension';
-import BasicFlexBox from './components/Session04/BasicFlexBox';
-import Color from './components/Session04/Color';
-import GetStartedButton from './components/Exercises/GetStartedButton';
+import LifecyleGetData from './src/examples/Session03/LifecyleGetData';
+import Dimension from './src/examples/Session04/Dimension';
+import BasicFlexBox from './src/examples/Session04/BasicFlexBox';
+import Color from './src/examples/Session04/Color';
+import GetStartedButton from './src/Exercises/GetStartedButton';
 import { Ionicons } from '@expo/vector-icons';
-import Block from './components/Exercises/Block';
-import ScrollViewExample from './components/Session05/ScrollViewExample';
-import ScrollViewWithManyDataExample from './components/Session05/ScrollViewWithManyDataExample';
-import FlatListExamples from './components/Session05/FlatListExamples';
-import SectionListExample from './components/Session05/SectionListExample';
-import ScrollViewInScrollView from './components/Session05/ScrollViewInScrollView';
-import SectionListAdvancedExample from './components/Session05/SectionListAdvancedExample';
-import BasicNetworking from './components/Session06/BasicNetworking';
-import LoginNetworking from './components/Session06/LoginNetworking';
-import UseMemoHook from './components/Session07/UseMemoHook';
-import UseCallbackHook from './components/Session07/UseCallbackHook';
+import Block from './src/Exercises/Block';
+import ScrollViewExample from './src/examples/Session05/ScrollViewExample';
+import ScrollViewWithManyDataExample from './src/examples/Session05/ScrollViewWithManyDataExample';
+import FlatListExamples from './src/examples/Session05/FlatListExamples';
+import SectionListExample from './src/examples/Session05/SectionListExample';
+import ScrollViewInScrollView from './src/examples/Session05/ScrollViewInScrollView';
+import SectionListAdvancedExample from './src/examples/Session05/SectionListAdvancedExample';
+import BasicNetworking from './src/examples/Session06/BasicNetworking';
+import LoginNetworking from './src/examples/Session06/LoginNetworking';
+import UseMemoHook from './src/examples/Session07/UseMemoHook';
+import UseCallbackHook from './src/examples/Session07/UseCallbackHook';
 // import AppNavigation from './components/Session08/AppNavigation';
-import ReactNativePaperApp from './components/Session09/ReactNativePaperApp';
-import LoginForm from './components/Session10/LoginForm';
-import RegisterSchemaValidationForm from './components/Session10/RegisterSchemaValidationForm';
-import RegisterWithReactNativePaperForm from './components/Session10/RegisterWithReactNativePaperForm';
-import CreateCategory from './components/Session10/CreateCategory';
+import ReactNativePaperApp from './src/examples/Session09/ReactNativePaperApp';
+import LoginForm from './src/examples/Session10/LoginForm';
+import RegisterSchemaValidationForm from './src/examples/Session10/RegisterSchemaValidationForm';
+import RegisterWithReactNativePaperForm from './src/examples/Session10/RegisterWithReactNativePaperForm';
+import CreateCategory from './src/examples/Session10/CreateCategory';
 
 import AppNavigation from './src/AppNavigation';
+import FirebaseExample from '@/examples/Session11/FirebaseExample';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -79,6 +80,8 @@ export default function App() {
   if (!fontsLoaded) {
     return null;
   }
+
+  return <FirebaseExample />;
 
   return (
     <React.Fragment>
