@@ -39,6 +39,7 @@ import CreateCategory from './src/examples/Session10/CreateCategory';
 
 import AppNavigation from './src/AppNavigation';
 import FirebaseExample from '@/examples/Session11/FirebaseExample';
+import Chat from '@/examples/Session11/chat';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -80,6 +81,8 @@ export default function App() {
   if (!fontsLoaded) {
     return null;
   }
+
+  return <Chat />;
 
   return <FirebaseExample />;
 
