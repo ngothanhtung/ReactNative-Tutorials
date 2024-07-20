@@ -2,8 +2,7 @@ import { View, Text, Button, StyleSheet, TextInput } from 'react-native';
 import React from 'react';
 
 import { db } from './firebase/initializeApp';
-import { onSnapshot, writeBatch, doc, setDoc, addDoc, updateDoc, deleteDoc, collection, serverTimestamp, increment, deleteField, query, where } from 'firebase/firestore';
-import { set } from 'react-hook-form';
+import { onSnapshot, writeBatch, doc, setDoc, getDoc, addDoc, updateDoc, deleteDoc, collection, serverTimestamp, increment, deleteField, query, where, getDocs } from 'firebase/firestore';
 
 type Props = {};
 
@@ -90,11 +89,48 @@ const FirebaseExample = (props: Props) => {
     }
   };
 
+  const getDocument = async () => {
+    const docRef = doc(db, 'cities', 'HN');
+    const docSnap = await getDoc(docRef);
+
+    if (docSnap.exists()) {
+      console.log('Document data:', docSnap.data());
+    } else {
+      // doc.data() will be undefined in this case
+      console.log('No such document!');
+    }
+  };
+
+  const getDocuments = async () => {
+    const q = query(collection(db, 'cities'));
+
+    const querySnapshot = await getDocs(q);
+
+    let cities: any[] = [];
+    querySnapshot.forEach((doc) => {
+      cities.push(doc.data());
+    });
+
+    console.log(cities);
+  };
+  const getDocumentsInASubCollection = async () => {
+    const querySnapshot = await getDocs(collection(db, 'conversations', '1', 'messages'));
+
+    let messages: any[] = [];
+    querySnapshot.forEach((doc) => {
+      // doc.data() is never undefined for query doc snapshots
+      messages.push(doc.data());
+    });
+    console.log(messages);
+  };
   return (
     <View style={styles.container}>
       <Text>City Name = {city.name}</Text>
       <Button title='Add' onPress={add} />
       <Button title='Batch write' onPress={write} />
+      <Button title='Get 1 document' onPress={getDocument} />
+      <Button title='Get documents' onPress={getDocuments} />
+      <Button title='Get documents in a sub collection' onPress={getDocumentsInASubCollection} />
 
       {messages.map((message, index) => {
         return <Text key={index}>{message.text}</Text>;

@@ -82,9 +82,9 @@ export default function App() {
     return null;
   }
 
-  return <Chat />;
-
   return <FirebaseExample />;
+
+  return <Chat />;
 
   return (
     <React.Fragment>
