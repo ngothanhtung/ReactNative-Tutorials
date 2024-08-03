@@ -46,6 +46,14 @@ import DateTimePickerExample from '@/examples/Session12/DateTimePickerExample';
 import DocumentPickerExample from '@/examples/Session12/DocumentPickerExample';
 import LocationExample from '@/examples/Session12/LocationExample';
 
+import { LogLevel, OneSignal } from 'react-native-onesignal';
+
+OneSignal.Debug.setLogLevel(LogLevel.Verbose);
+OneSignal.initialize('fbcc2836-1401-4471-bf99-04f96bce161b');
+
+// Also need enable notifications to complete OneSignal setup
+OneSignal.Notifications.requestPermission(true);
+
 export default function App() {
   const [fontsLoaded] = useFonts({
     // Gilroy
