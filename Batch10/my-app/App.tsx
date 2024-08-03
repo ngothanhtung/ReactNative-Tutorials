@@ -95,19 +95,19 @@ export default function App() {
     return null;
   }
 
-  return <LocationExample />;
+  // return <LocationExample />;
 
-  return <DocumentPickerExample />;
+  // return <DocumentPickerExample />;
 
-  return <DateTimePickerExample />;
+  // return <DateTimePickerExample />;
 
-  return <CheckboxExample />;
+  // return <CheckboxExample />;
 
-  return <CalendarExample />;
+  // return <CalendarExample />;
 
-  return <FirebaseExample />;
+  // return <FirebaseExample />;
 
-  return <Chat />;
+  // return <Chat />;
 
   return (
     <React.Fragment>
