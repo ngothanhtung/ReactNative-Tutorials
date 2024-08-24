@@ -4,13 +4,17 @@ import { StyleSheet, Text, View } from 'react-native';
 import Container from '@/components/Container';
 import PrimaryButton from '@/navigators/OnboardingStackNavigator/components/PrimaryButton';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
+import { RootStackParamList } from '@/navigators/RootStackNavigator/RootStackParamList';
 
-type Props = {};
+type Props = {
+  navigation: NativeStackNavigationProp<RootStackParamList>;
+};
 
-const LoginScreen = (props: Props) => {
+const LoginScreen = ({ navigation }: Props) => {
   return (
     <Container style={styles.container}>
-      <Text style={styles.text}>LoginScreen</Text>
+      <Text style={styles.text}>Login Screen</Text>
       <PrimaryButton
         text='Login'
         onPress={async () => {
@@ -23,6 +27,15 @@ const LoginScreen = (props: Props) => {
           await AsyncStorage.setItem('isLogin', 'true');
           // Array
           await AsyncStorage.setItem('array', JSON.stringify(['a', 'b', 'c']));
+        }}
+      />
+
+      <PrimaryButton
+        text='Create workspace'
+        onPress={async () => {
+          navigation.navigate('WorkspaceStackNavigator', {
+            screen: 'CreateWorkspace',
+          });
         }}
       />
     </Container>

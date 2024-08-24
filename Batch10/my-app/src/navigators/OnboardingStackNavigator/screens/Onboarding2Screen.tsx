@@ -87,6 +87,7 @@ function Dot({ color }: { color: string }) {
 type Props = {
   navigation: NativeStackNavigationProp<RootStackParamList>;
 };
+
 export default function Onboarding2Screen({ navigation }: Props) {
   return (
     <Container>
