@@ -38,6 +38,14 @@ const LoginScreen = ({ navigation }: Props) => {
           });
         }}
       />
+      <PrimaryButton
+        text='Chat'
+        onPress={async () => {
+          navigation.navigate('ChatStackNavigator', {
+            screen: 'ChatList',
+          });
+        }}
+      />
     </Container>
   );
 };

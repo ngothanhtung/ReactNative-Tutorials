@@ -39,7 +39,7 @@ const SplashScreen = ({ navigation }: Props) => {
           const array = await AsyncStorage.getItem('array');
           const arrayObject = array ? JSON.parse(array) : [];
 
-          Alert.alert('Thông báo', `username: ${username}, password: ${password}`);
+          // Alert.alert('Thông báo', `username: ${username}, password: ${password}`);
           // Autologin
           if (username && password) {
             // Call api login
