@@ -4,11 +4,13 @@ import { Button, Dimensions, Image, SafeAreaView, StyleSheet, Text, View } from 
 import { SvgXml } from 'react-native-svg';
 
 import Container from '@/components/Container';
+import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 
+import { auth } from '../../../firebase/initializeApp';
 import BigText from '../components/BigText';
 import PrimaryButton from '../components/PrimaryButton';
-import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { OnboardingStackParamList } from '../OnboardingStackParamList';
+import { RootStackParamList } from '@/navigators/RootStackNavigator/RootStackParamList';
 
 const WIDTH = Dimensions.get('window').width;
 
@@ -26,10 +28,21 @@ const xml = `
 `;
 
 type Props = {
-  navigation: NativeStackNavigationProp<OnboardingStackParamList>;
+  navigation: NativeStackNavigationProp<RootStackParamList>;
 };
 
 const Onboarding1Screen = ({ navigation }: Props) => {
+  React.useEffect(() => {
+    // Get current user of firebase
+    const user = auth.currentUser;
+    console.log('currentUser', user);
+    if (user) {
+      // navigation.navigate('WorkspaceStackNavigator', {
+      //   screen: 'CreateWorkspace',
+      // });
+    }
+  }, []);
+
   return (
     <Container>
       <SafeAreaView style={styles.container}>
@@ -50,7 +63,9 @@ const Onboarding1Screen = ({ navigation }: Props) => {
                   icon={null}
                   style={{ width: 130 }}
                   onPress={() => {
-                    navigation.navigate('Onboarding2');
+                    navigation.navigate('OnboardingStackNavigator', {
+                      screen: 'Onboarding2',
+                    });
                   }}
                 />
               </View>

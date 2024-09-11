@@ -8,12 +8,17 @@ import PrimaryButton from '@/navigators/OnboardingStackNavigator/components/Prim
 import DropdownList from '@/components/DropdownList';
 import { Ionicons } from '@expo/vector-icons';
 import MultipleDropdownList from '@/components/MultipleDropdownList';
+import { auth } from '../../../firebase/initializeApp';
 
 const HEIGHT = Dimensions.get('window').height;
 
 type Props = {};
 
 const CreateWorkspaceScreen = (props: Props) => {
+  // Get current user of firebase
+  const user = auth.currentUser;
+  console.log('currentUser', user);
+
   const [modalVisible, setModalVisible] = React.useState(false);
   return (
     <React.Fragment>
