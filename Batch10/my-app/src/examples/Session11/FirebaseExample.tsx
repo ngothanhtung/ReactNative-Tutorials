@@ -113,6 +113,7 @@ const FirebaseExample = (props: Props) => {
 
     console.log(cities);
   };
+
   const getDocumentsInASubCollection = async () => {
     const querySnapshot = await getDocs(collection(db, 'conversations', '1', 'messages'));
 
@@ -123,6 +124,7 @@ const FirebaseExample = (props: Props) => {
     });
     console.log(messages);
   };
+
   return (
     <View style={styles.container}>
       <Text>City Name = {city.name}</Text>
