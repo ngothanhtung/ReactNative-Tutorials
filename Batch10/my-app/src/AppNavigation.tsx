@@ -1,5 +1,4 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
 
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -16,5 +15,3 @@ const AppNavigation = (props: Props) => {
 };
 
 export default AppNavigation;
-
-const styles = StyleSheet.create({});

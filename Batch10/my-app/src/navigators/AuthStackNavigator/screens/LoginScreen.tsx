@@ -30,43 +30,7 @@ const LoginScreen = ({ navigation }: Props) => {
   return (
     <Container style={styles.container}>
       <Text style={styles.text}>Login Screen</Text>
-      <PrimaryButton
-        text='Login'
-        onPress={async () => {
-          // LOGIN THÀNH CÔNG
-          // await AsyncStorage.setItem('username', 'admin');
-          // await AsyncStorage.setItem('password', '123456789');
-          // await AsyncStorage.setItem('age', '18');
-          // await AsyncStorage.setItem('profile', JSON.stringify({ phone: '0905123456', email: 'admin@gmail.com' }));
-          // // save true / false
-          // await AsyncStorage.setItem('isLogin', 'true');
-          // // Array
-          // await AsyncStorage.setItem('array', JSON.stringify(['a', 'b', 'c']));
-
-          const email = 'tungnt@softech.vn';
-          const password = '123456789';
-
-          signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
-              // Signed in
-              const user = userCredential.user;
-              console.log('user uid', user.uid);
-
-              getProfile(user.uid).then((data) => {
-                console.log('data', data);
-              });
-              // Load profile
-
-              // ...
-            })
-            .catch((error) => {
-              const errorCode = error.code;
-              const errorMessage = error.message;
-              console.log('errorCode', errorCode);
-              console.log('errorMessage', errorMessage);
-            });
-        }}
-      />
+      <PrimaryButton text='Login' onPress={async () => {}} />
 
       <PrimaryButton
         text='Sign out'
