@@ -150,19 +150,23 @@ const ExamplesScreen = (props: Props) => {
   };
 
   const createTaskHandler = async () => {
-    const task = await createTask({
-      task: {
-        title: 'Task 5',
-        description: 'Description 1',
-        startDate: new Date('2024-09-01 00:00:00'),
-        dueDate: new Date('2024-09-30 00:00:00'),
-        status: 'To do',
-        assignee: 'dMhAKURQpEXsNr32mFtpN0w1MIE3',
-        uid: 'dMhAKURQpEXsNr32mFtpN0w1MIE3',
-      },
-    });
+    try {
+      const task = await createTask({
+        task: {
+          title: 'Task 5',
+          description: 'Description 1',
+          startDate: new Date('2024-09-01 00:00:00'),
+          dueDate: new Date('2024-09-30 00:00:00'),
+          status: 'To do',
+          assignee: 'dMhAKURQpEXsNr32mFtpN0w1MIE3',
+          uid: 'dMhAKURQpEXsNr32mFtpN0w1MIE3',
+        },
+      });
 
-    console.log('task', task);
+      console.log('task', task);
+    } catch (error) {
+      console.log('error', error);
+    }
   };
 
   return (

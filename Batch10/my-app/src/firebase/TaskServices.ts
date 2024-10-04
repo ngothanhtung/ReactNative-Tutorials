@@ -9,8 +9,9 @@ export async function createTask({ task }: { task: Task }): Promise<any> {
       ...task,
       createdTime: serverTimestamp(),
       updatedTime: serverTimestamp(),
-      startDate: task.startDate instanceof Date ? Timestamp.fromDate(task.startDate) : task.startDate,
-      dueDate: task.dueDate instanceof Date ? Timestamp.fromDate(task.dueDate) : task.dueDate,
+      startDate: task.startDate ? (task.startDate instanceof Date ? Timestamp.fromDate(task.startDate) : task.startDate) : null,
+      dueDate: task.dueDate ? (task.dueDate instanceof Date ? Timestamp.fromDate(task.dueDate) : task.dueDate) : null,
+      completedDate: task.completedDate ? (task.completedDate instanceof Date ? Timestamp.fromDate(task.completedDate) : task.completedDate) : null,
       uid: doc(db, 'profiles', task.uid),
       assignee: doc(db, 'profiles', task.assignee),
     };
