@@ -19,18 +19,31 @@ export interface Attachment {
   url: string;
 }
 
+export interface Project {
+  id?: string;
+  name: string;
+  description?: string;
+  members?: Member[];
+}
+
+export interface Member {
+  id: string;
+  role: string;
+  uid: string;
+}
+
 export interface Task {
   id?: string;
   title?: string;
   description?: string;
-  assignee: string;
-  uid: string;
+  assignee: any;
+  uid: any;
   status?: 'To do' | 'In progress' | 'Done';
   startDate?: Date;
   dueDate?: Date;
   completedDate?: Date;
   labels?: string[];
-  projectId?: string;
+  project?: any;
   attachments?: Attachment[];
   subTasks?: Task[];
   comments?: Comment[];

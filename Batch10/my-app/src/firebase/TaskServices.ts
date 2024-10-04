@@ -1,7 +1,9 @@
-import { db, auth } from '@/firebase/initializeApp';
-import { onSnapshot, writeBatch, doc, getDoc, addDoc, updateDoc, collection, collectionGroup, serverTimestamp, deleteField, query, getDocs, where, deleteDoc, Timestamp } from 'firebase/firestore';
+import { addDoc, collection, deleteDoc, doc, getDocs, query, serverTimestamp, Timestamp, updateDoc, where } from 'firebase/firestore';
+
+import { db } from '@/firebase/initializeApp';
+import { Comment, History, Task } from '@/types';
+
 import { getProfile } from './AuthServices';
-import { Comment, History, Task } from '@/types/task';
 
 export async function createTask({ task }: { task: Task }): Promise<any> {
   return new Promise(async (resolve, reject) => {
@@ -12,8 +14,10 @@ export async function createTask({ task }: { task: Task }): Promise<any> {
       startDate: task.startDate ? (task.startDate instanceof Date ? Timestamp.fromDate(task.startDate) : task.startDate) : null,
       dueDate: task.dueDate ? (task.dueDate instanceof Date ? Timestamp.fromDate(task.dueDate) : task.dueDate) : null,
       completedDate: task.completedDate ? (task.completedDate instanceof Date ? Timestamp.fromDate(task.completedDate) : task.completedDate) : null,
-      uid: doc(db, 'profiles', task.uid),
-      assignee: doc(db, 'profiles', task.assignee),
+
+      project: task.project ? doc(db, 'projects', task.project) : null,
+      uid: task.uid ? doc(db, 'profiles', task.uid) : null,
+      assignee: task.assignee ? doc(db, 'profiles', task.assignee) : null,
     };
 
     addDoc(collection(db, 'tasks'), data)
