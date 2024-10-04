@@ -1,6 +1,112 @@
 import { db, auth } from '@/firebase/initializeApp';
-import { onSnapshot, writeBatch, doc, getDoc, addDoc, updateDoc, collection, collectionGroup, serverTimestamp, deleteField, query, getDocs, where } from 'firebase/firestore';
+import { onSnapshot, writeBatch, doc, getDoc, addDoc, updateDoc, collection, collectionGroup, serverTimestamp, deleteField, query, getDocs, where, deleteDoc } from 'firebase/firestore';
 import { getProfile } from './AuthServices';
+import { Comment, History, Task } from '@/types/task';
+
+export async function createTask({ task }: { task: Task }): Promise<any> {
+  return new Promise(async (resolve, reject) => {
+    addDoc(collection(db, 'tasks'), task)
+      .then((docRef) => {
+        resolve(docRef.id);
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+}
+
+export async function updateTask({ id, task }: { id: string; task: Task }): Promise<any> {
+  return new Promise(async (resolve, reject) => {
+    updateDoc(doc(db, 'tasks', id), {
+      ...task,
+      updatedTime: serverTimestamp(),
+    })
+      .then(() => {
+        resolve(task);
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+}
+
+export async function deleteTask({ id }: { id: string }): Promise<any> {
+  return new Promise(async (resolve, reject) => {
+    deleteDoc(doc(db, 'tasks', id))
+      .then(() => {
+        resolve(id);
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+}
+
+export async function createSubTask({ taskId, subTask }: { taskId: string; subTask: Task }): Promise<any> {
+  return new Promise(async (resolve, reject) => {
+    addDoc(collection(db, 'tasks', `${taskId}/subTasks`), subTask)
+      .then((docRef) => {
+        resolve(docRef.id);
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+}
+
+export async function updateSubTask({ taskId, subTaskId, subTask }: { taskId: string; subTaskId: string; subTask: Task }): Promise<any> {
+  return new Promise(async (resolve, reject) => {
+    updateDoc(doc(db, 'tasks', `${taskId}/subTasks`, subTaskId), {
+      ...subTask,
+      updatedTime: serverTimestamp(),
+    })
+      .then(() => {
+        resolve(subTask);
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+}
+
+export async function createComment({ taskId, comment }: { taskId: string; comment: Comment }): Promise<any> {
+  return new Promise(async (resolve, reject) => {
+    addDoc(collection(db, 'tasks', `${taskId}/comments`), comment)
+      .then((docRef) => {
+        resolve(docRef.id);
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+}
+
+export async function updateComment({ taskId, commentId, comment }: { taskId: string; commentId: string; comment: Comment }): Promise<any> {
+  return new Promise(async (resolve, reject) => {
+    updateDoc(doc(db, 'tasks', `${taskId}/comments`, commentId), {
+      ...comment,
+      updatedTime: serverTimestamp(),
+    })
+      .then(() => {
+        resolve(comment);
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+}
+
+export async function createHistory({ taskId, history }: { taskId: string; history: History }): Promise<any> {
+  return new Promise(async (resolve, reject) => {
+    addDoc(collection(db, 'tasks', `${taskId}/histories`), history)
+      .then((docRef) => {
+        resolve(docRef.id);
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+}
 
 /**
  * Get tasks by assigned user
@@ -31,19 +137,59 @@ export async function getTasks({ uid }: { uid: string }): Promise<any> {
   });
 }
 
+export async function getSubTasks({ taskId }: { taskId: string }): Promise<any> {
+  return new Promise(async (resolve, reject) => {
+    const ref = collection(db, 'tasks', `${taskId}/subTasks`);
+
+    const items: any[] = [];
+    getDocs(ref)
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          const item = doc.data();
+          item.id = doc.id;
+          items.push(item);
+        });
+        resolve(items);
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+}
+
 export async function getComments({ taskId }: { taskId: string }): Promise<any> {
   return new Promise(async (resolve, reject) => {
     const ref = collection(db, 'tasks', `${taskId}/comments`);
 
-    const comments: any[] = [];
+    const items: any[] = [];
     getDocs(ref)
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-          const comment = doc.data();
-          comment.id = doc.id;
-          comments.push(comment);
+          const item = doc.data();
+          item.id = doc.id;
+          items.push(item);
         });
-        resolve(comments);
+        resolve(items);
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+}
+
+export async function getHistories({ taskId }: { taskId: string }): Promise<any> {
+  return new Promise(async (resolve, reject) => {
+    const ref = collection(db, 'tasks', `${taskId}/histories`);
+
+    const items: any[] = [];
+    getDocs(ref)
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          const item = doc.data();
+          item.id = doc.id;
+          items.push(item);
+        });
+        resolve(items);
       })
       .catch((error) => {
         reject(error);

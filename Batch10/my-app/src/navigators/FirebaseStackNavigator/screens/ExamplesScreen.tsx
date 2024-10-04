@@ -4,7 +4,7 @@ import React from 'react';
 import { db } from '../../../firebase/initializeApp';
 import { onSnapshot, writeBatch, doc, getDoc, addDoc, updateDoc, collection, serverTimestamp, deleteField, query, getDocs } from 'firebase/firestore';
 import { getProfile, signIn, signOut } from '@/firebase/AuthServices';
-import { getTasks } from '@/firebase/TaskServices';
+import { getComments, getTasks } from '@/firebase/TaskServices';
 
 type Props = {};
 
@@ -129,20 +129,26 @@ const ExamplesScreen = (props: Props) => {
 
   const getProfileHandler = async () => {
     const profile = await getProfile({ uid: 'dMhAKURQpEXsNr32mFtpN0w1MIE3' });
-    console.log(profile);
+    console.log('profile', profile);
   };
 
   const loginHandler = async () => {
     const email = 'tungnt@softech.vn';
     const password = '123456789';
     const user = await signIn({ email, password });
-    console.log(user);
+    console.log('user', user);
   };
 
   const getTasksHandler = async () => {
     const tasks = await getTasks({ uid: 'dMhAKURQpEXsNr32mFtpN0w1MIE3' });
-    console.log(tasks);
+    console.log('tasks', tasks);
   };
+
+  const getCommentsHandler = async () => {
+    const comments = await getComments({ taskId: 'Nuuj0r5nqSzjAZxW0kcx' });
+    console.log('comments', comments);
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={{ flex: 1, padding: 16 }}>
@@ -150,6 +156,7 @@ const ExamplesScreen = (props: Props) => {
         <Button title='Login' onPress={loginHandler} />
         <Button title='Get profile' onPress={getProfileHandler} />
         <Button title='Get tasks' onPress={getTasksHandler} />
+        <Button title='Get comments' onPress={getCommentsHandler} />
         <Button title='Add' onPress={add} />
         <Button title='Batch write' onPress={write} />
         <Button title='Get 1 document' onPress={getDocument} />
