@@ -1,11 +1,21 @@
 import { db, auth } from '@/firebase/initializeApp';
-import { onSnapshot, writeBatch, doc, getDoc, addDoc, updateDoc, collection, collectionGroup, serverTimestamp, deleteField, query, getDocs, where, deleteDoc } from 'firebase/firestore';
+import { onSnapshot, writeBatch, doc, getDoc, addDoc, updateDoc, collection, collectionGroup, serverTimestamp, deleteField, query, getDocs, where, deleteDoc, Timestamp } from 'firebase/firestore';
 import { getProfile } from './AuthServices';
 import { Comment, History, Task } from '@/types/task';
 
 export async function createTask({ task }: { task: Task }): Promise<any> {
   return new Promise(async (resolve, reject) => {
-    addDoc(collection(db, 'tasks'), task)
+    const data = {
+      ...task,
+      createdTime: serverTimestamp(),
+      updatedTime: serverTimestamp(),
+      startDate: task.startDate instanceof Date ? Timestamp.fromDate(task.startDate) : task.startDate,
+      dueDate: task.dueDate instanceof Date ? Timestamp.fromDate(task.dueDate) : task.dueDate,
+      uid: doc(db, 'profiles', task.uid),
+      assignee: doc(db, 'profiles', task.assignee),
+    };
+
+    addDoc(collection(db, 'tasks'), data)
       .then((docRef) => {
         resolve(docRef.id);
       })

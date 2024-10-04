@@ -20,19 +20,22 @@ export interface Attachment {
 }
 
 export interface Task {
-  id: string;
-  title: string;
-  description: string;
+  id?: string;
+  title?: string;
+  description?: string;
   assignee: string;
   uid: string;
-  status: string;
-  startDate: any;
-  dueDate: any;
-  completedDate: any;
-  labels: string[];
-  projectId: string;
-  attachments: Attachment[];
-  subTasks: Task[];
-  comments: Comment[];
-  histories: History[];
+  status?: 'To do' | 'In progress' | 'Done';
+  startDate?: Date;
+  dueDate?: Date;
+  completedDate?: Date;
+  labels?: string[];
+  projectId?: string;
+  attachments?: Attachment[];
+  subTasks?: Task[];
+  comments?: Comment[];
+  histories?: History[];
+
+  createdTime?: Date;
+  updatedTime?: Date;
 }

@@ -4,7 +4,7 @@ import React from 'react';
 import { db } from '../../../firebase/initializeApp';
 import { onSnapshot, writeBatch, doc, getDoc, addDoc, updateDoc, collection, serverTimestamp, deleteField, query, getDocs } from 'firebase/firestore';
 import { getProfile, signIn, signOut } from '@/firebase/AuthServices';
-import { getComments, getTasks } from '@/firebase/TaskServices';
+import { createTask, getComments, getTasks } from '@/firebase/TaskServices';
 
 type Props = {};
 
@@ -149,6 +149,22 @@ const ExamplesScreen = (props: Props) => {
     console.log('comments', comments);
   };
 
+  const createTaskHandler = async () => {
+    const task = await createTask({
+      task: {
+        title: 'Task 5',
+        description: 'Description 1',
+        startDate: new Date('2024-09-01 00:00:00'),
+        dueDate: new Date('2024-09-30 00:00:00'),
+        status: 'To do',
+        assignee: 'dMhAKURQpEXsNr32mFtpN0w1MIE3',
+        uid: 'dMhAKURQpEXsNr32mFtpN0w1MIE3',
+      },
+    });
+
+    console.log('task', task);
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={{ flex: 1, padding: 16 }}>
@@ -157,6 +173,7 @@ const ExamplesScreen = (props: Props) => {
         <Button title='Get profile' onPress={getProfileHandler} />
         <Button title='Get tasks' onPress={getTasksHandler} />
         <Button title='Get comments' onPress={getCommentsHandler} />
+        <Button title='Create task' onPress={createTaskHandler} />
         <Button title='Add' onPress={add} />
         <Button title='Batch write' onPress={write} />
         <Button title='Get 1 document' onPress={getDocument} />
