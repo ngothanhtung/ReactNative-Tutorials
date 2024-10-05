@@ -4,7 +4,8 @@ import React from 'react';
 import { db } from '../../../firebase/initializeApp';
 import { onSnapshot, writeBatch, doc, getDoc, addDoc, updateDoc, collection, serverTimestamp, deleteField, query, getDocs } from 'firebase/firestore';
 import { getProfile, signIn, signOut } from '@/firebase/AuthServices';
-import { createTask, getComments, getTasks } from '@/firebase/TaskServices';
+import { createSubTask, createTask, getComments, getTasks } from '@/firebase/TaskServices';
+import { addMembersToProject, createProject, removeMemberFromProject } from '@/firebase/ProjectServices';
 
 type Props = {};
 
@@ -152,13 +153,33 @@ const ExamplesScreen = (props: Props) => {
   const createTaskHandler = async () => {
     try {
       const task = await createTask({
-        task: {
-          title: 'Task 5',
-          description: 'Description 1',
-          startDate: new Date('2024-09-01 00:00:00'),
-          dueDate: new Date('2024-09-30 00:00:00'),
+        title: 'Task 15',
+        description: 'Description 15',
+        startDate: new Date('2024-09-01 00:00:00'),
+        dueDate: new Date('2024-09-30 00:00:00'),
+        status: 'To do',
+        assignee: 'g0EZQrVAPGZ5sDA2huMDCRaQbCT2',
+        uid: 'dMhAKURQpEXsNr32mFtpN0w1MIE3',
+        project: 'DG7ODCrWTO0jCSP5tZv8',
+      });
+
+      console.log('task', task);
+    } catch (error) {
+      console.log('error', error);
+    }
+  };
+
+  const createSubTaskHandler = async () => {
+    try {
+      const task = await createSubTask({
+        taskId: 'kuk8BqYKzuHNkMvuKlze',
+        subTask: {
+          title: 'Sub Task 2',
+          description: 'Sub Task Description 2',
+          startDate: new Date('2024-10-01 00:00:00'),
+          dueDate: new Date('2024-10-30 00:00:00'),
           status: 'To do',
-          assignee: 'dMhAKURQpEXsNr32mFtpN0w1MIE3',
+          assignee: 'g0EZQrVAPGZ5sDA2huMDCRaQbCT2',
           uid: 'dMhAKURQpEXsNr32mFtpN0w1MIE3',
         },
       });
@@ -169,21 +190,59 @@ const ExamplesScreen = (props: Props) => {
     }
   };
 
+  const createProjectHandler = async () => {
+    createProject({
+      name: 'Project 2',
+      description: 'Description 2',
+      topic: 'Development',
+      members: [
+        {
+          role: 'Tester',
+          uid: 'dMhAKURQpEXsNr32mFtpN0w1MIE3',
+        },
+      ],
+    });
+  };
+
+  const addMembersToProjectHandler = async () => {
+    addMembersToProject({
+      id: 'DG7ODCrWTO0jCSP5tZv8',
+      members: [
+        {
+          role: 'Tester',
+          uid: 'dMhAKURQpEXsNr32mFtpN0w1MIE3',
+        },
+      ],
+    });
+  };
+
+  const removeMemberFromProjectHandler = async () => {
+    removeMemberFromProject({
+      id: 'DG7ODCrWTO0jCSP5tZv8',
+      memberId: 'dMhAKURQpEXsNr32mFtpN0w1MIE3',
+    });
+  };
+
   return (
     <SafeAreaView style={styles.container}>
       <ScrollView style={{ flex: 1, padding: 16 }}>
-        <Text>City Name = {city.name}</Text>
+        <Button title='Create project' onPress={createProjectHandler} />
+        <Button title='Add members to project' onPress={addMembersToProjectHandler} />
+        <Button title='Remove member to project' onPress={removeMemberFromProjectHandler} />
+
         <Button title='Login' onPress={loginHandler} />
         <Button title='Get profile' onPress={getProfileHandler} />
         <Button title='Get tasks' onPress={getTasksHandler} />
         <Button title='Get comments' onPress={getCommentsHandler} />
         <Button title='Create task' onPress={createTaskHandler} />
+        <Button title='Create sub task' onPress={createSubTaskHandler} />
         <Button title='Add' onPress={add} />
         <Button title='Batch write' onPress={write} />
         <Button title='Get 1 document' onPress={getDocument} />
         <Button title='Get documents' onPress={getDocuments} />
         <Button title='Get documents in a sub collection' onPress={getDocumentsInASubCollection} />
 
+        <Text>City Name = {city.name}</Text>
         {messages.map((message, index) => {
           return <Text key={index}>{message.text}</Text>;
         })}

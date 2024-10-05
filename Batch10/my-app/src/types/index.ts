@@ -20,16 +20,17 @@ export interface Attachment {
 }
 
 export interface Project {
-  id?: string;
+  id?: string; // auto-generated
   name: string;
+  topic?: 'Development' | 'Design' | 'Marketing' | 'Others';
   description?: string;
   members?: Member[];
 }
 
 export interface Member {
-  id: string;
+  id?: string;
   role: string;
-  uid: string;
+  uid: string | any;
 }
 
 export interface Task {

@@ -5,8 +5,9 @@ import { Comment, History, Task } from '@/types';
 
 import { getProfile } from './AuthServices';
 
-export async function createTask({ task }: { task: Task }): Promise<any> {
+export async function createTask(task: Task): Promise<any> {
   return new Promise(async (resolve, reject) => {
+    // Prepare data
     const data = {
       ...task,
       createdTime: serverTimestamp(),
@@ -59,7 +60,19 @@ export async function deleteTask({ id }: { id: string }): Promise<any> {
 
 export async function createSubTask({ taskId, subTask }: { taskId: string; subTask: Task }): Promise<any> {
   return new Promise(async (resolve, reject) => {
-    addDoc(collection(db, 'tasks', `${taskId}/subTasks`), subTask)
+    // Prepare data
+    const data = {
+      ...subTask,
+      createdTime: serverTimestamp(),
+      updatedTime: serverTimestamp(),
+      startDate: subTask.startDate ? (subTask.startDate instanceof Date ? Timestamp.fromDate(subTask.startDate) : subTask.startDate) : null,
+      dueDate: subTask.dueDate ? (subTask.dueDate instanceof Date ? Timestamp.fromDate(subTask.dueDate) : subTask.dueDate) : null,
+      completedDate: subTask.completedDate ? (subTask.completedDate instanceof Date ? Timestamp.fromDate(subTask.completedDate) : subTask.completedDate) : null,
+      uid: subTask.uid ? doc(db, 'profiles', subTask.uid) : null,
+      assignee: subTask.assignee ? doc(db, 'profiles', subTask.assignee) : null,
+    };
+
+    addDoc(collection(db, 'tasks', `${taskId}/subTasks`), data)
       .then((docRef) => {
         resolve(docRef.id);
       })
@@ -86,7 +99,15 @@ export async function updateSubTask({ taskId, subTaskId, subTask }: { taskId: st
 
 export async function createComment({ taskId, comment }: { taskId: string; comment: Comment }): Promise<any> {
   return new Promise(async (resolve, reject) => {
-    addDoc(collection(db, 'tasks', `${taskId}/comments`), comment)
+    // Prepare data
+    const data = {
+      ...comment,
+      createdTime: serverTimestamp(),
+      updatedTime: serverTimestamp(),
+      uid: comment.uid ? doc(db, 'profiles', comment.uid) : null,
+    };
+
+    addDoc(collection(db, 'tasks', `${taskId}/comments`), data)
       .then((docRef) => {
         resolve(docRef.id);
       })
