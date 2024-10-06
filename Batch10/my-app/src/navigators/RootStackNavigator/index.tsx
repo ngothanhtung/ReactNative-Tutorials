@@ -4,7 +4,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
 import AuthStackNavigator from '../AuthStackNavigator';
 import ChatStackNavigator from '../ChatStackNavigator';
-import FirebaseStackNavigator from '../FirebaseStackNavigator';
+import FirebaseStackNavigator from '../WorkspaceStackNavigator';
 import OnboardingStackNavigator from '../OnboardingStackNavigator';
 import WorkspaceStackNavigator from '../WorkspaceStackNavigator';
 import { RootStackParamList } from './RootStackParamList';

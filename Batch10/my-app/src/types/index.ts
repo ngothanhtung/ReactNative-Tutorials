@@ -1,3 +1,5 @@
+import { Timestamp } from 'firebase/firestore';
+
 export interface Comment {
   id: string;
   content: string;
@@ -23,6 +25,7 @@ export interface Project {
   id?: string; // auto-generated
   name: string;
   topic?: 'Development' | 'Design' | 'Marketing' | 'Others';
+  color?: string;
   description?: string;
   members?: Member[];
 }
@@ -41,7 +44,7 @@ export interface Task {
   uid: any;
   status?: 'To do' | 'In progress' | 'Done';
   startDate?: Date;
-  dueDate?: Date;
+  dueDate?: any; // Date | Timestamp;
   completedDate?: Date;
   labels?: string[];
   project?: any;

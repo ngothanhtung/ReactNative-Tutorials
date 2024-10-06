@@ -31,6 +31,29 @@ export async function createProject(project: Project): Promise<any> {
   });
 }
 
+export async function getProjects({ uid }: { uid: string }): Promise<any> {
+  return new Promise(async (resolve, reject) => {
+    try {
+      const userRef = doc(db, 'profiles', uid);
+
+      const ref = collection(db, 'projects');
+      // I have array members in project, and each member has a field userID and name
+      // I want to get all projects that have a member with userID equal to the current user's uid
+      // const q = query(ref, where('members', 'array-contains', { uid: userRef }));
+      const q = query(ref);
+      const querySnapshot = await getDocs(q);
+      const projects: any[] = [];
+      querySnapshot.forEach((doc) => {
+        console.log(querySnapshot);
+        projects.push({ ...doc.data(), id: doc.id });
+      });
+      resolve(projects);
+    } catch (error) {
+      reject(error);
+    }
+  });
+}
+
 export async function getProject({ id }: { id: string }): Promise<any> {
   return new Promise(async (resolve, reject) => {
     const ref = doc(db, 'projects', id);

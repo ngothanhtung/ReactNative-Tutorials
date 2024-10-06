@@ -1,4 +1,4 @@
-import { addDoc, collection, deleteDoc, doc, getDocs, query, serverTimestamp, Timestamp, updateDoc, where } from 'firebase/firestore';
+import { addDoc, collection, deleteDoc, doc, getDocs, orderBy, query, serverTimestamp, Timestamp, updateDoc, where } from 'firebase/firestore';
 
 import { db } from '@/firebase/initializeApp';
 import { Comment, History, Task } from '@/types';
@@ -23,7 +23,7 @@ export async function createTask(task: Task): Promise<any> {
 
     addDoc(collection(db, 'tasks'), data)
       .then((docRef) => {
-        resolve(docRef.id);
+        resolve({ ...data, id: docRef.id });
       })
       .catch((error) => {
         reject(error);
@@ -145,22 +145,56 @@ export async function createHistory({ taskId, history }: { taskId: string; histo
 }
 
 /**
- * Get tasks by assigned user
+ * Get tasks by uid
  */
 export async function getTasks({ uid }: { uid: string }): Promise<any> {
   return new Promise(async (resolve, reject) => {
     // Get profile
     const profile = await getProfile({ uid });
+
+    // Get user reference
     const userRef = doc(db, 'profiles', uid);
 
     const ref = collection(db, 'tasks');
+    // const q = query(ref, where('uid', '==', userRef), orderBy('dueDate', 'desc'));
     const q = query(ref, where('uid', '==', userRef));
 
-    const tasks: any[] = [];
+    const tasks: Task[] = [];
     getDocs(q)
       .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
-          const task = doc.data();
+          const task = doc.data() as Task;
+          task.id = doc.id;
+          task.uid = profile;
+          tasks.push(task);
+        });
+        resolve(tasks);
+      })
+      .catch((error) => {
+        reject(error);
+      });
+  });
+}
+
+export async function getAssigneeTasks({ assigneeId, projectId }: { assigneeId: string; projectId: string }): Promise<any> {
+  return new Promise(async (resolve, reject) => {
+    // Get profile
+    const profile = await getProfile({ uid: assigneeId });
+
+    // Get project reference
+    const projectRef = doc(db, 'projects', projectId);
+
+    // Get user reference
+    const userRef = doc(db, 'profiles', assigneeId);
+
+    const ref = collection(db, 'tasks');
+    const q = query(ref, where('project', '==', projectRef), where('assignee', '==', userRef));
+
+    const tasks: Task[] = [];
+    getDocs(q)
+      .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          const task = doc.data() as Task;
           task.id = doc.id;
           task.uid = profile;
           tasks.push(task);

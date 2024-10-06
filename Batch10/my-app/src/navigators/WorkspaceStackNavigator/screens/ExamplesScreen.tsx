@@ -1,4 +1,4 @@
-import { Text, Button, StyleSheet, TextInput, SafeAreaView, ScrollView } from 'react-native';
+import { Text, Button, StyleSheet, TextInput, SafeAreaView, ScrollView, FlatList } from 'react-native';
 import React from 'react';
 
 import { db } from '../../../firebase/initializeApp';
@@ -153,12 +153,12 @@ const ExamplesScreen = (props: Props) => {
   const createTaskHandler = async () => {
     try {
       const task = await createTask({
-        title: 'Task 15',
-        description: 'Description 15',
-        startDate: new Date('2024-09-01 00:00:00'),
-        dueDate: new Date('2024-09-30 00:00:00'),
+        title: 'Task 16',
+        description: 'Description 16',
+        startDate: new Date('2024-10-01 00:00:00'),
+        dueDate: new Date('2024-10-10 00:00:00'),
         status: 'To do',
-        assignee: 'g0EZQrVAPGZ5sDA2huMDCRaQbCT2',
+        assignee: 'dMhAKURQpEXsNr32mFtpN0w1MIE3',
         uid: 'dMhAKURQpEXsNr32mFtpN0w1MIE3',
         project: 'DG7ODCrWTO0jCSP5tZv8',
       });
@@ -263,6 +263,8 @@ const ExamplesScreen = (props: Props) => {
             });
           }}
         />
+
+        <FlatList />
       </ScrollView>
     </SafeAreaView>
   );
