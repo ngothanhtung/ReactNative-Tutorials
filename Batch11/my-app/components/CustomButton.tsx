@@ -1,6 +1,7 @@
 import { View, Text, StyleSheet, Pressable } from 'react-native';
 import React from 'react';
 import Entypo from '@expo/vector-icons/Entypo';
+import Fonts from '../constants/fonts';
 
 type Props = {
   textColor?: string;
@@ -35,5 +36,6 @@ const styles = StyleSheet.create({
     color: 'white',
     fontWeight: '700',
     fontSize: 16,
+    fontFamily: Fonts.GilroySemiBold,
   },
 });
