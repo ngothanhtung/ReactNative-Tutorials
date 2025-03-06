@@ -23,9 +23,7 @@ if (getApps().length < 1) {
   fireStore = initializeFirestore(firebaseApp, {
     experimentalForceLongPolling: true,
   });
-  // fireAuth = initializeAuth(firebaseApp, {
-  //   persistence: getReactNativePersistence(AsyncStorage),
-  // });
+  fireAuth = initializeAuth(firebaseApp, {});
 } else {
   firebaseApp = getApp();
   fireAuth = getAuth();
@@ -35,4 +33,4 @@ if (getApps().length < 1) {
 // Initialize Firebase
 export const app = firebaseApp;
 export const db = fireStore;
-// export const auth = fireAuth;
+export const auth = fireAuth;

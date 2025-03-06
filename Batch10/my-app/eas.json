@@ -1,0 +1,26 @@
+{
+  "cli": {
+    "version": ">= 12.6.1",
+    "appVersionSource": "remote"
+  },
+  "build": {
+    "development": {
+      "developmentClient": true,
+      "distribution": "internal"
+    },
+    "preview": {
+      "distribution": "internal"
+    },
+    "production": {
+      "autoIncrement": true
+    }
+  },
+  "submit": {
+    "production": {
+      "android": {
+        "serviceAccountKeyPath": "./task-ez-439808-7014276c4fd5.json",
+        "track": "internal"
+      }
+    }
+  }
+}

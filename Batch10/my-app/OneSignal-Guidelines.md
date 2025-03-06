@@ -1,4 +1,4 @@
-## Documents
+# Documents
 
 <https://documentation.onesignal.com/docs/react-native-expo-sdk-setup>
 
