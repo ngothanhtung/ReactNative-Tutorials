@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, Image } from 'react-native';
 import React from 'react';
 import CustomButton from '../CustomButton';
 import Fonts from '../../constants/fonts';
+import Dots from './Dots';
 
 type Props = {};
 
@@ -23,6 +24,7 @@ const Slider = (props: Props) => {
       <Image style={styles.image} source={images[index]} />
       <Text style={styles.title}>{titles[index]}</Text>
       <Text style={styles.subTitle}>{subTitles[index]}</Text>
+      <Dots dots={images.length} index={index} />
       <CustomButton
         text='Next'
         onPress={() => {

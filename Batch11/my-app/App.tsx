@@ -12,6 +12,7 @@ import LoginScreen from './screens/LoginScreen';
 import Counter from './components/StateExamples/Counter';
 import SaveMeToogle from './components/StateExamples/SaveMeToogle';
 import Slider from './components/StateExamples/Slider';
+import ToDoList from './components/StateExamples/ToDoList';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -38,6 +39,7 @@ export default function App() {
       /> */}
 
       <Slider />
+      {/* <ToDoList /> */}
     </View>
   );
 }
