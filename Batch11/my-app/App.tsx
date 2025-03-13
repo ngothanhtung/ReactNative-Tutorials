@@ -9,6 +9,9 @@ import AntDesign from '@expo/vector-icons/AntDesign';
 import { useFonts } from 'expo-font';
 import Logo from './components/Logo';
 import LoginScreen from './screens/LoginScreen';
+import Counter from './components/StateExamples/Counter';
+import SaveMeToogle from './components/StateExamples/SaveMeToogle';
+import Slider from './components/StateExamples/Slider';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -26,7 +29,15 @@ export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style='auto' />
-      <LoginScreen />
+      {/* <LoginScreen /> */}
+      {/* <Counter /> */}
+      {/* <SaveMeToogle
+        onPress={(value) => {
+          console.log('value from save me toggle', value);
+        }}
+      /> */}
+
+      <Slider />
     </View>
   );
 }
