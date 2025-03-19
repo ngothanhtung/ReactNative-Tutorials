@@ -1,5 +1,5 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import { Button, StyleSheet, Text, View } from 'react-native';
 import Title from './components/Title';
 
 import CustomButton from './components/CustomButton';
@@ -13,6 +13,11 @@ import Counter from './components/StateExamples/Counter';
 import SaveMeToogle from './components/StateExamples/SaveMeToogle';
 import Slider from './components/StateExamples/Slider';
 import ToDoList from './components/StateExamples/ToDoList';
+import Example1 from './components/LifecycleExamples/Example1';
+import React from 'react';
+import ExampleCss from './components/StyleSheetCss/ExampleCss';
+import StarRating from './components/Rating/StarRating';
+import Tip from './components/TipMoney/Tip';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -27,6 +32,8 @@ export default function App() {
     return null;
   }
 
+  const [count, setCount] = React.useState(0);
+
   return (
     <View style={styles.container}>
       <StatusBar style='auto' />
@@ -38,8 +45,19 @@ export default function App() {
         }}
       /> */}
 
-      <Slider />
+      {/* <Slider /> */}
       {/* <ToDoList /> */}
+      {/* {count < 5 && <Example1 number={count} />}
+      <Button
+        title='Click me from App'
+        onPress={() => {
+          setCount(count + 1);
+        }}
+      /> */}
+
+      {/* <ExampleCss /> */}
+      <StarRating />
+      <Tip />
     </View>
   );
 }
