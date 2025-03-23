@@ -32,7 +32,7 @@ export default function App() {
     return null;
   }
 
-  const [count, setCount] = React.useState(0);
+  // const [count, setCount] = React.useState(0);
 
   return (
     <View style={styles.container}>
@@ -56,7 +56,7 @@ export default function App() {
       /> */}
 
       {/* <ExampleCss /> */}
-      <StarRating />
+      {/* <StarRating /> */}
       <Tip />
     </View>
   );
