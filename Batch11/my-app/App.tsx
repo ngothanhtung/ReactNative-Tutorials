@@ -18,6 +18,13 @@ import React from 'react';
 import ExampleCss from './components/StyleSheetCss/ExampleCss';
 import StarRating from './components/Rating/StarRating';
 import Tip from './components/TipMoney/Tip';
+import ScrollViewExample from './components/List/ScrollViewExample';
+import FlatListExample from './components/List/FlatListExample';
+import ProductsExample from './components/List/ProductsExample';
+import PicturesExample from './components/List/PicturesExample';
+import SectionListExample from './components/List/SectionListExample';
+import SectionListAdvancedExample from './components/List/SectionListAdvancedExample';
+import AppNavigation from './components/ReactNavigationExamples/AppNavigation';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -36,7 +43,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
-      <StatusBar style='auto' />
+      <StatusBar style="auto" />
       {/* <LoginScreen /> */}
       {/* <Counter /> */}
       {/* <SaveMeToogle
@@ -57,7 +64,14 @@ export default function App() {
 
       {/* <ExampleCss /> */}
       {/* <StarRating /> */}
-      <Tip />
+      {/* <Tip /> */}
+      {/* <ScrollViewExample /> */}
+      {/* <FlatListExample /> */}
+      {/* <ProductsExample /> */}
+      {/* <PicturesExample /> */}
+      {/* <SectionListExample /> */}
+      {/* <SectionListAdvancedExample /> */}
+      <AppNavigation />
     </View>
   );
 }
