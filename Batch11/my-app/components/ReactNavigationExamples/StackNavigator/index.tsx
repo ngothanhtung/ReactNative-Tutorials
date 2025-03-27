@@ -19,7 +19,7 @@ const StackNavigator = (props: Props) => {
         component={HomeScreen}
         options={{
           title: 'Trang chủ',
-          headerShown: true,
+          headerShown: false,
           headerStyle: {
             backgroundColor: '#f4511e',
           },
@@ -28,7 +28,7 @@ const StackNavigator = (props: Props) => {
             return (
               <View style={{ flexDirection: 'row' }}>
                 <Button onPress={() => alert('This is a button!')}>Info</Button>
-                <Button onPress={() => alert('This is a button!')}>Info</Button>{' '}
+                <Button onPress={() => alert('This is a button!')}>Info</Button>
               </View>
             );
           },

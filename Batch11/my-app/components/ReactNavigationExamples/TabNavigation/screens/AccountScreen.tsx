@@ -5,26 +5,26 @@ type Props = {
   navigation: any;
 };
 
-const HomeScreen = ({ navigation }: Props) => {
+const AccountScreen = ({ navigation }: Props) => {
   return (
     <View style={styles.container}>
       <Text>HomeScreen</Text>
       <Button
-        title="Tab"
+        title="Login"
         onPress={() => {
-          navigation.navigate('TabNavigator');
+          navigation.navigate('Login');
         }}
       />
     </View>
   );
 };
 
-export default HomeScreen;
+export default AccountScreen;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#d4e2ff',
+    backgroundColor: '#0f44b0',
     alignItems: 'center',
     justifyContent: 'center',
   },

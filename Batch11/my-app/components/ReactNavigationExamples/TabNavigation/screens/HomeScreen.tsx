@@ -9,12 +9,6 @@ const HomeScreen = ({ navigation }: Props) => {
   return (
     <View style={styles.container}>
       <Text>HomeScreen</Text>
-      <Button
-        title="Tab"
-        onPress={() => {
-          navigation.navigate('TabNavigator');
-        }}
-      />
     </View>
   );
 };
