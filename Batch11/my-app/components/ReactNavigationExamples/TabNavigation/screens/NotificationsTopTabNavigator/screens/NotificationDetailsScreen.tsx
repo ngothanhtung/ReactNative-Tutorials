@@ -5,26 +5,20 @@ type Props = {
   navigation: any;
 };
 
-const HomeScreen = ({ navigation }: Props) => {
+const NotificationDetailsScreen = ({ navigation }: Props) => {
   return (
     <View style={styles.container}>
-      <Text>HomeScreen</Text>
-      <Button
-        title="DrawerNavigator"
-        onPress={() => {
-          navigation.navigate('DrawerNavigator');
-        }}
-      />
+      <Text>Chi tiết thông báo</Text>
     </View>
   );
 };
 
-export default HomeScreen;
+export default NotificationDetailsScreen;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#d4e2ff',
+    backgroundColor: '#00ff7b',
     alignItems: 'center',
     justifyContent: 'center',
   },

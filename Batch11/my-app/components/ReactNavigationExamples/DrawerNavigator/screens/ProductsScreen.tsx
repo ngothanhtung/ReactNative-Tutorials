@@ -5,26 +5,26 @@ type Props = {
   navigation: any;
 };
 
-const NotificationsScreen = ({ navigation }: Props) => {
+const ProductsScreen = ({ navigation }: Props) => {
   return (
     <View style={styles.container}>
-      <Text>NotificationsScreen</Text>
+      <Text>Danh sách sản phẩm</Text>
       <Button
-        title="Login"
+        title="Details"
         onPress={() => {
-          navigation.navigate('Login');
+          navigation.navigate('ProductDetails');
         }}
       />
     </View>
   );
 };
 
-export default NotificationsScreen;
+export default ProductsScreen;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#af0fad',
+    backgroundColor: '#d4e2ff',
     alignItems: 'center',
     justifyContent: 'center',
   },

@@ -5,21 +5,21 @@ type Props = {
   navigation: any;
 };
 
-const HomeScreen = ({ navigation }: Props) => {
+const NotificationsScreen = ({ navigation }: Props) => {
   return (
     <View style={styles.container}>
-      <Text>HomeScreen</Text>
+      <Text>Danh sách thông báo</Text>
       <Button
-        title="DrawerNavigator"
+        title="Details"
         onPress={() => {
-          navigation.navigate('DrawerNavigator');
+          navigation.navigate('ProductDetails');
         }}
       />
     </View>
   );
 };
 
-export default HomeScreen;
+export default NotificationsScreen;
 
 const styles = StyleSheet.create({
   container: {

@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import StackNavigator from './StackNavigator';
 import TabNavigator from './TabNavigation';
 import MainStackNavigator from './MainStackNavigator';
+import DrawerNavigator from './DrawerNavigator';
 
 type Props = {};
 
@@ -14,6 +15,7 @@ const AppNavigation = (props: Props) => {
       {/* <StackNavigator /> */}
       {/* <TabNavigator /> */}
       <MainStackNavigator />
+      {/* <DrawerNavigator /> */}
     </NavigationContainer>
   );
 };

@@ -4,7 +4,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
 import AccountScreen from './screens/AccountScreen';
 import HomeScreen from './screens/HomeScreen';
-import NotificationsScreen from './screens/NotificationsScreen';
+import NotificationsTopTabNavigator from './screens/NotificationsTopTabNavigator';
 import ProductsStackNavigator from './screens/ProductsStackNavigator';
 import SearchScreen from './screens/SearchScreen';
 import { Text } from 'react-native';
@@ -56,8 +56,8 @@ const TabNavigator = (props: Props) => {
         }}
       />
       <Tab.Screen
-        name="Notification"
-        component={NotificationsScreen}
+        name="NotificationsTopTab"
+        component={NotificationsTopTabNavigator}
         options={{
           title: 'Thông báo',
           tabBarIcon: ({ color, size }) => {
