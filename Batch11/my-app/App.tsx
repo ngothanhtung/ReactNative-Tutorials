@@ -25,6 +25,10 @@ import PicturesExample from './components/List/PicturesExample';
 import SectionListExample from './components/List/SectionListExample';
 import SectionListAdvancedExample from './components/List/SectionListAdvancedExample';
 import AppNavigation from './components/ReactNavigationExamples/AppNavigation';
+import BasicExample from './components/Networking/BasicExample';
+import Login from './components/Networking/Login';
+import CreateCategory from './components/Networking/CreateCategory';
+import OnlineShopNavigation from './components/Networking/OnlineShopNavigation';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -71,7 +75,11 @@ export default function App() {
       {/* <PicturesExample /> */}
       {/* <SectionListExample /> */}
       {/* <SectionListAdvancedExample /> */}
-      <AppNavigation />
+      {/* <AppNavigation /> */}
+      {/* <BasicExample /> */}
+      {/* <Login /> */}
+      {/* <CreateCategory /> */}
+      <OnlineShopNavigation />
     </View>
   );
 }
