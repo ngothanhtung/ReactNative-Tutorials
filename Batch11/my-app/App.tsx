@@ -1,3 +1,4 @@
+import { configureFonts, DefaultTheme, MD2LightTheme, PaperProvider } from 'react-native-paper';
 import { StatusBar } from 'expo-status-bar';
 import { Button, StyleSheet, Text, View } from 'react-native';
 import Title from './components/Title';
@@ -32,6 +33,15 @@ import OnlineShopNavigation from './components/Networking/OnlineShopNavigation';
 import LoginForm from './components/ReactFormHook/LoginForm';
 import LoginFormWithYupValidation from './components/ReactFormHook/LoginFormWithYupValidation';
 import LoginFormWithZodValidation from './components/ReactFormHook/LoginFormWithZodValidation';
+import ButtonExample from './components/ReactNativePaper/ButtonExample';
+
+const theme = {
+  ...DefaultTheme,
+  colors: {
+    ...DefaultTheme.colors,
+    primary: '#FF6C44',
+  },
+};
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -49,19 +59,20 @@ export default function App() {
   // const [count, setCount] = React.useState(0);
 
   return (
-    <View style={styles.container}>
-      <StatusBar style="auto" />
-      {/* <LoginScreen /> */}
-      {/* <Counter /> */}
-      {/* <SaveMeToogle
+    <PaperProvider theme={theme}>
+      <View style={styles.container}>
+        <StatusBar style="auto" />
+        {/* <LoginScreen /> */}
+        {/* <Counter /> */}
+        {/* <SaveMeToogle
         onPress={(value) => {
           console.log('value from save me toggle', value);
         }}
       /> */}
 
-      {/* <Slider /> */}
-      {/* <ToDoList /> */}
-      {/* {count < 5 && <Example1 number={count} />}
+        {/* <Slider /> */}
+        {/* <ToDoList /> */}
+        {/* {count < 5 && <Example1 number={count} />}
       <Button
         title='Click me from App'
         onPress={() => {
@@ -69,24 +80,26 @@ export default function App() {
         }}
       /> */}
 
-      {/* <ExampleCss /> */}
-      {/* <StarRating /> */}
-      {/* <Tip /> */}
-      {/* <ScrollViewExample /> */}
-      {/* <FlatListExample /> */}
-      {/* <ProductsExample /> */}
-      {/* <PicturesExample /> */}
-      {/* <SectionListExample /> */}
-      {/* <SectionListAdvancedExample /> */}
-      {/* <AppNavigation /> */}
-      {/* <BasicExample /> */}
-      {/* <Login /> */}
-      {/* <CreateCategory /> */}
-      {/* <OnlineShopNavigation /> */}
-      {/* <LoginForm /> */}
-      {/* <LoginFormWithYupValidation /> */}
-      <LoginFormWithZodValidation />
-    </View>
+        {/* <ExampleCss /> */}
+        {/* <StarRating /> */}
+        {/* <Tip /> */}
+        {/* <ScrollViewExample /> */}
+        {/* <FlatListExample /> */}
+        {/* <ProductsExample /> */}
+        {/* <PicturesExample /> */}
+        {/* <SectionListExample /> */}
+        {/* <SectionListAdvancedExample /> */}
+        {/* <AppNavigation /> */}
+        {/* <BasicExample /> */}
+        {/* <Login /> */}
+        {/* <CreateCategory /> */}
+        {/* <OnlineShopNavigation /> */}
+        {/* <LoginForm /> */}
+        {/* <LoginFormWithYupValidation /> */}
+        {/* <LoginFormWithZodValidation /> */}
+        <ButtonExample />
+      </View>
+    </PaperProvider>
   );
 }
 
