@@ -29,6 +29,9 @@ import BasicExample from './components/Networking/BasicExample';
 import Login from './components/Networking/Login';
 import CreateCategory from './components/Networking/CreateCategory';
 import OnlineShopNavigation from './components/Networking/OnlineShopNavigation';
+import LoginForm from './components/ReactFormHook/LoginForm';
+import LoginFormWithYupValidation from './components/ReactFormHook/LoginFormWithYupValidation';
+import LoginFormWithZodValidation from './components/ReactFormHook/LoginFormWithZodValidation';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -79,7 +82,10 @@ export default function App() {
       {/* <BasicExample /> */}
       {/* <Login /> */}
       {/* <CreateCategory /> */}
-      <OnlineShopNavigation />
+      {/* <OnlineShopNavigation /> */}
+      {/* <LoginForm /> */}
+      {/* <LoginFormWithYupValidation /> */}
+      <LoginFormWithZodValidation />
     </View>
   );
 }
