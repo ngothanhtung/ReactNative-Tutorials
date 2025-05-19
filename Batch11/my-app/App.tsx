@@ -34,6 +34,7 @@ import LoginForm from './components/ReactFormHook/LoginForm';
 import LoginFormWithYupValidation from './components/ReactFormHook/LoginFormWithYupValidation';
 import LoginFormWithZodValidation from './components/ReactFormHook/LoginFormWithZodValidation';
 import ButtonExample from './components/ReactNativePaper/ButtonExample';
+import NotificationExamples from './components/NotificationExamples';
 
 const theme = {
   ...DefaultTheme,
@@ -97,7 +98,8 @@ export default function App() {
         {/* <LoginForm /> */}
         {/* <LoginFormWithYupValidation /> */}
         {/* <LoginFormWithZodValidation /> */}
-        <ButtonExample />
+        {/* <ButtonExample /> */}
+        <NotificationExamples />
       </View>
     </PaperProvider>
   );
